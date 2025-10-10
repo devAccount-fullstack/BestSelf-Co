@@ -1,0 +1,578 @@
+{% doc %}
+  @prompt
+    Create a split-layout product feature section with:
+    
+    Left side: Product lifestyle image with overlay badge (Save 13%)
+    Right side: Product details including:
+    
+    Star rating with review count
+    Product name as headline
+    2-3 sentence product description
+    Bulleted list of what's included
+    Full-width CTA button with pricing (original price crossed out)
+    
+    
+    Desktop: 50/50 split layout
+    Mobile: Stack image on top, content below
+    Color scheme: Neutral with yellow accent for badge and button
+
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-product-feature-{{ ai_gen_id }} {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    max-width: 100%;
+    background-color: {{ block.settings.background_color }};
+    border-radius: {{ block.settings.border_radius }}px;
+    overflow: hidden;
+  }
+
+  .ai-product-feature-image-{{ ai_gen_id }} {
+    position: relative;
+    flex: 1;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;}
+
+  .ai-product-feature-image-{{ ai_gen_id }} img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ai-product-feature-image-placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ai-product-feature-image-placeholder-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+    max-width: 300px;
+    max-height: 300px;
+    opacity: 0.5;
+  }
+
+  .ai-product-feature-badge-{{ ai_gen_id }} {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: {{ block.settings.badge_color }};
+    color: {{ block.settings.badge_text_color }};
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    z-index: 2;
+  }
+
+  .ai-product-feature-content-{{ ai_gen_id }} {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .ai-product-feature-rating-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .ai-product-feature-stars-{{ ai_gen_id }} {
+    display: flex;
+    gap: 2px;
+  }
+
+  .ai-product-feature-star-{{ ai_gen_id }} {
+    width: 16px;
+    height: 16px;
+    color: {{ block.settings.star_color }};
+  }
+
+  .ai-product-feature-star-empty-{{ ai_gen_id }} {
+    color: {{ block.settings.star_empty_color }};
+  }
+
+  .ai-product-feature-review-count-{{ ai_gen_id }} {
+    color: {{ block.settings.text_color }};
+    font-size: 14px;opacity: 0.8;
+  }
+
+  .ai-product-feature-title-{{ ai_gen_id }} {
+    color: {{ block.settings.heading_color }};
+    font-size: {{ block.settings.heading_size }}px;
+    font-weight: 700;
+    margin: 0;line-height: 1.2;
+  }
+
+  .ai-product-feature-description-{{ ai_gen_id }} {
+    color: {{ block.settings.text_color }};
+    font-size: {{ block.settings.text_size }}px;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .ai-product-feature-includes-{{ ai_gen_id }} {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .ai-product-feature-includes-{{ ai_gen_id }} li {
+    color: {{ block.settings.text_color }};
+    font-size: {{ block.settings.text_size }}px;
+    padding: 4px 0;
+    position: relative;
+    padding-left: 20px;
+  }
+
+  .ai-product-feature-includes-{{ ai_gen_id }} li::before {
+    content: "•";
+    color: {{ block.settings.bullet_color }};
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+  }
+
+  .ai-product-feature-cta-{{ ai_gen_id }} {
+    width: 100%;
+    background-color: {{ block.settings.button_color }};
+    color: {{ block.settings.button_text_color }};
+    border: none;
+    padding: 16px 24px;
+    border-radius: {{ block.settings.button_border_radius }}px;
+    font-size: {{ block.settings.button_text_size }}px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: background-color 0.3s ease;
+  }
+
+  .ai-product-feature-cta-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.button_hover_color }};
+  }
+
+  .ai-product-feature-pricing-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .ai-product-feature-original-price-{{ ai_gen_id }} {
+    text-decoration: line-through;
+    opacity: 0.7;
+    font-size: 14px;
+  }
+
+  .ai-product-feature-sale-price-{{ ai_gen_id }} {
+    font-weight: 700;
+  }
+
+  @media screen and (max-width: 768px) {
+    .ai-product-feature-{{ ai_gen_id }} {
+      flex-direction: column;}
+
+    .ai-product-feature-image-{{ ai_gen_id }} {
+      min-height: 300px;
+    }
+
+    .ai-product-feature-content-{{ ai_gen_id }} {
+      padding: 30px 20px;
+    }
+
+    .ai-product-feature-title-{{ ai_gen_id }} {
+      font-size: {{ block.settings.heading_size | times: 0.8 }}px;
+    }
+
+    .ai-product-feature-badge-{{ ai_gen_id }} {
+      top: 15px;
+      left: 15px;padding: 6px 12px;
+      font-size: 12px;
+    }
+  }
+{% endstyle %}
+
+<div class="ai-product-feature-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-product-feature-image-{{ ai_gen_id }}">
+    {% if block.settings.product_image %}
+      <img
+        src="{{ block.settings.product_image | image_url: width: 800 }}"
+        alt="{{ block.settings.product_image.alt | escape }}"
+        loading="lazy"
+        width="{{ block.settings.product_image.width }}"
+        height="{{ block.settings.product_image.height }}"
+      >
+    {% else %}
+      <div class="ai-product-feature-image-placeholder-{{ ai_gen_id }}">
+        {{ 'product-apparel-1' | placeholder_svg_tag }}
+      </div>
+    {% endif %}
+    
+    {% if block.settings.show_badge and block.settings.badge_text != blank %}
+      <div class="ai-product-feature-badge-{{ ai_gen_id }}">
+        {{ block.settings.badge_text }}
+      </div>
+    {% endif %}
+  </div>
+
+  <div class="ai-product-feature-content-{{ ai_gen_id }}">
+    {% if block.settings.show_rating %}
+      <div class="ai-product-feature-rating-{{ ai_gen_id }}">
+        <div class="ai-product-feature-stars-{{ ai_gen_id }}">
+          {% for i in (1..5) %}
+            <svg
+              class="ai-product-feature-star-{{ ai_gen_id }} {% if i > block.settings.rating %}ai-product-feature-star-empty-{{ ai_gen_id }}{% endif %}"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+          {% endfor %}
+        </div>
+        {% if block.settings.review_count != blank %}
+          <span class="ai-product-feature-review-count-{{ ai_gen_id }}">
+            ({{ block.settings.review_count }} reviews)
+          </span>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    {% if block.settings.product_title != blank %}
+      <h2 class="ai-product-feature-title-{{ ai_gen_id }}">
+        {{ block.settings.product_title }}
+      </h2>
+    {% endif %}
+
+    {% if block.settings.product_description != blank %}
+      <div class="ai-product-feature-description-{{ ai_gen_id }}">
+        {{ block.settings.product_description }}
+      </div>
+    {% endif %}
+
+    {% if block.settings.show_includes_list %}
+      <ul class="ai-product-feature-includes-{{ ai_gen_id }}">
+        {% if block.settings.include_item_1 != blank %}
+          <li>{{ block.settings.include_item_1 }}</li>
+        {% endif %}
+        {% if block.settings.include_item_2 != blank %}
+          <li>{{ block.settings.include_item_2 }}</li>
+        {% endif %}
+        {% if block.settings.include_item_3 != blank %}
+          <li>{{ block.settings.include_item_3 }}</li>
+        {% endif %}
+        {% if block.settings.include_item_4 != blank %}
+          <li>{{ block.settings.include_item_4 }}</li>
+        {% endif %}
+        {% if block.settings.include_item_5 != blank %}
+          <li>{{ block.settings.include_item_5 }}</li>
+        {% endif %}
+      </ul>
+    {% endif %}<a
+      href="{{ block.settings.cta_link }}"
+      class="ai-product-feature-cta-{{ ai_gen_id }}"
+    >
+      <span>{{ block.settings.cta_text }}</span>
+      {% if block.settings.show_pricing %}
+        <div class="ai-product-feature-pricing-{{ ai_gen_id }}">
+          {% if block.settings.original_price != blank %}
+            <span class="ai-product-feature-original-price-{{ ai_gen_id }}">
+              {{ block.settings.original_price }}
+            </span>
+          {% endif %}
+          {% if block.settings.sale_price != blank %}
+            <span class="ai-product-feature-sale-price-{{ ai_gen_id }}">
+              {{ block.settings.sale_price }}
+            </span>
+          {% endif %}
+        </div>
+      {% endif %}
+    </a>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Product feature split",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "product_image",
+      "label": "Product image"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_badge",
+      "label": "Show badge",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "badge_text",
+      "label": "Badge text",
+      "default": "Save 13%"
+    },
+    {
+      "type": "header",
+      "content": "Product details"
+    },
+    {
+      "type": "text",
+      "id": "product_title",
+      "label": "Product title",
+      "default": "Premium Wireless Headphones"
+    },
+    {
+      "type": "richtext",
+      "id": "product_description",
+      "label": "Product description",
+      "default": "<p>Experience crystal-clear audio with our premium wireless headphones. Featuring advanced noise cancellation and 30-hour battery life, these headphones deliver exceptional sound quality for music lovers and professionals alike.</p>"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_rating",
+      "label": "Show rating",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "rating",
+      "label": "Star rating",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 5
+    },
+    {
+      "type": "text",
+      "id": "review_count",
+      "label": "Review count",
+      "default": "127"
+    },
+    {
+      "type": "header",
+      "content": "What's included"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_includes_list",
+      "label": "Show includes list",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "include_item_1",
+      "label": "Include item 1",
+      "default": "Wireless headphones"
+    },
+    {
+      "type": "text",
+      "id": "include_item_2",
+      "label": "Include item 2",
+      "default": "USB-C charging cable"
+    },
+    {
+      "type": "text",
+      "id": "include_item_3",
+      "label": "Include item 3",
+      "default": "Premium carrying case"
+    },
+    {
+      "type": "text",
+      "id": "include_item_4",
+      "label": "Include item 4"
+    },
+    {
+      "type": "text",
+      "id": "include_item_5",
+      "label": "Include item 5"
+    },
+    {
+      "type": "header",
+      "content": "Call to action"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "Button text",
+      "default": "Shop Now"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "Button link"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_pricing",
+      "label": "Show pricing",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "original_price",
+      "label": "Original price",
+      "default": "$199.99"
+    },
+    {
+      "type": "text",
+      "id": "sale_price",
+      "label": "Sale price",
+      "default": "$174.99"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading",
+      "default": "#2c2c2c"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text",
+      "default": "#666666"
+    },
+    {
+      "type": "color",
+      "id": "badge_color",
+      "label": "Badge background",
+      "default": "#ffd700"
+    },
+    {
+      "type": "color",
+      "id": "badge_text_color",
+      "label": "Badge text",
+      "default": "#2c2c2c"
+    },
+    {
+      "type": "color",
+      "id": "star_color",
+      "label": "Star rating",
+      "default": "#ffd700"
+    },
+    {
+      "type": "color",
+      "id": "star_empty_color",
+      "label": "Empty star",
+      "default": "#e0e0e0"
+    },
+    {
+      "type": "color",
+      "id": "bullet_color",
+      "label": "Bullet points",
+      "default": "#ffd700"
+    },
+    {
+      "type": "color",
+      "id": "button_color",
+      "label": "Button background",
+      "default": "#ffd700"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_color",
+      "label": "Button hover",
+      "default": "#e6c200"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button text",
+      "default": "#2c2c2c"
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Heading size",
+      "min": 20,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "text_size",
+      "label": "Text size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "button_text_size",
+      "label": "Button text size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Style"
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "button_border_radius",
+      "label": "Button border radius",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "default": 6
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product feature split"
+    }
+  ]
+}
+{% endschema %}

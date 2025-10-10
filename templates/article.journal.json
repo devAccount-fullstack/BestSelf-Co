@@ -1,0 +1,138 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "section_double_awPcD4": {
+      "type": "section-double",
+      "blocks": {
+        "subheading_JdEtD7": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "Introducing",
+            "padding_bottom": 16
+          }
+        },
+        "heading_TyUU4y": {
+          "type": "heading",
+          "settings": {
+            "title": "{{ article.title }}",
+            "heading_font_size": "heading-large",
+            "padding_bottom": 16,
+            "heading_tag": "automatic"
+          }
+        },
+        "text_czpVEA": {
+          "type": "text",
+          "settings": {
+            "text": "{{ article.excerpt }}",
+            "text_font_size": "body-medium",
+            "padding_bottom": 16
+          }
+        },
+        "buttons_mw6kkg": {
+          "type": "buttons",
+          "settings": {
+            "button_text": "",
+            "button_url": "",
+            "button_type": "btn--primary",
+            "button_size": "",
+            "button_style": "btn--solid",
+            "show_arrow": false,
+            "padding_bottom": 16
+          }
+        }
+      },
+      "block_order": [
+        "subheading_JdEtD7",
+        "heading_TyUU4y",
+        "text_czpVEA",
+        "buttons_mw6kkg"
+      ],
+      "name": "Image with text",
+      "settings": {
+        "image_1": "{{ article.image }}",
+        "image_width": "one-half",
+        "text_alignment": "text-left",
+        "layout": "",
+        "width": "wrapper--full",
+        "height": "image-height",
+        "mobile_height": "image-height--mobile",
+        "reverse_blocks": false,
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "show_placeholder": true
+      }
+    },
+    "journal_hero": {
+      "type": "article-journal-hero",
+      "settings": {
+        "show_progress_bar": true,
+        "enable_sticky_header": true,
+        "overlay_opacity": 60,
+        "text_alignment": "center",
+        "show_reading_time": true,
+        "color_scheme": "scheme-10"
+      }
+    },
+    "journal_content": {
+      "type": "article-journal-content",
+      "settings": {
+        "show_table_of_contents": false,
+        "toc_position": "sidebar",
+        "content_width": "narrow",
+        "show_reading_time": true,
+        "enable_social_sharing": true
+      }
+    },
+    "journal_products": {
+      "type": "article-journal-products",
+      "settings": {
+        "heading": "Featured Products",
+        "fallback_collection": "",
+        "max_products": 4,
+        "enable_sticky": true
+      }
+    },
+    "related_articles": {
+      "type": "section-collection",
+      "settings": {
+        "featured_collection": "",
+        "heading": "Best Sellers",
+        "heading_font_size": "heading-medium",
+        "description": "",
+        "text_font_size": "body-medium",
+        "layout": "inline",
+        "link_text": "Shop Now",
+        "link_url": "",
+        "button_type": "btn--primary",
+        "button_size": "",
+        "button_style": "btn--solid",
+        "show_arrow": false,
+        "layout_desktop": "grid",
+        "grid": 4,
+        "rows": 1,
+        "width": "wrapper",
+        "layout_mobile": "slider",
+        "color_scheme": "scheme-1",
+        "padding_top": 64,
+        "padding_bottom": 64,
+        "heading_tag": "automatic"
+      }
+    }
+  },
+  "order": [
+    "section_double_awPcD4",
+    "journal_hero",
+    "journal_content",
+    "journal_products",
+    "related_articles"
+  ]
+}

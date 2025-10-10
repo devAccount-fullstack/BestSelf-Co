@@ -1,0 +1,135 @@
+{% comment %}
+  Product Guides Display
+  Shows helpful guides/listicles associated with a product
+  Usage: {% render 'product-guides', product: product %}
+{% endcomment %}
+
+{% if product.metafields.custom.product_guides.value.size > 0 %}
+  <div class="product-guides-section">
+    <h3 class="guides-heading">📚 Helpful Guides for {{ product.title }}</h3>
+    
+    <div class="guides-grid">
+      {% for guide_page in product.metafields.custom.product_guides.value %}
+        <div class="guide-card">
+          <a href="{{ guide_page.url }}" class="guide-link">
+            <div class="guide-content">
+              <h4 class="guide-title">{{ guide_page.title }}</h4>
+              
+              {% comment %} Extract audience from page handle if possible {% endcomment %}
+              {% assign handle_parts = guide_page.handle | split: '-' %}
+              {% if handle_parts.size > 2 %}
+                {% assign audience = handle_parts[-2] | append: ' ' | append: handle_parts[-1] | replace: '-', ' ' | capitalize %}
+                <span class="guide-audience">For {{ audience }}</span>
+              {% endif %}
+              
+              <span class="guide-cta">Read Guide →</span>
+            </div>
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+    
+    {% comment %} Alternative: Dropdown selector for multiple guides {% endcomment %}
+    {% if product.metafields.custom.product_guides.value.size > 3 %}
+      <div class="guide-selector">
+        <label for="guide-select">Choose a guide that fits you:</label>
+        <select id="guide-select" onchange="if(this.value) window.location.href=this.value;">
+          <option value="">Select a guide...</option>
+          {% for guide_page in product.metafields.custom.product_guides.value %}
+            <option value="{{ guide_page.url }}">{{ guide_page.title }}</option>
+          {% endfor %}
+        </select>
+      </div>
+    {% endif %}
+  </div>
+  
+  <style>
+    .product-guides-section {
+      margin: 2rem 0;
+      padding: 2rem;
+      background: #f8fafc;
+      border-radius: 12px;
+    }
+    
+    .guides-heading {
+      margin-bottom: 1.5rem;
+      font-size: 1.5rem;
+      color: #1e293b;
+    }
+    
+    .guides-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    
+    .guide-card {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      transition: all 0.2s;
+    }
+    
+    .guide-card:hover {
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transform: translateY(-2px);
+    }
+    
+    .guide-link {
+      display: block;
+      padding: 1.5rem;
+      text-decoration: none;
+      color: inherit;
+    }
+    
+    .guide-title {
+      margin: 0 0 0.5rem 0;
+      font-size: 1.1rem;
+      color: #0f172a;
+    }
+    
+    .guide-audience {
+      display: block;
+      font-size: 0.9rem;
+      color: #64748b;
+      margin-bottom: 0.5rem;
+    }
+    
+    .guide-cta {
+      display: inline-block;
+      color: #2563eb;
+      font-weight: 500;
+      font-size: 0.9rem;
+    }
+    
+    .guide-selector {
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid #e2e8f0;
+    }
+    
+    .guide-selector label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+      color: #475569;
+    }
+    
+    .guide-selector select {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      font-size: 1rem;
+      background: white;
+      cursor: pointer;
+    }
+    
+    @media (max-width: 768px) {
+      .guides-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+{% endif %}

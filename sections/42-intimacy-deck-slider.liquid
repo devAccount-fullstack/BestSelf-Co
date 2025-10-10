@@ -1,0 +1,229 @@
+{% liquid
+  assign section_id = section.settings.section_id
+  assign section_title = section.settings.section_title
+  assign section_text = section.settings.section_text
+  assign metaobject_content = section.settings.metaobject_content | first
+
+  if metaobject_content != blank
+    assign metaobject_title = metaobject_content.title
+    assign metaobject_text = metaobject_content.text | metafield_tag
+    if metaobject_title != blank
+      assign section_title = metaobject_title
+    endif
+    if metaobject_text != blank
+      assign section_text = metaobject_text
+    endif
+  endif
+
+  assign blocks = section.blocks
+
+  assign pt_mob = section.settings.pt_mob
+  assign pb_mob = section.settings.pb_mob
+  assign pt_tab = section.settings.pt_tab
+  assign pb_tab = section.settings.pb_tab
+  assign pt_desk = section.settings.pt_desk
+  assign pb_desk = section.settings.pb_desk
+%}
+
+{% render 'section-paddings',
+  section_id: section.id,
+  pt_mob: pt_mob,
+  pb_mob: pb_mob,
+  pt_tab: pt_tab,
+  pb_tab: pb_tab,
+  pt_desk: pt_desk,
+  pb_desk: pb_desk
+%}
+
+<style>
+  @media (min-width: 1024px) {
+    [data-section-id='{{ section.id }}'] .deck-slide-active {
+      max-width: 406px !important;
+      z-index: 2;
+    }
+    [data-section-id='{{ section.id }}'] .swiper-slide:not(.deck-slide-active) {
+      max-width: 355px !important;
+      z-index: 2;
+    }
+  }
+  @media screen and (min-width: 1440px) {
+    .deck__slider__padding__right {
+      padding-right: calc((100vw - 1440px) / 2 + 48px);
+    }
+    .deck__slider__padding__left {
+      width: calc(calc((100vw - 1440px) / 2 + 48px) + 476px);
+      padding-left: calc((100vw - 1440px) / 2 + 48px);
+    }
+  }
+</style>
+
+{% if blocks.size > 0 or metaobject_content != blank %}
+  <div
+    id="{{ section_id | handleize }}"
+    data-section-id="{{ section.id }}"
+    class="tw-overflow-hidden"
+    x-data="intimacyDeckSlider"
+  >
+    <div class="tw-flex tw-flex-col lg:tw-flex-row">
+      <div class="deck__slider__padding__left tw-flex tw-items-center xl:tw-pr-[78px] lg:tw-pr-8 tw-bg-white tw-relative tw-z-5 tw-px-4 md:tw-px-8 lg:tw-pl-12">
+        <div class="lg:tw-min-w-[398px]">
+          {% if section_title != blank %}
+            <div
+              class="tw-text-[28px] tw-px-7 md:tw-px-0 lg:tw-text-left tw-leading-[34px] md:tw-text-[48px] md:tw-leading-[62px] tw-text-black tw-text-center"
+            >
+              {{ section_title }}
+            </div>
+          {% endif %}
+
+          {% if section_text != blank %}
+            <p
+              class="tw-mt-2.5 tw-text-center tw-font-normal lg:tw-text-left tw-text-sm tw-leading-[22px] md:tw-text-base tw-text-black"
+            >
+              {{ section_text }}
+            </p>
+          {% endif %}
+
+          <!-- SLIDER BUTTONS DESKTOP -->
+          <div class="lg:tw-flex tw-hidden tw-gap-[13px] tw-mt-7.5 tw-justify-start">
+            <div class="deck-slider-btn-prev tw-opacity-50 tw-cursor-pointer">
+              {% render 'icon-42', name: 'swiper-btn', class: 'tw-rotate-180' %}
+            </div>
+            <div class="deck-slider-btn-next tw-cursor-pointer">{% render 'icon-42', name: 'swiper-btn' %}</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDER IMAGE -->
+      <div class="tw-w-full tw-overflow-hidden">
+        <div
+          class="swiper tw-select-none tw-mt-7.5 lg:tw-mt-0 deck__slider__padding__right lg:!tw-pr-12 lg:!tw-pl-0 !tw-px-4 md:!tw-px-8 !tw-overflow-visible lg:!tw-ml-[70px]"
+          x-ref="mainSlider"
+        >
+          <div class="swiper-wrapper !tw-items-center">
+            {% if metaobject_content != blank %}
+              {% for img in metaobject_content.images.value %}
+                <div class="{% if forloop.first %}deck-slide-active{% endif %} swiper-slide tw-max-w-[320px] !tw-h-fit tw-rounded-[10px] tw-overflow-hidden">
+                  <img
+                    src="{{ img | img_url: 'master' }}"
+                    height="100%"
+                    width="100%"
+                    alt="{{ section_title |  append: ' image-' |  append: forloop.index }}"
+                  >
+                </div>
+              {% endfor %}
+            {% else %}
+              {% for block in blocks %}
+                <div class="{% if forloop.first %}deck-slide-active{% endif %} swiper-slide tw-max-w-[320px] !tw-h-fit tw-rounded-[10px] tw-overflow-hidden">
+                  <img
+                    src="{{ block.settings.image | img_url: 'master' }}"
+                    height="100%"
+                    width="100%"
+                    alt="{{ block.id }}"
+                  >
+                </div>
+              {% endfor %}
+            {% endif %}
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDER BUTTONS MOBILE -->
+      <div class="lg:tw-hidden tw-flex tw-gap-[13px] tw-mt-4 justify-center">
+        <div class="deck-slider-btn-prev tw-opacity-50">
+          {% render 'icon-42', name: 'swiper-btn', class: 'tw-rotate-180' %}
+        </div>
+        <div class="deck-slider-btn-next">{% render 'icon-42', name: 'swiper-btn' %}</div>
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "42 Intimacy deck slider",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Section id",
+      "default": "intimacy-deck"
+    },
+    {
+      "type": "metaobject_list",
+      "id": "metaobject_content",
+      "metaobject_type": "cards_inside_the",
+      "label": "Metaobject",
+      "info": "If you use metaobjects, the section title and section text are taken from the metaobject"
+    },
+    {
+      "type": "richtext",
+      "id": "section_title",
+      "label": "Section title"
+    },
+    {
+      "type": "textarea",
+      "id": "section_text",
+      "label": "Section text"
+    },
+    {
+      "type": "header",
+      "content": "Padding Y settings"
+    },
+    {
+      "type": "number",
+      "id": "pt_mob",
+      "label": "Mobile padding top in px",
+      "default": 60
+    },
+    {
+      "type": "number",
+      "id": "pb_mob",
+      "label": "Mobile padding bottom in px",
+      "default": 56
+    },
+    {
+      "type": "number",
+      "id": "pt_tab",
+      "label": "Tablet padding top in px",
+      "default": 80
+    },
+    {
+      "type": "number",
+      "id": "pb_tab",
+      "label": "Tablet padding bottom in px",
+      "default": 80
+    },
+    {
+      "type": "number",
+      "id": "pt_desk",
+      "label": "Desktop padding top in px",
+      "default": 122
+    },
+    {
+      "type": "number",
+      "id": "pb_desk",
+      "label": "Desktop padding bottom in px",
+      "default": 120
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Card",
+      "type": "block",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "42 Intimacy deck slider"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,295 @@
+{% comment %}
+  Section: listicle-items-metaobject
+  Description: Listicle items section for metaobject templates
+  Used in: templates/metaobject/listicle.json
+{% endcomment %}
+
+{%- liquid
+  # When used in a metaobject template, the current metaobject is available as 'metaobject'
+  assign listicle = metaobject
+  assign items = nil
+  
+  # Debug mode
+  assign debug_mode = true
+  
+  # Parse items from the cta_text field
+  if listicle and listicle.cta_text
+    assign cta_text_raw = listicle.cta_text.value
+    
+    # Try to extract and parse the JSON
+    if cta_text_raw contains '"items"'
+      # Find the JSON part - it's embedded in the rich text structure
+      assign json_start = '{"items"'
+      assign json_end = ']}'
+      
+      if cta_text_raw contains json_start
+        assign json_part = cta_text_raw | split: json_start | last | prepend: json_start
+        assign json_clean = json_part | split: json_end | first | append: json_end
+        
+        # Parse the JSON
+        assign items_data = json_clean | parse_json
+        if items_data.items
+          assign items = items_data.items
+        endif
+      endif
+    endif
+  endif
+-%}
+
+<div class="listicle-items section-{{ section.id }}-padding">
+  <div class="page-width">
+    {%- if debug_mode -%}
+      <div style="background: #f0f0f0; padding: 20px; margin: 20px 0; border: 2px solid #333;">
+        <h3>🔍 Debug Information:</h3>
+        <hr style="margin: 10px 0;">
+        
+        <h4>Metaobject Information:</h4>
+        <p><strong>Handle:</strong> {{ listicle.handle }}</p>
+        <p><strong>Display Name:</strong> {{ listicle.display_name }}</p>
+        <p><strong>Meta Title:</strong> {{ listicle.meta_title.value }}</p>
+        
+        <hr style="margin: 10px 0;">
+        
+        <h4>CTA Text Field:</h4>
+        <p><strong>Field exists:</strong> {% if listicle.cta_text %}✅ Yes{% else %}❌ No{% endif %}</p>
+        <p><strong>Field value length:</strong> {{ listicle.cta_text.value | size }} characters</p>
+        <p><strong>Contains "items":</strong> {% if listicle.cta_text.value contains '"items"' %}✅ Yes{% else %}❌ No{% endif %}</p>
+        
+        <details>
+          <summary>Raw cta_text value (first 1000 chars)</summary>
+          <pre style="background: white; padding: 10px; overflow-x: auto; font-size: 0.8rem;">{{ listicle.cta_text.value | truncate: 1000 | escape }}</pre>
+        </details>
+        
+        <hr style="margin: 10px 0;">
+        
+        <h4>Items Status:</h4>
+        <p><strong>Items parsed:</strong> {% if items %}✅ {{ items.size }} items{% else %}❌ No items{% endif %}</p>
+        
+        {%- if items -%}
+          <p><strong>First item preview:</strong></p>
+          <ul>
+            <li>Number: {{ items[0].number }}</li>
+            <li>Heading: {{ items[0].heading }}</li>
+            <li>Content: {{ items[0].content | truncate: 100 }}</li>
+          </ul>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+    
+    {%- if items and items.size > 0 -%}
+      <div class="listicle-items__wrapper">
+        {%- for item in items -%}
+          {% assign mod_result = forloop.index0 | modulo: 2 %}
+          <div class="listicle-item {% if section.settings.alternate_layout and mod_result == 1 %}listicle-item--reversed{% endif %}">
+            <div class="listicle-item__content">
+              {%- if section.settings.show_numbers -%}
+                <div class="listicle-item__number">{{ item.number | default: forloop.index }}</div>
+              {%- endif -%}
+              
+              <div class="listicle-item__text">
+                <h3 class="listicle-item__heading">{{ item.heading }}</h3>
+                <div class="listicle-item__description">
+                  {{ item.content | newline_to_br }}
+                </div>
+              </div>
+            </div>
+          </div>
+        {%- endfor -%}
+      </div>
+    {%- else -%}
+      <div class="listicle-no-items">
+        <h3>⚠️ No Items Found</h3>
+        <p>The listicle items could not be parsed from the cta_text field.</p>
+        
+        {%- if listicle.cta_text -%}
+          <p>The cta_text field exists but the JSON parsing failed.</p>
+          <p>Check the debug information above for details.</p>
+        {%- else -%}
+          <p>The cta_text field is empty or missing.</p>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+<style>
+  .listicle-items {
+    background: var(--gradient-background);
+  }
+
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+  .listicle-items__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .listicle-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    padding: 2rem;
+    background: rgba(var(--color-foreground), 0.03);
+    border-radius: var(--buttons-radius);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .listicle-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  .listicle-item__content {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .listicle-item__number {
+    flex-shrink: 0;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(var(--color-foreground));
+    color: rgb(var(--color-background));
+    border-radius: 50%;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  .listicle-item__text {
+    flex: 1;
+  }
+
+  .listicle-item__heading {
+    margin: 0 0 1rem;
+    font-size: calc(var(--font-heading-scale) * 1.8rem);
+    line-height: 1.2;
+  }
+
+  .listicle-item__description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: rgba(var(--color-foreground), 0.75);
+  }
+
+  .listicle-item--reversed {
+    background: rgba(var(--color-foreground), 0.06);
+  }
+
+  .listicle-no-items {
+    text-align: center;
+    padding: 3rem;
+    background: rgba(var(--color-foreground), 0.03);
+    border-radius: var(--buttons-radius);
+  }
+
+  @media screen and (max-width: 749px) {
+    .listicle-item__content {
+      flex-direction: column;
+    }
+
+    .listicle-item__number {
+      width: 50px;
+      height: 50px;
+      font-size: 1.25rem;
+    }
+
+    .listicle-item__heading {
+      font-size: calc(var(--font-heading-scale) * 1.5rem);
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Listicle Items Meta",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_numbers",
+      "label": "Show item numbers",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "alternate_layout",
+      "label": "Alternate item backgrounds",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "options": [
+        {
+          "value": "scheme_1",
+          "label": "Accent 1"
+        },
+        {
+          "value": "scheme_2",
+          "label": "Accent 2"
+        },
+        {
+          "value": "background-1",
+          "label": "Background 1"
+        },
+        {
+          "value": "background-2",
+          "label": "Background 2"
+        },
+        {
+          "value": "inverse",
+          "label": "Inverse"
+        }
+      ],
+      "default": "scheme_1",
+      "label": "Color scheme"
+    },
+    {
+      "type": "header",
+      "content": "Section padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 36
+    }
+  ],
+  "presets": [
+    {
+      "name": "Listicle Items Meta"
+    }
+  ]
+}
+{% endschema %}

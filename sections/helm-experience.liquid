@@ -1,0 +1,395 @@
+{% comment %}
+  File: sections/helm-experience.liquid
+  Clean version of The Helm Experience section with customizable background and padding
+{% endcomment %}
+
+<section class="helm-experience" style="background-color: {{ section.settings.background_color | default: '#ffffff' }}; padding: {{ section.settings.padding_top | default: 40 }}px 0 {{ section.settings.padding_bottom | default: 40 }}px 0;">
+  <div class="helm-container">
+    <!-- Hero Section -->
+    <div class="helm-hero">
+      {% if section.settings.subtitle != blank %}
+        <div class="helm-subtitle">{{ section.settings.subtitle }}</div>
+      {% endif %}
+    </div>
+
+    <!-- Features Grid -->
+    <div class="helm-features">
+      <!-- Left Column Cards -->
+      <div class="helm-left-column">
+        {% for block in section.blocks limit: 2 %}
+          <div class="helm-feature-card" {{ block.shopify_attributes }}>
+            {% if block.settings.icon_type == 'svg_upload' and block.settings.icon_svg != blank %}
+              <div class="helm-icon-svg">
+                {{ block.settings.icon_svg | image_url: width: 32 | image_tag: loading: 'lazy', alt: block.settings.title }}
+              </div>
+            {% elsif block.settings.icon_type == 'svg_code' and block.settings.icon != blank %}
+              <div class="helm-icon-svg">
+                {{ block.settings.icon }}
+              </div>
+            {% elsif block.settings.emoji != blank %}
+              <span class="helm-emoji">{{ block.settings.emoji }}</span>
+            {% endif %}
+            <h3>{{ block.settings.title }}</h3>
+            <p>{{ block.settings.description }}</p>
+          </div>
+        {% endfor %}
+      </div>
+
+      <!-- Center Phone Mockup -->
+      <div class="helm-phone-mockup">
+        {% if section.settings.phone_image != blank %}
+          {{ section.settings.phone_image | image_url: width: 400 | image_tag: loading: 'lazy', alt: 'Helm App Interface' }}
+        {% else %}
+          <div class="helm-phone-placeholder">
+            <span>Phone Mockup</span>
+          </div>
+        {% endif %}
+      </div>
+
+      <!-- Right Column Cards -->
+      <div class="helm-right-column">
+        {% for block in section.blocks offset: 2 limit: 2 %}
+          <div class="helm-feature-card" {{ block.shopify_attributes }}>
+            {% if block.settings.icon_type == 'svg_upload' and block.settings.icon_svg != blank %}
+              <div class="helm-icon-svg">
+                {{ block.settings.icon_svg | image_url: width: 32 | image_tag: loading: 'lazy', alt: block.settings.title }}
+              </div>
+            {% elsif block.settings.icon_type == 'svg_code' and block.settings.icon != blank %}
+              <div class="helm-icon-svg">
+                {{ block.settings.icon }}
+              </div>
+            {% elsif block.settings.emoji != blank %}
+              <span class="helm-emoji">{{ block.settings.emoji }}</span>
+            {% endif %}
+            <h3>{{ block.settings.title }}</h3>
+            <p>{{ block.settings.description }}</p>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+/* Helm Experience Section Styles - Clean Version */
+.helm-experience {
+  overflow: hidden;
+}
+
+.helm-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Hero Section */
+.helm-hero {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.helm-subtitle {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #6b7280;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.helm-subtitle p {
+  margin: 0 0 1em 0;
+}
+
+.helm-subtitle p:last-child {
+  margin-bottom: 0;
+}
+
+/* Features Grid */
+.helm-features {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.helm-left-column,
+.helm-right-column {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Feature Cards */
+.helm-feature-card {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  transition: all 0.3s ease;
+  height: fit-content;
+}
+
+.helm-feature-card:hover {
+  transform: translateY(-2px);
+}
+
+.helm-feature-card .helm-emoji {
+  font-size: 32px;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.helm-feature-card .helm-icon-svg {
+  margin-bottom: 16px;
+}
+
+.helm-feature-card .helm-icon-svg img,
+.helm-feature-card .helm-icon-svg svg {
+  width: 32px;
+  height: 32px;
+  display: block;
+}
+
+.helm-feature-card h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.helm-feature-card p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #6b7280;
+  margin: 0;
+}
+
+/* Phone Mockup */
+.helm-phone-mockup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.helm-phone-mockup img {
+  max-width: 300px;
+  height: auto;
+  border-radius: 24px;
+}
+
+.helm-phone-placeholder {
+  width: 300px;
+  height: 600px;
+  background: #f3f4f6;
+  border: 2px solid #e5e7eb;
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9ca3af;
+  font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .helm-features {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  
+  .helm-phone-mockup {
+    order: 3;
+  }
+  
+  .helm-left-column,
+  .helm-right-column {
+    flex-direction: row;
+    gap: 24px;
+  }
+  
+  .helm-feature-card {
+    flex: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .helm-experience {
+    padding: {{ section.settings.padding_top | default: 30 | divided_by: 1.3 | round }}px 0 {{ section.settings.padding_bottom | default: 30 | divided_by: 1.3 | round }}px 0 !important;
+  }
+  
+  .helm-hero {
+    margin-bottom: 60px;
+  }
+  
+  .helm-left-column,
+  .helm-right-column {
+    flex-direction: column;
+  }
+  
+  .helm-feature-card {
+    padding: 24px;
+  }
+  
+  .helm-phone-mockup img,
+  .helm-phone-placeholder {
+    max-width: 250px;
+    height: auto;
+  }
+  
+  .helm-phone-placeholder {
+    height: 500px;
+  }
+}
+
+@media (max-width: 480px) {
+  .helm-container {
+    padding: 0 16px;
+  }
+  
+  .helm-feature-card {
+    padding: 20px;
+  }
+  
+  .helm-features {
+    gap: 32px;
+  }
+}
+</style>
+
+{% schema %}
+{
+  "name": "Helm Experience",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top Padding",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "default": 40,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom Padding",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "default": 40,
+      "unit": "px"
+    },
+    {
+      "type": "richtext",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "<p>Helm is crafted for those ready to make focus a physical practice. This beautiful object sits with intention wherever you place it—your desk, your fridge, your sacred spaces. Built like an heirloom to last generations, its weight reminds you that your time and what you create with it will define who you become.</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "phone_image",
+      "label": "Phone Mockup Image",
+      "info": "Upload an image of your app interface (recommended size: 400px width)"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature Card",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon_type",
+          "label": "Icon Type",
+          "options": [
+            { "value": "emoji", "label": "Emoji" },
+            { "value": "svg_upload", "label": "Upload SVG File" },
+            { "value": "svg_code", "label": "Custom SVG Code" }
+          ],
+          "default": "emoji"
+        },
+        {
+          "type": "text",
+          "id": "emoji",
+          "label": "Emoji Icon",
+          "info": "Add an emoji for the card icon (e.g., 📅)"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon_svg",
+          "label": "SVG Icon File",
+          "info": "Upload an SVG file for the icon (recommended: 32x32px)"
+        },
+        {
+          "type": "html",
+          "id": "icon",
+          "label": "Custom SVG Code",
+          "info": "Paste SVG code for a custom icon"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Feature Title",
+          "default": "Feature Title"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Feature Description",
+          "default": "Feature description goes here."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Helm Experience",
+      "blocks": [
+        {
+          "type": "feature",
+          "settings": {
+            "emoji": "📅",
+            "title": "Schedules",
+            "description": "Schedule your focus periods to start and end automatically."
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "emoji": "🎯",
+            "title": "Intention & Redirection",
+            "description": "Set clear intentions before focus, get redirected to meaningful alternatives when distracted."
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "emoji": "💪",
+            "title": "Commitment Levels",
+            "description": "Choose your focus intensity: Beast Mode (no breaks), Flow (limited breaks), or Chill (flexible breaks)."
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "emoji": "📊",
+            "title": "Analytics & Streaks",
+            "description": "Track your focus time, build daily streaks, and visualize your transformation with detailed insights."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

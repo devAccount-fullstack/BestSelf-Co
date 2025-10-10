@@ -1,0 +1,297 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "section_blog_XRJa3Q": {
+      "type": "section-blog",
+      "disabled": true,
+      "custom_css": [],
+      "settings": {
+        "blog_name": "articles",
+        "aspect_ratio": 1,
+        "title": "",
+        "heading_font_size": "heading-medium",
+        "title_font_size": "heading-small",
+        "show_tags": true,
+        "show_author": false,
+        "show_date": false,
+        "show_button": true,
+        "show_comments": false,
+        "width": "wrapper",
+        "grid": 4,
+        "rows": 2,
+        "color_scheme": "",
+        "padding_top": 32,
+        "padding_bottom": 0,
+        "heading_tag": "automatic",
+        "title_tag": "automatic"
+      }
+    },
+    "featured_posts_mctLEq": {
+      "type": "featured-posts",
+      "blocks": {
+        "featured_post_HQtF9g": {
+          "type": "featured_post",
+          "settings": {
+            "featured_post": "articles/fun-light-hearted-date-night-questions-couples",
+            "image": "{{ block.settings.featured_post.metafields.custom.image_header.value }}",
+            "subheading": "Featured post"
+          }
+        },
+        "featured_post_4w9R3D": {
+          "type": "featured_post",
+          "settings": {
+            "featured_post": "articles/intimacy-deck-perfect-couples-stages",
+            "image": "{{ block.settings.featured_post.metafields.custom.image_header.value }}",
+            "subheading": "Featured post"
+          }
+        }
+      },
+      "block_order": [
+        "featured_post_HQtF9g",
+        "featured_post_4w9R3D"
+      ],
+      "custom_css": [
+        "@media (max-width: 768px) {.editorial__title {font-size: 18px; margin-bottom: 8px; } .editorial__subheading, .subheading {font-size: 12px; } .editorial__excerpt {font-size: 14px; line-height: 1.4; margin-bottom: 6px; } .editorial__link, .btn--text, .btn--primary {font-size: 12px; }}"
+      ],
+      "settings": {
+        "show_author": false,
+        "show_date": false,
+        "heading_font_size": "heading-large",
+        "show_button": true,
+        "button_text": "Read more",
+        "button_type": "btn--primary",
+        "button_size": "",
+        "button_style": "btn--text",
+        "show_arrow": false,
+        "width": "wrapper--full",
+        "height": "image-height",
+        "mobile_height": "image-height--mobile",
+        "color_scheme": "scheme-3",
+        "padding_top": 10,
+        "padding_bottom": 10
+      }
+    },
+    "section_divider_VgNrdQ": {
+      "type": "section-divider",
+      "custom_css": [],
+      "settings": {
+        "show_line": true,
+        "width": "wrapper--full",
+        "color_scheme": "scheme-3",
+        "padding_top": 20,
+        "padding_bottom": 0
+      }
+    },
+    "section_rich_text_VKmVrN": {
+      "type": "section-rich-text",
+      "blocks": {
+        "subheading_yVgjTF": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "search by topic:",
+            "padding_bottom": 16
+          }
+        },
+        "buttons_GqybCB": {
+          "type": "buttons",
+          "settings": {
+            "button_text": "Social connection",
+            "button_url": "https://bestself.co/blogs/articles/tagged/social-connections",
+            "button_type": "btn--primary",
+            "button_size": "btn--small",
+            "button_style": "btn--outline",
+            "show_arrow": false,
+            "padding_bottom": 16
+          }
+        },
+        "buttons_QRnwb3": {
+          "type": "buttons",
+          "settings": {
+            "button_text": "Relationships",
+            "button_url": "https://bestself.co/blogs/articles/tagged/relationships",
+            "button_type": "btn--primary",
+            "button_size": "btn--small",
+            "button_style": "btn--outline",
+            "show_arrow": false,
+            "padding_bottom": 16
+          }
+        },
+        "buttons_HTLDHc": {
+          "type": "buttons",
+          "settings": {
+            "button_text": "Family & Parenting",
+            "button_url": "https://bestself.co/blogs/articles/tagged/family-parenting",
+            "button_type": "btn--primary",
+            "button_size": "btn--small",
+            "button_style": "btn--outline",
+            "show_arrow": false,
+            "padding_bottom": 16
+          }
+        },
+        "buttons_7iaGPA": {
+          "type": "buttons",
+          "settings": {
+            "button_text": "Personal Growth",
+            "button_url": "https://bestself.co/blogs/articles/tagged/personal-growth",
+            "button_type": "btn--primary",
+            "button_size": "btn--small",
+            "button_style": "btn--outline",
+            "show_arrow": false,
+            "padding_bottom": 16
+          }
+        },
+        "buttons_WEJjeM": {
+          "type": "buttons",
+          "settings": {
+            "button_text": "Emotional Intelligence",
+            "button_url": "https://bestself.co/blogs/articles/tagged/emotional-intelligence",
+            "button_type": "btn--primary",
+            "button_size": "btn--small",
+            "button_style": "btn--outline",
+            "show_arrow": false,
+            "padding_bottom": 16
+          }
+        },
+        "buttons_7QcHNa": {
+          "type": "buttons",
+          "settings": {
+            "button_text": "Product Guides",
+            "button_url": "https://bestself.co/blogs/articles/tagged/product-guide",
+            "button_type": "btn--primary",
+            "button_size": "btn--small",
+            "button_style": "btn--outline",
+            "show_arrow": false,
+            "padding_bottom": 16
+          }
+        },
+        "buttons_KFNMh8": {
+          "type": "buttons",
+          "settings": {
+            "button_text": "Learning",
+            "button_url": "https://bestself.co/blogs/articles/tagged/learning",
+            "button_type": "btn--primary",
+            "button_size": "btn--small",
+            "button_style": "btn--outline",
+            "show_arrow": false,
+            "padding_bottom": 16
+          }
+        },
+        "buttons_rxk3HD": {
+          "type": "buttons",
+          "settings": {
+            "button_text": "Productivity",
+            "button_url": "https://bestself.co/blogs/articles/tagged/productivity",
+            "button_type": "btn--primary",
+            "button_size": "btn--small",
+            "button_style": "btn--outline",
+            "show_arrow": false,
+            "padding_bottom": 16
+          }
+        },
+        "buttons_tiEeTn": {
+          "type": "buttons",
+          "settings": {
+            "button_text": "Habits",
+            "button_url": "https://bestself.co/blogs/articles/tagged/habits",
+            "button_type": "btn--primary",
+            "button_size": "btn--small",
+            "button_style": "btn--outline",
+            "show_arrow": false,
+            "padding_bottom": 16
+          }
+        }
+      },
+      "block_order": [
+        "subheading_yVgjTF",
+        "buttons_GqybCB",
+        "buttons_QRnwb3",
+        "buttons_HTLDHc",
+        "buttons_7iaGPA",
+        "buttons_WEJjeM",
+        "buttons_7QcHNa",
+        "buttons_KFNMh8",
+        "buttons_rxk3HD",
+        "buttons_tiEeTn"
+      ],
+      "custom_css": [
+        "@media (max-width: 768px) {.article-categories {text-align: center; } .article-categories h2 {font-size: 14px; } .btn {font-size: 10px; padding: 4px 8px; margin: 1px; } .btn--outline {border-width: 1px; } .btn-container {display: flex; flex-wrap: wrap; justify-content: center; gap: 2px; }}"
+      ],
+      "settings": {
+        "align_text": "text-center",
+        "width": "wrapper",
+        "color_scheme": "scheme-3",
+        "overlay_opacity": 0,
+        "show_overlay_text": false,
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    },
+    "main": {
+      "type": "blog",
+      "custom_css": [
+        ".blog__nav {display: none;}"
+      ],
+      "settings": {
+        "show_title": true,
+        "show_rss": false,
+        "show_tag_nav": false,
+        "aspect_ratio": 0.7,
+        "title_font_size": "heading-small",
+        "show_tags": false,
+        "show_author": false,
+        "show_date": false,
+        "show_button": true,
+        "show_comments": false,
+        "grid": 4,
+        "rows": 2,
+        "width": "wrapper",
+        "color_scheme": "",
+        "padding_top": 32,
+        "padding_bottom": 0,
+        "title_tag": "automatic"
+      }
+    },
+    "section_blog_jFk8rm": {
+      "type": "section-blog",
+      "custom_css": [
+        "@media (max-width: 768px) {.editorial__link, .btn--text, .btn--primary {font-size: 12px; }}"
+      ],
+      "settings": {
+        "blog_name": "{{ blog }}",
+        "aspect_ratio": 1.5,
+        "title": "Recent articles",
+        "heading_font_size": "heading-medium",
+        "title_font_size": "heading-small",
+        "show_tags": false,
+        "show_author": false,
+        "show_date": false,
+        "show_button": true,
+        "show_comments": false,
+        "width": "wrapper",
+        "grid": 4,
+        "rows": 2,
+        "color_scheme": "scheme-1",
+        "padding_top": 32,
+        "padding_bottom": 20,
+        "heading_tag": "automatic",
+        "title_tag": "automatic"
+      }
+    }
+  },
+  "order": [
+    "section_blog_XRJa3Q",
+    "featured_posts_mctLEq",
+    "section_divider_VgNrdQ",
+    "section_rich_text_VKmVrN",
+    "main",
+    "section_blog_jFk8rm"
+  ]
+}

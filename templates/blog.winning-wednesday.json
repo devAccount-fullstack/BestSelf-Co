@@ -1,0 +1,463 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "section_hero_R6pWgT": {
+      "type": "section-hero",
+      "settings": {
+        "image_1": "shopify://shop_images/WW-HEADER-BANNER.jpg",
+        "link": "",
+        "width": "wrapper--full-padded",
+        "height": "image-height",
+        "flex_align_desktop": "align--middle-center-desktop",
+        "content_width": 38,
+        "mobile_height": "image-height--mobile",
+        "flex_align_mobile": "align--middle-center-mobile",
+        "color_scheme": "",
+        "show_text_background": false,
+        "overlay_opacity": 0,
+        "show_overlay_text": false,
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "show_placeholder": true
+      }
+    },
+    "section_divider_k8dJNB": {
+      "type": "section-divider",
+      "settings": {
+        "show_line": true,
+        "width": "wrapper--full",
+        "color_scheme": "",
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    },
+    "featured_posts_mctLEq": {
+      "type": "featured-posts",
+      "blocks": {
+        "featured_post_HQtF9g": {
+          "type": "featured_post",
+          "settings": {
+            "featured_post": "winning-wednesday/how-adhd-affects-relationships-and-what-you-can-do",
+            "image": "{{ block.settings.featured_post.metafields.custom.image_header.value }}",
+            "subheading": "Featured post"
+          }
+        }
+      },
+      "block_order": [
+        "featured_post_HQtF9g"
+      ],
+      "custom_css": [
+        ".image__fill img {position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain !important; image-rendering: auto;}",
+        "@media only screen and (max-width: 768px) {.editorial__title {font-size: 18px; font-weight: bold; }}"
+      ],
+      "settings": {
+        "show_author": false,
+        "show_date": true,
+        "heading_font_size": "heading-medium",
+        "show_button": true,
+        "button_text": "Read more",
+        "button_type": "btn--primary",
+        "button_size": "",
+        "button_style": "btn--text",
+        "show_arrow": true,
+        "width": "wrapper--full-padded",
+        "height": "image-height",
+        "mobile_height": "image-height--mobile",
+        "color_scheme": "scheme-1",
+        "padding_top": 10,
+        "padding_bottom": 10
+      }
+    },
+    "section_blog_JkKEJV": {
+      "type": "section-blog",
+      "custom_css": [
+        "h2 {font-weight: bold; color: #242540;}",
+        "p {color: grey;}"
+      ],
+      "settings": {
+        "blog_name": "winning-wednesday",
+        "aspect_ratio": 1.1,
+        "title": "",
+        "heading_font_size": "heading-small",
+        "title_font_size": "heading-small",
+        "show_tags": false,
+        "show_author": false,
+        "show_date": true,
+        "show_button": true,
+        "show_comments": false,
+        "width": "wrapper",
+        "grid": 4,
+        "rows": 1,
+        "color_scheme": "",
+        "padding_top": 30,
+        "padding_bottom": 30,
+        "heading_tag": "automatic",
+        "title_tag": "automatic"
+      }
+    },
+    "section_divider_wWVVHB": {
+      "type": "section-divider",
+      "settings": {
+        "show_line": true,
+        "width": "wrapper--full",
+        "color_scheme": "",
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    },
+    "section_double_ayhmht": {
+      "type": "section-double",
+      "blocks": {
+        "subheading_MdEUL9": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "the story behind",
+            "padding_bottom": 16
+          }
+        },
+        "heading_rkm7xt": {
+          "type": "heading",
+          "settings": {
+            "title": "Winning Wednesday",
+            "heading_font_size": "heading-medium",
+            "padding_bottom": 16,
+            "heading_tag": "automatic"
+          }
+        },
+        "text_tcefbx": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Hi, I'm Cathryn Lavery, founder of BestSelf, and I write <strong>Winning Wednesday</strong> each week as your mid-week reset button. </p>",
+            "text_font_size": "body-medium",
+            "padding_bottom": 16
+          }
+        },
+        "subheading_RFyyPr": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "Here's what you'll get:",
+            "padding_bottom": 16
+          }
+        },
+        "text_jkRWe3": {
+          "type": "text",
+          "settings": {
+            "text": "<ul><li><strong>5-minute productivity hacks</strong> that save you hours each week<br/></li><li><strong>Evidence-based insights</strong> on productivity, relationships, and well-being<br/></li><li><strong>Actionable challenges</strong> that build momentum in every area of your life<br/></li><li><strong>Curated resources & tools</strong> to inspire and support your journey</li></ul>",
+            "text_font_size": "body-medium",
+            "padding_bottom": 16
+          }
+        },
+        "text_qGhytf": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>Join over 150,000+ people like you </strong>who rely on Winning Wednesday for actionable strategies to boost productivity, deepen relationships, and create meaningful progress – delivered exactly when you need it most.</p>",
+            "text_font_size": "body-small",
+            "padding_bottom": 16
+          }
+        },
+        "accordion_U6nyhj": {
+          "type": "accordion",
+          "settings": {
+            "title": "My Promise to Your Inbox",
+            "content": "<p>This isn't another promotional email cluttering your inbox. Here's my commitment:</p><p><strong>Every Winning Wednesday delivers genuinely useful content you can implement immediately.</strong> No fluff, no sales pitches – just actionable insights when you need them most.</p><p>I chose Wednesday because it's when motivation naturally dips (they don't call it hump day for nothing). It's the perfect moment for a reset that helps you finish your week stronger.</p><p>With an ADHD-friendly format, each edition respects your time while providing maximum value.</p><p>My goal? To make this the most valuable email you receive all week – one that consistently builds momentum in your work, relationships, and personal growth.</p>",
+            "show_icon": true,
+            "icon_name": "icon-email",
+            "icon_size": 20,
+            "icon_color": "",
+            "padding_bottom": 16
+          }
+        },
+        "code_GdWVpk": {
+          "type": "code",
+          "disabled": true,
+          "settings": {
+            "code": "<div class=\"klaviyo-form-VfhjFS\"></div>",
+            "padding_bottom": 16
+          }
+        }
+      },
+      "block_order": [
+        "subheading_MdEUL9",
+        "heading_rkm7xt",
+        "text_tcefbx",
+        "subheading_RFyyPr",
+        "text_jkRWe3",
+        "text_qGhytf",
+        "accordion_U6nyhj",
+        "code_GdWVpk"
+      ],
+      "settings": {
+        "image_1": "shopify://shop_images/cathryn_8e76786d-ec14-4e23-a364-f95a69416d9c.png",
+        "image_width": "one-half",
+        "text_alignment": "text-left",
+        "layout": "is-reversed",
+        "width": "wrapper",
+        "height": "image-height",
+        "mobile_height": "image-height--mobile",
+        "reverse_blocks": false,
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "show_placeholder": true
+      }
+    },
+    "section_rich_text_ReagkE": {
+      "type": "section-rich-text",
+      "blocks": {
+        "text_if8emQ": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>Join 150,000+ people like you</strong> who get their mid-week reset every Wednesday.</p>",
+            "text_font_size": "body-medium",
+            "padding_bottom": 0
+          }
+        }
+      },
+      "block_order": [
+        "text_if8emQ"
+      ],
+      "settings": {
+        "align_text": "text-center",
+        "width": "wrapper",
+        "color_scheme": "scheme-11",
+        "overlay_opacity": 0,
+        "show_overlay_text": false,
+        "padding_top": 30,
+        "padding_bottom": 10
+      }
+    },
+    "section_custom_code_HmrLPc": {
+      "type": "section-custom-code",
+      "settings": {
+        "code": "<div class=\"klaviyo-form-VfhjFS\"></div>",
+        "width": "wrapper--full",
+        "color_scheme": "scheme-11",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "section_accordion_zPAkJR": {
+      "type": "section-accordion",
+      "blocks": {
+        "text_wfkUGG": {
+          "type": "text",
+          "settings": {
+            "title": "",
+            "heading_font_size": "heading-small",
+            "text": "<p>This isn't another promotional email cluttering your inbox. Here's my commitment:</p><p><strong>Every Winning Wednesday delivers genuinely useful content you can implement immediately.</strong> No fluff, no sales pitches – just actionable insights when you need them most.</p><p>I chose Wednesday because it's when motivation naturally dips (they don't call it hump day for nothing). It's the perfect moment for a reset that helps you finish your week stronger.</p><p>With an ADHD-friendly format, each edition respects your time while providing maximum value.</p><p>My goal? To make this the most valuable email you receive all week – one that consistently builds momentum in your work, relationships, and personal growth.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_wfkUGG"
+      ],
+      "disabled": true,
+      "settings": {
+        "default_open": false,
+        "title": "My Promise to your inbox",
+        "heading_font_size": "heading-small",
+        "show_icon": true,
+        "icon_name": "icon-email",
+        "icon_size": 20,
+        "width": "wrapper--narrow",
+        "color_scheme": "scheme-11",
+        "icon_color": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "section_rich_text_7i7rQB": {
+      "type": "section-rich-text",
+      "blocks": {
+        "subheading_xemicC": {
+          "type": "subheading",
+          "disabled": true,
+          "settings": {
+            "subheading": "About Winning Wednesday",
+            "padding_bottom": 16
+          }
+        },
+        "heading_9LWiXx": {
+          "type": "heading",
+          "settings": {
+            "title": "The Story Behind Winning Wednesday",
+            "heading_font_size": "heading-medium",
+            "padding_bottom": 16,
+            "heading_tag": "automatic"
+          }
+        },
+        "text_LDW9QP": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Hi, I'm Cathryn Lavery, founder of BestSelf, and I write <strong>Winning Wednesday</strong> each week as your mid-week reset button. </p>",
+            "text_font_size": "body-medium",
+            "padding_bottom": 16
+          }
+        },
+        "text_CGFmpW": {
+          "type": "text",
+          "settings": {
+            "text": "<p>I created this newsletter with one clear goal: to make it the most useful email you'll receive all week. This isn't a promotional email – it's purposefully designed to ensure you can<strong> implement something from every edition that will make your life better.</strong></p><p>I noticed something important: success isn't built on grand Monday declarations. It's built on <em>Wednesday resilience</em> – those moments when we choose to reset, refocus, and keep moving forward.</p>",
+            "text_font_size": "body-medium",
+            "padding_bottom": 16
+          }
+        },
+        "text_MLWEEh": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>I've designed this with an ADHD-friendly format (something I understand firsthand) – delivering bite-sized wisdom that transforms mid-week chaos into clarity.</p><p></p>",
+            "text_font_size": "body-medium",
+            "padding_bottom": 16
+          }
+        },
+        "divider_DL6ENA": {
+          "type": "divider",
+          "settings": {
+            "show_line": true,
+            "padding_bottom": 20
+          }
+        },
+        "subheading_jptNtU": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "What You'll Get From Me Each Week",
+            "padding_bottom": 16
+          }
+        },
+        "text_47eBpw": {
+          "type": "text",
+          "settings": {
+            "text": "<ul><li><strong>Quick wins</strong> for work, home, and beyond</li><li><strong>Evidence-based insights</strong> on productivity, relationships, and well-being</li><li><strong>Actionable challenges</strong> that build momentum in every area of your life</li><li><strong>Curated resources</strong> to inspire and support your journey</li></ul>",
+            "text_font_size": "body-large",
+            "padding_bottom": 0
+          }
+        },
+        "divider_9Cj3tG": {
+          "type": "divider",
+          "settings": {
+            "show_line": true,
+            "padding_bottom": 20
+          }
+        },
+        "text_37TREw": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>Why Wednesday?</strong> It's when motivation naturally dips (they don't call it hump day for nothing). </p>",
+            "text_font_size": "body-medium",
+            "padding_bottom": 16
+          }
+        },
+        "text_MnkVww": {
+          "type": "text",
+          "settings": {
+            "text": "<p>I've designed this with an ADHD-friendly format (something I understand firsthand) – delivering bite-sized wisdom that transforms mid-week chaos into clarity.</p>",
+            "text_font_size": "body-medium",
+            "padding_bottom": 16
+          }
+        },
+        "image_qVm9wh": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Cat-v2.jpg",
+            "image_width": 10,
+            "padding_bottom": 16
+          }
+        }
+      },
+      "block_order": [
+        "subheading_xemicC",
+        "heading_9LWiXx",
+        "text_LDW9QP",
+        "text_CGFmpW",
+        "text_MLWEEh",
+        "divider_DL6ENA",
+        "subheading_jptNtU",
+        "text_47eBpw",
+        "divider_9Cj3tG",
+        "text_37TREw",
+        "text_MnkVww",
+        "image_qVm9wh"
+      ],
+      "disabled": true,
+      "settings": {
+        "align_text": "text-left",
+        "width": "wrapper",
+        "color_scheme": "scheme-20abd5bb-85e5-4922-804f-c970badeb73e",
+        "overlay_opacity": 0,
+        "show_overlay_text": false,
+        "padding_top": 50,
+        "padding_bottom": 50
+      }
+    },
+    "section_blog_XRJa3Q": {
+      "type": "section-blog",
+      "disabled": true,
+      "custom_css": [],
+      "settings": {
+        "blog_name": "articles",
+        "aspect_ratio": 1,
+        "title": "",
+        "heading_font_size": "heading-medium",
+        "title_font_size": "heading-small",
+        "show_tags": true,
+        "show_author": false,
+        "show_date": false,
+        "show_button": true,
+        "show_comments": false,
+        "width": "wrapper",
+        "grid": 4,
+        "rows": 2,
+        "color_scheme": "",
+        "padding_top": 32,
+        "padding_bottom": 0,
+        "heading_tag": "automatic",
+        "title_tag": "automatic"
+      }
+    },
+    "main": {
+      "type": "blog",
+      "disabled": true,
+      "settings": {
+        "show_title": true,
+        "show_rss": false,
+        "show_tag_nav": false,
+        "aspect_ratio": 1,
+        "title_font_size": "heading-small",
+        "show_tags": false,
+        "show_author": false,
+        "show_date": false,
+        "show_button": true,
+        "show_comments": false,
+        "grid": 4,
+        "rows": 2,
+        "color_scheme": "",
+        "padding_top": 32,
+        "padding_bottom": 0,
+        "title_tag": "automatic"
+      }
+    }
+  },
+  "order": [
+    "section_hero_R6pWgT",
+    "section_divider_k8dJNB",
+    "featured_posts_mctLEq",
+    "section_blog_JkKEJV",
+    "section_divider_wWVVHB",
+    "section_double_ayhmht",
+    "section_rich_text_ReagkE",
+    "section_custom_code_HmrLPc",
+    "section_accordion_zPAkJR",
+    "section_rich_text_7i7rQB",
+    "section_blog_XRJa3Q",
+    "main"
+  ]
+}

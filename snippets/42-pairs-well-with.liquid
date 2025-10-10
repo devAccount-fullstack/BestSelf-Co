@@ -1,0 +1,104 @@
+{% liquid
+  assign heading = layout.settings.heading
+  assign pair_product_1 = all_products[layout.settings.pair_product_1]
+  assign pair_product_2 = all_products[layout.settings.pair_product_2]
+  assign has_pair_1 = false
+  assign has_pair_2 = false
+  if pair_product_1 and pair_product_1.title != blank
+    assign has_pair_1 = true
+  endif
+  if pair_product_2 and pair_product_2.title != blank
+    assign has_pair_2 = true
+  endif
+
+  # If either is missing, try metafield list `custom.upsell_products`
+  if has_pair_1 == false or has_pair_2 == false
+    assign upsell_list = product.metafields.custom.upsell_products.value
+    if upsell_list and upsell_list.size > 0
+      if has_pair_1 == false and upsell_list[0]
+        assign pair_product_1 = upsell_list[0]
+        assign has_pair_1 = true
+      endif
+      if has_pair_2 == false
+        if upsell_list.size > 1
+          assign pair_product_2 = upsell_list[1]
+          assign has_pair_2 = true
+        elsif has_pair_1 == true and upsell_list.size > 1
+          assign pair_product_2 = upsell_list[1]
+          assign has_pair_2 = true
+        endif
+      endif
+    endif
+  endif
+%}
+
+<div
+  id="product-quick-view-42"
+  x-cloak
+  x-show="isShowPairsWellWith"
+  x-transition.500ms
+  class="tw-fixed tw-z-full tw-h-dvh tw-w-full tw-inset-0 tw-bg-black/20 tw-flex tw-flex-col tw-min-h-fit tw-justify-center tw-items-center"
+>
+  <div
+    @click.self="$store.ajaxProductPage.hide()"
+    @keyup.escape.window="$store.ajaxProductPage.visible ? $store.ajaxProductPage.hide() : ''"
+    class="tw-grid lg:tw-items-start tw-w-full tw-h-full tw-overflow-y-auto tw-overflow-x-hidden no-scrollbar tw-pt-[55px] lg:tw-pt-26 lg:tw-pb-14"
+
+    x-cloak
+    x-show="isShowPairsWellWith"
+    x-transition:enter="tw-transition tw-duration-700"
+    x-transition:enter-start="tw-translate-y-full"
+    x-transition:enter-end="tw-translate-y-0"
+    x-transition:leave="tw-transition tw-duration-700"
+    x-transition:leave-start="tw-translate-y-0"
+    x-transition:leave-end="tw-translate-y-full"
+  >
+    <div class="tw-relative tw-w-screen tw-mx-auto tw-max-w-[936px] lg:tw-w-[calc(100vw-102px)] tw-bg-white lg:tw-rounded-3xl tw-pb-5 lg:tw-py-10 lg:tw-pb-[66px]">
+      <div class="tw-flex tw-justify-end tw-items-center tw-p-4 lg:tw-absolute lg:tw-right-4 tw-top-4">
+        <button
+          @click="isShowPairsWellWith = false; $store.cart.show()"
+          class="tw-flex-shrink-0 tw-size-3.5 tw-cursor-pointer tw-text-black tw-aspect-square lg:tw-size-5"
+        >
+          {% render 'icon-42', name: 'close', class: '!tw-size-full' %}
+          <span class="tw-sr-only">Close</span>
+        </button>
+      </div>
+      {% if heading != blank %}
+        <h5 class="tw-mb-[22px] tw-font-primary tw-font-bold tw-text-base tw-leading-[17px] tw-text-center tw-uppercase lg:tw-mb-14">
+          {{ heading }}
+        </h5>
+      {% endif %}
+
+      {% if has_pair_1 and has_pair_2 %}
+        <div class="tw-flex tw-items-start tw-gap-5 tw-overflow-x-auto lg:tw-justify-center lg:tw-gap-[38px]">
+          <div class="tw-w-[285px] lg:tw-w-[320px]">
+            {% render '42-product-card', product: pair_product_1, btn_type_2: true, class: '' %}
+          </div>
+          <div class="tw-w-[285px] lg:tw-w-[320px]">
+            {% render '42-product-card', product: pair_product_2, btn_type_2: true, class: '' %}
+          </div>
+        </div>
+      {% else %}
+        <div class="tw-px-4 lg:tw-px-6">
+          <div
+            x-data="relatedProducts"
+            id="related-product-{{ section.id }}-modal"
+            data-id="related-product-{{ section.id }}-modal"
+            class="tw-mt-3 tw-flex tw-w-full"
+            data-url="{{ routes.product_recommendations_url }}?section_id={{- section.id -}}&product_id={{- product.id -}}&limit=2&intent=complementary"
+          >
+            {%- if recommendations.performed? and recommendations.products_count > 0 -%}
+              <div class="tw-flex tw-gap-5 lg:tw-justify-center lg:tw-gap-[38px] tw-w-full tw-overflow-x-auto">
+                {% for rec_product in recommendations.products %}
+                  <div class="tw-w-[285px] lg:tw-w-[320px]">
+                    {% render '42-product-card', product: rec_product, btn_type_2: true, class: '' %}
+                  </div>
+                {% endfor %}
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>

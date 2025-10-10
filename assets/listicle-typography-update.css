@@ -1,0 +1,294 @@
+/* =================================================================
+   LISTICLE TYPOGRAPHY & LAYOUT UPDATE
+   Custom typography system and layout width option
+   Mobile-first approach with responsive scaling
+   ================================================================= */
+
+/* =================================================================
+   TYPOGRAPHY SYSTEM - PARAGRAPH STYLES
+   ================================================================= */
+
+/* Base paragraph styles for listicle pages */
+.template-listicle p,
+.listicle-items p,
+.listicle-item__text p,
+.listicle-intro__content p,
+.listicle-hero p,
+.listicle-closing p,
+.listicle-product p,
+.rte p {
+  padding-bottom: 10px;
+  padding-top: 10px;
+  font-size: 1.125rem; /* 18px */
+  font-family: sans-serif;
+  line-height: 1.7;
+}
+
+/* Mobile paragraph styles */
+@media (max-width: 768px) {
+  .template-listicle p,
+  .listicle-items p,
+  .listicle-item__text p,
+  .listicle-intro__content p,
+  .listicle-hero p,
+  .listicle-closing p,
+  .listicle-product p,
+  .rte p {
+    font-size: 1rem; /* 16px */
+  }
+}
+
+/* =================================================================
+   TYPOGRAPHY SYSTEM - HEADING STYLES
+   ================================================================= */
+
+/* H1 - Main Title */
+.template-listicle h1,
+.listicle-hero h1,
+.listicle-hero__title,
+.hero-headline {
+  font-size: 3rem; /* 48px */
+  line-height: 1.2;
+  font-weight: 800;
+}
+
+@media (max-width: 768px) {
+  .template-listicle h1,
+  .listicle-hero h1,
+  .listicle-hero__title,
+  .hero-headline {
+    font-size: 2rem; /* 32px */
+    line-height: 1.3;
+  }
+}
+
+/* H2 - Section Headers (The 5 Benefits) */
+.template-listicle h2,
+.listicle-item__title,
+.listicle-items h2,
+.listicle-section-title {
+  font-size: 2rem; /* 32px */
+  line-height: 1.3;
+  font-weight: 700;
+  margin-top: 2em;
+  margin-bottom: 0.75em;
+}
+
+@media (max-width: 768px) {
+  .template-listicle h2,
+  .listicle-item__title,
+  .listicle-items h2,
+  .listicle-section-title {
+    font-size: 1.5rem; /* 24px */
+    line-height: 1.4;
+  }
+}
+
+/* H3 - Sub-headers */
+.template-listicle h3,
+.listicle-items h3,
+.listicle-subheading {
+  font-size: 1.5rem; /* 24px */
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .template-listicle h3,
+  .listicle-items h3,
+  .listicle-subheading {
+    font-size: 1.375rem; /* 22px */
+  }
+}
+
+/* =================================================================
+   LAYOUT WIDTH OPTION - MODERATE WIDTH (1200px)
+   ================================================================= */
+
+/* Moderate width layout class */
+.moderate-width-layout {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Apply moderate width to listicle container */
+.listicle-container.moderate-width,
+.template-listicle.moderate-width .page-width,
+.listicle-items__wrapper.moderate-width,
+.listicle-hero__wrapper.moderate-width,
+.listicle-product__wrapper.moderate-width,
+.listicle-closing__wrapper.moderate-width {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Ensure page-width class respects moderate width when applied */
+.template-listicle.moderate-width .page-width,
+.listicle-moderate-width .page-width {
+  max-width: 1200px;
+}
+
+/* =================================================================
+   IMAGE-WITH-TEXT SECTIONS INHERITANCE
+   ================================================================= */
+
+/* Ensure image-with-text sections inherit typography */
+.template-listicle .section-double .hero__rte p,
+.template-listicle .image-with-text p,
+.listicle-item__grid p {
+  padding-bottom: 10px;
+  padding-top: 10px;
+  font-size: 1.125rem; /* 18px */
+  font-family: sans-serif;
+  line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+  .template-listicle .section-double .hero__rte p,
+  .template-listicle .image-with-text p,
+  .listicle-item__grid p {
+    font-size: 1rem; /* 16px */
+  }
+}
+
+.template-listicle .section-double .hero__title,
+.template-listicle .image-with-text h2 {
+  font-size: 2rem; /* 32px */
+  line-height: 1.3;
+  font-weight: 700;
+  margin-top: 2em;
+  margin-bottom: 0.75em;
+}
+
+@media (max-width: 768px) {
+  .template-listicle .section-double .hero__title,
+  .template-listicle .image-with-text h2 {
+    font-size: 1.5rem; /* 24px */
+    line-height: 1.4;
+  }
+}
+
+/* =================================================================
+   ADDITIONAL REQUIREMENTS
+   ================================================================= */
+
+/* Ensure proper contrast - using dark text on light backgrounds */
+.template-listicle,
+.listicle-items,
+.listicle-hero,
+.listicle-product,
+.listicle-closing {
+  color: #1e293b; /* Dark text for readability */
+}
+
+/* Consistent spacing throughout */
+.listicle-section,
+.listicle-items__list > *,
+.listicle-item {
+  margin-bottom: 2rem;
+}
+
+.listicle-item:last-child {
+  margin-bottom: 0;
+}
+
+/* Preserve responsive behavior */
+@media (max-width: 640px) {
+  .moderate-width-layout {
+    padding: 0 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .moderate-width-layout {
+    padding: 0 10px;
+  }
+}
+
+/* =================================================================
+   LISTICLE V3 SPECIFIC STYLES
+   ================================================================= */
+
+/* Apply typography to V3 sections */
+.listicle-v3-hero p,
+.listicle-v3-items p,
+.listicle-v3-product p,
+.listicle-v3-closing p {
+  padding-bottom: 10px;
+  padding-top: 10px;
+  font-size: 1.125rem; /* 18px */
+  font-family: sans-serif;
+  line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+  .listicle-v3-hero p,
+  .listicle-v3-items p,
+  .listicle-v3-product p,
+  .listicle-v3-closing p {
+    font-size: 1rem; /* 16px */
+  }
+}
+
+/* V3 Heading styles */
+.listicle-v3-hero h1 {
+  font-size: 3rem; /* 48px */
+  line-height: 1.2;
+  font-weight: 800;
+}
+
+@media (max-width: 768px) {
+  .listicle-v3-hero h1 {
+    font-size: 2rem; /* 32px */
+    line-height: 1.3;
+  }
+}
+
+.listicle-v3-items h2 {
+  font-size: 2rem; /* 32px */
+  line-height: 1.3;
+  font-weight: 700;
+  margin-top: 2em;
+  margin-bottom: 0.75em;
+}
+
+@media (max-width: 768px) {
+  .listicle-v3-items h2 {
+    font-size: 1.5rem; /* 24px */
+    line-height: 1.4;
+  }
+}
+
+/* =================================================================
+   OVERRIDE EXISTING STYLES IF NEEDED
+   ================================================================= */
+
+/* Override any conflicting styles from other CSS files */
+.template-listicle p,
+.template-listicle h1,
+.template-listicle h2,
+.template-listicle h3 {
+  /* Reset any previous styles that might conflict */
+  margin-left: 0;
+  margin-right: 0;
+  text-align: left;
+}
+
+/* Ensure RTE content follows our typography */
+.template-listicle .rte p,
+.listicle-items .rte p {
+  /* Force our typography styles */
+  padding-bottom: 10px !important;
+  padding-top: 10px !important;
+  font-size: 1.125rem !important;
+  line-height: 1.7 !important;
+}
+
+@media (max-width: 768px) {
+  .template-listicle .rte p,
+  .listicle-items .rte p {
+    font-size: 1rem !important;
+  }
+}

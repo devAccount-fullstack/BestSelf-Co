@@ -1,0 +1,860 @@
+<!-- /sections/section-rich-text-video.liquid -->
+{%- liquid
+  assign color_scheme = 'color-' | append: section.settings.color_scheme
+  assign image_desktop = section.settings.image
+  assign image_mobile = section.settings.image_mobile
+  assign overlay_opacity = section.settings.overlay_opacity | times: 0.01
+  assign show_overlay_text = section.settings.show_overlay_text
+  assign animation_anchor = '#RteVideo--' | append: section.id
+  assign animation_order = 0
+-%}
+
+{%- style -%}
+  #RteVideo--{{ section.id }} {
+    --PT: {{ section.settings.padding_top }}px;
+    --PB: {{ section.settings.padding_bottom }}px;
+  }
+  
+  /* Video block styles - matching video accordion section */
+  .hero__video-wrapper {
+    margin: 0 auto;
+    max-width: var(--video-max-width, 100%);
+  }
+  
+  .hero__video {
+    position: relative;
+    width: 100%;
+  }
+  
+  .showcase-video {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    display: block;
+  }
+  
+  .video-placeholder {
+    aspect-ratio: 16/9;
+    background: #f8f8f8;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  }
+  
+  .video-placeholder svg {
+    margin-bottom: 1rem;
+  }
+  
+  .video-placeholder p {
+    color: #999;
+    font-size: 0.9rem;
+  }
+  
+  /* Iframe container for YouTube/Vimeo */
+  .hero__video--iframe {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  }
+  
+  .hero__video--iframe iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+  
+  @media screen and (max-width: 749px) {
+    .showcase-video,
+    .hero__video--iframe,
+    .video-placeholder {
+      border-radius: 8px;
+    }
+  }
+{%- endstyle -%}
+
+<section
+  id="RteVideo--{{ section.id }}"
+  class="index-rte section-padding {{ color_scheme }}"
+  data-section-id="{{ section.id }}"
+  data-section-type="rich-text-video"
+>
+  {%- if image_desktop or image_mobile -%}
+    <div class="hero__bg">
+      <div class="hero__image">
+        {%- render 'image-hero', image_desktop: image_desktop, image_mobile: image_mobile -%}
+      </div>
+
+      {%- unless show_overlay_text or overlay_opacity == 0.0 -%}
+        <div class="image-overlay" style="--overlay-opacity: {{ overlay_opacity }};"></div>
+      {%- endunless -%}
+    </div>
+  {%- endif -%}
+
+  {%- if section.blocks.size > 0 -%}
+    <div class="hero__content__wrapper {{ section.settings.align_text }} {{ section.settings.width }}">
+      <div
+        class="hero__content hero__content--compact hero__content--transparent{% if show_overlay_text %} backdrop--radial{% endif %}"
+        {% if show_overlay_text %}
+          style="--overlay-opacity: {{ overlay_opacity }};"
+        {% endif %}
+      >
+        {%- for block in section.blocks -%}
+          {%- liquid
+            capture block_style
+              echo 'style="'
+              echo '--block-padding-bottom:' | append: block.settings.padding_bottom | append: 'px;'
+              echo '"'
+            endcapture
+          -%}
+
+          {%- case block.type -%}
+            {%- when 'heading' -%}
+              {%- if block.settings.title != blank -%}
+                {%- liquid
+                  assign animation_order = animation_order | plus: 1
+                  assign heading_tag = 'h2'
+
+                  unless block.settings.heading_tag == 'automatic' or block.settings.heading_tag == blank
+                    assign heading_tag = block.settings.heading_tag
+                  endunless
+                -%}
+
+                <{{ heading_tag }}
+                  class="hero__title {{ block.settings.heading_font_size }} block-padding"
+                  data-aos="hero"
+                  data-aos-anchor="{{ animation_anchor }}"
+                  data-aos-order="{{ animation_order }}"
+                  {{ block.shopify_attributes }}
+                  {{ block_style }}
+                >
+                  {{ block.settings.title }}
+                </{{ heading_tag }}>
+              {%- endif -%}
+
+            {%- when 'subheading' -%}
+              {%- if block.settings.subheading != blank -%}
+                {%- assign animation_order = animation_order | plus: 1 -%}
+                <p
+                  class="hero__subheading block-padding"
+                  data-aos="hero"
+                  data-aos-anchor="{{ animation_anchor }}"
+                  data-aos-order="{{ animation_order }}"
+                  {{ block.shopify_attributes }}
+                  {{ block_style }}
+                >
+                  {{ block.settings.subheading }}
+                </p>
+              {%- endif -%}
+
+            {%- when 'text' -%}
+              {%- if block.settings.text != blank -%}
+                {%- assign animation_order = animation_order | plus: 1 -%}
+                <div
+                  class="hero__rte {{ block.settings.text_font_size }} block-padding"
+                  data-aos="hero"
+                  data-aos-anchor="{{ animation_anchor }}"
+                  data-aos-order="{{ animation_order }}"
+                  {{ block.shopify_attributes }}
+                  {{ block_style }}
+                >
+                  {{ block.settings.text }}
+                </div>
+              {%- endif -%}
+
+            {%- when 'video' -%}
+              {%- liquid
+                assign animation_order = animation_order | plus: 1
+                assign video_width_percent = block.settings.video_width
+                
+                capture video_wrapper_style
+                  echo 'style="'
+                  echo '--video-max-width:' | append: video_width_percent | append: '%;'
+                  echo '--block-padding-bottom:' | append: block.settings.padding_bottom | append: 'px;'
+                  echo '"'
+                endcapture
+              -%}
+              
+              <div
+                class="hero__video-wrapper block-padding"
+                data-aos="hero"
+                data-aos-anchor="{{ animation_anchor }}"
+                data-aos-order="{{ animation_order }}"
+                {{ block.shopify_attributes }}
+                {{ video_wrapper_style }}
+              >
+                {%- if block.settings.video_url != blank -%}
+                  {%- liquid
+                    assign video_id = ''
+                    assign video_type = ''
+                    
+                    if block.settings.video_url contains 'youtube.com/watch' or block.settings.video_url contains 'youtu.be/'
+                      assign video_type = 'youtube'
+                      if block.settings.video_url contains 'v='
+                        assign video_id = block.settings.video_url | split: 'v=' | last | split: '&' | first
+                      elsif block.settings.video_url contains 'youtu.be/'
+                        assign video_id = block.settings.video_url | split: 'youtu.be/' | last | split: '?' | first
+                      endif
+                    elsif block.settings.video_url contains 'vimeo.com'
+                      assign video_type = 'vimeo'
+                      assign video_id = block.settings.video_url | split: 'vimeo.com/' | last | split: '/' | last | split: '?' | first
+                    endif
+                  -%}
+                  
+                  {%- if video_type == 'youtube' and video_id != '' -%}
+                    <div class="hero__video hero__video--iframe">
+                      <iframe
+                        src="https://www.youtube.com/embed/{{ video_id }}?rel=0&showinfo=0&autoplay={{ block.settings.autoplay | default: 0 }}&loop={{ block.settings.loop | default: 0 }}&mute={{ block.settings.muted | default: 0 }}&controls={{ block.settings.controls | default: 1 }}"
+                        title="{{ block.settings.video_title | default: 'YouTube video player' }}"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen
+                        loading="lazy"
+                      ></iframe>
+                    </div>
+                  {%- elsif video_type == 'vimeo' and video_id != '' -%}
+                    <div class="hero__video hero__video--iframe">
+                      <iframe
+                        src="https://player.vimeo.com/video/{{ video_id }}?autoplay={{ block.settings.autoplay | default: 0 }}&loop={{ block.settings.loop | default: 0 }}&muted={{ block.settings.muted | default: 0 }}&controls={{ block.settings.controls | default: 1 }}"
+                        title="{{ block.settings.video_title | default: 'Vimeo video player' }}"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen
+                        loading="lazy"
+                      ></iframe>
+                    </div>
+                  {%- else -%}
+                    {%- comment -%} Direct video URL or HTML5 video {%- endcomment -%}
+                    <div class="hero__video">
+                      <video
+                        {% if block.settings.autoplay %}autoplay{% endif %}
+                        {% if block.settings.loop %}loop{% endif %}
+                        {% if block.settings.muted %}muted{% endif %}
+                        {% if block.settings.controls %}controls{% endif %}
+                        playsinline
+                        loading="lazy"
+                      >
+                        <source src="{{ block.settings.video_url }}" type="video/mp4">
+                        Your browser does not support the video tag.
+                      </video>
+                    </div>
+                  {%- endif -%}
+                {%- elsif block.settings.video != blank -%}
+                  {%- comment -%} Shopify hosted video - exactly like video accordion {%- endcomment -%}
+                  <div class="hero__video">
+                    {{ block.settings.video | video_tag: 
+                        autoplay: block.settings.autoplay,
+                        loop: block.settings.loop,
+                        muted: block.settings.muted,
+                        controls: block.settings.controls,
+                        class: 'showcase-video',
+                        id: 'showcase-video-' | append: block.id
+                    }}
+                  </div>
+                {%- else -%}
+                  <div class="video-placeholder">
+                    <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect width="64" height="64" rx="8" fill="#f0f0f0"/>
+                      <path d="M24 20l16 12-16 12V20z" fill="#999"/>
+                    </svg>
+                    <p>Add a video in theme customizer</p>
+                  </div>
+                {%- endif -%}
+              </div>
+
+            {%- when 'image' -%}
+              {%- liquid
+                assign animation_order = animation_order | plus: 1
+                assign image_width_percent = block.settings.image_width
+                assign image_width_ratio = image_width_percent | times: 0.01
+
+                capture block_style
+                  echo 'style="'
+                  echo '--block-padding-bottom:' | append: block.settings.padding_bottom | append: 'px;'
+                  echo 'width: ' | append: image_width_percent | append: '%'
+                  echo '"'
+                endcapture
+
+                capture sizes
+                  assign image_size_mobile = 'calc((100vw - 32px) * ' | append: image_width_ratio | append: ')'
+
+                  case section.settings.width
+                    when 'wrapper--full-padded'
+                      assign image_size_desktop = 'calc(100vw - 100px * ' | append: image_width_ratio | append: ')'
+                    when 'wrapper'
+                      assign image_size_desktop = 'calc(80vw * ' | append: image_width_ratio | append: ')'
+                    when 'wrapper--narrow'
+                      assign image_size_desktop = 'calc(670px * ' | append: image_width_ratio | append: ')'
+                  endcase
+
+                  echo '(min-width: 750px) ' | append: image_size_desktop | append: ', ' | append: image_size_mobile
+                endcapture
+              -%}
+
+              <div
+                class="hero__media block-padding"
+                data-aos="hero"
+                data-aos-anchor="{{ animation_anchor }}"
+                data-aos-order="{{ animation_order }}"
+                {{ block.shopify_attributes }}
+                {{ block_style }}
+              >
+                {%- render 'image', image: block.settings.image, sizes: sizes -%}
+              </div>
+
+            {%- when 'buttons' -%}
+              {%- liquid
+                assign button_style = block.settings.button_style
+                if button_style == 'btn--text' and block.settings.show_arrow
+                  assign button_style = button_style | append: ' btn--text-no-underline'
+                endif
+              -%}
+
+              {%- if block.settings.button_text != blank -%}
+                {%- liquid
+                  assign prev_index = forloop.index0 | minus: 1
+                  assign next_index = forloop.index0 | plus: 1
+                  assign prev_block = section.blocks[prev_index]
+                  assign next_block = section.blocks[next_index]
+                  assign animation_order = animation_order | plus: 1
+                -%}
+                {%- if next_block.type == 'buttons'
+                  and forloop.index0 == 0
+                  or prev_block.type != 'buttons'
+                  and next_index != section.blocks.size
+                  and next_block.type == 'buttons'
+                -%}
+                  <div class="hero__button-group">
+                {%- endif -%}
+
+                <div
+                  class="hero__button block-padding"
+                  data-aos="hero"
+                  data-aos-anchor="{{ animation_anchor }}"
+                  data-aos-order="{{ animation_order }}"
+                  {{ block.shopify_attributes }}
+                  {{ block_style }}
+                >
+                  <a
+                    href="{{ block.settings.button_url | default: '#!' }}"
+                    class="btn {{ button_style }} {{ block.settings.button_size }} {{ block.settings.button_type }}"
+                  >
+                    <span>{{ block.settings.button_text }}</span>
+
+                    {%- if block.settings.show_arrow -%}
+                      {%- render 'icon-arrow-right' -%}
+                    {%- endif -%}
+                  </a>
+                </div>
+
+                {%- if prev_block.type == 'buttons'
+                  and next_block.type != 'buttons'
+                  and prev_index != -1
+                  or forloop.index == section.blocks.size
+                  and prev_block.type == 'buttons'
+                  and prev_index != -1
+                -%}
+                  </div>
+                {%- endif -%}
+              {%- endif -%}
+
+            {%- when 'divider' -%}
+              {%- assign animation_order = animation_order | plus: 1 -%}
+              {%- capture attributes -%}
+                data-aos="hero"
+                data-aos-anchor="{{ animation_anchor }}"
+                data-aos-order="{{ animation_order }}"
+              {%- endcapture -%}
+
+              {%- render 'divider', block: block, attributes: attributes -%}
+          {%- endcase -%}
+        {%- endfor -%}
+      </div>
+    </div>
+  {%- else -%}
+    {%- render 'no-blocks' -%}
+  {%- endif -%}
+</section>
+
+{% schema %}
+{
+  "name": "Rich text with video",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "select",
+      "id": "align_text",
+      "label": "Text alignment",
+      "default": "text-left",
+      "options": [
+        {"value": "text-left", "label": "Left"},
+        {"value": "text-center", "label": "Centered"}
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "select",
+      "id": "width",
+      "label": "Width",
+      "default": "wrapper",
+      "options": [
+        {"value": "wrapper--full-padded", "label": "Full width padded"},
+        {"value": "wrapper", "label": "Normal"},
+        {"value": "wrapper--narrow", "label": "Narrow"}
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Desktop"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "info": "Optional. 3200 x 1200px .jpg recommended. [Learn more](https://invisiblethemes.com/link/broadcast/images)",
+      "label": "Background image"
+    },
+    {
+      "type": "header",
+      "content": "Mobile"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Background image",
+      "info": "Optional. 1200 x 1600px .jpg recommended. [Learn more](https://invisiblethemes.com/link/broadcast/images)"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "default": "scheme_1",
+      "label": "Color scheme"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "label": "Overlay opacity",
+      "info": "Increase contrast for legible text.",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 0
+    },
+    {
+      "type": "checkbox",
+      "id": "show_overlay_text",
+      "label": "Overlay behind text only",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Top",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Bottom",
+      "default": 100
+    }
+  ],
+  "blocks": [
+    {
+      "type": "heading",
+      "name": "Heading",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Rich text"
+        },
+        {
+          "type": "select",
+          "id": "heading_font_size",
+          "label": "Heading size",
+          "default": "heading-large",
+          "options": [
+            {"value": "heading-mini", "label": "Mini"},
+            {"value": "heading-x-small", "label": "Extra small"},
+            {"value": "heading-small", "label": "Small"},
+            {"value": "heading-medium", "label": "Medium"},
+            {"value": "heading-large", "label": "Large"},
+            {"value": "heading-x-large", "label": "Extra large"}
+          ]
+        },
+        {
+          "type": "header",
+          "content": "Padding"
+        },
+        {
+          "type": "range",
+          "id": "padding_bottom",
+          "min": 0,
+          "max": 50,
+          "step": 2,
+          "unit": "px",
+          "label": "Bottom",
+          "default": 16
+        },
+        {
+          "type": "header",
+          "content": "Advanced"
+        },
+        {
+          "type": "select",
+          "id": "heading_tag",
+          "label": "Heading SEO tag",
+          "default": "automatic",
+          "options": [
+            {"value": "automatic", "label": "Automatic"},
+            {"value": "h1", "label": "H1"},
+            {"value": "h2", "label": "H2"},
+            {"value": "h3", "label": "H3"},
+            {"value": "h4", "label": "H4"},
+            {"value": "h5", "label": "H5"},
+            {"value": "h6", "label": "H6"}
+          ]
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "name": "Subheading",
+      "settings": [
+        {
+          "type": "text",
+          "id": "subheading",
+          "label": "Subheading",
+          "default": "Introducing"
+        },
+        {
+          "type": "header",
+          "content": "Padding"
+        },
+        {
+          "type": "range",
+          "id": "padding_bottom",
+          "min": 0,
+          "max": 50,
+          "step": 2,
+          "unit": "px",
+          "label": "Bottom",
+          "default": 16
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "Text",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
+        },
+        {
+          "type": "select",
+          "id": "text_font_size",
+          "label": "Text size",
+          "info": "Automatically generated by the base size. Applies only when content in Text field is set to Paragraph.",
+          "default": "body-medium",
+          "options": [
+            {"value": "body-x-small", "label": "Extra small"},
+            {"value": "body-small", "label": "Small"},
+            {"value": "body-medium", "label": "Medium"},
+            {"value": "body-large", "label": "Large"},
+            {"value": "body-x-large", "label": "Extra large"}
+          ]
+        },
+        {
+          "type": "header",
+          "content": "Padding"
+        },
+        {
+          "type": "range",
+          "id": "padding_bottom",
+          "min": 0,
+          "max": 50,
+          "step": 2,
+          "unit": "px",
+          "label": "Bottom",
+          "default": 16
+        }
+      ]
+    },
+    {
+      "type": "video",
+      "name": "Video",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Video source"
+        },
+        {
+          "type": "video",
+          "id": "video",
+          "label": "Shopify hosted video",
+          "info": "Upload a video directly to Shopify"
+        },
+        {
+          "type": "text",
+          "id": "video_url",
+          "label": "Video URL",
+          "info": "YouTube, Vimeo, or direct video URL. Takes precedence over Shopify hosted video.",
+          "placeholder": "https://www.youtube.com/watch?v=..."
+        },
+        {
+          "type": "text",
+          "id": "video_title",
+          "label": "Video title",
+          "default": "Video player",
+          "info": "For accessibility"
+        },
+        {
+          "type": "header",
+          "content": "Video settings"
+        },
+        {
+          "type": "checkbox",
+          "id": "autoplay",
+          "label": "Autoplay",
+          "default": false,
+          "info": "Video will be muted when autoplay is enabled"
+        },
+        {
+          "type": "checkbox",
+          "id": "loop",
+          "label": "Loop video",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "muted",
+          "label": "Mute video",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "controls",
+          "label": "Show video controls",
+          "default": true
+        },
+        {
+          "type": "header",
+          "content": "Layout"
+        },
+        {
+          "type": "range",
+          "id": "video_width",
+          "min": 25,
+          "max": 100,
+          "step": 5,
+          "unit": "%",
+          "label": "Video width",
+          "default": 100
+        },
+        {
+          "type": "header",
+          "content": "Padding"
+        },
+        {
+          "type": "range",
+          "id": "padding_bottom",
+          "min": 0,
+          "max": 50,
+          "step": 2,
+          "unit": "px",
+          "label": "Bottom",
+          "default": 16
+        }
+      ]
+    },
+    {
+      "type": "buttons",
+      "name": "Button",
+      "settings": [
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Text",
+          "default": "Learn more"
+        },
+        {
+          "type": "url",
+          "id": "button_url",
+          "label": "Link"
+        },
+        {
+          "type": "select",
+          "id": "button_type",
+          "label": "Color",
+          "default": "btn--primary",
+          "options": [
+            {"value": "btn--black", "label": "Black"},
+            {"value": "btn--white", "label": "White"},
+            {"value": "btn--primary", "label": "Primary"},
+            {"value": "btn--secondary", "label": "Secondary"}
+          ]
+        },
+        {
+          "type": "select",
+          "id": "button_size",
+          "label": "Size",
+          "default": "",
+          "options": [
+            {"label": "Small", "value": "btn--small"},
+            {"label": "Medium", "value": ""},
+            {"label": "Large", "value": "btn--large"}
+          ]
+        },
+        {
+          "type": "select",
+          "id": "button_style",
+          "label": "Style",
+          "default": "btn--solid",
+          "options": [
+            {"label": "Solid", "value": "btn--solid"},
+            {"label": "Outline", "value": "btn--outline"},
+            {"label": "Text", "value": "btn--text"}
+          ]
+        },
+        {
+          "type": "checkbox",
+          "id": "show_arrow",
+          "label": "Show arrow",
+          "default": false
+        },
+        {
+          "type": "header",
+          "content": "Padding"
+        },
+        {
+          "type": "range",
+          "id": "padding_bottom",
+          "min": 0,
+          "max": 50,
+          "step": 2,
+          "unit": "px",
+          "label": "Bottom",
+          "default": 16
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "name": "Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+          "info": "200 x 200px .jpg recommended. [Learn more](https://invisiblethemes.com/link/broadcast/images)"
+        },
+        {
+          "type": "range",
+          "id": "image_width",
+          "min": 10,
+          "max": 100,
+          "step": 5,
+          "unit": "%",
+          "label": "Width",
+          "default": 20
+        },
+        {
+          "type": "header",
+          "content": "Padding"
+        },
+        {
+          "type": "range",
+          "id": "padding_bottom",
+          "min": 0,
+          "max": 50,
+          "step": 2,
+          "unit": "px",
+          "label": "Bottom",
+          "default": 16
+        }
+      ]
+    },
+    {
+      "type": "divider",
+      "name": "Divider",
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "show_line",
+          "label": "Show line",
+          "default": true
+        },
+        {
+          "type": "range",
+          "id": "padding_bottom",
+          "min": 0,
+          "max": 50,
+          "step": 1,
+          "unit": "px",
+          "label": "Bottom",
+          "default": 20
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Rich text with video",
+      "blocks": [
+        {
+          "type": "subheading"
+        },
+        {
+          "type": "heading"
+        },
+        {
+          "type": "text"
+        },
+        {
+          "type": "video"
+        },
+        {
+          "type": "buttons"
+        }
+      ]
+    }
+  ],
+  "disabled_on": {
+    "groups": ["header", "aside", "footer"]
+  }
+}
+{% endschema %}

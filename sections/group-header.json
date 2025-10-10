@@ -1,0 +1,213 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "header",
+  "name": "Header",
+  "sections": {
+    "announcement": {
+      "type": "announcement",
+      "blocks": {
+        "message_9WR3DA": {
+          "type": "message",
+          "disabled": true,
+          "settings": {
+            "show_wheel": true,
+            "message": "You are ||amount|| away from free shipping.",
+            "target_url_enabled": false,
+            "target_url": "",
+            "target_referrer_enabled": false,
+            "target_referrer": "",
+            "target_device_enabled": false,
+            "target_device": "mobile"
+          }
+        },
+        "text_UppBCe": {
+          "type": "text",
+          "settings": {
+            "text": "<p>RECLAIM YOUR FOCUS WITH <a href=\"/products/helm\" title=\"Helm\">HELM</a> → </p>",
+            "target_url_enabled": false,
+            "target_url": "shopify://products/helm",
+            "target_referrer_enabled": true,
+            "target_referrer": "",
+            "target_device_enabled": false,
+            "target_device": "mobile"
+          }
+        },
+        "text_NFmieX": {
+          "type": "text",
+          "settings": {
+            "text": "<p>NOW SHIPPING TO CANADA 🇨🇦 AND THE UK 🇬🇧</p>",
+            "target_url_enabled": false,
+            "target_url": "",
+            "target_referrer_enabled": false,
+            "target_referrer": "",
+            "target_device_enabled": false,
+            "target_device": "mobile"
+          }
+        },
+        "text_bipwxy": {
+          "type": "text",
+          "settings": {
+            "text": "<p>FREE U.S. SHIPPING ON ALL ORDERS $75+ </p>",
+            "target_url_enabled": false,
+            "target_url": "",
+            "target_referrer_enabled": false,
+            "target_referrer": "",
+            "target_device_enabled": false,
+            "target_device": "mobile"
+          }
+        }
+      },
+      "block_order": [
+        "message_9WR3DA",
+        "text_UppBCe",
+        "text_NFmieX",
+        "text_bipwxy"
+      ],
+      "custom_css": [
+        "announcement-bar {position: sticky top: 0;}"
+      ],
+      "settings": {
+        "show_border": true,
+        "layout": "slider",
+        "slider_speed": 5,
+        "text_alignment": "center",
+        "show_arrows": true,
+        "marquee_speed": 75,
+        "message_spacing": 20,
+        "text_font_size": "body-small",
+        "color_scheme": "scheme-5",
+        "border_color": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "header": {
+      "type": "header",
+      "blocks": {
+        "image_UPwr6X": {
+          "type": "image",
+          "settings": {
+            "position": "1",
+            "image": "shopify://shop_images/its-a-date-card-deck-romantic-connection-940344.jpg",
+            "aspect_ratio": 1,
+            "wide_image": true,
+            "overlay_opacity": 60,
+            "overlay_color": "#242540",
+            "title": "Romantic Connection",
+            "heading_font_size": "heading-small",
+            "link_text": "SHOP NOW",
+            "text_font_size": "body-small",
+            "link": "shopify://collections/romantic-relationships",
+            "text_color": "#ffffff"
+          }
+        },
+        "image_87RUwz": {
+          "type": "image",
+          "settings": {
+            "position": "1",
+            "image": "shopify://shop_images/BestSelf_PersonalGrowth-16.jpg",
+            "aspect_ratio": 1,
+            "wide_image": true,
+            "overlay_opacity": 50,
+            "overlay_color": "#242540",
+            "title": "Personal Growth",
+            "heading_font_size": "heading-small",
+            "link_text": "SHOP NOW",
+            "text_font_size": "body-small",
+            "link": "shopify://collections/personal-growth",
+            "text_color": "#ffffff"
+          }
+        },
+        "image_8ArN9P": {
+          "type": "image",
+          "settings": {
+            "position": "1",
+            "image": "shopify://shop_images/BestSelf_Family-211-Retouched.jpg",
+            "aspect_ratio": 1,
+            "wide_image": true,
+            "overlay_opacity": 50,
+            "overlay_color": "#000000",
+            "title": "Kids & Family",
+            "heading_font_size": "heading-small",
+            "link_text": "SHOP NOW",
+            "text_font_size": "body-small",
+            "link": "shopify://collections/kids-family",
+            "text_color": "#ffffff"
+          }
+        },
+        "image_pjKf7j": {
+          "type": "image",
+          "settings": {
+            "position": "1",
+            "image": "shopify://shop_images/BestSelf_SocialConnection-107_Retouched_V1.00_small_53310ec2-2603-4e79-bd9b-d7351da29dce.jpg",
+            "aspect_ratio": 1,
+            "wide_image": true,
+            "overlay_opacity": 50,
+            "overlay_color": "#242540",
+            "title": "Social Connection",
+            "heading_font_size": "heading-small",
+            "link_text": "SHOP NOW",
+            "text_font_size": "body-small",
+            "link": "shopify://collections/social-connections",
+            "text_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "image_UPwr6X",
+        "image_87RUwz",
+        "image_8ArN9P",
+        "image_pjKf7j"
+      ],
+      "settings": {
+        "header_sticky": true,
+        "header_style": "logo_center_menu_left",
+        "show_separator_line": true,
+        "header_border_color": "rgba(0,0,0,0)",
+        "separator_opacity": 10,
+        "show_icons": true,
+        "icon_as_circle": false,
+        "cart_icon_family": "bag",
+        "logo": "{{ shop.brand.logo }}",
+        "logo_max_limit": 100,
+        "logo_max_limit_mobile": 90,
+        "main_menu_linklist": "main-menu-broadcast",
+        "mobile_menu_linklist": "mobile-menu",
+        "enable_search": true,
+        "show_social_icons": false,
+        "button_text": "",
+        "button_link": "",
+        "button_type": "btn--primary",
+        "show_locale_selector": false,
+        "show_globe_icon": false,
+        "show_country_selector": false,
+        "show_country_name": false,
+        "show_country_flag": false,
+        "highlight_item": "",
+        "highlight_item_color": "#f73c3c",
+        "transparent_logo": "{{ shop.brand.logo }}",
+        "transparent_home": false,
+        "transparent_collection": false,
+        "transparent_article": false,
+        "transparent_page": false,
+        "transparent_product_page": false,
+        "secondary_menu_linklist": "",
+        "tertiary_menu_linklist": "",
+        "padding_top": 10,
+        "padding_bottom": 10
+      }
+    }
+  },
+  "order": [
+    "announcement",
+    "header"
+  ]
+}

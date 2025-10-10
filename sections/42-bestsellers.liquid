@@ -1,0 +1,216 @@
+{% liquid
+  assign blocks = section.blocks
+
+  assign metafield_product_list = section.settings.metafield_product_list
+
+  assign border_top = section.settings.border_top
+  assign border_bottom = section.settings.border_bottom
+
+  assign section_title = section.settings.section_title
+  assign show_title_arrow = section.settings.show_title_arrow
+  assign collection = section.settings.collection
+  assign btn_text = section.settings.btn_text
+  assign btn_link = section.settings.btn_link | default: collection.url
+
+  assign pt_mob = section.settings.pt_mob
+  assign pb_mob = section.settings.pb_mob
+  assign pt_tab = section.settings.pt_tab
+  assign pb_tab = section.settings.pb_tab
+  assign pt_desk = section.settings.pt_desk
+  assign pb_desk = section.settings.pb_desk
+%}
+
+{% render 'section-paddings',
+  section_id: section.id,
+  pt_mob: pt_mob,
+  pb_mob: pb_mob,
+  pt_tab: pt_tab,
+  pb_tab: pb_tab,
+  pt_desk: pt_desk,
+  pb_desk: pb_desk
+%}
+
+<div
+  data-section-id="{{ section.id }}"
+  class="tw-overflow-hidden {% if border_top %}section-border-t-42{% endif %} {% if border_bottom %}section-border-b-42{% endif %}"
+>
+  <div class="container-42">
+    <div class="tw-w-full tw-flex tw-justify-between tw-items-end tw-mb-6 lg:tw-mb-10">
+      {% if section_title != blank %}
+        <h2 class="section-title tw-font-bold tw-m-0 tw-text-black tw-text-[26px] tw-leading-[35px] lg:tw-text-[34px] lg:tw-leading-[40px]">
+          {{ section_title }}
+
+          {% if show_title_arrow %}
+            <span class="tw-hidden md:tw-inline-block">
+              <svg width="35" height="18" viewBox="0 0 35 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M33.7304 9.86083C34.2058 9.3854 34.2058 8.6146 33.7304 8.13917L25.983 0.391744C25.5075 -0.0836773 24.7367 -0.0836773 24.2613 0.391744C23.7859 0.867165 23.7859 1.63797 24.2613 2.1134L31.1479 9L24.2613 15.8866C23.7859 16.362 23.7859 17.1328 24.2613 17.6083C24.7367 18.0837 25.5075 18.0837 25.983 17.6083L33.7304 9.86083ZM0 9V10.2174H32.8696V9V7.78261H0V9Z" fill="black"/>
+              </svg>
+            </span>
+          {% endif %}
+        </h2>
+      {% endif %}
+
+      {% if btn_text != blank and btn_link != blank %}
+        <a
+          href="{{ btn_link }}"
+          class="btn-42 tw-min-w-[112px] btn-42--primary tw-whitespace-nowrap !tw-text-xs tw-shrink lg:!tw-text-sm tw-w-fit tw-border-sc-blue tw-border !tw-px-5 !tw-min-h-[42px] lg:!tw-min-h-[46px] tw-py-2.5 lg:tw-py-3 lg:!tw-px-5.5"
+        >
+          <span>{{ btn_text }}</span>
+          <svg
+            class="tw-shrink"
+            width="15"
+            height="8"
+            viewBox="0 0 15 8"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M14.3536 4.3079C14.5488 4.11264 14.5488 3.79605 14.3536 3.60079L11.1716 0.418812C10.9763 0.22355 10.6597 0.22355 10.4645 0.418812C10.2692 0.614074 10.2692 0.930656 10.4645 1.12592L13.2929 3.95435L10.4645 6.78277C10.2692 6.97803 10.2692 7.29462 10.4645 7.48988C10.6597 7.68514 10.9763 7.68514 11.1716 7.48988L14.3536 4.3079ZM0 3.95435V4.45435H14V3.95435V3.45435H0V3.95435Z" fill="currentColor"></path>
+          </svg>
+        </a>
+      {% endif %}
+    </div>
+
+    <div class="bestsellers-slider-wrapper tw-relative">
+      <div
+        class="swiper tw-relative tw-select-none tw-opacity-0 tw-duration-300"
+        x-ignore
+        ax-load
+        x-data="swiperSlider($el, 'bestsellers_slider', { navigation: { nextEl: '.slider-button-next-{{ section.id }}', prevEl: '.slider-button-prev-{{ section.id }}', disabledClass: 'tw-opacity-50' }})"
+      >
+        <div class="swiper-wrapper tw-pb-0.5">
+          {% if metafield_product_list != blank %}
+            {% for metafield_product in metafield_product_list %}
+              <div class="swiper-slide !tw-h-auto tw-max-w-[286px] lg:tw-max-w-[320px]">
+                {% render '42-product-card', product: metafield_product, class: '', badge_position: 'above' %}
+              </div>
+            {% endfor %}
+          {% else %}
+            {% for product in collection.products %}
+              <div class="swiper-slide !tw-h-auto tw-max-w-[286px] lg:tw-max-w-[320px]">
+                {% render '42-product-card', product: product, class: '', badge_position: 'above' %}
+              </div>
+            {% endfor %}
+          {% endif %}
+        </div>
+      </div>
+
+      <div class="slider-button-prev-{{ section.id }} tw-bg-white tw-rounded-full tw-cursor-pointer tw-absolute tw-z-5 -tw-left-[42px] tw-top-1/2 -tw-translate-y-1/2 tw-hidden lg:tw-flex">
+        {% render 'icon-42', name: 'swiper-btn', class: 'tw-rotate-180' %}
+      </div>
+      <div class="slider-button-next-{{ section.id }} tw-bg-white tw-rounded-full tw-cursor-pointer tw-absolute tw-z-5 -tw-right-[42px] tw-top-1/2 -tw-translate-y-1/2 tw-hidden lg:tw-flex">
+        {% render 'icon-42', name: 'swiper-btn' %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{%- if predictive_search.performed -%}
+  {%- if predictive_search.resources.products.size > 0
+    or predictive_search.resources.articles.size > 0
+    or predictive_search.resources.pages.size > 0
+  -%}
+    {%- if predictive_search.resources.products.size > 0 -%}
+      {%- for product in predictive_search.resources.products -%}
+        {% render '42-product-card', product: product, class: '' %}
+      {%- endfor -%}
+    {%- endif -%}
+  {%- endif -%}
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "42 Bestsellers",
+  "tag": "section",
+  "class": "quiz-42",
+  "settings": [
+    {
+      "type": "product_list",
+      "id": "metafield_product_list",
+      "label": "Metafield. Product list"
+    },
+    {
+      "type": "checkbox",
+      "id": "border_top",
+      "label": "Border top"
+    },
+    {
+      "type": "checkbox",
+      "id": "border_bottom",
+      "label": "Border bottom"
+    },
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Section title",
+      "default": "Best Sellers"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_title_arrow",
+      "label": "Show title arrow"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection"
+    },
+    {
+      "type": "text",
+      "id": "btn_text",
+      "label": "Button text",
+      "default": "SHOP ALL"
+    },
+    {
+      "type": "url",
+      "id": "btn_link",
+      "label": "Button link"
+    },
+    {
+      "type": "header",
+      "content": "Padding Y settings"
+    },
+    {
+      "type": "number",
+      "id": "pt_mob",
+      "label": "Mobile padding top in px",
+      "default": 48
+    },
+    {
+      "type": "number",
+      "id": "pb_mob",
+      "label": "Mobile padding bottom in px",
+      "default": 48
+    },
+    {
+      "type": "number",
+      "id": "pt_tab",
+      "label": "Tablet padding top in px",
+      "default": 48
+    },
+    {
+      "type": "number",
+      "id": "pb_tab",
+      "label": "Tablet padding bottom in px",
+      "default": 48
+    },
+    {
+      "type": "number",
+      "id": "pt_desk",
+      "label": "Desktop padding top in px",
+      "default": 56
+    },
+    {
+      "type": "number",
+      "id": "pb_desk",
+      "label": "Desktop padding bottom in px",
+      "default": 56
+    }
+  ],
+  "blocks": [],
+  "presets": [
+    {
+      "name": "42 Bestsellers"
+    }
+  ]
+}
+{% endschema %}

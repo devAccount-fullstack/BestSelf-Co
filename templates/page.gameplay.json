@@ -1,0 +1,114 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "custom-content-1": {
+      "type": "section-custom-content",
+      "blocks": {
+        "image-1-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Birthday_Deck_-_Desktop_-_English.jpg",
+            "title": "{{ page.metafields.custom.lander_cta | metafield_text }}Welcome to Birthday deck game!",
+            "flex_align": "align--middle-left",
+            "bg_color": "",
+            "color": "#ffffff",
+            "overlay_opacity": 30,
+            "overlay_color": "#242540",
+            "show_overlay_text": false,
+            "link_text": "",
+            "link": "",
+            "button_type": "btn--primary",
+            "button_size": "",
+            "button_style": "btn--solid",
+            "show_arrow": false
+          }
+        }
+      },
+      "block_order": [
+        "image-1-1"
+      ],
+      "settings": {
+        "borders": false,
+        "gutters": false,
+        "width": "wrapper--full",
+        "height": "screen-height-one-half",
+        "mobile_height": "screen-height-one-third--mobile",
+        "reverse_blocks": false,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "subheading": "",
+        "show_title": true,
+        "show_content": true,
+        "align_text": "text-center",
+        "width": "wrapper",
+        "padding_top": 50,
+        "padding_bottom": 50
+      }
+    },
+    "section_products_image_F9ykgR": {
+      "type": "section-products-image",
+      "blocks": {
+        "products_G6Y8cJ": {
+          "type": "products",
+          "settings": {
+            "product_list": [
+              "icebreaker-deck",
+              "deeper-talk-deck",
+              "intimacy-deck",
+              "relationship-deck"
+            ],
+            "layout_mobile": "slider"
+          }
+        },
+        "image_xEz8JB": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/BEST_SELF0747.jpg",
+            "mobile_height": "screen-height-one-half--mobile",
+            "title": "",
+            "flex_align": "align--middle-center",
+            "overlay_opacity": 0,
+            "overlay_color": "#000000",
+            "show_overlay_text": false,
+            "link_text": "",
+            "link": "",
+            "button_type": "btn--primary",
+            "button_size": "",
+            "button_style": "btn--solid",
+            "show_arrow": false,
+            "bg_color": "",
+            "color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "products_G6Y8cJ",
+        "image_xEz8JB"
+      ],
+      "settings": {
+        "width": "wrapper",
+        "reverse_blocks": false,
+        "padding_top": 50,
+        "padding_bottom": 50
+      }
+    }
+  },
+  "order": [
+    "custom-content-1",
+    "main",
+    "section_products_image_F9ykgR"
+  ]
+}

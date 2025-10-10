@@ -1,0 +1,432 @@
+<!-- /sections/product-science-metaobject-spotlight.liquid -->
+{%- liquid
+  # Get the metaobject based on page handle
+  assign science_pages = shop.metaobjects.product_science_page_v2.values
+  assign science_page = nil
+  
+  for sp in science_pages
+    if sp.original_page_handle == page.handle or sp.url_handle == page.handle
+      assign science_page = sp
+      break
+    endif
+  endfor
+  
+  # Fallback: try to match by similar handle
+  unless science_page
+    for sp in science_pages
+      if sp.url_handle contains page.handle or page.handle contains sp.url_handle
+        assign science_page = sp
+        break
+      endif
+    endfor
+  endunless
+  
+  # Get data from metaobject
+  if science_page
+    assign spotlight_heading = science_page.spotlight_heading.value
+    assign spotlight_description = science_page.spotlight_description
+    assign spotlight_product = science_page.spotlight_product.value
+  endif
+  
+  # Allow section settings to override if needed
+  if section.settings.override_heading != blank
+    assign spotlight_heading = section.settings.override_heading
+  endif
+  if section.settings.override_description != blank
+    assign spotlight_description = section.settings.override_description
+  endif
+  if section.settings.override_product != blank
+    assign spotlight_product = section.settings.override_product
+  endif
+-%}
+
+{%- if science_page or section.settings.show_fallback -%}
+  <div class="section-padding color-{{ section.settings.color_scheme }} spotlight-section" 
+       style="--PT: {{ section.settings.padding_top }}px; --PB: {{ section.settings.padding_bottom }}px;">
+    <div class="{{ section.settings.width }}">
+      <div class="spotlight-wrapper">
+        
+        {%- if spotlight_product != blank -%}
+          <div class="spotlight-product">
+            {%- if spotlight_product.featured_image -%}
+              <img src="{{ spotlight_product.featured_image | image_url: width: 600 }}"
+                   alt="{{ spotlight_product.title | escape }}"
+                   loading="lazy"
+                   width="600"
+                   height="600">
+            {%- endif -%}
+            
+            {%- if section.settings.show_product_info -%}
+              <div class="product-info">
+                <h4 class="product-title">{{ spotlight_product.title }}</h4>
+                {%- if section.settings.show_price -%}
+                  <div class="product-price">
+                    {%- if spotlight_product.compare_at_price > spotlight_product.price -%}
+                      <span class="price-compare">{{ spotlight_product.compare_at_price | money }}</span>
+                    {%- endif -%}
+                    <span class="price-current">{{ spotlight_product.price | money }}</span>
+                  </div>
+                {%- endif -%}
+              </div>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+        
+        <div class="spotlight-content">
+          {%- if spotlight_heading != blank -%}
+            <h2 class="{{ section.settings.heading_size }}">
+              {{ spotlight_heading }}
+            </h2>
+          {%- endif -%}
+          
+          {%- if spotlight_description != blank -%}
+            <div class="rte {{ section.settings.text_size }}">
+              {{ spotlight_description | metafield_tag }}
+            </div>
+          {%- endif -%}
+          
+          {%- if spotlight_product != blank and section.settings.show_add_to_cart -%}
+            <form action="/cart/add" method="post" enctype="multipart/form-data" class="product-form">
+              <input type="hidden" name="id" value="{{ spotlight_product.selected_or_first_available_variant.id }}">
+              
+              {%- if section.settings.show_quantity -%}
+                <div class="quantity-wrapper">
+                  <label for="quantity-{{ section.id }}">Quantity:</label>
+                  <input type="number" 
+                         id="quantity-{{ section.id }}" 
+                         name="quantity" 
+                         value="1" 
+                         min="1" 
+                         class="quantity-input">
+                </div>
+              {%- else -%}
+                <input type="hidden" name="quantity" value="1">
+              {%- endif -%}
+              
+              <button type="submit" 
+                      class="btn btn--{{ section.settings.button_style }}"
+                      {% unless spotlight_product.available %}disabled{% endunless %}>
+                {%- if spotlight_product.available -%}
+                  {{ section.settings.button_text | default: 'Add to Cart' }}
+                {%- else -%}
+                  Sold Out
+                {%- endif -%}
+              </button>
+            </form>
+          {%- elsif section.settings.show_button and section.settings.button_link != blank -%}
+            <a href="{{ section.settings.button_link }}" 
+               class="btn btn--{{ section.settings.button_style }}">
+              {{ section.settings.button_text | default: 'Learn More' }}
+            </a>
+          {%- endif -%}
+        </div>
+      </div>
+    </div>
+  </div>
+{%- else -%}
+  {%- if section.settings.show_debug -%}
+    <div style="padding: 40px; text-align: center; background: #f5f5f5;">
+      <p>No science page data found for handle: {{ page.handle }}</p>
+    </div>
+  {%- endif -%}
+{%- endif -%}
+
+<style>
+  .wrapper--moderate {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding-left: var(--outer);
+    padding-right: var(--outer);
+  }
+  
+  .spotlight-wrapper {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+  }
+  
+  .spotlight-product {
+    flex: 0 0 40%;
+  }
+  
+  .spotlight-product img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .product-info {
+    margin-top: 1rem;
+    text-align: center;
+  }
+  
+  .product-title {
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+  }
+  
+  .product-price {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .price-compare {
+    text-decoration: line-through;
+    opacity: 0.6;
+  }
+  
+  .price-current {
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+  
+  .spotlight-content {
+    flex: 1;
+  }
+  
+  .spotlight-content h2 {
+    margin-bottom: 1.5rem;
+  }
+  
+  .spotlight-content .rte {
+    margin-bottom: 2rem;
+  }
+  
+  .product-form {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-end;
+  }
+  
+  .quantity-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .quantity-input {
+    width: 80px;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  @media (max-width: 768px) {
+    .spotlight-wrapper {
+      flex-direction: column;
+      gap: 2rem;
+    }
+    
+    .spotlight-product {
+      flex: none;
+      width: 100%;
+      max-width: 400px;
+    }
+    
+    .product-form {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    
+    .quantity-wrapper {
+      width: 100%;
+    }
+    
+    .quantity-input {
+      width: 100%;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "PS Spotlight (Meta)",
+  "tag": "section",
+  "class": "section-spotlight-metaobject",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Metaobject Connection"
+    },
+    {
+      "type": "paragraph",
+      "content": "This section automatically pulls spotlight/CTA data from the Product Science Page metaobject."
+    },
+    {
+      "type": "checkbox",
+      "id": "show_fallback",
+      "label": "Show fallback content",
+      "default": false,
+      "info": "Display fallback when no metaobject is found"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_debug",
+      "label": "Show debug info",
+      "default": false,
+      "info": "Show debug message when no data found"
+    },
+    {
+      "type": "header",
+      "content": "Override Content"
+    },
+    {
+      "type": "text",
+      "id": "override_heading",
+      "label": "Override heading",
+      "info": "Leave blank to use metaobject data"
+    },
+    {
+      "type": "richtext",
+      "id": "override_description",
+      "label": "Override description",
+      "info": "Leave blank to use metaobject data"
+    },
+    {
+      "type": "product",
+      "id": "override_product",
+      "label": "Override product",
+      "info": "Leave blank to use metaobject data"
+    },
+    {
+      "type": "header",
+      "content": "Product Display"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_product_info",
+      "label": "Show product info",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_price",
+      "label": "Show price",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_add_to_cart",
+      "label": "Show add to cart",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_quantity",
+      "label": "Show quantity selector",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Button Settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_button",
+      "label": "Show custom button",
+      "default": false,
+      "info": "Use when not showing add to cart"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Learn More"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "select",
+      "id": "button_style",
+      "label": "Button style",
+      "options": [
+        {"value": "primary", "label": "Primary"},
+        {"value": "secondary", "label": "Secondary"},
+        {"value": "outline", "label": "Outline"}
+      ],
+      "default": "primary"
+    },
+    {
+      "type": "header",
+      "content": "Layout Settings"
+    },
+    {
+      "type": "select",
+      "id": "width",
+      "label": "Content width",
+      "options": [
+        {"value": "wrapper", "label": "Full width"},
+        {"value": "wrapper--moderate", "label": "Moderate (1300px)"},
+        {"value": "wrapper--narrow", "label": "Narrow (670px)"},
+        {"value": "wrapper--tiny", "label": "Extra narrow"}
+      ],
+      "default": "wrapper--moderate"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "label": "Heading size",
+      "options": [
+        {"value": "h1", "label": "Extra large"},
+        {"value": "h2", "label": "Large"},
+        {"value": "h3", "label": "Medium"}
+      ],
+      "default": "h2"
+    },
+    {
+      "type": "select",
+      "id": "text_size",
+      "label": "Text size",
+      "options": [
+        {"value": "text-sm", "label": "Small"},
+        {"value": "", "label": "Normal"},
+        {"value": "text-lg", "label": "Large"}
+      ],
+      "default": ""
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "options": [
+        {"value": "", "label": "Default"},
+        {"value": "scheme-1", "label": "Scheme 1"},
+        {"value": "scheme-2", "label": "Scheme 2"},
+        {"value": "scheme-3", "label": "Scheme 3"},
+        {"value": "scheme-10", "label": "Scheme 10"}
+      ],
+      "default": ""
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 50
+    }
+  ],
+  "presets": [
+    {
+      "name": "PS Spotlight (Meta)"
+    }
+  ]
+}
+{% endschema %}

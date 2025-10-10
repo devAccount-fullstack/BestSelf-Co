@@ -1,0 +1,581 @@
+{% liquid
+  assign anchor_id = section.settings.anchor_id | handleize
+  assign rounded_top = section.settings.rounded_top
+  assign rounded_bottom = section.settings.rounded_bottom
+  assign title = section.settings.title
+  assign btn_url = section.settings.btn_url
+  assign btn_text = section.settings.btn_text
+
+  assign metaobject_content = section.settings.metaobject_content | first
+
+  assign blocks = section.blocks
+
+  assign pt_mob = section.settings.pt_mob
+  assign pb_mob = section.settings.pb_mob
+  assign pt_tab = section.settings.pt_tab
+  assign pb_tab = section.settings.pb_tab
+  assign pt_desk = section.settings.pt_desk
+  assign pb_desk = section.settings.pb_desk
+%}
+
+{% render 'section-paddings',
+  section_id: section.id,
+  pt_mob: pt_mob,
+  pb_mob: pb_mob,
+  pt_tab: pt_tab,
+  pb_tab: pb_tab,
+  pt_desk: pt_desk,
+  pb_desk: pb_desk
+%}
+
+
+<div
+  id="{{ anchor_id }}"
+  class="tw-bg-white"
+>
+  <div
+    data-section-id="{{ section.id }}"
+    class="tw-bg-sc-blue {% if rounded_top %}tw-rounded-t-3xl lg:tw-rounded-t-[40px]{% endif %} {% if rounded_bottom %}tw-rounded-b-3xl lg:tw-rounded-b-[40px]{% endif %}"
+  >
+    <div class="container-42">
+      {% comment %} Mobile {% endcomment %}
+      <div class="lg:tw-hidden">
+        {% if title != blank %}
+          <h2 class="tw-text-white tw-text-center tw-text-[28px] tw-leading-none tw-mb-8 lg:tw-mb-0 ">
+            {{ title }}
+          </h2>
+        {% endif %}
+
+        <div class="tw-relative">
+          <div
+            class="swiper tw-opacity-0"
+            x-ignore
+            ax-load
+            x-data="swiperSlider($el, 'benefits', { navigation: { nextEl: '.slider-button-next-{{ section.id }}', prevEl: '.slider-button-prev-{{ section.id }}' }})"
+          >
+            <div class="swiper-wrapper">
+              {% assign global_index = 0 %}
+
+              {% if metaobject_content != blank %}
+                {% for i in (1..2) %}
+                  {% capture benefits_group_key %}benefits_group_{{ i }}{% endcapture %}
+                  <div class="swiper-slide">
+                    <div class="tw-flex tw-flex-col tw-gap-3.5">
+                      {% for item in metaobject_content[benefits_group_key] %}
+                        <!-- DEBUG: item.icon = {{ item.icon }}, item.text = {{ item.text }}, item.description = {{ item.description }}, item.title = {{ item.title }}, item.name = {{ item.name }} -->
+                        {% liquid
+                          assign icon = item.icon.value
+                          assign heading = item.text.value
+                          assign text = item.description.value
+                          assign global_index = global_index | plus: 1
+
+                          if global_index < 10
+                            assign global_index = global_index | prepend: '0'
+                          endif
+                        %}
+
+                        <div class="tw-relative tw-flex tw-flex-col tw-justify-center tw-items-center tw-rounded-2xl tw-bg-sc-ice-blue tw-py-5 tw-px-[22px]">
+                          <div class="tw-flex tw-justify-cente tw-items-center tw-mx-auto tw-w-[62px]">
+                            {% if icon != blank %}
+                              {{-
+                                icon
+                                | image_url: width: icon.width
+                                | image_tag:
+                                  loading: 'lazy',
+                                  sizes: 'min(100vw, 100px)',
+                                  widths: '100',
+                                  alt: heading,
+                                  class: 'tw-aspect-square tw-mb-3.75'
+                              -}}
+                            {% endif %}
+                          </div>
+
+                          <div class="tw-space-y-1.5">
+                            {% if heading != blank %}
+                              <h6 class="tw-text-center tw-text-sc-blue tw-text-[17px] tw-leading-[100%]">
+                                {{ heading }}
+                              </h6>
+                            {% endif %}
+                            {% if text != blank %}
+                              <h6 class="tw-text-center tw-text-sc-blue tw-text-sm tw-leading-[22px]">{{ text }}</h6>
+                            {% endif %}
+                          </div>
+
+                          <div class="tw-font-primary tw-absolute tw-top-5 tw-right-5 tw-aspect-square tw-size-8 tw-flex tw-justify-center tw-items-center tw-bg-white tw-rounded-full tw-text-sc-blue tw-text-sm tw-leading-4">
+                            {{ global_index }}
+                          </div>
+                        </div>
+                      {% endfor %}
+                    </div>
+                  </div>
+                {% endfor %}
+
+              {% else %}
+                {% for block in blocks %}
+                  <div class="swiper-slide">
+                    <div class="tw-flex tw-flex-col tw-gap-3.5">
+                      {% for i in (1..3) %}
+                        {% capture icon_key %}icon_{{- i -}}{% endcapture %}
+                        {% capture heading_key %}heading_{{- i -}}{% endcapture %}
+                        {% capture text_key %}text_{{- i -}}{% endcapture %}
+
+                        {% liquid
+                          assign icon = block.settings[icon_key]
+                          assign heading = block.settings[heading_key]
+                          assign text = block.settings[text_key]
+                          assign global_index = global_index | plus: 1
+
+                          if global_index < 10
+                            assign global_index = global_index | prepend: '0'
+                          endif
+                        %}
+
+                        <div class="tw-relative tw-flex tw-flex-col tw-justify-center tw-items-center tw-rounded-2xl tw-bg-sc-ice-blue tw-py-5 tw-px-[22px]">
+                          <div class="tw-flex tw-justify-cente tw-items-center tw-mx-auto tw-w-[62px]">
+                            {% if icon != blank %}
+                              {{-
+                                icon
+                                | image_url: width: icon.width
+                                | image_tag:
+                                  loading: 'lazy',
+                                  sizes: 'min(100vw, 100px)',
+                                  widths: '100',
+                                  alt: heading,
+                                  class: 'tw-aspect-square tw-mb-3.75'
+                              -}}
+                            {% endif %}
+                          </div>
+
+                          <div class="tw-space-y-1.5">
+                            {% if heading != blank %}
+                              <h6 class="tw-text-center tw-text-sc-blue tw-text-[17px] tw-leading-[100%]">
+                                {{ heading }}
+                              </h6>
+                            {% endif %}
+                            {% if text != blank %}
+                              <h6 class="tw-text-center tw-text-sc-blue tw-text-sm tw-leading-[22px]">{{ text }}</h6>
+                            {% endif %}
+                          </div>
+
+                          <div class="tw-font-primary tw-absolute tw-top-5 tw-right-5 tw-aspect-square tw-size-8 tw-flex tw-justify-center tw-items-center tw-bg-white tw-rounded-full tw-text-sc-blue tw-text-sm tw-leading-4">
+                            {{ global_index }}
+                          </div>
+                        </div>
+                      {% endfor %}
+                    </div>
+                  </div>
+                {% endfor %}
+              {% endif %}
+            </div>
+          </div>
+
+          <div class="tw-flex tw-gap-[13px] tw-mt-6 justify-center">
+            <div class="tw-flex tw-size-9 tw-rounded-full tw-border tw-border-solid tw-border-white tw-text-white slider-button-prev-{{ section.id }}">
+              {% render 'icon-42', name: 'swiper-btn', class: 'tw-rotate-180' %}
+            </div>
+            <div class="tw-flex tw-size-9 tw-rounded-full tw-border tw-border-solid tw-border-white tw-text-white slider-button-next-{{ section.id }}">
+              {% render 'icon-42', name: 'swiper-btn' %}
+            </div>
+          </div>
+        </div>
+
+        {% if btn_url != blank and btn_text != blank %}
+          <a
+            href="{{ btn_url }}"
+            class="btn-42 btn-42--third tw-mt-6 !tw-px-[72.5px] !tw-w-fit !tw-mx-auto"
+          >
+            {{- btn_text }}
+            {% render 'icon-42', name: 'btn-arrow' -%}
+          </a>
+        {% endif %}
+      </div>
+
+      {% comment %} Desktop {% endcomment %}
+      <div class="tw-hidden tw-relative lg:tw-grid tw-grid-cols-3 tw-items-center">
+        {% assign global_index_desk = 0 %}
+        {% assign first_block = blocks | first %}
+        {% assign second_block = blocks | last %}
+
+        {% if metaobject_content != blank %}
+          <div class="tw-row-start-1 tw-relative tw-z-5 tw-flex tw-flex-col tw-gap-10">
+            {% for item in metaobject_content['benefits_group_1'] %}
+              {% liquid
+                assign icon = item.icon.value
+                assign heading = item.text.value
+                assign text = item.description.value
+                assign global_index_desk = global_index_desk | plus: 1
+
+                if global_index_desk < 10
+                  assign global_index_desk = global_index_desk | prepend: '0'
+                endif
+              %}
+
+              <div class="tw-relative tw-flex tw-justify-center tw-items-center tw-gap-2 tw-rounded-2xl tw-bg-sc-ice-blue tw-p-5">
+                <div class="tw-flex tw-justify-cente tw-items-center tw-w-[71px] tw-flex-shrink-0 tw-right-3.5">
+                  {% if icon != blank %}
+                    {{-
+                      icon
+                      | image_url: width: icon.width
+                      | image_tag:
+                        loading: 'lazy',
+                        sizes: 'min(100vw, 100px)',
+                        widths: '100',
+                        alt: heading,
+                        class: 'tw-aspect-square tw-mb-3.75'
+                    -}}
+                  {% endif %}
+                </div>
+
+                <div class="tw-space-y-1.5">
+                  {% if heading != blank %}
+                    <h6 class="tw-text-sc-blue tw-text-[17px] tw-leading-[100%]">
+                      {{ heading }}
+                    </h6>
+                  {% endif %}
+                  {% if text != blank %}
+                    <h6 class="tw-text-sc-blue tw-text-sm tw-leading-[22px]">{{ text }}</h6>
+                  {% endif %}
+                </div>
+
+                <div class="tw-font-primary tw-aspect-square tw-size-8 tw-flex tw-justify-center tw-items-center tw-bg-white tw-rounded-full tw-text-sc-blue tw-text-sm tw-leading-4 tw-self-start">
+                  {{ global_index_desk }}
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        {% else %}
+          <div class="tw-row-start-1 tw-relative tw-z-5 tw-flex tw-flex-col tw-gap-10">
+            {% for i in (1..3) %}
+              {% capture icon_key %}icon_{{- i -}}{% endcapture %}
+              {% capture heading_key %}heading_{{- i -}}{% endcapture %}
+              {% capture text_key %}text_{{- i -}}{% endcapture %}
+
+              {% liquid
+                assign icon = first_block.settings[icon_key]
+                assign heading = first_block.settings[heading_key]
+                assign text = first_block.settings[text_key]
+                assign global_index_desk = global_index_desk | plus: 1
+
+                if global_index_desk < 10
+                  assign global_index_desk = global_index_desk | prepend: '0'
+                endif
+              %}
+
+              <div class="tw-relative tw-flex tw-justify-center tw-items-center tw-gap-2 tw-rounded-2xl tw-bg-sc-ice-blue tw-p-5">
+                <div class="tw-flex tw-justify-cente tw-items-center tw-w-[71px] tw-flex-shrink-0 tw-right-3.5">
+                  {% if icon != blank %}
+                    {{-
+                      icon
+                      | image_url: width: icon.width
+                      | image_tag:
+                        loading: 'lazy',
+                        sizes: 'min(100vw, 100px)',
+                        widths: '100',
+                        alt: heading,
+                        class: 'tw-aspect-square tw-mb-3.75'
+                    -}}
+                  {% endif %}
+                </div>
+
+                <div class="tw-space-y-1.5">
+                  {% if heading != blank %}
+                    <h6 class="tw-text-sc-blue tw-text-[17px] tw-leading-[100%]">
+                      {{ heading }}
+                    </h6>
+                  {% endif %}
+                  {% if text != blank %}
+                    <h6 class="tw-text-sc-blue tw-text-sm tw-leading-[22px]">{{ text }}</h6>
+                  {% endif %}
+                </div>
+
+                <div class="tw-font-primary tw-aspect-square tw-size-8 tw-flex tw-justify-center tw-items-center tw-bg-white tw-rounded-full tw-text-sc-blue tw-text-sm tw-leading-4 tw-self-start">
+                  {{ global_index_desk }}
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        {% endif %}
+
+        <div class="tw-row-start-1 tw-relative tw-z-5">
+          {% if title != blank %}
+            <h2 class="tw-text-white tw-text-center tw-text-[40px] tw-leading-none tw-px-5">
+              {{ title }}
+            </h2>
+          {% endif %}
+
+          {% if btn_url != blank and btn_text != blank %}
+            <a
+              href="{{ btn_url }}"
+              class="btn-42 btn-42--third tw-mt-8 !tw-px-[22px] !tw-h-12 !tw-w-fit !tw-mx-auto"
+            >
+              {{- btn_text }}
+              {% render 'icon-42', name: 'btn-arrow' -%}
+            </a>
+          {% endif %}
+        </div>
+
+        {% if metaobject_content != blank %}
+          <div class="tw-row-start-1 tw-relative tw-z-5 tw-flex tw-flex-col tw-gap-10">
+            {% for item in metaobject_content['benefits_group_2'] %}
+              {% liquid
+                assign icon = item.icon.value
+                assign heading = item.text.value
+                assign text = item.description.value
+                assign global_index_desk = global_index_desk | plus: 1
+
+                if global_index_desk < 10
+                  assign global_index_desk = global_index_desk | prepend: '0'
+                endif
+              %}
+
+              <div class="tw-relative tw-flex tw-justify-center tw-items-center tw-gap-2 tw-rounded-2xl tw-bg-sc-ice-blue tw-p-5">
+                <div class="tw-flex tw-justify-cente tw-items-center tw-w-[71px] tw-flex-shrink-0 tw-right-3.5">
+                  {% if icon != blank %}
+                    {{-
+                      icon
+                      | image_url: width: icon.width
+                      | image_tag:
+                        loading: 'lazy',
+                        sizes: 'min(100vw, 100px)',
+                        widths: '100',
+                        alt: heading,
+                        class: 'tw-aspect-square tw-mb-3.75'
+                    -}}
+                  {% endif %}
+                </div>
+
+                <div class="tw-space-y-1.5">
+                  {% if heading != blank %}
+                    <h6 class="tw-text-sc-blue tw-text-[17px] tw-leading-[100%]">
+                      {{ heading }}
+                    </h6>
+                  {% endif %}
+                  {% if text != blank %}
+                    <h6 class="tw-text-sc-blue tw-text-sm tw-leading-[22px]">{{ text }}</h6>
+                  {% endif %}
+                </div>
+
+                <div class="tw-font-primary tw-aspect-square tw-size-8 tw-flex tw-justify-center tw-items-center tw-bg-white tw-rounded-full tw-text-sc-blue tw-text-sm tw-leading-4 tw-self-start">
+                  {{ global_index_desk }}
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        {% else %}
+          <div class="tw-row-start-1 tw-relative tw-z-5 tw-flex tw-flex-col tw-gap-10">
+            {% for i in (1..3) %}
+              {% capture icon_key %}icon_{{- i -}}{% endcapture %}
+              {% capture heading_key %}heading_{{- i -}}{% endcapture %}
+              {% capture text_key %}text_{{- i -}}{% endcapture %}
+
+              {% liquid
+                assign icon = second_block.settings[icon_key]
+                assign heading = second_block.settings[heading_key]
+                assign text = second_block.settings[text_key]
+                assign global_index_desk = global_index_desk | plus: 1
+
+                if global_index_desk < 10
+                  assign global_index_desk = global_index_desk | prepend: '0'
+                endif
+              %}
+
+              <div class="tw-relative tw-flex tw-justify-center tw-items-center tw-gap-2 tw-rounded-2xl tw-bg-sc-ice-blue tw-p-5">
+                <div class="tw-flex tw-justify-cente tw-items-center tw-w-[71px] tw-flex-shrink-0 tw-right-3.5">
+                  {% if icon != blank %}
+                    {{-
+                      icon
+                      | image_url: width: icon.width
+                      | image_tag:
+                        loading: 'lazy',
+                        sizes: 'min(100vw, 100px)',
+                        widths: '100',
+                        alt: heading,
+                        class: 'tw-aspect-square tw-mb-3.75'
+                    -}}
+                  {% endif %}
+                </div>
+
+                <div class="tw-space-y-1.5">
+                  {% if heading != blank %}
+                    <h6 class="tw-text-sc-blue tw-text-[17px] tw-leading-[100%]">
+                      {{ heading }}
+                    </h6>
+                  {% endif %}
+                  {% if text != blank %}
+                    <h6 class="tw-text-sc-blue tw-text-sm tw-leading-[22px]">{{ text }}</h6>
+                  {% endif %}
+                </div>
+
+                <div class="tw-font-primary tw-aspect-square tw-size-8 tw-flex tw-justify-center tw-items-center tw-bg-white tw-rounded-full tw-text-sc-blue tw-text-sm tw-leading-4 tw-self-start">
+                  {{ global_index_desk }}
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        {% endif %}
+
+        {% comment %} Decor {% endcomment %}
+        <div class="tw-block tw-absolute tw-left-1/2 -tw-translate-x-1/2 tw-z-1">
+          <svg width="564" height="564" viewBox="0 0 564 564" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="282" cy="282" r="208.624" stroke="white" stroke-opacity="0.4"/>
+            <circle cx="282" cy="282" r="242.421" stroke="white" stroke-opacity="0.2"/>
+            <circle cx="282" cy="282" r="281.5" stroke="white" stroke-opacity="0.1"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "42 Benefits",
+  "tag": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "anchor_id",
+      "label": "Anchor id",
+      "default": "section-name"
+    },
+    {
+      "type": "metaobject_list",
+      "id": "metaobject_content",
+      "metaobject_type": "benefits_group",
+      "label": "Metaobject",
+      "info": "If you use metaobjects, the section title and section text are taken from the metaobject"
+    },
+    {
+      "type": "checkbox",
+      "id": "rounded_top",
+      "label": "Rounded top?",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "rounded_bottom",
+      "label": "Rounded bottom?",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Scientifically backed benefits"
+    },
+    {
+      "type": "text",
+      "id": "btn_text",
+      "label": "Button text",
+      "default": "Read more"
+    },
+    {
+      "type": "url",
+      "id": "btn_url",
+      "label": "Button url"
+    },
+    {
+      "type": "header",
+      "content": "Padding Y settings"
+    },
+    {
+      "type": "number",
+      "id": "pt_mob",
+      "label": "Mobile padding top in px",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "pb_mob",
+      "label": "Mobile padding bottom in px",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "pt_tab",
+      "label": "Tablet padding top in px",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "pb_tab",
+      "label": "Tablet padding bottom in px",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "pt_desk",
+      "label": "Desktop padding top in px",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "pb_desk",
+      "label": "Desktop padding bottom in px",
+      "default": 0
+    }
+  ],
+  "blocks": [
+    {
+      "type": "block",
+      "name": "Block",
+      "limit": 2,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon_1",
+          "label": "Icon #1"
+        },
+        {
+          "type": "text",
+          "id": "heading_1",
+          "label": "Heading #1"
+        },
+        {
+          "type": "textarea",
+          "id": "text_1",
+          "label": "Text #1"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon_2",
+          "label": "Icon #2"
+        },
+        {
+          "type": "text",
+          "id": "heading_2",
+          "label": "Heading #2"
+        },
+        {
+          "type": "textarea",
+          "id": "text_2",
+          "label": "Text #2"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon_3",
+          "label": "Icon #3"
+        },
+        {
+          "type": "text",
+          "id": "heading_3",
+          "label": "Heading #3"
+        },
+        {
+          "type": "textarea",
+          "id": "text_3",
+          "label": "Text #3"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "42 Benefits"
+    }
+  ]
+}
+{% endschema %}

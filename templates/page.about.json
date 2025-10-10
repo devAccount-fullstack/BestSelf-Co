@@ -1,0 +1,421 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "section_hero_PhpLbb": {
+      "type": "section-hero",
+      "blocks": {
+        "heading_MnViQE": {
+          "type": "heading",
+          "settings": {
+            "title": "Your Best Self Starts Here"
+          }
+        },
+        "text_MCK38J": {
+          "type": "text",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "heading_MnViQE",
+        "text_MCK38J"
+      ],
+      "settings": {
+        "image_1": "shopify://shop_images/BestSelf_BestSellers-7.jpg",
+        "link": "",
+        "width": "wrapper--full",
+        "height": "screen-height-one-half",
+        "flex_align_desktop": "align--middle-center-desktop",
+        "mobile_height": "image-height--mobile",
+        "flex_align_mobile": "align--middle-center-mobile",
+        "overlay_opacity": 55,
+        "show_overlay_text": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "show_placeholder": true
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "subheading": "",
+        "show_title": true,
+        "show_content": true,
+        "align_text": "text-left",
+        "width": "wrapper",
+        "padding_top": 50,
+        "padding_bottom": 50
+      }
+    },
+    "section_double_ibmcpy": {
+      "type": "section-double",
+      "blocks": {
+        "subheading_gzEMTy": {
+          "type": "subheading",
+          "disabled": true,
+          "settings": {
+            "subheading": "Introducing",
+            "padding_bottom": 16
+          }
+        },
+        "heading_Wafz7U": {
+          "type": "heading",
+          "settings": {
+            "title": "Our Why",
+            "padding_bottom": 16
+          }
+        },
+        "text_NmJDVG": {
+          "type": "text",
+          "settings": {
+            "text": "<p>We’ve all been there—feeling stuck, overwhelmed, or unsure where to start.</p><p>At BestSelf, we know that the journey to your best self isn’t always about big, life-changing moments. Often, it’s about the small, consistent actions that bring clarity, connection, and confidence.</p><p>We believe that everyone has the potential to grow into the best version of themselves—whatever that looks like for them. Our mission is to create tools that inspire and support you along the way.</p>",
+            "padding_bottom": 16
+          }
+        }
+      },
+      "block_order": [
+        "subheading_gzEMTy",
+        "heading_Wafz7U",
+        "text_NmJDVG"
+      ],
+      "settings": {
+        "image_1": "shopify://shop_images/About.jpg",
+        "image_width": "one-half",
+        "text_alignment": "text-left",
+        "layout": "",
+        "width": "wrapper",
+        "height": "image-height",
+        "mobile_height": "image-height--mobile",
+        "reverse_blocks": false,
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "show_placeholder": true
+      }
+    },
+    "section_double_Kn6cYC": {
+      "type": "section-double",
+      "blocks": {
+        "subheading_bwgPzq": {
+          "type": "subheading",
+          "disabled": true,
+          "settings": {
+            "subheading": "Introducing",
+            "padding_bottom": 16
+          }
+        },
+        "heading_3NKXze": {
+          "type": "heading",
+          "settings": {
+            "title": "Our Story",
+            "padding_bottom": 16
+          }
+        },
+        "text_Dt9qQt": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Hi, I’m Cathryn Lavery, founder of BestSelf.</p><p>Growing up, life often felt like a constant uphill battle—juggling tasks, losing focus, and always feeling behind. I craved clarity and control but didn’t know where to start.</p><p>That’s when I discovered personal development. By building small, intentional habits, I began to reshape my days and align with what truly mattered. Out of that journey, I created the Self Journal—a simple framework to help me stay focused and purposeful.</p><p>When we launched in 2015, I never imagined how many people would resonate with it. The Self Journal quickly became a lifeline for thousands, empowering them to reclaim their time, achieve goals, and live with intention.</p><p>But life isn’t just about productivity. Over the years, I’ve learned the value of connection, balance, and reflection—especially as I navigated ADHD, became a mom, and embraced new chapters of my life. These experiences have shaped how BestSelf has evolved, supporting not just what you do, but who you want to become.</p><p>Today, BestSelf is about more than achieving goals. It’s about helping you create a life that feels meaningful and connected—one intentional step at a time.</p><p></p>",
+            "padding_bottom": 16
+          }
+        }
+      },
+      "block_order": [
+        "subheading_bwgPzq",
+        "heading_3NKXze",
+        "text_Dt9qQt"
+      ],
+      "settings": {
+        "image_1": "shopify://shop_images/collage.png",
+        "image_width": "one-half",
+        "text_alignment": "text-left",
+        "layout": "is-reversed",
+        "width": "wrapper",
+        "height": "image-height",
+        "mobile_height": "image-height--mobile",
+        "reverse_blocks": false,
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "show_placeholder": true
+      }
+    },
+    "section_text_row_k8iHwb": {
+      "type": "section-text-row",
+      "blocks": {
+        "icon_fGibdx": {
+          "type": "icon",
+          "settings": {
+            "icon_name": "icon-shield",
+            "icon_size": 20,
+            "icon_color": "#545454",
+            "title": "Secure transactions",
+            "text": "<p>Transactions are handled with bank-grade security.</p>"
+          }
+        },
+        "icon_NjHg9g": {
+          "type": "icon",
+          "settings": {
+            "icon_name": "icon-trophy",
+            "icon_size": 20,
+            "icon_color": "#545454",
+            "title": "Simple checkout",
+            "text": "<p>Our secure checkout is quick and easy to use.</p>"
+          }
+        },
+        "icon_GfdYLa": {
+          "type": "icon",
+          "settings": {
+            "icon_name": "icon-chat",
+            "icon_size": 20,
+            "icon_color": "#545454",
+            "title": "Get in touch",
+            "text": "<p>Have questions? Get in touch with us at any time.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "icon_fGibdx",
+        "icon_NjHg9g",
+        "icon_GfdYLa"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "",
+        "align_heading": "text-center",
+        "align_text": "text-center",
+        "icon_alignment": "icon--top",
+        "width": "wrapper--full-padded",
+        "align_columns": "flex-align-top",
+        "layout": "grid",
+        "grid": 3,
+        "layout_mobile": "slider",
+        "padding_top": 50,
+        "padding_bottom": 50
+      }
+    },
+    "section_rich_text_TzPYpd": {
+      "type": "section-rich-text",
+      "blocks": {
+        "subheading_NFtfjd": {
+          "type": "subheading",
+          "disabled": true,
+          "settings": {
+            "subheading": "Introducing",
+            "padding_bottom": 16
+          }
+        },
+        "heading_PP44YE": {
+          "type": "heading",
+          "settings": {
+            "title": "Tools to Support Your Journey",
+            "padding_bottom": 16
+          }
+        },
+        "text_kLmmYk": {
+          "type": "text",
+          "settings": {
+            "text": "<p>We’re not here to tell you what your best self looks like. Only you can decide that.</p><p>But whatever your journey, we’ve got the tools to support you:</p>",
+            "padding_bottom": 16
+          }
+        }
+      },
+      "block_order": [
+        "subheading_NFtfjd",
+        "heading_PP44YE",
+        "text_kLmmYk"
+      ],
+      "settings": {
+        "align_text": "text-center",
+        "width": "wrapper",
+        "overlay_opacity": 0,
+        "show_overlay_text": false,
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    },
+    "columns": {
+      "type": "section-columns",
+      "blocks": {
+        "image-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/kid-reading-little-hero_s-journal.jpg",
+            "image_shape": "normal",
+            "title": "Add a title or tagline",
+            "text": "<p>Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.</p>",
+            "button_text": "",
+            "button_url": "",
+            "button_type": "btn--primary hero__btn",
+            "button_size": "",
+            "button_style": "btn--solid",
+            "show_arrow": false,
+            "image_aspect_ratio": 1,
+            "mobile_image_aspect_ratio": 1
+          }
+        }
+      },
+      "block_order": [
+        "image-1"
+      ],
+      "settings": {
+        "title": "",
+        "align_heading": "text-left",
+        "align_text": "text-center",
+        "width": "wrapper--full-padded",
+        "align_columns": "flex-align-top",
+        "layout": "grid",
+        "grid": 3,
+        "layout_mobile": "slider",
+        "padding_top": 0,
+        "padding_bottom": 50
+      }
+    },
+    "double-2": {
+      "type": "section-double",
+      "blocks": {
+        "heading-2-1": {
+          "type": "heading",
+          "settings": {
+            "title": "Image with text",
+            "padding_bottom": 16
+          }
+        },
+        "text-2-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
+            "padding_bottom": 16
+          }
+        }
+      },
+      "block_order": [
+        "heading-2-1",
+        "text-2-1"
+      ],
+      "settings": {
+        "image_width": "one-half",
+        "text_alignment": "text-left",
+        "layout": "",
+        "width": "wrapper--full",
+        "height": "sixty-fifty-height-hero",
+        "mobile_height": "four-fifty-height-hero--mobile",
+        "reverse_blocks": false,
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "show_placeholder": true
+      }
+    },
+    "announcement": {
+      "type": "section-announcement",
+      "blocks": {
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>Make an announcement</strong> | More info</p>",
+            "color": "",
+            "target_device_enabled": false,
+            "target_device": "mobile"
+          }
+        }
+      },
+      "block_order": [
+        "text"
+      ],
+      "settings": {
+        "slider_speed": 7,
+        "text_alignment": "center",
+        "marquee_speed": 100,
+        "direction": "ticker-rtl",
+        "message_spacing": 10,
+        "show_border": false,
+        "layout": "marquee",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "collections-list": {
+      "type": "section-collections-list",
+      "blocks": {
+        "collection-1": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "title": ""
+          }
+        },
+        "collection-2": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "title": ""
+          }
+        },
+        "collection-3": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "title": ""
+          }
+        },
+        "collection-4": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "title": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection-1",
+        "collection-2",
+        "collection-3",
+        "collection-4"
+      ],
+      "settings": {
+        "title": "",
+        "description": "",
+        "button_text": "",
+        "button_url": "shopify://collections",
+        "button_type": "btn--primary",
+        "button_size": "",
+        "button_style": "btn--solid",
+        "show_arrow": false,
+        "aspect_ratio": 1.2,
+        "layout": "grid",
+        "grid": 4,
+        "layout_mobile": "slider",
+        "padding_top": 50,
+        "padding_bottom": 32
+      }
+    },
+    "press-logos": {
+      "type": "section-press-logos",
+      "settings": {
+        "enable_heading_slider": false,
+        "logo_opacity": 60,
+        "title": "As seen in",
+        "padding_top": 50,
+        "padding_bottom": 50
+      }
+    }
+  },
+  "order": [
+    "section_hero_PhpLbb",
+    "main",
+    "section_double_ibmcpy",
+    "section_double_Kn6cYC",
+    "section_text_row_k8iHwb",
+    "section_rich_text_TzPYpd",
+    "columns",
+    "double-2",
+    "announcement",
+    "collections-list",
+    "press-logos"
+  ]
+}

@@ -1,0 +1,12 @@
+{% comment %}
+  PARAMS:
+    product => OBJECT
+{% endcomment %}
+
+<script type="application/json">
+  {
+    "product":  {{ product | json }},
+    "productOptions": {{ product.options_with_values | json }},
+    "selectedVariant": {% if product.selected_or_first_available_variant %}{{ product.selected_or_first_available_variant | json }}{% else %}{{ product.variants[0] | json }}{% endif %}
+  }
+</script>

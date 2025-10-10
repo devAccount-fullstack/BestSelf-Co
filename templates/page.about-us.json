@@ -1,0 +1,607 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "section_hero_gwXHQc": {
+      "type": "section-hero",
+      "blocks": {
+        "heading_9HKk9k": {
+          "type": "heading",
+          "settings": {
+            "title": "The Story Behind The Brand",
+            "heading_font_size": "heading-large",
+            "heading_tag": "automatic"
+          }
+        }
+      },
+      "block_order": [
+        "heading_9HKk9k"
+      ],
+      "settings": {
+        "image_1": "shopify://shop_images/56.jpg",
+        "link": "",
+        "width": "wrapper--full",
+        "height": "four-fifty-height-hero",
+        "flex_align_desktop": "align--middle-center-desktop",
+        "content_width": 50,
+        "mobile_height": "screen-height-three-quarters--mobile",
+        "flex_align_mobile": "align--middle-center-mobile",
+        "color_scheme": "scheme-10",
+        "show_text_background": false,
+        "overlay_opacity": 55,
+        "show_overlay_text": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "show_placeholder": true
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "subheading": "",
+        "show_title": true,
+        "heading_font_size": "heading-large",
+        "show_content": true,
+        "text_font_size": "body-medium",
+        "align_text": "text-left",
+        "width": "wrapper",
+        "color_scheme": "",
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "heading_tag": "automatic"
+      }
+    },
+    "section_rich_text_EN7JBU": {
+      "type": "section-rich-text",
+      "blocks": {
+        "image_qFCWEk": {
+          "type": "image",
+          "settings": {
+            "image_width": 20,
+            "padding_bottom": 16
+          }
+        },
+        "subheading_9eCgff": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "Introducing",
+            "padding_bottom": 16
+          }
+        },
+        "heading_rNzKVL": {
+          "type": "heading",
+          "settings": {
+            "title": "Rich text",
+            "heading_font_size": "heading-large",
+            "padding_bottom": 16,
+            "heading_tag": "automatic"
+          }
+        },
+        "text_PGCGp7": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
+            "text_font_size": "body-medium",
+            "padding_bottom": 16
+          }
+        },
+        "buttons_N3gdnK": {
+          "type": "buttons",
+          "settings": {
+            "button_text": "Learn more",
+            "button_url": "",
+            "button_type": "btn--primary",
+            "button_size": "",
+            "button_style": "btn--solid",
+            "show_arrow": false,
+            "padding_bottom": 16
+          }
+        }
+      },
+      "block_order": [
+        "image_qFCWEk",
+        "subheading_9eCgff",
+        "heading_rNzKVL",
+        "text_PGCGp7",
+        "buttons_N3gdnK"
+      ],
+      "disabled": true,
+      "settings": {
+        "align_text": "text-left",
+        "width": "wrapper",
+        "color_scheme": "",
+        "overlay_opacity": 0,
+        "show_overlay_text": false,
+        "padding_top": 100,
+        "padding_bottom": 100
+      }
+    },
+    "section_custom_content_fiRVtL": {
+      "type": "section-custom-content",
+      "blocks": {
+        "image_k7mjwD": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Cathryn-21.jpg",
+            "title": "",
+            "heading_font_size": "heading-large",
+            "text": "",
+            "text_font_size": "body-medium",
+            "flex_align": "align--middle-center",
+            "show_text_background": false,
+            "bg_color": "",
+            "color": "#ffffff",
+            "overlay_opacity": 0,
+            "overlay_color": "#000000",
+            "show_overlay_text": false,
+            "link_text": "",
+            "link": "",
+            "button_type": "btn--primary",
+            "button_size": "",
+            "button_style": "btn--solid",
+            "show_arrow": false,
+            "heading_tag": "automatic"
+          }
+        },
+        "text_UDweQ4": {
+          "type": "text",
+          "settings": {
+            "subheading": "",
+            "title": "Our Story",
+            "heading_font_size": "heading-large",
+            "text": "<p>Like so many of our customers, our founder Cathryn Lavery knows what it feels like to struggle with the chaos of life. Growing up with undiagnosed ADHD, she constantly felt out of sync—watching others seemingly glide through life while she struggled to stay focused and organized.<br/>Everything changed in her 20s when she discovered the power of intentional habits and structure. It wasn’t just about getting organized—it was about reclaiming her confidence and building a life of purpose.<br/>What began as Cathryn’s personal solution—the Self Journal—has now become a movement of intentional living.</p><ul><li><strong> 1.3 million Self Journals sold </strong>across <strong>72 countries.</strong></li><li><strong>500,000+ community members</strong> using our tools for transformation.</li><li><strong>Millions of hours saved</strong> and <strong>countless goals achieved</strong> by our customers.</li></ul><p>Today, every product we create reflects this core belief: with the right tools, anyone can design a life they love.</p>",
+            "text_font_size": "body-medium",
+            "button_text": "",
+            "button_url": "",
+            "button_type": "btn--secondary",
+            "button_size": "btn--small",
+            "button_style": "btn--text",
+            "show_arrow": true,
+            "show_social_links": false,
+            "text_columns": 1,
+            "align_text": "text-left",
+            "bg_color": "",
+            "color": "",
+            "heading_tag": "automatic"
+          }
+        }
+      },
+      "block_order": [
+        "image_k7mjwD",
+        "text_UDweQ4"
+      ],
+      "settings": {
+        "borders": false,
+        "gutters": false,
+        "width": "wrapper",
+        "height": "screen-height-one-half",
+        "mobile_height": "four-fifty-height-hero--mobile",
+        "reverse_blocks": false,
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "section_rich_text_t4nP9X": {
+      "type": "section-rich-text",
+      "blocks": {
+        "subheading_f4JbxP": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "WHY WE DO THIS",
+            "padding_bottom": 16
+          }
+        },
+        "heading_AkDm4C": {
+          "type": "heading",
+          "settings": {
+            "title": "Crafting your best self with thoughtful tools",
+            "heading_font_size": "heading-large",
+            "padding_bottom": 16,
+            "heading_tag": "automatic"
+          }
+        },
+        "text_xwi7PT": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
+            "text_font_size": "body-medium",
+            "padding_bottom": 16
+          }
+        },
+        "buttons_EUdXUF": {
+          "type": "buttons",
+          "settings": {
+            "button_text": "Learn more",
+            "button_url": "",
+            "button_type": "btn--primary",
+            "button_size": "",
+            "button_style": "btn--solid",
+            "show_arrow": false,
+            "padding_bottom": 16
+          }
+        }
+      },
+      "block_order": [
+        "subheading_f4JbxP",
+        "heading_AkDm4C",
+        "text_xwi7PT",
+        "buttons_EUdXUF"
+      ],
+      "disabled": true,
+      "settings": {
+        "align_text": "text-left",
+        "width": "wrapper",
+        "color_scheme": "",
+        "overlay_opacity": 0,
+        "show_overlay_text": false,
+        "padding_top": 100,
+        "padding_bottom": 100
+      }
+    },
+    "section_double_PbyH3V": {
+      "type": "section-double",
+      "blocks": {
+        "subheading_XzaQpU": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "",
+            "padding_bottom": 16
+          }
+        },
+        "heading_hxCJNY": {
+          "type": "heading",
+          "settings": {
+            "title": "Why We Exist",
+            "heading_font_size": "heading-large",
+            "padding_bottom": 16,
+            "heading_tag": "automatic"
+          }
+        },
+        "text_pnkYRg": {
+          "type": "text",
+          "settings": {
+            "text": "<p>What if showing up just a little better every day could change the world?<br/>It might sound small—starting your day with a clear plan, having one meaningful conversation, or taking a single step toward a goal. But those small actions don’t just stay small. They add up. They compound. And, like ripples in a pond, they create a force that spreads far beyond you.</p><p><br/>Imagine what would happen if millions of people across the globe woke up each day more intentional, focused, and present. Relationships would strengthen. Communities would grow. Goals would be achieved. The world itself would shift.<br/>At BestSelf, we believe that kind of transformation starts with you.</p><p><br/>We design tools to turn life’s chaos into clarity and small actions into extraordinary results. Whether you’re looking to master your time, deepen your connections, or accomplish ambitious goals, we’re here to empower you to thrive—not just survive.</p><p><br/>The next five years of your story are waiting to be written. We’re here to help you write them—one intentional day at a time.<br/></p>",
+            "text_font_size": "body-medium",
+            "padding_bottom": 16
+          }
+        }
+      },
+      "block_order": [
+        "subheading_XzaQpU",
+        "heading_hxCJNY",
+        "text_pnkYRg"
+      ],
+      "settings": {
+        "image_1": "shopify://shop_images/BestSelf1198_-_Medium_76e2e345-6acd-45ba-951e-494131371c91.jpg",
+        "image_width": "one-half",
+        "text_alignment": "text-left",
+        "layout": "is-reversed",
+        "width": "wrapper--full",
+        "height": "image-height",
+        "mobile_height": "four-fifty-height-hero--mobile",
+        "reverse_blocks": false,
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "show_placeholder": true
+      }
+    },
+    "section_custom_content_HppMea": {
+      "type": "section-custom-content",
+      "blocks": {
+        "image_kXCch6": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Self_Journal_2022_-_Woman_Writing_on_Her_Journal_1.jpg",
+            "title": "",
+            "heading_font_size": "heading-large",
+            "text": "",
+            "text_font_size": "body-medium",
+            "flex_align": "align--middle-center",
+            "show_text_background": false,
+            "bg_color": "",
+            "color": "#ffffff",
+            "overlay_opacity": 0,
+            "overlay_color": "#000000",
+            "show_overlay_text": false,
+            "link_text": "",
+            "link": "",
+            "button_type": "btn--primary",
+            "button_size": "",
+            "button_style": "btn--solid",
+            "show_arrow": false,
+            "heading_tag": "automatic"
+          }
+        },
+        "text_3X4eLQ": {
+          "type": "text",
+          "settings": {
+            "subheading": "",
+            "title": "What Makes Us Different",
+            "heading_font_size": "heading-large",
+            "text": "<p><strong>Science-Backed Simplicity </strong>We transform proven psychology, behavioral science and productivity principles into practical, beautiful tools you'll love to use daily.</p><p><br/><strong>Impact-Driven Design</strong> Our products aren't just beautiful—they're engineered for transformation. Every detail serves a purpose in your journey.</p><p><br/><strong>Owner-Operated & Customer-Focused</strong> We're not answering to shareholders—we answer to you. Every product comes from real needs in our community.<br/>.<br/></p>",
+            "text_font_size": "body-medium",
+            "button_text": "",
+            "button_url": "",
+            "button_type": "btn--primary",
+            "button_size": "",
+            "button_style": "btn--solid",
+            "show_arrow": false,
+            "show_social_links": false,
+            "text_columns": 1,
+            "align_text": "text-left",
+            "bg_color": "",
+            "color": "",
+            "heading_tag": "automatic"
+          }
+        }
+      },
+      "block_order": [
+        "image_kXCch6",
+        "text_3X4eLQ"
+      ],
+      "settings": {
+        "borders": false,
+        "gutters": false,
+        "width": "wrapper",
+        "height": "screen-height-one-half",
+        "mobile_height": "four-fifty-height-hero--mobile",
+        "reverse_blocks": false,
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "section_double_xQE8eM": {
+      "type": "section-double",
+      "blocks": {
+        "subheading_7arKdn": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "",
+            "padding_bottom": 16
+          }
+        },
+        "heading_3fAUfG": {
+          "type": "heading",
+          "settings": {
+            "title": "Our Core Values",
+            "heading_font_size": "heading-large",
+            "padding_bottom": 16,
+            "heading_tag": "automatic"
+          }
+        },
+        "text_RtKCXm": {
+          "type": "text",
+          "settings": {
+            "text": "<ul><li><strong>Progress Over Perfection</strong><br/>We believe small wins lead to big transformations. That’s why our tools—like the <strong>13-week sprint in the Self Journal</strong>—are designed to keep you moving forward, even when life gets messy.</li></ul><p></p><ul><li><strong>Intentional Living</strong><br/>Every product we create is built to help you focus on what truly matters. From goal-setting systems to relationship tools, we’re here to help you live with purpose every day.</li></ul><p></p><ul><li><strong>Meaningful Connection</strong><br/>Life is richer when it’s shared. Tools like the Intimacy Deck and Little Talk Deck have sparked millions of heartfelt conversations, helping families, couples, and teams connect on a deeper level.</li></ul><p></p><ul><li><strong>Authenticity</strong><br/>We’re transparent about our mission, our process, and our products—because trust is the foundation of everything we build.<br/></li></ul>",
+            "text_font_size": "body-medium",
+            "padding_bottom": 16
+          }
+        }
+      },
+      "block_order": [
+        "subheading_7arKdn",
+        "heading_3fAUfG",
+        "text_RtKCXm"
+      ],
+      "settings": {
+        "image_1": "shopify://shop_images/self-journal-journal-personal-growth-206582.jpg",
+        "image_width": "one-half",
+        "text_alignment": "text-left",
+        "layout": "is-reversed",
+        "width": "wrapper--full",
+        "height": "image-height",
+        "mobile_height": "four-fifty-height-hero--mobile",
+        "reverse_blocks": false,
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "show_placeholder": true
+      }
+    },
+    "section_double_nzKHyy": {
+      "type": "section-double",
+      "blocks": {
+        "subheading_CET7Fg": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "Our Origin Story",
+            "padding_bottom": 16
+          }
+        },
+        "heading_4gbEbq": {
+          "type": "heading",
+          "settings": {
+            "title": "I thought I was building a totally different business.",
+            "heading_font_size": "heading-large",
+            "padding_bottom": 16,
+            "heading_tag": "automatic"
+          }
+        },
+        "text_A3zMeF": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>Launched in 2015 by Cathryn Lavery</strong>, BestSelf.co was born out of a desire to help people become the best versions of themselves. We are committed to creating premium analog tools that are not only backed by scientific research but are also thoughtfully designed to improve your daily life and supercharge your thinking.</p>",
+            "text_font_size": "body-medium",
+            "padding_bottom": 16
+          }
+        },
+        "text_LDdQc8": {
+          "type": "text",
+          "settings": {
+            "text": "<p>- Cathryn Lavery, Founder of BestSelf.</p>",
+            "text_font_size": "body-medium",
+            "padding_bottom": 16
+          }
+        }
+      },
+      "block_order": [
+        "subheading_CET7Fg",
+        "heading_4gbEbq",
+        "text_A3zMeF",
+        "text_LDdQc8"
+      ],
+      "disabled": true,
+      "settings": {
+        "image_1": "shopify://shop_images/Group_1171275500.png",
+        "image_width": "one-half",
+        "text_alignment": "text-left",
+        "layout": "is-reversed",
+        "width": "wrapper--full-padded",
+        "height": "image-height",
+        "mobile_height": "screen-height-one-half--mobile",
+        "reverse_blocks": false,
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "show_placeholder": true
+      }
+    },
+    "section_double_4byUPN": {
+      "type": "section-double",
+      "blocks": {
+        "subheading_iMKL4E": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "Our Brand",
+            "padding_bottom": 16
+          }
+        },
+        "heading_AcKBAT": {
+          "type": "heading",
+          "settings": {
+            "title": "We want to make things better.",
+            "heading_font_size": "heading-large",
+            "padding_bottom": 16,
+            "heading_tag": "automatic"
+          }
+        },
+        "text_gzFPn8": {
+          "type": "text",
+          "settings": {
+            "text": "<p>That’s why we create tools that set people up to succeed. We also want to set the planet up to succeed, so we partner with Nomos—a sugar cane-based paper company in Columbia, who shares our passion for sustainability.</p>",
+            "text_font_size": "body-medium",
+            "padding_bottom": 16
+          }
+        }
+      },
+      "block_order": [
+        "subheading_iMKL4E",
+        "heading_AcKBAT",
+        "text_gzFPn8"
+      ],
+      "disabled": true,
+      "settings": {
+        "image_1": "shopify://shop_images/image_15.png",
+        "image_width": "one-half",
+        "text_alignment": "text-left",
+        "layout": "",
+        "width": "wrapper--full",
+        "height": "image-height",
+        "mobile_height": "screen-height-one-half--mobile",
+        "reverse_blocks": false,
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "show_placeholder": true
+      }
+    },
+    "section_collections_list_FTMXhh": {
+      "type": "section-collections-list",
+      "blocks": {
+        "collection_c9HUfy": {
+          "type": "collection",
+          "settings": {
+            "collection": "personal-growth",
+            "collection_image": "shopify://shop_images/BestSelf_PersonalGrowth-16.jpg",
+            "title": ""
+          }
+        },
+        "collection_eh8fKH": {
+          "type": "collection",
+          "settings": {
+            "collection": "romantic-relationships",
+            "collection_image": "shopify://shop_images/Romantic_Connection_jpg.webp",
+            "title": ""
+          }
+        },
+        "collection_WxhVaP": {
+          "type": "collection",
+          "settings": {
+            "collection": "kids-family",
+            "collection_image": "shopify://shop_images/BestSelf_Family-211-Retouched.jpg",
+            "title": ""
+          }
+        },
+        "collection_qtgUD4": {
+          "type": "collection",
+          "settings": {
+            "collection": "social-connections",
+            "collection_image": "shopify://shop_images/BestSelf_SocialConnection-107_Retouched_V1.00_small_503b871b-619d-4020-9885-c84c93bb404f.jpg",
+            "title": ""
+          }
+        },
+        "collection_pJYDgq": {
+          "type": "collection",
+          "settings": {
+            "collection": "professional-growth",
+            "collection_image": "shopify://shop_images/BestSelf_ProfessionalGrowth-53.jpg",
+            "title": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_c9HUfy",
+        "collection_eh8fKH",
+        "collection_WxhVaP",
+        "collection_qtgUD4",
+        "collection_pJYDgq"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "5 Paths to Your Best Self",
+        "heading_font_size": "heading-medium",
+        "description": "",
+        "text_font_size": "body-medium",
+        "button_text": "",
+        "button_url": "shopify://collections",
+        "button_type": "btn--primary",
+        "button_size": "",
+        "button_style": "btn--solid",
+        "show_arrow": true,
+        "aspect_ratio": 1,
+        "width": "wrapper--full-padded",
+        "layout": "grid",
+        "grid": 5,
+        "layout_mobile": "slider",
+        "color_scheme": "",
+        "padding_top": 32,
+        "padding_bottom": 32,
+        "heading_tag": "automatic"
+      }
+    }
+  },
+  "order": [
+    "section_hero_gwXHQc",
+    "main",
+    "section_rich_text_EN7JBU",
+    "section_custom_content_fiRVtL",
+    "section_rich_text_t4nP9X",
+    "section_double_PbyH3V",
+    "section_custom_content_HppMea",
+    "section_double_xQE8eM",
+    "section_double_nzKHyy",
+    "section_double_4byUPN",
+    "section_collections_list_FTMXhh"
+  ]
+}

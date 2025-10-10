@@ -1,0 +1,96 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "custom.pre_footer",
+  "name": "Pre-footer 42",
+  "sections": {
+    "section_divider_JHpJwD": {
+      "type": "section-divider",
+      "disabled": true,
+      "settings": {
+        "show_line": true,
+        "width": "wrapper--full",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "section_text_row_YiwUT3": {
+      "type": "section-text-row",
+      "blocks": {
+        "icon_rjxhej": {
+          "type": "icon",
+          "settings": {
+            "icon_name": "icon-recycle",
+            "icon_size": 20,
+            "icon_color": "#242540",
+            "title": "100% Satisfaction Guarantee",
+            "heading_font_size": "heading-small",
+            "text": "<p>Enjoy peace of mind. 30-day returns.</p>",
+            "text_font_size": "body-medium",
+            "heading_tag": "automatic"
+          }
+        },
+        "icon_WyxAC6": {
+          "type": "icon",
+          "settings": {
+            "icon_name": "icon-trophy",
+            "icon_size": 20,
+            "icon_color": "#242540",
+            "title": "Science-Backed & Proven",
+            "heading_font_size": "heading-small",
+            "text": "<p>Grounded in psychology, personal growth, and relationship science.</p>",
+            "text_font_size": "body-medium",
+            "heading_tag": "automatic"
+          }
+        },
+        "icon_eQXaBB": {
+          "type": "icon",
+          "settings": {
+            "icon_name": "icon-heart",
+            "icon_size": 20,
+            "icon_color": "#242540",
+            "title": "500k+ Customers",
+            "heading_font_size": "heading-small",
+            "text": "<p>Trusted by over 500,000 people to achieve goals and strengthen relationships.</p>",
+            "text_font_size": "body-medium",
+            "heading_tag": "automatic"
+          }
+        }
+      },
+      "block_order": [
+        "icon_rjxhej",
+        "icon_WyxAC6",
+        "icon_eQXaBB"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "",
+        "heading_font_size": "heading-medium",
+        "align_heading": "text-center",
+        "align_text": "text-center",
+        "icon_alignment": "icon--top",
+        "width": "wrapper",
+        "align_columns": "flex-align-center",
+        "layout": "grid",
+        "grid": 3,
+        "layout_mobile": "1",
+        "color_scheme": "scheme-3",
+        "padding_top": 30,
+        "padding_bottom": 30,
+        "heading_tag": "automatic"
+      }
+    }
+  },
+  "order": [
+    "section_divider_JHpJwD",
+    "section_text_row_YiwUT3"
+  ]
+}

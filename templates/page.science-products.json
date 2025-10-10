@@ -1,0 +1,587 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "subheading": "",
+        "show_title": true,
+        "heading_font_size": "heading-large",
+        "show_content": true,
+        "text_font_size": "body-medium",
+        "align_text": "text-left",
+        "width": "wrapper",
+        "color_scheme": "",
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "heading_tag": "automatic"
+      }
+    },
+    "section_hero_QJLhJy": {
+      "type": "section-hero",
+      "blocks": {
+        "text_Rb8rBm": {
+          "type": "text",
+          "settings": {
+            "text": "<p>{{ page.metafields.custom.banner_subheading.value }}</p>",
+            "text_font_size": "body-large"
+          }
+        },
+        "heading_YDAKfa": {
+          "type": "heading",
+          "settings": {
+            "title": "{{ page.metafields.custom.banner_heading.value }}",
+            "heading_font_size": "heading-medium",
+            "heading_tag": "automatic"
+          }
+        }
+      },
+      "block_order": [
+        "text_Rb8rBm",
+        "heading_YDAKfa"
+      ],
+      "settings": {
+        "image_1": "{{ page.metafields.custom.banner_image.value }}",
+        "link": "",
+        "width": "wrapper--full",
+        "height": "four-fifty-height-hero",
+        "flex_align_desktop": "align--middle-center-desktop",
+        "content_width": 50,
+        "mobile_height": "four-fifty-height-hero--mobile",
+        "flex_align_mobile": "align--middle-center-mobile",
+        "color_scheme": "scheme-10",
+        "show_text_background": false,
+        "overlay_opacity": 60,
+        "show_overlay_text": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "show_placeholder": true
+      }
+    },
+    "section_rich_text_xwjDqX": {
+      "type": "section-rich-text",
+      "blocks": {
+        "heading_AcmycJ": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "title": "The Self Journal: Where Science Meets Self-Improvement",
+            "heading_font_size": "heading-large",
+            "padding_bottom": 34,
+            "heading_tag": "automatic"
+          }
+        },
+        "text_YD4wTm": {
+          "type": "text",
+          "settings": {
+            "text": "{{ page.metafields.custom.ssj_main_description | metafield_tag }}",
+            "text_font_size": "body-large",
+            "padding_bottom": 16
+          }
+        }
+      },
+      "block_order": [
+        "heading_AcmycJ",
+        "text_YD4wTm"
+      ],
+      "settings": {
+        "align_text": "text-center",
+        "width": "wrapper",
+        "color_scheme": "",
+        "overlay_opacity": 0,
+        "show_overlay_text": false,
+        "padding_top": 50,
+        "padding_bottom": 40
+      }
+    },
+    "section_rich_text_GztEEw": {
+      "type": "section-rich-text",
+      "blocks": {
+        "heading_gWxAEL": {
+          "type": "heading",
+          "settings": {
+            "title": "{{ page.metafields.custom.scj_heading.value }}",
+            "heading_font_size": "heading-medium",
+            "padding_bottom": 34,
+            "heading_tag": "automatic"
+          }
+        }
+      },
+      "block_order": [
+        "heading_gWxAEL"
+      ],
+      "settings": {
+        "align_text": "text-center",
+        "width": "wrapper",
+        "color_scheme": "",
+        "overlay_opacity": 0,
+        "show_overlay_text": false,
+        "padding_top": 40,
+        "padding_bottom": 20
+      }
+    },
+    "section_double_rYeHcf": {
+      "type": "section-double",
+      "blocks": {
+        "subheading_jUJj8M": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "THE SCIENCE BEHIND",
+            "padding_bottom": 16
+          }
+        },
+        "heading_AHni99": {
+          "type": "heading",
+          "settings": {
+            "title": "{{ page.metafields.custom.ssj_activity_1_heading.value }}",
+            "heading_font_size": "heading-large",
+            "padding_bottom": 16,
+            "heading_tag": "automatic"
+          }
+        },
+        "text_PTHi6F": {
+          "type": "text",
+          "settings": {
+            "text": "{{ page.metafields.custom.ssj_activity1_description | metafield_tag }}",
+            "text_font_size": "body-medium",
+            "padding_bottom": 16
+          }
+        },
+        "accordion_x8jYyr": {
+          "type": "accordion",
+          "settings": {
+            "title": "Links to scientific studies:",
+            "content": "{{ page.metafields.custom.ssj_activity1_accordion_answer | metafield_tag }}",
+            "show_icon": true,
+            "icon_name": "icon-lightning",
+            "icon_size": 20,
+            "icon_color": "#fbc94b",
+            "padding_bottom": 16
+          }
+        },
+        "subheading_T7XdLy": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "How It Relates",
+            "padding_bottom": 16
+          }
+        },
+        "text_PJBq4q": {
+          "type": "text",
+          "settings": {
+            "text": "<p>{{ page.metafields.custom.ssj_activity_1_description_2 | metafield_tag }}</p>",
+            "text_font_size": "body-medium",
+            "padding_bottom": 16
+          }
+        }
+      },
+      "block_order": [
+        "subheading_jUJj8M",
+        "heading_AHni99",
+        "text_PTHi6F",
+        "accordion_x8jYyr",
+        "subheading_T7XdLy",
+        "text_PJBq4q"
+      ],
+      "settings": {
+        "image_1": "{{ page.metafields.custom.ssj_activity_1_image.value }}",
+        "image_width": "one-half",
+        "text_alignment": "text-left",
+        "layout": "",
+        "width": "wrapper",
+        "height": "image-height",
+        "mobile_height": "image-height--mobile",
+        "reverse_blocks": false,
+        "color_scheme": "",
+        "padding_top": 50,
+        "padding_bottom": 20,
+        "show_placeholder": true
+      }
+    },
+    "section_double_99zzxf": {
+      "type": "section-double",
+      "blocks": {
+        "subheading_ALqeiw": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "THE SCIENCE BEHIND",
+            "padding_bottom": 16
+          }
+        },
+        "heading_MJbHBd": {
+          "type": "heading",
+          "settings": {
+            "title": "{{ page.metafields.custom.ssj_activity_2_heading.value }}",
+            "heading_font_size": "heading-large",
+            "padding_bottom": 16,
+            "heading_tag": "automatic"
+          }
+        },
+        "text_37ijtK": {
+          "type": "text",
+          "settings": {
+            "text": "{{ page.metafields.custom.ssj_activity2_description | metafield_tag }}",
+            "text_font_size": "body-medium",
+            "padding_bottom": 16
+          }
+        },
+        "accordion_MeBqEH": {
+          "type": "accordion",
+          "settings": {
+            "title": "Links to scientific studies:",
+            "content": "{{ page.metafields.custom.ssj_activity2_accordion_answer | metafield_tag }}",
+            "show_icon": true,
+            "icon_name": "icon-lightning",
+            "icon_size": 20,
+            "icon_color": "#fbc94b",
+            "padding_bottom": 16
+          }
+        },
+        "subheading_kRdDJp": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "How It Relates",
+            "padding_bottom": 16
+          }
+        },
+        "text_TJEFfx": {
+          "type": "text",
+          "settings": {
+            "text": "<p>{{ page.metafields.custom.ssj_activity_2_description_2 | metafield_tag }}</p>",
+            "text_font_size": "body-medium",
+            "padding_bottom": 16
+          }
+        }
+      },
+      "block_order": [
+        "subheading_ALqeiw",
+        "heading_MJbHBd",
+        "text_37ijtK",
+        "accordion_MeBqEH",
+        "subheading_kRdDJp",
+        "text_TJEFfx"
+      ],
+      "settings": {
+        "image_1": "{{ page.metafields.custom.ssj_activity_2_image.value }}",
+        "image_width": "one-half",
+        "text_alignment": "text-left",
+        "layout": "is-reversed",
+        "width": "wrapper",
+        "height": "image-height",
+        "mobile_height": "image-height--mobile",
+        "reverse_blocks": false,
+        "color_scheme": "",
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "show_placeholder": true
+      }
+    },
+    "section_double_NEa7Dj": {
+      "type": "section-double",
+      "blocks": {
+        "subheading_Pxw4in": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "THE SCIENCE BEHIND",
+            "padding_bottom": 16
+          }
+        },
+        "heading_tcMVCw": {
+          "type": "heading",
+          "settings": {
+            "title": "The Impact of Reflection",
+            "heading_font_size": "heading-large",
+            "padding_bottom": 16,
+            "heading_tag": "automatic"
+          }
+        },
+        "text_X97r7Q": {
+          "type": "text",
+          "settings": {
+            "text": "{{ page.metafields.custom.ssj_activity3_description | metafield_tag }}",
+            "text_font_size": "body-medium",
+            "padding_bottom": 16
+          }
+        },
+        "accordion_KVP8UR": {
+          "type": "accordion",
+          "settings": {
+            "title": "Links to scientific studies:",
+            "content": "{{ page.metafields.custom.ssj_activity3_accordion_answer | metafield_tag }}",
+            "show_icon": true,
+            "icon_name": "icon-lightning",
+            "icon_size": 20,
+            "icon_color": "#fbc94b",
+            "padding_bottom": 16
+          }
+        },
+        "subheading_An6fm6": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "How It Relates",
+            "padding_bottom": 16
+          }
+        },
+        "text_zThkpe": {
+          "type": "text",
+          "settings": {
+            "text": "<p>{{ page.metafields.custom.ssj_activity_3_description_2 | metafield_tag }}</p>",
+            "text_font_size": "body-medium",
+            "padding_bottom": 16
+          }
+        }
+      },
+      "block_order": [
+        "subheading_Pxw4in",
+        "heading_tcMVCw",
+        "text_X97r7Q",
+        "accordion_KVP8UR",
+        "subheading_An6fm6",
+        "text_zThkpe"
+      ],
+      "settings": {
+        "image_1": "{{ page.metafields.custom.ssj_activity_3_image.value }}",
+        "image_width": "one-half",
+        "text_alignment": "text-left",
+        "layout": "",
+        "width": "wrapper",
+        "height": "image-height",
+        "mobile_height": "image-height--mobile",
+        "reverse_blocks": false,
+        "color_scheme": "",
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "show_placeholder": true
+      }
+    },
+    "section_double_GqE4jr": {
+      "type": "section-double",
+      "blocks": {
+        "subheading_RGgfYF": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "THE SCIENCE BEHIND",
+            "padding_bottom": 16
+          }
+        },
+        "heading_wbjTt7": {
+          "type": "heading",
+          "settings": {
+            "title": "{{ page.metafields.custom.ssj_activity_4_heading.value }}",
+            "heading_font_size": "heading-large",
+            "padding_bottom": 16,
+            "heading_tag": "automatic"
+          }
+        },
+        "text_4Ee8xn": {
+          "type": "text",
+          "settings": {
+            "text": "{{ page.metafields.custom.ssj_activity4_description | metafield_tag }}",
+            "text_font_size": "body-medium",
+            "padding_bottom": 16
+          }
+        },
+        "accordion_QYtMeU": {
+          "type": "accordion",
+          "settings": {
+            "title": "Links to scientific studies:",
+            "content": "{{ page.metafields.custom.ssj_activity4_accordion_answer | metafield_tag }}",
+            "show_icon": true,
+            "icon_name": "icon-lightning",
+            "icon_size": 20,
+            "icon_color": "#fbc94b",
+            "padding_bottom": 16
+          }
+        },
+        "subheading_Yzkzz4": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "How It Relates",
+            "padding_bottom": 16
+          }
+        },
+        "text_neNEUQ": {
+          "type": "text",
+          "settings": {
+            "text": "<p>{{ page.metafields.custom.ssj_activity_4_description_2 | metafield_tag }}</p>",
+            "text_font_size": "body-medium",
+            "padding_bottom": 16
+          }
+        }
+      },
+      "block_order": [
+        "subheading_RGgfYF",
+        "heading_wbjTt7",
+        "text_4Ee8xn",
+        "accordion_QYtMeU",
+        "subheading_Yzkzz4",
+        "text_neNEUQ"
+      ],
+      "settings": {
+        "image_1": "{{ page.metafields.custom.ssj_activity_4_image.value }}",
+        "image_width": "one-half",
+        "text_alignment": "text-left",
+        "layout": "is-reversed",
+        "width": "wrapper",
+        "height": "image-height",
+        "mobile_height": "image-height--mobile",
+        "reverse_blocks": true,
+        "color_scheme": "",
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "show_placeholder": true
+      }
+    },
+    "section_double_L9j47U": {
+      "type": "section-double",
+      "blocks": {
+        "subheading_wfTbFa": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "THE SCIENCE BEHIND",
+            "padding_bottom": 16
+          }
+        },
+        "heading_HWx6xd": {
+          "type": "heading",
+          "settings": {
+            "title": "{{ page.metafields.custom.ssj_activity_5_heading.value }}",
+            "heading_font_size": "heading-large",
+            "padding_bottom": 16,
+            "heading_tag": "automatic"
+          }
+        },
+        "text_W8UrQp": {
+          "type": "text",
+          "settings": {
+            "text": "{{ page.metafields.custom.ssj_activity5_description | metafield_tag }}",
+            "text_font_size": "body-medium",
+            "padding_bottom": 16
+          }
+        },
+        "accordion_zPJyNa": {
+          "type": "accordion",
+          "settings": {
+            "title": "Links to scientific studies:",
+            "content": "{{ page.metafields.custom.ssj_activity5_accordion_answer | metafield_tag }}",
+            "show_icon": true,
+            "icon_name": "icon-lightning",
+            "icon_size": 20,
+            "icon_color": "#fbc94b",
+            "padding_bottom": 16
+          }
+        },
+        "subheading_zmjnmM": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "How It Relates",
+            "padding_bottom": 16
+          }
+        },
+        "text_gzVMyP": {
+          "type": "text",
+          "settings": {
+            "text": "<p>{{ page.metafields.custom.ssj_activity_5_description_2 | metafield_tag }}</p>",
+            "text_font_size": "body-medium",
+            "padding_bottom": 16
+          }
+        }
+      },
+      "block_order": [
+        "subheading_wfTbFa",
+        "heading_HWx6xd",
+        "text_W8UrQp",
+        "accordion_zPJyNa",
+        "subheading_zmjnmM",
+        "text_gzVMyP"
+      ],
+      "settings": {
+        "image_1": "{{ page.metafields.custom.ssj_activity_5_image.value }}",
+        "image_width": "one-half",
+        "text_alignment": "text-left",
+        "layout": "",
+        "width": "wrapper",
+        "height": "image-height",
+        "mobile_height": "image-height--mobile",
+        "reverse_blocks": false,
+        "color_scheme": "",
+        "padding_top": 20,
+        "padding_bottom": 50,
+        "show_placeholder": true
+      }
+    },
+    "section_custom_content_TTcpPQ": {
+      "type": "section-custom-content",
+      "blocks": {
+        "text_dcDPgd": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "subheading": "Introducing",
+            "title": "{{ page.metafields.custom.lander_cta | metafield_text }}",
+            "heading_font_size": "heading-large",
+            "text": "{{ page.metafields.custom.cta_description | metafield_tag }}",
+            "text_font_size": "body-medium",
+            "button_text": "",
+            "button_url": "",
+            "button_type": "btn--secondary",
+            "button_size": "",
+            "button_style": "btn--solid",
+            "show_arrow": true,
+            "show_social_links": false,
+            "text_columns": 1,
+            "align_text": "text-left",
+            "bg_color": "",
+            "color": "#242540",
+            "heading_tag": "automatic"
+          }
+        },
+        "product_R96Vrr": {
+          "type": "product",
+          "settings": {
+            "product": "{{ page.metafields.custom.product_spotlight.value }}",
+            "title": "{{ page.metafields.custom.lander_cta | metafield_text }}",
+            "bg_color": "#ffffff",
+            "color": "#273d63"
+          }
+        }
+      },
+      "block_order": [
+        "text_dcDPgd",
+        "product_R96Vrr"
+      ],
+      "settings": {
+        "borders": true,
+        "gutters": false,
+        "width": "wrapper--full",
+        "height": "image-height",
+        "mobile_height": "image-height--mobile",
+        "reverse_blocks": false,
+        "color_scheme": "scheme-1",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    }
+  },
+  "order": [
+    "main",
+    "section_hero_QJLhJy",
+    "section_rich_text_xwjDqX",
+    "section_rich_text_GztEEw",
+    "section_double_rYeHcf",
+    "section_double_99zzxf",
+    "section_double_NEa7Dj",
+    "section_double_GqE4jr",
+    "section_double_L9j47U",
+    "section_custom_content_TTcpPQ"
+  ]
+}

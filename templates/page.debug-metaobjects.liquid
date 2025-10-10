@@ -1,0 +1,181 @@
+{% comment %}
+  Debug template to check metaobject visibility
+  This will show exactly what's available via shop.metaobjects.listicle
+{% endcomment %}
+
+<div style="padding: 40px; max-width: 1200px; margin: 0 auto;">
+  <h1>🔍 Metaobject Debug Information</h1>
+  
+  <div style="background: #f5f5f5; padding: 20px; margin: 20px 0; border-radius: 8px;">
+    <h2>Current Page Information</h2>
+    <ul>
+      <li><strong>Page Title:</strong> {{ page.title }}</li>
+      <li><strong>Page Handle:</strong> {{ page.handle }}</li>
+      <li><strong>Page Template:</strong> page.{{ page.template_suffix | default: 'default' }}</li>
+      <li><strong>Page ID:</strong> {{ page.id }}</li>
+    </ul>
+  </div>
+
+  <div style="background: #e8f4fd; padding: 20px; margin: 20px 0; border-radius: 8px;">
+    <h2>Page Metafields</h2>
+    <ul>
+      <li><strong>custom.listicle_content exists:</strong> {% if page.metafields.custom.listicle_content %}✅ Yes{% else %}❌ No{% endif %}</li>
+      <li><strong>custom.listicle_content.value:</strong> {{ page.metafields.custom.listicle_content.value | default: 'Not set' }}</li>
+      <li><strong>custom.listicle_content type:</strong> {{ page.metafields.custom.listicle_content.type | default: 'Unknown' }}</li>
+    </ul>
+  </div>
+
+  <div style="background: #fff3cd; padding: 20px; margin: 20px 0; border-radius: 8px;">
+    <h2>shop.metaobjects.listicle Access</h2>
+    <ul>
+      <li><strong>shop.metaobjects exists:</strong> {% if shop.metaobjects %}✅ Yes{% else %}❌ No{% endif %}</li>
+      <li><strong>shop.metaobjects.listicle exists:</strong> {% if shop.metaobjects.listicle %}✅ Yes{% else %}❌ No{% endif %}</li>
+      <li><strong>shop.metaobjects.listicle.values exists:</strong> {% if shop.metaobjects.listicle.values %}✅ Yes{% else %}❌ No{% endif %}</li>
+      <li><strong>Total listicles count:</strong> {{ shop.metaobjects.listicle.values.size | default: 0 }}</li>
+    </ul>
+  </div>
+
+  {% if shop.metaobjects.listicle.values.size > 0 %}
+    <div style="background: #d4edda; padding: 20px; margin: 20px 0; border-radius: 8px;">
+      <h2>✅ Available Listicles ({{ shop.metaobjects.listicle.values.size }} total)</h2>
+      <table style="width: 100%; border-collapse: collapse;">
+        <thead>
+          <tr style="background: #28a745; color: white;">
+            <th style="padding: 10px; text-align: left;">Display Name</th>
+            <th style="padding: 10px; text-align: left;">Handle</th>
+            <th style="padding: 10px; text-align: left;">ID</th>
+            <th style="padding: 10px; text-align: left;">Has cta_text?</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for listicle in shop.metaobjects.listicle.values %}
+            <tr style="border-bottom: 1px solid #ddd;">
+              <td style="padding: 10px;">{{ listicle.display_name | default: listicle.meta_title.value }}</td>
+              <td style="padding: 10px;"><code>{{ listicle.handle }}</code></td>
+              <td style="padding: 10px;"><small>{{ listicle.id | split: '/' | last }}</small></td>
+              <td style="padding: 10px;">
+                {% if listicle.cta_text %}
+                  ✅ Yes ({{ listicle.cta_text.value | size }} chars)
+                {% else %}
+                  ❌ No
+                {% endif %}
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+    <div style="background: #e7f3ff; padding: 20px; margin: 20px 0; border-radius: 8px;">
+      <h2>Testing Access Methods</h2>
+      
+      {% assign test_handle = shop.metaobjects.listicle.values.first.handle %}
+      <h3>1. Access by handle: <code>shop.metaobjects.listicle['{{ test_handle }}']</code></h3>
+      {% assign test_by_handle = shop.metaobjects.listicle[test_handle] %}
+      <p>Result: {% if test_by_handle %}✅ Success - {{ test_by_handle.display_name }}{% else %}❌ Failed{% endif %}</p>
+      
+      <h3>2. Access by iteration:</h3>
+      <p>Result: ✅ Works (shown in table above)</p>
+      
+      <h3>3. First listicle details:</h3>
+      {% assign first_listicle = shop.metaobjects.listicle.values.first %}
+      {% if first_listicle %}
+        <ul>
+          <li><strong>meta_title:</strong> {{ first_listicle.meta_title.value }}</li>
+          <li><strong>meta_description:</strong> {{ first_listicle.meta_description.value | truncate: 100 }}</li>
+          <li><strong>unified:</strong> {{ first_listicle.unified.value }}</li>
+          <li><strong>listicle_format:</strong> {{ first_listicle.listicle_format.value }}</li>
+          <li><strong>product:</strong> {{ first_listicle.product.value.title | default: 'Not set' }}</li>
+          <li><strong>cta_url:</strong> {{ first_listicle.cta_url.value | default: 'Not set' }}</li>
+          <li><strong>cta_text preview:</strong> {{ first_listicle.cta_text.value | truncate: 200 | escape }}</li>
+        </ul>
+      {% endif %}
+    </div>
+
+    {% if page.metafields.custom.listicle_content.value %}
+      <div style="background: #d1ecf1; padding: 20px; margin: 20px 0; border-radius: 8px;">
+        <h2>Resolving Page's Listicle Reference</h2>
+        {% assign target_id = page.metafields.custom.listicle_content.value %}
+        {% assign numeric_id = target_id | split: '/' | last %}
+        
+        <p><strong>Target GID:</strong> <code>{{ target_id }}</code></p>
+        <p><strong>Numeric ID:</strong> <code>{{ numeric_id }}</code></p>
+        
+        {% assign found_listicle = nil %}
+        {% for listicle in shop.metaobjects.listicle.values %}
+          {% assign listicle_numeric_id = listicle.id | split: '/' | last %}
+          {% if listicle_numeric_id == numeric_id %}
+            {% assign found_listicle = listicle %}
+            {% break %}
+          {% endif %}
+        {% endfor %}
+        
+        {% if found_listicle %}
+          <p style="color: green;"><strong>✅ Found matching listicle:</strong> {{ found_listicle.display_name }}</p>
+          
+          <h3>Parsing cta_text JSON:</h3>
+          {% if found_listicle.cta_text %}
+            {% assign cta_text_string = found_listicle.cta_text.value %}
+            <p><strong>Raw cta_text (first 500 chars):</strong></p>
+            <pre style="background: white; padding: 10px; overflow-x: auto;">{{ cta_text_string | truncate: 500 | escape }}</pre>
+            
+            {% comment %} Try to parse the JSON {% endcomment %}
+            {% if cta_text_string contains '"items"' %}
+              <p style="color: green;">✅ Contains "items" - attempting to parse...</p>
+              
+              {% comment %} Extract just the JSON part if it's embedded {% endcomment %}
+              {% assign items_json = nil %}
+              {% if cta_text_string contains '{"items"' %}
+                {% assign json_start = cta_text_string | split: '{"items"' | last | prepend: '{"items"' %}
+                {% assign json_end = json_start | split: ']}' | first | append: ']}' %}
+                {% assign items_json = json_end %}
+              {% endif %}
+              
+              {% if items_json %}
+                <p><strong>Extracted JSON:</strong></p>
+                <pre style="background: white; padding: 10px; overflow-x: auto;">{{ items_json | truncate: 300 | escape }}</pre>
+                
+                {% assign parsed = items_json | parse_json %}
+                {% if parsed.items %}
+                  <p style="color: green;">✅ Successfully parsed {{ parsed.items.size }} items!</p>
+                  <ul>
+                    {% for item in parsed.items limit: 3 %}
+                      <li><strong>Item {{ item.number }}:</strong> {{ item.heading }}</li>
+                    {% endfor %}
+                  </ul>
+                {% else %}
+                  <p style="color: red;">❌ parse_json didn't extract items</p>
+                {% endif %}
+              {% else %}
+                <p style="color: orange;">⚠️ Couldn't extract JSON string</p>
+              {% endif %}
+            {% else %}
+              <p style="color: red;">❌ cta_text doesn't contain "items"</p>
+            {% endif %}
+          {% else %}
+            <p style="color: red;">❌ No cta_text field</p>
+          {% endif %}
+        {% else %}
+          <p style="color: red;">❌ Could not find listicle with ID {{ numeric_id }}</p>
+        {% endif %}
+      </div>
+    {% endif %}
+    
+  {% else %}
+    <div style="background: #f8d7da; padding: 20px; margin: 20px 0; border-radius: 8px;">
+      <h2>❌ No Listicles Found</h2>
+      <p>shop.metaobjects.listicle is empty or not accessible.</p>
+      <p>This means the metaobjects are not properly published to the storefront.</p>
+    </div>
+  {% endif %}
+
+  <div style="background: #f0f0f0; padding: 20px; margin: 20px 0; border-radius: 8px;">
+    <h2>How to Use This Information</h2>
+    <ol>
+      <li>If you see <strong>green checkmarks</strong> and listicles in the table, the metaobjects ARE accessible</li>
+      <li>If the table is empty or you see red X's, the metaobjects are NOT published to the storefront</li>
+      <li>Check if your page's listicle reference can be resolved (bottom section)</li>
+      <li>Verify that the cta_text field contains valid JSON with items</li>
+    </ol>
+  </div>
+</div>

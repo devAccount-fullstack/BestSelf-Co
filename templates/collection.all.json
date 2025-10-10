@@ -1,0 +1,410 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "section_countdown_timer_qXq9Tp": {
+      "type": "section-countdown-timer",
+      "blocks": {
+        "subheading_ERnJ88": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "UP TO 35% OFF EVERYTHING"
+          }
+        },
+        "heading_YdVJjX": {
+          "type": "heading",
+          "settings": {
+            "title": "Black Friday Sale"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_ERnJ88",
+        "heading_YdVJjX"
+      ],
+      "disabled": true,
+      "settings": {
+        "end_date": "2024-11-30",
+        "end_time": "11:59",
+        "period": "pm",
+        "end_message": "<p>Offer has expired</p>",
+        "hide_on_complete": true,
+        "width": "wrapper",
+        "text_align": "text-left",
+        "height": "one-fifty-height-hero",
+        "mobile_height": "one-fifty-height-hero--mobile",
+        "text_align_mobile": "text-center--mobile",
+        "digits_gradient": "",
+        "overlay_opacity": 0,
+        "show_overlay_text": false
+      }
+    },
+    "section_hero_xXy4Ky": {
+      "type": "section-hero",
+      "blocks": {
+        "heading_h4NGMA": {
+          "type": "heading",
+          "settings": {
+            "title": "All Collections"
+          }
+        },
+        "text_iKJEaK": {
+          "type": "text",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "heading_h4NGMA",
+        "text_iKJEaK"
+      ],
+      "disabled": true,
+      "settings": {
+        "image_1": "shopify://shop_images/Castelli-Pocket-Tucson-Weekly-Diary-inner-page-spread_1.png",
+        "link": "",
+        "width": "wrapper--full",
+        "height": "screen-height-three-quarters",
+        "flex_align_desktop": "align--middle-center-desktop",
+        "mobile_height": "screen-height-three-quarters--mobile",
+        "flex_align_mobile": "align--middle-center-mobile",
+        "overlay_opacity": 0,
+        "show_overlay_text": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "show_placeholder": true
+      }
+    },
+    "section_collection_Pm3X4J": {
+      "type": "section-collection",
+      "settings": {
+        "featured_collection": "best-sellers",
+        "heading": "Best Sellers",
+        "description": "<p>{{ section.settings.featured_collection.metafields.custom.description | metafield_tag }}</p>",
+        "layout": "inline",
+        "link_text": "View All",
+        "link_url": "shopify://collections/best-sellers",
+        "button_type": "btn--primary",
+        "button_size": "",
+        "button_style": "btn--solid",
+        "show_arrow": false,
+        "layout_desktop": "grid",
+        "grid": 4,
+        "rows": 1,
+        "width": "wrapper--full-padded",
+        "layout_mobile": "slider",
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    },
+    "section_divider_TLNBCM": {
+      "type": "section-divider",
+      "settings": {
+        "show_line": true,
+        "width": "wrapper--full-padded",
+        "padding_top": 15,
+        "padding_bottom": 15
+      }
+    },
+    "section_collection_GrBwkT": {
+      "type": "section-collection",
+      "settings": {
+        "featured_collection": "new-arrivals",
+        "heading": "New Arrivals",
+        "description": "<p>Our product line is expanding–discover our newest arrivals.</p>",
+        "layout": "inline",
+        "link_text": "View All",
+        "link_url": "shopify://collections/new-arrivals",
+        "button_type": "btn--primary",
+        "button_size": "",
+        "button_style": "btn--solid",
+        "show_arrow": false,
+        "layout_desktop": "grid",
+        "grid": 4,
+        "rows": 1,
+        "width": "wrapper--full-padded",
+        "layout_mobile": "slider",
+        "padding_top": 50,
+        "padding_bottom": 50
+      }
+    },
+    "section_divider_Pq8PGX": {
+      "type": "section-divider",
+      "settings": {
+        "show_line": true,
+        "width": "wrapper--full-padded",
+        "padding_top": 15,
+        "padding_bottom": 15
+      }
+    },
+    "section_collection_HmGrPJ": {
+      "type": "section-collection",
+      "settings": {
+        "featured_collection": "journals",
+        "heading": "Journals",
+        "description": "<p>{{ section.settings.featured_collection.metafields.custom.description | metafield_tag }}</p>",
+        "layout": "inline",
+        "link_text": "View All",
+        "link_url": "shopify://collections/journals",
+        "button_type": "btn--primary",
+        "button_size": "",
+        "button_style": "btn--solid",
+        "show_arrow": false,
+        "layout_desktop": "grid",
+        "grid": 4,
+        "rows": 1,
+        "width": "wrapper--full-padded",
+        "layout_mobile": "slider",
+        "padding_top": 50,
+        "padding_bottom": 50
+      }
+    },
+    "section_divider_3JxPgU": {
+      "type": "section-divider",
+      "settings": {
+        "show_line": true,
+        "width": "wrapper--full-padded",
+        "padding_top": 15,
+        "padding_bottom": 15
+      }
+    },
+    "section_collection_FGmkyT": {
+      "type": "section-collection",
+      "settings": {
+        "featured_collection": "productivity",
+        "heading": "{{ section.settings.featured_collection.title }}",
+        "description": "<p>{{ section.settings.featured_collection.metafields.custom.description | metafield_tag }}</p>",
+        "layout": "inline",
+        "link_text": "View All",
+        "link_url": "shopify://collections/productivity",
+        "button_type": "btn--primary",
+        "button_size": "",
+        "button_style": "btn--solid",
+        "show_arrow": false,
+        "layout_desktop": "grid",
+        "grid": 4,
+        "rows": 1,
+        "width": "wrapper--full-padded",
+        "layout_mobile": "slider",
+        "padding_top": 50,
+        "padding_bottom": 50
+      }
+    },
+    "section_divider_RbNHAm": {
+      "type": "section-divider",
+      "settings": {
+        "show_line": true,
+        "width": "wrapper--full-padded",
+        "padding_top": 15,
+        "padding_bottom": 15
+      }
+    },
+    "section_collection_txAMD4": {
+      "type": "section-collection",
+      "settings": {
+        "featured_collection": "kids-family",
+        "heading": "{{ section.settings.featured_collection.title }}",
+        "description": "<p>{{ section.settings.featured_collection.metafields.custom.description | metafield_tag }}</p>",
+        "layout": "inline",
+        "link_text": "View All",
+        "link_url": "shopify://collections/new-arrivals",
+        "button_type": "btn--primary",
+        "button_size": "",
+        "button_style": "btn--solid",
+        "show_arrow": false,
+        "layout_desktop": "grid",
+        "grid": 4,
+        "rows": 1,
+        "width": "wrapper--full-padded",
+        "layout_mobile": "slider",
+        "padding_top": 50,
+        "padding_bottom": 50
+      }
+    },
+    "hero": {
+      "type": "collection-image-with-title",
+      "disabled": true,
+      "settings": {
+        "show_title": true,
+        "show_description": true,
+        "flex_align": "align--middle-left",
+        "show_image": true,
+        "banner_layout": "overlay",
+        "height": "screen-height-one-third",
+        "mobile_height": "screen-height-one-half--mobile",
+        "overlay_opacity": 0,
+        "show_overlay_text": false,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "subcollections": {
+      "type": "subcollections",
+      "disabled": true,
+      "settings": {
+        "subcollection_layout": "grid",
+        "subcollection_description": false,
+        "select_image": "collection",
+        "color": "#ffffff",
+        "bg_color": "",
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    },
+    "main": {
+      "type": "collection",
+      "disabled": true,
+      "settings": {
+        "enable_sort": true,
+        "enable_filters": true,
+        "filter_layout": "inline-open",
+        "default_open": true,
+        "collection_linklist": "",
+        "grid": 3,
+        "grid_mobile": "2",
+        "products_per_page": 24,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "section_highlights_N7CnAx": {
+      "type": "section-highlights",
+      "blocks": {
+        "highlight_9YA68U": {
+          "type": "highlight",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_52.png",
+            "heading": "Discovery Decks",
+            "url": "shopify://collections/prompt-decks",
+            "color": "#ffffff",
+            "bg_color": "rgba(0,0,0,0)",
+            "border_color": ""
+          }
+        },
+        "highlight_AwzpFF": {
+          "type": "highlight",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_53.png",
+            "heading": "Journals & Planners",
+            "url": "shopify://collections/journals-planners",
+            "color": "#ffffff",
+            "bg_color": "rgba(0,0,0,0)",
+            "border_color": ""
+          }
+        },
+        "highlight_8yGXpU": {
+          "type": "highlight",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_51.png",
+            "heading": "Self Care Gifts",
+            "url": "shopify://collections/self-care-gifts",
+            "color": "#ffffff",
+            "bg_color": "rgba(0,0,0,0)",
+            "border_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "highlight_9YA68U",
+        "highlight_AwzpFF",
+        "highlight_8yGXpU"
+      ],
+      "disabled": true,
+      "settings": {
+        "style": "square",
+        "grid": 3,
+        "heading": "",
+        "heading_position": "text-center",
+        "width": "wrapper--full-padded",
+        "layout_mobile": "1",
+        "padding_top": 50,
+        "padding_bottom": 50
+      }
+    },
+    "section_double_MQiE4Q": {
+      "type": "section-double",
+      "blocks": {
+        "heading_XcLwkM": {
+          "type": "heading",
+          "settings": {
+            "title": "Why Choose Us?",
+            "padding_bottom": 16
+          }
+        },
+        "text_kjB6VY": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>",
+            "padding_bottom": 16
+          }
+        },
+        "text_H9636P": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>Ed ut perspiciatis unde omnis iste</strong></p><p>Natus error sit voluptatem accusantium doloremque</p>",
+            "padding_bottom": 16
+          }
+        },
+        "text_eP3mch": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>Ed ut perspiciatis unde omnis iste</strong></p><p>Natus error sit voluptatem accusantium doloremque</p>",
+            "padding_bottom": 16
+          }
+        },
+        "text_WcYQaj": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>Ed ut perspiciatis unde omnis iste</strong></p><p>Natus error sit voluptatem accusantium doloremque</p>",
+            "padding_bottom": 16
+          }
+        }
+      },
+      "block_order": [
+        "heading_XcLwkM",
+        "text_kjB6VY",
+        "text_H9636P",
+        "text_eP3mch",
+        "text_WcYQaj"
+      ],
+      "disabled": true,
+      "settings": {
+        "image_1": "shopify://shop_images/Rectangle_54.png",
+        "image_2": "shopify://shop_images/Rectangle_55.png",
+        "image_width": "one-half",
+        "text_alignment": "text-left",
+        "layout": "is-reversed",
+        "width": "wrapper--full-padded",
+        "height": "screen-height-three-quarters",
+        "mobile_height": "screen-height-one-half--mobile",
+        "reverse_blocks": false,
+        "padding_top": 0,
+        "padding_bottom": 30,
+        "show_placeholder": true
+      }
+    }
+  },
+  "order": [
+    "section_countdown_timer_qXq9Tp",
+    "section_hero_xXy4Ky",
+    "section_collection_Pm3X4J",
+    "section_divider_TLNBCM",
+    "section_collection_GrBwkT",
+    "section_divider_Pq8PGX",
+    "section_collection_HmGrPJ",
+    "section_divider_3JxPgU",
+    "section_collection_FGmkyT",
+    "section_divider_RbNHAm",
+    "section_collection_txAMD4",
+    "hero",
+    "subcollections",
+    "main",
+    "section_highlights_N7CnAx",
+    "section_double_MQiE4Q"
+  ]
+}

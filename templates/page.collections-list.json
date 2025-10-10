@@ -1,0 +1,224 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "42_page_heading_H8a9Rk": {
+      "type": "42-page-heading",
+      "name": "42 Page Heading",
+      "settings": {
+        "border_top": false,
+        "border_bottom": true,
+        "title": "Best Sellers",
+        "description": "Our most powerful products for turning goals into achievements and strangers into soulmates. Join over 1 million people who've transformed their lives with these bestsellers.",
+        "pt_mob": 32,
+        "pb_mob": 20,
+        "pt_tab": 52,
+        "pb_tab": 32,
+        "pt_desk": 72,
+        "pb_desk": 32
+      }
+    },
+    "42_collection_list_qPfjb6": {
+      "type": "42-collection-list",
+      "blocks": {
+        "block_XQUnyr": {
+          "type": "block",
+          "settings": {
+            "collection": "personal-growth",
+            "custom_image": "shopify://shop_images/Personal-Growth.webp",
+            "custom_heading": ""
+          }
+        },
+        "block_rRryfR": {
+          "type": "block",
+          "settings": {
+            "collection": "romantic-relationships",
+            "custom_image": "shopify://shop_images/Romantic_Connection.png",
+            "custom_heading": ""
+          }
+        },
+        "block_wKhUKx": {
+          "type": "block",
+          "settings": {
+            "collection": "kids-collection",
+            "custom_image": "shopify://shop_images/Kids_Collection.png",
+            "custom_heading": ""
+          }
+        },
+        "block_gC4EEe": {
+          "type": "block",
+          "settings": {
+            "collection": "social-connections",
+            "custom_image": "shopify://shop_images/Social_Connection.png",
+            "custom_heading": ""
+          }
+        },
+        "block_JdaeHw": {
+          "type": "block",
+          "settings": {
+            "collection": "professional-growth",
+            "custom_image": "shopify://shop_images/Professional-Growth.webp",
+            "custom_heading": ""
+          }
+        },
+        "block_WzbyF9": {
+          "type": "block",
+          "settings": {
+            "collection": "new-arrivals",
+            "custom_image": "shopify://shop_images/New-Arrivals.webp",
+            "custom_heading": ""
+          }
+        }
+      },
+      "block_order": [
+        "block_XQUnyr",
+        "block_rRryfR",
+        "block_wKhUKx",
+        "block_gC4EEe",
+        "block_JdaeHw",
+        "block_WzbyF9"
+      ],
+      "name": "42 Collection list",
+      "settings": {
+        "layout_style_mob": "secondary",
+        "pt_mob": 20,
+        "pb_mob": 20,
+        "pt_tab": 32,
+        "pb_tab": 32,
+        "pt_desk": 32,
+        "pb_desk": 32
+      }
+    },
+    "42_bestsellers_Diyk8i": {
+      "type": "42-bestsellers",
+      "name": "42 Bestsellers",
+      "settings": {
+        "border_top": false,
+        "border_bottom": true,
+        "section_title": "Personal Growth",
+        "show_title_arrow": true,
+        "collection": "personal-growth",
+        "btn_text": "SHOP ALL",
+        "btn_link": "",
+        "pt_mob": 40,
+        "pb_mob": 32,
+        "pt_tab": 40,
+        "pb_tab": 32,
+        "pt_desk": 20,
+        "pb_desk": 40
+      }
+    },
+    "42_bestsellers_kdWhGD": {
+      "type": "42-bestsellers",
+      "name": "42 Bestsellers",
+      "settings": {
+        "border_top": false,
+        "border_bottom": true,
+        "section_title": "Romantic Connection",
+        "show_title_arrow": true,
+        "collection": "romantic-relationships",
+        "btn_text": "SHOP ALL",
+        "btn_link": "",
+        "pt_mob": 32,
+        "pb_mob": 32,
+        "pt_tab": 40,
+        "pb_tab": 32,
+        "pt_desk": 40,
+        "pb_desk": 40
+      }
+    },
+    "42_bestsellers_3UYTBd": {
+      "type": "42-bestsellers",
+      "name": "42 Bestsellers",
+      "settings": {
+        "border_top": false,
+        "border_bottom": true,
+        "section_title": "Kids Collection",
+        "show_title_arrow": true,
+        "collection": "kids-collection",
+        "btn_text": "SHOP ALL",
+        "btn_link": "",
+        "pt_mob": 32,
+        "pb_mob": 32,
+        "pt_tab": 40,
+        "pb_tab": 32,
+        "pt_desk": 40,
+        "pb_desk": 40
+      }
+    },
+    "42_bestsellers_cie4Qi": {
+      "type": "42-bestsellers",
+      "name": "42 Bestsellers",
+      "settings": {
+        "border_top": false,
+        "border_bottom": true,
+        "section_title": "Social Connection",
+        "show_title_arrow": true,
+        "collection": "social-connections",
+        "btn_text": "SHOP ALL",
+        "btn_link": "",
+        "pt_mob": 32,
+        "pb_mob": 32,
+        "pt_tab": 40,
+        "pb_tab": 32,
+        "pt_desk": 40,
+        "pb_desk": 40
+      }
+    },
+    "42_bestsellers_fCaKRb": {
+      "type": "42-bestsellers",
+      "name": "42 Bestsellers",
+      "settings": {
+        "border_top": false,
+        "border_bottom": true,
+        "section_title": "Professional Growth",
+        "show_title_arrow": true,
+        "collection": "professional-growth",
+        "btn_text": "SHOP ALL",
+        "btn_link": "",
+        "pt_mob": 32,
+        "pb_mob": 32,
+        "pt_tab": 40,
+        "pb_tab": 32,
+        "pt_desk": 40,
+        "pb_desk": 40
+      }
+    },
+    "42_bestsellers_UEHGMh": {
+      "type": "42-bestsellers",
+      "name": "42 Bestsellers",
+      "settings": {
+        "border_top": false,
+        "border_bottom": false,
+        "section_title": "New Arrivals",
+        "show_title_arrow": true,
+        "collection": "new-arrivals",
+        "btn_text": "SHOP ALL",
+        "btn_link": "",
+        "pt_mob": 32,
+        "pb_mob": 56,
+        "pt_tab": 40,
+        "pb_tab": 56,
+        "pt_desk": 40,
+        "pb_desk": 120
+      }
+    }
+  },
+  "order": [
+    "42_page_heading_H8a9Rk",
+    "42_collection_list_qPfjb6",
+    "42_bestsellers_Diyk8i",
+    "42_bestsellers_kdWhGD",
+    "42_bestsellers_3UYTBd",
+    "42_bestsellers_cie4Qi",
+    "42_bestsellers_fCaKRb",
+    "42_bestsellers_UEHGMh"
+  ]
+}

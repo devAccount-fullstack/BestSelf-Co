@@ -1,0 +1,252 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "section_accordion_group_eDwCTM": {
+      "type": "section-accordion-group",
+      "blocks": {
+        "heading_8RabeG": {
+          "type": "heading",
+          "settings": {
+            "title": "FAQ"
+          }
+        },
+        "question_RhkEW4": {
+          "type": "question",
+          "settings": {
+            "default_open": false,
+            "title": "How do BestSelf.co products help me achieve real change?",
+            "content": "<p>Our products are built on science-backed principles of psychology, productivity, and personal development. <br/><br/>With consistent use, they help you gain clarity, build better habits, and make meaningful progress toward your goals—whether it's personal growth, deeper relationships, or career success. We’ve done the research, so you don’t have to reinvent the wheel—just follow the systems, and you’ll see results.</p>",
+            "show_icon": false,
+            "icon_name": "icon-award",
+            "icon_size": 20,
+            "icon_color": "#545454"
+          }
+        },
+        "question_LJxCkh": {
+          "type": "question",
+          "settings": {
+            "default_open": false,
+            "title": "Do you offer a money-back guarantee?",
+            "content": "<p>Yes! We’re confident in the impact our products will have on your life that we offer a <strong>30-day money-back guarantee</strong>. If you don’t see the change you expected, just reach out to our support team—we’re here to help.<br/><br/><strong>To qualify for a full refund, items must be unopened and in their original shrink-wrapped packaging.</strong> If your product has been opened or used, no worries—just email us at support@bestself.co and we’ll do our best to make it right.</p>",
+            "show_icon": false,
+            "icon_name": "icon-award",
+            "icon_size": 20,
+            "icon_color": "#545454"
+          }
+        },
+        "question_t9aiDU": {
+          "type": "question",
+          "settings": {
+            "default_open": false,
+            "title": "What’s the best way to get started?",
+            "content": "<p>Start with the product that addresses the area of your life you want to improve first. For productivity and goal-setting, the <strong>Self Journal </strong>is a great place to begin. If you want to strengthen your relationships, try the <strong>Intimacy Deck</strong>. Each product comes with simple instructions to help you hit the ground running.</p>",
+            "show_icon": false,
+            "icon_name": "icon-award",
+            "icon_size": 20,
+            "icon_color": "#545454"
+          }
+        },
+        "question_pggGtf": {
+          "type": "question",
+          "settings": {
+            "default_open": false,
+            "title": "What payment methods do you accept?",
+            "content": "<p>We accept Visa, Mastercard, American Express, Discover, PayPal, Google Pay, and Apple Pay. All available payment options will show up at checkout.</p><p>For bulk orders, we also accept ACH and check payments. Please contact us for more details.</p>",
+            "show_icon": false,
+            "icon_name": "icon-award",
+            "icon_size": 20,
+            "icon_color": "#545454"
+          }
+        },
+        "question_cEeMgW": {
+          "type": "question",
+          "settings": {
+            "default_open": false,
+            "title": "Where do I find discounts and promo codes?",
+            "content": "<p>Be sure to sign up for our mailing list so you don’t miss out on any promotions or new products. That is where you’ll find the best deals. </p>",
+            "show_icon": false,
+            "icon_name": "icon-award",
+            "icon_size": 20,
+            "icon_color": "#545454"
+          }
+        },
+        "question_Xtzfdw": {
+          "type": "question",
+          "settings": {
+            "default_open": false,
+            "title": "Can I use more than one discount code at checkout?",
+            "content": "<p>Our store supports discount code combinations on select promotions. When applicable, you can combine:</p><ul><li>One automatic discount (like a sitewide sale)</li><li>One discount code (entered at checkout)</li></ul><p>If a combination isn’t working, it’s likely because the codes or discounts aren’t eligible to be used together. </p><p>Please note: <strong>Free gift promotions cannot be combined with other discount codes.</strong> If you're not seeing a free gift added to your cart, try removing other discount codes to see it apply correctly.</p><p><strong>Free Shipping Promotions</strong><br/>Currently, free shipping promotions apply only to the continental U.S. Unfortunately, orders to Alaska, Hawaii, U.S. territories (like Puerto Rico), and international destinations aren’t eligible—yet!<br/><br/>Still have questions? Reach out to our support team—we’re happy to help!</p>",
+            "show_icon": false,
+            "icon_name": "icon-award",
+            "icon_size": 20,
+            "icon_color": ""
+          }
+        },
+        "question_V7bRCa": {
+          "type": "question",
+          "settings": {
+            "default_open": false,
+            "title": "Where is my Order Confirmation Email and/or Tracking Email?",
+            "content": "<p>You should receive an Order Confirmation email soon after you made your purchase. It may end up in your spam folder. If not, please contact us and we’ll be happy to help.</p><p>You should also receive a Shipping Confirmation email as soon as your order ships out.</p>",
+            "show_icon": false,
+            "icon_name": "icon-award",
+            "icon_size": 20,
+            "icon_color": "#545454"
+          }
+        },
+        "question_cyqrfP": {
+          "type": "question",
+          "settings": {
+            "default_open": false,
+            "title": "I need help tracking an Amazon order",
+            "content": "<p>For orders made on Amazon, please view your order history on Amazon for shipping information. For all other questions, you’ll need to <a href=\"https://www.amazon.com/gp/help/customer/display.html?nodeId=508510\"><strong>contact Amazon’s Customer Service</strong> </a>for additional support, as we do not have access to shipping information on our end.</p>",
+            "show_icon": false,
+            "icon_name": "icon-award",
+            "icon_size": 20,
+            "icon_color": "#545454"
+          }
+        },
+        "question_VcfwrF": {
+          "type": "question",
+          "settings": {
+            "default_open": false,
+            "title": "What if my order is received damaged?",
+            "content": "<p>First off, we’re so sorry that this has happened. Over the past couple of years, we’ve worked with our fulfillment partners to improve packaging and the process to ensure orders arrive to our standards. However, things still happen and shipping can be bumpy.  </p><p>Please contact us and we’ll get a replacement sent out right away.</p><p>For faster service, please include the following:</p><ol><li>An image of the page and items</li><li>The original order #</li><li>Your full shipping address</li></ol>",
+            "show_icon": false,
+            "icon_name": "icon-award",
+            "icon_size": 20,
+            "icon_color": "#545454"
+          }
+        },
+        "question_ft68BB": {
+          "type": "question",
+          "settings": {
+            "default_open": false,
+            "title": "How can I share product feedback?",
+            "content": "<p>We LOVE hearing feedback and always looking to make our products better. Please send us an email to support@bestself.co  and share your feedback.</p>",
+            "show_icon": false,
+            "icon_name": "icon-award",
+            "icon_size": 20,
+            "icon_color": "#545454"
+          }
+        },
+        "question_W9zY8x": {
+          "type": "question",
+          "settings": {
+            "default_open": false,
+            "title": "Where are your products made?",
+            "content": "<p>We’re proud to be a global company. Our team works remotely all over the world. Materials for our products are responsibility sourced globally and assembled/printed in either Colombia or China.</p>",
+            "show_icon": false,
+            "icon_name": "icon-award",
+            "icon_size": 20,
+            "icon_color": "#545454"
+          }
+        },
+        "question_yUe6pp": {
+          "type": "question",
+          "settings": {
+            "default_open": false,
+            "title": "Are the relationship products LGBTQ+ friendly?",
+            "content": "<p>We strive to make all of our products inclusive and available to everyone. All of the relationship decks and the Relationship Journals are completely gender-neutral. So no matter what type of relationship you have or how you identify, you can enjoy these products without modifying them.</p><p>The relationships products include: Intimacy Deck, Date Deck, Relationship Journals, Relationships Deck and Intimacy After Dark Deck are all LGBTQ+ friendly.</p>",
+            "show_icon": false,
+            "icon_name": "icon-award",
+            "icon_size": 20,
+            "icon_color": "#545454"
+          }
+        },
+        "question_g7eQp9": {
+          "type": "question",
+          "settings": {
+            "default_open": true,
+            "title": "Support and Contact Options",
+            "content": "<p>Our team is available <strong>Monday through Friday, 8 AM – 5 PM CST</strong>, and we aim to respond to all inquiries within 1 business day. Please note that we take major holidays off to spend time with family and friends, so there may be a slight delay in responses during those times.<br/><br/>The best way to reach us is via email at support@bestself.co.<br/><br/>You can also leave us a message through chat with your contact information, and we'll get back to you within 1 business day.<br/><br/>At this time, <span style=\"text-decoration:underline\">we do not offer phone support.</span></p>",
+            "show_icon": false,
+            "icon_name": "icon-award",
+            "icon_size": 20,
+            "icon_color": "#545454"
+          }
+        },
+        "question_9YH3Td": {
+          "type": "question",
+          "settings": {
+            "default_open": true,
+            "title": "Shipping within the United States",
+            "content": "<p>We offer <strong>Standard</strong> and <strong>Priority Delivery</strong> on all orders.</p><ul><li><strong>Same-Day Shipping</strong>: Orders placed before 12 PM CT (Mon–Fri) ship the same day. Orders placed after 12 PM CT ship the next business day.</li><li><strong>Standard Delivery</strong>: Arrives within 5–10 business days, depending on your location.</li><li><strong>Priority Delivery</strong>: Arrives within 2–5 business days, depending on your location.</li></ul><p><strong>⚠️ Please note: Same-Day Shipping means your order leaves our warehouse the same day—it does not guarantee same-day arrival.</strong><br/></p><p><strong>Additional Details</strong></p><ul><li>⏰ You have <strong>1 hour</strong> after placing your order to modify or cancel it.</li><li>📦 <strong>We do not process or ship orders on weekends or U.S. public holidays.</strong> Orders placed during those times will be fulfilled on the next business day.</li></ul>",
+            "show_icon": false,
+            "icon_name": "icon-award",
+            "icon_size": 20,
+            "icon_color": "#545454"
+          }
+        },
+        "question_HTWz3z": {
+          "type": "question",
+          "settings": {
+            "default_open": true,
+            "title": "Do you ship internationally?",
+            "content": "<p><strong>YES! We now ship to Canada 🇨🇦, Ireland 🇮🇪, and the United Kingdom 🇬🇧.</strong></p><ul><li><strong>Shipping Costs</strong>: Calculated at checkout based on your delivery address.</li><li><strong>Carrier</strong>: All international orders are shipped via DHL Express.</li><li><strong>Delivery Time</strong>: Estimated 2–5 business days, though customs processing may cause delays.</li><li><strong>Duties & Taxes</strong>: These are the responsibility of the customer and are not included in the shipping cost.</li><li><strong>Returns: Please note that international returns are not accepted.</strong></li></ul>",
+            "show_icon": false,
+            "icon_name": "icon-award",
+            "icon_size": 20,
+            "icon_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_8RabeG",
+        "question_RhkEW4",
+        "question_LJxCkh",
+        "question_t9aiDU",
+        "question_pggGtf",
+        "question_cEeMgW",
+        "question_Xtzfdw",
+        "question_V7bRCa",
+        "question_cyqrfP",
+        "question_VcfwrF",
+        "question_ft68BB",
+        "question_W9zY8x",
+        "question_yUe6pp",
+        "question_g7eQp9",
+        "question_9YH3Td",
+        "question_HTWz3z"
+      ],
+      "settings": {
+        "heading_font_size": "heading-medium",
+        "question_font_size": "heading-small",
+        "width": "wrapper--narrow",
+        "columns": "1",
+        "color_scheme": "",
+        "padding_top": 50,
+        "padding_bottom": 50
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "subheading": "",
+        "show_title": true,
+        "heading_font_size": "heading-large",
+        "show_content": true,
+        "text_font_size": "body-medium",
+        "align_text": "text-center",
+        "width": "wrapper",
+        "color_scheme": "",
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "heading_tag": "automatic"
+      }
+    }
+  },
+  "order": [
+    "section_accordion_group_eDwCTM",
+    "main"
+  ]
+}

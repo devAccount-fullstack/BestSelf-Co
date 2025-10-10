@@ -1,0 +1,170 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "custom_css": [
+        ".hero__title.heading-size-8.aos-animate {display: none !important;}",
+        "h2 {font-size: 32px; font-family: \"Inter\", sans-serif; line-height: 60px;}",
+        "h3 {font-size: 24px; font-weight: bold; font-family: \"Inter\", sans-serif;}",
+        "h4 {font-size: 20px; font-family: \"Inter\", sans-serif;}",
+        "p,h5,h6,ul,ol,li {font-size: 16px; line-height: 28px; font-family: \"Libre Baskerville\", serif;}",
+        "p a {color: blue;}"
+      ],
+      "settings": {
+        "subheading": "",
+        "show_title": true,
+        "heading_font_size": "heading-large",
+        "show_content": false,
+        "text_font_size": "body-medium",
+        "align_text": "text-center",
+        "width": "wrapper",
+        "color_scheme": "",
+        "padding_top": 30,
+        "padding_bottom": 30,
+        "heading_tag": "automatic"
+      }
+    },
+    "section_rich_text_t76XyU": {
+      "type": "section-rich-text",
+      "blocks": {
+        "heading_wHLK3d": {
+          "type": "heading",
+          "settings": {
+            "title": "Your preferences have been submitted.",
+            "heading_font_size": "heading-large",
+            "padding_bottom": 16,
+            "heading_tag": "automatic"
+          }
+        },
+        "text_44YRdP": {
+          "type": "text",
+          "settings": {
+            "text": "<p>We've noted your device type and will send you the right setup instructions when your Helm ships.</p><p><strong>Good to know:</strong> The main difference between iPhone and Android is where you'll tap your Helm. Android phones tap on the middle back, while iPhones tap on the top. We'll remind you of this in your setup instructions!</p>",
+            "text_font_size": "body-medium",
+            "padding_bottom": 16
+          }
+        },
+        "image_yyLAgb": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/iOS-Android-NFC_5571c93a-428d-412c-819e-60c960453b18.jpg",
+            "image_width": 70,
+            "padding_bottom": 16
+          }
+        },
+        "subheading_XafNBz": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "What happens next:",
+            "padding_bottom": 16
+          }
+        },
+        "text_36fAKz": {
+          "type": "text",
+          "settings": {
+            "text": "<p>• We will start shipping Helm this Friday</p><p>• You'll receive tracking information via email</p><p>• We'll include personalized setup instructions for your device</p><p>If you have any questions, just reply to any of our emails or reach out at helm@bestself.co</p>",
+            "text_font_size": "body-medium",
+            "padding_bottom": 16
+          }
+        }
+      },
+      "block_order": [
+        "heading_wHLK3d",
+        "text_44YRdP",
+        "image_yyLAgb",
+        "subheading_XafNBz",
+        "text_36fAKz"
+      ],
+      "custom_css": [
+        "p {padding-bottom: 10px; padding-top: 10px; font-size: 1.125rem; /* 18px */ font-family: sans-serif; line-height: 1.7;}",
+        "/* Mobile styles */@media (max-width: 768px) {p {font-size: 1rem; /* 16px */ }}"
+      ],
+      "name": "Rich text",
+      "settings": {
+        "align_text": "text-left",
+        "width": "wrapper",
+        "color_scheme": "",
+        "overlay_opacity": 0,
+        "show_overlay_text": false,
+        "padding_top": 50,
+        "padding_bottom": 50
+      }
+    },
+    "section_collections_list_7NhKcw": {
+      "type": "section-collections-list",
+      "blocks": {
+        "collection_iaRcNN": {
+          "type": "collection",
+          "settings": {
+            "collection": "best-sellers",
+            "title": ""
+          }
+        },
+        "collection_J9t7qW": {
+          "type": "collection",
+          "settings": {
+            "collection": "action-pads",
+            "title": ""
+          }
+        },
+        "collection_WVNaFz": {
+          "type": "collection",
+          "settings": {
+            "collection": "back-to-school",
+            "title": ""
+          }
+        },
+        "collection_9qe3zP": {
+          "type": "collection",
+          "settings": {
+            "collection": "bundles",
+            "title": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_iaRcNN",
+        "collection_J9t7qW",
+        "collection_WVNaFz",
+        "collection_9qe3zP"
+      ],
+      "name": "Collection list",
+      "settings": {
+        "title": "Shop our collections",
+        "heading_font_size": "heading-medium",
+        "description": "",
+        "text_font_size": "body-medium",
+        "button_text": "",
+        "button_url": "shopify://collections/back-in-stock",
+        "button_type": "btn--primary",
+        "button_size": "",
+        "button_style": "btn--solid",
+        "show_arrow": false,
+        "aspect_ratio": 1,
+        "width": "wrapper",
+        "layout": "grid",
+        "grid": 4,
+        "layout_mobile": "slider",
+        "color_scheme": "scheme-3",
+        "padding_top": 32,
+        "padding_bottom": 32,
+        "heading_tag": "automatic"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "section_rich_text_t76XyU",
+    "section_collections_list_7NhKcw"
+  ]
+}

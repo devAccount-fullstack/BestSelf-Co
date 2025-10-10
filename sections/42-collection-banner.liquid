@@ -1,0 +1,101 @@
+{% liquid
+  assign title = section.settings.title
+  assign text = section.settings.text
+
+  assign pt_mob = section.settings.pt_mob
+  assign pb_mob = section.settings.pb_mob
+  assign pt_tab = section.settings.pt_tab
+  assign pb_tab = section.settings.pb_tab
+  assign pt_desk = section.settings.pt_desk
+  assign pb_desk = section.settings.pb_desk
+%}
+
+{% render 'section-paddings',
+  section_id: section.id,
+  pt_mob: pt_mob,
+  pb_mob: pb_mob,
+  pt_tab: pt_tab,
+  pb_tab: pb_tab,
+  pt_desk: pt_desk,
+  pb_desk: pb_desk
+%}
+
+<div data-section-id="{{ section.id }}">
+  <div class="container-42">
+    {% if title != blank %}
+      <h2 class="tw-text-black tw-font-bold tw-text-[28px] tw-leading-[35px] lg:tw-text-[40px] lg:tw-leading-[50px]">
+        {{ title }}
+      </h2>
+    {% endif %}
+
+    {% if text != blank %}
+      <div class="tw-mt-2.5 tw-text-sm tw-font-normal tw-text-black tw-leading-[22px] lg:tw-text-[18px] lg:tw-leading-[26px]">
+        {{ text }}
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "42 Collection Banner",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text"
+    },
+    {
+      "type": "header",
+      "content": "Padding Y settings"
+    },
+    {
+      "type": "number",
+      "id": "pt_mob",
+      "label": "Mobile padding top in px",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "pb_mob",
+      "label": "Mobile padding bottom in px",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "pt_tab",
+      "label": "Tablet padding top in px",
+      "default": 228
+    },
+    {
+      "type": "number",
+      "id": "pb_tab",
+      "label": "Tablet padding bottom in px",
+      "default": 48
+    },
+    {
+      "type": "number",
+      "id": "pt_desk",
+      "label": "Desktop padding top in px",
+      "default": 228
+    },
+    {
+      "type": "number",
+      "id": "pb_desk",
+      "label": "Desktop padding bottom in px",
+      "default": 48
+    }
+  ],
+  "presets": [
+    {
+      "name": "42 Collection Banner"
+    }
+  ]
+}
+{% endschema %}

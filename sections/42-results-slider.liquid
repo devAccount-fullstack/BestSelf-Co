@@ -1,0 +1,264 @@
+{% liquid
+  assign star_rating = section.settings.star_rating
+  assign section_title = section.settings.section_title
+  assign section_text = section.settings.section_text
+
+  assign blocks = section.blocks
+
+  assign pt_mob = section.settings.pt_mob
+  assign pb_mob = section.settings.pb_mob
+  assign pt_tab = section.settings.pt_tab
+  assign pb_tab = section.settings.pb_tab
+  assign pt_desk = section.settings.pt_desk
+  assign pb_desk = section.settings.pb_desk
+%}
+
+{% render 'section-paddings',
+  section_id: section.id,
+  pt_mob: pt_mob,
+  pb_mob: pb_mob,
+  pt_tab: pt_tab,
+  pb_tab: pb_tab,
+  pt_desk: pt_desk,
+  pb_desk: pb_desk
+%}
+
+<style>
+  @media (min-width: 1024px) {
+    [data-section-id='{{ section.id }}'] .custom-slide-active .active__avatar__user {
+      width: 50px;
+      height: 50px;
+    }
+    [data-section-id='{{ section.id }}'] .custom-slide-active {
+      max-width: 396px !important;
+      z-index: 2;
+    }
+    [data-section-id='{{ section.id }}'] .swiper-slide:not(.custom-slide-active) {
+      max-width: 320px !important;
+      z-index: 2;
+    }
+  }
+
+  @media screen and (min-width: 1440px) {
+    .results__slider__padding__right {
+      padding-right: calc((100vw - 1440px) / 2 + 48px) !important;
+    }
+    .results__slider__padding__left {
+      width: calc(calc((100vw - 1440px) / 2 + 48px) + 537px);
+      padding-left: calc((100vw - 1440px) / 2 + 48px);
+    }
+  }
+</style>
+
+{% if blocks.size > 0 %}
+  <div
+    data-section-id="{{ section.id }}"
+    class="tw-overflow-hidden"
+    x-data="videoSlider"
+  >
+    <div class="tw-flex tw-flex-col lg:tw-flex-row">
+      <div class="results__slider__padding__left tw-flex tw-items-center xl:tw-pr-[106px] tw-bg-white tw-relative tw-z-5  tw-px-4 md:tw-pr-0 md:tw-pl-8 lg:tw-pl-12">
+        <div
+          class="tw-justify-center tw-flex tw-flex-col tw-items-center"
+        >
+          <!-- CONTENT -->
+          <div class="md:tw-min-w-[431px]">
+            {% if star_rating != blank %}
+              {% assign star_rating_split = star_rating | split: ',' %}
+              {% assign star_rating_text_class = 'tw-text-[#2C3C60] tw-text-sm md:tw-text-[13px] md:tw-leading-[16px] tw-leading-[22px]' %}
+              <div
+                class="tw-flex tw-items-center tw-gap-2 tw-mb-6 tw-justify-center md:tw-justify-start"
+              >
+                <span class="{{ star_rating_text_class }}">{{ star_rating_split[0] }}</span>
+                <span class="tw-flex tw-items-center tw-gap-[3px]">
+                  {% for i in (1..5) %}
+                    {% render 'icon-42', name: 'star' %}
+                  {% endfor %}
+                </span>
+                <span class="{{ star_rating_text_class }}">{{ star_rating_split[1] }}</span>
+              </div>
+            {% endif %}
+            {% if section_title != blank %}
+              <div
+                class="tw-text-[36px] md:tw-text-left tw-leading-[46px] md:tw-text-[64px] md:tw-leading-[75px] tw-text-black tw-text-center"
+              >
+                {{ section_title }}
+              </div>
+            {% endif %}
+
+            <!-- LINE DESKTOP -->
+            <div
+              class="md:tw-flex tw-hidden tw-w-16 tw-bg-sc-blue tw-h-1.5 tw-mt-15 tw-mb-[35px]"
+            ></div>
+
+            {% if section_text != blank %}
+              <p
+                class="tw-mt-6 md:tw-mt-0 tw-text-center tw-font-normal md:tw-text-left tw-text-base md:tw-text-[20px] md:tw-leading-[28px] tw-text-black"
+              >
+                {{ section_text }}
+              </p>
+            {% endif %}
+
+            <!-- SLIDER BUTTONS DESKTOP -->
+            <div class="md:tw-flex tw-hidden tw-gap-[13px] tw-mt-[59px] tw-justify-start">
+              <div x-ref="resultsPrevSlide" @click="prevSlide()" style="opacity: 50%;" class="tw-cursor-pointer">
+                {% render 'icon-42', name: 'swiper-btn', class: 'tw-rotate-180' %}
+              </div>
+              <div x-ref="resultsNextSlide" @click="nextSlide()" class="tw-cursor-pointer">
+                {% render 'icon-42', name: 'swiper-btn' %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDER VIDEO -->
+      <div
+        class="swiper lg:!tw-ml-[16px] results__swiper tw-mt-4.5 tw-opacity-0 tw-duration-300 lg:tw-mt-0 !tw-px-4 md:!tw-px-8 !tw-overflow-visible results__slider__padding__right lg:!tw-pr-12 lg:!tw-pl-0"
+        x-ref="relustSlider"
+      >
+        <div class="swiper-wrapper !tw-items-center">
+          {% for block in blocks %}
+            {% liquid
+              assign video = block.settings.video
+              assign poster = video.preview_image | img_url: 'master'
+              assign avatar_user = block.settings.avatar_user
+              assign name_user = block.settings.name_user
+            %}
+            <div class="{% if forloop.first %}custom-slide-active{% endif %} swiper-slide !tw-h-fit tw-rounded-[10px] tw-max-w-[320px] tw-overflow-hidden">
+              {% if video != blank %}
+                <div class="tw-relative">
+                  {{
+                    video
+                    | video_tag:
+                      loop: true,
+                      muted: false,
+                      controls: false,
+                      class: 'video-player-js tw-h-full tw-w-full tw-object-cover',
+                      playsinline: true,
+                      poster: poster
+                  }}
+                  <div class="play-btn-js changes__width__slide-js tw-cursor-pointer tw-absolute" style="top:50%;left:50%;transform:translate(-50%,-50%);">
+                    {% render 'icon-42', name: 'video-play' %}
+                  </div>
+                  {% if avatar_user != blank and name_user != blank %}
+                    <div class="tw-absolute tw-z-5 tw-top-[29px] md:tw-top-5 tw-left-5 tw-flex tw-items-center tw-gap-2">
+                      <div class="active__avatar__user tw-w-7.5 tw-duration-500 tw-h-7.5 tw-rounded-full tw-overflow-hidden tw-border-[#A5A5A5] tw-border-[0.5px] tw-flex tw-items-center tw-justify-center">
+                        <img
+                          src="{{ avatar_user | img_url: 'master' }}"
+                          alt="{{ name_user }}"
+                          class="tw-max-w-full tw-object-cover"
+                        >
+                      </div>
+                      <span class="tw-font-medium tw-text-white tw-text-[22px]">{{ name_user }}</span>
+                    </div>
+                  {% endif %}
+                </div>
+              {% endif %}
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- SLIDER BUTTONS MOBILE -->
+      <div class="md:tw-hidden tw-flex tw-gap-[13px] tw-mt-4 justify-center">
+        <div x-ref="resultsPrevSlideMob" @click="prevSlide()" style="opacity: 50%">
+          {% render 'icon-42', name: 'swiper-btn', class: 'tw-rotate-180' %}
+        </div>
+        <div x-ref="resultsNextSlideMob" @click="nextSlide()">{% render 'icon-42', name: 'swiper-btn' %}</div>
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "42 Results slider",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "star_rating",
+      "label": "Star rating"
+    },
+    {
+      "type": "richtext",
+      "id": "section_title",
+      "label": "Section title"
+    },
+    {
+      "type": "textarea",
+      "id": "section_text",
+      "label": "Section text"
+    },
+    {
+      "type": "header",
+      "content": "Padding Y settings"
+    },
+    {
+      "type": "number",
+      "id": "pt_mob",
+      "label": "Mobile padding top in px",
+      "default": 60
+    },
+    {
+      "type": "number",
+      "id": "pb_mob",
+      "label": "Mobile padding bottom in px",
+      "default": 56
+    },
+    {
+      "type": "number",
+      "id": "pt_tab",
+      "label": "Tablet padding top in px",
+      "default": 80
+    },
+    {
+      "type": "number",
+      "id": "pb_tab",
+      "label": "Tablet padding bottom in px",
+      "default": 80
+    },
+    {
+      "type": "number",
+      "id": "pt_desk",
+      "label": "Desktop padding top in px",
+      "default": 122
+    },
+    {
+      "type": "number",
+      "id": "pb_desk",
+      "label": "Desktop padding bottom in px",
+      "default": 120
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Video",
+      "type": "block",
+      "settings": [
+        {
+          "type": "video",
+          "id": "video",
+          "label": "Video"
+        },
+        {
+          "type": "image_picker",
+          "id": "avatar_user",
+          "label": "Avatar user"
+        },
+        {
+          "type": "text",
+          "id": "name_user",
+          "label": "Name user"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "42 Results slider"
+    }
+  ]
+}
+{% endschema %}

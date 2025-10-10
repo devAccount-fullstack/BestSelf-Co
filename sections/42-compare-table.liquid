@@ -1,0 +1,406 @@
+{% liquid
+  assign anchor_id = section.settings.anchor_id | handleize
+
+  assign title = section.settings.title
+  assign title = title | replace: '[[', '<span style="color: #2C3C60;">' | replace: ']]', '</span>'
+
+  assign metaobject_content = section.settings.metaobject_content | first
+
+  assign pt_mob = section.settings.pt_mob
+  assign pb_mob = section.settings.pb_mob
+  assign pt_tab = section.settings.pt_tab
+  assign pb_tab = section.settings.pb_tab
+  assign pt_desk = section.settings.pt_desk
+  assign pb_desk = section.settings.pb_desk
+%}
+
+{% render 'section-paddings',
+  section_id: section.id,
+  pt_mob: pt_mob,
+  pb_mob: pb_mob,
+  pt_tab: pt_tab,
+  pb_tab: pb_tab,
+  pt_desk: pt_desk,
+  pb_desk: pb_desk
+%}
+
+{% if metaobject_content != blank %}
+  <div
+    data-section-id="{{ section.id }}"
+    id="{{ anchor_id }}"
+  >
+    <div class="container-42">
+      {% if title != blank %}
+        <h2 class="tw-text-black tw-text-center tw-text-[28px] tw-leading-none tw-mb-6 lg:tw-mb-12 lg:tw-text-[48px] lg:tw-leading-[64px]">
+          {{ title }}
+        </h2>
+      {% endif %}
+
+      <div class="tw-grid tw-grid-rows-1 tw-gap-4 tw-auto-rows-fr lg:tw-grid-cols-2 xl:tw-gap-8.5 tw-overflow-hidden">
+        {% if metaobject_content != blank %}
+          {% assign main_product = product %}
+          {% assign product_to_compare = all_products[metaobject_content.product_to_compare] %}
+
+          {% for i in (1..2) %}
+            {% capture product_heading_key %}product_heading_{{ i }}{% endcapture %}
+            {% capture product_image_key %}product_image_{{ i }}{% endcapture %}
+            {% capture product_items_key %}product_items_{{ i }}{% endcapture %}
+
+            {% liquid
+              assign bg_color = '#2C3C60'
+              assign text_color = '#FFFFFF'
+              assign reverse_block = false
+              assign heading = metaobject_content[product_heading_key]
+              assign product_image = metaobject_content[product_image_key]
+              assign product_items = metaobject_content[product_items_key]
+              assign btn_text = 'Explore'
+              assign btn_url = main_product.url
+              assign bg_product_block = 'linear-gradient(180deg, rgba(235, 235, 235, 1), rgba(234, 234, 235, 1) 100%)'
+
+              if i == 2
+                assign bg_color = '#C4C5DC'
+                assign text_color = '#000000'
+                assign reverse_block = true
+                assign btn_url = product_to_compare.url
+              endif
+            %}
+
+            <div
+              style="background: {{ bg_color }}; color: {{ text_color }};"
+              class="tw-overflow-hidden tw-relative tw-flex {% if reverse_block %}tw-flex-col-reverse lg:tw-flex-row-reverse{% else %} tw-flex-col lg:tw-flex-row{% endif %} {% if i == 1 %}tw-pb-0 lg:tw-pb-6 lg:tw-pr-0 lg:tw-pl-6 xl:tw-pb-10.5 xl:tw-pr-0 xl:tw-pl-10.5{% else %}tw-pt-0 lg:tw-pt-6 lg:tw-pl-0 lg:tw-pr-6 xl:tw-pt-10.5 xl:tw-pl-0 xl:tw-pr-10.5{% endif %} tw-gap-[22px] tw-p-6 tw-rounded-2xl lg:tw-rounded-3xl lg:tw-justify-between lg:tw-gap-0.5 lg:tw-py-6 xl:tw-py-10.5"
+            >
+              <div>
+                {% if heading != blank %}
+                  <h5 class="tw-font-bold tw-font-primary tw-text-2xl tw-leading-[48px] tw-mb-4 {% if reverse_block %}lg:tw-text-right{% else %} lg:tw-text-left{% endif %} xl:tw-text-[42px] xl:tw-leading-[50px] xl:tw-mb-8">
+                    {{ heading }}
+                  </h5>
+                {% endif %}
+                <ul class="tw-flex tw-flex-col tw-gap-4 lg:tw-gap-6">
+                  {% for item in product_items.value %}
+                    {% if item != blank %}
+                      <li class="tw-font-secondary tw-font-normal tw-text-lg tw-leading-6 tw-flex tw-items-center tw-gap-3 tw-mb-0 {% if reverse_block %}lg:tw-flex-row-reverse lg:tw-text-right{% else %} lg:tw-flex-row lg:tw-text-left{% endif %} xl:tw-text-2xl">
+                        <svg
+                          class="tw-size-6 xl:tw-size-8.5"
+                          width="100%"
+                          height="100%"
+                          viewBox="0 0 35 35"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path d="M31.6978 17.5068C31.6978 9.7855 25.4383 3.52612 17.717 3.52612C9.99571 3.52612 3.73633 9.7855 3.73633 17.5068C3.73633 25.2281 9.99571 31.4876 17.717 31.4876C25.4383 31.4876 31.6978 25.2281 31.6978 17.5068Z" stroke="currentColor" stroke-width="1.57287"/>
+                          <path d="M12.126 18.1969L15.6211 21.692L23.3103 13.3037" stroke="currentColor" stroke-width="1.57287" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span>{{ item }}</span>
+                      </li>
+                    {% endif %}
+                  {% endfor %}
+                </ul>
+                {% if btn_text != blank and btn_url != blank %}
+                  <a
+                    style="color: {{ text_color }}; border-color: {{ text_color }};"
+                    href="{{ btn_url }}"
+                    class="btn-42 btn-42--third tw-mt-6 !tw-px-4 !tw-h-8.5 !tw-w-fit {% if reverse_block %}lg:tw-ml-auto{% endif %}"
+                  >
+                    <span class="tw-text-sm tw-leading-6 tw-font-semibold">{{- btn_text }}</span>
+                    {% render 'icon-42', name: 'btn-arrow' -%}
+                  </a>
+                {% endif %}
+              </div>
+
+              <div class="tw-flex-shrink-0 tw-relative tw-pb-[calc(50%-8px)] tw-overflow-hidden lg:tw-flex-shrink-0 lg:tw-p-0 lg:tw-h-full lg:tw-w-[calc(150px-8px)] lg:tw-flex lg:tw-items-center xl:tw-w-[calc(246.5px-16px)] {% if forloop.last %} lg:tw-justify-end {% endif %}">
+                <div
+                  style="background: {{ bg_product_block }};"
+                  class="tw-absolute {% if forloop.first %} tw-top-0 lg:tw-justify-start {% else %} tw-bottom-0 lg:tw-justify-end {% endif %} tw-flex tw-justify-center tw-py-6 tw-px-20 sm:tw-py-14 tw-w-full tw-h-auto tw-aspect-square tw-rounded-full lg:tw-size-[300px] lg:tw-static lg:tw-p-9 xl:tw-p-13 xl:tw-size-[493px]"
+                >
+                  {% if product_image != blank %}
+                    {% assign img_class = 'tw-h-auto tw-w-full tw-object-contain tw-max-w-30 sm:tw-max-w-[50%] tw-mx-auto lg:tw-w-[148px] lg:tw-mx-0' %}
+                    {% if forloop.first %}
+                      {% assign img_class = img_class | append: ' tw-self-start lg:tw-self-center' %}
+                    {% else %}
+                      {% assign img_class = img_class | append: ' tw-self-end lg:tw-self-center' %}
+                    {% endif %}
+                    {{-
+                      product_image
+                      | image_url: width: product_image.width
+                      | image_tag:
+                        loading: 'lazy',
+                        sizes: 'min(100vw, 600px)',
+                        widths: '100,200,300,400,500,600',
+                        alt: product_image.alt,
+                        class: img_class
+                    -}}
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        {% else %}
+          {% for block in section.blocks %}
+            {% liquid
+              assign bg_color = block.settings.bg_color
+              assign text_color = block.settings.text_color
+              assign reverse_block = block.settings.reverse_block
+              assign heading = block.settings.heading
+              assign btn_text = block.settings.btn_text
+              assign btn_url = block.settings.btn_url
+              assign product_image = block.settings.product_image
+              assign bg_product_block = block.settings.bg_product_block
+            %}
+
+            <div
+              style="background: {{ bg_color }}; color: {{ text_color }};"
+              class="tw-overflow-hidden tw-relative tw-flex {% if reverse_block %}tw-flex-col-reverse lg:tw-flex-row-reverse{% else %} tw-flex-col lg:tw-flex-row{% endif %} {% if forloop.first %}tw-pb-0 lg:tw-pb-6 lg:tw-pr-0 lg:tw-pl-6 xl:tw-pb-10.5 xl:tw-pr-0 xl:tw-pl-10.5{% else %}tw-pt-0 lg:tw-pt-6 lg:tw-pl-0 lg:tw-pr-6 xl:tw-pt-10.5 xl:tw-pl-0 xl:tw-pr-10.5{% endif %} tw-gap-[22px] tw-p-6 tw-rounded-2xl lg:tw-rounded-3xl lg:tw-justify-between lg:tw-gap-0.5 lg:tw-py-6 xl:tw-py-10.5"
+            >
+              <div>
+                {% if heading != blank %}
+                  <h5 class="tw-font-bold tw-font-primary tw-text-2xl tw-leading-[48px] tw-mb-4 {% if reverse_block %}lg:tw-text-right{% else %} lg:tw-text-left{% endif %} xl:tw-text-[42px] xl:tw-leading-[50px] xl:tw-mb-8">
+                    {{ heading }}
+                  </h5>
+                {% endif %}
+                <ul class="tw-flex tw-flex-col tw-gap-4 lg:tw-gap-6">
+                  {% for i in (1..10) %}
+                    {% capture item_key %}item_{{- i -}}{% endcapture %}
+                    {% assign item = block.settings[item_key] %}
+
+                    {% if item != blank %}
+                      <li class="tw-font-secondary tw-font-normal tw-text-lg tw-leading-6 tw-flex tw-items-center tw-gap-3 tw-mb-0 {% if reverse_block %}lg:tw-flex-row-reverse lg:tw-text-right{% else %} lg:tw-flex-row lg:tw-text-left{% endif %} xl:tw-text-2xl">
+                        <svg
+                          class="tw-size-6 xl:tw-size-8.5"
+                          width="100%"
+                          height="100%"
+                          viewBox="0 0 35 35"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path d="M31.6978 17.5068C31.6978 9.7855 25.4383 3.52612 17.717 3.52612C9.99571 3.52612 3.73633 9.7855 3.73633 17.5068C3.73633 25.2281 9.99571 31.4876 17.717 31.4876C25.4383 31.4876 31.6978 25.2281 31.6978 17.5068Z" stroke="currentColor" stroke-width="1.57287"/>
+                          <path d="M12.126 18.1969L15.6211 21.692L23.3103 13.3037" stroke="currentColor" stroke-width="1.57287" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span>{{ item }}</span>
+                      </li>
+                    {% endif %}
+                  {% endfor %}
+                </ul>
+                {% if btn_text != blank and btn_url != blank %}
+                  <a
+                    style="color: {{ text_color }}; border-color: {{ text_color }};"
+                    href="{{ btn_url }}"
+                    class="btn-42 btn-42--third tw-mt-6 !tw-px-4 !tw-h-8.5 !tw-w-fit {% if reverse_block %}lg:tw-ml-auto{% endif %}"
+                  >
+                    <span class="tw-text-sm tw-leading-6 tw-font-semibold">{{- btn_text }}</span>
+                    {% render 'icon-42', name: 'btn-arrow' -%}
+                  </a>
+                {% endif %}
+              </div>
+
+              <div class="tw-flex-shrink-0 tw-relative tw-pb-[calc(50%-8px)] tw-overflow-hidden lg:tw-flex-shrink-0 lg:tw-p-0 lg:tw-h-full lg:tw-w-[calc(150px-8px)] lg:tw-flex lg:tw-items-center xl:tw-w-[calc(246.5px-16px)] {% if forloop.last %} lg:tw-justify-end {% endif %}">
+                <div
+                  style="background: {{ bg_product_block }};"
+                  class="tw-absolute {% if forloop.first %} tw-top-0 lg:tw-justify-start {% else %} tw-bottom-0 lg:tw-justify-end {% endif %} tw-flex tw-justify-center tw-py-6 tw-px-20 sm:tw-py-14 tw-w-full tw-h-auto tw-aspect-square tw-rounded-full lg:tw-size-[300px] lg:tw-static lg:tw-p-9 xl:tw-p-13 xl:tw-size-[493px]"
+                >
+                  {% if product_image != blank %}
+                    {% assign img_class = 'tw-h-auto tw-w-full tw-object-contain tw-max-w-30 sm:tw-max-w-[50%] tw-mx-auto lg:tw-w-[148px] lg:tw-mx-0' %}
+                    {% if forloop.first %}
+                      {% assign img_class = img_class | append: ' tw-self-start lg:tw-self-center' %}
+                    {% else %}
+                      {% assign img_class = img_class | append: ' tw-self-end lg:tw-self-center' %}
+                    {% endif %}
+                    {{-
+                      product_image
+                      | image_url: width: product_image.width
+                      | image_tag:
+                        loading: 'lazy',
+                        sizes: 'min(100vw, 600px)',
+                        widths: '100,200,300,400,500,600',
+                        alt: product_image.alt,
+                        class: img_class
+                    -}}
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "42 Compare table",
+  "tag": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "anchor_id",
+      "label": "Anchor id",
+      "default": "42-compare-table"
+    },
+    {
+      "type": "metaobject_list",
+      "id": "metaobject_content",
+      "metaobject_type": "compare_table_two_tools",
+      "label": "Metaobject"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Two Tools. One Goal: [[Your Success]]",
+      "info": "[[...]] - use for highlight"
+    },
+    {
+      "type": "header",
+      "content": "Padding Y settings"
+    },
+    {
+      "type": "number",
+      "id": "pt_mob",
+      "label": "Mobile padding top in px",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "pb_mob",
+      "label": "Mobile padding bottom in px",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "pt_tab",
+      "label": "Tablet padding top in px",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "pb_tab",
+      "label": "Tablet padding bottom in px",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "pt_desk",
+      "label": "Desktop padding top in px",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "pb_desk",
+      "label": "Desktop padding bottom in px",
+      "default": 0
+    }
+  ],
+  "blocks": [
+    {
+      "type": "block",
+      "name": "Block",
+      "limit": 2,
+      "settings": [
+        {
+          "type": "color",
+          "id": "bg_color",
+          "label": "Backgroung color",
+          "default": "#2C3C60"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text color",
+          "default": "#fff"
+        },
+        {
+          "type": "checkbox",
+          "id": "reverse_block",
+          "label": "Reverse block",
+          "default": false
+        },
+        {
+          "type": "image_picker",
+          "id": "product_image",
+          "label": "Product image"
+        },
+        {
+          "type": "color_background",
+          "id": "bg_product_block",
+          "label": "Backgroung product block",
+          "default": "linear-gradient(180deg, #EBEBEB 0%, #EAEAEB 100%)"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading"
+        },
+        {
+          "type": "text",
+          "id": "btn_text",
+          "label": "Button text",
+          "default": "Explore"
+        },
+        {
+          "type": "url",
+          "id": "btn_url",
+          "label": "Button url"
+        },
+        {
+          "type": "text",
+          "id": "item_1",
+          "label": "Item #1"
+        },
+        {
+          "type": "text",
+          "id": "item_2",
+          "label": "Item #2"
+        },
+        {
+          "type": "text",
+          "id": "item_3",
+          "label": "Item #3"
+        },
+        {
+          "type": "text",
+          "id": "item_4",
+          "label": "Item #4"
+        },
+        {
+          "type": "text",
+          "id": "item_5",
+          "label": "Item #5"
+        },
+        {
+          "type": "text",
+          "id": "item_6",
+          "label": "Item #6"
+        },
+        {
+          "type": "text",
+          "id": "item_7",
+          "label": "Item #7"
+        },
+        {
+          "type": "text",
+          "id": "item_8",
+          "label": "Item #8"
+        },
+        {
+          "type": "text",
+          "id": "item_9",
+          "label": "Item #9"
+        },
+        {
+          "type": "text",
+          "id": "item_10",
+          "label": "Item #10"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "42 Compare table"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,265 @@
+<style>
+  .thumbnail-slider .swiper-slide-thumb-active {
+    position: relative;
+  }
+  .thumbnail-slider .swiper-slide-thumb-active:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    width: 100%;
+    background: #2c3c60;
+    z-index: 5;
+  }
+  @media screen and (min-width: 1024px) {
+    .thumbnail-slider .swiper-slide-thumb-active:before {
+      height: 10px;
+    }
+  }
+</style>
+
+<div class="tw-relative">
+  <div class="swiper main-slider" x-ref="mainSlider">
+    <div class="swiper-wrapper">
+      {% for image in product.images %}
+        <div class="swiper-slide tw-select-none tw-aspect-square tw-overflow-hidden tw-rounded-ra-10">
+          <div class="tw-relative tw-w-full tw-h-full tw-cursor-pointer gallery-image-container"
+               data-image-url="{{ image | img_url: 'master' }}"
+               data-image-alt="{{ image.alt }}"
+               onclick="openFullscreenImage(this)">
+            <img
+              src="{{ image | img_url: 'master' }}"
+              alt="{{ image.alt }}"
+              height="100%"
+              width="100%"
+              class="tw-w-full tw-h-full tw-object-cover"
+            >
+            <!-- Full-screen icon overlay -->
+            <div class="tw-absolute tw-top-2 tw-right-2 tw-bg-black/30 tw-rounded-full tw-p-2 tw-opacity-0 tw-transition-opacity tw-duration-200 hover:tw-opacity-100 gallery-fullscreen-icon">
+              <svg class="tw-w-4 tw-h-4 tw-text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"></path>
+              </svg>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  {% if show_nav_btn %}
+    <div
+      x-ref="mainSliderPrev"
+      class="tw-absolute tw-z-5 tw-bg-white tw-rounded-full tw-cursor-pointer tw-transition-all tw-duration-200 hover:tw-bg-white/60"
+      style="top:50%;left:0.25rem;transform:translateY(-50%);"
+    >
+      {% render 'icon-42', name: 'swiper-btn', class: 'tw-rotate-180' %}
+    </div>
+    <div
+      x-ref="mainSliderNext"
+      class="tw-absolute tw-z-5 tw-bg-white tw-rounded-full tw-cursor-pointer tw-transition-all tw-duration-200 hover:tw-bg-white/60"
+      style="top:50%;right:0.25rem;transform:translateY(-50%);"
+    >
+      {% render 'icon-42', name: 'swiper-btn', class: '' %}
+    </div>
+  {% endif %}
+</div>
+
+<div class="swiper thumbnail-slider tw-mt-2 lg:tw-mt-[15px]" x-ref="thumbnailSlider">
+  <div class="swiper-wrapper">
+    {% for image in product.images %}
+      <div class="swiper-slide tw-select-none !tw-h-auto tw-cursor-pointer tw-rounded-[10px] tw-overflow-hidden">
+        <div class="tw-flex tw-items-center tw-h-full">
+          <img
+            src="{{ image | img_url: 'master' }}"
+            alt="{{ image.alt }}"
+            height="100%"
+            width="100%"
+            class="tw-w-full tw-h-full tw-object-cover"
+          >
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Initialize infinite loop gallery for product gallery
+  const galleryElements = document.querySelectorAll('.main-slider');
+
+  galleryElements.forEach(function(galleryEl) {
+    // Get navigation buttons
+    const prevBtn = galleryEl.parentElement.querySelector('[x-ref="mainSliderPrev"]');
+    const nextBtn = galleryEl.parentElement.querySelector('[x-ref="mainSliderNext"]');
+    const thumbnailSlider = galleryEl.parentElement.querySelector('.thumbnail-slider');
+
+    if (galleryEl && prevBtn && nextBtn) {
+      // Wait for Swiper to be initialized
+      setTimeout(function() {
+        const mainSwiper = galleryEl.swiper;
+        const thumbSwiper = thumbnailSlider ? thumbnailSlider.swiper : null;
+
+        if (mainSwiper) {
+          // Override the navigation button functionality for infinite loop
+          prevBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            if (mainSwiper.isBeginning) {
+              // Go to last slide
+              mainSwiper.slideTo(mainSwiper.slides.length - 1);
+              if (thumbSwiper) {
+                thumbSwiper.slideTo(thumbSwiper.slides.length - 1);
+              }
+            } else {
+              // Go to previous slide
+              mainSwiper.slidePrev();
+              if (thumbSwiper) {
+                thumbSwiper.slidePrev();
+              }
+            }
+          });
+
+          nextBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            if (mainSwiper.isEnd) {
+              // Go to first slide
+              mainSwiper.slideTo(0);
+              if (thumbSwiper) {
+                thumbSwiper.slideTo(0);
+              }
+            } else {
+              // Go to next slide
+              mainSwiper.slideNext();
+              if (thumbSwiper) {
+                thumbSwiper.slideNext();
+              }
+            }
+          });
+
+          // Ensure navigation buttons are never disabled
+          function updateNavigationButtons() {
+            if (prevBtn) {
+              prevBtn.style.opacity = '1';
+              prevBtn.style.pointerEvents = 'auto';
+              prevBtn.removeAttribute('disabled');
+            }
+            if (nextBtn) {
+              nextBtn.style.opacity = '1';
+              nextBtn.style.pointerEvents = 'auto';
+              nextBtn.removeAttribute('disabled');
+            }
+          }
+
+          // Update buttons on slide change
+          mainSwiper.on('slideChange', updateNavigationButtons);
+          mainSwiper.on('reachBeginning', updateNavigationButtons);
+          mainSwiper.on('reachEnd', updateNavigationButtons);
+
+          // Initial update
+          updateNavigationButtons();
+        }
+      }, 100); // Small delay to ensure Swiper is initialized
+    }
+  });
+});
+
+// Full-screen image viewer functionality
+function openFullscreenImage(element) {
+  const imageUrl = element.getAttribute('data-image-url');
+  const imageAlt = element.getAttribute('data-image-alt');
+
+  // Create fullscreen modal
+  const modal = document.createElement('div');
+  modal.id = 'fullscreen-image-modal';
+  modal.className = 'tw-fixed tw-inset-0 tw-bg-black tw-bg-opacity-90 tw-z-50 tw-flex tw-items-center tw-justify-center tw-opacity-0 tw-transition-opacity tw-duration-300';
+  modal.style.cursor = 'zoom-out';
+
+  modal.innerHTML = `
+    <div class="tw-relative tw-max-w-screen tw-max-h-screen tw-p-4">
+      <img
+        src="${imageUrl}"
+        alt="${imageAlt}"
+        class="tw-max-w-full tw-max-h-full tw-object-contain tw-mx-auto tw-block"
+        style="max-height: 90vh; max-width: 90vw;"
+      >
+      <button
+        onclick="closeFullscreenImage()"
+        class="tw-absolute tw-top-4 tw-right-4 tw-bg-black tw-bg-opacity-50 tw-text-white tw-rounded-full tw-p-2 tw-transition-all tw-duration-200 hover:tw-bg-opacity-70"
+        style="z-index: 51;"
+      >
+        <svg class="tw-w-6 tw-h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+  `;
+
+  // Add modal to body
+  document.body.appendChild(modal);
+  document.body.style.overflow = 'hidden'; // Prevent background scrolling
+
+  // Trigger fade in
+  setTimeout(() => {
+    modal.classList.remove('tw-opacity-0');
+    modal.classList.add('tw-opacity-100');
+  }, 10);
+
+  // Close on background click
+  modal.addEventListener('click', function(e) {
+    if (e.target === modal || e.target.tagName === 'IMG') {
+      closeFullscreenImage();
+    }
+  });
+
+  // Close on ESC key
+  document.addEventListener('keydown', handleEscKey);
+}
+
+function closeFullscreenImage() {
+  const modal = document.getElementById('fullscreen-image-modal');
+  if (modal) {
+    modal.classList.remove('tw-opacity-100');
+    modal.classList.add('tw-opacity-0');
+
+    setTimeout(() => {
+      modal.remove();
+      document.body.style.overflow = ''; // Restore scrolling
+      document.removeEventListener('keydown', handleEscKey);
+    }, 300);
+  }
+}
+
+function handleEscKey(e) {
+  if (e.key === 'Escape') {
+    closeFullscreenImage();
+  }
+}
+
+// Show fullscreen icon on hover
+document.addEventListener('DOMContentLoaded', function() {
+  const galleryContainers = document.querySelectorAll('.gallery-image-container');
+
+  galleryContainers.forEach(container => {
+    const icon = container.querySelector('.gallery-fullscreen-icon');
+
+    container.addEventListener('mouseenter', function() {
+      if (icon) {
+        icon.classList.remove('tw-opacity-0');
+        icon.classList.add('tw-opacity-100');
+      }
+    });
+
+    container.addEventListener('mouseleave', function() {
+      if (icon) {
+        icon.classList.remove('tw-opacity-100');
+        icon.classList.add('tw-opacity-0');
+      }
+    });
+  });
+});
+</script>

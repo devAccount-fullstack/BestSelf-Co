@@ -1,0 +1,125 @@
+<div class="mg-carousel-section">
+  <h2>{{ section.settings.heading }}</h2>
+  <div>
+  <span class="mg-rotating-text">
+    <span class="active">{{ section.settings.mg-active-slide-text }}</span>
+    {% for block in section.blocks %} 
+      <span class="">{{ block.settings.mg-slide-text }}</span>
+    {% endfor %}
+  </span>
+  </div>
+  <div>
+  <a href="{{ section.settings.button_link }}" class="btn btn--solid btn--primary">{{ section.settings.button_text }}</a>
+  </div>  
+</div>
+
+<style>
+.mg-carousel-section {
+  background-image: url({{ section.settings.bg_image | image_url }});
+  background-position: center center;
+  background-size: cover;
+  text-align: center;
+  padding: 100px 20px;
+}
+.mg-carousel-section h2 {
+    font-size: 44px;
+}
+.mg-rotating-text {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  font-family: "New York", "Iowan Old Style", "Apple Garamond", Baskerville, "Times New Roman", "Droid Serif", Times, "Source Serif Pro", serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 62px;
+  font-weight: bold;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.mg-rotating-text span {
+  font-family: "New York", "Iowan Old Style", "Apple Garamond", Baskerville, "Times New Roman", "Droid Serif", Times, "Source Serif Pro", serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+   display: none;
+   margin: 0;
+}
+
+.mg-rotating-text .active {
+  font-family: "New York", "Iowan Old Style", "Apple Garamond", Baskerville, "Times New Roman", "Droid Serif", Times, "Source Serif Pro", serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+   display: inline-block;
+   animation: fade 1s ease-in-out;
+}
+
+@keyframes fade {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+</style>
+
+<script>
+  const rotatingText = document.querySelector('.mg-rotating-text');
+  const textItems = rotatingText.querySelectorAll('span');
+  let currentIndex = 0;
+
+  function rotateText() {
+    textItems[currentIndex].classList.remove('active');
+    currentIndex = (currentIndex + 1) % textItems.length;
+    textItems[currentIndex].classList.add('active');
+  }
+
+  setInterval(rotateText, 3000);
+</script>
+{% schema %}
+{
+  "name": "MG Text Slider",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "bg_image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Your Corporate Gift For"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "GET PERSONALIZED HELP"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "text",
+      "id": "mg-active-slide-text",
+      "label": "Default Slide Text",
+      "default": "Employees"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "text",
+      "name": "Text Slide",
+      "settings": [
+        {
+          "type": "text",
+          "id": "mg-slide-text",
+          "label": "Slide Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "MG Text Slider"
+    }
+  ]
+}
+{% endschema %}

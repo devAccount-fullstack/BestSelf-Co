@@ -1,0 +1,212 @@
+{% liquid
+  assign blocks = section.blocks
+
+  assign show_more = section.settings.show_more
+  assign show_less = section.settings.show_less
+
+  assign pt_mob = section.settings.pt_mob
+  assign pb_mob = section.settings.pb_mob
+  assign pt_tab = section.settings.pt_tab
+  assign pb_tab = section.settings.pb_tab
+  assign pt_desk = section.settings.pt_desk
+  assign pb_desk = section.settings.pb_desk
+%}
+
+{% render 'section-paddings',
+  section_id: section.id,
+  pt_mob: pt_mob,
+  pb_mob: pb_mob,
+  pt_tab: pt_tab,
+  pb_tab: pb_tab,
+  pt_desk: pt_desk,
+  pb_desk: pb_desk
+%}
+
+{% if blocks.size > 0 %}
+  <div
+    data-section-id="{{ section.id }}"
+    class="tw-overflow-hidden"
+  >
+    <div class="container-42">
+      <div
+        class="swiper tw-opacity-0 tw-duration-300 !tw-overflow-visible"
+        x-ignore
+        ax-load
+        x-data="swiperSlider($el, 'reviews_slider')"
+      >
+        <div class="swiper-wrapper">
+          {% for block in section.blocks %}
+            {% liquid
+              assign title = block.settings.title
+              assign text = block.settings.text
+              assign icon_star = block.settings.icon_star
+              assign author = block.settings.author
+            %}
+            <div class="swiper-slide tw-cursor-pointer lg:tw-max-w-[380px] tw-max-w-[318px] lg:tw-p-8 tw-p-7">
+              <h3 class="tw-text-sc-blue tw-text-xl lg:tw-text-2xl tw-font-semibold">
+                {{ title }}
+              </h3>
+              <div class="tw-mt-3.5 tw-mb-12 lg:tw-mt-4 lg:tw-mb-15 ">
+                <div
+                  x-data="{ expanded: false, isClamped: false }"
+                  x-init="
+                    $nextTick(() => {
+                      const el = $refs.text;
+                      isClamped = el.scrollHeight > el.clientHeight;
+                    })
+                  "
+                >
+                  <div
+                    x-ref="text"
+                    :class="expanded ? '' : 'tw-line-clamp-5'"
+                    class="rte-all:tw-font-normal tw-text-black tw-text-lg tw-leading-8 lg:tw-text-sm lg:tw-leading-6 transition-all"
+                  >
+                    {{ text }}
+                  </div>
+
+                  <button
+                    x-show="isClamped && !expanded"
+                    @click="expanded = true"
+                    class="tw-flex tw-ml-auto sc-blue hover:tw-underline tw-mt-2 tw-text-xs tw-cursor-pointer"
+                  >
+                    {{ show_more }}
+                  </button>
+
+                  <button
+                    x-show="expanded"
+                    @click="expanded = false"
+                    class="tw-flex tw-ml-auto sc-blue hover:tw-underline tw-mt-2 tw-text-xs tw-cursor-pointer"
+                  >
+                    {{ show_less }}
+                  </button>
+                </div>
+              </div>
+
+              <div class="tw-mt-auto">
+                <div class="tw-flex tw-gap-[3.44px]">
+                  {% for i in (1..icon_star) %}
+                    {% render 'icon-42', name: 'review-star', class: 'tw-h-3.5 tw-w-3.5 lg:tw-h-4 lg:tw-w-4' %}
+                  {% endfor %}
+                </div>
+
+                <div class="tw-mt-2 tw-text-sc-blue tw-font-semibold tw-text-sm lg:tw-text-base">
+                  {{ author }}
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+
+        <div class="tw-hidden md:tw-flex tw-gap-[13px] tw-mt-2 tw-justify-start">
+          <div class="slider-nav-btn-prev tw-cursor-pointer">
+            {% render 'icon-42', name: 'swiper-btn', class: 'tw-rotate-180' %}
+          </div>
+          <div class="slider-nav-btn-next tw-cursor-pointer">{% render 'icon-42', name: 'swiper-btn' %}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "42 Reviews",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "show_more",
+      "label": "Button text. Show more",
+      "default": "Show more"
+    },
+    {
+      "type": "text",
+      "id": "show_less",
+      "label": "Button text. Show less",
+      "default": "Show less"
+    },
+    {
+      "type": "header",
+      "content": "Padding Y settings"
+    },
+    {
+      "type": "number",
+      "id": "pt_mob",
+      "label": "Mobile padding top in px",
+      "default": 48
+    },
+    {
+      "type": "number",
+      "id": "pb_mob",
+      "label": "Mobile padding bottom in px",
+      "default": 48
+    },
+    {
+      "type": "number",
+      "id": "pt_tab",
+      "label": "Tablet padding top in px",
+      "default": 48
+    },
+    {
+      "type": "number",
+      "id": "pb_tab",
+      "label": "Tablet padding bottom in px",
+      "default": 48
+    },
+    {
+      "type": "number",
+      "id": "pt_desk",
+      "label": "Desktop padding top in px",
+      "default": 56
+    },
+    {
+      "type": "number",
+      "id": "pb_desk",
+      "label": "Desktop padding bottom in px",
+      "default": 56
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Review",
+      "type": "block",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text"
+        },
+        {
+          "type": "text",
+          "id": "custom_heading",
+          "label": "Custom heading"
+        },
+        {
+          "type": "range",
+          "id": "icon_star",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "label": "Icon star",
+          "default": 5
+        },
+        {
+          "type": "text",
+          "id": "author",
+          "label": "Author"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "42 Reviews"
+    }
+  ]
+}
+{% endschema %}

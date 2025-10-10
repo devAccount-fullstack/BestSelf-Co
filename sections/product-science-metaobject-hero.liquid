@@ -1,0 +1,423 @@
+<!-- /sections/product-science-metaobject-hero.liquid -->
+{%- liquid
+  # Get the metaobject based on page handle
+  assign science_page_handle = page.handle | replace: 'the-science-of-', 'science-' | replace: 'the-science-behind-', 'science-behind-'
+  assign science_pages = shop.metaobjects.product_science_page_v2.values
+  assign science_page = nil
+  
+  for sp in science_pages
+    if sp.original_page_handle == page.handle or sp.url_handle == page.handle
+      assign science_page = sp
+      break
+    endif
+  endfor
+  
+  # Fallback: try to match by similar handle
+  unless science_page
+    for sp in science_pages
+      if sp.url_handle contains page.handle or page.handle contains sp.url_handle
+        assign science_page = sp
+        break
+      endif
+    endfor
+  endunless
+  
+  # Get data from metaobject
+  if science_page
+    assign hero_heading = science_page.hero_heading.value
+    assign hero_subheading = science_page.hero_subheading.value  
+    assign hero_image = science_page.hero_image.value
+  endif
+  
+  # Allow section settings to override if needed
+  if section.settings.override_heading != blank
+    assign hero_heading = section.settings.override_heading
+  endif
+  if section.settings.override_subheading != blank
+    assign hero_subheading = section.settings.override_subheading
+  endif
+  if section.settings.override_image != blank
+    assign hero_image = section.settings.override_image
+  endif
+  
+  # Section settings
+  assign overlay_opacity = section.settings.overlay_opacity | times: 0.01
+  assign color_scheme = 'color-' | append: section.settings.color_scheme
+  assign text_color_override = section.settings.text_color_override
+-%}
+
+{%- if science_page or section.settings.show_fallback -%}
+  <div class="section-hero {{ section.settings.height }} {{ section.settings.mobile_height }} {{ color_scheme }}"
+       style="--PT: {{ section.settings.padding_top }}px; --PB: {{ section.settings.padding_bottom }}px;">
+    
+    {%- if hero_image != blank -%}
+      <div class="hero__image-wrapper">
+        <img src="{{ hero_image | image_url: width: 2400 }}"
+             alt="{{ hero_heading | escape }}"
+             loading="eager"
+             width="2400"
+             height="800"
+             class="hero__image">
+        {%- if section.settings.show_overlay and overlay_opacity > 0 -%}
+          <div class="hero__overlay" style="opacity: {{ overlay_opacity }};"></div>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+    
+    <div class="hero__content {{ section.settings.flex_align_desktop }} {{ section.settings.flex_align_mobile }}">
+      <div class="hero__content-inner">
+        {%- if hero_subheading != blank -%}
+          <p class="hero__subheading {{ section.settings.subheading_size }}"
+             {%- if text_color_override != blank -%}
+               style="color: {{ text_color_override }};"
+             {%- endif -%}>
+            {{ hero_subheading }}
+          </p>
+        {%- endif -%}
+        {%- if hero_heading != blank -%}
+          <h1 class="hero__heading {{ section.settings.heading_size }}"
+              {%- if text_color_override != blank -%}
+                style="color: {{ text_color_override }};"
+              {%- endif -%}>
+            {{ hero_heading }}
+          </h1>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+{%- else -%}
+  <div style="padding: 40px; text-align: center; background: #f5f5f5;">
+    <p>No science page data found for handle: {{ page.handle }}</p>
+  </div>
+{%- endif -%}
+
+<style>
+  .section-hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  
+  .hero__image-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .hero__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .hero__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: currentColor;
+    mix-blend-mode: multiply;
+  }
+  
+  .hero__content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding: 40px;
+  }
+  
+  .hero__content-inner {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .hero__subheading {
+    margin-bottom: 1rem;
+    opacity: 0.9;
+    line-height: 1.4;
+  }
+  
+  .hero__heading {
+    font-weight: bold;
+    line-height: 1.2;
+    margin: 0;
+  }
+  
+  /* Subheading sizes */
+  .subheading-small { font-size: 0.9rem; }
+  .subheading-medium { font-size: 1.1rem; }
+  .subheading-large { font-size: 1.3rem; }
+  .subheading-xlarge { font-size: 1.5rem; }
+  
+  /* Heading sizes */
+  .heading-small { font-size: 1.8rem; }
+  .heading-medium { font-size: 2.5rem; }
+  .heading-large { font-size: 3rem; }
+  .heading-xlarge { font-size: 3.5rem; }
+  .heading-xxlarge { font-size: 4rem; }
+  
+  /* Height classes */
+  .three-fifty-height-hero { min-height: 350px; }
+  .four-fifty-height-hero { min-height: 450px; }
+  .five-fifty-height-hero { min-height: 550px; }
+  .six-fifty-height-hero { min-height: 650px; }
+  .seven-fifty-height-hero { min-height: 750px; }
+  .full-height-hero { min-height: 100vh; }
+  
+  /* Mobile adjustments */
+  @media (max-width: 768px) {
+    .three-fifty-height-hero--mobile { min-height: 350px; }
+    .four-fifty-height-hero--mobile { min-height: 450px; }
+    .five-fifty-height-hero--mobile { min-height: 550px; }
+    .six-fifty-height-hero--mobile { min-height: 650px; }
+    
+    /* Mobile font sizes */
+    .subheading-small { font-size: 0.85rem; }
+    .subheading-medium { font-size: 1rem; }
+    .subheading-large { font-size: 1.15rem; }
+    .subheading-xlarge { font-size: 1.3rem; }
+    
+    .heading-small { font-size: 1.5rem; }
+    .heading-medium { font-size: 2rem; }
+    .heading-large { font-size: 2.5rem; }
+    .heading-xlarge { font-size: 2.8rem; }
+    .heading-xxlarge { font-size: 3.2rem; }
+  }
+  
+  /* Alignment classes */
+  .align--middle-left-desktop { justify-content: flex-start; text-align: left; }
+  .align--middle-center-desktop { justify-content: center; text-align: center; }
+  .align--middle-right-desktop { justify-content: flex-end; text-align: right; }
+  
+  @media (max-width: 768px) {
+    .align--middle-left-mobile { justify-content: flex-start; text-align: left; }
+    .align--middle-center-mobile { justify-content: center; text-align: center; }
+    .align--middle-right-mobile { justify-content: flex-end; text-align: right; }
+  }
+  
+  /* Color scheme classes - inherit from theme */
+  .color- {
+    background-color: var(--section-bg);
+    color: var(--text);
+  }
+  
+  .color-scheme-1 {
+    background-color: var(--scheme-1-bg, var(--section-bg));
+    color: var(--scheme-1-text, var(--text));
+  }
+  
+  .color-scheme-2 {
+    background-color: var(--scheme-2-bg, var(--section-bg));
+    color: var(--scheme-2-text, var(--text));
+  }
+  
+  .color-scheme-3 {
+    background-color: var(--scheme-3-bg, var(--section-bg));
+    color: var(--scheme-3-text, var(--text));
+  }
+  
+  .color-scheme-10 {
+    background-color: var(--scheme-10-bg, #1a1a1a);
+    color: var(--scheme-10-text, #ffffff);
+  }
+</style>
+
+{% schema %}
+{
+  "name": "PS Hero (Metaobject)",
+  "tag": "section",
+  "class": "section-hero-metaobject",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Metaobject Connection"
+    },
+    {
+      "type": "paragraph",
+      "content": "This section automatically pulls hero data from the Product Science Page metaobject based on the current page handle."
+    },
+    {
+      "type": "checkbox",
+      "id": "show_fallback",
+      "label": "Show fallback content",
+      "default": false,
+      "info": "Display fallback when no metaobject is found"
+    },
+    {
+      "type": "header",
+      "content": "Override Content"
+    },
+    {
+      "type": "text",
+      "id": "override_heading",
+      "label": "Override heading",
+      "info": "Leave blank to use metaobject data"
+    },
+    {
+      "type": "text",
+      "id": "override_subheading",
+      "label": "Override subheading",
+      "info": "Leave blank to use metaobject data"
+    },
+    {
+      "type": "image_picker",
+      "id": "override_image",
+      "label": "Override image",
+      "info": "Leave blank to use metaobject data"
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "select",
+      "id": "subheading_size",
+      "label": "Subheading size",
+      "options": [
+        {"value": "subheading-small", "label": "Small"},
+        {"value": "subheading-medium", "label": "Medium"},
+        {"value": "subheading-large", "label": "Large"},
+        {"value": "subheading-xlarge", "label": "Extra Large"}
+      ],
+      "default": "subheading-large"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "label": "Heading size",
+      "options": [
+        {"value": "heading-small", "label": "Small"},
+        {"value": "heading-medium", "label": "Medium"},
+        {"value": "heading-large", "label": "Large"},
+        {"value": "heading-xlarge", "label": "Extra Large"},
+        {"value": "heading-xxlarge", "label": "XXL"}
+      ],
+      "default": "heading-large"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "options": [
+        {"value": "", "label": "Default"},
+        {"value": "scheme-1", "label": "Scheme 1"},
+        {"value": "scheme-2", "label": "Scheme 2"},
+        {"value": "scheme-3", "label": "Scheme 3"},
+        {"value": "scheme-10", "label": "Scheme 10 (Dark)"}
+      ],
+      "default": "scheme-10",
+      "info": "Applies to overlay color when enabled"
+    },
+    {
+      "type": "color",
+      "id": "text_color_override",
+      "label": "Text color override",
+      "info": "Choose a custom color for text, or leave blank to use color scheme"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_overlay",
+      "label": "Show overlay",
+      "default": true,
+      "info": "Add overlay using the color scheme color"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "%",
+      "label": "Overlay opacity",
+      "default": 60,
+      "info": "Only applies when overlay is enabled"
+    },
+    {
+      "type": "header",
+      "content": "Layout Settings"
+    },
+    {
+      "type": "select",
+      "id": "height",
+      "label": "Desktop height",
+      "options": [
+        {"value": "three-fifty-height-hero", "label": "350px"},
+        {"value": "four-fifty-height-hero", "label": "450px"},
+        {"value": "five-fifty-height-hero", "label": "550px"},
+        {"value": "six-fifty-height-hero", "label": "650px"},
+        {"value": "seven-fifty-height-hero", "label": "750px"},
+        {"value": "full-height-hero", "label": "Full screen"}
+      ],
+      "default": "four-fifty-height-hero"
+    },
+    {
+      "type": "select",
+      "id": "mobile_height",
+      "label": "Mobile height",
+      "options": [
+        {"value": "three-fifty-height-hero--mobile", "label": "350px"},
+        {"value": "four-fifty-height-hero--mobile", "label": "450px"},
+        {"value": "five-fifty-height-hero--mobile", "label": "550px"},
+        {"value": "six-fifty-height-hero--mobile", "label": "650px"}
+      ],
+      "default": "four-fifty-height-hero--mobile"
+    },
+    {
+      "type": "select",
+      "id": "flex_align_desktop",
+      "label": "Desktop content alignment",
+      "options": [
+        {"value": "align--middle-left-desktop", "label": "Left"},
+        {"value": "align--middle-center-desktop", "label": "Center"},
+        {"value": "align--middle-right-desktop", "label": "Right"}
+      ],
+      "default": "align--middle-center-desktop"
+    },
+    {
+      "type": "select",
+      "id": "flex_align_mobile",
+      "label": "Mobile content alignment",
+      "options": [
+        {"value": "align--middle-left-mobile", "label": "Left"},
+        {"value": "align--middle-center-mobile", "label": "Center"},
+        {"value": "align--middle-right-mobile", "label": "Right"}
+      ],
+      "default": "align--middle-center-mobile"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 0
+    }
+  ],
+  "presets": [
+    {
+      "name": "PS Hero (Metaobject)"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,263 @@
+{% liquid
+  assign section_title = section.settings.section_title
+  assign blocks = section.blocks
+  assign active_collection = ''
+
+  assign pt_mob = section.settings.pt_mob
+  assign pb_mob = section.settings.pb_mob
+  assign pt_tab = section.settings.pt_tab
+  assign pb_tab = section.settings.pb_tab
+  assign pt_desk = section.settings.pt_desk
+  assign pb_desk = section.settings.pb_desk
+%}
+
+{% render 'section-paddings',
+  section_id: section.id,
+  pt_mob: pt_mob,
+  pb_mob: pb_mob,
+  pt_tab: pt_tab,
+  pb_tab: pb_tab,
+  pt_desk: pt_desk,
+  pb_desk: pb_desk
+%}
+
+<style>
+  @media screen and (min-width: 1440px) {
+    .shop_our__padding__right {
+      padding-right: calc((100vw - 1440px) / 2 + 48px) !important;
+    }
+    .shop_our__padding__left {
+      width: calc(calc((100vw - 1440px) / 2 + 48px) + 344px);
+      padding-left: calc((100vw - 1440px) / 2 + 48px);
+    }
+  }
+</style>
+
+<div
+  data-section-id="{{ section.id }}"
+  class="tw-overflow-hidden"
+  x-data="{ activeCollection: '' }"
+>
+  <div class="container-42 tw-mb-4 lg:tw-mb-10">
+    {% if section_title != blank %}
+      <h2 class="tw-font-bold tw-mb-6 lg:tw-mb-8 tw-text-black tw-text-[28px] tw-leading-[35px] lg:tw-text-[32px] lg:tw-leading-[40px]">
+        {{ section_title }}
+      </h2>
+    {% endif %}
+
+    <div
+      class="swiper"
+      x-ignore
+      ax-load
+      x-data="swiperSlider($el, 'shop_our_tabs')"
+    >
+      <div class="swiper-wrapper">
+        {% for block in blocks %}
+          {% assign coll_handle = block.settings.collection.title %}
+          <div class="swiper-slide !tw-w-fit">
+            <button
+              type="button"
+              {% if forloop.first %}
+                x-init="activeCollection = '{{ coll_handle | handleize }}'"
+              {% endif %}
+              @click="activeCollection = '{{ coll_handle | handleize }}'"
+              :class="{'!tw-text-black' : activeCollection === '{{ coll_handle | handleize }}' }"
+              class="tw-text-[20px] tw-leading-[26px] lg:tw-text-[22px] lg:tw-leading-[29px] tw-text-[#B3B3B3] tw-uppercase"
+            >
+              {% if block.settings.custom_heading != blank %}
+                {{ block.settings.custom_heading }}
+              {% else %}
+                {{ coll_handle }}
+              {% endif %}
+            </button>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  {% for block in blocks %}
+    <div
+      x-show="activeCollection === '{{ block.settings.collection.title | handleize }}'"
+      x-cloak
+      x-transition:enter.delay.100ms.duration.300ms
+      x-transition:leave.duration.0ms
+    >
+      <div class="tw-flex">
+        <div class="shop_our__padding__left lg:tw-flex lg:tw-flex-col tw-hidden lg:tw-pr-5.5 tw-bg-white tw-relative tw-z-5 lg:tw-pl-12">
+          <div class="lg:tw-w-[320px] tw-h-fit tw-min-h-[150px] tw-relative">
+            <div
+              class="tw-absolute tw-top-0 tw-left-0 tw-w-full tw-h-full tw-rounded-[10px]"
+              style="background-color: {{ block.settings.overlay_color }}; opacity: {{ block.settings.overlay_opacity | times: 0.01 }}"
+            ></div>
+
+            {% if block.settings.custom_image != blank %}
+              <img
+                src="{{ block.settings.custom_image | img_url: 'master' }}"
+                alt="{{ block.settings.collection.title }}"
+                class="tw-w-full tw-rounded-[10px] tw-object-cover"
+              >
+            {% else %}
+              <img
+                src="{{ block.settings.collection.featured_image.src | img_url: 'master' }}"
+                alt="{{ block.settings.collection.title }}"
+                class="tw-max-w-full tw-rounded-[10px] tw-object-cover"
+              >
+            {% endif %}
+
+            <div class="tw-absolute tw-bottom-0 tw-left-0 tw-px-5 tw-py-5">
+              <h3 style="color: {{ block.settings.text_color }}" class="tw-text-[28px] tw-leading-[35px] tw-font-bold">
+                {% if block.settings.custom_heading != blank %}
+                  {{ block.settings.custom_heading }}
+                {% else %}
+                  {{ block.settings.collection.title }}
+                {% endif %}
+              </h3>
+              <a
+                style="background: transparent;color:{{ block.settings.text_color }};border: 1px solid {{ block.settings.text_color }}"
+                href="{{ block.settings.collection.url }}?view=main-collection"
+                class="btn-42 btn-42--primary tw-mt-[13px] tw-min-w-[127px] tw-w-fit"
+              >
+                <span>{{ 'collections.general.shop_all' | t }}</span>
+                {% render 'icon-42', name: 'btn-arrow' %}
+              </a>
+            </div>
+          </div>
+          <!-- SLIDER BUTTONS DESKTOP -->
+          <div class="md:tw-flex tw-hidden tw-gap-[13px] tw-mt-[59px] tw-justify-start">
+            <div class="tw-cursor-pointer slider-button-prev-{{ section.id }}">
+              {% render 'icon-42', name: 'swiper-btn', class: 'tw-rotate-180' %}
+            </div>
+            <div class="tw-cursor-pointer slider-button-next-{{ section.id }}">
+              {% render 'icon-42', name: 'swiper-btn' %}
+            </div>
+          </div>
+        </div>
+
+        <div class="tw-w-full tw-overflow-hidden">
+          <!-- SLIDER -->
+          <div
+            class="swiper tw-select-none !tw-w-full tw-opacity-0 tw-duration-300 !tw-px-4 md:!tw-px-8 lg:!tw-pl-0 lg:!tw-pr-12 shop_our__padding__right !tw-overflow-visible"
+            x-ignore
+            ax-load
+            x-data="swiperSlider($el, 'shop_our_product', { navigation: { nextEl: '.slider-button-next-{{ section.id }}', prevEl: '.slider-button-prev-{{ section.id }}', disabledClass: 'tw-opacity-50' }})"
+          >
+            <div class="swiper-wrapper">
+              {% for product in block.settings.collection.products %}
+                <div class="swiper-slide !tw-h-auto tw-max-w-[286px] lg:tw-max-w-[320px]">
+                  {% render '42-product-card', product: product, class: '' %}
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+{% schema %}
+{
+  "name": "42 Shop our Collections",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Section title",
+      "default": "Shop our Collections"
+    },
+    {
+      "type": "header",
+      "content": "Padding Y settings"
+    },
+    {
+      "type": "number",
+      "id": "pt_mob",
+      "label": "Mobile padding top in px",
+      "default": 48
+    },
+    {
+      "type": "number",
+      "id": "pb_mob",
+      "label": "Mobile padding bottom in px",
+      "default": 48
+    },
+    {
+      "type": "number",
+      "id": "pt_tab",
+      "label": "Tablet padding top in px",
+      "default": 48
+    },
+    {
+      "type": "number",
+      "id": "pb_tab",
+      "label": "Tablet padding bottom in px",
+      "default": 48
+    },
+    {
+      "type": "number",
+      "id": "pt_desk",
+      "label": "Desktop padding top in px",
+      "default": 56
+    },
+    {
+      "type": "number",
+      "id": "pb_desk",
+      "label": "Desktop padding bottom in px",
+      "default": 56
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Collection",
+      "type": "block",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+        },
+        {
+          "type": "image_picker",
+          "id": "custom_image",
+          "label": "Custom image"
+        },
+        {
+          "type": "range",
+          "id": "overlay_opacity",
+          "label": "Overlay opacity",
+          "info": "Increase contrast for legible text.",
+          "min": 0,
+          "max": 100,
+          "step": 5,
+          "unit": "%",
+          "default": 0
+        },
+        {
+          "type": "color",
+          "id": "overlay_color",
+          "label": "Overlay color",
+          "default": "#242540"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text color",
+          "default": "#ffffff"
+        },
+        {
+          "type": "text",
+          "id": "custom_heading",
+          "label": "Custom heading"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "42 Shop our Collections"
+    }
+  ]
+}
+{% endschema %}

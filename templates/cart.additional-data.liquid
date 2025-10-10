@@ -1,0 +1,25 @@
+{% layout none %}
+{% comment %}{% endcomment %}
+{% assign json = '' %}
+{% for item in cart.items %}
+  {% assign handle = item.handle %}
+  {% if json != '' %}
+    {% assign json = json | append: ',' %}
+  {% endif %}
+
+  {% capture item_json %}
+    "{{- item.id -}}": {
+    "id": {{ item.id }},
+    "compare_at_price": {{ item.variant.compare_at_price | default: 0 | json }}
+    {% comment %}
+      ///// example how to add simple mf /////
+      "mf_custom_category": {{ all_products[item.handle].metafields.custom.custom_category | json }}
+    {% endcomment %}
+    }
+  {% endcapture %}
+
+  {% assign json = json | append: item_json %}
+{%- endfor -%}
+{
+{{ json }}
+}

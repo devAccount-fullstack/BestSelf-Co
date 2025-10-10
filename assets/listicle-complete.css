@@ -1,0 +1,462 @@
+/*
+ * =============================================================================
+ * COMPLETE LISTICLE STYLES - Consolidated CSS
+ * =============================================================================
+ * Combines all listicle-specific styles into one organized file
+ * Last updated: 2024
+ * 
+ * TABLE OF CONTENTS:
+ * 1. Typography - Paragraphs
+ * 2. Typography - Headings
+ * 3. Typography - Lists
+ * 4. Links & Underlines
+ * 5. Images & Media
+ * 6. Layout & Spacing
+ * 7. Mobile Responsive Overrides
+ * =============================================================================
+ */
+
+/* =============================================================================
+   1. TYPOGRAPHY - PARAGRAPHS
+   ============================================================================= */
+
+.hero__rte p,
+.template-metaobject-listicle p,
+.template-metaobject-listicle .hero__rte p,
+.section-rich-text .hero__rte p,
+.section-double .hero__rte p,
+.template-page .rte p,
+.template-article .rte p,
+.article__content p,
+.page-content p {
+  /* Base paragraph styling */
+  padding: 10px 0;
+  font-family: sans-serif;
+  line-height: 1.65;
+  
+  /* Adjusted font size (was 1.125rem, now 1.0625rem) */
+  font-size: 1.0625rem !important; /* 17px */
+}
+
+/* =============================================================================
+   2. TYPOGRAPHY - HEADINGS
+   ============================================================================= */
+
+/* H1 Headings */
+.hero__rte h1,
+.template-metaobject-listicle h1,
+.template-metaobject-listicle .hero__rte h1,
+.section-rich-text .hero__rte h1,
+.section-double .hero__rte h1 {
+  font-size: 2.25rem !important; /* 36px - reduced from 40px */
+  font-weight: 700;
+  line-height: 1.2 !important;
+  margin: 1.5em 0 0.6em !important;
+}
+
+/* H2 Headings */
+.hero__rte h2,
+.template-metaobject-listicle h2,
+.template-metaobject-listicle .hero__rte h2,
+.section-rich-text .hero__rte h2,
+.section-double .hero__rte h2 {
+  font-size: 1.75rem !important; /* 28px - reduced from 32px */
+  font-weight: 600;
+  line-height: 1.3 !important;
+  margin: 1.5em 0 0.6em !important;
+}
+
+/* H3 Headings */
+.hero__rte h3,
+.template-metaobject-listicle h3,
+.template-metaobject-listicle .hero__rte h3,
+.section-rich-text .hero__rte h3,
+.section-double .hero__rte h3 {
+  font-size: 1.375rem !important; /* 22px - reduced from 24px */
+  font-weight: 600;
+  line-height: 1.3 !important;
+  margin: 1.3em 0 0.5em !important;
+}
+
+/* H4 Headings */
+.hero__rte h4,
+.template-metaobject-listicle h4,
+.template-metaobject-listicle .hero__rte h4,
+.section-rich-text .hero__rte h4,
+.section-double .hero__rte h4 {
+  font-size: 1.125rem !important; /* 18px */
+  font-weight: 600;
+  line-height: 1.3;
+  margin: 1em 0 0.4em !important;
+}
+
+/* H5 & H6 Headings */
+.hero__rte h5,
+.hero__rte h6,
+.template-metaobject-listicle h5,
+.template-metaobject-listicle h6,
+.section-rich-text .hero__rte h5,
+.section-rich-text .hero__rte h6,
+.section-double .hero__rte h5,
+.section-double .hero__rte h6 {
+  font-size: 1rem !important; /* 16px */
+  font-weight: 600;
+  line-height: 1.3;
+  margin: 0.8em 0 0.3em !important;
+}
+
+/* =============================================================================
+   3. TYPOGRAPHY - LISTS
+   ============================================================================= */
+
+.hero__rte ul,
+.hero__rte ol,
+.template-metaobject-listicle ul,
+.template-metaobject-listicle ol,
+.template-metaobject-listicle .hero__rte ul,
+.template-metaobject-listicle .hero__rte ol,
+.section-rich-text .hero__rte ul,
+.section-rich-text .hero__rte ol,
+.section-double .hero__rte ul,
+.section-double .hero__rte ol {
+  margin: 1em 0;
+  padding-left: 1.5em;
+}
+
+.hero__rte li,
+.template-metaobject-listicle li,
+.template-metaobject-listicle .hero__rte li,
+.section-rich-text .hero__rte li,
+.section-double .hero__rte li {
+  margin: 0.5em 0;
+  line-height: 1.6;
+}
+
+/* =============================================================================
+   4. LINKS & UNDERLINES
+   ============================================================================= */
+
+/* Remove ALL existing underlines first */
+.template-metaobject-listicle a,
+.section-double .hero__rte a,
+.section-rich-text .hero__rte a,
+.hero__rte a,
+.rte a {
+  /* Remove any existing underlines */
+  border-bottom: none !important;
+  box-shadow: none !important;
+  background-image: none !important;
+  text-decoration: none !important;
+}
+
+/* Apply clean, single underline */
+.template-metaobject-listicle a,
+.section-double .hero__rte a,
+.section-rich-text .hero__rte a,
+.hero__rte a,
+.rte a {
+  /* Single, subtle underline using modern CSS */
+  text-decoration: underline !important;
+  text-decoration-thickness: 0.5px !important; /* Very thin line */
+  text-decoration-color: rgba(0, 0, 0, 0.3) !important; /* Light gray */
+  text-underline-offset: 2px !important; /* Space from text */
+  text-decoration-skip-ink: auto !important; /* Skip descenders */
+  
+  /* Ensure inline display */
+  display: inline !important;
+  
+  /* Smooth transition */
+  transition: text-decoration-color 0.2s ease !important;
+}
+
+/* Hover state */
+.template-metaobject-listicle a:hover,
+.section-double .hero__rte a:hover,
+.section-rich-text .hero__rte a:hover,
+.hero__rte a:hover,
+.rte a:hover {
+  text-decoration-color: rgba(0, 0, 0, 0.5) !important;
+  text-decoration-thickness: 0.75px !important;
+}
+
+/* Focus state for accessibility */
+.template-metaobject-listicle a:focus,
+.section-double .hero__rte a:focus,
+.section-rich-text .hero__rte a:focus,
+.hero__rte a:focus,
+.rte a:focus {
+  outline: 2px solid #0066cc !important;
+  outline-offset: 2px !important;
+  text-decoration-color: rgba(0, 0, 0, 0.6) !important;
+}
+
+/* Ensure no underlines on buttons */
+a.btn,
+a.button,
+a[class*="btn"],
+a[class*="button"],
+.no-underline {
+  text-decoration: none !important;
+  border-bottom: none !important;
+}
+
+/* Fallback for browsers that don't support thin text-decoration-thickness */
+@supports not (text-decoration-thickness: 0.5px) {
+  .template-metaobject-listicle a,
+  .section-double .hero__rte a,
+  .section-rich-text .hero__rte a,
+  .hero__rte a,
+  .rte a {
+    text-decoration: none !important;
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.3) !important;
+    padding-bottom: 2px !important;
+  }
+  
+  .template-metaobject-listicle a:hover,
+  .section-double .hero__rte a:hover,
+  .section-rich-text .hero__rte a:hover,
+  .hero__rte a:hover,
+  .rte a:hover {
+    border-bottom-color: rgba(0, 0, 0, 0.5) !important;
+  }
+}
+
+/* =============================================================================
+   5. IMAGES & MEDIA
+   ============================================================================= */
+
+/* Responsive images */
+.hero__rte img,
+.template-metaobject-listicle img,
+.template-metaobject-listicle .hero__rte img,
+.section-rich-text img,
+.section-rich-text .hero__rte img,
+.section-double img,
+.section-double .hero__rte img,
+.template-page .rte img,
+.template-article .rte img {
+  max-width: 100% !important;
+  height: auto !important;
+  display: block;
+  margin: 1.5rem auto;
+}
+
+/* Fix for Image Height Settings in section-double */
+.brick__block__image .image__hero__frame.image-height {
+  height: auto !important; /* Allow natural aspect ratio */
+  min-height: 100%;
+}
+
+/* Ensure other height options work */
+.brick__block__image .image__hero__frame.screen-height-full,
+.brick__block__image .image__hero__frame.screen-height-three-quarters,
+.brick__block__image .image__hero__frame.screen-height-two-thirds,
+.brick__block__image .image__hero__frame.screen-height-one-half,
+.brick__block__image .image__hero__frame.screen-height-one-third,
+.brick__block__image .image__hero__frame.seven-fifty-height-hero,
+.brick__block__image .image__hero__frame.sixty-fifty-height-hero,
+.brick__block__image .image__hero__frame.five-fifty-height-hero,
+.brick__block__image .image__hero__frame.four-fifty-height-hero {
+  height: 100% !important;
+}
+
+/* Ensure images respect their aspect ratios when using image-height */
+.brick__block__image .image__hero__frame.image-height img,
+.brick__block__image .image__hero__frame.image-height--mobile img {
+  object-fit: contain !important;
+  width: 100%;
+  height: 100%;
+}
+
+/* =============================================================================
+   6. LAYOUT & SPACING
+   ============================================================================= */
+
+/* Reduce text padding in Image with Text sections */
+.section-double .hero__rte.block-padding,
+.section-double .block-padding {
+  padding-bottom: 10px !important; /* Reduced from 16px */
+}
+
+/* Override inline padding styles */
+.section-double [class*="text"][style*="padding-bottom: 16px"],
+.section-double .hero__rte[style*="padding-bottom: 16px"] {
+  padding-bottom: 10px !important;
+}
+
+/* Consistent spacing for all text elements */
+.brick__blocks .hero__rte,
+.brick__blocks [class*="heading"],
+.brick__blocks [class*="subheading"],
+.brick__blocks [class*="text"] {
+  padding-bottom: 10px !important;
+}
+
+/* Keep button padding separate */
+.brick__blocks [class*="button"],
+.brick__blocks .hero__buttons {
+  padding-bottom: 16px !important;
+}
+
+/* =============================================================================
+   7. MOBILE RESPONSIVE OVERRIDES
+   ============================================================================= */
+
+/* TABLET (768px and below) */
+@media (max-width: 768px) {
+  /* Paragraphs */
+  .hero__rte p,
+  .template-metaobject-listicle p,
+  .template-metaobject-listicle .hero__rte p,
+  .section-rich-text .hero__rte p,
+  .section-double .hero__rte p,
+  .template-page .rte p,
+  .template-article .rte p,
+  .article__content p,
+  .page-content p {
+    font-size: 0.9375rem !important; /* 15px */
+    line-height: 1.6 !important;
+    padding: 8px 0;
+  }
+  
+  /* H1 */
+  .hero__rte h1,
+  .template-metaobject-listicle h1,
+  .template-metaobject-listicle .hero__rte h1,
+  .section-rich-text .hero__rte h1,
+  .section-double .hero__rte h1 {
+    font-size: 1.625rem !important; /* 26px */
+    margin: 1.2em 0 0.5em !important;
+  }
+  
+  /* H2 */
+  .hero__rte h2,
+  .template-metaobject-listicle h2,
+  .template-metaobject-listicle .hero__rte h2,
+  .section-rich-text .hero__rte h2,
+  .section-double .hero__rte h2 {
+    font-size: 1.375rem !important; /* 22px */
+    margin: 1.2em 0 0.5em !important;
+  }
+  
+  /* H3 */
+  .hero__rte h3,
+  .template-metaobject-listicle h3,
+  .template-metaobject-listicle .hero__rte h3,
+  .section-rich-text .hero__rte h3,
+  .section-double .hero__rte h3 {
+    font-size: 1.125rem !important; /* 18px */
+    margin: 1em 0 0.4em !important;
+  }
+  
+  /* H4 */
+  .hero__rte h4,
+  .template-metaobject-listicle h4 {
+    font-size: 1rem !important; /* 16px */
+  }
+}
+
+/* MOBILE (479px and below) */
+@media (max-width: 479px) {
+  /* Paragraphs */
+  .hero__rte p,
+  .template-metaobject-listicle p,
+  .template-metaobject-listicle .hero__rte p,
+  .section-rich-text .hero__rte p,
+  .section-double .hero__rte p,
+  .template-page .rte p,
+  .template-article .rte p,
+  .article__content p,
+  .page-content p {
+    font-size: 0.875rem !important; /* 14px */
+    line-height: 1.55 !important;
+    padding: 6px 0;
+  }
+  
+  /* H1 */
+  .hero__rte h1,
+  .template-metaobject-listicle h1,
+  .template-metaobject-listicle .hero__rte h1 {
+    font-size: 1.375rem !important; /* 22px */
+    margin: 1em 0 0.4em !important;
+  }
+  
+  /* H2 */
+  .hero__rte h2,
+  .template-metaobject-listicle h2,
+  .template-metaobject-listicle .hero__rte h2 {
+    font-size: 1.125rem !important; /* 18px */
+    margin: 0.8em 0 0.4em !important;
+  }
+  
+  /* H3 */
+  .hero__rte h3,
+  .template-metaobject-listicle h3,
+  .template-metaobject-listicle .hero__rte h3 {
+    font-size: 1rem !important; /* 16px */
+    margin: 0.7em 0 0.3em !important;
+  }
+  
+  /* H4 */
+  .hero__rte h4,
+  .template-metaobject-listicle h4 {
+    font-size: 0.9375rem !important; /* 15px */
+  }
+  
+  /* H5 & H6 */
+  .hero__rte h5,
+  .hero__rte h6,
+  .template-metaobject-listicle h5,
+  .template-metaobject-listicle h6 {
+    font-size: 0.875rem !important; /* 14px */
+  }
+  
+  /* Links - mobile adjustments */
+  .hero__rte a,
+  .template-metaobject-listicle .hero__rte a,
+  .rte a,
+  body .hero__rte a {
+    text-underline-offset: 3px !important;
+    min-height: 24px !important;
+    padding: 2px 0 !important;
+    display: inline !important;
+  }
+  
+  /* Images on mobile */
+  .hero__rte img,
+  .template-metaobject-listicle img {
+    margin: 1rem auto;
+  }
+  
+  /* Lists on mobile */
+  .hero__rte ul,
+  .hero__rte ol,
+  .template-metaobject-listicle ul,
+  .template-metaobject-listicle ol {
+    padding-left: 1.2em;
+  }
+}
+
+/* Mobile image height fix */
+@media (max-width: 749px) {
+  .brick__block__image .image__hero__frame.image-height--mobile {
+    height: auto !important;
+    min-height: 100%;
+  }
+  
+  .brick__block__image .image__hero__frame.screen-height-full--mobile,
+  .brick__block__image .image__hero__frame.screen-height-three-quarters--mobile,
+  .brick__block__image .image__hero__frame.screen-height-two-thirds--mobile,
+  .brick__block__image .image__hero__frame.screen-height-one-half--mobile,
+  .brick__block__image .image__hero__frame.screen-height-one-third--mobile,
+  .brick__block__image .image__hero__frame.seven-fifty-height-hero--mobile,
+  .brick__block__image .image__hero__frame.sixty-fifty-height-hero--mobile,
+  .brick__block__image .image__hero__frame.five-fifty-height-hero--mobile,
+  .brick__block__image .image__hero__frame.four-fifty-height-hero--mobile {
+    height: 100% !important;
+  }
+}
+
+/* =============================================================================
+   END OF LISTICLE COMPLETE STYLES
+   ============================================================================= */

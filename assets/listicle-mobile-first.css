@@ -1,0 +1,407 @@
+/* =================================================================
+   LISTICLE MOBILE-FIRST STYLESHEET
+   Built for mobile devices first, enhanced for desktop
+   Breakpoints: 640px, 768px, 1024px, 1280px
+   ================================================================= */
+
+/* =================================================================
+   BASE MOBILE STYLES (0-639px)
+   Primary target: iPhone 12/13 Pro (390px)
+   ================================================================= */
+
+.template-listicle {
+  /* Mobile-first variables */
+  --mobile-padding: 20px;
+  --mobile-section-spacing: 60px;
+  --mobile-heading-size: 28px;
+  --mobile-subheading-size: 18px;
+  --mobile-body-size: 17px; /* Apple recommended minimum */
+  --mobile-number-size: 48px;
+  --mobile-button-height: 48px; /* Touch target minimum 44px + padding */
+  --mobile-line-height: 1.7;
+}
+
+/* Counter for list items */
+.template-listicle {
+  counter-reset: listicle-counter;
+}
+
+/* =================================================================
+   MOBILE HERO SECTION
+   ================================================================= */
+
+.template-listicle .index-rte {
+  padding: 40px var(--mobile-padding);
+}
+
+.template-listicle .index-rte .hero__title {
+  font-size: var(--mobile-heading-size);
+  line-height: 1.3;
+  font-weight: 700;
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+
+.template-listicle .index-rte .hero__subheading {
+  font-size: var(--mobile-subheading-size);
+  line-height: 1.5;
+  opacity: 0.9;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* =================================================================
+   MOBILE LIST ITEMS
+   ================================================================= */
+
+.template-listicle .section-double {
+  padding: var(--mobile-section-spacing) 0;
+}
+
+/* Mobile: Always show image above text */
+.template-listicle .section-double .hero__split {
+  display: flex;
+  flex-direction: column !important;
+}
+
+.template-listicle .section-double .hero__image-container {
+  order: 1;
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+.template-listicle .section-double .hero__content {
+  order: 2;
+  width: 100%;
+  padding: 0 var(--mobile-padding);
+}
+
+/* Large numbers for mobile */
+.template-listicle .section-double .hero__title:first-child {
+  position: relative;
+  padding-top: 0.8em;
+  font-size: 24px;
+  line-height: 1.3;
+  font-weight: 600;
+}
+
+.template-listicle .section-double .hero__title:first-child::before {
+  counter-increment: listicle-counter;
+  content: counter(listicle-counter);
+  display: block;
+  font-size: var(--mobile-number-size);
+  font-weight: 900;
+  line-height: 1;
+  opacity: 0.08;
+  margin-bottom: -0.4em;
+  color: currentColor;
+  position: absolute;
+  left: 0;
+  top: -0.1em;
+}
+
+/* Mobile text sizing */
+.template-listicle .section-double .hero__rte {
+  font-size: var(--mobile-body-size);
+  line-height: var(--mobile-line-height);
+  max-width: 100%;
+}
+
+.template-listicle .section-double .hero__rte p {
+  margin-bottom: 1em;
+  /* Short paragraphs for mobile reading */
+  max-width: 100%;
+}
+
+/* =================================================================
+   MOBILE BUTTONS & CTAs
+   ================================================================= */
+
+.template-listicle .btn,
+.template-listicle .btn--primary,
+.template-listicle button {
+  min-height: var(--mobile-button-height);
+  padding: 14px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  width: 100%;
+  border-radius: 8px;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* =================================================================
+   MOBILE STICKY CTA BAR
+   ================================================================= */
+
+.listicle-sticky-cta {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  padding: 12px var(--mobile-padding);
+  z-index: 100;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+}
+
+.listicle-sticky-cta.is-visible {
+  transform: translateY(0);
+}
+
+.listicle-sticky-cta.is-hidden {
+  transform: translateY(100%);
+}
+
+.listicle-sticky-cta__button {
+  width: 100%;
+  min-height: 44px;
+  background: var(--color-primary, #000);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* =================================================================
+   MOBILE PERFORMANCE OPTIMIZATIONS
+   ================================================================= */
+
+/* Optimize images for mobile */
+.template-listicle img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Lazy loading for images below fold */
+.template-listicle .section-double:nth-child(n+3) img {
+  content-visibility: auto;
+}
+
+/* Reduce animations on mobile for performance */
+@media (prefers-reduced-motion: reduce) {
+  .template-listicle * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* =================================================================
+   TABLET STYLES (640px-767px)
+   ================================================================= */
+
+@media (min-width: 640px) {
+  .template-listicle {
+    --mobile-padding: 30px;
+    --mobile-section-spacing: 70px;
+    --mobile-heading-size: 32px;
+    --mobile-number-size: 56px;
+  }
+  
+  .template-listicle .index-rte {
+    padding: 50px var(--mobile-padding);
+  }
+  
+  .template-listicle .section-double .hero__content {
+    padding: 0 var(--mobile-padding);
+  }
+  
+  /* Buttons can be inline on larger mobile */
+  .template-listicle .btn {
+    width: auto;
+    min-width: 160px;
+  }
+}
+
+/* =================================================================
+   SMALL DESKTOP (768px-1023px)
+   ================================================================= */
+
+@media (min-width: 768px) {
+  .template-listicle {
+    --desktop-padding: 40px;
+    --desktop-section-spacing: 80px;
+  }
+  
+  /* Allow image-text side by side on tablets/small desktop */
+  .template-listicle .section-double .hero__split {
+    flex-direction: row !important;
+  }
+  
+  .template-listicle .section-double.is-reversed .hero__split {
+    flex-direction: row-reverse !important;
+  }
+  
+  .template-listicle .section-double .hero__image-container {
+    width: 50%;
+    margin-bottom: 0;
+  }
+  
+  .template-listicle .section-double .hero__content {
+    width: 50%;
+    padding: 0 var(--desktop-padding);
+  }
+  
+  /* Larger typography for desktop */
+  .template-listicle .index-rte .hero__title {
+    font-size: 36px;
+  }
+  
+  .template-listicle .section-double .hero__title:first-child {
+    font-size: 28px;
+  }
+  
+  .template-listicle .section-double .hero__title:first-child::before {
+    font-size: 64px;
+    opacity: 0.06;
+  }
+  
+  /* Hide sticky CTA on desktop */
+  .listicle-sticky-cta {
+    display: none;
+  }
+}
+
+/* =================================================================
+   DESKTOP (1024px-1279px)
+   ================================================================= */
+
+@media (min-width: 1024px) {
+  .template-listicle {
+    --desktop-section-spacing: 100px;
+  }
+  
+  .template-listicle .index-rte {
+    padding: 80px 60px;
+  }
+  
+  .template-listicle .index-rte .hero__title {
+    font-size: 48px;
+  }
+  
+  .template-listicle .index-rte .hero__subheading {
+    font-size: 20px;
+    max-width: 800px;
+  }
+  
+  .template-listicle .section-double .hero__title:first-child {
+    font-size: 32px;
+  }
+  
+  .template-listicle .section-double .hero__title:first-child::before {
+    font-size: 80px;
+  }
+  
+  .template-listicle .section-double .hero__rte {
+    font-size: 18px;
+    max-width: 600px;
+  }
+}
+
+/* =================================================================
+   LARGE DESKTOP (1280px+)
+   ================================================================= */
+
+@media (min-width: 1280px) {
+  .template-listicle .index-rte {
+    padding: 100px 80px;
+  }
+  
+  .template-listicle .index-rte .hero__title {
+    font-size: 56px;
+  }
+  
+  .template-listicle .index-rte .hero__subheading {
+    font-size: 22px;
+  }
+  
+  .template-listicle .section-double .hero__title:first-child::before {
+    font-size: 96px;
+    opacity: 0.05;
+  }
+  
+  .template-listicle .section-double {
+    padding: 120px 0;
+  }
+  
+  /* Add subtle animations only on large screens */
+  .template-listicle .section-double {
+    transition: transform 0.3s ease;
+  }
+  
+  .template-listicle .section-double:hover {
+    transform: translateY(-2px);
+  }
+}
+
+/* =================================================================
+   MOBILE-SPECIFIC VISUAL ENHANCEMENTS
+   ================================================================= */
+
+/* Alternating backgrounds for better mobile scanning */
+.template-listicle .section-double:nth-child(even) {
+  background-color: var(--color-background-2, #f8f8f8);
+}
+
+/* Visual separator between sections on mobile */
+.template-listicle .section-double {
+  position: relative;
+}
+
+.template-listicle .section-double::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 20px;
+  right: 20px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0,0,0,0.1), transparent);
+}
+
+.template-listicle .section-double:last-child::after {
+  display: none;
+}
+
+/* =================================================================
+   ACCESSIBILITY IMPROVEMENTS
+   ================================================================= */
+
+/* Focus styles for keyboard navigation */
+.template-listicle a:focus,
+.template-listicle button:focus {
+  outline: 2px solid var(--color-primary, #000);
+  outline-offset: 2px;
+}
+
+/* Skip links for screen readers */
+.template-listicle .visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0,0,0,0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* =================================================================
+   PRINT STYLES
+   ================================================================= */
+
+@media print {
+  .listicle-sticky-cta {
+    display: none !important;
+  }
+  
+  .template-listicle .section-double {
+    page-break-inside: avoid;
+  }
+}

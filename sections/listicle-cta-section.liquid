@@ -1,0 +1,220 @@
+<!-- /sections/listicle-cta-section.liquid -->
+{%- comment -%}
+  CTA section for metaobject-based listicle pages
+  Displays call-to-action heading, text, and button from metaobject data
+{%- endcomment -%}
+
+{%- liquid
+  assign listicle = page.metafields.custom.listicle_content.value
+  assign color_scheme = 'color-' | append: section.settings.color_scheme
+  assign animation_anchor = '#ListicleCTA--' | append: section.id
+  assign animation_order = 0
+-%}
+
+{%- style -%}
+  #ListicleCTA--{{ section.id }} {
+    --PT: {{ section.settings.padding_top }}px;
+    --PB: {{ section.settings.padding_bottom }}px;
+  }
+{%- endstyle -%}
+
+<section
+  id="ListicleCTA--{{ section.id }}"
+  class="index-rte section-padding {{ color_scheme }}"
+  data-section-id="{{ section.id }}"
+  data-section-type="listicle-cta"
+>
+  {%- liquid
+    assign has_cta_content = false
+    if listicle.cta_heading != blank or listicle.cta_text != blank or listicle.cta_button_text != blank
+      assign has_cta_content = true
+    endif
+  -%}
+
+  {%- if listicle and has_cta_content -%}
+    <div class="hero__content__wrapper {{ section.settings.align_text }} {{ section.settings.width }}">
+      <div class="hero__content hero__content--compact hero__content--transparent">
+        
+        {%- comment -%} CTA Heading {%- endcomment -%}
+        {%- if listicle.cta_heading != blank -%}
+          {%- assign animation_order = animation_order | plus: 1 -%}
+          <h2
+            class="hero__title heading-large"
+            data-aos="hero"
+            data-aos-anchor="{{ animation_anchor }}"
+            data-aos-order="{{ animation_order }}"
+          >
+            {{ listicle.cta_heading }}
+          </h2>
+        {%- endif -%}
+
+        {%- comment -%} CTA Text {%- endcomment -%}
+        {%- if listicle.cta_text != blank -%}
+          {%- assign animation_order = animation_order | plus: 1 -%}
+          <div
+            class="hero__rte body-large"
+            data-aos="hero"
+            data-aos-anchor="{{ animation_anchor }}"
+            data-aos-order="{{ animation_order }}"
+          >
+            {{ listicle.cta_text }}
+          </div>
+        {%- endif -%}
+
+        {%- comment -%} CTA Button {%- endcomment -%}
+        {%- if listicle.cta_button_text != blank and listicle.cta_button_link != blank -%}
+          {%- assign animation_order = animation_order | plus: 1 -%}
+          <div
+            class="hero__button"
+            data-aos="hero"
+            data-aos-anchor="{{ animation_anchor }}"
+            data-aos-order="{{ animation_order }}"
+          >
+            <a
+              href="{{ listicle.cta_button_link }}"
+              class="btn btn--solid btn--large btn--primary"
+            >
+              <span>{{ listicle.cta_button_text }}</span>
+            </a>
+          </div>
+        {%- endif -%}
+
+      </div>
+    </div>
+  {%- else -%}
+    {%- comment -%} Fallback CTA when no metaobject data is available {%- endcomment -%}
+    {%- if section.settings.show_fallback_cta -%}
+      <div class="hero__content__wrapper {{ section.settings.align_text }} {{ section.settings.width }}">
+        <div class="hero__content hero__content--compact hero__content--transparent">
+          <h2 class="hero__title heading-large">
+            {{ section.settings.fallback_heading | default: "Ready to get started?" }}
+          </h2>
+          <div class="hero__rte body-large">
+            <p>{{ section.settings.fallback_text | default: "Discover our products and start your journey to better productivity and relationships." }}</p>
+          </div>
+          <div class="hero__button">
+            <a
+              href="{{ section.settings.fallback_button_url | default: '/collections/all' }}"
+              class="btn btn--solid btn--large btn--primary"
+            >
+              <span>{{ section.settings.fallback_button_text | default: "Shop Now" }}</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    {%- endif -%}
+  {%- endif -%}
+</section>
+
+{% schema %}
+{
+  "name": "Listicle CTA",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "select",
+      "id": "align_text",
+      "label": "Text alignment",
+      "default": "text-center",
+      "options": [
+        {"value": "text-left", "label": "Left"},
+        {"value": "text-center", "label": "Centered"}
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "select",
+      "id": "width",
+      "label": "Width",
+      "default": "wrapper",
+      "options": [
+        {"value": "wrapper--full-padded", "label": "Full width padded"},
+        {"value": "wrapper", "label": "Normal"},
+        {"value": "wrapper--narrow", "label": "Narrow"}
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Fallback Content"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_fallback_cta",
+      "label": "Show fallback CTA",
+      "default": true,
+      "info": "Display default CTA when no metaobject data is available"
+    },
+    {
+      "type": "text",
+      "id": "fallback_heading",
+      "label": "Fallback heading",
+      "default": "Ready to get started?"
+    },
+    {
+      "type": "textarea",
+      "id": "fallback_text",
+      "label": "Fallback text",
+      "default": "Discover our products and start your journey to better productivity and relationships."
+    },
+    {
+      "type": "text",
+      "id": "fallback_button_text",
+      "label": "Fallback button text",
+      "default": "Shop Now"
+    },
+    {
+      "type": "url",
+      "id": "fallback_button_url",
+      "label": "Fallback button URL"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "default": "scheme_2",
+      "label": "Color scheme"
+    },
+    {
+      "type": "header",
+      "content": "Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Top",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Bottom",
+      "default": 40
+    }
+  ],
+  "presets": [
+    {
+      "name": "Listicle CTA"
+    }
+  ],
+  "disabled_on": {
+    "groups": ["header", "aside", "footer"]
+  }
+}
+{% endschema %}

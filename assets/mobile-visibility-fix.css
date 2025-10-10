@@ -1,0 +1,194 @@
+/* Mobile Visibility Fix for Broadcast Theme with Tailwind
+   This fixes the broken hide_on_mobile functionality in 42 sections
+   Place this file AFTER bundle.css in theme.liquid */
+
+/* ========================================
+   MOBILE HIDING (max-width: 767px)
+   ======================================== */
+@media screen and (max-width: 767px) {
+  /* Force hide all Tailwind mobile-hidden elements */
+  .tw-hidden:not(.sm\:tw-block):not(.sm\:tw-flex):not(.sm\:tw-inline-flex):not(.sm\:tw-grid) {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+  }
+  
+  /* Specific handling for 42 section mobile order classes */
+  .mobile-order-variant-picker.tw-hidden,
+  .mobile-order-cta.tw-hidden,
+  .mobile-order-late.tw-hidden,
+  .mobile-order-trust.tw-hidden,
+  .mobile-title-price-container.tw-hidden,
+  .mobile-order-early.tw-hidden,
+  .hide-in-quick-view.tw-hidden,
+  .badge-desktop-only {
+    display: none !important;
+    visibility: hidden !important;
+  }
+  
+  /* Additional Broadcast theme mobile hide classes */
+  .small-hide,
+  .medium-up,
+  .large-up {
+    display: none !important;
+  }
+  
+  /* Show mobile-specific elements */
+  .small-show,
+  .medium-down,
+  .large-down,
+  .badge-mobile-only {
+    display: block !important;
+    visibility: visible !important;
+  }
+}
+
+/* ========================================
+   TABLET AND DESKTOP (min-width: 768px)
+   ======================================== */
+@media screen and (min-width: 768px) {
+  /* Restore display for md: prefixed classes */
+  .md\:tw-block,
+  .tw-hidden.md\:tw-block {
+    display: block !important;
+  }
+  
+  .md\:tw-flex,
+  .tw-hidden.md\:tw-flex {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+  }
+  
+  .md\:tw-inline-flex,
+  .tw-hidden.md\:tw-inline-flex {
+    display: -webkit-inline-box !important;
+    display: -ms-inline-flexbox !important;
+    display: inline-flex !important;
+  }
+  
+  .md\:tw-grid,
+  .tw-hidden.md\:tw-grid {
+    display: grid !important;
+  }
+  
+  .md\:tw-inline,
+  .tw-hidden.md\:tw-inline {
+    display: inline !important;
+  }
+  
+  /* Hide desktop-hidden elements */
+  .md\:tw-hidden {
+    display: none !important;
+  }
+  
+  /* Hide mobile badges on desktop */
+  .badge-mobile-only {
+    display: none !important;
+  }
+  
+  /* Show desktop badges */
+  .badge-desktop-only {
+    display: block !important;
+  }
+  
+  /* Broadcast theme desktop classes */
+  .small-show,
+  .medium-down,
+  .large-down {
+    display: none !important;
+  }
+  
+  .small-hide,
+  .medium-up,
+  .large-up {
+    display: block !important;
+  }
+}
+
+/* ========================================
+   LARGE DESKTOP (min-width: 1024px)
+   ======================================== */
+@media screen and (min-width: 1024px) {
+  /* Large breakpoint Tailwind classes */
+  .lg\:tw-block,
+  .tw-hidden.lg\:tw-block {
+    display: block !important;
+  }
+  
+  .lg\:tw-flex,
+  .tw-hidden.lg\:tw-flex {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+  }
+  
+  .lg\:tw-inline-flex,
+  .tw-hidden.lg\:tw-inline-flex {
+    display: -webkit-inline-box !important;
+    display: -ms-inline-flexbox !important;
+    display: inline-flex !important;
+  }
+  
+  .lg\:tw-grid,
+  .tw-hidden.lg\:tw-grid {
+    display: grid !important;
+  }
+  
+  .lg\:tw-hidden {
+    display: none !important;
+  }
+  
+  /* Handle margin-top responsive utilities */
+  .lg\:tw-mt-\[var\(--mt-desk\)\] {
+    margin-top: var(--mt-desk) !important;
+  }
+}
+
+/* ========================================
+   DEBUG HELPERS (Remove in production)
+   ======================================== */
+/* Uncomment to debug visibility issues
+.tw-hidden {
+  border: 2px solid red !important;
+}
+
+.md\:tw-block,
+.md\:tw-flex {
+  border: 2px solid green !important;
+}
+*/
+
+/* ========================================
+   CRITICAL OVERRIDES
+   ======================================== */
+/* This section ensures our fixes take precedence */
+#MainContent .tw-hidden:not([class*="md\:tw-"]) {
+  display: none !important;
+}
+
+/* Ensure proper flex container behavior on desktop */
+@media screen and (min-width: 768px) {
+  #MainContent .tw-flex.tw-hidden.md\:tw-flex {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+  }
+}
+
+/* Fix for specific 42-main-product section elements */
+@media screen and (max-width: 767px) {
+  section[id*="42-main-product"] .tw-hidden:not([class*="md\:tw-"]) {
+    display: none !important;
+  }
+}

@@ -1,0 +1,225 @@
+/* =================================================================
+   LISTICLE PAGE TYPOGRAPHY STYLES
+   Applies to all content on listicle metaobject pages
+   ================================================================= */
+
+/* Scope all styles to listicle pages using body class */
+body.template-metaobject-listicle,
+.template-metaobject-listicle {
+  /* Typography system variables */
+  --listicle-font-family: sans-serif;
+}
+
+/* =================================================================
+   PARAGRAPH STYLES
+   ================================================================= */
+
+body.template-metaobject-listicle p,
+.template-metaobject-listicle p {
+  padding-bottom: 10px;
+  padding-top: 10px;
+  font-size: 1.125rem; /* 18px */
+  font-family: sans-serif;
+  line-height: 1.7;
+}
+
+/* Mobile paragraph styles */
+@media (max-width: 768px) {
+  body.template-metaobject-listicle p,
+  .template-metaobject-listicle p {
+    font-size: 1rem; /* 16px */
+  }
+}
+
+/* =================================================================
+   HEADING STYLES
+   ================================================================= */
+
+/* H1 - Main Title */
+body.template-metaobject-listicle h1,
+.template-metaobject-listicle h1 {
+  font-size: 3rem; /* 48px */
+  line-height: 1.2;
+  font-weight: 800;
+}
+
+@media (max-width: 768px) {
+  body.template-metaobject-listicle h1,
+  .template-metaobject-listicle h1 {
+    font-size: 2rem; /* 32px */
+    line-height: 1.3;
+  }
+}
+
+/* H2 - Section Headers (The 5 Benefits) */
+body.template-metaobject-listicle h2,
+.template-metaobject-listicle h2 {
+  font-size: 2rem; /* 32px */
+  line-height: 1.3;
+  font-weight: 700;
+  margin-top: 2em;
+  margin-bottom: 0.75em;
+}
+
+@media (max-width: 768px) {
+  body.template-metaobject-listicle h2,
+  .template-metaobject-listicle h2 {
+    font-size: 1.5rem; /* 24px */
+    line-height: 1.4;
+  }
+}
+
+/* H3 - Sub-headers */
+body.template-metaobject-listicle h3,
+.template-metaobject-listicle h3 {
+  font-size: 1.5rem; /* 24px */
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  body.template-metaobject-listicle h3,
+  .template-metaobject-listicle h3 {
+    font-size: 1.375rem; /* 22px */
+  }
+}
+
+/* =================================================================
+   LAYOUT WIDTH OPTION - MODERATE WIDTH
+   ================================================================= */
+
+/* Moderate width layout class that can be applied to any container */
+.moderate-width-layout {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Apply moderate width to common container classes when on listicle pages */
+body.template-metaobject-listicle .page-width.moderate-width,
+.template-metaobject-listicle .page-width.moderate-width {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Alternative: Auto-apply moderate width to all page-width containers on listicle pages */
+body.template-metaobject-listicle.moderate-width-enabled .page-width,
+.template-metaobject-listicle.moderate-width-enabled .page-width {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* =================================================================
+   IMAGE-WITH-TEXT SECTIONS
+   Ensure these sections inherit the typography styles
+   ================================================================= */
+
+/* Image-with-text paragraphs */
+body.template-metaobject-listicle .image-with-text p,
+.template-metaobject-listicle .image-with-text p,
+body.template-metaobject-listicle .section-double p,
+.template-metaobject-listicle .section-double p {
+  padding-bottom: 10px;
+  padding-top: 10px;
+  font-size: 1.125rem; /* 18px */
+  font-family: sans-serif;
+  line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+  body.template-metaobject-listicle .image-with-text p,
+  .template-metaobject-listicle .image-with-text p,
+  body.template-metaobject-listicle .section-double p,
+  .template-metaobject-listicle .section-double p {
+    font-size: 1rem; /* 16px */
+  }
+}
+
+/* Image-with-text headings */
+body.template-metaobject-listicle .image-with-text h2,
+.template-metaobject-listicle .image-with-text h2,
+body.template-metaobject-listicle .section-double h2,
+.template-metaobject-listicle .section-double h2 {
+  font-size: 2rem; /* 32px */
+  line-height: 1.3;
+  font-weight: 700;
+  margin-top: 2em;
+  margin-bottom: 0.75em;
+}
+
+@media (max-width: 768px) {
+  body.template-metaobject-listicle .image-with-text h2,
+  .template-metaobject-listicle .image-with-text h2,
+  body.template-metaobject-listicle .section-double h2,
+  .template-metaobject-listicle .section-double h2 {
+    font-size: 1.5rem; /* 24px */
+    line-height: 1.4;
+  }
+}
+
+/* =================================================================
+   ADDITIONAL STYLES FOR CONSISTENT SPACING
+   ================================================================= */
+
+/* Ensure consistent spacing between sections */
+body.template-metaobject-listicle section,
+.template-metaobject-listicle section {
+  margin-bottom: 2rem;
+}
+
+/* Rich text editor content */
+body.template-metaobject-listicle .rte p,
+.template-metaobject-listicle .rte p {
+  padding-bottom: 10px;
+  padding-top: 10px;
+  font-size: 1.125rem; /* 18px */
+  font-family: sans-serif;
+  line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+  body.template-metaobject-listicle .rte p,
+  .template-metaobject-listicle .rte p {
+    font-size: 1rem; /* 16px */
+  }
+}
+
+/* =================================================================
+   UTILITY CLASSES FOR MANUAL CONTROL
+   ================================================================= */
+
+/* Class to force moderate width on specific elements */
+.force-moderate-width {
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding: 0 20px !important;
+}
+
+/* Class to disable moderate width on specific elements */
+.no-moderate-width {
+  max-width: none !important;
+}
+
+/* =================================================================
+   RESPONSIVE ADJUSTMENTS
+   ================================================================= */
+
+/* Tablet adjustments */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .moderate-width-layout,
+  body.template-metaobject-listicle .page-width.moderate-width,
+  .template-metaobject-listicle .page-width.moderate-width {
+    padding: 0 30px;
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 480px) {
+  .moderate-width-layout,
+  body.template-metaobject-listicle .page-width.moderate-width,
+  .template-metaobject-listicle .page-width.moderate-width {
+    padding: 0 15px;
+  }
+}

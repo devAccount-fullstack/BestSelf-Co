@@ -1,0 +1,36 @@
+<div
+  id="product-quick-view-42"
+  x-cloak
+  x-show="$store.ajaxProductPage.visible"
+  x-transition.500ms
+  class="tw-fixed tw-z-full tw-h-screen tw-w-full tw-inset-0 tw-bg-black/20 tw-flex tw-flex-col tw-min-h-fit tw-justify-center tw-items-center"
+>
+  <div
+    @click.self="$store.ajaxProductPage.hide()"
+    @keyup.escape.window="$store.ajaxProductPage.visible ? $store.ajaxProductPage.hide() : ''"
+    class="tw-grid lg:tw-items-start tw-w-full tw-h-dvh tw-overflow-y-auto tw-overflow-x-hidden no-scrollbar tw-pt-[55px] lg:tw-pt-26 lg:tw-pb-14"
+
+    x-cloak
+    x-show="$store.ajaxProductPage.visible"
+    x-transition:enter="tw-transition tw-duration-700"
+    x-transition:enter-start="tw-translate-y-full"
+    x-transition:enter-end="tw-translate-y-0"
+    x-transition:leave="tw-transition tw-duration-700"
+    x-transition:leave-start="tw-translate-y-0"
+    x-transition:leave-end="tw-translate-y-full"
+  >
+    <div class="tw-relative tw-w-screen tw-mx-auto tw-max-w-[1338px] lg:tw-w-[calc(100vw-102px)] tw-bg-white lg:tw-rounded-3xl tw-pb-10 lg:tw-py-8.5">
+      <div class="tw-flex tw-justify-end tw-items-center tw-p-4 lg:tw-absolute lg:tw-right-4 tw-top-4">
+        <button
+          @click="$store.ajaxProductPage.hide()"
+          class="tw-flex-shrink-0 tw-size-3.5 tw-cursor-pointer tw-text-black tw-aspect-square lg:tw-size-5"
+        >
+          {% render 'icon-42', name: 'close', class: '!tw-size-full' %}
+          <span class="tw-sr-only">Close</span>
+        </button>
+      </div>
+
+      <div id="product-page-popup-content"></div>
+    </div>
+  </div>
+</div>

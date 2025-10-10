@@ -1,0 +1,296 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {
+            "subheading_option": "none",
+            "padding_bottom": 0
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "padding_bottom": 0
+          }
+        },
+        "tabs": {
+          "type": "tab_richtext",
+          "disabled": true,
+          "settings": {
+            "show_description": true,
+            "show_read_more": true,
+            "title_1": "",
+            "raw_content_1": "",
+            "title_2": "BENEFITS",
+            "raw_content_2": "{{ product.metafields.custom.benefits_description | metafield_tag }}",
+            "title_3": "Specifications",
+            "raw_content_3": "{{ product.metafields.custom.feature_content | metafield_tag }}",
+            "title_4": "",
+            "raw_content_4": "",
+            "title_5": "",
+            "raw_content_5": "",
+            "padding_bottom": 0
+          }
+        },
+        "description_RNzUU7": {
+          "type": "description",
+          "settings": {
+            "show_read_more": true,
+            "padding_bottom": 0
+          }
+        },
+        "accordion_jCp7Mh": {
+          "type": "accordion",
+          "settings": {
+            "show_description": false,
+            "show_read_more": false,
+            "default_open": false,
+            "heading": "BENEFITS",
+            "text": "{{ product.metafields.custom.benefits_description | metafield_tag }}",
+            "padding_bottom": 0
+          }
+        },
+        "accordion_nqLCaa": {
+          "type": "accordion",
+          "settings": {
+            "show_description": false,
+            "show_read_more": true,
+            "default_open": false,
+            "heading": "FEATURES",
+            "text": "{{ product.metafields.custom.feature_content | metafield_tag }}",
+            "padding_bottom": 10
+          }
+        },
+        "variants": {
+          "type": "variants",
+          "settings": {
+            "info_page": "",
+            "size_chart_style": "text",
+            "subscriptions_enable_selectors": false,
+            "padding_bottom": 16
+          }
+        },
+        "upsell_koala_bundles_deals_block_ikqKVL": {
+          "type": "shopify://apps/upsell-koala-bundles/blocks/deals-block/2b951f75-113f-4fca-bdf3-c92703235716",
+          "settings": {
+            "product": "{{ product }}"
+          }
+        },
+        "buttons": {
+          "type": "buttons",
+          "settings": {
+            "show_quantity": true,
+            "show_payment_button": true,
+            "show_gift_card_recipient": false,
+            "padding_bottom": 0
+          }
+        },
+        "upsell_by_amp_embedded_product_kVLqPA": {
+          "type": "shopify://apps/upsell-by-amp/blocks/embedded-product/04a7ddf7-3a4c-4228-9a44-33ba2380f058",
+          "settings": {
+            "override_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "price",
+        "tabs",
+        "description_RNzUU7",
+        "accordion_jCp7Mh",
+        "accordion_nqLCaa",
+        "variants",
+        "upsell_koala_bundles_deals_block_ikqKVL",
+        "buttons",
+        "upsell_by_amp_embedded_product_kVLqPA"
+      ],
+      "custom_css": [],
+      "settings": {
+        "product_sticky_enable": true,
+        "variant_image_scroll": true,
+        "show_cart_bar": true,
+        "enable_zoom": true,
+        "enable_video_looping": false,
+        "image_layout": "thumbnails",
+        "image_size": "small",
+        "mobile_image_style": "slider",
+        "padding_top": 10,
+        "padding_bottom": 20
+      }
+    },
+    "section_press_logos_DM3x3q": {
+      "type": "section-press-logos",
+      "settings": {
+        "enable_heading_slider": true,
+        "logo_opacity": 100,
+        "title": "",
+        "padding_top": 10,
+        "padding_bottom": 10
+      }
+    },
+    "section_accordion_group_3XamJT": {
+      "type": "section-accordion-group",
+      "blocks": {
+        "heading_KwVqRC": {
+          "type": "heading",
+          "settings": {
+            "title": "Frequently Asked Questions"
+          }
+        },
+        "question_6kbr7D": {
+          "type": "question",
+          "settings": {
+            "default_open": false,
+            "title": "{{ product.metafields.custom.faq_question_1.value }}",
+            "content": "{{ product.metafields.custom.faq_answer_1 | metafield_tag }}",
+            "show_icon": true,
+            "icon_name": "icon-award",
+            "icon_size": 20,
+            "icon_color": "#545454"
+          }
+        },
+        "question_BeqJKm": {
+          "type": "question",
+          "settings": {
+            "default_open": false,
+            "title": "{{ product.metafields.custom.faq_question_2.value }}",
+            "content": "{{ product.metafields.custom.faq_answer_2 | metafield_tag }}",
+            "show_icon": true,
+            "icon_name": "icon-chat",
+            "icon_size": 20,
+            "icon_color": "#545454"
+          }
+        },
+        "question_KGFLVP": {
+          "type": "question",
+          "settings": {
+            "default_open": false,
+            "title": "{{ product.metafields.custom.faq_question_3.value }}",
+            "content": "{{ product.metafields.custom.faq_answer_3 | metafield_tag }}",
+            "show_icon": true,
+            "icon_name": "icon-info-empty",
+            "icon_size": 20,
+            "icon_color": "#545454"
+          }
+        },
+        "question_4CKXjR": {
+          "type": "question",
+          "settings": {
+            "default_open": false,
+            "title": "{{ product.metafields.custom.faq_question_4.value }}",
+            "content": "{{ product.metafields.custom.faq_answer_4 | metafield_tag }}",
+            "show_icon": true,
+            "icon_name": "icon-cloud",
+            "icon_size": 20,
+            "icon_color": "#545454"
+          }
+        },
+        "question_apARV3": {
+          "type": "question",
+          "settings": {
+            "default_open": false,
+            "title": "{{ product.metafields.custom.faq_question_5.value }}",
+            "content": "{{ product.metafields.custom.faq_answer_5 | metafield_tag }}",
+            "show_icon": true,
+            "icon_name": "icon-leaf",
+            "icon_size": 20,
+            "icon_color": "#545454"
+          }
+        },
+        "question_wHKPdx": {
+          "type": "question",
+          "settings": {
+            "default_open": false,
+            "title": "{{ product.metafields.custom.faq_question_6.value }}",
+            "content": "{{ product.metafields.custom.faq_answer_6 | metafield_tag }}",
+            "show_icon": true,
+            "icon_name": "icon-flare",
+            "icon_size": 20,
+            "icon_color": "#545454"
+          }
+        },
+        "question_jPnjCe": {
+          "type": "question",
+          "settings": {
+            "default_open": false,
+            "title": "{{ product.metafields.custom.faq_question_7.value }}",
+            "content": "{{ product.metafields.custom.faq_answer_7 | metafield_tag }}",
+            "show_icon": true,
+            "icon_name": "icon-award",
+            "icon_size": 20,
+            "icon_color": "#545454"
+          }
+        },
+        "question_YDp6yE": {
+          "type": "question",
+          "settings": {
+            "default_open": false,
+            "title": "{{ product.metafields.custom.faq_question_8.value }}",
+            "content": "{{ product.metafields.custom.faq_answer_8 | metafield_tag }}",
+            "show_icon": true,
+            "icon_name": "icon-award",
+            "icon_size": 20,
+            "icon_color": "#545454"
+          }
+        }
+      },
+      "block_order": [
+        "heading_KwVqRC",
+        "question_6kbr7D",
+        "question_BeqJKm",
+        "question_KGFLVP",
+        "question_4CKXjR",
+        "question_apARV3",
+        "question_wHKPdx",
+        "question_jPnjCe",
+        "question_YDp6yE"
+      ],
+      "settings": {
+        "width": "wrapper",
+        "columns": "1",
+        "padding_top": 50,
+        "padding_bottom": 50
+      }
+    },
+    "related": {
+      "type": "related",
+      "blocks": {
+        "related": {
+          "type": "related",
+          "settings": {
+            "product_recommendations_heading": "You Might Like...",
+            "limit": 5
+          }
+        }
+      },
+      "block_order": [
+        "related"
+      ],
+      "settings": {
+        "enable_tabs": true,
+        "heading_alignment": "text-center",
+        "layout_mobile": "slider",
+        "padding_top": 25,
+        "padding_bottom": 35
+      }
+    }
+  },
+  "order": [
+    "main",
+    "section_press_logos_DM3x3q",
+    "section_accordion_group_3XamJT",
+    "related"
+  ]
+}

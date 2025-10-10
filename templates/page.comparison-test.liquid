@@ -1,0 +1,82 @@
+{% comment %}
+  Test Template for Apple Comparison Table Section
+  To use: Create a page in admin and set template to "page.comparison-test"
+{% endcomment %}
+
+<div class="page-comparison-test">
+  <div class="shopify-section">
+    {% render 'ss-comparison-table-apple', section: sections['ss-comparison-table-apple'] %}
+  </div>
+</div>
+
+<style>
+  .page-comparison-test {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 40px 0;
+  }
+</style>
+
+<script>
+  // Add section data for testing
+  if (typeof window !== 'undefined') {
+    window.testSectionData = {
+      id: 'test-section',
+      settings: {
+        heading: 'Choose Your Perfect Planner',
+        first_heading: 'BestSelf Planner',
+        second_heading: 'Generic Planner',
+        third_heading: 'Digital App',
+        table_column_active: '1',
+        mobile_card_style: 'glass',
+        enable_swipe: true,
+        heading_color: '#2D3748',
+        table_column_active_bg_color: '#4299E1',
+        table_heading_active_color: '#FFFFFF',
+        background_color: '#F7FAFC'
+      },
+      blocks: [
+        {
+          settings: {
+            row_heading: 'Goal Tracking',
+            first_icon: 'yes',
+            second_icon: 'no',
+            third_icon: 'yes'
+          }
+        },
+        {
+          settings: {
+            row_heading: 'Habit Tracking',
+            first_icon: 'yes',
+            second_icon: 'no',
+            third_icon: 'dont_know'
+          }
+        },
+        {
+          settings: {
+            row_heading: 'Weekly Reviews',
+            first_icon: 'yes',
+            second_icon: 'yes',
+            third_icon: 'no'
+          }
+        },
+        {
+          settings: {
+            row_heading: 'Monthly Reflection',
+            first_icon: 'yes',
+            second_icon: 'no',
+            third_icon: 'no'
+          }
+        },
+        {
+          settings: {
+            row_heading: 'Offline Access',
+            first_icon: 'yes',
+            second_icon: 'yes',
+            third_icon: 'no'
+          }
+        }
+      ]
+    };
+  }
+</script>

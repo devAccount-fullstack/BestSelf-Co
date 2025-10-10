@@ -1,0 +1,1708 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "42_main_product_xYEg3T": {
+      "type": "42-main-product",
+      "blocks": {
+        "badge_BKhtrr": {
+          "type": "badge",
+          "settings": {
+            "custom_badge_text": "{{ product.metafields.product.badge.value }}",
+            "mt_desk": 0,
+            "mt_mob": 0,
+            "hide_on_mobile": true
+          }
+        },
+        "judge_me_reviews_preview_badge_VGUAXK": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        },
+        "title_WDMUEe": {
+          "type": "title",
+          "settings": {
+            "mt_desk": 8,
+            "mt_mob": 8,
+            "hide_on_mobile": false
+          }
+        },
+        "text_GGwLik": {
+          "type": "text",
+          "settings": {
+            "mt_desk": 15,
+            "mt_mob": 10,
+            "description": "<h3><strong>The physical key to digital freedom</strong></h3>",
+            "hide_on_mobile": false
+          }
+        },
+        "separator_aEnxCj": {
+          "type": "separator",
+          "settings": {
+            "mt_desk": 15,
+            "mt_mob": 10,
+            "hide_on_mobile": false
+          }
+        },
+        "price_Bt9rH4": {
+          "type": "price",
+          "settings": {
+            "mt_desk": 16,
+            "mt_mob": 10,
+            "show_badge_save": true,
+            "hide_on_mobile": false
+          }
+        },
+        "text_Tc7kCE": {
+          "type": "text",
+          "settings": {
+            "mt_desk": 17,
+            "mt_mob": 24,
+            "description": "<p>{{ product.description }}</p>",
+            "hide_on_mobile": false
+          }
+        },
+        "separator_MJrkbg": {
+          "type": "separator",
+          "disabled": true,
+          "settings": {
+            "mt_desk": 15,
+            "mt_mob": 5,
+            "hide_on_mobile": false
+          }
+        },
+        "text_xBpiAB": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "mt_desk": 17,
+            "mt_mob": 24,
+            "description": "<h2><strong>Your phone was engineered to steal your time. Helm was engineered to reclaim it.</strong> </h2>",
+            "hide_on_mobile": false
+          }
+        },
+        "text_jnaa8w": {
+          "type": "text",
+          "settings": {
+            "mt_desk": 17,
+            "mt_mob": 24,
+            "description": "<p><strong>Apps are designed to addict. Helm is designed to protect.</strong> <br/><br/>Tap this handcrafted brass device to instantly transform your phone from distraction machine to productivity tool. Schedule automatic focus sessions, set intentions that stick, and reclaim hours lost to mindless scrolling.<br/><br/><strong>One purchase. Zero subscriptions. Lifetime of focus.</strong></p>",
+            "hide_on_mobile": true
+          }
+        },
+        "text_with_icon_column_6hbmnQ": {
+          "type": "text_with_icon_column",
+          "disabled": true,
+          "settings": {
+            "icon_name": "icon-check",
+            "mt_desk": 15,
+            "mt_mob": 10,
+            "text": "One purchase. Zero subscriptions. Lifetime of focus.",
+            "hide_on_mobile": false
+          }
+        },
+        "separator_c6xKzq": {
+          "type": "separator",
+          "disabled": true,
+          "settings": {
+            "mt_desk": 15,
+            "mt_mob": 5,
+            "hide_on_mobile": false
+          }
+        },
+        "buy_buttons_RjKNDH": {
+          "type": "buy_buttons",
+          "settings": {
+            "mt_desk": 15,
+            "mt_mob": 14,
+            "hide_on_mobile": false
+          }
+        },
+        "privacy_policy_WtkVdJ": {
+          "type": "privacy_policy",
+          "name": "Trust badges",
+          "settings": {
+            "mt_desk": 20,
+            "mt_mob": 20,
+            "icon_1": "shopify://shop_images/Trusted_by_200_000.png",
+            "text_1": "Trusted by 200,000+",
+            "icon_2": "shopify://shop_images/30-Day_Returns.png",
+            "text_2": "30-Day Returns",
+            "icon_3": "shopify://shop_images/Free_US_Shipping.png",
+            "text_3": "Free US Shipping*",
+            "hide_on_mobile": false
+          }
+        },
+        "upsell_koala_bundles_deals_block_XBHdac": {
+          "type": "shopify://apps/upsell-koala-bundles/blocks/deals-block/2b951f75-113f-4fca-bdf3-c92703235716",
+          "disabled": true,
+          "settings": {
+            "product": "{{product}}"
+          }
+        },
+        "elevate_ab_testing_payment_logos_WW9dYn": {
+          "type": "shopify://apps/elevate-ab-testing/blocks/payment-logos/4ce51acb-a9f5-4e05-ae92-4c018aa51124",
+          "disabled": true,
+          "settings": {
+            "title": "",
+            "alignment": "center",
+            "show_visa": true,
+            "show_mastercard": true,
+            "show_amex": true,
+            "show_paypal": true,
+            "show_apple_pay": true,
+            "show_google_pay": false,
+            "show_discover": false,
+            "show_diners_club": false,
+            "show_jcb": false,
+            "show_unionpay": false,
+            "title_color": "",
+            "title_size": 0,
+            "title_weight": "",
+            "title_spacing": 12,
+            "icon_width": 36,
+            "icon_height": 36,
+            "icon_spacing": 8,
+            "section_padding": 4
+          }
+        },
+        "accordion_q6kj9j": {
+          "type": "accordion",
+          "settings": {
+            "mt_desk": 24,
+            "mt_mob": 24,
+            "question": "What you get",
+            "answer": "{{ product.metafields.product.features | metafield_tag }}",
+            "hide_on_mobile": false
+          }
+        },
+        "accordion_4fDeRd": {
+          "type": "accordion",
+          "settings": {
+            "mt_desk": 8,
+            "mt_mob": 8,
+            "question": "Details & Specs",
+            "answer": "{{ product.metafields.custom.feature_content | metafield_tag }}",
+            "hide_on_mobile": false
+          }
+        },
+        "accordion_jVJAtL": {
+          "type": "accordion",
+          "settings": {
+            "mt_desk": 8,
+            "mt_mob": 8,
+            "question": "Why it works",
+            "answer": "{{ product.metafields.product.why_it_works | metafield_tag }}",
+            "hide_on_mobile": false
+          }
+        },
+        "accordion_aCXdjB": {
+          "type": "accordion",
+          "settings": {
+            "mt_desk": 8,
+            "mt_mob": 8,
+            "question": "How to use",
+            "answer": "{{ product.metafields.product.how_to_use | metafield_tag }}",
+            "hide_on_mobile": false
+          }
+        },
+        "elevate_ab_testing_testimonial_carousel_VNEDJL": {
+          "type": "shopify://apps/elevate-ab-testing/blocks/testimonial-carousel/4ce51acb-a9f5-4e05-ae92-4c018aa51124",
+          "settings": {
+            "wrapper_background_color": "#ffffff",
+            "vertical_margin_top": 0,
+            "vertical_margin_bottom": 0,
+            "wrapper_padding_y": 0,
+            "card_padding": 12,
+            "card_border_radius": 12,
+            "card_background_color": "#ffffff",
+            "card_text_color": "#333333",
+            "star_background_color": "#ffffff",
+            "star_fill_color": "#fbc94b",
+            "star_empty_color": "#dfdfdf",
+            "testimonial_1_name": "James Liu",
+            "testimonial_1_rating": 5,
+            "testimonial_1_text": "The design snob in me loves this thing - it's sculpture meets function.",
+            "testimonial_2_name": "Michael Chen",
+            "testimonial_2_rating": 5,
+            "testimonial_2_text": "So glad I got into the beta test on this. I've tried every screen time app, deleted them all. Love this thing!",
+            "testimonial_3_name": "Emma Davis",
+            "testimonial_3_rating": 5,
+            "testimonial_3_text": "OK I was skeptical about the beta but this thing is legit. It's heavier than expected (in a good way) and gorgeous on my desk."
+          }
+        },
+        "link_jhJwr4": {
+          "type": "link",
+          "disabled": true,
+          "settings": {
+            "mt_desk": 24,
+            "mt_mob": 24,
+            "icon": "shopify://shop_images/Money_With_Wings_Icon_80341a96-e0d4-46ef-bda4-61ad9d5371f7.png",
+            "text": "You're losing $50 daily. See your full cost →",
+            "link": "#distraction-calculator",
+            "hide_on_mobile": false
+          }
+        },
+        "pairs_well_with_AQMXUk": {
+          "type": "pairs_well_with",
+          "disabled": true,
+          "settings": {
+            "heading": "PAIRS WELL WITH...",
+            "pair_product_1": "{{ product.metafields.custom.upsell_product_1.value }}",
+            "pair_product_2": "{{ product.metafields.custom.upsell_product_2.value }}",
+            "hide_on_mobile": true
+          }
+        }
+      },
+      "block_order": [
+        "badge_BKhtrr",
+        "judge_me_reviews_preview_badge_VGUAXK",
+        "title_WDMUEe",
+        "text_GGwLik",
+        "separator_aEnxCj",
+        "price_Bt9rH4",
+        "text_Tc7kCE",
+        "separator_MJrkbg",
+        "text_xBpiAB",
+        "text_jnaa8w",
+        "text_with_icon_column_6hbmnQ",
+        "separator_c6xKzq",
+        "buy_buttons_RjKNDH",
+        "privacy_policy_WtkVdJ",
+        "upsell_koala_bundles_deals_block_XBHdac",
+        "elevate_ab_testing_payment_logos_WW9dYn",
+        "accordion_q6kj9j",
+        "accordion_4fDeRd",
+        "accordion_jVJAtL",
+        "accordion_aCXdjB",
+        "elevate_ab_testing_testimonial_carousel_VNEDJL",
+        "link_jhJwr4",
+        "pairs_well_with_AQMXUk"
+      ],
+      "custom_css": [
+        "h2 {font-size: 18px; line-height: 24px; color: #767676;}"
+      ],
+      "name": "42 Product",
+      "settings": {
+        "show_nav_btn": true,
+        "show_buy_now_button": false,
+        "show_cart_bar": true,
+        "pt_mob": 15,
+        "pb_mob": 15,
+        "pt_tab": 20,
+        "pb_tab": 20,
+        "pt_desk": 20,
+        "pb_desk": 20
+      }
+    },
+    "main": {
+      "type": "product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {
+            "subheading_option": "none",
+            "heading_font_size": "heading-medium",
+            "padding_bottom": 16
+          }
+        },
+        "divider_7haN4y": {
+          "type": "divider",
+          "settings": {
+            "show_line": true,
+            "padding_bottom": 10
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "text_font_size": "body-medium",
+            "padding_bottom": 20
+          }
+        },
+        "icon_MEGyRh": {
+          "type": "icon",
+          "settings": {
+            "icon_name": "icon-check",
+            "icon_size": 20,
+            "icon_color": "",
+            "text": "<p>{{ product.metafields.product.key_outcome_1.value }}</p>",
+            "text_font_size": "body-medium",
+            "width": "full",
+            "padding_bottom": 16
+          }
+        },
+        "icon_ihzYgC": {
+          "type": "icon",
+          "settings": {
+            "icon_name": "icon-check",
+            "icon_size": 20,
+            "icon_color": "",
+            "text": "<p>{{ product.metafields.product.key_outcome_2.value }}</p>",
+            "text_font_size": "body-medium",
+            "width": "full",
+            "padding_bottom": 16
+          }
+        },
+        "icon_edfmNP": {
+          "type": "icon",
+          "settings": {
+            "icon_name": "icon-check",
+            "icon_size": 20,
+            "icon_color": "",
+            "text": "<p>{{ product.metafields.product.key_outcome_3.value }}</p>",
+            "text_font_size": "body-medium",
+            "width": "full",
+            "padding_bottom": 16
+          }
+        },
+        "icon_RKNwpc": {
+          "type": "icon",
+          "settings": {
+            "icon_name": "icon-award",
+            "image": "shopify://shop_images/cheap-2.svg",
+            "icon_size": 30,
+            "icon_color": "",
+            "text": "<p><a href=\"#Rte--template--17391281209413__section_rich_text_LENHCa\" title=\"distraction cost\">Calculate Your Distraction Cost →</a></p>",
+            "text_font_size": "body-medium",
+            "width": "full",
+            "padding_bottom": 16
+          }
+        },
+        "buttons": {
+          "type": "buttons",
+          "settings": {
+            "show_quantity": true,
+            "button_type": "btn--primary",
+            "button_style": "btn--solid",
+            "show_payment_button": true,
+            "button_type_dynamic": "btn--secondary",
+            "button_style_dynamic": "btn--solid",
+            "show_gift_card_recipient": false,
+            "padding_bottom": 16
+          }
+        },
+        "icon_EmFRhe": {
+          "type": "icon",
+          "settings": {
+            "icon_name": "icon-gift",
+            "icon_size": 25,
+            "icon_color": "#0076ff",
+            "text": "<p>FREE GIFT with all preorders</p>",
+            "text_font_size": "body-medium",
+            "width": "full",
+            "padding_bottom": 16
+          }
+        },
+        "icon_QGMfzU": {
+          "type": "icon",
+          "settings": {
+            "icon_name": "icon-truck",
+            "icon_size": 25,
+            "icon_color": "#0076ff",
+            "text": "<p>Order today. Ships FREE July 17.</p>",
+            "text_font_size": "body-medium",
+            "width": "full",
+            "padding_bottom": 16
+          }
+        },
+        "divider_4PCqgC": {
+          "type": "divider",
+          "disabled": true,
+          "settings": {
+            "show_line": true,
+            "padding_bottom": 20
+          }
+        },
+        "countdown_mtjapJ": {
+          "type": "countdown",
+          "settings": {
+            "end_date": "2025-06-13",
+            "end_time": "11:59",
+            "period": "pm",
+            "end_message": "<p>Helm is sold out – but not for long. Join the waitlist for early access to Batch Two</p>",
+            "hide_on_complete": true,
+            "digits_font_size": "heading-large",
+            "text_font_size": "body-small",
+            "text": "<p><strong>Only 33 Units Left:</strong></p><p><br/>Pre-orders close in:</p>",
+            "heading_font_size": "heading-small",
+            "bg_color": "#f9f9f9",
+            "color": "#644f29",
+            "text_align": "text-center",
+            "padding_bottom": 0
+          }
+        },
+        "tab_richtext_atGP4t": {
+          "type": "tab_richtext",
+          "disabled": true,
+          "settings": {
+            "show_description": true,
+            "show_read_more": false,
+            "title_1": "Tab",
+            "raw_content_1": "<p>This content type will accept <strong>rich text</strong> to help with adding styles and links to additional pages or content. Use this to add supplementary information to help your buyers.</p>",
+            "title_2": "Info",
+            "raw_content_2": "<p>You can use product metafields to assign content to this tab that is unique to an individual product.  Use tabs to highlight unique features, sizing information, or other sales information.</p>",
+            "title_3": "",
+            "raw_content_3": "",
+            "title_4": "",
+            "raw_content_4": "",
+            "title_5": "",
+            "raw_content_5": "",
+            "padding_bottom": 0
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "divider_7haN4y",
+        "price",
+        "icon_MEGyRh",
+        "icon_ihzYgC",
+        "icon_edfmNP",
+        "icon_RKNwpc",
+        "buttons",
+        "icon_EmFRhe",
+        "icon_QGMfzU",
+        "divider_4PCqgC",
+        "countdown_mtjapJ",
+        "tab_richtext_atGP4t"
+      ],
+      "disabled": true,
+      "custom_css": [
+        ".shopify-installments {display: none !important;}"
+      ],
+      "settings": {
+        "product_sticky_enable": true,
+        "variant_image_scroll": true,
+        "show_cart_bar": true,
+        "enable_zoom": true,
+        "enable_video_looping": false,
+        "image_layout": "thumbnails",
+        "image_size": "normal",
+        "mobile_image_style": "slider",
+        "show_arrow_on_mob": true,
+        "color_scheme": "",
+        "padding_top": 25,
+        "padding_bottom": 25
+      }
+    },
+    "42_deeper_connection_UtXdWj": {
+      "type": "42-deeper-connection",
+      "blocks": {
+        "block_CVjDDB": {
+          "type": "block",
+          "settings": {
+            "name_user": ""
+          }
+        }
+      },
+      "block_order": [
+        "block_CVjDDB"
+      ],
+      "name": "UGC Video",
+      "settings": {
+        "metaobject_content": [
+          "helm-ugc-superpower-misdirected-9-x-16-v-1",
+          "helm-ugc-we-created-i-pad-kids-9-x-16-v-1",
+          "helm-ugc-sex-vs-screen-time-9-x-16-v-1",
+          "helm-ugc-physical-protection-paradox-9-x-16-v-1"
+        ],
+        "pt_mob": 30,
+        "pb_mob": 30,
+        "pt_tab": 50,
+        "pb_tab": 50,
+        "pt_desk": 80,
+        "pb_desk": 80
+      }
+    },
+    "video_accordion_showcase_iWfnEf": {
+      "type": "video-accordion-showcase",
+      "blocks": {
+        "accordion_item_VTfYYU": {
+          "type": "accordion_item",
+          "settings": {
+            "step_number": "1.",
+            "step_title": "Create your focus modes",
+            "step_content": "<p>Work mode: Slack yes, Instagram no. Family time: Everything off except emergency contacts. Bedtime: No emails, no news, no rabbit holes. </p><p><strong>You design the rules that fit your life.</strong></p>",
+            "default_open": false
+          }
+        },
+        "accordion_item_3VNVXk": {
+          "type": "accordion_item",
+          "settings": {
+            "step_number": "2.",
+            "step_title": "Tap now or schedule forever",
+            "step_content": "<p>One tap = instant focus. <strong>Or set recurring sessions that run automatically. </strong>Monday's discipline protects Friday's exhausted self. No daily decisions required.</p>",
+            "default_open": false
+          }
+        },
+        "accordion_item_waABiW": {
+          "type": "accordion_item",
+          "settings": {
+            "step_number": "3.",
+            "step_title": "Remote start, physical stop",
+            "step_content": "<p>Start focus from your couch. But to unlock those apps? You need to physically tap Helm. We made giving up harder than following through.</p>",
+            "default_open": false
+          }
+        },
+        "accordion_item_z4RCBb": {
+          "type": "accordion_item",
+          "settings": {
+            "step_number": "4.",
+            "step_title": "Distance is the strategy",
+            "step_content": "<p>Helm lives where it makes you move. Nightstand phone, kitchen Helm = actual sleep. The 20-foot walk is your moat against midnight scrolling.</p>",
+            "default_open": false
+          }
+        },
+        "accordion_item_J6WdTd": {
+          "type": "accordion_item",
+          "settings": {
+            "step_number": "5.",
+            "step_title": "Real numbers, real change",
+            "step_content": "<p>Week 1: 2 focused hours. <br/>Month 3: 5-hour deep work days. <br/><br/><strong>Your sleep improved. Your partner noticed. Your work shipped. Numbers that translate to life.</strong></p>",
+            "default_open": false
+          }
+        }
+      },
+      "block_order": [
+        "accordion_item_VTfYYU",
+        "accordion_item_3VNVXk",
+        "accordion_item_waABiW",
+        "accordion_item_z4RCBb",
+        "accordion_item_J6WdTd"
+      ],
+      "name": "Video Accordion Showcase",
+      "settings": {
+        "background_color": "#f9f9f9",
+        "section_padding_top": 48,
+        "section_padding_bottom": 48,
+        "section_subtitle": "HOW IT WORKS",
+        "section_heading": "From endless scroll to endless possibility",
+        "heading_size": "h2",
+        "main_video": "shopify://files/videos/quick-video-helm.mp4",
+        "video_autoplay": false,
+        "video_loop": true,
+        "video_muted": true,
+        "video_controls": true,
+        "desktop_layout": "video-left",
+        "accordion_text_size": 18,
+        "accordion_background": "#f9f9f9",
+        "accordion_text_color": "#ffffff",
+        "accordion_border_color": "#e0e0e0"
+      }
+    },
+    "simple_video_enhanced_DPpbM4": {
+      "type": "simple-video-enhanced",
+      "blocks": {
+        "heading_YqXW3h": {
+          "type": "heading",
+          "settings": {
+            "subtitle": "HOW IT WORKS",
+            "heading": "Built like our grandfathers' tools. For our generation's addiction",
+            "heading_size": "h2",
+            "custom_heading_size_desktop": 36,
+            "custom_heading_size_mobile": 26,
+            "subtitle_size_desktop": 14,
+            "subtitle_size_mobile": 12,
+            "heading_color": "#000000",
+            "alignment": "center",
+            "margin_bottom": 40
+          }
+        },
+        "video_pdwJgx": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/helm manufacturing - commercial music LOW RES.mp4",
+            "video_url": "",
+            "video_autoplay": false,
+            "video_loop": false,
+            "video_muted": false,
+            "video_controls": true,
+            "video_max_width": 800,
+            "alignment": "center",
+            "margin_bottom": 10
+          }
+        },
+        "text_zR8XLB": {
+          "type": "text",
+          "settings": {
+            "text_content": "<p>Transform your relationship with technology. Take back control of your time and attention with Helm.</p>",
+            "text_size_desktop": 20,
+            "text_size_mobile": 16,
+            "line_height": 1.6,
+            "text_color": "#666666",
+            "alignment": "center",
+            "text_width": 700,
+            "margin_bottom": 30
+          }
+        },
+        "button_nn4Qmq": {
+          "type": "button",
+          "settings": {
+            "button_text": "Learn More",
+            "button_url": "",
+            "button_style": "btn--primary",
+            "button_text_size_desktop": 16,
+            "button_text_size_mobile": 14,
+            "button_padding_vertical": 14,
+            "button_padding_horizontal": 30,
+            "alignment": "center",
+            "margin_bottom": 30
+          }
+        }
+      },
+      "block_order": [
+        "heading_YqXW3h",
+        "video_pdwJgx",
+        "text_zR8XLB",
+        "button_nn4Qmq"
+      ],
+      "name": "Enhanced Simple Video",
+      "settings": {
+        "container_max_width": 1200,
+        "section_padding_top": 60,
+        "section_padding_bottom": 60,
+        "section_padding_horizontal": 20,
+        "section_padding_top_mobile": 15,
+        "section_padding_bottom_mobile": 15,
+        "section_padding_horizontal_mobile": 15,
+        "background_color": "#ffffff",
+        "subtitle_color": "#666666",
+        "heading_line_height": 1.2,
+        "video_border_radius": 12,
+        "video_shadow": "0 10px 40px rgba(0, 0, 0, 0.1)",
+        "button_border_radius": 6,
+        "button_primary_bg": "#000000",
+        "button_primary_text": "#ffffff",
+        "button_primary_hover_bg": "#333333",
+        "button_primary_hover_text": "#ffffff",
+        "button_secondary_bg": "#f8f8f8",
+        "button_secondary_text": "#000000",
+        "button_secondary_border": "#e0e0e0",
+        "button_secondary_hover_bg": "#e0e0e0",
+        "button_secondary_hover_text": "#000000",
+        "button_secondary_hover_border": "#cccccc",
+        "button_outline_text": "#000000",
+        "button_outline_border": "#000000",
+        "button_outline_hover_bg": "#000000",
+        "button_outline_hover_text": "#ffffff",
+        "button_outline_hover_border": "#000000"
+      }
+    },
+    "product_features_grid_wUkLYi": {
+      "type": "product-features-grid",
+      "blocks": {
+        "feature_NQFR7P": {
+          "type": "feature",
+          "settings": {
+            "custom_svg": "calendar-icon.svg",
+            "icon": "calendar",
+            "custom_icon": "🚀",
+            "title": "Focus Profiles",
+            "description": "Craft custom boundaries for every part of your life. Save profiles tailored to your unique needs."
+          }
+        },
+        "feature_Schedules": {
+          "type": "feature",
+          "settings": {
+            "custom_svg": "clock-icon.svg",
+            "icon": "clock",
+            "custom_icon": "⏰",
+            "title": "Schedules",
+            "description": "Set it and forget it. Your focus blocks run automatically. No decisions, just protection."
+          }
+        },
+        "feature_cQRDfh": {
+          "type": "feature",
+          "settings": {
+            "custom_svg": "heart-icon.svg",
+            "icon": "smile",
+            "custom_icon": "🚀",
+            "title": "Smart Breaks",
+            "description": "Your focus, your rhythm. Allow mindful 5-minute breaks or lock in completely."
+          }
+        },
+        "feature_HQMMkH": {
+          "type": "feature",
+          "settings": {
+            "custom_svg": "alert-circle-icon.svg",
+            "icon": "exit",
+            "custom_icon": "🚀",
+            "title": "Emergency Lifelines",
+            "description": "Get 5 lifetime emergency unlocks for when you truly need full access. Once they're gone, they're gone."
+          }
+        },
+        "feature_TFkhAM": {
+          "type": "feature",
+          "settings": {
+            "custom_svg": "feather-lock-icon.svg",
+            "icon": "lock",
+            "custom_icon": "🚀",
+            "title": "Strict Mode",
+            "description": "Total commitment protection. Prevents app deletion or workarounds during active focus sessions."
+          }
+        },
+        "feature_RfkG4R": {
+          "type": "feature",
+          "settings": {
+            "custom_svg": "feather-shield-icon.svg",
+            "icon": "shield",
+            "custom_icon": "🚀",
+            "title": "Guardian Mode",
+            "description": "Transform any device into a kid-safe zone. Block apps, purchases, and settings. Peace of mind in one tap."
+          }
+        },
+        "feature_tAdWdA": {
+          "type": "feature",
+          "settings": {
+            "custom_svg": "battery-icon.svg",
+            "icon": "battery",
+            "custom_icon": "🔋",
+            "title": "No Charging",
+            "description": "Always ready. No charging, no batteries, no excuses."
+          }
+        },
+        "feature_DeviceShare": {
+          "type": "feature",
+          "settings": {
+            "custom_svg": "feather-icon-users.svg",
+            "icon": "users",
+            "custom_icon": "👥",
+            "title": "Device Sharing",
+            "description": "One Helm, multiple lives transformed. Share with up to 2 people—each with their own private account."
+          }
+        },
+        "feature_Analytics": {
+          "type": "feature",
+          "settings": {
+            "custom_svg": "feather-icon-activity.svg",
+            "icon": "chart",
+            "custom_icon": "📊",
+            "title": "Focus Analytics",
+            "description": "Watch your transformation unfold. Track streaks, measure progress, and see how much life you've reclaimed."
+          }
+        }
+      },
+      "block_order": [
+        "feature_NQFR7P",
+        "feature_Schedules",
+        "feature_cQRDfh",
+        "feature_HQMMkH",
+        "feature_TFkhAM",
+        "feature_RfkG4R",
+        "feature_tAdWdA",
+        "feature_DeviceShare",
+        "feature_Analytics"
+      ],
+      "name": "Product Features Grid",
+      "settings": {
+        "heading": "The Helm App",
+        "subtitle": "Built to save what money can't buy back.",
+        "desktop_columns": 3,
+        "background_color": "#1b1b26",
+        "heading_color": "#ffffff",
+        "text_color": "#b0b0b0",
+        "card_background": "#ffffff0d",
+        "border_color": "#ffffff1a",
+        "hover_border_color": "#ffffff33",
+        "icon_background": "#ffffff1a",
+        "icon_color": "#ffffff",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "42_3_step_science_deeper_connection_3ATEnc": {
+      "type": "42-3-step-science-deeper-connection",
+      "blocks": {
+        "block_E8TLmG": {
+          "type": "block",
+          "settings": {
+            "heading": "Environment",
+            "description": ""
+          }
+        },
+        "block_HkaEcG": {
+          "type": "block",
+          "settings": {
+            "heading": "",
+            "description": ""
+          }
+        },
+        "block_xNFwte": {
+          "type": "block",
+          "settings": {
+            "heading": "",
+            "description": ""
+          }
+        }
+      },
+      "block_order": [
+        "block_E8TLmG",
+        "block_HkaEcG",
+        "block_xNFwte"
+      ],
+      "disabled": true,
+      "custom_css": [
+        ".tw-bg-sc-blue {background-color: #2c2c39 !important;}"
+      ],
+      "name": "3-Step Science of Deeper Connection",
+      "settings": {
+        "anchor_id": "helm-steps",
+        "metaobject_content": [
+          "your-3-step-focus-transformation"
+        ],
+        "title": "Your 3-step focus transformation.",
+        "text": "<p>The Intimacy Deck isn’t just a game—it’s a relationship catalyst powered by psychology. This simple yet powerful 3-step process helps you unlock deeper emotional intimacy, one conversation at a time.</p>",
+        "pt_mob": 0,
+        "pb_mob": 0,
+        "pt_tab": 0,
+        "pb_tab": 0,
+        "pt_desk": 0,
+        "pb_desk": 40
+      }
+    },
+    "section_rich_text_EXTwGb": {
+      "type": "section-rich-text",
+      "blocks": {
+        "subheading_eJUiLT": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "Reclaim Your Time",
+            "padding_bottom": 16
+          }
+        },
+        "heading_qTjeLD": {
+          "type": "heading",
+          "settings": {
+            "title": "The Helm Experience",
+            "heading_font_size": "heading-large",
+            "padding_bottom": 16,
+            "heading_tag": "automatic"
+          }
+        },
+        "text_9TJf4B": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Helm makes focus tangible. Crafted like an heirloom, this beautiful object transforms how you relate to technology—<strong>because your time and what you create with it defines who you become.</strong></p>",
+            "text_font_size": "body-large",
+            "padding_bottom": 30
+          }
+        }
+      },
+      "block_order": [
+        "subheading_eJUiLT",
+        "heading_qTjeLD",
+        "text_9TJf4B"
+      ],
+      "disabled": true,
+      "custom_css": [
+        "#Rte--template--17365206761541__section_rich_text_EXTwGb {max-width: 860px; margin-left: auto; margin-right: auto; padding-left: 1rem; padding-right: 1rem;}"
+      ],
+      "settings": {
+        "align_text": "text-center",
+        "width": "wrapper--narrow",
+        "color_scheme": "",
+        "overlay_opacity": 0,
+        "show_overlay_text": false,
+        "padding_top": 60,
+        "padding_bottom": 0
+      }
+    },
+    "helm_experience_fjGtNc": {
+      "type": "helm-experience",
+      "blocks": {
+        "feature_p8UFpx": {
+          "type": "feature",
+          "settings": {
+            "icon_type": "svg_upload",
+            "emoji": "📅",
+            "icon_svg": "shopify://shop_images/Foster_meaningful_transformative_conversations.png",
+            "icon": "",
+            "title": "Schedules",
+            "description": "Schedule your focus periods to start and end automatically."
+          }
+        },
+        "feature_DNhBy3": {
+          "type": "feature",
+          "settings": {
+            "icon_type": "svg_upload",
+            "emoji": "🎯",
+            "icon_svg": "shopify://shop_images/Challenge_assumptions_and_encourage_self-reflection.png",
+            "icon": "",
+            "title": "Intention & Redirection",
+            "description": "Set clear intentions before focus, get redirected to meaningful alternatives when distracted."
+          }
+        },
+        "feature_TYJcJf": {
+          "type": "feature",
+          "settings": {
+            "icon_type": "svg_upload",
+            "emoji": "💪",
+            "icon_svg": "shopify://shop_images/icon_commitment.png",
+            "icon": "",
+            "title": "Commitment Levels",
+            "description": "Choose your focus intensity: Beast Mode (no breaks), Flow (limited breaks), or Chill (flexible breaks)."
+          }
+        },
+        "feature_gXnLVJ": {
+          "type": "feature",
+          "settings": {
+            "icon_type": "svg_upload",
+            "emoji": "📊",
+            "icon_svg": "shopify://shop_images/icon-self-journal-features-icon-2.png",
+            "icon": "",
+            "title": "Analytics & Streaks",
+            "description": "Track your focus time, build daily streaks, and visualize your transformation with detailed insights."
+          }
+        }
+      },
+      "block_order": [
+        "feature_p8UFpx",
+        "feature_DNhBy3",
+        "feature_TYJcJf",
+        "feature_gXnLVJ"
+      ],
+      "disabled": true,
+      "settings": {
+        "background_color": "#ffffff",
+        "padding_top": 0,
+        "padding_bottom": 80,
+        "subtitle": "",
+        "phone_image": "shopify://shop_images/phone-graphics-v1.png"
+      }
+    },
+    "ss_comparison_table_12_fGwxJq": {
+      "type": "ss-comparison-table-12",
+      "blocks": {
+        "table_row_tmPEKR": {
+          "type": "table_row",
+          "settings": {
+            "row_heading": "Premium design",
+            "first_column": "",
+            "first_column_icon": "check",
+            "second_column": "",
+            "second_column_icon": "cross",
+            "third_column": "",
+            "third_column_icon": "cross",
+            "four_column": "",
+            "four_column_icon": "check",
+            "fives_column": "",
+            "fives_column_icon": "cross",
+            "sixth_column": "",
+            "sixth_column_icon": "cross"
+          }
+        },
+        "table_row_jiQNGW": {
+          "type": "table_row",
+          "settings": {
+            "row_heading": "Physical key",
+            "first_column": "",
+            "first_column_icon": "check",
+            "second_column": "",
+            "second_column_icon": "cross",
+            "third_column": "",
+            "third_column_icon": "cross",
+            "four_column": "",
+            "four_column_icon": "check",
+            "fives_column": "",
+            "fives_column_icon": "cross",
+            "sixth_column": "",
+            "sixth_column_icon": "cross"
+          }
+        },
+        "table_row_YVRNhU": {
+          "type": "table_row",
+          "settings": {
+            "row_heading": "Lock remotely",
+            "first_column": "",
+            "first_column_icon": "check",
+            "second_column": "",
+            "second_column_icon": "cross",
+            "third_column": "",
+            "third_column_icon": "cross",
+            "four_column": "",
+            "four_column_icon": "check",
+            "fives_column": "",
+            "fives_column_icon": "cross",
+            "sixth_column": "",
+            "sixth_column_icon": "cross"
+          }
+        },
+        "table_row_A4bEVr": {
+          "type": "table_row",
+          "settings": {
+            "row_heading": "Custom modes",
+            "first_column": "",
+            "first_column_icon": "check",
+            "second_column": "",
+            "second_column_icon": "check",
+            "third_column": "",
+            "third_column_icon": "cross",
+            "four_column": "",
+            "four_column_icon": "check",
+            "fives_column": "",
+            "fives_column_icon": "cross",
+            "sixth_column": "",
+            "sixth_column_icon": "cross"
+          }
+        },
+        "table_row_EjA8nm": {
+          "type": "table_row",
+          "settings": {
+            "row_heading": "Can't override",
+            "first_column": "",
+            "first_column_icon": "check",
+            "second_column": "",
+            "second_column_icon": "check",
+            "third_column": "",
+            "third_column_icon": "cross",
+            "four_column": "",
+            "four_column_icon": "check",
+            "fives_column": "",
+            "fives_column_icon": "cross",
+            "sixth_column": "",
+            "sixth_column_icon": "cross"
+          }
+        },
+        "table_row_KyCkbF": {
+          "type": "table_row",
+          "settings": {
+            "row_heading": "Schedule focus",
+            "first_column": "",
+            "first_column_icon": "check",
+            "second_column": "",
+            "second_column_icon": "check",
+            "third_column": "",
+            "third_column_icon": "cross",
+            "four_column": "",
+            "four_column_icon": "cross",
+            "fives_column": "",
+            "fives_column_icon": "cross",
+            "sixth_column": "",
+            "sixth_column_icon": "cross"
+          }
+        },
+        "table_row_BrDEaG": {
+          "type": "table_row",
+          "settings": {
+            "row_heading": "Price",
+            "first_column": "$125 once",
+            "first_column_icon": "none",
+            "second_column": "~$8/month forever",
+            "second_column_icon": "none",
+            "third_column": "$200 + no apps",
+            "third_column_icon": "none",
+            "four_column": "",
+            "four_column_icon": "check",
+            "fives_column": "",
+            "fives_column_icon": "cross",
+            "sixth_column": "",
+            "sixth_column_icon": "cross"
+          }
+        },
+        "table_row_KwTCL8": {
+          "type": "table_row",
+          "settings": {
+            "row_heading": "Desktop app",
+            "first_column": "Coming soon",
+            "first_column_icon": "none",
+            "second_column": "",
+            "second_column_icon": "cross",
+            "third_column": "",
+            "third_column_icon": "cross",
+            "four_column": "",
+            "four_column_icon": "check",
+            "fives_column": "",
+            "fives_column_icon": "cross",
+            "sixth_column": "",
+            "sixth_column_icon": "cross"
+          }
+        }
+      },
+      "block_order": [
+        "table_row_tmPEKR",
+        "table_row_jiQNGW",
+        "table_row_YVRNhU",
+        "table_row_A4bEVr",
+        "table_row_EjA8nm",
+        "table_row_KyCkbF",
+        "table_row_BrDEaG",
+        "table_row_KwTCL8"
+      ],
+      "name": "SS - Comparison table #12",
+      "settings": {
+        "content_align": "center",
+        "content_align_mobile": "center",
+        "heading": "<h2>What makes Helm different?</h2>",
+        "heading_custom": false,
+        "heading_font": "josefin_sans_n4",
+        "heading_size": 40,
+        "heading_size_mobile": 28,
+        "heading_height": 130,
+        "text": "<p>Most focus apps live inside the problem. Helm exists outside it.</p>",
+        "text_custom": false,
+        "text_font": "josefin_sans_n4",
+        "text_size": 18,
+        "text_size_mobile": 14,
+        "text_height": 150,
+        "text_mt": 16,
+        "text_mt_mobile": 16,
+        "table_columns": 3,
+        "table_radius": 20,
+        "table_mt": 24,
+        "table_mt_mobile": 12,
+        "first_heading": "Helm",
+        "first_heading_image": "shopify://shop_images/helm-office-accessories-bestself-co-642683.jpg",
+        "first_heading_url": "",
+        "second_heading": "Phone Apps",
+        "second_heading_url": "",
+        "third_heading": "Dumb Phones",
+        "third_heading_url": "",
+        "four_heading": "",
+        "four_heading_url": "",
+        "fives_heading": "",
+        "fives_heading_url": "",
+        "sixth_heading": "",
+        "sixth_heading_url": "",
+        "heading_image_size": 70,
+        "heading_image_size_mobile": 70,
+        "heading_image_radius": 100,
+        "heading_image_border_thickness": 0,
+        "column_heading_custom": false,
+        "column_heading_font": "assistant_n4",
+        "column_heading_size": 24,
+        "column_heading_size_mobile": 14,
+        "column_heading_height": 130,
+        "column_heading_align": "center",
+        "column_heading_align_mobile": "center",
+        "column_heading_padding_horizontal": 16,
+        "column_heading_padding_horizontal_mobile": 4,
+        "column_heading_padding_vertical": 24,
+        "column_heading_padding_vertical_mobile": 20,
+        "row_padding_horizontal": 16,
+        "row_padding_horizontal_mobile": 4,
+        "row_padding_vertical": 24,
+        "row_padding_vertical_mobile": 20,
+        "row_border_thickness": 1,
+        "row_heading_custom": false,
+        "row_heading_font": "assistant_n4",
+        "row_heading_size": 16,
+        "row_heading_size_mobile": 12,
+        "row_heading_height": 130,
+        "value_custom": false,
+        "value_font": "assistant_n4",
+        "value_size": 16,
+        "value_size_mobile": 14,
+        "value_height": 130,
+        "value_icon_size": 28,
+        "value_icon_size_mobile": 24,
+        "versus_icon_size": 60,
+        "versus_icon_size_mobile": 48,
+        "bottom_text": "<p>Your phone should work for you, not against you</p>",
+        "bottom_text_custom": false,
+        "bottom_text_font": "josefin_sans_n4",
+        "bottom_text_size": 12,
+        "bottom_text_size_mobile": 12,
+        "bottom_text_height": 150,
+        "bottom_text_mt": 24,
+        "bottom_text_mt_mobile": 20,
+        "bottom_text_align": "center",
+        "bottom_text_align_mobile": "center",
+        "heading_color": "#000000",
+        "text_color": "#000000",
+        "bottom_text_color": "#afabab",
+        "column_heading_color": "#000000",
+        "column_heading_active_color": "#242540",
+        "value_color": "#000000",
+        "value_active_color": "#212121",
+        "table_column_bg_color": "#f7f7f7",
+        "table_column_active_bg_color": "#f4ead7",
+        "heading_image_border_color": "#000000",
+        "row_heading_color": "#000000",
+        "row_border_color": "#d9d9d9",
+        "value_icon_color": "#000000",
+        "value_icon_active_color": "#212121",
+        "versus_value_icon_color": "#ffffff",
+        "versus_icon_bg_color": "#ab8c52",
+        "background_color": "#ffffff",
+        "background_gradient": "",
+        "border_color": "#000000",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "margin_horizontal": 0,
+        "margin_horizontal_mobile": 0,
+        "padding_top": 52,
+        "padding_bottom": 36,
+        "padding_horizontal": 5,
+        "padding_horizontal_mobile": 1.5,
+        "full_width": false,
+        "content_width": 1200,
+        "border_thickness": 0,
+        "section_radius": 0,
+        "lazy": true
+      }
+    },
+    "helm_roi_calculator_ipJ3AB": {
+      "type": "helm-roi-calculator",
+      "disabled": true,
+      "name": "ROI Calculator",
+      "settings": {
+        "heading": "What's the True Cost?",
+        "subtitle": "Every moment lost to distraction has a price. Let's calculate yours.",
+        "time_label": "Time lost to distractions daily",
+        "time_min": 0,
+        "time_max": 480,
+        "time_step": 15,
+        "default_time": 120,
+        "value_label": "Your time's value per hour",
+        "value_min": 0,
+        "value_max": 500,
+        "value_step": 5,
+        "default_value": 50,
+        "helm_price": 79,
+        "results_title": "The Hidden Cost",
+        "breakeven_label": "Helm Pays for Itself In",
+        "background_color": "#ffffff",
+        "heading_color": "#1a1f36",
+        "text_color": "#4a5568",
+        "card_background": "#fffffff2",
+        "border_color": "#1a1f3614",
+        "label_color": "#718096",
+        "accent_color": "#2b6cb0",
+        "slider_track": "#e2e8f0",
+        "divider_color": "#e2e8f0",
+        "result_background": "#f7fafc",
+        "cost_color": "#e53e3e",
+        "gradient_start": "#2b6cb0",
+        "gradient_end": "#5090d3",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "section_rich_text_DL7cWG": {
+      "type": "section-rich-text",
+      "blocks": {
+        "subheading_RNmBgJ": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "Intentional Focus",
+            "padding_bottom": 16
+          }
+        },
+        "heading_ULWVpb": {
+          "type": "heading",
+          "settings": {
+            "title": "How Helm Works",
+            "heading_font_size": "heading-large",
+            "padding_bottom": 16,
+            "heading_tag": "automatic"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_RNmBgJ",
+        "heading_ULWVpb"
+      ],
+      "disabled": true,
+      "settings": {
+        "align_text": "text-center",
+        "width": "wrapper",
+        "color_scheme": "scheme-3",
+        "overlay_opacity": 0,
+        "show_overlay_text": false,
+        "padding_top": 100,
+        "padding_bottom": 0
+      }
+    },
+    "42_benefits_yLQbA7": {
+      "type": "42-benefits",
+      "disabled": true,
+      "custom_css": [
+        ".tw-bg-sc-blue {background-color: #2c2c39 !important;}"
+      ],
+      "name": "42 Benefits",
+      "settings": {
+        "anchor_id": "helm-science",
+        "metaobject_content": [
+          "helm-benefits"
+        ],
+        "rounded_top": true,
+        "rounded_bottom": false,
+        "title": "Scientifically backed benefits",
+        "btn_text": "learn more",
+        "btn_url": "shopify://pages/the-science-behind-helm",
+        "pt_mob": 42,
+        "pb_mob": 44,
+        "pt_tab": 60,
+        "pb_tab": 60,
+        "pt_desk": 120,
+        "pb_desk": 120
+      }
+    },
+    "section_custom_code_qTVXMP": {
+      "type": "section-custom-code",
+      "name": "Custom code",
+      "settings": {
+        "code": "<div id=\"distraction-calculator\">",
+        "width": "wrapper",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "42_faq_hGXPRA": {
+      "type": "42-faq",
+      "blocks": {
+        "faq_item_nVwMJb": {
+          "type": "faq_item",
+          "settings": {
+            "question": "{{ product.metafields.product.faq_question_1.value }}",
+            "answer": "<p>All orders will ship in the order they are received, beginning August 15th. <br/><br/>If you order Helm with another product that's currently in stock, your entire order will ship together when Helm becomes available.</p>"
+          }
+        },
+        "faq_item_3dXg7V": {
+          "type": "faq_item",
+          "settings": {
+            "question": "{{ product.metafields.product.faq_question_2.value }}",
+            "answer": "{{ product.metafields.product.faq_answer_2 | metafield_tag }}"
+          }
+        },
+        "faq_item_x96Ynd": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How does Helm help reduce screen time?",
+            "answer": "<p>As a screen time management solution, Helm helps you reclaim an average of 2+ hours daily by creating physical boundaries around your digital habits. This digital minimalism approach redirects time from mindless scrolling toward meaningful activities and deep work.</p>"
+          }
+        },
+        "faq_item_cncXie": {
+          "type": "faq_item",
+          "settings": {
+            "question": "{{ product.metafields.product.faq_question_3.value }}",
+            "answer": "{{ product.metafields.product.faq_answer_3 | metafield_tag }}"
+          }
+        },
+        "faq_item_a4JteJ": {
+          "type": "faq_item",
+          "settings": {
+            "question": "{{ product.metafields.product.faq_question_4.value }}",
+            "answer": "{{ product.metafields.product.faq_answer_4 | metafield_tag }}"
+          }
+        },
+        "faq_item_mzcpMp": {
+          "type": "faq_item",
+          "settings": {
+            "question": "{{ product.metafields.product.faq_question_5.value }}",
+            "answer": "<p>Android app is in progress, not available yet but it will be soon. By the time you receive your Helm, it will be available on both iOS and Android devices.</p>"
+          }
+        },
+        "faq_item_HfWEk7": {
+          "type": "faq_item",
+          "settings": {
+            "question": "{{ product.metafields.product.faq_question_6.value }}",
+            "answer": "<p>Yes, you'll need to download the Helm companion app on iOS (soon will be on Android). The app is where you customize what gets blocked, set intentions, and track your focus analytics.</p>"
+          }
+        },
+        "faq_item_hJrxcW": {
+          "type": "faq_item",
+          "settings": {
+            "question": "{{ product.metafields.product.faq_question_7.value }}",
+            "answer": "{{ product.metafields.product.faq_answer_7 | metafield_tag }}"
+          }
+        },
+        "faq_item_UDKyA9": {
+          "type": "faq_item",
+          "settings": {
+            "question": "{{ product.metafields.product.faq_question_8.value }}",
+            "answer": "{{ product.metafields.product.faq_answer_8 | metafield_tag }}"
+          }
+        },
+        "faq_item_DJkdja": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Can Helm help with phone addiction?",
+            "answer": "<p>Yes! This phone addiction solution addresses the root cause of compulsive phone use by creating a physical barrier that's harder to override than willpower alone. The device transforms your relationship with technology from reactive to intentional.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_nVwMJb",
+        "faq_item_3dXg7V",
+        "faq_item_x96Ynd",
+        "faq_item_cncXie",
+        "faq_item_a4JteJ",
+        "faq_item_mzcpMp",
+        "faq_item_HfWEk7",
+        "faq_item_hJrxcW",
+        "faq_item_UDKyA9",
+        "faq_item_DJkdja"
+      ],
+      "settings": {
+        "bg_color": "#ecf2ff",
+        "section_title": "<h2><strong>Frequently Asked Questions</strong></h2>",
+        "pt_mob": 48,
+        "pb_mob": 48,
+        "pt_tab": 60,
+        "pb_tab": 60,
+        "pt_desk": 40,
+        "pb_desk": 40
+      }
+    },
+    "section_accordion_group_3XamJT": {
+      "type": "section-accordion-group",
+      "blocks": {
+        "heading_KwVqRC": {
+          "type": "heading",
+          "settings": {
+            "title": "Frequently Asked Questions"
+          }
+        },
+        "question_6kbr7D": {
+          "type": "question",
+          "settings": {
+            "default_open": true,
+            "title": "What is Helm",
+            "content": "<p>Helm is a premium digital wellness tool and focus app blocker that helps you transform digital distraction into intentional direction. This innovative productivity device for mindful technology use lets you activate a distraction-free mode by simply tapping your phone to it.<br/><br/><a href=\"/pages/the-science-behind-helm\" target=\"_blank\" title=\"The Science Behind Helm\">See the science behind Helm here.</a></p>",
+            "show_icon": false,
+            "icon_name": "icon-award",
+            "icon_size": 20,
+            "icon_color": "#545454"
+          }
+        },
+        "question_BeqJKm": {
+          "type": "question",
+          "settings": {
+            "default_open": false,
+            "title": "How does Helm help reduce screen time?",
+            "content": "<p>As a screen time management solution, Helm helps you reclaim an average of 2+ hours daily by creating physical boundaries around your digital habits. This digital minimalism approach redirects time from mindless scrolling toward meaningful activities and deep work.</p>",
+            "show_icon": false,
+            "icon_name": "icon-chat",
+            "icon_size": 20,
+            "icon_color": "#545454"
+          }
+        },
+        "question_KGFLVP": {
+          "type": "question",
+          "settings": {
+            "default_open": false,
+            "title": "Can Helm help with phone addiction?",
+            "content": "<p>Yes! This phone addiction solution addresses the root cause of compulsive phone use by creating a physical barrier that's harder to override than willpower alone. The device transforms your relationship with technology from reactive to intentional.</p>",
+            "show_icon": false,
+            "icon_name": "icon-info-empty",
+            "icon_size": 20,
+            "icon_color": "#545454"
+          }
+        },
+        "question_4CKXjR": {
+          "type": "question",
+          "settings": {
+            "default_open": false,
+            "title": "Does Helm work for ADHD and neurodivergent users?",
+            "content": "<p>Absolutely. Helm provides the external structure that neurodivergent brains often need, bypassing executive function challenges through simple physical triggers that don't rely on remembering to use a traditional focus app blocker.</p>",
+            "show_icon": false,
+            "icon_name": "icon-cloud",
+            "icon_size": 20,
+            "icon_color": "#545454"
+          }
+        },
+        "question_apARV3": {
+          "type": "question",
+          "settings": {
+            "default_open": false,
+            "title": "Why use a physical device like Helm?",
+            "content": "<p>Software alone is too easy to circumvent. Helm is a physical commitment device that creates real friction when your willpower is lowest. Imagine trying to unblock distracting apps when the Helm is in your kitchen and you're in your bedroom, or sitting in your car when the device is at home. That physical distance becomes a powerful barrier.</p><p>Unlike digital blockers that can be switched off with a tap, Helm creates a tangible obstacle to mindless scrolling. The device serves as a constant, immovable reminder of your commitment to focus. Physical triggers create 32% stronger habits than digital solutions because they engage you in a tactile, intentional ritual that apps alone can't replicate.<br/></p><p>Helm isn't just a blocker—it's a physical manifestation of your commitment to living more intentionally</p>",
+            "show_icon": false,
+            "icon_name": "icon-leaf",
+            "icon_size": 20,
+            "icon_color": "#545454"
+          }
+        },
+        "question_wHKPdx": {
+          "type": "question",
+          "settings": {
+            "default_open": false,
+            "title": "What devices does Helm work with?",
+            "content": "<p>This screen time management device requires a phone with NFC (Near Field Communication) capability. This includes iPhone 12 and newer, and most Android devices from 2018 onward.</p>",
+            "show_icon": false,
+            "icon_name": "icon-flare",
+            "icon_size": 20,
+            "icon_color": "#545454"
+          }
+        },
+        "question_YDp6yE": {
+          "type": "question",
+          "settings": {
+            "default_open": false,
+            "title": "Do I need to install an app?",
+            "content": "<p>Yes, you'll need to download the Helm companion app (available on iOS and Android). The app is where you customize what gets blocked, set intentions, and track your focus analytics.</p>",
+            "show_icon": false,
+            "icon_name": "icon-award",
+            "icon_size": 20,
+            "icon_color": "#545454"
+          }
+        },
+        "question_KJgAzx": {
+          "type": "question",
+          "settings": {
+            "default_open": false,
+            "title": "Is the app free?",
+            "content": "<p>Yes! Your Helm purchase includes lifetime access to the app (with no subscription). Unlike other focus tools, there are no monthly fees or subscriptions—ever.</p>",
+            "show_icon": false,
+            "icon_name": "icon-cloud",
+            "icon_size": 20,
+            "icon_color": "#545454"
+          }
+        },
+        "question_fpC6bA": {
+          "type": "question",
+          "settings": {
+            "default_open": false,
+            "title": "How does the physical tap actually work?",
+            "content": "<p>Helm uses NFC (Near Field Communication) technology. When you tap your phone to Helm, it instantly activates whichever mode you’re in and either allows or blocks your chosen apps.</p>",
+            "show_icon": false,
+            "icon_name": "icon-diameter",
+            "icon_size": 20,
+            "icon_color": "#545454"
+          }
+        },
+        "question_JiFjti": {
+          "type": "question",
+          "settings": {
+            "default_open": false,
+            "title": "What happens if I try to open blocked apps?",
+            "content": "<p>Instead of accessing the blocked content, you'll see helpful redirects like progress toward your intentions, mindfulness prompts, or suggested alternative activities.<br/></p>",
+            "show_icon": false,
+            "icon_name": "icon-info-empty",
+            "icon_size": 20,
+            "icon_color": "#545454"
+          }
+        },
+        "question_dTpJcP": {
+          "type": "question",
+          "settings": {
+            "default_open": false,
+            "title": "What is Helm made of?",
+            "content": "<p>Helm features a premium brass base with a black silicone top. It's substantial (140g), designed to last a lifetime, and magnetic base so it sticks to any metal surface.</p>",
+            "show_icon": false,
+            "icon_name": "icon-flare",
+            "icon_size": 20,
+            "icon_color": "#545454"
+          }
+        },
+        "question_eJDbiU": {
+          "type": "question",
+          "settings": {
+            "default_open": false,
+            "title": "Can I have multiple Helm devices?",
+            "content": "<p>Yes, you can have multiple devices tied to your same account. Common setups could include:<br/>* One device at work and another at home<br/>* A backup device for emergencies<br/>* Multiple locations for comprehensive tracking</p>",
+            "show_icon": false,
+            "icon_name": "icon-star",
+            "icon_size": 20,
+            "icon_color": "#545454"
+          }
+        },
+        "question_ige9Tr": {
+          "type": "question",
+          "settings": {
+            "default_open": false,
+            "title": "Can I share my Helm with someone else?",
+            "content": "<p><strong>Yes! Helm supports sharing between two users on the same device.</strong>Here's how it works:<strong>For the Primary User (Device Owner):</strong></p><ul><li>Simply add the second person's email address in your Helm app settings.</li><li>You maintain full control of the device and can remove access anytime.</li><li>Your data stays completely private - they can't see your focus sessions, app choices, or usage patterns.</li></ul><p><strong>For the Secondary User:</strong></p><ul><li>They'll receive an invitation to download the Helm app and create their account.</li><li>Once set up, they can tap the same Helm device to activate their own focus modes.</li><li>They get the full Helm experience with their own custom app blocking, intentions, and analytics.</li><li>Their data is completely separate and private from the primary user.</li></ul><p><strong>Perfect for:</strong></p><ul><li>Couples sharing a home workspace.</li><li>Roommates who both want to improve focus.</li><li>Partners supporting each other's digital wellness goals.</li></ul><p><strong>Important Notes:</strong></p><ul><li>Only two users can share one Helm device. Will consider ability to add further users in future.</li><li>Each user maintains complete privacy - no shared data or settings.</li><li>The primary user controls who has access and can revoke sharing privileges.</li><li>Both users need phones with NFC capability.</li></ul><p>This makes Helm a great investment for households where multiple people want to transform their relationship with technology, without needing to purchase separate devices.</p>",
+            "show_icon": false,
+            "icon_name": "icon-star",
+            "icon_size": 20,
+            "icon_color": "#545454"
+          }
+        },
+        "question_BA9pcb": {
+          "type": "question",
+          "settings": {
+            "default_open": false,
+            "title": "When will my order ship?",
+            "content": "<p>Pre-orders will ship starting July 17 on a first-come, first-served basis. If you order Helm with another product that's currently in stock, your entire order will ship together when Helm becomes available.</p>",
+            "show_icon": false,
+            "icon_name": "icon-location",
+            "icon_size": 20,
+            "icon_color": "#545454"
+          }
+        },
+        "question_PVJhnq": {
+          "type": "question",
+          "settings": {
+            "default_open": false,
+            "title": "How is my data protected?",
+            "content": "<p>We prioritize your privacy completely. While Helm displays your personal analytics within the app, **we have zero access to your data**. Your focus patterns, app usage, and personal information stay entirely on your device.</p>",
+            "show_icon": false,
+            "icon_name": "icon-cloud",
+            "icon_size": 20,
+            "icon_color": "#545454"
+          }
+        }
+      },
+      "block_order": [
+        "heading_KwVqRC",
+        "question_6kbr7D",
+        "question_BeqJKm",
+        "question_KGFLVP",
+        "question_4CKXjR",
+        "question_apARV3",
+        "question_wHKPdx",
+        "question_YDp6yE",
+        "question_KJgAzx",
+        "question_fpC6bA",
+        "question_JiFjti",
+        "question_dTpJcP",
+        "question_eJDbiU",
+        "question_ige9Tr",
+        "question_BA9pcb",
+        "question_PVJhnq"
+      ],
+      "disabled": true,
+      "settings": {
+        "heading_font_size": "heading-medium",
+        "question_font_size": "heading-small",
+        "width": "wrapper",
+        "columns": "1",
+        "color_scheme": "",
+        "padding_top": 50,
+        "padding_bottom": 50
+      }
+    },
+    "related": {
+      "type": "related",
+      "disabled": true,
+      "settings": {
+        "enable_tabs": true,
+        "heading_alignment": "text-center",
+        "heading_font_size": "heading-small",
+        "layout_mobile": "slider",
+        "color_scheme": "",
+        "padding_top": 25,
+        "padding_bottom": 35
+      }
+    }
+  },
+  "order": [
+    "42_main_product_xYEg3T",
+    "main",
+    "42_deeper_connection_UtXdWj",
+    "video_accordion_showcase_iWfnEf",
+    "simple_video_enhanced_DPpbM4",
+    "product_features_grid_wUkLYi",
+    "42_3_step_science_deeper_connection_3ATEnc",
+    "section_rich_text_EXTwGb",
+    "helm_experience_fjGtNc",
+    "ss_comparison_table_12_fGwxJq",
+    "helm_roi_calculator_ipJ3AB",
+    "section_rich_text_DL7cWG",
+    "42_benefits_yLQbA7",
+    "section_custom_code_qTVXMP",
+    "42_faq_hGXPRA",
+    "section_accordion_group_3XamJT",
+    "related"
+  ]
+}

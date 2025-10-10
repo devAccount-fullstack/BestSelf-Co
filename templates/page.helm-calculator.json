@@ -1,0 +1,59 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "padding_top": 40,
+        "padding_bottom": 0
+      }
+    },
+    "roi_calculator": {
+      "type": "helm-roi-calculator",
+      "settings": {
+        "heading": "What's the True Cost?",
+        "subtitle": "Every moment lost to distraction has a price. Let's calculate yours.",
+        "time_label": "Time lost to distractions daily",
+        "time_min": 0,
+        "time_max": 480,
+        "time_step": 15,
+        "default_time": 120,
+        "value_label": "Your time's value per hour",
+        "value_min": 0,
+        "value_max": 500,
+        "value_step": 5,
+        "default_value": 50,
+        "helm_price": 79,
+        "results_title": "The Hidden Cost",
+        "breakeven_label": "Helm Pays for Itself In",
+        "background_color": "#FFFFFF",
+        "heading_color": "#1A1F36",
+        "text_color": "#4A5568",
+        "card_background": "rgba(255, 255, 255, 0.95)",
+        "border_color": "rgba(26, 31, 54, 0.08)",
+        "label_color": "#718096",
+        "accent_color": "#2B6CB0",
+        "slider_track": "#E2E8F0",
+        "divider_color": "#E2E8F0",
+        "result_background": "#F7FAFC",
+        "cost_color": "#E53E3E",
+        "gradient_start": "#2B6CB0",
+        "gradient_end": "#5090D3",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    }
+  },
+  "order": [
+    "main",
+    "roi_calculator"
+  ]
+}

@@ -1,0 +1,477 @@
+<!-- /sections/metaobject-cta.liquid -->
+{% comment %}
+  Reusable CTA Section that pulls content from Product CTA metaobjects
+  This section provides centralized management of CTAs across multiple pages
+  
+  Settings:
+  - cta_handle: The handle of the product_cta metaobject to display
+  - override_product: Optional product override (uses current product if not set)
+  - layout: Layout style (horizontal or vertical)
+{% endcomment %}
+
+{%- liquid
+  # Get the CTA metaobject by handle
+  assign cta_metaobjects = shop.metaobjects.product_cta.values
+  assign selected_cta = nil
+  
+  for cta in cta_metaobjects
+    if cta.handle == section.settings.cta_handle
+      assign selected_cta = cta
+      break
+    endif
+  endfor
+  
+  # Fallback to first active CTA if specific handle not found
+  unless selected_cta
+    for cta in cta_metaobjects
+      if cta.is_active.value == true
+        assign selected_cta = cta
+        break
+      endif
+    endfor
+  endunless
+  
+  # Determine which product to feature
+  if section.settings.override_product != blank
+    assign featured_product = all_products[section.settings.override_product]
+  elsif selected_cta.featured_product.value != blank
+    assign featured_product = selected_cta.featured_product.value
+  elsif template contains 'product'
+    assign featured_product = product
+  endif
+  
+  # Get CTA data with fallbacks
+  assign cta_headline = selected_cta.headline.value | default: section.settings.fallback_headline
+  assign cta_description = selected_cta.description.value | default: section.settings.fallback_description
+  assign cta_button_text = selected_cta.button_text.value | default: 'Shop Now'
+  assign cta_image = selected_cta.cta_image.value
+  assign cta_bg_color = selected_cta.background_color.value | default: section.settings.background_color
+  assign cta_text_color = selected_cta.text_color.value | default: section.settings.text_color
+  
+  # Animation
+  assign animation_anchor = '#MetaobjectCTA--' | append: section.id
+-%}
+
+{%- if selected_cta or section.settings.show_fallback -%}
+  {%- style -%}
+    #MetaobjectCTA--{{ section.id }} {
+      --PT: {{ section.settings.padding_top }}px;
+      --PB: {{ section.settings.padding_bottom }}px;
+      {%- if cta_bg_color != blank -%}
+        --cta-bg-color: {{ cta_bg_color }};
+      {%- endif -%}
+      {%- if cta_text_color != blank -%}
+        --cta-text-color: {{ cta_text_color }};
+      {%- endif -%}
+    }
+    
+    #MetaobjectCTA--{{ section.id }} .metaobject-cta {
+      background-color: var(--cta-bg-color, {{ section.settings.background_color }});
+      color: var(--cta-text-color, {{ section.settings.text_color }});
+    }
+    
+    #MetaobjectCTA--{{ section.id }} .metaobject-cta__headline {
+      color: var(--cta-text-color, inherit);
+    }
+    
+    @media only screen and (max-width: 749px) {
+      #MetaobjectCTA--{{ section.id }} {
+        --PT: calc({{ section.settings.padding_top }}px * 0.75);
+        --PB: calc({{ section.settings.padding_bottom }}px * 0.75);
+      }
+    }
+  {%- endstyle -%}
+
+  <section
+    id="MetaobjectCTA--{{ section.id }}"
+    class="metaobject-cta-section section-padding"
+    data-section-id="{{ section.id }}"
+    data-section-type="metaobject-cta"
+  >
+    <div class="{{ section.settings.width }}">
+      <div class="metaobject-cta metaobject-cta--{{ section.settings.layout }}">
+        
+        {%- comment -%} Image Section {%- endcomment -%}
+        <div class="metaobject-cta__image-wrapper">
+          {%- if cta_image -%}
+            <img
+              src="{{ cta_image | image_url: width: 800 }}"
+              srcset="{{ cta_image | image_url: width: 400 }} 400w,
+                      {{ cta_image | image_url: width: 600 }} 600w,
+                      {{ cta_image | image_url: width: 800 }} 800w,
+                      {{ cta_image | image_url: width: 1200 }} 1200w"
+              sizes="(max-width: 749px) 100vw, 50vw"
+              alt="{{ cta_image.alt | default: cta_headline | escape }}"
+              loading="lazy"
+              width="{{ cta_image.width }}"
+              height="{{ cta_image.height }}"
+              class="metaobject-cta__image"
+              data-aos="fade-up"
+              data-aos-anchor="{{ animation_anchor }}"
+              data-aos-delay="100"
+            >
+          {%- elsif featured_product.featured_image -%}
+            <img
+              src="{{ featured_product.featured_image | image_url: width: 800 }}"
+              srcset="{{ featured_product.featured_image | image_url: width: 400 }} 400w,
+                      {{ featured_product.featured_image | image_url: width: 600 }} 600w,
+                      {{ featured_product.featured_image | image_url: width: 800 }} 800w,
+                      {{ featured_product.featured_image | image_url: width: 1200 }} 1200w"
+              sizes="(max-width: 749px) 100vw, 50vw"
+              alt="{{ featured_product.featured_image.alt | default: featured_product.title | escape }}"
+              loading="lazy"
+              width="{{ featured_product.featured_image.width }}"
+              height="{{ featured_product.featured_image.height }}"
+              class="metaobject-cta__image"
+              data-aos="fade-up"
+              data-aos-anchor="{{ animation_anchor }}"
+              data-aos-delay="100"
+            >
+          {%- elsif section.settings.placeholder_image != blank -%}
+            {{ section.settings.placeholder_image | image_url: width: 800 | image_tag: 
+              class: 'metaobject-cta__image',
+              loading: 'lazy'
+            }}
+          {%- else -%}
+            <div class="metaobject-cta__placeholder">
+              {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
+            </div>
+          {%- endif -%}
+        </div>
+
+        {%- comment -%} Content Section {%- endcomment -%}
+        <div class="metaobject-cta__content">
+          {%- if cta_headline != blank -%}
+            <h2 class="metaobject-cta__headline {{ section.settings.heading_size }}"
+                data-aos="fade-up"
+                data-aos-anchor="{{ animation_anchor }}"
+                data-aos-delay="200">
+              {{ cta_headline }}
+            </h2>
+          {%- endif -%}
+          
+          {%- if cta_description != blank -%}
+            <div class="metaobject-cta__description rte {{ section.settings.text_size }}"
+                 data-aos="fade-up"
+                 data-aos-anchor="{{ animation_anchor }}"
+                 data-aos-delay="300">
+              {{ cta_description | metafield_tag }}
+            </div>
+          {%- endif -%}
+          
+          {%- if featured_product != blank -%}
+            <div class="metaobject-cta__product-info"
+                 data-aos="fade-up"
+                 data-aos-anchor="{{ animation_anchor }}"
+                 data-aos-delay="400">
+              
+              {%- if section.settings.show_product_title -%}
+                <h3 class="metaobject-cta__product-title">{{ featured_product.title }}</h3>
+              {%- endif -%}
+              
+              {%- if section.settings.show_price -%}
+                <div class="metaobject-cta__price">
+                  {%- if featured_product.compare_at_price > featured_product.price -%}
+                    <span class="metaobject-cta__price--sale">{{ featured_product.price | money }}</span>
+                    <span class="metaobject-cta__price--compare">{{ featured_product.compare_at_price | money }}</span>
+                    {%- if section.settings.show_savings -%}
+                      <span class="metaobject-cta__savings">
+                        Save {{ featured_product.compare_at_price | minus: featured_product.price | money }}
+                      </span>
+                    {%- endif -%}
+                  {%- else -%}
+                    <span class="metaobject-cta__price--regular">{{ featured_product.price | money }}</span>
+                  {%- endif -%}
+                </div>
+              {%- endif -%}
+              
+              {%- comment -%} Add to Cart Button {%- endcomment -%}
+              {%- if featured_product.available -%}
+                <product-form class="metaobject-cta__form" data-section-id="{{ section.id }}">
+                  <form action="/cart/add" method="post" enctype="multipart/form-data">
+                    <input type="hidden" name="id" value="{{ featured_product.selected_or_first_available_variant.id }}">
+                    <button
+                      type="submit"
+                      name="add"
+                      class="btn btn--{{ section.settings.button_style }} metaobject-cta__button"
+                      data-aos="fade-up"
+                      data-aos-anchor="{{ animation_anchor }}"
+                      data-aos-delay="500"
+                    >
+                      <span>{{ cta_button_text }}</span>
+                    </button>
+                  </form>
+                </product-form>
+              {%- else -%}
+                <button type="button" class="btn btn--{{ section.settings.button_style }} metaobject-cta__button" disabled>
+                  <span>{{ 'products.product.sold_out' | t }}</span>
+                </button>
+              {%- endif -%}
+              
+              {%- if section.settings.show_view_product -%}
+                <a href="{{ featured_product.url }}" class="metaobject-cta__link">
+                  View Product Details →
+                </a>
+              {%- endif -%}
+            </div>
+          {%- elsif section.settings.custom_url != blank -%}
+            <a href="{{ section.settings.custom_url }}" 
+               class="btn btn--{{ section.settings.button_style }} metaobject-cta__button"
+               data-aos="fade-up"
+               data-aos-anchor="{{ animation_anchor }}"
+               data-aos-delay="500">
+              <span>{{ cta_button_text }}</span>
+            </a>
+          {%- endif -%}
+        </div>
+      </div>
+    </div>
+  </section>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Metaobject CTA",
+  "tag": "section",
+  "class": "section-metaobject-cta",
+  "settings": [
+    {
+      "type": "header",
+      "content": "CTA Selection"
+    },
+    {
+      "type": "text",
+      "id": "cta_handle",
+      "label": "CTA Handle",
+      "info": "Enter the handle of the Product CTA metaobject to display"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_fallback",
+      "label": "Show fallback content",
+      "default": true,
+      "info": "Display fallback content when no CTA is selected"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Layout style",
+      "options": [
+        {
+          "value": "horizontal",
+          "label": "Horizontal (Image left, content right)"
+        },
+        {
+          "value": "horizontal-reverse",
+          "label": "Horizontal Reverse (Content left, image right)"
+        },
+        {
+          "value": "vertical",
+          "label": "Vertical (Image top, content bottom)"
+        }
+      ],
+      "default": "horizontal"
+    },
+    {
+      "type": "select",
+      "id": "width",
+      "label": "Section width",
+      "options": [
+        {
+          "value": "wrapper",
+          "label": "Standard"
+        },
+        {
+          "value": "wrapper--narrow",
+          "label": "Narrow"
+        },
+        {
+          "value": "wrapper--full",
+          "label": "Full width"
+        }
+      ],
+      "default": "wrapper"
+    },
+    {
+      "type": "header",
+      "content": "Product Settings"
+    },
+    {
+      "type": "product",
+      "id": "override_product",
+      "label": "Override product",
+      "info": "Leave blank to use the metaobject's featured product"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_product_title",
+      "label": "Show product title",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_price",
+      "label": "Show price",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_savings",
+      "label": "Show savings amount",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_view_product",
+      "label": "Show 'View Product' link",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "label": "Heading size",
+      "options": [
+        {
+          "value": "heading-small",
+          "label": "Small"
+        },
+        {
+          "value": "heading-medium",
+          "label": "Medium"
+        },
+        {
+          "value": "heading-large",
+          "label": "Large"
+        }
+      ],
+      "default": "heading-large"
+    },
+    {
+      "type": "select",
+      "id": "text_size",
+      "label": "Text size",
+      "options": [
+        {
+          "value": "body-small",
+          "label": "Small"
+        },
+        {
+          "value": "body-medium",
+          "label": "Medium"
+        },
+        {
+          "value": "body-large",
+          "label": "Large"
+        }
+      ],
+      "default": "body-medium"
+    },
+    {
+      "type": "header",
+      "content": "Fallback Content"
+    },
+    {
+      "type": "text",
+      "id": "fallback_headline",
+      "label": "Fallback headline",
+      "default": "Transform Your Life Today"
+    },
+    {
+      "type": "richtext",
+      "id": "fallback_description",
+      "label": "Fallback description",
+      "default": "<p>Discover our scientifically-backed tools designed to help you achieve your goals.</p>"
+    },
+    {
+      "type": "url",
+      "id": "custom_url",
+      "label": "Custom button URL",
+      "info": "Used when no product is available"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#f8f9fa"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "select",
+      "id": "button_style",
+      "label": "Button style",
+      "options": [
+        {
+          "value": "primary",
+          "label": "Primary"
+        },
+        {
+          "value": "secondary",
+          "label": "Secondary"
+        },
+        {
+          "value": "outline",
+          "label": "Outline"
+        }
+      ],
+      "default": "primary"
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 50
+    },
+    {
+      "type": "header",
+      "content": "Media"
+    },
+    {
+      "type": "image_picker",
+      "id": "placeholder_image",
+      "label": "Placeholder image",
+      "info": "Used when no product or CTA image is available"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Metaobject CTA",
+      "category": "Promotional"
+    }
+  ]
+}
+{% endschema %}

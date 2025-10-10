@@ -1,0 +1,380 @@
+/* ========================================
+   CONSOLIDATED LISTICLE CSS
+   Combines all listicle styling into one organized file
+   Created: 2025-08-31
+   ======================================== */
+
+/* ========================================
+   1. BASE TYPOGRAPHY & TEXT STYLES
+   ======================================== */
+
+/* Paragraph styling - exact match with longform-content */
+.template-metaobject-listicle main p,
+.template-article main p {
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+/* Mobile paragraph styles */
+@media screen and (max-width: 768px) {
+  .template-metaobject-listicle main p,
+  .template-article main p {
+    margin-bottom: 1.25rem;
+  }
+}
+
+/* ========================================
+   2. HEADING STYLES
+   ======================================== */
+
+/* H1 Headings */
+.template-metaobject-listicle h1,
+.template-metaobject-listicle .h1,
+.template-article h1,
+.template-article .h1 {
+  font-size: 2.5rem;
+  line-height: 1.2;
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+/* H2 Headings */
+.template-metaobject-listicle h2,
+.template-metaobject-listicle .h2,
+.template-article h2,
+.template-article .h2 {
+  font-size: 2rem;
+  line-height: 1.3;
+  margin-top: 2rem;
+  margin-bottom: 1.25rem;
+  font-weight: 600;
+}
+
+/* H3 Headings */
+.template-metaobject-listicle h3,
+.template-metaobject-listicle .h3,
+.template-article h3,
+.template-article .h3 {
+  font-size: 1.75rem;
+  line-height: 1.3;
+  margin-top: 1.75rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+/* H4 Headings */
+.template-metaobject-listicle h4,
+.template-metaobject-listicle .h4,
+.template-article h4,
+.template-article .h4 {
+  font-size: 1.5rem;
+  line-height: 1.4;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+/* H5 & H6 Headings */
+.template-metaobject-listicle h5,
+.template-metaobject-listicle h6,
+.template-metaobject-listicle .h5,
+.template-metaobject-listicle .h6,
+.template-article h5,
+.template-article h6,
+.template-article .h5,
+.template-article .h6 {
+  font-size: 1.25rem;
+  line-height: 1.4;
+  margin-top: 1.25rem;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+/* Mobile heading styles */
+@media screen and (max-width: 768px) {
+  .template-metaobject-listicle h1,
+  .template-metaobject-listicle .h1,
+  .template-article h1,
+  .template-article .h1 {
+    font-size: 1.875rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .template-metaobject-listicle h2,
+  .template-metaobject-listicle .h2,
+  .template-article h2,
+  .template-article .h2 {
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .template-metaobject-listicle h3,
+  .template-metaobject-listicle .h3,
+  .template-article h3,
+  .template-article .h3 {
+    font-size: 1.375rem;
+    margin-top: 1.25rem;
+    margin-bottom: 0.875rem;
+  }
+
+  .template-metaobject-listicle h4,
+  .template-metaobject-listicle .h4,
+  .template-article h4,
+  .template-article .h4 {
+    font-size: 1.25rem;
+    margin-top: 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .template-metaobject-listicle h5,
+  .template-metaobject-listicle h6,
+  .template-metaobject-listicle .h5,
+  .template-metaobject-listicle .h6,
+  .template-article h5,
+  .template-article h6,
+  .template-article .h5,
+  .template-article .h6 {
+    font-size: 1.125rem;
+    margin-top: 1rem;
+    margin-bottom: 0.625rem;
+  }
+}
+
+/* ========================================
+   3. LIST STYLES
+   ======================================== */
+
+/* List styling - exact match with longform-content */
+.template-metaobject-listicle main ul,
+.template-metaobject-listicle main ol,
+.template-article main ul,
+.template-article main ol {
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.template-metaobject-listicle main li,
+.template-article main li {
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+}
+
+/* ========================================
+   4. LINK STYLES
+   ======================================== */
+
+/* Remove ALL existing underlines first */
+.template-metaobject-listicle a,
+.template-metaobject-listicle a:link,
+.template-metaobject-listicle a:visited,
+.template-article a,
+.template-article a:link,
+.template-article a:visited {
+  text-decoration: none !important;
+  text-underline-offset: initial !important;
+  text-decoration-thickness: initial !important;
+  border-bottom: none !important;
+}
+
+/* Apply clean, single underline */
+.template-metaobject-listicle .rte a:not(.button):not(.btn),
+.template-metaobject-listicle .metafield-rich_text_field a:not(.button):not(.btn),
+.template-metaobject-listicle [data-item-content] a:not(.button):not(.btn),
+.template-metaobject-listicle .content a:not(.button):not(.btn),
+.template-article .rte a:not(.button):not(.btn),
+.template-article [data-item-content] a:not(.button):not(.btn),
+.template-article .content a:not(.button):not(.btn) {
+  text-decoration: underline !important;
+  text-decoration-color: currentColor !important;
+  text-decoration-thickness: 0.05em !important;
+  text-underline-offset: 0.15em !important;
+  text-decoration-skip-ink: auto !important;
+  transition: opacity 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+/* Hover state */
+.template-metaobject-listicle .rte a:not(.button):not(.btn):hover,
+.template-metaobject-listicle .metafield-rich_text_field a:not(.button):not(.btn):hover,
+.template-article .rte a:not(.button):not(.btn):hover {
+  opacity: 0.8;
+  text-decoration-color: currentColor !important;
+}
+
+/* Focus state for accessibility */
+.template-metaobject-listicle .rte a:not(.button):not(.btn):focus,
+.template-metaobject-listicle .metafield-rich_text_field a:not(.button):not(.btn):focus,
+.template-article .rte a:not(.button):not(.btn):focus {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+/* Ensure no underlines on buttons */
+.template-metaobject-listicle a.button,
+.template-metaobject-listicle a.btn,
+.template-article a.button,
+.template-article a.btn {
+  text-decoration: none !important;
+  border-bottom: none !important;
+}
+
+/* ========================================
+   5. IMAGE STYLES
+   ======================================== */
+
+/* Responsive images */
+.template-metaobject-listicle img,
+.template-article img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Center-aligned images */
+.template-metaobject-listicle .text-center img,
+.template-metaobject-listicle img.center,
+.template-article .text-center img,
+.template-article img.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Fix for Image Height Settings in section-double */
+.listicle-content img,
+[data-item-content] img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* ========================================
+   6. LISTICLE-SPECIFIC STYLES
+   ======================================== */
+
+/* Listicle item numbering */
+.listicle-item {
+  counter-increment: listicle-counter;
+  position: relative;
+}
+
+.listicle-item::before {
+  content: counter(listicle-counter);
+  position: absolute;
+  left: -2rem;
+  top: 0;
+  font-weight: bold;
+  font-size: 1.25rem;
+  color: var(--COLOR-ACCENT, #000);
+}
+
+/* Reset counter at container */
+.listicle-container {
+  counter-reset: listicle-counter;
+}
+
+/* ========================================
+   7. RTE (Rich Text Editor) CONTENT
+   ======================================== */
+
+/* Ensure RTE content gets the same styling */
+.template-metaobject-listicle .rte,
+.template-metaobject-listicle .metafield-rich_text_field,
+.template-article .rte {
+  line-height: 1.6;
+}
+
+.template-metaobject-listicle .rte > *:first-child,
+.template-metaobject-listicle .metafield-rich_text_field > *:first-child,
+.template-article .rte > *:first-child {
+  margin-top: 0;
+}
+
+/* Section-specific targeting for metafield content */
+.section--longform .metafield-rich_text_field,
+.section--double .metafield-rich_text_field,
+.section--article .rte {
+  /* Inherit all the typography styles defined above */
+}
+
+/* ========================================
+   8. SPACING & LAYOUT
+   ======================================== */
+
+/* Content container spacing */
+.listicle-content {
+  padding: 2rem 0;
+}
+
+@media screen and (max-width: 768px) {
+  .listicle-content {
+    padding: 1.5rem 0;
+  }
+}
+
+/* Section spacing */
+.listicle-section {
+  margin-bottom: 3rem;
+}
+
+@media screen and (max-width: 768px) {
+  .listicle-section {
+    margin-bottom: 2rem;
+  }
+}
+
+/* ========================================
+   9. MOBILE OPTIMIZATIONS
+   ======================================== */
+
+@media screen and (max-width: 768px) {
+  /* Adjust font sizes for better mobile readability */
+  .template-metaobject-listicle,
+  .template-article {
+    font-size: 16px; /* Prevent zoom on iOS */
+  }
+  
+  /* Improve touch targets */
+  .template-metaobject-listicle a,
+  .template-article a {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+  
+  /* Better spacing for mobile */
+  .template-metaobject-listicle main,
+  .template-article main {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* ========================================
+   10. PRINT STYLES
+   ======================================== */
+
+@media print {
+  .template-metaobject-listicle,
+  .template-article {
+    font-size: 12pt;
+    line-height: 1.5;
+  }
+  
+  .template-metaobject-listicle a,
+  .template-article a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .template-metaobject-listicle a[href]::after,
+  .template-article a[href]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.9em;
+  }
+}
+
+/* ========================================
+   END OF CONSOLIDATED LISTICLE CSS
+   ======================================== */

@@ -1,0 +1,335 @@
+{% # theme-check-disable %}
+
+{% liquid
+  assign bg_image_desk = section.settings.bg_image_desk
+  assign bg_image_mob = section.settings.bg_image_mob
+  assign overlay_opacity = section.settings.overlay_opacity | times: 0.01
+  assign overlay_color = section.settings.overlay_color
+  assign overlay_opacity_mob = section.settings.overlay_opacity_mob | times: 0.01
+  assign overlay_color_mob = section.settings.overlay_color_mob
+
+  assign section_title = section.settings.section_title
+  assign section_text = section.settings.section_text
+  assign btn_text = section.settings.btn_text
+  assign btn_link = section.settings.btn_link
+
+  assign blocks = section.blocks
+
+  assign pt_mob = section.settings.pt_mob
+  assign pb_mob = section.settings.pb_mob
+  assign pt_tab = section.settings.pt_tab
+  assign pb_tab = section.settings.pb_tab
+  assign pt_desk = section.settings.pt_desk
+  assign pb_desk = section.settings.pb_desk
+%}
+
+{% render 'section-paddings',
+  section_id: section.id,
+  pt_mob: pt_mob,
+  pb_mob: pb_mob,
+  pt_tab: pt_tab,
+  pb_tab: pb_tab,
+  pt_desk: pt_desk,
+  pb_desk: pb_desk
+%}
+
+<style>
+  @media screen and (min-width: 768px) {
+    [data-section-id='{{ section.id }}'] {
+      background: url("{{ bg_image_desk | img_url: 'master' }}") no-repeat center center;
+      background-size: cover;
+    }
+  }
+</style>
+
+<div
+  data-section-id="{{ section.id }}"
+  class="tw-relative tw-overflow-hidden"
+>
+  <div
+    class="tw-hidden md:tw-block tw-absolute tw-top-0 tw-left-0 tw-w-full tw-h-full tw-bg-cover"
+    style="background-color: {{ overlay_color }}; opacity: {{ overlay_opacity }}"
+  ></div>
+
+  <!-- DESKTOP START -->
+  <div class="tw-relative tw-hidden md:tw-block">
+    <div class="container-42">
+      <div class="tw-max-w-[544px]">
+        {% if section_title != blank %}
+          <div class="tw-text-white tw-text-[44px] tw-leading-[54px]">
+            {{ section_title }}
+          </div>
+        {% endif %}
+        {% if section_text != blank %}
+          <p class="tw-text-white tw-text-xl !tw-leading-[28px] tw-mt-2.5 tw-font-normal">
+            {{ section_text }}
+          </p>
+        {% endif %}
+        {% if btn_text != blank %}
+          <div class="tw-mt-5.5">
+            <a
+              href="{{ btn_link }}"
+              class="btn-42 btn-42--primary tw-w-full md:tw-w-fit md:tw-min-w-[210px]"
+            >
+              <span>{{ btn_text }}</span>
+              {% render 'icon-42', name: 'btn-arrow' %}
+            </a>
+          </div>
+        {% endif %}
+      </div>
+      {% if blocks.size > 0 %}
+        <div class="tw-mt-[76px] tw-flex tw-gap-9.5">
+          {% for block in blocks %}
+            {% liquid
+              assign icon = block.settings.icon
+              assign heading = block.settings.heading
+              assign text = block.settings.text
+            %}
+            <div class="tw-max-w-[233px]">
+              {% if icon != blank %}
+                <div class="tw-flex tw-mb-[15px] tw-w-[37px] tw-h-[37px]">
+                  <img src="{{ icon | img_url: 'master' }}" alt="{{ icon.alt }}">
+                </div>
+              {% endif %}
+              {% if heading != blank %}
+                <h3 class="tw-font-bold tw-text-sm tw-leading-[17px] tw-text-white">
+                  {{ heading }}
+                </h3>
+              {% endif %}
+              {% if text != blank %}
+                <p class="tw-text-xs tw-font-normal tw-leading-[16px] tw-text-white tw-mt-[3px]">
+                  {{ text }}
+                </p>
+              {% endif %}
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+  <!-- DESKTOP END -->
+
+  <!-- MOBILE START -->
+  <div class="tw-block md:tw-hidden">
+    <div class="tw-flex tw-relative">
+      <div
+        class="tw-absolute tw-top-0 tw-left-0 tw-right-0 tw-w-full tw-h-full"
+        style="background-color: {{ overlay_color_mob }}; opacity: {{ overlay_opacity_mob }}"
+      ></div>
+
+      <img
+        src="{{ bg_image_mob | img_url: 'master' }}"
+        alt="{{ bg_image_mob.alt }}"
+        class="tw-max-w-full tw-w-full tw-object-cover"
+      >
+    </div>
+
+    <div class="tw-bg-sc-blue tw-py-8">
+      <div class="tw-px-4">
+        {% if section_title != blank %}
+          <div class="tw-text-white tw-text-[28px] tw-leading-[36px]">
+            {{ section_title }}
+          </div>
+        {% endif %}
+        {% if section_text != blank %}
+          <p class="tw-text-white tw-text-base tw-mt-3 tw-font-normal">
+            {{ section_text }}
+          </p>
+        {% endif %}
+        {% if btn_text != blank %}
+          <div class="tw-mt-4">
+            <a
+              href="{{ btn_link }}"
+              class="btn-42 btn-42--primary tw-w-full md:tw-w-fit md:tw-min-w-[210px]"
+            >
+              <span>{{ btn_text }}</span>
+              {% render 'icon-42', name: 'btn-arrow' %}
+            </a>
+          </div>
+        {% endif %}
+      </div>
+      {% if blocks.size > 0 %}
+        <div
+          class="swiper !tw-px-4 tw-mt-8"
+          x-ignore
+          ax-load
+          x-data="swiperSlider($el, 'hero_slider')"
+        >
+          <div class="swiper-wrapper">
+            {% for block in blocks %}
+              {% liquid
+                assign icon = block.settings.icon
+                assign heading = block.settings.heading
+                assign text = block.settings.text
+              %}
+              <div class="swiper-slide">
+                <div class="tw-flex tw-gap-[7px]">
+                  {% if icon != blank %}
+                    <div class="tw-flex tw-shrink-0  tw-w-8 tw-h-8">
+                      <img src="{{ icon | img_url: 'master' }}" alt="{{ icon.alt }}" class="tw-max-w-full">
+                    </div>
+                  {% endif %}
+                  <div>
+                    {% if heading != blank %}
+                      <h3 class="tw-font-bold tw-text-sm tw-leading-[22px] tw-text-white">
+                        {{ heading }}
+                      </h3>
+                    {% endif %}
+                    {% if text != blank %}
+                      <p class="tw-text-[10px] tw-leading-[13px] tw-text-white tw-mt-0.5">
+                        {{ text }}
+                      </p>
+                    {% endif %}
+                  </div>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+  <!-- MOBILE END -->
+</div>
+
+{% schema %}
+{
+  "name": "42 Hero",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "bg_image_desk",
+      "label": "Background Image Desktop"
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_image_mob",
+      "label": "Background Image Mobile"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "label": "Overlay opacity Desktop",
+      "info": "Increase contrast for legible text.",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 0
+    },
+    {
+      "type": "color",
+      "id": "overlay_color",
+      "label": "Overlay color Desktop",
+      "default": "#242540"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity_mob",
+      "label": "Overlay opacity Mobile",
+      "info": "Increase contrast for legible text.",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 0
+    },
+    {
+      "type": "color",
+      "id": "overlay_color_mob",
+      "label": "Overlay color Mobile",
+      "default": "#242540"
+    },
+    {
+      "type": "richtext",
+      "id": "section_title",
+      "label": "Section title"
+    },
+    {
+      "type": "textarea",
+      "id": "section_text",
+      "label": "Section text"
+    },
+    {
+      "type": "text",
+      "id": "btn_text",
+      "label": "Button text"
+    },
+    {
+      "type": "url",
+      "id": "btn_link",
+      "label": "Button link"
+    },
+    {
+      "type": "header",
+      "content": "Padding Y settings"
+    },
+    {
+      "type": "number",
+      "id": "pt_mob",
+      "label": "Mobile padding top in px",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "pb_mob",
+      "label": "Mobile padding bottom in px",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "pt_tab",
+      "label": "Tablet padding top in px",
+      "default": 228
+    },
+    {
+      "type": "number",
+      "id": "pb_tab",
+      "label": "Tablet padding bottom in px",
+      "default": 48
+    },
+    {
+      "type": "number",
+      "id": "pt_desk",
+      "label": "Desktop padding top in px",
+      "default": 228
+    },
+    {
+      "type": "number",
+      "id": "pb_desk",
+      "label": "Desktop padding bottom in px",
+      "default": 48
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Block",
+      "type": "block",
+      "limit": 3,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "42 Hero"
+    }
+  ]
+}
+{% endschema %}

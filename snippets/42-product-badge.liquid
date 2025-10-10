@@ -1,0 +1,97 @@
+{%- liquid
+  assign product_tags = product.tags | join: ',' | append: ','
+  assign preorder = false
+  assign is_preorder_meta = false
+  assign on_sale = false
+  assign sold_out = false
+  assign badge = ''
+  assign badge_new = ''
+  assign badge_soldout = ''
+  assign badge_alignment = settings.badge_alignment
+
+  assign custom_badge_text = block.settings.custom_badge_text
+
+  if product.metafields.theme.badge != blank and product.metafields.theme.badge.type == 'single_line_text_field'
+    assign badge = product.metafields.theme.badge.value
+  endif
+
+  if badge == '' and product_tags contains '_badge_'
+    assign badge = product_tags | split: '_badge_'
+    assign badge = badge[1] | split: ',' | first | replace: '_', ' '
+  endif
+
+  if product.metafields.theme.preorder.type == 'boolean' and product.metafields.theme.preorder.value == true
+    assign is_preorder_meta = true
+  endif
+
+  if product_tags contains '_preorder' or is_preorder_meta
+    assign preorder = true
+  endif
+
+  if product.compare_at_price > product.price and settings.sale_tags_enable
+    assign on_sale = true
+  endif
+
+  unless product.available
+    assign sold_out = true
+  endunless
+
+  if settings.show_automatic_new_badge
+    assign product_created_timestamp = product.created_at | date: '%s' | plus: 0
+    assign days_in_seconds = settings.badge_new_date_limit | times: 24 | times: 60 | times: 60
+    assign current_date_timestamp = 'now' | date: '%s'
+    assign check_date_timestamp = current_date_timestamp | minus: days_in_seconds
+
+    if product_created_timestamp > check_date_timestamp
+      assign badge_new = 'products.product.new' | t
+    endif
+  endif
+
+  if settings.show_sold_out_badge and sold_out
+    assign badge_soldout = 'products.product.sold_out' | t
+  endif
+
+  assign badge_box_class = 'tw-w-fit tw-rounded-[100px] tw-bg-[#FBC94B] tw-min-h-7.5 tw-inline-flex tw-items-center tw-px-3'
+  assign badge_text_class = 'tw-text-[#242540] tw-uppercase tw-text-[12px] tw-leading-[20px] tw-font-medium'
+-%}
+
+{% assign product_badge_value = '' %}
+{% if product.metafields.product.badge != blank %}
+  {% if product.metafields.product.badge.type == 'single_line_text_field' %}
+    {% assign product_badge_value = product.metafields.product.badge.value %}
+  {% else %}
+    {% assign product_badge_value = product.metafields.product.badge %}
+  {% endif %}
+{% endif %}
+
+{% if product_badge_value != blank %}
+  <span class="{{ badge_box_class }} {{ badge_text_class }}">
+    {{ product_badge_value }}
+  </span>
+{% elsif custom_badge_text != blank %}
+  <span class="{{ badge_box_class }} {{ badge_text_class }}">
+    {{ custom_badge_text }}
+  </span>
+{% else %}
+  {%- if badge != '' or badge_new != '' or badge_soldout != '' -%}
+    <span class="{{ badge_box_class }} {{ badge_text_class }}">
+      {%- if badge_soldout != '' -%}
+        {{ badge_soldout }}
+      {%- elsif badge_new != '' -%}
+        {{ badge_new }}
+      {%- else -%}
+        {{ badge }}
+      {%- endif -%}
+    </span>
+  {%- elsif preorder and sold_out == false -%}
+    <span class="{{ badge_box_class }} {{ badge_text_class }} !tw-bg-[#0009FF] !tw-text-white">
+      {{- 'products.product.pre_order' | t -}}
+    </span>
+  {%- elsif on_sale and sold_out == false -%}
+    <span
+      class="{{ badge_box_class }} {{ badge_text_class }} !tw-bg-[#0009FF] !tw-text-white"
+    >
+      {{- 'products.product.on_sale' | t -}}
+    </span>
+  {%- endif -%}
+{% endif %}

@@ -1,0 +1,180 @@
+{% liquid
+  assign blocks = section.blocks
+
+  assign layout_style_mob = section.settings.layout_style_mob
+
+  assign pt_mob = section.settings.pt_mob
+  assign pb_mob = section.settings.pb_mob
+  assign pt_tab = section.settings.pt_tab
+  assign pb_tab = section.settings.pb_tab
+  assign pt_desk = section.settings.pt_desk
+  assign pb_desk = section.settings.pb_desk
+%}
+
+{% render 'section-paddings',
+  section_id: section.id,
+  pt_mob: pt_mob,
+  pb_mob: pb_mob,
+  pt_tab: pt_tab,
+  pb_tab: pb_tab,
+  pt_desk: pt_desk,
+  pb_desk: pb_desk
+%}
+
+{% if layout_style_mob == 'secondary' %}
+  <style>
+    @media (max-width: 640px) {
+      [data-section-id='{{ section.id }}'] {
+        border-bottom: 1px solid #DADADA !important;
+      }
+      [data-section-id='{{ section.id }}'] .swiper-slide {
+        max-width: fit-content;
+      }
+      [data-section-id='{{ section.id }}'] .swiper-slide-img,
+      [data-section-id='{{ section.id }}'] .swiper-slide-copy svg {
+        display: none;
+      }
+    }
+  </style>
+{% endif %}
+
+{% if blocks.size > 0 %}
+  <div
+    data-section-id="{{ section.id }}"
+    class="tw-overflow-hidden"
+  >
+    <div class="container-42">
+      <div
+        class="swiper tw-opacity-0 tw-duration-300 !tw-overflow-visible tw-select-none"
+        x-ignore
+        ax-load
+        x-data="swiperSlider($el, 'collection_list')"
+      >
+        <div class="swiper-wrapper">
+          {% for block in section.blocks %}
+            {% liquid
+              assign collection = block.settings.collection
+              assign custom_image = block.settings.custom_image
+              assign custom_heading = block.settings.custom_heading
+            %}
+            <div class="swiper-slide tw-max-w-[206px]">
+              <a href="{{ collection.url }}?view=main-collection" class="btn-42 tw-flex-col tw-gap-3.5" data-aos="Fade">
+                {% if custom_image != blank %}
+                  <img
+                    src="{{ custom_image | img_url: 'master' }}"
+                    alt="{{ collection.title }}"
+                    class="swiper-slide-img tw-rounded-[8px] tw-aspect-square tw-object-cover"
+                    loading="lazy"
+                  >
+                {% else %}
+                  <img
+                    src="{{ collection.featured_image.src | img_url: 'master' }}"
+                    alt="{{ collection.title }}"
+                    class="swiper-slide-img tw-rounded-[8px] tw-aspect-square tw-object-cover"
+                    loading="lazy"
+                  >
+                {% endif %}
+                {% assign heading_class = 'tw-font-bold tw-text-sm tw-leading-[17px] tw-text-black' %}
+                <div class="swiper-slide-copy tw-flex tw-items-center tw-gap-1.5 tw-w-full">
+                  {% if custom_heading != blank %}
+                    <h3 class="{{ heading_class }}">{{ custom_heading }}</h3>
+                  {% else %}
+                    <h3 class="{{ heading_class }}">{{ collection.title }}</h3>
+                  {% endif %}
+                  {% render 'icon-42', name: 'btn-arrow' %}
+                </div>
+              </a>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "42 Collection list",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "select",
+      "id": "layout_style_mob",
+      "label": "Layout style on mobile",
+      "default": "primary",
+      "options": [
+        { "value": "primary", "label": "Primary" },
+        { "value": "secondary", "label": "Secondary" }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Padding Y settings"
+    },
+    {
+      "type": "number",
+      "id": "pt_mob",
+      "label": "Mobile padding top in px",
+      "default": 48
+    },
+    {
+      "type": "number",
+      "id": "pb_mob",
+      "label": "Mobile padding bottom in px",
+      "default": 48
+    },
+    {
+      "type": "number",
+      "id": "pt_tab",
+      "label": "Tablet padding top in px",
+      "default": 48
+    },
+    {
+      "type": "number",
+      "id": "pb_tab",
+      "label": "Tablet padding bottom in px",
+      "default": 48
+    },
+    {
+      "type": "number",
+      "id": "pt_desk",
+      "label": "Desktop padding top in px",
+      "default": 56
+    },
+    {
+      "type": "number",
+      "id": "pb_desk",
+      "label": "Desktop padding bottom in px",
+      "default": 56
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Collection",
+      "type": "block",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+        },
+        {
+          "type": "image_picker",
+          "id": "custom_image",
+          "label": "Custom image"
+        },
+        {
+          "type": "text",
+          "id": "custom_heading",
+          "label": "Custom heading"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "42 Collection list"
+    }
+  ]
+}
+{% endschema %}

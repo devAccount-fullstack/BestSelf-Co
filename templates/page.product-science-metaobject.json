@@ -1,0 +1,119 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "hero": {
+      "type": "product-science-metaobject-hero",
+      "settings": {
+        "show_fallback": false,
+        "height": "four-fifty-height-hero",
+        "mobile_height": "four-fifty-height-hero--mobile",
+        "flex_align_desktop": "align--middle-center-desktop",
+        "flex_align_mobile": "align--middle-center-mobile",
+        "overlay_opacity": 60,
+        "color_scheme": "scheme-10",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "intro": {
+      "type": "product-science-metaobject-intro",
+      "settings": {
+        "show_fallback": false,
+        "width": "wrapper--moderate",
+        "text_align": "center",
+        "heading_size": "h2",
+        "text_size": "text-lg",
+        "color_scheme": "",
+        "padding_top": 66,
+        "padding_bottom": 30
+      }
+    },
+    "activities": {
+      "type": "product-science-metaobject-activities",
+      "settings": {
+        "show_debug": false,
+        "show_studies": true,
+        "studies_label": "Show me the research",
+        "alternate_layout": true,
+        "width": "wrapper--moderate",
+        "heading_size": "h3",
+        "text_size": "",
+        "padding_top": 16,
+        "padding_bottom": 16
+      }
+    },
+    "spotlight": {
+      "type": "product-science-metaobject-spotlight",
+      "settings": {
+        "show_fallback": false,
+        "show_product_info": true,
+        "show_price": true,
+        "show_add_to_cart": true,
+        "show_quantity": false,
+        "button_style": "primary",
+        "width": "wrapper--moderate",
+        "heading_size": "h2",
+        "text_size": "",
+        "color_scheme": "",
+        "padding_top": 50,
+        "padding_bottom": 50
+      }
+    },
+    "cta": {
+      "type": "metaobject-cta",
+      "settings": {
+        "cta_handle": "self-journal-cta",
+        "layout": "horizontal",
+        "width": "wrapper",
+        "show_product_title": true,
+        "show_price": true,
+        "show_savings": true,
+        "heading_size": "heading-large",
+        "text_size": "body-medium",
+        "button_style": "primary",
+        "padding_top": 50,
+        "padding_bottom": 50
+      }
+    },
+    "rich_text_testimonial": {
+      "type": "section-rich-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "title": "What Our Customers Say",
+            "heading_font_size": "heading-large",
+            "padding_bottom": 20,
+            "heading_tag": "h2"
+          }
+        }
+      },
+      "block_order": ["heading"],
+      "settings": {
+        "align_text": "text-center",
+        "width": "wrapper",
+        "color_scheme": "scheme-1",
+        "overlay_opacity": 0,
+        "show_overlay_text": false,
+        "padding_top": 50,
+        "padding_bottom": 50
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "intro",
+    "activities",
+    "spotlight",
+    "cta",
+    "rich_text_testimonial"
+  ]
+}

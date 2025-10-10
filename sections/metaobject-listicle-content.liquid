@@ -1,0 +1,294 @@
+{% comment %}
+  Section: metaobject-listicle-content
+  Description: Renders listicle metaobject content
+  Used in: templates/metaobject/listicle.json
+  
+  The 'shop.metaobjects.listicle' collection is automatically available
+  when this template is used for metaobject pages.
+{% endcomment %}
+
+{{ 'listicle-consolidated.css' | asset_url | stylesheet_tag }}
+
+{% if section.settings.enable_moderate_width %}
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      document.body.classList.add('moderate-width-enabled');
+    });
+  </script>
+{% endif %}
+
+{%- liquid
+  # When rendering a metaobject template, the current metaobject is available as 'metaobject'
+  # This is different from page templates where you need to look it up
+  assign listicle = metaobject
+  assign items = nil
+  
+  # Method 1: Try direct field access (2024+ pattern)
+  if listicle and listicle.cta_text
+    # First try direct JSON parse of the field value
+    assign cta_text_raw = listicle.cta_text.value
+    
+    if cta_text_raw
+      # Method 1a: Direct JSON parse (if field contains pure JSON)
+      assign items_data = cta_text_raw | parse_json
+      if items_data.items
+        assign items = items_data.items
+      elsif items_data and items_data.size > 0
+        # Check if it's already an array of items
+        assign first_item = items_data.first
+        if first_item.heading or first_item.content
+          assign items = items_data
+        endif
+      endif
+      
+      # Method 1b: Rich text structure parsing (if wrapped in rich text JSON)
+      unless items
+        if cta_text_raw contains 'children'
+          assign rich_text_parsed = cta_text_raw | parse_json
+          if rich_text_parsed.children
+            for child in rich_text_parsed.children
+              if child.children
+                for subchild in child.children
+                  if subchild.value
+                    # Try to parse embedded JSON in rich text nodes
+                    if subchild.value contains '"items"' or subchild.value contains '[{'
+                      assign embedded_data = subchild.value | parse_json
+                      if embedded_data.items
+                        assign items = embedded_data.items
+                        break
+                      elsif embedded_data and embedded_data.size > 0
+                        assign first_embedded = embedded_data.first
+                        if first_embedded.heading or first_embedded.content
+                          assign items = embedded_data
+                          break
+                        endif
+                      endif
+                    endif
+                  endif
+                endfor
+              endif
+              if items
+                break
+              endif
+            endfor
+          endif
+        endif
+      endunless
+      
+      # Method 1c: String-based extraction (fallback for legacy format)
+      unless items
+        if cta_text_raw contains '"items"'
+          assign json_start_marker = '{"items"'
+          assign json_end_marker = ']}'
+          
+          if cta_text_raw contains json_start_marker
+            assign json_part = cta_text_raw | split: json_start_marker | last | prepend: json_start_marker
+            assign json_clean = json_part | split: json_end_marker | first | append: json_end_marker
+            
+            assign items_data = json_clean | parse_json
+            if items_data.items
+              assign items = items_data.items
+            endif
+          endif
+        endif
+      endunless
+    endif
+  endif
+-%}
+
+<div class="metaobject-listicle page-width{% if section.settings.enable_moderate_width %} moderate-width{% endif %}">
+  <div class="listicle-header">
+    <h1>{{ listicle.meta_title.value | default: listicle.display_name }}</h1>
+    {% if listicle.meta_description %}
+      <div class="listicle-description">
+        {{ listicle.meta_description.value }}
+      </div>
+    {% endif %}
+  </div>
+
+  {% if items and items.size > 0 %}
+    <div class="listicle-items">
+      {% for item in items %}
+        <div class="listicle-item">
+          <div class="listicle-item__number">{{ item.number | default: forloop.index }}</div>
+          <div class="listicle-item__content">
+            <h3>{{ item.heading }}</h3>
+            <p>{{ item.content }}</p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  {% else %}
+    <div class="no-items-message">
+      <p>No items found in this listicle.</p>
+      {% if listicle.cta_text %}
+        <details>
+          <summary>🔍 Enhanced Debug: cta_text Analysis</summary>
+          <div style="background: white; padding: 15px; margin: 10px 0; border: 2px solid #333;">
+            
+            <h4>Field Type & Structure:</h4>
+            <p><strong>Field type:</strong> {{ listicle.cta_text.type | default: 'unknown' }}</p>
+            <p><strong>Has .value property:</strong> {% if listicle.cta_text.value %}Yes{% else %}No{% endif %}</p>
+            <p><strong>Raw field dump:</strong></p>
+            <pre style="background: #f0f0f0; padding: 10px; overflow-x: auto;">{{ listicle.cta_text | json | escape }}</pre>
+            
+            <h4>Field Value Content:</h4>
+            <p><strong>Value length:</strong> {{ listicle.cta_text.value.size | default: 0 }} characters</p>
+            <p><strong>Contains 'items':</strong> {% if listicle.cta_text.value contains '"items"' %}Yes{% else %}No{% endif %}</p>
+            <p><strong>Contains 'children':</strong> {% if listicle.cta_text.value contains 'children' %}Yes{% else %}No{% endif %}</p>
+            <p><strong>Contains '[{':</strong> {% if listicle.cta_text.value contains '[{' %}Yes{% else %}No{% endif %}</p>
+            <p><strong>First 300 chars:</strong></p>
+            <pre style="background: #f0f0f0; padding: 10px; overflow-x: auto;">{{ listicle.cta_text.value | truncate: 300 | escape }}</pre>
+            
+            <h4>Parse Attempts:</h4>
+            {% assign direct_parse = listicle.cta_text.value | parse_json %}
+            <p><strong>Direct parse_json success:</strong> {% if direct_parse %}Yes{% else %}No{% endif %}</p>
+            {% if direct_parse %}
+              <p><strong>Parsed object keys:</strong> {{ direct_parse | json | truncate: 200 | escape }}</p>
+              <p><strong>Has .items property:</strong> {% if direct_parse.items %}Yes ({{ direct_parse.items.size }} items){% else %}No{% endif %}</p>
+              <p><strong>Has .children property:</strong> {% if direct_parse.children %}Yes ({{ direct_parse.children.size }} children){% else %}No{% endif %}</p>
+            {% endif %}
+            
+            <h4>Alternative Access Methods:</h4>
+            <p><strong>Using metafield_tag filter:</strong></p>
+            <div style="border: 1px solid #ccc; padding: 10px; background: #f9f9f9;">
+              {{ listicle.cta_text | metafield_tag }}
+            </div>
+            
+          </div>
+        </details>
+      {% else %}
+        <p><strong>❌ cta_text field is not accessible</strong></p>
+      {% endif %}
+    </div>
+  {% endif %}
+
+  {% if listicle.product.value %}
+    <div class="listicle-product">
+      <h2>Featured Product</h2>
+      <a href="{{ listicle.product.value.url }}">
+        {{ listicle.product.value.title }}
+      </a>
+    </div>
+  {% endif %}
+
+  {% if listicle.cta_url.value %}
+    <div class="listicle-cta">
+      <a href="{{ listicle.cta_url.value }}" class="button">
+        Learn More
+      </a>
+    </div>
+  {% endif %}
+</div>
+
+<style>
+  .metaobject-listicle {
+    padding: 40px 20px;
+  }
+
+  .listicle-header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .listicle-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+
+  .listicle-description {
+    font-size: 1.2rem;
+    color: #666;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .listicle-items {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .listicle-item {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+    padding: 20px;
+    background: #f5f5f5;
+    border-radius: 8px;
+  }
+
+  .listicle-item__number {
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+    background: #333;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  .listicle-item__content h3 {
+    margin: 0 0 10px;
+    font-size: 1.3rem;
+  }
+
+  .listicle-item__content p {
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  .listicle-product,
+  .listicle-cta {
+    text-align: center;
+    margin-top: 40px;
+  }
+
+  .button {
+    display: inline-block;
+    padding: 12px 30px;
+    background: #333;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+  }
+
+  .no-items-message {
+    text-align: center;
+    padding: 40px;
+    background: #fff3cd;
+    border-radius: 8px;
+  }
+
+  details {
+    margin-top: 20px;
+    text-align: left;
+  }
+
+  pre {
+    background: white;
+    padding: 10px;
+    overflow-x: auto;
+    font-size: 0.9rem;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Listicle Content",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_moderate_width",
+      "label": "Enable moderate width layout",
+      "default": true,
+      "info": "Limits content width to 1200px for better readability"
+    }
+  ]
+}
+{% endschema %}

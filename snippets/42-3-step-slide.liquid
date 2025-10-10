@@ -1,0 +1,29 @@
+<style>
+  [data-block-id='{{ id }}'] .text-number {
+    -webkit-text-stroke: 1px #ffffff;
+  }
+
+  @media (min-width: 1024px) {
+    [data-block-id='{{ id }}'] .text-number {
+      -webkit-text-stroke: 2px #2c3c60;
+    }
+  }
+</style>
+
+<div data-block-id="{{ id }}" class="tw-relative tw-pt-[131px] xl:tw-pt-[162px]">
+  <div class="tw-absolute" style="top:0;left:50%;transform:translateX(-50%);">
+    <h2 class="text-number tw-text-[204px] tw-leading-[210px] tw-text-transparent tw-text-center xl:tw-text-[244px] xl:tw-leading-[250px]">
+      {{- number -}}
+    </h2>
+  </div>
+  <div class="tw-relative tw-z-5 tw-flex tw-flex-col tw-gap-2.5 tw-bg-sc-ice-blue tw-rounded-3xl tw-py-5 tw-px-4.5 tw-min-h-[158px] lg:tw-bg-white">
+    {% if heading != blank %}
+      <h6 class="tw-text-[17px] tw-leading-[21px] tw-font-bold tw-text-sc-blue">{{ heading }}</h6>
+    {% endif %}
+    {% if description != blank %}
+      <div class="tw-font-secondary tw-text-sm tw-leading-[22px] tw-font-normal tw-text-sc-blue">
+        {{ description }}
+      </div>
+    {% endif %}
+  </div>
+</div>

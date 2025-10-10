@@ -1,0 +1,114 @@
+<!-- /snippets/cart-bar.liquid -->
+
+{%- liquid
+  assign current_variant = product.selected_or_first_available_variant
+  assign selling_plan_hide = true
+  assign button_add = false
+  assign blocks_form = section.blocks | where: 'type', 'form'
+
+  if settings.currency_code_enable
+    assign current_variant_price = current_variant.price | money_with_currency
+    assign current_variant_compare_at_price = current_variant.compare_at_price | money_with_currency
+  else
+    assign current_variant_price = current_variant.price | money
+    assign current_variant_compare_at_price = current_variant.compare_at_price | money
+  endif
+
+  assign any_variant_available = false
+  for variant in product.variants
+    if variant.available
+      assign any_variant_available = true
+      break
+    endif
+  endfor
+-%}
+
+{% if product.selling_plan_groups.size > 0
+  and blocks_form.size > 0
+  and blocks_form[0].settings.subscriptions_enable_selectors
+%}
+  {%- assign selling_plan_hide = false -%}
+{% endif %}
+
+{%- if product.has_only_default_variant and selling_plan_hide -%}
+  {%- assign button_add = true -%}
+{%- endif -%}
+
+<div
+  id="sticky-add-to-cart-bar"
+  class="tw-fixed tw-left-0 tw-right-0 tw-bottom-0 tw-flex tw-items-center tw-w-full md:tw-h-20 tw-min-h-30 md:tw-min-h-0 tw-overflow-hidden tw-bg-white tw-shadow-lg tw-z-20"
+  style="box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);"
+  x-cloak
+  x-show="showSticky && !cartDrawerOpen"
+  x-transition:enter="tw-transition tw-duration-500"
+  x-transition:enter-start="tw-translate-y-full"
+  x-transition:enter-end="tw-translate-y-0"
+  x-transition:leave="tw-transition tw-duration-500"
+  x-transition:leave-start="tw-translate-y-0"
+  x-transition:leave-end="tw-translate-y-full"
+>
+  <div class="tw-px-4 md:tw-px-12.5 tw-flex tw-items-center tw-flex-col tw-gap-2 md:tw-flex-row md:tw-justify-between tw-h-full tw-py-2.5 tw-w-full">
+    <div class="tw-flex tw-items-center tw-gap-2 md:tw-items-baseline md:tw-gap-4">
+      <h4 class="tw-text-black tw-text-lg tw-font-bold">{{ product.title | strip_html }}</h4>
+      <div
+        class="tw-flex tw-items-center"
+      >
+        <span
+          aria-label="price"
+          class="tw-text-[#0009FF] tw-font-medium tw-text-base"
+          x-text="formatMoney(selectedVariant?.price)"
+        >
+        </span>
+        <template x-if="selectedVariant?.compare_at_price && selectedVariant?.compare_at_price > selectedVariant?.price">
+          <span
+            aria-label="compare at price"
+            class="tw-ml-1.5 tw-text-[#888888] tw-font-medium tw-text-base tw-line-through"
+            x-text="formatMoney(selectedVariant?.compare_at_price)"
+          >
+          </span>
+        </template>
+      </div>
+    </div>
+
+    <div class="tw-w-full md:tw-w-fit">
+      {%- if settings.show_newsletter == true and current_variant.available == false -%}
+        <button
+          class="tw-relative btn-42 btn-42--primary tw-w-full !tw-bg-sc-yellow md:tw-w-fit md:!tw-px-15"
+          type="button"
+          @click="openSoldoutMotification();"
+        >
+          <span class="tw-uppercase tw-text-sc-blue tw-text-sm tw-leading-[16px] tw-font-medium">
+            {{- 'general.newsletter_form.newsletter_product_availability' | t -}}
+          </span>
+        </button>
+      {% else %}
+        <button
+          type="button"
+          class="selector--atc tw-relative tw-w-full tw-h-12 lg:tw-h-11 tw-flex tw-items-center tw-justify-center tw-bg-sc-yellow tw-rounded-[134px] hide-in-quick-view tw-transition-all tw-duration-200 hover:tw-bg-sc-yellow/80 md:tw-w-fit md:!tw-px-15"
+          :aria-busy="isAddingToCart"
+          :class="
+            {
+              'tw-pointer-events-none tw-opacity-70' : selectedVariant?.available === false,
+              'tw-pointer-events-none': loader
+            }
+          "
+          {% if any_variant_available == false or button_add and current_variant.available != true %}
+            disabled="disabled"
+          {% endif %}
+          @click="addToCart()"
+        >
+          <span class="tw-uppercase tw-text-sc-blue tw-text-sm tw-leading-[16px] tw-font-medium">
+            {{- 'products.product.add_to_bag' | t -}}
+          </span>
+
+          <span
+            class="tw-absolute tw-inset-0 tw-flex tw-justify-center tw-items-center tw-pointer-events-none tw-opacity-0"
+            :class="{ '!tw-opacity-100': loader }"
+          >
+            {%- render 'icon-42', name: 'loader', class: 'tw-w-5 tw-text-sc-blue tw-fill-sc-blue' -%}
+          </span>
+        </button>
+      {%- endif -%}
+    </div>
+  </div>
+</div>

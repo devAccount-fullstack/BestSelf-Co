@@ -1,0 +1,355 @@
+<!-- /sections/product-science-metaobject-activities.liquid -->
+{%- liquid
+  # Get the metaobject based on page handle
+  assign science_pages = shop.metaobjects.product_science_page_v2.values
+  assign science_page = nil
+  
+  for sp in science_pages
+    if sp.original_page_handle == page.handle or sp.url_handle == page.handle
+      assign science_page = sp
+      break
+    endif
+  endfor
+  
+  # Fallback: try to match by similar handle
+  unless science_page
+    for sp in science_pages
+      if sp.url_handle contains page.handle or page.handle contains sp.url_handle
+        assign science_page = sp
+        break
+      endif
+    endfor
+  endunless
+-%}
+
+{%- if science_page -%}
+  {%- for i in (1..5) -%}
+    {%- liquid
+      # Build field names dynamically
+      assign heading_field = 'activity_' | append: i | append: '_heading'
+      assign description_field = 'activity_' | append: i | append: '_description'
+      assign studies_field = 'activity_' | append: i | append: '_studies'
+      assign application_field = 'activity_' | append: i | append: '_application'
+      assign image_field = 'activity_' | append: i | append: '_image'
+      
+      # Get values from metaobject
+      assign activity_heading = science_page[heading_field].value
+      assign activity_description = science_page[description_field]
+      assign activity_studies = science_page[studies_field]
+      assign activity_application = science_page[application_field]
+      assign activity_image = science_page[image_field].value
+      
+      # Determine if this activity has content
+      assign has_content = false
+      if activity_heading != blank or activity_description != blank or activity_studies != blank or activity_application != blank
+        assign has_content = true
+      endif
+      
+      # Determine layout direction
+      assign is_even = i | modulo: 2
+      if is_even == 0
+        assign image_position = 'right'
+        assign flex_direction = 'row-reverse'
+      else
+        assign image_position = 'left'
+        assign flex_direction = 'row'
+      endif
+      
+      # Allow override from settings
+      if section.settings.alternate_layout == false
+        assign flex_direction = 'row'
+        assign image_position = section.settings.image_position
+      endif
+    -%}
+    
+    {%- if has_content -%}
+      <div class="section-padding activity-section activity-{{ i }}" 
+           style="--PT: {{ section.settings.padding_top }}px; --PB: {{ section.settings.padding_bottom }}px;">
+        <div class="{{ section.settings.width }}">
+          <div class="activity-wrapper flex-{{ flex_direction }}">
+            
+            {%- if activity_image != blank -%}
+              <div class="activity-image">
+                <img src="{{ activity_image | image_url: width: 800 }}"
+                     alt="{{ activity_heading | escape }}"
+                     loading="lazy"
+                     width="800"
+                     height="600">
+              </div>
+            {%- endif -%}
+            
+            <div class="activity-content">
+              {%- if activity_heading != blank -%}
+                <h3 class="{{ section.settings.heading_size }}">
+                  {{ activity_heading }}
+                </h3>
+              {%- endif -%}
+              
+              {%- if activity_description != blank -%}
+                <div class="activity-description rte {{ section.settings.text_size }}">
+                  {{ activity_description | metafield_tag }}
+                </div>
+              {%- endif -%}
+              
+              {%- if activity_studies != blank and section.settings.show_studies -%}
+                <details class="activity-studies">
+                  <summary class="accordion-trigger">
+                    <span>{{ section.settings.studies_label | default: 'Show me the research' }}</span>
+                    <svg class="accordion-icon" width="16" height="16" viewBox="0 0 16 16">
+                      <path d="M8 10L4 6h8l-4 4z" fill="currentColor"/>
+                    </svg>
+                  </summary>
+                  <div class="accordion-content rte">
+                    {{ activity_studies | metafield_tag }}
+                  </div>
+                </details>
+              {%- endif -%}
+              
+              {%- if activity_application != blank -%}
+                <div class="activity-application rte {{ section.settings.text_size }}">
+                  {{ activity_application | metafield_tag }}
+                </div>
+              {%- endif -%}
+            </div>
+          </div>
+        </div>
+      </div>
+    {%- endif -%}
+  {%- endfor -%}
+{%- else -%}
+  {%- if section.settings.show_debug -%}
+    <div style="padding: 40px; text-align: center; background: #f5f5f5;">
+      <p>No science page data found for handle: {{ page.handle }}</p>
+    </div>
+  {%- endif -%}
+{%- endif -%}
+
+<style>
+  .wrapper--moderate {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding-left: var(--outer);
+    padding-right: var(--outer);
+  }
+  
+  .activity-section {
+    position: relative;
+  }
+  
+  .activity-section:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 1300px;
+    height: 1px;
+    background-color: #e0e0e0;
+  }
+  
+  .activity-wrapper {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+  }
+  
+  .flex-row {
+    flex-direction: row;
+  }
+  
+  .flex-row-reverse {
+    flex-direction: row-reverse;
+  }
+  
+  .activity-image {
+    flex: 0 0 45%;
+  }
+  
+  .activity-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .activity-content {
+    flex: 1;
+  }
+  
+  .activity-content h3 {
+    margin-bottom: 1.5rem;
+  }
+  
+  .activity-description,
+  .activity-application {
+    margin-bottom: 1.5rem;
+  }
+  
+  .activity-studies {
+    margin: 1.5rem 0;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.03);
+    border-radius: 8px;
+  }
+  
+  .accordion-trigger {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding: 0.5rem 0;
+    font-weight: 500;
+    list-style: none;
+  }
+  
+  .accordion-trigger::-webkit-details-marker {
+    display: none;
+  }
+  
+  .accordion-icon {
+    transition: transform 0.3s ease;
+  }
+  
+  details[open] .accordion-icon {
+    transform: rotate(180deg);
+  }
+  
+  .accordion-content {
+    padding-top: 1rem;
+  }
+  
+  @media (max-width: 768px) {
+    .activity-wrapper {
+      flex-direction: column !important;
+      gap: 2rem;
+    }
+    
+    .activity-image {
+      flex: none;
+      width: 100%;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "PS Activities (Meta)",
+  "tag": "section",
+  "class": "section-activities-metaobject",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Metaobject Connection"
+    },
+    {
+      "type": "paragraph",
+      "content": "This section automatically pulls all 5 activity sections from the Product Science Page metaobject."
+    },
+    {
+      "type": "checkbox",
+      "id": "show_debug",
+      "label": "Show debug info",
+      "default": false,
+      "info": "Show debug message when no data found"
+    },
+    {
+      "type": "header",
+      "content": "Display Settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_studies",
+      "label": "Show research accordions",
+      "default": true,
+      "info": "Display the 'Show me the research' accordions"
+    },
+    {
+      "type": "text",
+      "id": "studies_label",
+      "label": "Research accordion label",
+      "default": "Show me the research"
+    },
+    {
+      "type": "checkbox",
+      "id": "alternate_layout",
+      "label": "Alternate image position",
+      "default": true,
+      "info": "Alternate between left and right image positions"
+    },
+    {
+      "type": "select",
+      "id": "image_position",
+      "label": "Default image position",
+      "options": [
+        {"value": "left", "label": "Left"},
+        {"value": "right", "label": "Right"}
+      ],
+      "default": "left",
+      "info": "Used when alternate layout is disabled"
+    },
+    {
+      "type": "header",
+      "content": "Layout Settings"
+    },
+    {
+      "type": "select",
+      "id": "width",
+      "label": "Content width",
+      "options": [
+        {"value": "wrapper", "label": "Full width"},
+        {"value": "wrapper--moderate", "label": "Moderate (1300px)"},
+        {"value": "wrapper--narrow", "label": "Narrow (670px)"},
+        {"value": "wrapper--tiny", "label": "Extra narrow"}
+      ],
+      "default": "wrapper--moderate"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "label": "Heading size",
+      "options": [
+        {"value": "h2", "label": "Large"},
+        {"value": "h3", "label": "Medium"},
+        {"value": "h4", "label": "Small"}
+      ],
+      "default": "h3"
+    },
+    {
+      "type": "select",
+      "id": "text_size",
+      "label": "Text size",
+      "options": [
+        {"value": "text-sm", "label": "Small"},
+        {"value": "", "label": "Normal"},
+        {"value": "text-lg", "label": "Large"}
+      ],
+      "default": ""
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 16
+    }
+  ],
+  "presets": [
+    {
+      "name": "PS Activities (Meta)"
+    }
+  ]
+}
+{% endschema %}

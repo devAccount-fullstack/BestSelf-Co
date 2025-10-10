@@ -1,0 +1,189 @@
+<!doctype html>
+<html class="no-js no-touch supports-no-cookies" lang="{{ request.locale.iso_code }}">
+  <head>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "BestSelf.co",
+        "url": "https://bestself.co",
+        "description": "BestSelf creates analog tools backed by behavioral science to help people improve productivity, relationships, and self-awareness.",
+        "sameAs": [
+          "https://www.instagram.com/bestselfco/",
+          "https://www.facebook.com/bestselfco/",
+          "https://www.linkedin.com/company/bestselfco/",
+          "https://www.pinterest.com/bestselfco/",
+          "https://www.tiktok.com/@bestselfco"
+        ],
+        "productSupported": [
+          "Self Journal",
+          "Self Planner",
+          "Daily Action Pad",
+          "Intimacy Deck",
+          "Deeper Talk Deck",
+          "Icebreaker Deck",
+          "Little Hero's Journal",
+          "Values Deck",
+          "Relationship Deck",
+          "Win the Day Pad"
+        ]
+      }
+    </script>
+
+    {% render 'replo-head' %}
+    {%- if content_for_header contains 'tapita-seo-script-tags' -%}{%- include 'tapita-seo-schema' -%}{%- endif -%}
+
+    {%- render 'head' -%}
+
+    <!-- Preload JS -->
+    {{ 'bundle.js' | asset_url | preload_tag: as: 'script' }}
+    {{ 'bundle.css' | asset_url | stylesheet_tag: preload: true }}
+
+    {{ content_for_header }}
+
+    <!-- GROWIFY -->
+    <script type="application/javascript">
+      ((e, p, t, s, n, r) =>
+        e.grp ||
+        (((s = e.grp =
+          function () {
+            s.process ? s.process.apply(s, arguments) : s.queue.push(arguments);
+          }).queue = []),
+        (s.t = +new Date()),
+        ((n = p.createElement(t)).async = 1),
+        (n.src = 'https://storage.googleapis.com/grpixel/openpixel.min.js'),
+        (r = p.getElementsByTagName(t)[0]).parentNode.insertBefore(n, r)))(window, document, 'script'),
+        grp('init', '2328');
+    </script>
+    <!-- END GROWIFY -->
+    <!-- MICROSOFT CLARITY -->
+    <script type="text/javascript">
+      (function (c, l, a, r, i, t, y) {
+        c[a] =
+          c[a] ||
+          function () {
+            (c[a].q = c[a].q || []).push(arguments);
+          };
+        t = l.createElement(r);
+        t.async = 1;
+        t.src = 'https://www.clarity.ms/tag/' + i;
+        y = l.getElementsByTagName(r)[0];
+        y.parentNode.insertBefore(t, y);
+      })(window, document, 'clarity', 'script', 'm07cdyoo9w');
+    </script>
+
+    <!-- END MICROSOFT CLARITY -->
+    {%- if content_for_header contains 'elevateab.app' -%}
+      {%- unless request.design_mode -%}
+        <script>try{window.eab_data={selectors:JSON.parse(`{{shop.metafields.elevateab.select}}`)||{},allTests:JSON.parse(`{{shop.metafields.elevateab.tests}}`)||{},currencyFormat:{% if settings.currency_code_enabled %}"{{ shop.money_with_currency_format}}"{% else %}"{{ shop.money_format}}"{% endif %}};}catch(error){console.log(error);window.eab_data={selectors:{},allTests:{},currencyFormat:{% if settings.currency_code_enabled %}"{{ shop.money_with_currency_format}}"{% else %}"{{ shop.money_format}}"{% endif %}};}
+        </script>
+        <script src="https://ds0wlyksfn0sb.cloudfront.net/redirect.js"></script>
+      {%- endunless -%}
+    {%- endif -%}
+    
+    {%- comment -%}Consolidated listicle styles - loads for all listicle pages{%- endcomment -%}
+    {%- if (template.name == 'page' and template.suffix == 'listicle') 
+         or (template.name == 'metaobject' and metaobject.type == 'listicle') 
+         or (template.name == 'article' and template.suffix == 'lander-listicle') -%}
+      {{ 'listicle-consolidated.css' | asset_url | stylesheet_tag }}
+    {%- endif -%}
+    
+    {%- comment -%}Article Journal Template Assets{%- endcomment -%}
+    {%- if template.name == 'article' and template.suffix == 'journal' -%}
+      {{ 'article-journal.css' | asset_url | stylesheet_tag }}
+    {%- endif -%}
+    
+    {%- comment -%}Critical fix for mobile visibility issues with Tailwind classes{%- endcomment -%}
+    {{ 'mobile-visibility-fix.css' | asset_url | stylesheet_tag }}
+  </head>
+  <body
+    x-data
+    id="{{ page_title | handle }}"
+    class="template-{{ template.name | handle }}{% if template.name == 'metaobject' and metaobject.type == 'listicle' %} template-metaobject-listicle{% endif %} grid-{{ settings.grid_style }}{% if customer %} customer-logged-in{% endif %}{% if settings.animations_enable %} aos-initialized{% endif %}{% if settings.product_grid_outline %} has-line-design{% endif %}"
+    data-animations="{{ settings.animations_enable }}"
+  >
+
+    <!-- AMP UPSELL EDITS - START -->
+    <script>
+      function ampResetAtcBtns() {
+        const atcBtns = document.querySelectorAll(
+          'quick-add-product button.quick-add__button, .product-quick-add__form .product__submit__item button[type="submit"], product-form .product__submit__item button[type="submit"]'
+        );
+
+        atcBtns.forEach((btn) => {
+          btn.classList.remove('is-loading');
+          btn.removeAttribute('disabled');
+        });
+      }
+
+      window.AMP_CART_UPDATED = (cart) => {
+        ampResetAtcBtns();
+      };
+    </script>
+    <!-- AMP UPSELL EDITS - END -->
+
+    {%- render 'loading' -%}
+
+    <a class="in-page-link visually-hidden skip-link" data-skip-content href="#MainContent">
+      {{- 'general.accessibility.skip_to_content' | t -}}
+    </a>
+
+    <div class="container" data-site-container>
+      <div class="header-sections tw-relative tw-z-10">
+        {% sections 'group-header-42' %}
+      </div>
+
+      {% sections 'group-overlay' %}
+
+      <!-- CONTENT -->
+      <main role="main" id="MainContent" class="main-content">
+        {{ content_for_layout }}
+      </main>
+    </div>
+
+    {% sections 'group-pre-footer-42' %}
+
+    <footer class="footer-sections">
+      {% sections 'group-footer-42' %}
+    </footer>
+
+    {%- if settings.swatches_type != 'disabled' -%}
+      {% render 'template-swatch' %}
+    {%- endif -%}
+
+    {% render 'zoom-pswp' %}
+
+    {%- if template.name != 'product' and settings.show_scroll_top_button -%}
+      <button
+        type="button"
+        class="btn btn--scroll-top btn--black btn--solid"
+        aria-label="{{ 'general.accessibility.scroll_to_top' | t }}"
+        data-scroll-top-button
+      >
+        {%- render 'icon-arrow-up' -%}
+      </button>
+    {%- endif -%}
+    <script src="{{ 'custom.js' | asset_url }}" defer="defer"></script>
+
+    {%- comment -%}
+      In order to use your custom javascript file at assets/custom.js
+      just cut this next line and paste it outside this comment:
+      <script src="{{ 'custom.js' | asset_url }}" defer="defer"></script>
+    {%- endcomment -%}
+    <!-- Paste marketing code or third party scripts below this comment line ============== -->
+
+    <!-- And above this comment line ================================================== -->
+    {% render 'js-variables-helpers' %}
+    {% render '42-product-quick-view' %}
+
+    <!-- webpack bundle -->
+    <script src="{{ 'bundle.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'shopify-cart-events.min.js' | asset_url }}" defer="defer"></script>
+    
+    {%- comment -%}Article Journal Template JavaScript{%- endcomment -%}
+    {%- if template.name == 'article' and template.suffix == 'journal' -%}
+      <script src="{{ 'article-journal.js' | asset_url }}" defer="defer"></script>
+    {%- endif -%}
+    
+  </body>
+</html>

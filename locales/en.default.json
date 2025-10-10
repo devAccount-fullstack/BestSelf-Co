@@ -1,0 +1,870 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin language editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "general": {
+    "404": {
+      "title": "404 Page Not Found",
+      "subtext_html": "The page you requested does not exist."
+    },
+    "ie11_support_message": "This site has limited support for your browser. We recommend switching to Edge, Chrome, Safari, or Firefox.",
+    "swatches": {
+      "color": "Color, Colour"
+    },
+    "siblings": {
+      "label": "Color"
+    },
+    "products_with_count": {
+      "one": "{{ count }} product",
+      "other": "{{ count }} products"
+    },
+    "size_chart": {
+      "title": "Size chart",
+      "size": "Size"
+    },
+    "meta": {
+      "tags": "Tagged \"{{ tags }}\"",
+      "page": "Page {{ page }}"
+    },
+    "breadcrumbs": {
+      "home": "Home",
+      "products": "Products",
+      "go_back": "Back"
+    },
+    "forms": {
+      "post_error": "Sorry, looks like something went wrong. Please correct the following and submit again:"
+    },
+    "newsletter_form": {
+      "newsletter_email": "Email",
+      "name": "Name",
+      "submit": "Join",
+      "placeholder": "Email Address",
+      "thank_you": "Thanks for signing up!",
+      "thank_you_with_code_html": "Thanks for signing up! Use the code <span>Discount10</span> for 10% off.",
+      "error_message": "This customer is already subscribed!",
+      "product_notification_for": "Product notification for",
+      "newsletter_product_availability": "Join the waitlist",
+      "notify": "Notify Me",
+      "email": "Your email",
+      "email_label": "Please enter your email and we will let you know when your selected item becomes available.",
+      "notification_success": "Your email has been received."
+    },
+    "search": {
+      "articles": "Blog posts",
+      "no_results": "No results found for “{{ terms }}”. Check the spelling or use a different word or phrase.",
+      "page": "Page",
+      "products": "Products",
+      "results_pages_with_count": {
+        "one": "{{ count }} page",
+        "other": "{{ count }} pages"
+      },
+      "results_suggestions_with_count": {
+        "one": "{{ count }} suggestion",
+        "other": "{{ count }} suggestions"
+      },
+      "results_products_with_count": {
+        "one": "{{ count }} product",
+        "other": "{{ count }} products"
+      },
+      "results_with_count": {
+        "one": "{{ count }} result",
+        "other": "{{ count }} results"
+      },
+      "results_with_count_and_term": {
+        "one": "{{ count }} result found for “{{ terms }}”",
+        "other": "{{ count }} results found for “{{ terms }}”"
+      },
+      "title": "Search results",
+      "search_for": "Search for “{{ terms }}”",
+      "reset": "Reset",
+      "clear": "Clear",
+      "suggestions": "Suggestions",
+      "pages": "Pages",
+      "placeholder": "Search our store",
+      "search": "Search",
+      "popular_searches": "Popular searches",
+      "popular_products": "Popular products"
+    },
+    "accessibility": {
+      "skip_to_content": "Skip to content",
+      "unit_price_separator": "per",
+      "close": "Close",
+      "show_menu": "Show menu",
+      "exit_menu": "Exit menu",
+      "view": "View",
+      "scroll_to_top": "Scroll to top",
+      "scroll_to_product": "Scroll to product",
+      "scroll_to_logo": "Scroll to logo",
+      "footer_logo": "Footer logo",
+      "slide_image": "Slide image"
+    },
+    "social": {
+      "share_on_facebook": "Share",
+      "share_on_twitter": "Tweet",
+      "share_on_pinterest": "Pin it",
+      "copied_text": "Copied!",
+      "alt_text": {
+        "share_on_facebook": "Share on Facebook",
+        "share_on_twitter": "Tweet on Twitter",
+        "share_on_pinterest": "Pin on Pinterest"
+      }
+    },
+    "share": {
+      "share": "Share",
+      "share_url": "Link",
+      "copy_to_clipboard": "Copy link",
+      "success_message": "Link copied to clipboard"
+    },
+    "money": {
+      "free": "Free"
+    },
+    "pagination": {
+      "prev": "Previous",
+      "next": "Next"
+    },
+    "shop_the_look": {
+      "button": "Shop the look"
+    }
+  },
+  "blogs": {
+    "article": {
+      "by_author": "By {{ author }}",
+      "older_post": "Older Posts",
+      "newer_post": "Newer Posts",
+      "related_products": "Related products",
+      "tags": "Tags",
+      "read_more": "Read more",
+      "no_articles": "There are no articles to show.",
+      "back_to": "Back to",
+      "all": "All"
+    },
+    "comments": {
+      "title": "Leave a comment",
+      "name": "Name",
+      "email": "Email",
+      "comment": "Comment",
+      "post": "Write a comment",
+      "moderated": "Please note, comments must be approved before they are published",
+      "success_moderated": "Your comment was posted successfully. We will publish it in a little while, as our blog is moderated.",
+      "success": "Your comment was posted successfully! Thank you!",
+      "comments_with_count": {
+        "one": "{{ count }} comment",
+        "other": "{{ count }} comments"
+      }
+    },
+    "sidebar": {
+      "see_more": "See more..."
+    }
+  },
+  "cart": {
+    "general": {
+      "title": "Cart",
+      "vendor": "Vendor",
+      "remove": "Remove",
+      "subtotal": "Subtotal",
+      "subtotal_items": "Items",
+      "subtotal_note": "Shipping, taxes, and discount codes are calculated at checkout",
+      "customer_note": "Leave a note about your order",
+      "cart_notes_label": "Add order notes",
+      "products_with_count": {
+        "one": "Product",
+        "other": "Products"
+      },
+      "pair_products": "Pair with",
+      "estimate_shipping_label": "Estimate shipping",
+      "gift_notes_label": "Is this a gift?",
+      "gift_note_attribute": "Gift note",
+      "update": "Update Cart",
+      "checkout": "Check Out",
+      "accept_terms": "You must accept our terms and conditions.",
+      "accepted_terms": "Accepted terms/conditions?",
+      "view_cart": "View cart",
+      "empty": "Your Cart is Empty",
+      "savings": "You're saving",
+      "with": "with",
+      "or": "or",
+      "increase_quantity_label": "Increase button quantity",
+      "decrease_quantity_label": "Decrease button quantity",
+      "quantity_field_label": "Quantity field",
+      "continue_shopping": "Continue Shopping",
+      "discount_label": "You're saving {{ amount }} with {{ title }}",
+      "limit_message": "No more products available for purchase",
+      "add_message": "You added a product: ",
+      "total_message": {
+        "one": "and you have {{ count }} product in the cart",
+        "other": "and you have {{ count }} products in the cart"
+      },
+      "qualified_shipping_message": "Congratulations! Your order qualifies for free shipping"
+    },
+    "shipping_calculator": {
+      "estimate_shipping": "Estimate shipping",
+      "calculate_shipping": "Calculate shipping",
+      "calculating": "Calculating...",
+      "no_shipping_available": "We do not ship to this destination."
+    }
+  },
+  "collections": {
+    "general": {
+      "title": "Collections",
+      "shop_all": "Shop All",
+      "clear_all": "Clear All",
+      "load_more": "Load more",
+      "view_collection": "View collection",
+      "no_matches": "Sorry, there are no products here.",
+      "results_with_count": "Results: {{ count }} of {{ all_products_count }} products",
+      "link_title": "Browse our {{ title }} collection",
+      "sort": "Sort by",
+      "filter_by": "Filter by",
+      "filters": "Filters",
+      "show_filters": "Show Filters",
+      "hide_filters": "Hide Filters",
+      "clear_filters": "Clear Filters",
+      "no_filters": "No filters available for this collection",
+      "all": "All",
+      "reset": "Reset",
+      "view_items_with_count": {
+        "one": "View {{ count }} item",
+        "other": "View {{ count }} items"
+      },
+      "show_more": "More options",
+      "items": {
+        "heading": "Collection",
+        "one": "item",
+        "other": "items"
+      },
+      "colors_with_count": {
+        "one": "color",
+        "other": "colors"
+      }
+    },
+    "sidebar": {
+      "vendors": "Vendors",
+      "no_vendors": "Add a vendor to your product for this list to build itself.",
+      "tags": "Tags",
+      "no_tags": "Add tags to your products for this list to build itself."
+    }
+  },
+  "contact": {
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "phone": "Phone Number",
+      "subject": "Subject",
+      "send": "Send",
+      "select_default": "Please select",
+      "required_field_text": "Fields marked with an asterisk (*) are required.",
+      "post_success": "Thanks for contacting us. We'll get back to you as soon as possible."
+    }
+  },
+  "customer": {
+    "account": {
+      "account": "Account",
+      "title": "My Account",
+      "details": "Account Details",
+      "view_addresses": "View Addresses",
+      "return": "Return to Account Details",
+      "contact_store": "Contact Shop"
+    },
+    "activate_account": {
+      "title": "Activate Account",
+      "subtext": "Create your password to activate your account.",
+      "password": "Password",
+      "password_confirm": "Confirm Password",
+      "submit": "Activate Account",
+      "cancel": "Decline Invitation"
+    },
+    "addresses": {
+      "title": "Your Addresses",
+      "default": "Default",
+      "add_new": "Add a New Address",
+      "edit_address": "Edit address",
+      "first_name": "First Name",
+      "last_name": "Last Name",
+      "company": "Company",
+      "address1": "Address1",
+      "address2": "Address2",
+      "city": "City",
+      "country": "Country",
+      "province": "Province",
+      "zip": "Postal/Zip Code",
+      "phone": "Phone",
+      "set_default": "Set as default address",
+      "add": "Add Address",
+      "update": "Update Address",
+      "cancel": "Cancel",
+      "edit": "Edit",
+      "delete": "Delete",
+      "delete_confirm": "Are you sure you wish to delete this address?"
+    },
+    "login": {
+      "title": "Login",
+      "email": "Email",
+      "password": "Password",
+      "forgot_password": "Forgot your password?",
+      "sign_in": "Sign In",
+      "cancel": "Return to Store",
+      "guest_title": "Continue as a guest",
+      "guest_continue": "Continue",
+      "create_account_prompt": "Don't have an account?",
+      "create_account_cta": "Sign up here"
+    },
+    "orders": {
+      "title": "Order History",
+      "order_number": "Order",
+      "date": "Date",
+      "payment_status": "Payment Status",
+      "fulfillment_status": "Fulfillment Status",
+      "total": "Total",
+      "none": "You haven't placed any orders yet."
+    },
+    "order": {
+      "title": "Order {{ name }}",
+      "date": "Placed on {{ date }}",
+      "cancelled": "Order Cancelled on {{ date }}",
+      "cancelled_reason": "Reason: {{ reason }}",
+      "billing_address": "Billing Address",
+      "payment_status": "Payment Status",
+      "shipping_address": "Shipping Address",
+      "fulfillment_status": "Fulfillment Status",
+      "discount": "Discount",
+      "shipping": "Shipping",
+      "tax": "Tax",
+      "details": {
+        "product": "Product",
+        "sku": "SKU",
+        "price": "Price",
+        "quantity": "Quantity",
+        "total": "Total",
+        "fulfilled_at": "Fulfilled {{ date }}",
+        "saved_with": "saved with",
+        "subtotal": "Subtotal"
+      }
+    },
+    "recover_password": {
+      "title": "Reset your password",
+      "email": "Email",
+      "submit": "Submit",
+      "cancel": "Cancel",
+      "subtext": "We will send you an email to reset your password.",
+      "success": "We've sent you an email with a link to update your password."
+    },
+    "reset_password": {
+      "title": "Reset account password",
+      "subtext": "Enter a new password for {{ email }}",
+      "password": "Password",
+      "password_confirm": "Confirm Password",
+      "submit": "Reset Password"
+    },
+    "register": {
+      "title": "Create Account",
+      "first_name": "First Name",
+      "last_name": "Last Name",
+      "email": "Email",
+      "password": "Password",
+      "submit": "Create",
+      "cancel": "Return to Store",
+      "sign_in_prompt": "Already have an account?",
+      "sign_in_cta": "Sign in here"
+    }
+  },
+  "date_formats": {
+    "full_date": "%B %d, %Y",
+    "full_date_and_time": "%B %d, %Y %I:%M%p"
+  },
+  "home_page": {
+    "sections": {
+      "frontpage_title": "Frontpage collection",
+      "featured_title": "Featured collections",
+      "news_title": "Latest News"
+    },
+    "onboarding": {
+      "no_products_html": "You have no products in your Frontpage collection. This placeholder will appear until you <a href=\"/admin/custom_collections\">add a product to this collection</a>.",
+      "add_product": "Add Product",
+      "product_title": "Product Title",
+      "no_collections_html": "You don't have any collections to show here. <a href=\"/admin/custom_collections\">Add some collections</a> to go along with the default Frontpage.",
+      "no_description": "This is a sample description for a product. Once you add a product, this text will change.",
+      "no_content": "This section doesn’t currently include any content. Add content to this section using the sidebar.",
+      "collection_image": "Collection Image",
+      "collection_title": "Example Collection Title",
+      "size": "Size",
+      "color": "Color"
+    }
+  },
+  "layout": {
+    "customer": {
+      "logged_in_as": "Logged in as",
+      "log_out": "Log out",
+      "log_in": "Log in",
+      "create_account": "Create an account"
+    },
+    "header": {
+      "menu": "Menu",
+      "search": "Search",
+      "account": "Account",
+      "cart": "Cart",
+      "gift_card": "Gift Card",
+      "gift_card_url": "gift-card"
+    },
+    "footer": {
+      "social_platform": "{{ name }} on {{ platform }}",
+      "linklist_title": "Quick Links",
+      "social_title": "Get Connected",
+      "newsletter_title": "Newsletter",
+      "currency": "Currency",
+      "language": "Language",
+      "accepted_payments": "Accepted Payments"
+    },
+    "search_page": {
+      "singular_article": "Post",
+      "singular_page": "Page"
+    }
+  },
+  "products": {
+    "general": {
+      "previous": "Previous",
+      "next": "Next",
+      "from": "From",
+      "quick_add": "ADD TO BAG",
+      "added_to_cart": "Added to cart",
+      "recently_viewed": "Recently Viewed",
+      "view_space": "View in your space",
+      "description": "Description",
+      "read_more": "Read more",
+      "view_product": "View Product",
+      "see_all": "See All",
+      "to": "To",
+      "complementary_products_title": "Pairs well with",
+      "choose_product": "Choose a product",
+      "product_info": "Select one from the section settings",
+      "upsell_title": "Better When Paired With...",
+      "upsell_add_to_cart": "Add",
+      "upsell_out_of_stock": "Out of stock",
+      "upsell_error_title": "Choose an upsell product",
+      "upsell_error_info": "Use metafields to show a product here. Empty upsells will not show on live site.",
+      "missing_metafield_image": "Use a metafield to show an image here. Empty metafields will not show on live site.",
+      "shop_now": "Shop now"
+    },
+    "product": {
+      "quick_view": "Quick view",
+      "add_to_bag": "Add to bag",
+      "buy_now": "Buy now",
+      "regular_price": "Regular price",
+      "sold_out": "Sold Out",
+      "sale_type": "Sale type",
+      "new": "New",
+      "pre_order": "Pre-Order",
+      "on_sale": "Sale",
+      "final_sale": "Final sale",
+      "unavailable": "Unavailable",
+      "compare_at": "Compare at",
+      "unit_price_label": "Unit price",
+      "subscription": "Subscription",
+      "save": "Save",
+      "off": "off",
+      "sku": "SKU",
+      "one_time_purchase": "One-time purchase",
+      "quantity": "Quantity",
+      "add_to_cart": "ADD TO BAG",
+      "added": "Added to your cart:",
+      "vendor": "Vendor",
+      "type": "Type",
+      "tags": "Tags",
+      "variant_option_image": "Size",
+      "ask_title": "Ask about this product:",
+      "zoom": "Zoom",
+      "configure": "Customize",
+      "select": "Select",
+      "select_value": "Select value",
+      "select_color": "Select color",
+      "each": "each",
+      "in_stock": "Item is in stock",
+      "out_of_stock": "Item is out of stock",
+      "item_unavailable": "Item is unavailable",
+      "remaining_html": "Hurry, Only {{ inventory }} Left!",
+      "remaining_no_count": "Hurry! Low inventory",
+      "pickup_availability": {
+        "pickup_options": "Pickup options",
+        "view_store_info": "View store information",
+        "check_other_stores": "Check availability at other stores",
+        "pick_up_available": "Pickup available",
+        "pick_up_available_at_html": "Pickup available at <strong>{{ location_name }}</strong>",
+        "pick_up_unavailable_at_html": "Pickup currently unavailable at <strong>{{ location_name }}</strong>",
+        "unavailable": "Couldn't load pickup availability",
+        "refresh": "Refresh"
+      }
+    }
+  },
+  "countdown": {
+    "days": "Days",
+    "hours": "Hours",
+    "minutes": "Minutes",
+    "seconds": "Seconds"
+  },
+  "gift_cards": {
+    "issued": {
+      "title": "Here's your {{ value }} gift card for {{ shop }}!",
+      "subtext": "Here's your gift card!",
+      "disabled": "Disabled",
+      "expired": "Expired on {{ expiry }}",
+      "active": "Expires on {{ expiry }}",
+      "redeem": "Use this code at checkout to redeem your gift card",
+      "shop_link": "Start shopping",
+      "print": "Print"
+    }
+  },
+  "recipient": {
+    "form": {
+      "checkbox": "I want to send this as a gift",
+      "email_label": "Recipient email",
+      "email": "Email",
+      "name_label": "Recipient name (optional)",
+      "name": "Name",
+      "message_label": "Message (optional)",
+      "message": "Message",
+      "max_characters": "{{ max_chars }} characters max",
+      "send_on": "YYYY-MM-DD",
+      "send_on_label": "Send on (optional)"
+    }
+  },
+  "password": {
+    "page": {
+      "title": "Opening Soon",
+      "powered_by": "This store will be powered by"
+    },
+    "form": {
+      "success": "Thank you for signing up!",
+      "newsletter_title": "Subscribe for Updates",
+      "placeholder": "email@example.com",
+      "login": "Password"
+    },
+    "buttons": {
+      "sign_up": "Sign Up",
+      "store_login": "Store Login",
+      "newsletter_signup": "Newsletter Signup",
+      "login": "Login"
+    }
+  },
+  "sections": {
+    "foxify-17314253044Zo6K": {
+      "x-sm6rfkzv-text_html": "<p><span style=\"color: rgb(7, 8, 16); font-family: &quot;DM Sans&quot;, sans-serif; font-size: 18px; text-transform: none\">Designed to bring families closer through engaging conversation cards and fun moments. With 150 thought-provoking questions across seven unique categories and a color-coded die to select a category each turn, this deck is perfect for sparking meaningful conversations at the dinner table, during family trips, or gatherings.</span></p>",
+      "x-ltb9au4y-button_label_html": "SHOP NOW",
+      "x-41y2cloe-text_html": "<p>Family talk - Game Edition</p>",
+      "x-53q6pqru-text_html": "Discovery decks",
+      "x-dkmkuc7t-text_html": "collections",
+      "x-poie08km-text_html": "Discover our collections and get ready for the end of the year!",
+      "x-w92kaf1x-text_html": "<p><span style=\"color: rgb(21, 38, 92)\">Best of everything</span></p>",
+      "x-8nxi4yxs-title_html": "Discovery decks",
+      "x-n2jubi41-title_html": "CHOOSE YOUR JOURNAL",
+      "x-hxb0m7b3-title_html": "BUNDLES",
+      "x-597dwcdp-text_html": "<p>Journals and Planners</p>",
+      "x-o93dcs5e-text_html": "This collection includes conversation card decks like <strong>Pequeñas Conversaciones</strong>, <strong>Rompehielo</strong>, and <strong>Nuestra Intimidad</strong>. Each product is carefully crafted to help you create deeper connections, whether with family, friends, or a partner—perfect for those seeking meaningful experiences and authentic conversations in Spanish.<span class=\"\" contenteditable=\"false\"><span class=\"flex h-[30px] w-[30px] items-center justify-center\" contenteditable=\"false\"></span></span><span class=\"\" contenteditable=\"false\"><span class=\"flex h-[30px] w-[30px] items-center justify-center\" contenteditable=\"false\"></span></span>",
+      "x-6m6osbq4-button_label_html": "SHOP NOW",
+      "x-00nw2338-text_html": "<span style=\"font-size: 44px\">Spanish</span><br><span style=\"font-size: 44px\"> products</span>",
+      "x-owgartv2-title_html": "gift guides",
+      "x-1c16oe6n-title_html": "<p>black friday week</p>",
+      "x-91lav8t1-title_html": "<p>Free shipping on all orders over $75</p>",
+      "x-netb7to7-text_html": "Featured products",
+      "x-cy0ymhju-text_html": "<span style=\"font-size: 20px\">INTIMACY DECK</span>",
+      "x-7mzicab8-text_html": "<span style=\"font-size: 20px\">ICEBREAKER DECK</span>",
+      "x-5zrq6yr7-text_html": "<span style=\"font-size: 20px\">SELF JOURNAL</span>",
+      "x-ab43bs3y-text_html": "<span style=\"font-size: 20px\">LITTLE TALK</span>",
+      "x-pt6ui4hv-text_html": "new product",
+      "x-geo674h9-title_html": "<p>Up to 35% off</p>",
+      "x-leu5zobp-text_html": "<p>Science-Backed &amp; Proven</p><p></p>",
+      "x-g68yzf33-text_html": "<p>Grounded in psychology, personal growth, and relationship science.</p>",
+      "x-t8v8elpx-text_html": "<p>100% Satisfaction Guarantee</p>",
+      "x-ovg0lzni-text_html": "<p>Enjoy peace of mind. 30-day returns.</p>",
+      "x-76b3owd7-text_html": "<p>500k+ Customers</p>",
+      "x-6hwdyuko-text_html": "<p>Trusted by over 500,000 people to achieve goals and strengthen relationships.</p>",
+      "x-yoaada8y-text_html": "<span style=\"color: rgb(255, 255, 255); font-size: 24px\">Spend $75, FREE SHIPPING</span>",
+      "x-h7dhxv7j-button_label_html": "Shop now",
+      "x-owf2h68b-text_html": "<p><span style=\"color: rgb(74, 74, 74)\">Black Friday</span></p>",
+      "x-6rz3f4xj-text_html": "<span style=\"font-size: 24px\">Up to 35% off</span>",
+      "x-o5lumh0x-button_label_html": "Shop now"
+    },
+    "foxify-1731444406qtHfQ": {
+      "x-cwne0iqm-text_html": "Discovery decks",
+      "x-y2ja6ega-button_label_html": "Shop all products",
+      "x-9qph8f55-text_html": "Featured Collections",
+      "x-0akc6n54-button_label_html": "Shop now",
+      "x-nahv70h9-title_html": "Choose your journal",
+      "x-p8ozqdr5-title_html": "Social Connection",
+      "x-j5r4csj5-title_html": "Kids and Family",
+      "x-x5pinxqf-text_html": "<p>Holiday gifting isn’t just about wrapping up a present; it’s about wrapping up an experience, a shared moment, and a memory to cherish.</p><p>This year, give more than a gift—give an opportunity for connection, reflection, and growth with BestSelf. Our products are crafted to inspire meaningful interactions, spark deep conversations, and strengthen bonds. Designed with science-backed methods, every BestSelf gift isn’t just another item; it’s a path to a more connected, fulfilled life.</p><p></p>",
+      "x-w65wlbz2-button_label_html": "Code: BSPX20",
+      "x-qe5ra99p-text_html": "Use Code at Checkout!",
+      "x-k3akqfqj-text_html": "<p><span style=\"color: rgb(255, 255, 255)\">Thank you for choosing our products to support your journey toward becoming your best self.</span></p>",
+      "x-3ls6s3nd-text_html": "<span style=\"color: rgb(255, 255, 255)\">Hurry! Your chance to save 20% ends 12/31/2024. Plus, get a free holiday bonus with every purchase. Don’t miss this special offer to make your gift truly unforgettable.</span>",
+      "x-sp4lu76f-button_label_html": "Code: BSPX20",
+      "x-gun0zu00-text_html": "<span style=\"color: rgb(255, 255, 255)\"><mark data-color=\"rgba(204, 204, 204, 0)\" style=\"background-color: rgba(204, 204, 204, 0); color: inherit\">Create Lasting Memories with Gifts That Matter</mark></span><br>",
+      "x-j0o1xlho-text_html": "<p><span style=\"color: rgb(255, 255, 255)\">New products</span></p>",
+      "x-qnzs1qht-text_html": "<p><span style=\"color: rgb(255, 255, 255)\">Discover our new arrivals</span></p>",
+      "x-nslt2zbr-button_label_html": "Birthday deck",
+      "x-19bptz7y-button_label_html": "Family Talk",
+      "x-88r3rxiz-button_label_html": "Daily Action Pad"
+    },
+    "foxify-1731780162ZUMrY": {
+      "x-wjvjdxzd-text_html": "Special Deals for Your Mom",
+      "x-vhn121pc-list_items-Item-1-title_html": "Nourishing ingredients you know",
+      "x-4po9xqq2-title_html": "Vegan power",
+      "x-bdsbmkx6-testimonial_list-item-6-author_html": "Robin M.",
+      "x-qjha4e7i-text_html": "Stay in the Loop with Our Newsletter",
+      "x-vlrbuau6-text_html": "Join our newsletter and receive a 10% OFF code for your first purchase!",
+      "x-z1m1vt4a-email_placeholder_html": "Enter your email",
+      "x-z1m1vt4a-button_label_html": "submit",
+      "x-vfcrib2h-text_html": "Selected from our recipes",
+      "x-sa0o1gop-button_label_html": "view more",
+      "x-4f94vcfg-text_html": "Follow us on Instagram",
+      "x-ls8sqksy-text_html": "<a target=\"_blank\" rel=\"noopener noreferrer nofollow\" href=\"https://www.instagram.com/\">@supplementhealth</a>",
+      "x-yrgm16l2-text_html": "Free &amp; Fast Delivery",
+      "x-8gkbxa0v-title_html": "Easy chew gummies",
+      "x-0tg9ti5j-text_html": "We offer free &amp; fast shipping with ground delivery",
+      "x-j4gw3oxw-text_html": "Online support",
+      "x-2bfqgfk2-text_html": "Online Support24 hours a day, 7 days a week",
+      "x-ljrfy0sk-text_html": "30 days return",
+      "x-j175dywa-text_html": "Free exchange or return within 30 days",
+      "x-erkl03kk-text_html": "Flexible Payment",
+      "x-w18zfsdv-text_html": "Pay with Multiple Credit Cards. Buy now pay later",
+      "x-7f08w99s-text_html": "mother’s day sale",
+      "x-tuaob9n9-text_html": "For Mother’s Day Only",
+      "x-efaz7i4w-text_html": "Edge Supplement",
+      "x-fz0vqk74-list_items-Item-1-title_html": "Bacopa Monnieri",
+      "x-fz0vqk74-list_items-item-3-title_html": "Ginkgo Biloba",
+      "x-fz0vqk74-list_items-item-2-title_html": "Contributes to the reduction",
+      "x-ct5t5238-button_label_html": "Add to cart",
+      "x-mu4ifhsr-text_html": "$59",
+      "x-vhn121pc-list_items-item-3-title_html": "Metabolism-boosting recipe",
+      "x-nvpetnbd-text_html": "$69",
+      "x-umltpoq1-text_html": "Superblend Protein",
+      "x-u3ke5cv5-list_items-Item-1-title_html": "Compostable Pack",
+      "x-u3ke5cv5-list_items-item-3-title_html": "Heavy Metal Tested",
+      "x-u3ke5cv5-list_items-item-2-title_html": "GMO and Soy Free",
+      "x-ylav6kep-button_label_html": "Add to cart",
+      "x-0h513u69-text_html": "$59",
+      "x-1mppztk9-text_html": "$69",
+      "x-n8l74b4a-text_html": "Edge Multivitamin",
+      "x-a2adsaua-list_items-Item-1-title_html": "Bacopa Monnieri",
+      "x-vhn121pc-list_items-item-2-title_html": "Stable blood sugar response",
+      "x-a2adsaua-list_items-item-3-title_html": "Ginkgo Biloba",
+      "x-a2adsaua-list_items-item-2-title_html": "Contributes to the reduction",
+      "x-58carx56-button_label_html": "Add to cart",
+      "x-vzueq8ml-text_html": "$59",
+      "x-64pzpium-text_html": "$69",
+      "x-87omezv2-collection_list-Collection-1-text_html": "This strategic alliance focuses on optimizing endurance and recovery, leveraging scientific innovation to push athletic boundaries.",
+      "x-87omezv2-collection_list-Collection-1-title_html": "Multivitamin",
+      "x-87omezv2-collection_list-Collection-1-button_label_html": "shop now",
+      "x-87omezv2-collection_list-Collection-3-text_html": "This strategic alliance focuses on optimizing endurance and recovery, leveraging scientific innovation to push athletic boundaries.",
+      "x-87omezv2-collection_list-Collection-3-title_html": "Superblend Protein",
+      "x-6w4lfu0q-button_label_html": "shop the deals",
+      "x-87omezv2-collection_list-Collection-3-button_label_html": "shop now",
+      "x-87omezv2-collection_list-Collection-2-text_html": "This strategic alliance focuses on optimizing endurance and recovery, leveraging scientific innovation to push athletic boundaries.",
+      "x-87omezv2-collection_list-Collection-2-title_html": "Radiant Vitamin",
+      "x-87omezv2-collection_list-Collection-2-button_label_html": "shop now",
+      "x-lt3cy57r-text_html": "our lineup",
+      "x-qeu49hbg-text_html": "our featured",
+      "x-19ctdf94-text_html": "The best tasting vegan protein powder available",
+      "x-c9yxdwzt-text_html": "Developed by experts",
+      "x-rclwqhp9-text_html": "Developed by leading experts in pharmaceuticals &amp; nutritional science.",
+      "x-7878h3zi-text_html": "Easy chew gummies",
+      "x-ci86biwl-text_html": "4.8/5",
+      "x-q6qxhxwp-text_html": "Naeo gummies provide a pleasant way to consume your supplements",
+      "x-1h47uldo-text_html": "Vegan power",
+      "x-9q20he3w-text_html": "Crafted using only plant-based ingredients, ensuring alignment with vegan dietary standards.",
+      "x-ikcw4kq9-text_html": "Embracing sustainability",
+      "x-hpgckq0n-text_html": "Naeo's commitment to sustainability is reflected in our eco-friendly practices",
+      "x-f4ycyjcj-text_html": "Your cognitive<br>enhancer for daily use",
+      "x-vm21hhpe-text_html": "We create safe products that really work and are designed to make you feel good. Any question about our products?",
+      "x-l732qmu2-button_label_html": "see more",
+      "x-6bbxv27n-title_html": "How long does shipping take?",
+      "x-tf9kj9vp-title_html": "Does my piece come in any packaging?",
+      "x-pal7iw11-title_html": "Developed by experts",
+      "x-qly66hjn-title_html": "Do you ship internationally?",
+      "x-80i8z8pf-title_html": "What payment methods do you accept?",
+      "x-xgvg5vgy-text_html": "Your sales managers will go into the field feeling energized, excited, and inspired. We are a full service business development group – we build strategies and systems. ",
+      "x-wnurrmua-text_html": "\"Discover eco-friendly packaging options for your piece, ensuring a sustainable and stylish delivery experience.\"",
+      "x-girtci7b-text_html": "\"We're delighted to serve customers worldwide! Our international shipping options ensure your desired items reach you, wherever you are.\"",
+      "x-6xygpryz-text_html": "I'm a paragraph. Click here to add your own text and edit me. I’m a great place for you to tell a story and let your users know a little more about you.",
+      "x-04ptqsqd-text_html": "FEATURED IN",
+      "x-vgzrj536-press_list-1-title_html": "<p>“Especially the Edge I can feel the difference it’s making helping me concentrate.”</p>",
+      "x-vgzrj536-press_list-2-title_html": "<p>\"Parsley patients get a lot of bang their buck, including six visits with their doctor.\"</p>",
+      "x-vgzrj536-press_list-3-title_html": "<p>“Especially the Edge I can feel the difference it’s making helping me concentrate.”</p>",
+      "x-vmmhf6p0-title_html": "Easy chew gummies",
+      "x-vgzrj536-press_list-4-title_html": "<p>“Especially the Edge I can feel the difference it’s making helping me concentrate.”</p>",
+      "x-vgzrj536-press_list-5-title_html": "<p>\"Parsley patients get a lot of bang their buck, including six visits with their doctor.\"</p>",
+      "x-21emx1y3-text_html": "special offer",
+      "x-0dd304cv-text_html": "Save $50 when buy both Vitamin + protein",
+      "x-wlrkewb7-text_html": "To perform at our best we need our brains working at their best. Think of Edge as a multivitamin for your brain, containing everything you need to ensure.",
+      "x-w0lwjecg-button_label_html": "bundle & save",
+      "x-9xq60y80-text_html": "01.",
+      "x-0876m9rj-text_html": "02.",
+      "x-8snye9nm-text_html": "03.",
+      "x-rfwa9bj0-text_html": "happy feedback",
+      "x-3n2pr3n6-title_html": "Embracing sustainability",
+      "x-a2klc6y0-text_html": "Over 20,000+ Customers love us",
+      "x-y5g3jy2f-text_html": "Introducing the latest styles in women's shoes tailored for every occasion taste.",
+      "x-l134pvpb-button_label_html": "Shop best sellers",
+      "x-bdsbmkx6-testimonial_list-1-bio_html": "Verified Buyer",
+      "x-bdsbmkx6-testimonial_list-1-text_html": "Blends absolutely well with water and to clean the shaker afterwards is even easier. Great job y’all. 🙂",
+      "x-bdsbmkx6-testimonial_list-1-author_html": "Melissa H.",
+      "x-bdsbmkx6-testimonial_list-3-bio_html": "Verified Buyer",
+      "x-bdsbmkx6-testimonial_list-3-text_html": "Chocolate hazelnut is delicious and works really well when mixed with oats for protein porridge. The vanilla flavour tastes a bit more artificial / powdery but still pretty good!",
+      "x-bdsbmkx6-testimonial_list-3-author_html": "Jess K.",
+      "x-bdsbmkx6-testimonial_list-5-bio_html": "Verified Buyer",
+      "x-r4i05816-title_html": "Developed by experts",
+      "x-bdsbmkx6-testimonial_list-5-text_html": "I am so glad I gave this one a chance! I love the chocolate peanut butter one and even put it on cereal for a protein packed snack!",
+      "x-bdsbmkx6-testimonial_list-5-author_html": "Jess K.",
+      "x-bdsbmkx6-testimonial_list-2-bio_html": "Verified Buyer",
+      "x-bdsbmkx6-testimonial_list-2-text_html": "Had my first ever Performance Protein and absolutely loved it!",
+      "x-bdsbmkx6-testimonial_list-2-author_html": "David L.",
+      "x-bdsbmkx6-testimonial_list-4-bio_html": "Verified Buyer",
+      "x-bdsbmkx6-testimonial_list-4-text_html": "I had almost given up being able to find a plant based protein powder that didn’t upset my stomach.",
+      "x-bdsbmkx6-testimonial_list-4-author_html": "Robin M.",
+      "x-bdsbmkx6-testimonial_list-item-6-bio_html": "Verified Buyer",
+      "x-bdsbmkx6-testimonial_list-item-6-text_html": "The vanilla flavour tastes a bit more artificial / powdery but still pretty good!"
+    },
+    "foxify-1731951799u4kdr": {
+      "x-yggwavga-text_html": "<p>Designed to bring families closer through engaging conversation cards and fun moments.</p>",
+      "x-mvn6ktfw-button_label_html": "Buy it now",
+      "x-27a4ibf4-text_html": "<p>A color-coded dice adds a playful element to every session, making it one of the most fun family games for all ages.</p>",
+      "x-7vq1xhfn-text_html": "<p>Perfect for Any Occasion</p>",
+      "x-a7qty89p-text_html": "<p>Versatile enough for any setting, from family dinners to road trips</p>",
+      "x-n3gzy36b-text_html": "<p>Why this Special Edition</p>",
+      "x-70uc280y-text_html": "Family talk&nbsp;<em>helps families connect in a world where meaningful communication is often overlooked.</em>",
+      "x-35aiin4a-text_html": "<p> It provides a simple yet powerful tool to bring family members closer together, bridging gaps between generations and fostering deeper understanding.</p><p>By sparking engaging and heartfelt conversations, the deck helps families build stronger emotional bonds, address misunderstandings, and create cherished memories. It transforms everyday moments into opportunities for growth, empathy, and connection, ensuring that each family member feels heard, valued, and supported.</p><p>In a time where distractions are plenty and quality time is scarce, the Family Talk Deck offers a way to prioritize what truly matters—each other.</p><p></p>",
+      "x-fkt8mapr-text_html": "How to play",
+      "x-jhhs6jf1-text_html": "Gather the family in a comfortable space, <em>shuffle the cards and place them in separate piles by color.</em>",
+      "x-qxi587fk-text_html": "<p>Decide the play order. The first player rolls the die to select the card color and follows the prompts. Each player then takes turns doing the same. Listen carefully and answer honestly—there are no wrong answers!</p>",
+      "x-92wovhx9-button_label_html": "@bestselfco",
+      "x-rjdn64h3-list_items-Item-1-title_html": "150 cards",
+      "x-rjdn64h3-list_items-Item-2-title_html": "1 dice",
+      "x-rjdn64h3-list_items-Item-1731693709dvJx0-title_html": " 1 instruction sheet",
+      "x-gwjw65b9-text_html": "<p>New product</p>",
+      "x-sky9poj0-text_html": "<p>We launched our new card deck <em>for family conversations and interaction, including a dice to make it even more fun!</em></p>",
+      "x-ia7rld8p-text_html": "<p>Diverse Topics for Deeper Family Connections</p>",
+      "x-l8tsgzwq-text_html": "<p>Thoughtful prompts that cover essential values, cherished memories, everyday life, and fun themes to inspire genuine conversations.</p>",
+      "x-z0xqp4jt-text_html": "<p>Interactive Play with Color-Coded Dice</p>",
+      "x-89lnnibu-text_html": "<p>Any suggestions or feedback? Contact us.</p>",
+      "x-3i04cwnx-text_html": "E-mail:",
+      "x-d81s0jcr-text_html": "<p><a target=\"_blank\" rel=\"noopener noreferrer nofollow\" href=\"mailto:support@bestself.co\"><u>support@bestself.co</u></a></p>",
+      "x-oo1nekum-text_html": "<p>BestSelf Mailing Address:</p>",
+      "x-bov3rtjc-text_html": "<p>2028 E Ben White Blvd #240-5675 Austin TX 78741</p>"
+    },
+    "foxify-1732036430qEb51": {
+      "x-kh0fn59r-text_html": "<p>Once everyone has taken their turns, it’s time to wrap up the celebration with the Reflect &amp; Connect category. These cards are designed to bring the game to a thoughtful close. Each player (including the birthday person) will select a card from this pile to share, helping everyone reflect on the special memories and connections made throughout the game.</p><p></p>",
+      "x-r7j0g71y-text_html": "Time Capsule&nbsp;🎉",
+      "x-7omkrow5-text_html": "<p><strong>How-To Guide</strong></p><p>Welcome to the time capsule activity! This is your chance to capture the special moments and memories from today's celebration and preserve them for the future. Follow these simple steps to create your own time capsule!</p>",
+      "x-7928rgix-text_html": "Enjoy the Birthday deck&nbsp;<em>and make this celebration unforgettable!</em>",
+      "x-64km9loa-text_html": "<span style=\"color: rgb(0, 0, 0); font-family: Arial, sans-serif; font-size: 11pt\">Share photos on social media with</span><br><span style=\"color: rgb(0, 0, 0); font-family: Arial, sans-serif; font-size: 11pt\"> the hashtag </span><span style=\"color: rgb(0, 0, 0); font-family: Arial, sans-serif; font-size: 24pt\">#bestselfbirthday</span><br>",
+      "x-psu6x5zf-button_label_html": "@bestselfco",
+      "x-7r55beks-text_html": "<p>Divide the Deck into Three Piles:</p><p>Pile 1: Reflect &amp; Connect cards – set these aside for the end of the game.</p><p>Pile 2: Wildcard and Games/Activities cards – the birthday person will only choose cards from this pile during the game.</p><p>Pile 3: Affirmations, Memory Lane, and Connect cards – everyone else will choose from this pile.</p><p></p>",
+      "x-e9jqtskt-text_html": "How to Play&nbsp;🎉",
+      "x-izk41g29-text_html": "<p>Birthday Person’s Turn: The birthday person will select cards only from the Wildcard or Games/Activities categories. They’ll read the card aloud and follow the prompt for some birthday fun.</p><p>Other Players’ Turns: All other players will take turns choosing a card from either Pile 2 (Wildcard and Games/Activities) or Pile 3 (Affirmations, Memory Lane, Connect). Each player should read their card aloud and complete the activity or share their thoughts.</p><p>Notepad included: Some prompts will ask you to write down your responses. Feel free to share what you write with the group or keep it as a special memory!</p><p></p>",
+      "x-gumdclqe-text_html": "Ending the game",
+      "x-gpsje75w-text_html": "<p>Birthday deck</p>",
+      "x-20y3d3uu-text_html": "<p>How  to play</p>",
+      "x-l9ick1x9-text_html": "Set Up the Deck&nbsp;",
+      "x-0vxgvo01-text_html": "Birthday Trivia&nbsp;🎉",
+      "x-u98qfqq7-text_html": "<p>Get ready for a fun-filled Birthday Trivia game, where we test how well everyone knows the birthday person! 🎉 This activity is all about sharing favorite memories, fun facts, and discovering even more about the person we're celebrating.</p>",
+      "x-u0swnyiu-text_html": "Spontaneous Superlatives&nbsp;🎉",
+      "x-lobd6dw9-text_html": "<p>Welcome to Spontaneous Superlatives! Get ready to create hilarious and unexpected superlatives for your group on the spot. Let’s have some fun and discover who in the group wins the most outrageous titles!</p><p></p>",
+      "x-5to0t8bc-text_html": "Would you rather&nbsp;🎉",
+      "x-2x6xog21-text_html": "<p>Here are some fun \"Would You Rather\" questions for the activity, where guests will choose between two options, trying to guess what the birthday person would prefer.</p><p>*Each guest takes a sheet from the notepad and writes down their answers (A or B) individually, guessing the birthday person’s choices.</p><p>*Award points or a prize to the winner!</p>",
+      "x-gh2v35qu-text_html": "<span style=\"color: rgb(255, 255, 255)\">life's too short for forgettable birthdays</span><br>",
+      "x-zde4m26i-text_html": "Birthday Trivia&nbsp;🎉",
+      "x-f94l2sp4-text_html": "Spontaneous Superlatives&nbsp;🎉",
+      "x-v38em16f-text_html": "Would you rather&nbsp;🎉",
+      "x-h7pr6zor-text_html": "Time Capsule&nbsp;🎉"
+    },
+    "foxify-footer": {
+      "f-1723248287SYThy-text_html": "Information",
+      "f-1723248287TO98E-text_html": "Quick links",
+      "f-1723248287ztkh6-text_html": "Subscribe to our emails",
+      "f-1723248287c9kRl-text_html": "<p>You deserve to feel good. Subscribe to our newsletter.</p>",
+      "f-1723248287s68eg-email_placeholder_html": "Enter your email",
+      "f-1723248287bnId5-copyright_html": "&copy; 2023, Foxify Powered by FoxEcom"
+    },
+    "foxify-header": {
+      "f-1723248287SYThy-text_html": "Information",
+      "f-1723248287TO98E-text_html": "Quick links",
+      "f-1723248287ztkh6-text_html": "Subscribe to our emails",
+      "f-1723248287c9kRl-text_html": "<p>You deserve to feel good. Subscribe to our newsletter.</p>",
+      "f-1723248287s68eg-email_placeholder_html": "Enter your email",
+      "f-1723248287bnId5-copyright_html": "&copy; 2023, Foxify Powered by FoxEcom"
+    },
+    "foxify-1732902464lYAFQ": {
+      "x-yn8mry76-text_html": "<p><span style=\"text-transform: capitalize\">How to play</span></p>",
+      "x-zvcswwp8-text_html": "Icebreaker Deck<br>",
+      "x-fnlm0se3-text_html": "<p><strong>How-To Guide</strong></p><p>Welcome to the time capsule activity! This is your chance to capture the special moments and memories from today's celebration and preserve them for the future. Follow these simple steps to create your own time capsule!</p>",
+      "x-bp4a82p7-text_html": "Time Capsule&nbsp;🎉",
+      "x-2xgidfgi-text_html": "Birthday Trivia&nbsp;🎉",
+      "x-m9wxw8dv-text_html": "Birthday Trivia&nbsp;🎉",
+      "x-declvjso-text_html": "<p>Get ready for a fun-filled Birthday Trivia game, where we test how well everyone knows the birthday person! 🎉 This activity is all about sharing favorite memories, fun facts, and discovering even more about the person we're celebrating.</p>",
+      "x-3yb4jftj-text_html": "Spontaneous Superlatives&nbsp;🎉",
+      "x-mh0i9xhl-text_html": "<p>Welcome to Spontaneous Superlatives! Get ready to create hilarious and unexpected superlatives for your group on the spot. Let’s have some fun and discover who in the group wins the most outrageous titles!</p><p></p>",
+      "x-dkioh5fc-text_html": "Spontaneous Superlatives&nbsp;🎉",
+      "x-yuevvzov-text_html": "Would you rather&nbsp;🎉",
+      "x-lwj7ooll-text_html": "Would you rather&nbsp;🎉",
+      "x-3ppzbkb0-text_html": "<p><span style=\"color: rgb(255, 255, 255)\">A tool for Creating lasting and more Impactful connections.</span></p>",
+      "x-qo3j1i8l-text_html": "<p>Here are some fun \"Would You Rather\" questions for the activity, where guests will choose between two options, trying to guess what the birthday person would prefer.</p><p>*Each guest takes a sheet from the notepad and writes down their answers (A or B) individually, guessing the birthday person’s choices.</p><p>*Award points or a prize to the winner!</p>",
+      "x-luo23sgp-text_html": "Start Your Challenge Today!",
+      "x-sbek4kz9-text_html": "<span style=\"color: rgb(0, 0, 0); font-family: Arial, sans-serif; font-size: 11pt\">If you have any stories around your Icebreaker Deck conversations, or ideas for conversation topics — post on social media and tag:</span><br><span style=\"color: rgb(0, 0, 0); font-family: Arial, sans-serif; font-size: 11pt\"> </span><br><span style=\"color: rgb(0, 0, 0); font-family: Arial, sans-serif; font-size: 24pt\">#bestselfco</span><br>",
+      "x-yi8ojq0u-button_label_html": "@bestselfco",
+      "x-4x2afxco-text_html": "Time Capsule&nbsp;🎉",
+      "x-6insqvq8-text_html": "<p>Discover more decks for meaningful conversations</p>",
+      "x-w5x7b34c-button_label_html": "Shop collection",
+      "x-q341q953-text_html": "<h2>How to play</h2><p></p><p><strong>• </strong>Your deck includes six topic categories and Review &amp; Connect cards (in envelope).</p><p>• Choose a comfortable setting and time when you won’t be interrupted.</p><p>• Shuffle the category cards and draw one to start sharing.</p><p>• Listen openly and respond honestly there are no wrong answers!</p><p>• To wrap up, use the Review &amp; Connect cards to integrate your insights. This practice enhances your conversational experience, helping you retain the connections you’ve made.</p>"
+    },
+    "foxify-1733952836PEFZC": {
+      "x-vi2xzvu3-text_html": "<p>Cumpleaños</p>",
+      "x-xcb1q1hf-text_html": "<p>Cómo jugar</p>",
+      "x-km34k3zl-text_html": "<p><strong>Guía de Instrucciones</strong></p><p></p><p>¡Bienvenido a la actividad de la cápsula del tiempo! Esta es tu oportunidad para capturar los momentos y recuerdos especiales de la celebración de hoy y preservarlos para el futuro. ¡Sigue estos sencillos pasos para crear tu propia cápsula del tiempo!</p><p></p>",
+      "x-ike9f4fv-text_html": "<p>Cápsula del tiempo&nbsp;🎉</p>",
+      "x-o6ija4m3-text_html": "<p>Trivia de cumpleaños&nbsp;🎉</p>",
+      "x-f8lpkq80-text_html": "<p>Trivia de cumpleaños🎉</p>",
+      "x-azbb4y3m-text_html": "<p>¡Prepárate para un juego de Trivia de Cumpleaños lleno de diversión, donde pondremos a prueba cuánto conoce cada uno a la persona que cumple años! 🎉 Esta actividad se trata de compartir recuerdos favoritos, datos curiosos y descubrir aún más sobre la persona a la que estamos celebrando.</p><p></p>",
+      "x-e34ywhl0-text_html": "<p>Superlativos espontáneos&nbsp;🎉</p>",
+      "x-zzn3l0t0-text_html": "<p>¡Bienvenido a Superlativos Espontáneos! Prepárate para crear superlativos divertidos e inesperados para tu grupo en el momento. ¡Vamos a divertirnos y descubrir quién se lleva los títulos más alocados!</p><p></p>",
+      "x-ev3q9l6x-text_html": "<p>Superlativos espontáneos&nbsp;🎉</p>",
+      "x-2scmly85-text_html": "<p>Preferirías...&nbsp;🎉</p>",
+      "x-s1l0pv5c-text_html": "<p>Preferirías…&nbsp;🎉</p>",
+      "x-r5kporla-text_html": "<p><span style=\"color: rgb(255, 255, 255)\">La vida es demasiado corta para tener cumpleaños que se olviden.</span></p>",
+      "x-iue55ohh-text_html": "<p>Aquí tienes algunas divertidas preguntas de \"Preferirías…?\" para la actividad, donde los invitados deberán elegir entre dos opciones, intentando adivinar qué preferiría el cumpleañero.</p><p>* Cada uno toma una hoja de la libreta y escribe individualmente sus respuestas A o B adivinando las elecciones de la persona que cumple años.</p><p>*Otorguen puntos o un premio al ganador!</p>",
+      "x-gyjifsxv-text_html": "<p>Disfruta la baraja Cumpleaños&nbsp;<em>y haz que esta celebración sea inolvidable</em></p>",
+      "x-2mp68lx5-text_html": "<p><span style=\"color: rgb(0, 0, 0); font-family: Arial, sans-serif; font-size: 11pt\">Comparte fotos en redes con el hashtag:</span></p><p><span style=\"color: rgb(0, 0, 0); font-family: Arial, sans-serif; font-size: 24pt\">#bestselfbirthday</span></p>",
+      "x-ii6y9wrd-button_label_html": "@bestselfco",
+      "x-sazprajf-text_html": "<p>Prepara el juego</p>",
+      "x-r4wrzxny-text_html": "<p>Divide las cartas en tres grupos:</p><p>Grupo 1: Categoría Reflexionar &amp; Conectar – guardalas para el final del juego.</p><p>Grupo 2: Categorías Diversión al azar y Juegos /Actividades – la persona del cumpleaños solo escogerá cartas de este montón durante el juego.</p><p>Grupo 3: Categorías Afirmación, Momentos memorables y Conexión – los demás jugadores pueden tomar cartas de este grupo o del grupo 2 durante el juego.</p><p></p><p></p>",
+      "x-nv8kx0xr-text_html": "<p>Final del juego</p>",
+      "x-ypplcyvo-text_html": "<p>Una vez que todos hayan tomado su turno, es momento de concluir la celebración con la categoría Reflexionar &amp; Conectar. Estas cartas están diseñadas para cerrar el juego de manera reflexiva. Cada jugador (incluida la persona del cumpleaños) seleccionará una carta de este montón para compartir, ayudando a todos a reflexionar sobre los recuerdos y conexiones especiales que se hicieron durante el juego.</p>",
+      "x-xzud3elo-text_html": "<p>Cómo jugar&nbsp;🎉</p>",
+      "x-7t85l7uo-text_html": "<p>Turno de la persona del cumpleaños: La persona del cumpleaños seleccionará cartas solo de las categorías Diversión al azar y Juegos/Actividades (grupo 2). Leerá la carta en voz alta y seguirá las indicaciones para disfrutar de un momento divertido.</p><p>Turno de los demás jugadores: Los demás jugadores tomarán turnos para elegir una carta del grupo 2 ( Diversión al azar y Juegos/Actividades) o del grupo 3 (Afirmación, Momentos memorables y Conexión). Cada jugador debe leer su carta en voz alta y completar la actividad o compartir sus pensamientos.</p><p>Bloc de notas incluido: Algunas indicaciones te pedirán que escribas tus respuestas. ¡Siéntete libre de compartir lo que escribes con el grupo o guardarlo como un recuerdo especial!</p><p></p><p></p>",
+      "x-5gjisfne-text_html": "<p>Cápsula del tiempo&nbsp;🎉</p>"
+    },
+    "foxify-1731693219YiFUd": {
+      "x-f7gpdh67-text_html": "<p><span style=\"color: rgb(255, 255, 255)\">New products</span></p>",
+      "x-qa7inj89-text_html": "<p><span style=\"color: rgb(255, 255, 255)\">Discover our new arrivals</span></p>",
+      "x-6p2jaajk-button_label_html": "Birthday deck",
+      "x-3sgftti0-button_label_html": "Family Talk",
+      "x-na4i4u0p-button_label_html": "Daily Action Pad",
+      "x-k6aoz5rg-text_html": "Featured Collections",
+      "x-j1hk0bjk-title_html": "Social Connection",
+      "x-p3yv762d-title_html": "Choose your journal",
+      "x-p5xttr0a-title_html": "Kids and Family",
+      "x-d3oyrzhx-text_html": "<p><span style=\"color: rgb(255, 255, 255)\">Thank you for choosing our products to support your journey toward becoming your best self.</span></p>",
+      "x-42ug5zwb-button_label_html": "Code: WIN2025",
+      "x-azphcy21-text_html": "<span style=\"color: rgb(255, 255, 255)\">Hurry! Your chance to save 20% ends 01/15/2025. Plus, get a free holiday bonus with every purchase. Don’t miss this special offer to make your gift truly unforgettable.</span>",
+      "x-p2tblayl-text_html": "Use Code at Checkout!",
+      "x-kbsjnpdl-button_label_html": "Code: WIN2025",
+      "x-npzq6p1p-text_html": "<p>Holiday gifting isn’t just about wrapping up a present; it’s about wrapping up an experience, a shared moment, and a memory to cherish.</p><p>This year, give more than a gift—give an opportunity for connection, reflection, and growth with BestSelf. Our products are crafted to inspire meaningful interactions, spark deep conversations, and strengthen bonds. Designed with science-backed methods, every BestSelf gift isn’t just another item; it’s a path to a more connected, fulfilled life.</p><p></p>",
+      "x-aa2rr4us-text_html": "Discovery decks",
+      "x-6o043ha1-button_label_html": "Shop all products"
+    }
+  }
+}

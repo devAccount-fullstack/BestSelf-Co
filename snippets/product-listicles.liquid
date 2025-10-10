@@ -1,0 +1,333 @@
+{% comment %}
+  Product Listicles Display
+  Shows available listicles for a product with audience selector
+  Usage: {% render 'product-listicles', product: product %}
+{% endcomment %}
+
+{% if product.metafields.listicles.primary_listicles.value.size > 0 %}
+  {% assign listicles = product.metafields.listicles.primary_listicles.value %}
+  {% assign audience_priorities = product.metafields.listicles.audience_priorities.value %}
+  
+  <div class="product-listicles" id="product-listicles">
+    <div class="listicles-header">
+      <h3>Find the Perfect Guide for You</h3>
+      <p>Select your situation to see personalized content</p>
+    </div>
+    
+    <div class="audience-selector">
+      <div class="audience-buttons">
+        {% assign audiences = 'remote-workers,busy-parents,health-conscious,budget-shoppers,gift-buyers' | split: ',' %}
+        {% assign audience_labels = 'Working from Home?,Busy Parent?,Health Focused?,Looking for Value?,Shopping for Someone Else?' | split: ',' %}
+        
+        {% for audience in audiences %}
+          {% assign audience_listicle = listicles | where: 'target_audience.value', audience | first %}
+          {% if audience_listicle %}
+            <button 
+              class="audience-btn {% if forloop.first %}active{% endif %}" 
+              data-audience="{{ audience }}"
+              data-listicle-id="{{ audience_listicle.id }}"
+              aria-pressed="{% if forloop.first %}true{% else %}false{% endif %}"
+            >
+              <span class="audience-icon">
+                {% case audience %}
+                  {% when 'remote-workers' %}
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                      <line x1="8" y1="21" x2="16" y2="21"></line>
+                      <line x1="12" y1="17" x2="12" y2="21"></line>
+                    </svg>
+                  {% when 'busy-parents' %}
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                      <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                  {% when 'health-conscious' %}
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                    </svg>
+                  {% when 'budget-shoppers' %}
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <line x1="12" y1="1" x2="12" y2="23"></line>
+                      <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                    </svg>
+                  {% when 'gift-buyers' %}
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <polyline points="20 12 20 22 4 22 4 12"></polyline>
+                      <rect x="2" y="7" width="20" height="5"></rect>
+                      <line x1="12" y1="22" x2="12" y2="7"></line>
+                      <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path>
+                      <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path>
+                    </svg>
+                {% endcase %}
+              </span>
+              <span class="audience-label">{{ audience_labels[forloop.index0] }}</span>
+            </button>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+    
+    <div class="listicle-previews">
+      {% for listicle in listicles %}
+        <div class="listicle-preview {% if forloop.first %}active{% endif %}" 
+             data-audience="{{ listicle.target_audience.value }}"
+             data-listicle-id="{{ listicle.id }}">
+          
+          <div class="preview-card">
+            {% if listicle.hero_image %}
+              <div class="preview-image">
+                {{ listicle.hero_image | image_url: width: 600 | image_tag:
+                   loading: 'lazy',
+                   sizes: '(min-width: 768px) 400px, 100vw',
+                   widths: '300, 400, 600',
+                   alt: listicle.hero_headline.value
+                }}
+              </div>
+            {% endif %}
+            
+            <div class="preview-content">
+              <h4 class="preview-title">{{ listicle.hero_headline.value }}</h4>
+              
+              {% if listicle.hero_subtitle.value != blank %}
+                <p class="preview-subtitle">{{ listicle.hero_subtitle.value }}</p>
+              {% endif %}
+              
+              {% assign list_items = listicle.list_items.value %}
+              {% if list_items.size > 0 %}
+                <ul class="preview-highlights">
+                  {% for item in list_items limit: 3 %}
+                    <li>{{ item.headline | truncate: 50 }}</li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+              
+              <div class="preview-actions">
+                <a href="/pages/listicle-{{ listicle.id | handleize }}" 
+                   class="btn-read-guide">
+                  Read Full Guide
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 8h6M9 5l3 3-3 3"/>
+                  </svg>
+                </a>
+                
+                {% if listicle.stats_callouts.value %}
+                  {% assign stats = listicle.stats_callouts.value | first %}
+                  <span class="preview-stat">
+                    {{ stats.value }} {{ stats.label }}
+                  </span>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+  
+  <style>
+    .product-listicles {
+      margin: 3rem 0;
+      padding: 2rem;
+      background: #f8fafc;
+      border-radius: 1rem;
+    }
+    
+    .listicles-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    
+    .listicles-header h3 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: #1e293b;
+    }
+    
+    .listicles-header p {
+      color: #64748b;
+    }
+    
+    .audience-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      margin-bottom: 2rem;
+    }
+    
+    .audience-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.25rem;
+      background: white;
+      border: 2px solid #e2e8f0;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-size: 0.9375rem;
+      font-weight: 500;
+      color: #475569;
+    }
+    
+    .audience-btn:hover {
+      border-color: #cbd5e1;
+      background: #f1f5f9;
+    }
+    
+    .audience-btn.active {
+      background: #2563eb;
+      border-color: #2563eb;
+      color: white;
+    }
+    
+    .audience-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+    }
+    
+    .listicle-preview {
+      display: none;
+    }
+    
+    .listicle-preview.active {
+      display: block;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .preview-card {
+      background: white;
+      border-radius: 0.75rem;
+      overflow: hidden;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+    
+    .preview-image {
+      width: 100%;
+      height: 200px;
+      overflow: hidden;
+    }
+    
+    .preview-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .preview-content {
+      padding: 1.5rem;
+    }
+    
+    .preview-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: #1e293b;
+    }
+    
+    .preview-subtitle {
+      color: #64748b;
+      margin-bottom: 1rem;
+    }
+    
+    .preview-highlights {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1.5rem 0;
+    }
+    
+    .preview-highlights li {
+      padding: 0.5rem 0;
+      padding-left: 1.5rem;
+      position: relative;
+      color: #475569;
+    }
+    
+    .preview-highlights li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #10b981;
+      font-weight: bold;
+    }
+    
+    .preview-actions {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .btn-read-guide {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      background: #2563eb;
+      color: white;
+      border-radius: 0.5rem;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+    
+    .btn-read-guide:hover {
+      background: #1d4ed8;
+      transform: translateX(4px);
+    }
+    
+    .preview-stat {
+      font-size: 0.875rem;
+      color: #64748b;
+      font-weight: 600;
+    }
+    
+    @media (max-width: 768px) {
+      .audience-buttons {
+        flex-direction: column;
+      }
+      
+      .audience-btn {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  </style>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const audienceButtons = document.querySelectorAll('.audience-btn');
+      const listiclePreviews = document.querySelectorAll('.listicle-preview');
+      
+      audienceButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          const targetAudience = this.dataset.audience;
+          
+          // Update button states
+          audienceButtons.forEach(btn => {
+            btn.classList.remove('active');
+            btn.setAttribute('aria-pressed', 'false');
+          });
+          this.classList.add('active');
+          this.setAttribute('aria-pressed', 'true');
+          
+          // Update preview visibility
+          listiclePreviews.forEach(preview => {
+            preview.classList.remove('active');
+            if (preview.dataset.audience === targetAudience) {
+              preview.classList.add('active');
+            }
+          });
+        });
+      });
+    });
+  </script>
+{% endif %}

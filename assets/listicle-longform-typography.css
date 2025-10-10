@@ -1,0 +1,114 @@
+/* 
+ * Listicle Longform Typography
+ * Matches templates/page.longform-content.json main section custom_css exactly
+ * Applied to metaobject listicle pages and article listicle pages for consistent presentation
+ */
+
+/* Paragraph styling - exact match with longform-content */
+.template-metaobject-listicle p,
+.template-article.template-suffix-lander-listicle p {
+  padding: 10px 0 !important;
+  font-size: 1.125rem !important;
+  font-family: sans-serif !important;
+  line-height: 1.7 !important;
+}
+
+/* Mobile paragraph styles */
+@media (max-width: 768px) {
+  .template-metaobject-listicle p,
+  .template-article.template-suffix-lander-listicle p {
+    font-size: 1rem !important;
+  }
+}
+
+/* Heading styles - exact match with longform-content */
+.template-metaobject-listicle h1,
+.template-article.template-suffix-lander-listicle h1 {
+  font-size: 2.5rem !important;
+  font-weight: 700 !important;
+  margin: 2em 0 0.8em !important;
+}
+
+.template-metaobject-listicle h2,
+.template-article.template-suffix-lander-listicle h2 {
+  font-size: 2rem !important;
+  font-weight: 600 !important;
+  margin: 2em 0 0.7em !important;
+}
+
+.template-metaobject-listicle h3,
+.template-article.template-suffix-lander-listicle h3 {
+  font-size: 1.5rem !important;
+  font-weight: 600 !important;
+  margin: 1.8em 0 0.6em !important;
+}
+
+/* Mobile heading styles */
+@media (max-width: 768px) {
+  .template-metaobject-listicle h1,
+  .template-article.template-suffix-lander-listicle h1 {
+    font-size: 1.875rem !important;
+  }
+  
+  .template-metaobject-listicle h2,
+  .template-article.template-suffix-lander-listicle h2 {
+    font-size: 1.5rem !important;
+  }
+  
+  .template-metaobject-listicle h3,
+  .template-article.template-suffix-lander-listicle h3 {
+    font-size: 1.25rem !important;
+  }
+}
+
+/* List styling - exact match with longform-content */
+.template-metaobject-listicle ul,
+.template-metaobject-listicle ol,
+.template-article.template-suffix-lander-listicle ul,
+.template-article.template-suffix-lander-listicle ol {
+  margin: 1.5em 0 !important;
+  padding-left: 1.5em !important;
+}
+
+.template-metaobject-listicle li,
+.template-article.template-suffix-lander-listicle li {
+  margin-bottom: 0.3em !important;
+  font-size: 1.125rem !important;
+  line-height: 1.7 !important;
+}
+
+/* Ensure RTE content gets the same styling */
+.template-metaobject-listicle .rte p,
+.template-article.template-suffix-lander-listicle .rte p {
+  padding: 10px 0 !important;
+  font-size: 1.125rem !important;
+  font-family: sans-serif !important;
+  line-height: 1.7 !important;
+}
+
+@media (max-width: 768px) {
+  .template-metaobject-listicle .rte p,
+  .template-article.template-suffix-lander-listicle .rte p {
+    font-size: 1rem !important;
+  }
+}
+
+/* Section-specific targeting for metafield content */
+.template-metaobject-listicle .section-rich-text p,
+.template-metaobject-listicle .section-double p,
+.template-article.template-suffix-lander-listicle .section-rich-text p,
+.template-article.template-suffix-lander-listicle .section-double p {
+  padding: 10px 0 !important;
+  font-size: 1.125rem !important;
+  font-family: sans-serif !important;
+  line-height: 1.7 !important;
+}
+
+@media (max-width: 768px) {
+  .template-metaobject-listicle .section-rich-text p,
+  .template-metaobject-listicle .section-double p,
+  .template-article.template-suffix-lander-listicle .section-rich-text p,
+  .template-article.template-suffix-lander-listicle .section-double p {
+    font-size: 1rem !important;
+  }
+}

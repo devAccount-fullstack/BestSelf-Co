@@ -1,0 +1,100 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "footer",
+  "name": "Footer",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "text_kex4Ea": {
+          "type": "text",
+          "settings": {
+            "image_width": 150,
+            "title": "About",
+            "heading_font_size": "heading-medium",
+            "text": "<p>Don't settle for average. Our science-backed tools were designed to help you achieve your goals, deepen relationships, and <span style=\"text-decoration:underline\"><strong>become the best version of you.</strong></span></p>",
+            "column_width": 20,
+            "enable_accordion": true
+          }
+        },
+        "linklist_NTHMiB": {
+          "type": "linklist",
+          "settings": {
+            "linklist": "customer-service",
+            "title": "Shop",
+            "heading_font_size": "heading-medium",
+            "column_width": 20,
+            "enable_accordion": true
+          }
+        },
+        "linklist_hiJbAn": {
+          "type": "linklist",
+          "settings": {
+            "linklist": "footer",
+            "title": "",
+            "heading_font_size": "heading-medium",
+            "column_width": 18,
+            "enable_accordion": true
+          }
+        },
+        "newsletter_4HKkWb": {
+          "type": "newsletter",
+          "settings": {
+            "title": "Newsletter",
+            "heading_font_size": "heading-medium",
+            "text": "<p>Subscribe to get special offers, free giveaways, and once-in-a-lifetime deals.</p>",
+            "show_name": false,
+            "button_text": "Join",
+            "show_arrow": false,
+            "terms": true,
+            "button_type": "btn--black",
+            "button_size": "",
+            "button_style": "btn--solid",
+            "show_social_links": false,
+            "column_width": 33
+          }
+        },
+        "social_Mjqc86": {
+          "type": "social",
+          "settings": {
+            "title": "",
+            "heading_font_size": "heading-medium",
+            "text": "",
+            "column_width": 40,
+            "enable_follow_on_shop": false,
+            "enable_accordion": true
+          }
+        }
+      },
+      "block_order": [
+        "text_kex4Ea",
+        "linklist_NTHMiB",
+        "linklist_hiJbAn",
+        "newsletter_4HKkWb",
+        "social_Mjqc86"
+      ],
+      "custom_css": [
+        "button#subscribe-button-newsletter_4HKkWb span {font-size: 15px; font-family: \"Avenir Next\";}"
+      ],
+      "settings": {
+        "logo": "shopify://shop_images/Logo_Bestself_Full_White_rights_2x_d7fe434c-11fa-432b-9ef2-2faf1c679f65.png",
+        "logo_image_width": 250,
+        "color_scheme": "scheme-2",
+        "border_color": "#242540",
+        "padding_top": 21,
+        "padding_bottom": 42
+      }
+    }
+  },
+  "order": [
+    "footer"
+  ]
+}

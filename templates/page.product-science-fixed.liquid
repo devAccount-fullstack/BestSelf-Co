@@ -1,0 +1,826 @@
+{% comment %}
+  Template: page.product-science.liquid
+  Description: Display Product Science Pages using metaobject data
+  FIXED VERSION - Properly handles product references and spacing
+{% endcomment %}
+
+{% comment %} CRITICAL CSS FOR SPACING FIXES {% endcomment %}
+<style>
+  /* REMOVE WHITE SPACE AT TOP */
+  .section-header + * {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+  
+  #MainContent > *:first-child {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+  
+  .page-product-science .hero-section:first-child {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+  
+  /* Force remove any spacing before hero */
+  .hero-section {
+    margin-top: 0 !important;
+  }
+</style>
+
+{% comment %} Get the metaobject based on page handle {% endcomment %}
+{% assign science_page_handle = page.handle | replace: 'the-science-of-', 'science-' | replace: 'the-science-behind-', 'science-behind-' %}
+{% assign science_pages = shop.metaobjects.product_science_page_v2.values %}
+{% assign science_page = nil %}
+
+{% for sp in science_pages %}
+  {% if sp.original_page_handle == page.handle %}
+    {% assign science_page = sp %}
+    {% break %}
+  {% endif %}
+{% endfor %}
+
+{% comment %} Fallback: try to match by similar handle {% endcomment %}
+{% unless science_page %}
+  {% for sp in science_pages %}
+    {% if sp.url_handle contains page.handle or page.handle contains sp.url_handle %}
+      {% assign science_page = sp %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+{% endunless %}
+
+{% if science_page %}
+  
+  {% comment %} CRITICAL FIX: Get actual product object from GID reference {% endcomment %}
+  {% if science_page.spotlight_product %}
+    {% comment %} Extract product ID from GID: gid://shopify/Product/6604235112517 {% endcomment %}
+    {% assign product_gid = science_page.spotlight_product %}
+    {% assign product_id_parts = product_gid | split: '/' %}
+    {% assign product_id = product_id_parts | last %}
+    
+    {% comment %} Get the actual product object using all_products {% endcomment %}
+    {% for p in collections.all.products %}
+      {% assign p_id = p.id | append: '' %}
+      {% if p_id == product_id %}
+        {% assign spotlight_product_object = p %}
+        {% break %}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+  
+  {% comment %} Sticky Add to Cart Bar {% endcomment %}
+  {% if spotlight_product_object %}
+    <div class="sticky-cart-bar" id="stickyCartBar">
+      <div class="sticky-cart-inner">
+        <div class="sticky-product-info">
+          {% if spotlight_product_object.featured_image %}
+            {{ spotlight_product_object.featured_image | image_url: width: 60 | image_tag: class: 'sticky-product-image' }}
+          {% endif %}
+          <div class="sticky-product-details">
+            <span class="sticky-product-title">{{ spotlight_product_object.title }}</span>
+            <span class="sticky-product-price">{{ spotlight_product_object.price | money }}</span>
+          </div>
+        </div>
+        <div class="sticky-cart-actions">
+          <button class="btn btn--primary btn--sticky" onclick="addToCart('{{ spotlight_product_object.selected_or_first_available_variant.id }}')">
+            Add to Cart - {{ spotlight_product_object.price | money }}
+          </button>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+  
+  {% comment %} Hero Section {% endcomment %}
+  {% if science_page.hero_heading or science_page.hero_image %}
+    <section class="hero-section section-hero">
+      <div class="hero-wrapper">
+        {% if science_page.hero_image %}
+          <div class="hero-image-wrapper">
+            {{ science_page.hero_image | image_url: width: 1920 | image_tag: class: 'hero-image', loading: 'eager' }}
+            <div class="hero-overlay" style="opacity: 0.6;"></div>
+          </div>
+        {% endif %}
+        
+        <div class="hero-content align--middle-center-desktop align--middle-center-mobile">
+          <div class="wrapper">
+            {% if science_page.hero_subheading %}
+              <p class="hero-subheading body-large">{{ science_page.hero_subheading }}</p>
+            {% endif %}
+            {% if science_page.hero_heading %}
+              <h1 class="hero-heading heading-medium">{{ science_page.hero_heading }}</h1>
+            {% elsif science_page.page_title %}
+              <h1 class="hero-heading heading-medium">{{ science_page.page_title }}</h1>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </section>
+  {% endif %}
+
+  {% comment %} Introduction Section {% endcomment %}
+  {% if science_page.intro_heading or science_page.intro_content %}
+    <section class="section-rich-text">
+      <div class="wrapper">
+        <div class="text-center">
+          {% if science_page.intro_heading %}
+            <h2 class="heading-medium" style="padding-bottom: 34px;">{{ science_page.intro_heading }}</h2>
+          {% endif %}
+          {% if science_page.intro_content %}
+            <div class="rich-text body-large" style="padding-bottom: 16px;">
+              {{ science_page.intro_content | metafield_tag }}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </section>
+  {% endif %}
+
+  {% comment %} Science Activity Sections {% endcomment %}
+  {% for i in (1..5) %}
+    {% assign activity_heading = 'activity_' | append: i | append: '_heading' %}
+    {% assign activity_description = 'activity_' | append: i | append: '_description' %}
+    {% assign activity_studies = 'activity_' | append: i | append: '_studies' %}
+    {% assign activity_application = 'activity_' | append: i | append: '_application' %}
+    {% assign activity_image = 'activity_' | append: i | append: '_image' %}
+    
+    {% assign heading = science_page[activity_heading] %}
+    {% assign description = science_page[activity_description] %}
+    {% assign studies = science_page[activity_studies] %}
+    {% assign application = science_page[activity_application] %}
+    {% assign image = science_page[activity_image] %}
+    
+    {% if heading or description %}
+      <section class="section-double {% if i == 2 or i == 4 %}is-reversed{% endif %}">
+        <div class="wrapper">
+          <div class="section-double__inner">
+            
+            {% comment %} Content Column {% endcomment %}
+            <div class="section-double__content">
+              <span class="subheading" style="padding-bottom: 16px;">THE SCIENCE BEHIND</span>
+              
+              {% if heading %}
+                <h2 class="heading-large" style="padding-bottom: 16px;">{{ heading }}</h2>
+              {% endif %}
+              
+              {% if description %}
+                <div class="body-medium" style="padding-bottom: 16px;">
+                  {{ description | metafield_tag }}
+                </div>
+              {% endif %}
+              
+              {% if studies %}
+                <details class="accordion-item" style="padding-bottom: 16px;">
+                  <summary class="accordion-title">
+                    <span class="icon icon-lightning" style="color: #fbc94b; width: 20px; height: 20px;">⚡</span>
+                    <span>Links to scientific studies:</span>
+                  </summary>
+                  <div class="accordion-content">
+                    {{ studies | metafield_tag }}
+                  </div>
+                </details>
+              {% endif %}
+              
+              {% if application %}
+                <div class="application-section">
+                  <span class="subheading" style="padding-bottom: 16px;">How It Relates</span>
+                  <div class="body-medium" style="padding-bottom: 16px;">
+                    {{ application | metafield_tag }}
+                  </div>
+                </div>
+              {% endif %}
+            </div>
+            
+            {% comment %} Image Column {% endcomment %}
+            <div class="section-double__image">
+              {% if image %}
+                {{ image | image_url: width: 800 | image_tag: class: 'activity-image', loading: 'lazy' }}
+              {% else %}
+                <div class="placeholder-image" style="background: #f5f5f5; min-height: 400px; display: flex; align-items: center; justify-content: center;">
+                  <span style="color: #999;">Image placeholder</span>
+                </div>
+              {% endif %}
+            </div>
+            
+          </div>
+        </div>
+      </section>
+    {% endif %}
+  {% endfor %}
+
+  {% comment %} Enhanced Product CTA Section - FIXED to use actual product object {% endcomment %}
+  {% if spotlight_product_object %}
+    <section class="section-product-cta" id="product-cta">
+      <div class="wrapper">
+        <div class="product-cta__inner">
+          
+          {% comment %} CTA Content {% endcomment %}
+          <div class="product-cta__content">
+            <h2 class="heading-large">
+              {% if science_page.spotlight_heading %}
+                {{ science_page.spotlight_heading }}
+              {% else %}
+                Ready to Apply the Science?
+              {% endif %}
+            </h2>
+            
+            <div class="body-large" style="margin: 20px 0;">
+              {% if science_page.spotlight_description %}
+                {{ science_page.spotlight_description | metafield_tag }}
+              {% else %}
+                <p>Transform research into results with our scientifically-backed tools. Join thousands who have already improved their lives using these evidence-based methods.</p>
+              {% endif %}
+            </div>
+            
+            {% comment %} Benefits List {% endcomment %}
+            <ul class="benefits-list">
+              <li>✓ Backed by scientific research</li>
+              <li>✓ Proven results from real users</li>
+              <li>✓ Easy to implement daily</li>
+              <li>✓ 60-day money-back guarantee</li>
+            </ul>
+          </div>
+          
+          {% comment %} Product Card - NOW WITH ACTUAL PRODUCT DATA {% endcomment %}
+          <div class="product-cta__product">
+            <div class="product-card-enhanced">
+              {% if spotlight_product_object.featured_image %}
+                <a href="{{ spotlight_product_object.url }}" class="product-image-link">
+                  {{ spotlight_product_object.featured_image | image_url: width: 500 | image_tag: class: 'product-image', loading: 'lazy', alt: spotlight_product_object.title }}
+                </a>
+              {% endif %}
+              
+              <div class="product-details">
+                <h3 class="product-title">{{ spotlight_product_object.title }}</h3>
+                
+                {% assign current_variant = spotlight_product_object.selected_or_first_available_variant %}
+                {% if current_variant.compare_at_price > current_variant.price %}
+                  <div class="product-pricing">
+                    <span class="product-price">{{ current_variant.price | money }}</span>
+                    <span class="product-compare-price">{{ current_variant.compare_at_price | money }}</span>
+                    <span class="product-savings">
+                      Save {{ current_variant.compare_at_price | minus: current_variant.price | money }}
+                    </span>
+                  </div>
+                {% else %}
+                  <div class="product-price-single">{{ current_variant.price | money }}</div>
+                {% endif %}
+                
+                <div class="product-actions">
+                  <button class="btn btn--primary btn--large" onclick="addToCart('{{ current_variant.id }}')">
+                    Add to Cart - {{ current_variant.price | money }}
+                  </button>
+                  <a href="{{ spotlight_product_object.url }}" class="btn-link">
+                    Learn More →
+                  </a>
+                </div>
+                
+                {% comment %} Trust Indicators {% endcomment %}
+                <div class="trust-indicators">
+                  <span>⭐⭐⭐⭐⭐ 4.8/5 from 2,000+ reviews</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+  {% endif %}
+
+{% else %}
+  {% comment %} Fallback if no metaobject found {% endcomment %}
+  <section class="section-error">
+    <div class="wrapper">
+      <div class="text-center" style="padding: 100px 0;">
+        <h1>Science Page Not Found</h1>
+        <p>The science content for this page hasn't been configured yet.</p>
+        <p><small>Page handle: {{ page.handle }}</small></p>
+        <p><small>Looking for metaobject with handle: {{ science_page_handle }}</small></p>
+      </div>
+    </div>
+  </section>
+{% endif %}
+
+<style>
+  /* Hero Section Styles */
+  .hero-section {
+    position: relative;
+    min-height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-top: 0 !important; /* FORCE NO TOP MARGIN */
+    padding-top: 0 !important; /* FORCE NO TOP PADDING */
+  }
+  
+  .hero-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .hero-image-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+  }
+  
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+  }
+  
+  .hero-subheading {
+    margin-bottom: 16px;
+  }
+  
+  .hero-heading {
+    margin: 0;
+  }
+  
+  /* Section Styles */
+  .section-rich-text,
+  .section-double,
+  .section-custom-content,
+  .section-product-cta {
+    padding: 50px 0;
+  }
+  
+  .wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  /* Double Section (Activities) */
+  .section-double__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+  
+  .section-double.is-reversed .section-double__inner {
+    direction: rtl;
+  }
+  
+  .section-double.is-reversed .section-double__content {
+    direction: ltr;
+  }
+  
+  .section-double.is-reversed .section-double__image {
+    direction: ltr;
+  }
+  
+  .activity-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  /* Accordion Styles */
+  .accordion-item {
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+  }
+  
+  .accordion-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-weight: 500;
+  }
+  
+  .accordion-content {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid #e5e5e5;
+  }
+  
+  /* Enhanced Product CTA Section */
+  .section-product-cta {
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    padding: 80px 0;
+    border-top: 1px solid #e5e5e5;
+  }
+  
+  .product-cta__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  
+  .product-cta__content {
+    padding-right: 40px;
+  }
+  
+  .benefits-list {
+    list-style: none;
+    padding: 0;
+    margin: 30px 0;
+  }
+  
+  .benefits-list li {
+    padding: 8px 0;
+    font-size: 1.1rem;
+    color: #333;
+  }
+  
+  .product-card-enhanced {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    /* Remove drop shadow, add bold bottom border and subtle outline */
+    box-shadow: none;
+    border: 1px solid #e5e5e5;
+    border-bottom: 6px solid #273d63;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+  }
+  
+  .product-card-enhanced:hover {
+    transform: translateY(-5px);
+    border-bottom-color: #1a2a42;
+  }
+  
+  .product-image-link {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    background: #f8f9fa;
+  }
+  
+  .product-card-enhanced .product-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+  
+  .product-card-enhanced:hover .product-image {
+    transform: scale(1.05);
+  }
+  
+  .product-details {
+    padding: 30px;
+  }
+  
+  .product-card-enhanced .product-title {
+    font-size: 1.75rem;
+    margin-bottom: 15px;
+    color: #1a1a1a;
+    font-weight: 600;
+  }
+  
+  .product-pricing {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .product-price {
+    font-size: 1.75rem;
+    font-weight: bold;
+    color: #273d63;
+  }
+  
+  .product-compare-price {
+    font-size: 1.25rem;
+    color: #999;
+    text-decoration: line-through;
+  }
+  
+  .product-savings {
+    background: #4CAF50;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 600;
+  }
+  
+  .product-price-single {
+    font-size: 1.75rem;
+    font-weight: bold;
+    color: #273d63;
+    margin-bottom: 20px;
+  }
+  
+  .product-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background: #273d63;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  /* Yellow primary button to match other product pages */
+  .btn--primary {
+    background: #FFC107;
+    color: #1a1a1a;
+    font-weight: 700;
+  }
+  
+  .btn--primary:hover {
+    background: #273d63;  /* Navy background on hover */
+    color: white;  /* White text on hover for readability */
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(39,61,99,0.3);
+  }
+  
+  .btn--large {
+    padding: 16px 40px;
+    font-size: 1.125rem;
+  }
+  
+  .btn--sticky {
+    padding: 12px 30px;
+    font-size: 1rem;
+    white-space: nowrap;
+  }
+  
+  .btn:hover {
+    background: #1a2a42;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(39,61,99,0.3);
+  }
+  
+  /* Sticky Cart Bar Styles */
+  .sticky-cart-bar {
+    position: fixed;
+    bottom: -100px;
+    left: 0;
+    right: 0;
+    background: white;
+    box-shadow: 0 -2px 20px rgba(0,0,0,0.1);
+    z-index: 999;
+    transition: bottom 0.3s ease;
+    border-top: 1px solid #e5e5e5;
+  }
+  
+  .sticky-cart-bar.visible {
+    bottom: 0;
+  }
+  
+  .sticky-cart-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .sticky-product-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .sticky-product-image {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  .sticky-product-details {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .sticky-product-title {
+    font-weight: 600;
+    font-size: 1rem;
+    color: #1a1a1a;
+  }
+  
+  .sticky-product-price {
+    font-size: 1.125rem;
+    color: #273d63;
+    font-weight: bold;
+  }
+  
+  .btn-link {
+    color: #273d63;
+    text-decoration: none;
+    font-weight: 600;
+    text-align: center;
+    transition: color 0.3s ease;
+  }
+  
+  .btn-link:hover {
+    color: #1a2a42;
+  }
+  
+  .trust-indicators {
+    padding-top: 15px;
+    border-top: 1px solid #e5e5e5;
+    text-align: center;
+    color: #666;
+    font-size: 0.95rem;
+  }
+  
+  /* Utility Classes */
+  .text-center {
+    text-align: center;
+  }
+  
+  .subheading {
+    display: block;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #666;
+    font-weight: 600;
+  }
+  
+  .heading-large {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin-bottom: 20px;
+  }
+  
+  .heading-medium {
+    font-size: 2rem;
+    line-height: 1.3;
+  }
+  
+  .body-large {
+    font-size: 1.125rem;
+    line-height: 1.6;
+  }
+  
+  .body-medium {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  
+  /* Mobile Styles */
+  @media (max-width: 768px) {
+    .hero-section {
+      min-height: 350px;
+    }
+    
+    .section-double__inner,
+    .product-cta__inner {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+    
+    .product-cta__content {
+      padding-right: 0;
+    }
+    
+    .section-double.is-reversed .section-double__inner {
+      direction: ltr;
+    }
+    
+    .heading-large {
+      font-size: 1.75rem;
+    }
+    
+    .heading-medium {
+      font-size: 1.5rem;
+    }
+    
+    .section-rich-text,
+    .section-double,
+    .section-product-cta {
+      padding: 40px 0;
+    }
+    
+    .product-actions {
+      flex-direction: column;
+    }
+    
+    .benefits-list li {
+      font-size: 1rem;
+    }
+    
+    /* Sticky cart mobile styles */
+    .sticky-cart-inner {
+      flex-direction: column;
+      gap: 15px;
+    }
+    
+    .sticky-product-info {
+      width: 100%;
+    }
+    
+    .sticky-cart-actions {
+      width: 100%;
+    }
+    
+    .btn--sticky {
+      width: 100%;
+    }
+  }
+</style>
+
+<script>
+  // Sticky cart bar functionality
+  window.addEventListener('scroll', function() {
+    const stickyBar = document.getElementById('stickyCartBar');
+    const productCta = document.getElementById('product-cta');
+    
+    if (stickyBar && productCta) {
+      const ctaPosition = productCta.getBoundingClientRect();
+      
+      // Show sticky bar when product CTA is out of view
+      if (ctaPosition.top > window.innerHeight || ctaPosition.bottom < 0) {
+        stickyBar.classList.add('visible');
+      } else {
+        stickyBar.classList.remove('visible');
+      }
+    }
+  });
+  
+  // FIXED Add to cart function with proper error handling
+  function addToCart(variantId) {
+    if (!variantId || variantId === 'undefined' || variantId === '') {
+      console.error('No valid variant ID provided');
+      alert('Sorry, this product cannot be added to cart at this time.');
+      return;
+    }
+    
+    fetch('/cart/add.js', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        id: variantId,
+        quantity: 1
+      })
+    })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Failed to add to cart');
+      }
+      return response.json();
+    })
+    .then(data => {
+      // Update cart count if element exists
+      const cartCount = document.querySelector('.cart-count');
+      if (cartCount) {
+        const currentCount = parseInt(cartCount.textContent) || 0;
+        cartCount.textContent = currentCount + 1;
+      }
+      
+      // Show success message
+      alert('Product added to cart successfully!');
+      
+      // Optionally trigger cart drawer if it exists
+      if (typeof window.openCartDrawer === 'function') {
+        window.openCartDrawer();
+      }
+    })
+    .catch(error => {
+      console.error('Error adding to cart:', error);
+      alert('Error adding product to cart. Please try again.');
+    });
+  }
+</script>

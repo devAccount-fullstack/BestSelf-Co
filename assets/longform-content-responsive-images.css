@@ -1,0 +1,18 @@
+/* Longform Content Responsive Images */
+.longform-content img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1rem auto;
+}
+
+.longform-content img[width] {
+  max-width: 100%;
+  width: auto;
+}
+
+@media (max-width: 768px) {
+  .longform-content img {
+    margin: 0.5rem auto;
+  }
+}

@@ -1,0 +1,783 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "subheading": "",
+        "show_title": true,
+        "show_content": true,
+        "align_text": "text-left",
+        "width": "wrapper",
+        "padding_top": 50,
+        "padding_bottom": 50
+      }
+    },
+    "section_columns_HJbXcB": {
+      "type": "section-columns",
+      "blocks": {
+        "image_BzMNQ7": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Frame_10.jpg",
+            "image_shape": "blob-one",
+            "title": "",
+            "text": "",
+            "button_text": "",
+            "button_url": "shopify://collections/30-and-under",
+            "button_type": "btn--white",
+            "button_size": "",
+            "button_style": "btn--outline",
+            "show_arrow": true,
+            "image_aspect_ratio": 1,
+            "mobile_image_aspect_ratio": 1
+          }
+        },
+        "image_DrwN8q": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Frame_11.jpg",
+            "image_shape": "blob-two",
+            "title": "",
+            "text": "",
+            "button_text": "",
+            "button_url": "shopify://collections/35-50",
+            "button_type": "btn--white",
+            "button_size": "",
+            "button_style": "btn--outline",
+            "show_arrow": false,
+            "image_aspect_ratio": 1,
+            "mobile_image_aspect_ratio": 1
+          }
+        },
+        "image_x37NcV": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Frame_12.jpg",
+            "image_shape": "blob-three",
+            "title": "",
+            "text": "",
+            "button_text": "",
+            "button_url": "shopify://collections/50-100",
+            "button_type": "btn--white",
+            "button_size": "",
+            "button_style": "btn--outline",
+            "show_arrow": false,
+            "image_aspect_ratio": 1,
+            "mobile_image_aspect_ratio": 1
+          }
+        }
+      },
+      "block_order": [
+        "image_BzMNQ7",
+        "image_DrwN8q",
+        "image_x37NcV"
+      ],
+      "settings": {
+        "title": "Gifts That Fit Every Budget",
+        "align_heading": "text-center",
+        "align_text": "text-center",
+        "width": "wrapper",
+        "align_columns": "flex-align-center",
+        "layout": "grid",
+        "grid": 3,
+        "layout_mobile": "2",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "section_collections_list_FTMXhh": {
+      "type": "section-collections-list",
+      "blocks": {
+        "collection_c9HUfy": {
+          "type": "collection",
+          "settings": {
+            "collection": "35-and-under",
+            "collection_image": "shopify://shop_images/Holiday-Gift-Page-Intimacy-v1.jpg",
+            "title": "SHOP NOW"
+          }
+        },
+        "collection_eh8fKH": {
+          "type": "collection",
+          "settings": {
+            "collection": "35-50",
+            "collection_image": "shopify://shop_images/Holiday-Gift-Page-Self-Journal-v1.jpg",
+            "title": "SHOP NOW"
+          }
+        },
+        "collection_WxhVaP": {
+          "type": "collection",
+          "settings": {
+            "collection": "50-100",
+            "collection_image": "shopify://shop_images/Holiday-Gift-Page-Bundle-v1.jpg",
+            "title": "SHOP NOW"
+          }
+        }
+      },
+      "block_order": [
+        "collection_c9HUfy",
+        "collection_eh8fKH",
+        "collection_WxhVaP"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "Gifts That Fit Every Budget",
+        "description": "<h6>No matter your budget, we have the perfect gift for everyone.</h6>",
+        "button_text": "",
+        "button_url": "shopify://collections",
+        "button_type": "btn--primary",
+        "button_size": "btn--large",
+        "button_style": "btn--solid",
+        "show_arrow": true,
+        "aspect_ratio": 1,
+        "layout": "grid",
+        "grid": 3,
+        "layout_mobile": "slider",
+        "padding_top": 62,
+        "padding_bottom": 45
+      }
+    },
+    "section_collection_gUDPD8": {
+      "type": "section-collection",
+      "disabled": true,
+      "settings": {
+        "featured_collection": "bundles",
+        "heading": "",
+        "description": "",
+        "layout": "inline",
+        "link_text": "",
+        "link_url": "",
+        "button_type": "btn--primary",
+        "button_size": "",
+        "button_style": "btn--solid",
+        "show_arrow": false,
+        "layout_desktop": "grid",
+        "grid": 3,
+        "rows": 1,
+        "width": "wrapper--full-padded",
+        "layout_mobile": "slider",
+        "padding_top": 50,
+        "padding_bottom": 50
+      }
+    },
+    "section_double_46UWEG": {
+      "type": "section-double",
+      "blocks": {
+        "heading_Ybe4Yn": {
+          "type": "heading",
+          "settings": {
+            "title": "The Connector",
+            "padding_bottom": 16
+          }
+        },
+        "text_XaJit7": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
+            "padding_bottom": 16
+          }
+        },
+        "buttons_X6mwMh": {
+          "type": "buttons",
+          "settings": {
+            "button_text": "Shop the Connector Gifts",
+            "button_url": "",
+            "button_type": "btn--primary",
+            "button_size": "",
+            "button_style": "btn--solid",
+            "show_arrow": false,
+            "padding_bottom": 16
+          }
+        }
+      },
+      "block_order": [
+        "heading_Ybe4Yn",
+        "text_XaJit7",
+        "buttons_X6mwMh"
+      ],
+      "disabled": true,
+      "custom_css": [
+        ".brick__block__text {padding: 0 !important;}"
+      ],
+      "settings": {
+        "image_1": "shopify://shop_images/6306486_dde98a98-76fd-48b5-920f-72c33239b4b1.jpg",
+        "image_width": "one-half",
+        "text_alignment": "text-center",
+        "layout": "is-reversed",
+        "width": "wrapper--full-padded",
+        "height": "four-fifty-height-hero",
+        "mobile_height": "screen-height-one-half--mobile",
+        "reverse_blocks": false,
+        "padding_top": 50,
+        "padding_bottom": 0,
+        "show_placeholder": true
+      }
+    },
+    "section_collection_AhJYK7": {
+      "type": "section-collection",
+      "disabled": true,
+      "settings": {
+        "featured_collection": "action-pads",
+        "heading": "",
+        "description": "",
+        "layout": "inline",
+        "link_text": "",
+        "link_url": "",
+        "button_type": "btn--primary",
+        "button_size": "",
+        "button_style": "btn--solid",
+        "show_arrow": false,
+        "layout_desktop": "grid",
+        "grid": 3,
+        "rows": 1,
+        "width": "wrapper--full-padded",
+        "layout_mobile": "slider",
+        "padding_top": 50,
+        "padding_bottom": 50
+      }
+    },
+    "section_double_wJaPND": {
+      "type": "section-double",
+      "blocks": {
+        "heading_JbnaWe": {
+          "type": "heading",
+          "settings": {
+            "title": "The Fun Maker",
+            "padding_bottom": 16
+          }
+        },
+        "text_AVTgYb": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
+            "padding_bottom": 16
+          }
+        },
+        "buttons_jKB97G": {
+          "type": "buttons",
+          "settings": {
+            "button_text": "Shop the Fun maker Gifts",
+            "button_url": "",
+            "button_type": "btn--primary",
+            "button_size": "",
+            "button_style": "btn--solid",
+            "show_arrow": false,
+            "padding_bottom": 16
+          }
+        }
+      },
+      "block_order": [
+        "heading_JbnaWe",
+        "text_AVTgYb",
+        "buttons_jKB97G"
+      ],
+      "disabled": true,
+      "custom_css": [
+        ".brick__block__text {padding: 0 !important;}"
+      ],
+      "settings": {
+        "image_1": "shopify://shop_images/6306486_dde98a98-76fd-48b5-920f-72c33239b4b1.jpg",
+        "image_width": "one-half",
+        "text_alignment": "text-center",
+        "layout": "",
+        "width": "wrapper--full-padded",
+        "height": "four-fifty-height-hero",
+        "mobile_height": "screen-height-one-half--mobile",
+        "reverse_blocks": false,
+        "padding_top": 50,
+        "padding_bottom": 0,
+        "show_placeholder": true
+      }
+    },
+    "section_rich_text_qJTUCc": {
+      "type": "section-rich-text",
+      "blocks": {
+        "subheading_ky7LpH": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "gifts for the good list",
+            "padding_bottom": 16
+          }
+        },
+        "heading_g7NfTf": {
+          "type": "heading",
+          "settings": {
+            "title": "Thoughtful Gifts for Every Personality",
+            "padding_bottom": 16
+          }
+        },
+        "text_xf8LRq": {
+          "type": "text",
+          "settings": {
+            "text": "<p>From the ultra-organized to the deep thinkers, we’ve got gifts that speak to who they are and what they love. Explore gifts tailored to their personality and bring a smile to their face this holiday season!</p>",
+            "padding_bottom": 16
+          }
+        },
+        "text_BTcbG9": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p><em>Tap into their personality—literally! Click to explore thoughtful gifts for everyone on your list.</em></p>",
+            "padding_bottom": 16
+          }
+        }
+      },
+      "block_order": [
+        "subheading_ky7LpH",
+        "heading_g7NfTf",
+        "text_xf8LRq",
+        "text_BTcbG9"
+      ],
+      "settings": {
+        "align_text": "text-center",
+        "width": "wrapper",
+        "overlay_opacity": 0,
+        "show_overlay_text": false,
+        "padding_top": 60,
+        "padding_bottom": 0
+      }
+    },
+    "section_columns_HfjVBe": {
+      "type": "section-columns",
+      "blocks": {
+        "image_Qtng4d": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/4_2dfdedc2-b2c4-4020-8f30-037f83b0e549.jpg",
+            "image_shape": "rounded",
+            "title": "",
+            "text": "",
+            "button_text": "",
+            "button_url": "https://bestself.co/collections/the-organizer",
+            "button_type": "btn--primary",
+            "button_size": "btn--small",
+            "button_style": "btn--solid",
+            "show_arrow": false,
+            "image_aspect_ratio": 1,
+            "mobile_image_aspect_ratio": 1
+          }
+        },
+        "image_3FJd8e": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/1_2efe1494-dd69-40b0-b3df-28c973793224.jpg",
+            "image_shape": "rounded",
+            "title": "",
+            "text": "",
+            "button_text": "",
+            "button_url": "https://bestself.co/collections/the-thinker",
+            "button_type": "btn--primary",
+            "button_size": "btn--small",
+            "button_style": "btn--outline",
+            "show_arrow": false,
+            "image_aspect_ratio": 1,
+            "mobile_image_aspect_ratio": 1
+          }
+        },
+        "image_zXPWCh": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/5_ccfd3310-56d4-43b6-af1a-090135f850a1.jpg",
+            "image_shape": "rounded",
+            "title": "",
+            "text": "",
+            "button_text": "",
+            "button_url": "https://bestself.co/collections/the-connector",
+            "button_type": "btn--primary",
+            "button_size": "",
+            "button_style": "btn--solid",
+            "show_arrow": false,
+            "image_aspect_ratio": 1,
+            "mobile_image_aspect_ratio": 1
+          }
+        },
+        "image_EiEQNR": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/6_b415d9ad-82ed-4af0-a21d-112fc6919b68.jpg",
+            "image_shape": "rounded",
+            "title": "",
+            "text": "",
+            "button_text": "",
+            "button_url": "https://bestself.co/collections/the-entrepreneur",
+            "button_type": "btn--primary",
+            "button_size": "",
+            "button_style": "btn--solid",
+            "show_arrow": false,
+            "image_aspect_ratio": 1,
+            "mobile_image_aspect_ratio": 1
+          }
+        },
+        "image_bBJVax": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/the-couple.jpg",
+            "image_shape": "rounded",
+            "title": "",
+            "text": "",
+            "button_text": "",
+            "button_url": "https://bestself.co/collections/the-couple",
+            "button_type": "btn--primary",
+            "button_size": "",
+            "button_style": "btn--solid",
+            "show_arrow": false,
+            "image_aspect_ratio": 1,
+            "mobile_image_aspect_ratio": 1
+          }
+        },
+        "image_JfgXrm": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/7_579eb4e5-1b81-4165-93c3-09566503b95e.jpg",
+            "image_shape": "rounded",
+            "title": "",
+            "text": "",
+            "button_text": "",
+            "button_url": "https://bestself.co/collections/the-parent",
+            "button_type": "btn--primary",
+            "button_size": "",
+            "button_style": "btn--solid",
+            "show_arrow": false,
+            "image_aspect_ratio": 1,
+            "mobile_image_aspect_ratio": 1
+          }
+        },
+        "image_BPAmcU": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/2_7fd04104-51cc-471a-9b14-3b391112c00c.jpg",
+            "image_shape": "rounded",
+            "title": "",
+            "text": "",
+            "button_text": "",
+            "button_url": "https://bestself.co/collections/the-introvert",
+            "button_type": "btn--primary",
+            "button_size": "",
+            "button_style": "btn--solid",
+            "show_arrow": false,
+            "image_aspect_ratio": 1,
+            "mobile_image_aspect_ratio": 1
+          }
+        },
+        "image_jAxqAf": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/3_497afb72-0203-44da-b241-24d041189109.jpg",
+            "image_shape": "rounded",
+            "title": "",
+            "text": "",
+            "button_text": "",
+            "button_url": "https://bestself.co/collections/the-creator",
+            "button_type": "btn--primary",
+            "button_size": "",
+            "button_style": "btn--solid",
+            "show_arrow": false,
+            "image_aspect_ratio": 1,
+            "mobile_image_aspect_ratio": 1
+          }
+        }
+      },
+      "block_order": [
+        "image_Qtng4d",
+        "image_3FJd8e",
+        "image_zXPWCh",
+        "image_EiEQNR",
+        "image_bBJVax",
+        "image_JfgXrm",
+        "image_BPAmcU",
+        "image_jAxqAf"
+      ],
+      "settings": {
+        "title": "",
+        "align_heading": "text-center",
+        "align_text": "text-center",
+        "width": "wrapper",
+        "align_columns": "flex-align-center",
+        "layout": "grid",
+        "grid": 4,
+        "layout_mobile": "2",
+        "padding_top": 30,
+        "padding_bottom": 0
+      }
+    },
+    "section_rich_text_AXKxAP": {
+      "type": "section-rich-text",
+      "blocks": {
+        "text_A8BfnX": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>Tap into their personality—literally! Click to explore thoughtful gifts for everyone on your list.</strong></p>",
+            "padding_bottom": 16
+          }
+        }
+      },
+      "block_order": [
+        "text_A8BfnX"
+      ],
+      "settings": {
+        "align_text": "text-center",
+        "width": "wrapper",
+        "overlay_opacity": 0,
+        "show_overlay_text": false,
+        "padding_top": 10,
+        "padding_bottom": 30
+      }
+    },
+    "section_collection_tzn9qa": {
+      "type": "section-collection",
+      "settings": {
+        "featured_collection": "best-sellers",
+        "heading": "Bestsellers",
+        "description": "<p>These are the gifts everyone is talking about!</p>",
+        "layout": "inline",
+        "link_text": "SHOP {{ section.settings.featured_collection.title }}",
+        "link_url": "{{ section.settings.featured_collection.url }}",
+        "button_type": "btn--black",
+        "button_size": "btn--small",
+        "button_style": "btn--outline",
+        "show_arrow": true,
+        "layout_desktop": "grid",
+        "grid": 5,
+        "rows": 2,
+        "width": "wrapper",
+        "layout_mobile": "slider",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "section_collection_HFdnXR": {
+      "type": "section-collection",
+      "settings": {
+        "featured_collection": "bundles",
+        "heading": "The More, the Merrier",
+        "description": "<p>Save more with our curated bundles</p>",
+        "layout": "inline",
+        "link_text": "SHOP {{ section.settings.featured_collection.title }}",
+        "link_url": "{{ section.settings.featured_collection.url }}",
+        "button_type": "btn--white",
+        "button_size": "btn--small",
+        "button_style": "btn--outline",
+        "show_arrow": true,
+        "layout_desktop": "grid",
+        "grid": 5,
+        "rows": 2,
+        "width": "wrapper",
+        "layout_mobile": "slider",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "section_collection_6VJy7H": {
+      "type": "section-collection",
+      "settings": {
+        "featured_collection": "party-favorites",
+        "heading": "Party Favorites",
+        "description": "<p>Perfect picks for holiday parties, white elephants, and spreading festive cheer.</p>",
+        "layout": "inline",
+        "link_text": "SHOP {{ section.settings.featured_collection.title }}",
+        "link_url": "{{ section.settings.featured_collection.url }}",
+        "button_type": "btn--black",
+        "button_size": "btn--small",
+        "button_style": "btn--outline",
+        "show_arrow": true,
+        "layout_desktop": "grid",
+        "grid": 5,
+        "rows": 2,
+        "width": "wrapper",
+        "layout_mobile": "slider",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "17322064405845d26e": {
+      "type": "apps",
+      "settings": {
+        "include_margins": false
+      }
+    },
+    "section_divider_Tmni6x": {
+      "type": "section-divider",
+      "settings": {
+        "show_line": true,
+        "width": "wrapper--full",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "section_rich_text_W4WwNJ": {
+      "type": "section-rich-text",
+      "blocks": {
+        "heading_8Rp9Fh": {
+          "type": "heading",
+          "settings": {
+            "title": "Why Customers Love BestSelf Gifts",
+            "padding_bottom": 16
+          }
+        },
+        "subheading_mzKVKK": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "",
+            "padding_bottom": 16
+          }
+        },
+        "text_dGF3yR": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Our gifts inspire growth, connection, and joy. From goal-setting tools to conversation decks, they’re cherished for creating meaningful experiences.</p>",
+            "padding_bottom": 10
+          }
+        }
+      },
+      "block_order": [
+        "heading_8Rp9Fh",
+        "subheading_mzKVKK",
+        "text_dGF3yR"
+      ],
+      "settings": {
+        "align_text": "text-center",
+        "width": "wrapper",
+        "overlay_opacity": 0,
+        "show_overlay_text": false,
+        "padding_top": 50,
+        "padding_bottom": 0
+      }
+    },
+    "section_double_4byUPN": {
+      "type": "section-double",
+      "blocks": {
+        "subheading_iMKL4E": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "",
+            "padding_bottom": 16
+          }
+        },
+        "heading_AcKBAT": {
+          "type": "heading",
+          "settings": {
+            "title": "Most Gifted",
+            "padding_bottom": 16
+          }
+        },
+        "text_gzFPn8": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Our best-loved products, for your most-loved people</p>",
+            "padding_bottom": 16
+          }
+        },
+        "buttons_dwnMJw": {
+          "type": "buttons",
+          "settings": {
+            "button_text": "shop now",
+            "button_url": "https://bestself.co/collections/best-sellers",
+            "button_type": "btn--primary",
+            "button_size": "",
+            "button_style": "btn--solid",
+            "show_arrow": false,
+            "padding_bottom": 16
+          }
+        }
+      },
+      "block_order": [
+        "subheading_iMKL4E",
+        "heading_AcKBAT",
+        "text_gzFPn8",
+        "buttons_dwnMJw"
+      ],
+      "disabled": true,
+      "custom_css": [
+        ".brick__block__text {padding: 0 !important;}"
+      ],
+      "settings": {
+        "image_1": "shopify://shop_images/All_Decks_2022_-_Holiday_Theme_2_-_Large_c2236ec9-5f1d-4d72-aa4f-815441248d4e.jpg",
+        "image_width": "one-half",
+        "text_alignment": "text-center",
+        "layout": "",
+        "width": "wrapper",
+        "height": "image-height",
+        "mobile_height": "screen-height-one-half--mobile",
+        "reverse_blocks": true,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "show_placeholder": true
+      }
+    },
+    "section_rich_text_wcApDR": {
+      "type": "section-rich-text",
+      "blocks": {
+        "heading_HgKEwz": {
+          "type": "heading",
+          "settings": {
+            "title": "Not Sure What To Get? Let Us Help!",
+            "padding_bottom": 16
+          }
+        },
+        "text_gNQ9AU": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Take Our 60-Second Quiz To Get Personalized Picks</p>",
+            "padding_bottom": 16
+          }
+        },
+        "buttons_wRx9mf": {
+          "type": "buttons",
+          "settings": {
+            "button_text": "TAKE THE GIFTING QUIZ",
+            "button_url": "https://app.quizell.com/preview/tb22pfLKfY8A15KjPyLjMS1394700",
+            "button_type": "btn--primary",
+            "button_size": "",
+            "button_style": "btn--solid",
+            "show_arrow": false,
+            "padding_bottom": 16
+          }
+        }
+      },
+      "block_order": [
+        "heading_HgKEwz",
+        "text_gNQ9AU",
+        "buttons_wRx9mf"
+      ],
+      "disabled": true,
+      "settings": {
+        "align_text": "text-center",
+        "width": "wrapper",
+        "image": "shopify://shop_images/Self_Journal_Project_Action_Pad_Decks_2020_-_Holiday_Theme_3_-_Medium_41e5f352-16da-4d96-b0a1-c1ad86016b66.jpg",
+        "overlay_opacity": 60,
+        "show_overlay_text": false,
+        "padding_top": 100,
+        "padding_bottom": 50
+      }
+    }
+  },
+  "order": [
+    "main",
+    "section_columns_HJbXcB",
+    "section_collections_list_FTMXhh",
+    "section_collection_gUDPD8",
+    "section_double_46UWEG",
+    "section_collection_AhJYK7",
+    "section_double_wJaPND",
+    "section_rich_text_qJTUCc",
+    "section_columns_HfjVBe",
+    "section_rich_text_AXKxAP",
+    "section_collection_tzn9qa",
+    "section_collection_HFdnXR",
+    "section_collection_6VJy7H",
+    "17322064405845d26e",
+    "section_divider_Tmni6x",
+    "section_rich_text_W4WwNJ",
+    "section_double_4byUPN",
+    "section_rich_text_wcApDR"
+  ]
+}

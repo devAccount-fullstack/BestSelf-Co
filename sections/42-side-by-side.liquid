@@ -1,0 +1,155 @@
+{% liquid
+  assign bg_color = section.settings.bg_color
+  assign image = section.settings.image
+  assign section_text = section.settings.section_text
+  assign section_title = section.settings.section_title
+  assign btn_text = section.settings.btn_text
+  assign btn_link = section.settings.btn_link
+
+  assign pt_mob = section.settings.pt_mob
+  assign pb_mob = section.settings.pb_mob
+  assign pt_tab = section.settings.pt_tab
+  assign pb_tab = section.settings.pb_tab
+  assign pt_desk = section.settings.pt_desk
+  assign pb_desk = section.settings.pb_desk
+%}
+
+{% render 'section-paddings',
+  section_id: section.id,
+  pt_mob: pt_mob,
+  pb_mob: pb_mob,
+  pt_tab: pt_tab,
+  pb_tab: pb_tab,
+  pt_desk: pt_desk,
+  pb_desk: pb_desk
+%}
+
+<style>
+  @media screen and (min-width: 1440px) {
+    .side_by_side__padding__left {
+      padding-left: calc((100vw - 1440px) / 2 + 48px);
+    }
+  }
+</style>
+
+<div data-section-id="{{ section.id }}">
+  <div style="background: {{ bg_color }}">
+    <div class="tw-flex tw-flex-col-reverse md:tw-flex-row md:tw-items-center">
+      <div class="side_by_side__padding__left md:tw-w-1/2 tw-py-[46px] tw-px-4 md:tw-px-0 md:tw-pl-8 lg:tw-pl-12">
+        <div class="md:tw-max-w-[407px]">
+          {% if section_title != blank %}
+            <div class="tw-text-white tw-text-[28px] lg:tw-text-[48px] lg:tw-leading-[64px] tw-leading-[35px]">
+              {{ section_title }}
+            </div>
+          {% endif %}
+          {% if section_text != blank %}
+            <p class="tw-text-white tw-font-normal tw-text-base lg:tw-text-[20px] lg:tw-leading-[28px] tw-mt-[11px]">
+              {{ section_text }}
+            </p>
+          {% endif %}
+          {% if btn_text != blank %}
+            <div class="tw-mt-6">
+              <a
+                href="{{ btn_link }}"
+                class="btn-42 btn-42--primary !tw-min-h-10.5 md:!tw-min-h-12 tw-w-full md:tw-w-fit md:tw-min-w-[146px]"
+              >
+                <span>{{ btn_text }}</span>
+                {% render 'icon-42', name: 'btn-arrow' %}
+              </a>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+      <div class="md:tw-w-1/2">
+        {% if image != blank %}
+          <img src="{{ image | img_url: 'master' }}" alt="{{ image.alt }}" loading="lazy" class="tw-max-w-full">
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "42 Side by side",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background color",
+      "default": "#2C3C60"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "richtext",
+      "id": "section_title",
+      "label": "Section Title"
+    },
+    {
+      "type": "textarea",
+      "id": "section_text",
+      "label": "Section text"
+    },
+    {
+      "type": "text",
+      "id": "btn_text",
+      "label": "Button text"
+    },
+    {
+      "type": "url",
+      "id": "btn_link",
+      "label": "Button link"
+    },
+    {
+      "type": "header",
+      "content": "Padding Y settings"
+    },
+    {
+      "type": "number",
+      "id": "pt_mob",
+      "label": "Mobile padding top in px",
+      "default": 55
+    },
+    {
+      "type": "number",
+      "id": "pb_mob",
+      "label": "Mobile padding bottom in px",
+      "default": 49
+    },
+    {
+      "type": "number",
+      "id": "pt_tab",
+      "label": "Tablet padding top in px",
+      "default": 60
+    },
+    {
+      "type": "number",
+      "id": "pb_tab",
+      "label": "Tablet padding bottom in px",
+      "default": 60
+    },
+    {
+      "type": "number",
+      "id": "pt_desk",
+      "label": "Desktop padding top in px",
+      "default": 120
+    },
+    {
+      "type": "number",
+      "id": "pb_desk",
+      "label": "Desktop padding bottom in px",
+      "default": 120
+    }
+  ],
+  "presets": [
+    {
+      "name": "42 Side by side"
+    }
+  ]
+}
+{% endschema %}

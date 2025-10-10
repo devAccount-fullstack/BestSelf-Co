@@ -1,0 +1,853 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "subheading": "",
+        "show_title": true,
+        "show_content": true,
+        "align_text": "text-center",
+        "width": "wrapper",
+        "padding_top": 50,
+        "padding_bottom": 50
+      }
+    },
+    "section_hero_JTFBYy": {
+      "type": "section-hero",
+      "blocks": {
+        "heading_efcczr": {
+          "type": "heading",
+          "settings": {
+            "title": "Welcome to Your Journey to Success with the Self Journal"
+          }
+        },
+        "text_UNzXnb": {
+          "type": "text",
+          "settings": {}
+        },
+        "button_m7BHpb": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "link_text": "Begin Your Transformation Today",
+            "link": "",
+            "button_type": "btn--primary",
+            "button_size": "",
+            "button_style": "btn--solid",
+            "show_arrow": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_efcczr",
+        "text_UNzXnb",
+        "button_m7BHpb"
+      ],
+      "custom_css": [
+        ".hero__aside__wrapper.frame__item,.index-hero .hero__content {max-width: 60%; padding: 120px 0;}"
+      ],
+      "settings": {
+        "image_1": "shopify://shop_images/Self_Journal_2018_Writing_on_Journal.jpg",
+        "link": "",
+        "width": "wrapper--full",
+        "height": "screen-height-one-third",
+        "flex_align_desktop": "align--middle-center-desktop",
+        "mobile_height": "four-fifty-height-hero--mobile",
+        "flex_align_mobile": "align--middle-center-mobile",
+        "overlay_opacity": 30,
+        "show_overlay_text": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "show_placeholder": true
+      }
+    },
+    "section_rich_text_yfq3DK": {
+      "type": "section-rich-text",
+      "blocks": {
+        "text_9F697a": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Congratulations on starting your journey with the Self Journal! You’ve taken a powerful first step toward structuring your goals, building better habits, and making each day count. Imagine a life where each day feels intentional, productive, and fulfilling—that’s what your Self Journal journey can unlock. </p><p></p><p>At BestSelf, we believe that success is inevitable when you have a clear path forward and take consistent action. So let’s dive in together, step-by-step, and make your goals a reality.</p>",
+            "padding_bottom": 16
+          }
+        }
+      },
+      "block_order": [
+        "text_9F697a"
+      ],
+      "settings": {
+        "align_text": "text-center",
+        "width": "wrapper",
+        "overlay_opacity": 0,
+        "show_overlay_text": false,
+        "padding_top": 50,
+        "padding_bottom": 50
+      }
+    },
+    "section_double_CTQzq8": {
+      "type": "section-double",
+      "blocks": {
+        "heading_pKE79P": {
+          "type": "heading",
+          "settings": {
+            "title": "The Self Journal Philosophy",
+            "padding_bottom": 16
+          }
+        },
+        "text_kJXyea": {
+          "type": "text",
+          "settings": {
+            "text": "<p>The Self Journal is more than just a planner—it’s a carefully designed system that bridges the gap between setting goals and achieving them. Built on a 13-week roadmap, this journal combines structured goal-setting, habit-building, daily reflection, and consistent action to make your success inevitable. </p><h4><strong>Why 13 weeks? </strong></h4><p>It’s short enough to keep your motivation high but long enough to see real, lasting progress. By structuring your life in 13-week cycles, you’re not just planning your days; you’re designing a life you love, one step at a time. </p><p>With the Self Journal, your success becomes inevitable through proven structure and consistent action. Through goal-setting, daily reflection, and weekly progress tracking, you’ll see meaningful progress in just a few weeks.</p>",
+            "padding_bottom": 16
+          }
+        }
+      },
+      "block_order": [
+        "heading_pKE79P",
+        "text_kJXyea"
+      ],
+      "custom_css": [
+        ".brick__block__text {padding: 0 !important;}"
+      ],
+      "settings": {
+        "image_1": "shopify://shop_images/woman-writing-on-self-journal.jpg",
+        "image_width": "one-half",
+        "text_alignment": "text-left",
+        "layout": "",
+        "width": "wrapper--full-padded",
+        "height": "four-fifty-height-hero",
+        "mobile_height": "screen-height-one-half--mobile",
+        "reverse_blocks": false,
+        "padding_top": 100,
+        "padding_bottom": 100,
+        "show_placeholder": true
+      }
+    },
+    "section_rich_text_7bzrpc": {
+      "type": "section-rich-text",
+      "blocks": {
+        "heading_Tfqaxg": {
+          "type": "heading",
+          "settings": {
+            "title": "Welcome to Your Journey to Success with the Self Journal",
+            "padding_bottom": 16
+          }
+        },
+        "subheading_7grfYQ": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "Your 13-week roadmap to achieve more, stress less, and cultivate the life you envision.",
+            "padding_bottom": 16
+          }
+        },
+        "text_4iddpX": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Congratulations on starting your journey with the Self Journal! You’ve taken a powerful first step toward structuring your goals, building better habits, and making each day count. Imagine a life where each day feels intentional, productive, and fulfilling—that’s what your Self Journal journey can unlock. At BestSelf, we believe that success is inevitable when you have a clear path forward and take consistent action. So let’s dive in together, step-by-step, and make your goals a reality.</p>",
+            "padding_bottom": 16
+          }
+        },
+        "buttons_URG48r": {
+          "type": "buttons",
+          "settings": {
+            "button_text": "Begin Your Transformation Today",
+            "button_url": "",
+            "button_type": "btn--primary",
+            "button_size": "",
+            "button_style": "btn--solid",
+            "show_arrow": false,
+            "padding_bottom": 16
+          }
+        }
+      },
+      "block_order": [
+        "heading_Tfqaxg",
+        "subheading_7grfYQ",
+        "text_4iddpX",
+        "buttons_URG48r"
+      ],
+      "disabled": true,
+      "settings": {
+        "align_text": "text-center",
+        "width": "wrapper",
+        "image": "shopify://shop_images/Homepage_Banner_-_New_Journal_-_Desktop_6_c1ab046b-3f7b-473d-92c2-e0641d284ebc.jpg",
+        "overlay_opacity": 0,
+        "show_overlay_text": false,
+        "padding_top": 100,
+        "padding_bottom": 100
+      }
+    },
+    "section_double_ceyRid": {
+      "type": "section-double",
+      "blocks": {
+        "subheading_jLr6RQ": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "Introducing",
+            "padding_bottom": 16
+          }
+        },
+        "heading_aRDJct": {
+          "type": "heading",
+          "settings": {
+            "title": "The Self Journal Philosophy",
+            "padding_bottom": 16
+          }
+        },
+        "text_GcBNwK": {
+          "type": "text",
+          "settings": {
+            "text": "<p>The Self Journal is more than just a planner—it’s a carefully designed system that bridges the gap between setting goals and achieving them. Built on a 13-week roadmap, this journal combines structured goal-setting, habit-building, daily reflection, and consistent action to make your success inevitable. </p><p>Why 13 weeks? It’s short enough to keep your motivation high but long enough to see real, lasting progress. By structuring your life in 13-week cycles, you’re not just planning your days; you’re designing a life you love, one step at a time. </p><p>With the Self Journal, your success becomes inevitable through proven structure and consistent action. Through goal-setting, daily reflection, and weekly progress tracking, you’ll see meaningful progress in just a few weeks.</p>",
+            "padding_bottom": 16
+          }
+        }
+      },
+      "block_order": [
+        "subheading_jLr6RQ",
+        "heading_aRDJct",
+        "text_GcBNwK"
+      ],
+      "disabled": true,
+      "settings": {
+        "image_width": "one-half",
+        "text_alignment": "text-left",
+        "layout": "",
+        "width": "wrapper--full-padded",
+        "height": "image-height",
+        "mobile_height": "image-height--mobile",
+        "reverse_blocks": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "show_placeholder": true
+      }
+    },
+    "section_rich_text_fzyQey": {
+      "type": "section-rich-text",
+      "blocks": {
+        "heading_RVNjgn": {
+          "type": "heading",
+          "settings": {
+            "title": "The Self Journal Philosophy",
+            "padding_bottom": 20
+          }
+        },
+        "text_hgycpX": {
+          "type": "text",
+          "settings": {
+            "text": "<p>The Self Journal is more than just a planner—it’s a carefully designed system that bridges the gap between setting goals and achieving them. Built on a 13-week roadmap, this journal combines structured goal-setting, habit-building, daily reflection, and consistent action to make your success inevitable. </p><p>Why 13 weeks? It’s short enough to keep your motivation high but long enough to see real, lasting progress. By structuring your life in 13-week cycles, you’re not just planning your days; you’re designing a life you love, one step at a time. </p><p>With the Self Journal, your success becomes inevitable through proven structure and consistent action. Through goal-setting, daily reflection, and weekly progress tracking, you’ll see meaningful progress in just a few weeks.</p>",
+            "padding_bottom": 16
+          }
+        }
+      },
+      "block_order": [
+        "heading_RVNjgn",
+        "text_hgycpX"
+      ],
+      "disabled": true,
+      "settings": {
+        "align_text": "text-left",
+        "width": "wrapper",
+        "overlay_opacity": 0,
+        "show_overlay_text": false,
+        "padding_top": 100,
+        "padding_bottom": 100
+      }
+    },
+    "section_rich_text_c3afm8": {
+      "type": "section-rich-text",
+      "blocks": {
+        "subheading_7tz7wc": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "Getting Started",
+            "padding_bottom": 16
+          }
+        },
+        "heading_VUMc4y": {
+          "type": "heading",
+          "settings": {
+            "title": "A Step-by-Step Guide",
+            "padding_bottom": 16
+          }
+        },
+        "text_EtUrca": {
+          "type": "text",
+          "settings": {
+            "text": "<p>To get the most out of your Self Journal, here’s a simple guide to help you start strong. Each step builds on the last, bringing clarity, direction, and momentum to your journey.</p>",
+            "padding_bottom": 16
+          }
+        }
+      },
+      "block_order": [
+        "subheading_7tz7wc",
+        "heading_VUMc4y",
+        "text_EtUrca"
+      ],
+      "settings": {
+        "align_text": "text-center",
+        "width": "wrapper",
+        "overlay_opacity": 0,
+        "show_overlay_text": false,
+        "padding_top": 50,
+        "padding_bottom": 50
+      }
+    },
+    "section_double_tA3q4m": {
+      "type": "section-double",
+      "blocks": {
+        "subheading_QtcnCk": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "STEP 1:",
+            "padding_bottom": 16
+          }
+        },
+        "heading_fUFBYQ": {
+          "type": "heading",
+          "settings": {
+            "title": "Define Your 13-Week Goal",
+            "padding_bottom": 16
+          }
+        },
+        "text_4RFpLf": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Setting a clear, inspiring goal is the foundation of your 13-week journey. Think big, but be specific. A great goal is one that’s SMART—Specific, Measurable, Achievable, Relevant, and Time-bound. Here’s an example:</p><ul><li><strong>Vague Goal:</strong> “I want to improve my fitness.”</li><li><strong>SMART Goal:</strong> “I will complete a 5K race in under 30 minutes by the end of 13 weeks.”</li></ul><p>Use the Self Journal’s 13-week layout to capture your goal. This will be your North Star, guiding you every day.</p>",
+            "padding_bottom": 16
+          }
+        },
+        "text_qVbhcL": {
+          "type": "text",
+          "settings": {
+            "text": "<h5><strong>Key Message:</strong></h5><p><strong>Your 13-week goal is the big picture. Make it specific, measurable, and inspiring. Let’s set your goal!</strong></p>",
+            "padding_bottom": 16
+          }
+        }
+      },
+      "block_order": [
+        "subheading_QtcnCk",
+        "heading_fUFBYQ",
+        "text_4RFpLf",
+        "text_qVbhcL"
+      ],
+      "custom_css": [
+        ".brick__block__text {padding: 0 !important;}"
+      ],
+      "settings": {
+        "image_1": "shopify://shop_images/13week_Bucket_List.png",
+        "image_width": "one-half",
+        "text_alignment": "text-left",
+        "layout": "",
+        "width": "wrapper",
+        "height": "image-height",
+        "mobile_height": "image-height--mobile",
+        "reverse_blocks": false,
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "show_placeholder": true
+      }
+    },
+    "section_double_RAkDTz": {
+      "type": "section-double",
+      "blocks": {
+        "subheading_rNdaUy": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "STEP 2:",
+            "padding_bottom": 16
+          }
+        },
+        "heading_mKQxMr": {
+          "type": "heading",
+          "settings": {
+            "title": "Map Out Your Roadmap",
+            "padding_bottom": 16
+          }
+        },
+        "text_J3MwAD": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Big goals require small, actionable steps. Break down your 13-week outcome goal into milestones and critical drivers—these are the essential actions that will keep you on track each day and week. For example, if your goal is to run a 5K, your critical drivers might include weekly run targets or strength training sessions.</p><p><strong>Key Message:</strong></p><p>A goal without a roadmap is just a dream. Let’s map out the steps to make it real. <strong>Time to outline your path!</strong></p>",
+            "padding_bottom": 16
+          }
+        }
+      },
+      "block_order": [
+        "subheading_rNdaUy",
+        "heading_mKQxMr",
+        "text_J3MwAD"
+      ],
+      "custom_css": [
+        ".brick__block__text {padding: 0 !important;}"
+      ],
+      "settings": {
+        "image_1": "shopify://shop_images/Self_Journal_-_Weekly_Reflection.png",
+        "image_width": "one-half",
+        "text_alignment": "text-left",
+        "layout": "is-reversed",
+        "width": "wrapper",
+        "height": "image-height",
+        "mobile_height": "image-height--mobile",
+        "reverse_blocks": false,
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "show_placeholder": true
+      }
+    },
+    "section_double_9RAUqP": {
+      "type": "section-double",
+      "blocks": {
+        "subheading_p9QEzh": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "Step 3:",
+            "padding_bottom": 16
+          }
+        },
+        "heading_J4VVRP": {
+          "type": "heading",
+          "settings": {
+            "title": "Plan Your First Week",
+            "padding_bottom": 16
+          }
+        },
+        "text_6KnjTE": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Start each week with intention. Use the weekly planning pages to outline your three biggest objectives, note key tasks, and set any important deadlines. Weekly planning keeps you focused on what truly matters and gives you a sense of accomplishment by week’s end. </p><p><em>Examples of weekly objectives:</em> Complete two training sessions; spend one hour in creative brainstorming; finish a chapter in your book.</p><p><strong>Key Message:</strong></p><p>Every week is a fresh start. Set weekly objectives and make a plan to win. <strong>Let’s plan your week!</strong></p>",
+            "padding_bottom": 16
+          }
+        }
+      },
+      "block_order": [
+        "subheading_p9QEzh",
+        "heading_J4VVRP",
+        "text_6KnjTE"
+      ],
+      "custom_css": [
+        ".brick__block__text {padding: 0 !important;}"
+      ],
+      "settings": {
+        "image_1": "shopify://shop_images/Self_Journal_-_Weekly_Planning.png",
+        "image_width": "one-half",
+        "text_alignment": "text-left",
+        "layout": "",
+        "width": "wrapper",
+        "height": "image-height",
+        "mobile_height": "image-height--mobile",
+        "reverse_blocks": false,
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "show_placeholder": true
+      }
+    },
+    "section_double_TbqAja": {
+      "type": "section-double",
+      "blocks": {
+        "subheading_6QfV4P": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "Step 4:",
+            "padding_bottom": 16
+          }
+        },
+        "heading_YKG4qM": {
+          "type": "heading",
+          "settings": {
+            "title": "Begin Daily Pages",
+            "padding_bottom": 16
+          }
+        },
+        "text_QpKhyW": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Each day, take a moment to set your priorities and goals for the day. Start with gratitude, identify your top three tasks, and outline what would make today a success. In the evening, reflect on what went well, lessons learned, and small wins. This daily rhythm is key to building momentum.</p><p><strong>Key Message:</strong></p><p>Start each day with purpose and end with reflection. Consistency is key. <strong>Let’s make today count!</strong></p>",
+            "padding_bottom": 16
+          }
+        }
+      },
+      "block_order": [
+        "subheading_6QfV4P",
+        "heading_YKG4qM",
+        "text_QpKhyW"
+      ],
+      "custom_css": [
+        ".brick__block__text {padding: 0 !important;}"
+      ],
+      "settings": {
+        "image_1": "shopify://shop_images/Self_Journal_Daily_Planning.png",
+        "image_width": "one-half",
+        "text_alignment": "text-left",
+        "layout": "is-reversed",
+        "width": "wrapper",
+        "height": "image-height",
+        "mobile_height": "image-height--mobile",
+        "reverse_blocks": false,
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "show_placeholder": true
+      }
+    },
+    "section_double_Xg3JMw": {
+      "type": "section-double",
+      "blocks": {
+        "subheading_AWfqBy": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "Step 5:",
+            "padding_bottom": 16
+          }
+        },
+        "heading_neiRTh": {
+          "type": "heading",
+          "settings": {
+            "title": "Reflect and Adjust Weekly",
+            "padding_bottom": 16
+          }
+        },
+        "text_VyKfn6": {
+          "type": "text",
+          "settings": {
+            "text": "<p>At the end of each week, use the weekly reflection pages to review your progress. What went well? What could you improve? Celebrate your wins and adapt your approach as needed. Reflection helps you stay on course, learn from experience, and keeps your motivation high.</p><p><strong>Key Message:</strong></p><p>Reflection keeps you on track. Celebrate wins and adapt where needed. <strong>Reflect and grow!</strong></p>",
+            "padding_bottom": 16
+          }
+        }
+      },
+      "block_order": [
+        "subheading_AWfqBy",
+        "heading_neiRTh",
+        "text_VyKfn6"
+      ],
+      "custom_css": [
+        ".brick__block__text {padding: 0 !important;}"
+      ],
+      "settings": {
+        "image_1": "shopify://shop_images/13_Week_reflection_-_benchmark.png",
+        "image_width": "one-half",
+        "text_alignment": "text-left",
+        "layout": "",
+        "width": "wrapper",
+        "height": "image-height",
+        "mobile_height": "image-height--mobile",
+        "reverse_blocks": false,
+        "padding_top": 50,
+        "padding_bottom": 100,
+        "show_placeholder": true
+      }
+    },
+    "section_rich_text_dWYChz": {
+      "type": "section-rich-text",
+      "blocks": {
+        "heading_HgKpAD": {
+          "type": "heading",
+          "settings": {
+            "title": "Tips for Getting the Most from Your Self Journal",
+            "padding_bottom": 26
+          }
+        },
+        "text_qNYJ8a": {
+          "type": "text",
+          "settings": {
+            "text": "<p>These simple tips can help you unlock the full potential of your Self Journal and make each day a productive, meaningful step forward.<br/></p><ol><li><strong>Start Small:</strong> Begin with just one or two entries each day to build a consistent habit. It’s okay if everything isn’t perfect on Day 1—experiment and adjust as you go.<br/></li><li><strong>Stay Consistent:</strong> Commit to filling in your journal daily, even if it’s just a few minutes. Small, consistent actions make a big difference.<br/></li><li><strong>Use Time-Blocking:</strong> Allocate specific time slots for your top tasks to minimize distractions and get more done.<br/></li><li><strong>Embrace Gratitude and Reflection:</strong> These small practices create a powerful shift in your mindset and help you stay motivated.<br/></li><li><strong>Be Flexible:</strong> Life happens, and that’s okay. The journal is undated, so if you miss a day, simply pick up where you left off without stress. For example, if you miss a week, try filling out only the gratitude section to maintain momentum.</li></ol>",
+            "padding_bottom": 16
+          }
+        }
+      },
+      "block_order": [
+        "heading_HgKpAD",
+        "text_qNYJ8a"
+      ],
+      "settings": {
+        "align_text": "text-left",
+        "width": "wrapper--narrow",
+        "overlay_opacity": 0,
+        "show_overlay_text": false,
+        "padding_top": 100,
+        "padding_bottom": 100
+      }
+    },
+    "section_accordion_group_7dx3b4": {
+      "type": "section-accordion-group",
+      "blocks": {
+        "heading_TyjaJG": {
+          "type": "heading",
+          "settings": {
+            "title": "FAQs for New Self Journal Users"
+          }
+        },
+        "question_U8mcfi": {
+          "type": "question",
+          "settings": {
+            "default_open": false,
+            "title": "What if I miss a day or week?",
+            "content": "<p>No problem! The journal is undated, so simply pick up where you left off. Progress is more important than perfection. We designed the Self Journal with flexibility in mind. It’s okay to skip days; the journal’s purpose is to serve you, not stress you.</p>",
+            "show_icon": true,
+            "icon_name": "icon-award",
+            "icon_size": 20,
+            "icon_color": "#545454"
+          }
+        },
+        "question_KLNbde": {
+          "type": "question",
+          "settings": {
+            "default_open": false,
+            "title": "How much time should I spend each day?",
+            "content": "<p>A few minutes each morning and evening is enough. Consistency is key, not the time spent.</p>",
+            "show_icon": true,
+            "icon_name": "icon-award",
+            "icon_size": 20,
+            "icon_color": "#545454"
+          }
+        },
+        "question_zPLF7k": {
+          "type": "question",
+          "settings": {
+            "default_open": false,
+            "title": "How is this journal different from others?",
+            "content": "<p>Unlike traditional planners, the Self Journal is backed by psychological principles to keep you focused and motivated, helping you achieve meaningful goals within a proven 13-week framework.</p>",
+            "show_icon": true,
+            "icon_name": "icon-award",
+            "icon_size": 20,
+            "icon_color": "#545454"
+          }
+        },
+        "question_wEMU3h": {
+          "type": "question",
+          "settings": {
+            "default_open": false,
+            "title": "How do I make my goals SMART?",
+            "content": "<p>A SMART goal is Specific, Measurable, Achievable, Relevant, and Time-bound. If you need help, check out our goal-setting guide for more examples.</p>",
+            "show_icon": true,
+            "icon_name": "icon-award",
+            "icon_size": 20,
+            "icon_color": "#545454"
+          }
+        },
+        "question_yzUQeb": {
+          "type": "question",
+          "settings": {
+            "default_open": false,
+            "title": "What if my goal changes?",
+            "content": "<p>Life changes, and so do goals. Don’t hesitate to adjust as needed to stay aligned with your priorities.</p>",
+            "show_icon": true,
+            "icon_name": "icon-award",
+            "icon_size": 20,
+            "icon_color": "#545454"
+          }
+        }
+      },
+      "block_order": [
+        "heading_TyjaJG",
+        "question_U8mcfi",
+        "question_KLNbde",
+        "question_zPLF7k",
+        "question_wEMU3h",
+        "question_yzUQeb"
+      ],
+      "settings": {
+        "width": "wrapper",
+        "columns": "1",
+        "padding_top": 100,
+        "padding_bottom": 100
+      }
+    },
+    "section_rich_text_UMACpU": {
+      "type": "section-rich-text",
+      "blocks": {
+        "heading_M6pXMC": {
+          "type": "heading",
+          "settings": {
+            "title": "More Resources to Support Your Journey",
+            "padding_bottom": 16
+          }
+        },
+        "text_ERpW74": {
+          "type": "text",
+          "settings": {
+            "text": "<p>The Self Journal journey is better together. Here are some additional resources to help you stay on track and get the most out of your journal:</p>",
+            "padding_bottom": 16
+          }
+        }
+      },
+      "block_order": [
+        "heading_M6pXMC",
+        "text_ERpW74"
+      ],
+      "settings": {
+        "align_text": "text-center",
+        "width": "wrapper",
+        "overlay_opacity": 0,
+        "show_overlay_text": false,
+        "padding_top": 50,
+        "padding_bottom": 26
+      }
+    },
+    "section_multicolumn_qNUQGG": {
+      "type": "section-multicolumn",
+      "blocks": {
+        "icon_rMxn3t": {
+          "type": "icon",
+          "settings": {
+            "column_width": 33,
+            "icon_name": "icon-shield",
+            "icon_size": 50,
+            "icon_alignment": "icon--top",
+            "icon_color": "#545454",
+            "image": "shopify://shop_images/Asset_8_300x_32c07f16-3391-4726-b899-751f3afe1b25.png",
+            "title": "",
+            "text": "<h4><a href=\"/pages/self-journal-video-tutorials\" target=\"_blank\" title=\"Self Journal -Video Tutorials\">Video  Tutorials</a></h4><p>Check out our video guides that show how to fill in each section of your journal.</p>"
+          }
+        },
+        "icon_wRHEL8": {
+          "type": "icon",
+          "settings": {
+            "column_width": 33,
+            "icon_name": "icon-trophy",
+            "icon_size": 50,
+            "icon_alignment": "icon--top",
+            "icon_color": "#545454",
+            "image": "shopify://shop_images/Asset_9_300x_920f3868-825a-4246-a779-9d149f98da2c.png",
+            "title": "",
+            "text": "<h4><a href=\"/products/goal-templates\" target=\"_blank\" title=\"Goal Getter Toolkit: Your Free Path to Success\">Goal-Setting Templates</a></h4><p>Use these templates to clarify and break down your goals into achievable steps.</p>"
+          }
+        },
+        "icon_U8f9yp": {
+          "type": "icon",
+          "settings": {
+            "column_width": 33,
+            "icon_name": "icon-chat",
+            "icon_size": 50,
+            "icon_alignment": "icon--top",
+            "icon_color": "#545454",
+            "image": "shopify://shop_images/Asset_10_300x_cc68b17d-38a6-437a-831a-3087f95989fc.png",
+            "title": "",
+            "text": "<h4><a href=\"https://bestself.co/pages/the-science-of-success-research-behind-the-self-journal\" target=\"_blank\" title=\"https://bestself.co/pages/the-science-of-success-research-behind-the-self-journal\">Self Journal Science </a></h4><p>See the scientific principles behind this product.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "icon_rMxn3t",
+        "icon_wRHEL8",
+        "icon_U8f9yp"
+      ],
+      "settings": {
+        "title": "",
+        "description": "",
+        "align_heading": "text-center",
+        "align_text": "text-center",
+        "width": "wrapper--full-padded",
+        "align_columns": "flex-align-top",
+        "layout_mobile": "slider",
+        "padding_top": 0,
+        "padding_bottom": 50
+      }
+    },
+    "section_rich_text_fFJ46V": {
+      "type": "section-rich-text",
+      "blocks": {
+        "heading_aBKKMk": {
+          "type": "heading",
+          "settings": {
+            "title": "More Resources to Support Your Journey",
+            "padding_bottom": 16
+          }
+        },
+        "text_QXrP6g": {
+          "type": "text",
+          "settings": {
+            "text": "<p>The Self Journal journey is better together. Here are some additional resources to help you stay on track and get the most out of your journal:</p><ul><li><strong>Video Tutorials:</strong> Need a quick walkthrough? Check out our video guides that show how to fill in each section of your journal.</li><li><strong>Goal-Setting Templates:</strong> Use these templates to clarify and break down your goals into achievable steps.</li></ul><p><strong>Join the Community:</strong> Join over 10,000 members in the BestSelf Alliance Facebook group to connect with people who are on the same journey toward achieving their goals. Share your progress, ask for advice, and find inspiration from fellow high-achievers.</p>",
+            "padding_bottom": 16
+          }
+        }
+      },
+      "block_order": [
+        "heading_aBKKMk",
+        "text_QXrP6g"
+      ],
+      "disabled": true,
+      "settings": {
+        "align_text": "text-left",
+        "width": "wrapper",
+        "overlay_opacity": 0,
+        "show_overlay_text": false,
+        "padding_top": 100,
+        "padding_bottom": 100
+      }
+    },
+    "section_rich_text_9pC3qW": {
+      "type": "section-rich-text",
+      "blocks": {
+        "heading_tkkhBp": {
+          "type": "heading",
+          "settings": {
+            "title": "Ready to Get Started?",
+            "padding_bottom": 16
+          }
+        },
+        "text_QxJ4Mj": {
+          "type": "text",
+          "settings": {
+            "text": "<p>The best time to start was yesterday. The second-best time is now! Dive into your Self Journal and start building the habits and routines that will lead you to success. Remember, the path to becoming your best self starts with a single step. Don’t wait—start creating the life you envision today.</p>",
+            "padding_bottom": 16
+          }
+        },
+        "buttons_g9jEUG": {
+          "type": "buttons",
+          "settings": {
+            "button_text": "Start Building Your Best Self Now",
+            "button_url": "",
+            "button_type": "btn--primary",
+            "button_size": "",
+            "button_style": "btn--solid",
+            "show_arrow": false,
+            "padding_bottom": 16
+          }
+        }
+      },
+      "block_order": [
+        "heading_tkkhBp",
+        "text_QxJ4Mj",
+        "buttons_g9jEUG"
+      ],
+      "settings": {
+        "align_text": "text-center",
+        "width": "wrapper",
+        "overlay_opacity": 0,
+        "show_overlay_text": false,
+        "padding_top": 100,
+        "padding_bottom": 100
+      }
+    }
+  },
+  "order": [
+    "main",
+    "section_hero_JTFBYy",
+    "section_rich_text_yfq3DK",
+    "section_double_CTQzq8",
+    "section_rich_text_7bzrpc",
+    "section_double_ceyRid",
+    "section_rich_text_fzyQey",
+    "section_rich_text_c3afm8",
+    "section_double_tA3q4m",
+    "section_double_RAkDTz",
+    "section_double_9RAUqP",
+    "section_double_TbqAja",
+    "section_double_Xg3JMw",
+    "section_rich_text_dWYChz",
+    "section_accordion_group_7dx3b4",
+    "section_rich_text_UMACpU",
+    "section_multicolumn_qNUQGG",
+    "section_rich_text_fFJ46V",
+    "section_rich_text_9pC3qW"
+  ]
+}

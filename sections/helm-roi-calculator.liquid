@@ -1,0 +1,804 @@
+{%- comment -%}
+  Helm ROI Calculator - Minimalist Design
+  Ultra-tight mobile layout with theme typography
+{%- endcomment -%}
+
+{%- style -%}
+  #ROICalculator--{{ section.id }} {
+    padding: {{ section.settings.padding_top }}px 0 {{ section.settings.padding_bottom }}px;
+    background: {{ section.settings.background_color }};
+    position: relative;
+    overflow: hidden;
+  }
+
+  .roi-calculator__container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .roi-calculator__header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .roi-calculator__title {
+    font-family: var(--font-heading-family);
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: var(--font-heading-weight);
+    color: rgb(var(--color-foreground));
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.02em;
+    line-height: 1.2;
+    opacity: 0;
+    animation: fadeInUp 0.6s ease-out 0.1s forwards;
+  }
+
+  .roi-calculator__subtitle {
+    font-family: var(--font-body-family);
+    font-size: 1rem;
+    color: rgba(var(--color-foreground), 0.75);
+    opacity: 0;
+    animation: fadeInUp 0.6s ease-out 0.2s forwards;
+    font-weight: var(--font-body-weight);
+    line-height: 1.5;
+    max-width: 450px;
+    margin: 0 auto;
+  }
+
+  /* Calculator Card */
+  .roi-calculator__card {
+    background: rgb(var(--color-background));
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 2px 20px rgba(var(--color-foreground), 0.04);
+    border: 1px solid rgba(var(--color-foreground), 0.08);
+    opacity: 0;
+    animation: fadeInUp 0.6s ease-out 0.3s forwards;
+    transition: box-shadow 0.3s ease;
+  }
+
+  .roi-calculator__card:hover {
+    box-shadow: 0 4px 30px rgba(var(--color-foreground), 0.08);
+  }
+
+  /* Input Sections */
+  .roi-input-group {
+    margin-bottom: 2rem;
+  }
+
+  .roi-input-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    font-family: var(--font-body-family);
+    gap: 1rem;
+  }
+
+  .roi-label-text {
+    font-size: 0.875rem;
+    color: rgba(var(--color-foreground), 0.75);
+    font-weight: var(--font-body-weight);
+    letter-spacing: 0.01em;
+    line-height: 1.4;
+    flex: 1;
+  }
+
+  .roi-value-display {
+    font-family: var(--font-heading-family);
+    font-size: 1.125rem;
+    color: rgb(var(--color-link));
+    font-weight: var(--font-heading-weight);
+    min-width: 80px;
+    text-align: right;
+    transition: color 0.2s ease;
+    white-space: nowrap;
+  }
+
+  /* Custom Sliders */
+  .roi-slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background: linear-gradient(to right, 
+      rgb(var(--color-link)) 0%, 
+      rgb(var(--color-link)) var(--progress), 
+      rgba(var(--color-foreground), 0.1) var(--progress), 
+      rgba(var(--color-foreground), 0.1) 100%);
+    outline: none;
+    transition: background 0.2s ease;
+  }
+
+  .roi-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: rgb(var(--color-background));
+    box-shadow: 0 1px 8px rgba(var(--color-foreground), 0.2);
+    cursor: pointer;
+    border: 2px solid rgb(var(--color-link));
+    transition: all 0.2s ease;
+  }
+
+  .roi-slider::-webkit-slider-thumb:hover {
+    transform: scale(1.1);
+    box-shadow: 0 2px 12px rgba(var(--color-foreground), 0.25);
+  }
+
+  .roi-slider::-webkit-slider-thumb:active {
+    transform: scale(1.05);
+  }
+
+  .roi-slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: rgb(var(--color-background));
+    box-shadow: 0 1px 8px rgba(var(--color-foreground), 0.2);
+    cursor: pointer;
+    border: 2px solid rgb(var(--color-link));
+    transition: all 0.2s ease;
+  }
+
+  /* Results Section */
+  .roi-results {
+    border-top: 1px solid rgba(var(--color-foreground), 0.08);
+    padding-top: 2rem;
+    margin-top: 2rem;
+  }
+
+  .roi-results__title {
+    font-family: var(--font-body-family);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(var(--color-foreground), 0.6);
+    margin-bottom: 1.5rem;
+    font-weight: var(--font-body-weight-bold);
+  }
+
+  .roi-cost-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .roi-cost-item {
+    text-align: center;
+    padding: 1rem 0.5rem;
+    background: rgba(var(--color-foreground), 0.02);
+    border-radius: 8px;
+    transition: all 0.2s ease;
+  }
+
+  .roi-cost-item:hover {
+    transform: translateY(-1px);
+    background: rgba(var(--color-foreground), 0.04);
+  }
+
+  .roi-cost-period {
+    font-family: var(--font-body-family);
+    font-size: 0.75rem;
+    color: rgba(var(--color-foreground), 0.6);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.25rem;
+  }
+
+  .roi-cost-amount {
+    font-family: var(--font-heading-family);
+    font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+    color: rgb(255, 87, 87);
+    font-weight: var(--font-heading-weight);
+    letter-spacing: -0.02em;
+    transition: transform 0.2s ease;
+  }
+
+  /* Break-even Visualization */
+  .roi-breakeven {
+    background: linear-gradient(135deg, rgb(var(--color-link)), rgb(var(--color-link)));
+    border-radius: 10px;
+    padding: 1.5rem;
+    text-align: center;
+    color: rgb(var(--color-background));
+    position: relative;
+    overflow: hidden;
+  }
+
+  .roi-breakeven::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 60%);
+    animation: pulse 4s ease-in-out infinite;
+  }
+
+  .roi-breakeven-label {
+    font-family: var(--font-body-family);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.25rem;
+    opacity: 0.9;
+    position: relative;
+  }
+
+  .roi-breakeven-days {
+    font-family: var(--font-heading-family);
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    font-weight: var(--font-heading-weight);
+    letter-spacing: -0.02em;
+    position: relative;
+    line-height: 1.1;
+  }
+
+  .roi-breakeven-description {
+    font-family: var(--font-body-family);
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+    opacity: 0.85;
+    position: relative;
+    line-height: 1.3;
+  }
+
+  /* Mobile Responsive - ULTRA TIGHT */
+  @media screen and (max-width: 767px) {
+    #ROICalculator--{{ section.id }} {
+      padding: 40px 0;
+    }
+
+    .roi-calculator__container {
+      padding: 0 1rem;
+    }
+
+    .roi-calculator__header {
+      margin-bottom: 1.25rem;
+    }
+
+    .roi-calculator__title {
+      font-size: 1.375rem;
+      margin-bottom: 0.375rem;
+    }
+
+    .roi-calculator__subtitle {
+      font-size: 0.8125rem;
+      line-height: 1.4;
+    }
+
+    .roi-calculator__card {
+      padding: 1rem;
+      border-radius: 8px;
+    }
+
+    .roi-input-group {
+      margin-bottom: 1.25rem;
+    }
+
+    .roi-input-label {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.375rem;
+      margin-bottom: 0.625rem;
+    }
+
+    .roi-label-text {
+      font-size: 0.75rem;
+      line-height: 1.3;
+    }
+
+    .roi-value-display {
+      font-size: 0.9375rem;
+      text-align: left;
+      min-width: auto;
+    }
+
+    .roi-slider {
+      height: 3px;
+    }
+
+    .roi-slider::-webkit-slider-thumb,
+    .roi-slider::-moz-range-thumb {
+      width: 18px;
+      height: 18px;
+    }
+
+    .roi-results {
+      padding-top: 1.25rem;
+      margin-top: 1.25rem;
+    }
+
+    .roi-results__title {
+      font-size: 0.625rem;
+      margin-bottom: 0.875rem;
+      letter-spacing: 0.12em;
+    }
+
+    .roi-cost-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.375rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .roi-cost-item {
+      padding: 0.625rem 0.25rem;
+      border-radius: 6px;
+    }
+
+    .roi-cost-period {
+      font-size: 0.5625rem;
+      margin-bottom: 0.125rem;
+      letter-spacing: 0.06em;
+    }
+
+    .roi-cost-amount {
+      font-size: 0.875rem;
+    }
+
+    .roi-breakeven {
+      padding: 1rem;
+      border-radius: 8px;
+    }
+
+    .roi-breakeven-label {
+      font-size: 0.625rem;
+      margin-bottom: 0.125rem;
+    }
+
+    .roi-breakeven-days {
+      font-size: 1.5rem;
+      margin: 0.125rem 0;
+    }
+
+    .roi-breakeven-description {
+      font-size: 0.75rem;
+      line-height: 1.3;
+      margin-top: 0.25rem;
+    }
+  }
+
+  /* Desktop Enhancements */
+  @media screen and (min-width: 768px) {
+    .roi-calculator__container {
+      max-width: 600px;
+    }
+
+    .roi-calculator__card {
+      padding: 2.5rem;
+    }
+
+    .roi-cost-grid {
+      gap: 1.5rem;
+    }
+
+    .roi-cost-item {
+      padding: 1.25rem;
+    }
+  }
+
+  /* Animations */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes pulse {
+    0%, 100% {
+      transform: rotate(0deg) scale(1);
+      opacity: 0.15;
+    }
+    50% {
+      transform: rotate(180deg) scale(1.05);
+      opacity: 0.2;
+    }
+  }
+
+  /* Smooth Number Transitions */
+  .roi-value-transition {
+    transition: all 0.3s ease;
+  }
+{%- endstyle -%}
+
+<section id="ROICalculator--{{ section.id }}" class="roi-calculator-section">
+  <div class="roi-calculator__container">
+    <!-- Header -->
+    <div class="roi-calculator__header">
+      <h2 class="roi-calculator__title">{{ section.settings.heading | default: "What's the True Cost?" }}</h2>
+      <p class="roi-calculator__subtitle">{{ section.settings.subtitle | default: "Every moment lost to distraction has a price. Let's calculate yours." }}</p>
+    </div>
+
+    <!-- Calculator Interface -->
+    <div class="roi-calculator__card" x-data="roiCalculator()">
+      <!-- Time Lost Input -->
+      <div class="roi-input-group">
+        <div class="roi-input-label">
+          <span class="roi-label-text">{{ section.settings.time_label | default: "Time lost to distractions daily" }}</span>
+          <span class="roi-value-display roi-value-transition" x-text="formatTime(timePerDay)"></span>
+        </div>
+        <input 
+          type="range" 
+          class="roi-slider"
+          x-model="timePerDay"
+          @input="updateCalculations()"
+          min="{{ section.settings.time_min | default: 0 }}"
+          max="{{ section.settings.time_max | default: 480 }}"
+          step="{{ section.settings.time_step | default: 15 }}"
+          :style="`--progress: ${(timePerDay - {{ section.settings.time_min | default: 0 }}) / ({{ section.settings.time_max | default: 480 }} - {{ section.settings.time_min | default: 0 }}) * 100}%`"
+        >
+      </div>
+
+      <!-- Hourly Value Input -->
+      <div class="roi-input-group">
+        <div class="roi-input-label">
+          <span class="roi-label-text">{{ section.settings.value_label | default: "Your time's value per hour" }}</span>
+          <span class="roi-value-display roi-value-transition" x-text="formatCurrency(hourlyValue)"></span>
+        </div>
+        <input 
+          type="range" 
+          class="roi-slider"
+          x-model="hourlyValue"
+          @input="updateCalculations()"
+          min="{{ section.settings.value_min | default: 0 }}"
+          max="{{ section.settings.value_max | default: 500 }}"
+          step="{{ section.settings.value_step | default: 5 }}"
+          :style="`--progress: ${(hourlyValue - {{ section.settings.value_min | default: 0 }}) / ({{ section.settings.value_max | default: 500 }} - {{ section.settings.value_min | default: 0 }}) * 100}%`"
+        >
+      </div>
+
+      <!-- Results -->
+      <div class="roi-results">
+        <h3 class="roi-results__title">{{ section.settings.results_title | default: "The Hidden Cost" }}</h3>
+        
+        <div class="roi-cost-grid">
+          <div class="roi-cost-item">
+            <div class="roi-cost-period">Daily</div>
+            <div class="roi-cost-amount roi-value-transition" x-text="formatCurrency(dailyCost)"></div>
+          </div>
+          <div class="roi-cost-item">
+            <div class="roi-cost-period">Monthly</div>
+            <div class="roi-cost-amount roi-value-transition" x-text="formatCurrency(monthlyCost)"></div>
+          </div>
+          <div class="roi-cost-item">
+            <div class="roi-cost-period">Yearly</div>
+            <div class="roi-cost-amount roi-value-transition" x-text="formatCurrency(yearlyCost)"></div>
+          </div>
+        </div>
+
+        <!-- Break-even Insight -->
+        <div class="roi-breakeven">
+          <div class="roi-breakeven-label">{{ section.settings.breakeven_label | default: "Helm Pays for Itself In" }}</div>
+          <div class="roi-breakeven-days roi-value-transition" x-text="breakevenDays + ' days'"></div>
+          <div class="roi-breakeven-description" x-text="breakevenMessage"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+function roiCalculator() {
+  return {
+    timePerDay: {{ section.settings.default_time | default: 120 }}, // minutes
+    hourlyValue: {{ section.settings.default_value | default: 50 }}, // dollars
+    dailyCost: 0,
+    monthlyCost: 0,
+    yearlyCost: 0,
+    breakevenDays: 0,
+    breakevenMessage: '',
+    helmPrice: {{ section.settings.helm_price | default: 79 }},
+    
+    init() {
+      this.updateCalculations();
+    },
+    
+    formatTime(minutes) {
+      const hours = Math.floor(minutes / 60);
+      const mins = minutes % 60;
+      if (hours > 0) {
+        return `${hours}h ${mins}m`;
+      }
+      return `${mins} min`;
+    },
+    
+    formatCurrency(amount) {
+      return new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD',
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 0
+      }).format(amount);
+    },
+    
+    updateCalculations() {
+      // Calculate costs
+      const hoursPerDay = this.timePerDay / 60;
+      this.dailyCost = hoursPerDay * this.hourlyValue;
+      this.monthlyCost = this.dailyCost * 30;
+      this.yearlyCost = this.dailyCost * 365;
+      
+      // Calculate break-even
+      if (this.dailyCost > 0) {
+        this.breakevenDays = Math.ceil(this.helmPrice / this.dailyCost);
+        
+        if (this.breakevenDays <= 7) {
+          this.breakevenMessage = "Less than a week to positive ROI";
+        } else if (this.breakevenDays <= 30) {
+          this.breakevenMessage = "Under a month to reclaim your time";
+        } else if (this.breakevenDays <= 90) {
+          this.breakevenMessage = "A small investment in your focus";
+        } else {
+          this.breakevenMessage = "Every day of focus counts";
+        }
+      } else {
+        this.breakevenDays = 0;
+        this.breakevenMessage = "Start by identifying your distractions";
+      }
+    }
+  };
+}
+</script>
+
+{% schema %}
+{
+  "name": "ROI Calculator",
+  "class": "roi-calculator-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Section Heading",
+      "default": "What's the True Cost?"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Section Subtitle",
+      "default": "Every moment lost to distraction has a price. Let's calculate yours."
+    },
+    {
+      "type": "header",
+      "content": "Calculator Settings"
+    },
+    {
+      "type": "text",
+      "id": "time_label",
+      "label": "Time Input Label",
+      "default": "Time lost to distractions daily"
+    },
+    {
+      "type": "range",
+      "id": "time_min",
+      "label": "Minimum Time (minutes)",
+      "min": 0,
+      "max": 60,
+      "step": 15,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "time_max",
+      "label": "Maximum Time (minutes)",
+      "min": 120,
+      "max": 720,
+      "step": 60,
+      "default": 480
+    },
+    {
+      "type": "range",
+      "id": "time_step",
+      "label": "Time Step (minutes)",
+      "min": 5,
+      "max": 30,
+      "step": 5,
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "default_time",
+      "label": "Default Time (minutes)",
+      "min": 30,
+      "max": 240,
+      "step": 15,
+      "default": 120
+    },
+    {
+      "type": "text",
+      "id": "value_label",
+      "label": "Value Input Label",
+      "default": "Your time's value per hour"
+    },
+    {
+      "type": "range",
+      "id": "value_min",
+      "label": "Minimum Value ($)",
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "value_max",
+      "label": "Maximum Value ($)",
+      "min": 100,
+      "max": 1000,
+      "step": 50,
+      "default": 500
+    },
+    {
+      "type": "range",
+      "id": "value_step",
+      "label": "Value Step ($)",
+      "min": 1,
+      "max": 25,
+      "step": 1,
+      "default": 5
+    },
+    {
+      "type": "range",
+      "id": "default_value",
+      "label": "Default Value ($)",
+      "min": 25,
+      "max": 100,
+      "step": 5,
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "helm_price",
+      "label": "Helm Price ($)",
+      "min": 29,
+      "max": 199,
+      "step": 10,
+      "default": 79
+    },
+    {
+      "type": "text",
+      "id": "results_title",
+      "label": "Results Title",
+      "default": "The Hidden Cost"
+    },
+    {
+      "type": "text",
+      "id": "breakeven_label",
+      "label": "Break-even Label",
+      "default": "Helm Pays for Itself In"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading Color",
+      "default": "#1A1F36"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#4A5568"
+    },
+    {
+      "type": "color",
+      "id": "card_background",
+      "label": "Card Background",
+      "default": "rgba(255, 255, 255, 0.95)"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Border Color",
+      "default": "rgba(26, 31, 54, 0.08)"
+    },
+    {
+      "type": "color",
+      "id": "label_color",
+      "label": "Label Color",
+      "default": "#718096"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Accent Color",
+      "default": "#2B6CB0"
+    },
+    {
+      "type": "color",
+      "id": "slider_track",
+      "label": "Slider Track Color",
+      "default": "#E2E8F0"
+    },
+    {
+      "type": "color",
+      "id": "divider_color",
+      "label": "Divider Color",
+      "default": "#E2E8F0"
+    },
+    {
+      "type": "color",
+      "id": "result_background",
+      "label": "Result Card Background",
+      "default": "#F7FAFC"
+    },
+    {
+      "type": "color",
+      "id": "cost_color",
+      "label": "Cost Amount Color",
+      "default": "#E53E3E"
+    },
+    {
+      "type": "color",
+      "id": "gradient_start",
+      "label": "Gradient Start Color",
+      "default": "#2B6CB0"
+    },
+    {
+      "type": "color",
+      "id": "gradient_end",
+      "label": "Gradient End Color",
+      "default": "#5090D3"
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top Padding",
+      "min": 0,
+      "max": 150,
+      "step": 10,
+      "default": 60,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom Padding",
+      "min": 0,
+      "max": 150,
+      "step": 10,
+      "default": 60,
+      "unit": "px"
+    }
+  ],
+  "presets": [
+    {
+      "name": "ROI Calculator",
+      "settings": {
+        "heading": "What's the True Cost?",
+        "subtitle": "Every moment lost to distraction has a price. Let's calculate yours.",
+        "background_color": "#FFFFFF",
+        "heading_color": "#1A1F36",
+        "accent_color": "#2B6CB0"
+      }
+    }
+  ]
+}
+{% endschema %}

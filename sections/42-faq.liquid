@@ -1,0 +1,176 @@
+{% liquid
+  assign bg_color = section.settings.bg_color
+
+  assign section_title = section.settings.section_title
+
+  assign pt_mob = section.settings.pt_mob
+  assign pb_mob = section.settings.pb_mob
+  assign pt_tab = section.settings.pt_tab
+  assign pb_tab = section.settings.pb_tab
+  assign pt_desk = section.settings.pt_desk
+  assign pb_desk = section.settings.pb_desk
+%}
+
+{% render 'section-paddings',
+  section_id: section.id,
+  pt_mob: pt_mob,
+  pb_mob: pb_mob,
+  pt_tab: pt_tab,
+  pb_tab: pb_tab,
+  pt_desk: pt_desk,
+  pb_desk: pb_desk
+%}
+
+<div
+  data-section-id="{{ section.id }}"
+  style="--bg-color-faq:{{ bg_color }} "
+  class="max-md:tw-bg-[var(--bg-color-faq)]"
+ id="faq">
+  <div class="container-42">
+    <div
+      style="--bg-color-faq:{{ bg_color }}"
+      class="md:tw-bg-[var(--bg-color-faq)] md:tw-rounded-[40px] md:tw-px-8 md:tw-py-8 lg:tw-py-[70px] "
+    >
+      <div class="tw-flex justify-center">
+        <div class="tw-flex tw-flex-col md:tw-flex-row tw-gap-16 tw-justify-between tw-w-full">
+          {% if section_title != blank %}
+            <div class="md:tw-max-w-[280px]">
+              <div class="tw-text-black lg:tw-text-[48px] tw-text-[28px] tw-leading-[35px] lg:tw-leading-[56px]">
+                {{ section_title }}
+              </div>
+            </div>
+          {% endif %}
+
+          <div class="md:tw-max-w-[748px] tw-w-full" x-data="{ openItem: null }">
+            {% for block in section.blocks %}
+              {% if block.settings.answer != blank %}
+                <div
+                  class="tw-w-full"
+                  style="{% if forloop.first %}border-top: 1px solid #2C3C6033;{% endif %}border-bottom: 1px solid #2C3C6033;"
+                >
+                  <button
+                    class="tw-w-full tw-flex tw-justify-between tw-gap-5 tw-items-center tw-py-7 md:tw-py-5"
+                    @click="openItem === {{ forloop.index0 }} ? openItem = null : openItem = {{ forloop.index0 }}"
+                  >
+                    <h3 class="tw-text-black tw-text-left tw-text-sm tw-leading-[24px] lg:tw-text-[22px] lg:tw-leading-[30px] tw-font-bold">
+                      {{- block.settings.question -}}
+                    </h3>
+                    <span x-show="openItem !== {{ forloop.index0 }}">
+                      {% render 'icon-42', name: 'accordion-plus' %}
+                    </span>
+                    <span x-cloak x-show="openItem === {{ forloop.index0 }}">
+                      {% render 'icon-42', name: 'accordion-minus' %}
+                    </span>
+                  </button>
+
+                  <div
+                    x-show="openItem === {{ forloop.index0 }}"
+                    x-collapse
+                  >
+                    <div class="rte-42 tw-flex tw-flex-col tw-gap-3 rte-all:tw-font-normal tw-text-[14px] lg:tw-text-[20px] tw-leading-[22px] lg:tw-leading-[28px] tw-text-black tw-pb-7 md:tw-pb-5">
+                      {{ block.settings.answer }}
+                    </div>
+                  </div>
+                </div>
+              {% endif %} 
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "42 Faq",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background color",
+      "default": "#ECF2FF"
+    },
+    {
+      "type": "richtext",
+      "id": "section_title",
+      "label": "Section Title"
+    },
+    {
+      "type": "header",
+      "content": "Padding Y settings"
+    },
+    {
+      "type": "number",
+      "id": "pt_mob",
+      "label": "Mobile padding top in px",
+      "default": 48
+    },
+    {
+      "type": "number",
+      "id": "pb_mob",
+      "label": "Mobile padding bottom in px",
+      "default": 48
+    },
+    {
+      "type": "number",
+      "id": "pt_tab",
+      "label": "Tablet padding top in px",
+      "default": 60
+    },
+    {
+      "type": "number",
+      "id": "pb_tab",
+      "label": "Tablet padding bottom in px",
+      "default": 60
+    },
+    {
+      "type": "number",
+      "id": "pt_desk",
+      "label": "Desktop padding top in px",
+      "default": 120
+    },
+    {
+      "type": "number",
+      "id": "pb_desk",
+      "label": "Desktop padding bottom in px",
+      "default": 120
+    }
+  ],
+  "blocks": [
+    {
+      "type": "faq_item",
+      "name": "FAQ Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question"
+        },
+        {
+          "type": "richtext",
+          "id": "answer",
+          "label": "Answer"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "42 Faq",
+      "blocks": [
+        {
+          "type": "faq_item"
+        },
+        {
+          "type": "faq_item"
+        },
+        {
+          "type": "faq_item"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,191 @@
+<div
+  class="tw-fixed tw-inset-0 tw-z-10 tw-duration-300 tw-pointer-events-none"
+  :class="{'tw-pointer-events-auto tw-bg-black/20' : showDrawerFilter}"
+  @click="hideDrawer()"
+></div>
+<div
+  x-cloak
+  x-show="showDrawerFilter"
+  x-transition:enter="tw-transition tw-duration-700"
+  x-transition:enter-start="-tw-translate-x-full"
+  x-transition:enter-end="tw-translate-x-0"
+  x-transition:leave="tw-transition tw-duration-700"
+  x-transition:leave-start="tw-translate-x-0"
+  x-transition:leave-end="-tw-translate-x-full"
+  class="tw-fixed tw-top-0 tw-left-0 tw-bottom-0 tw-bg-white tw-z-10 tw-w-[80%] md:tw-w-[25%]"
+>
+  <div class="tw-grid tw-grid-cols-1 tw-grid-rows-[auto,1fr] tw-h-full">
+    <div class="tw-flex tw-flex-col tw-gap-2 tw-px-6 tw-py-5">
+      <div class="tw-flex tw-items-center tw-justify-between">
+        <h3 class="tw-text-black tw-font-medium lg:tw-text-xl tw-text-lg">
+          {{- 'collections.general.filters' | t -}}
+        </h3>
+        <button type="button" @click="hideDrawer()" class="tw-w-5">
+          {% render 'icon-42', name: 'close', class: '' %}
+        </button>
+      </div>
+
+      <ul data-active-filters-update class="tw-flex tw-items-center tw-gap-3 tw-flex-wrap">
+        <!-- Loop through active filters and allow removal -->
+        {%- for filter in collection.filters -%}
+          {%- if filter.type == 'price_range' -%}
+            {%- if filter.min_value.value != null or filter.max_value.value != null -%}
+              <li>
+                <button
+                  type="button"
+                  class="tw-flex tw-items-center tw-justify-center tw-text-xs tw-text-black tw-gap-1 tw-border-[1px] tw-border-sc-blue tw-border-solid tw-rounded-[50px] tw-py-1 tw-px-2"
+                  @click.prevent="removeFilter('{{ filter.url_to_remove }}')"
+                >
+                  {%- assign min_value = filter.min_value.value | default: 0 -%}
+                  {%- assign max_value = filter.max_value.value | default: filter.range_max -%}
+                  <span>{{ min_value | money }} - {{ max_value | money }}</span>
+                  {% render 'icon-42', name: 'close', class: 'tw-w-2' %}
+                </button>
+              </li>
+            {%- endif -%}
+          {%- else -%}
+            {%- for filter_value in filter.active_values -%}
+              <li>
+                <button
+                  type="button"
+                  class="tw-flex tw-items-center tw-justify-center tw-text-xs tw-text-black tw-gap-1 tw-border-[1px] tw-border-sc-blue tw-border-solid tw-rounded-[50px] tw-py-1 tw-px-2"
+                  @click.prevent="removeFilter('{{ filter_value.url_to_remove }}')"
+                >
+                  {{- filter_value.label -}}
+                  {% render 'icon-42', name: 'close', class: 'tw-w-2' %}
+                </button>
+              </li>
+            {%- endfor -%}
+          {%- endif -%}
+        {%- endfor -%}
+      </ul>
+    </div>
+
+    <form
+      class="tw-h-full tw-w-full tw-overflow-auto tw-px-6 tw-py-3"
+      id="{{ formID }}"
+      @change="applyFilters($el)"
+    >
+      <!-- Loop through each filter in the collection -->
+      {%- for filter in collection.filters -%}
+        <!-- Filter container with border -->
+        <div x-data="{openAccordion: false}">
+          <!-- Handle filter type: list or boolean -->
+          {%- case filter.type -%}
+            {%- when 'list' -%}
+              <!-- Filter label -->
+              <button
+                @click="openAccordion = !openAccordion"
+                type="button"
+                class="tw-flex tw-justify-between tw-gap-3 tw-items-center tw-w-full tw-py-3"
+              >
+                <h3 class="tw-text-sc-blue tw-font-medium lg:tw-text-xl tw-text-lg">{{ filter.label }}</h3>
+                <span x-show="!openAccordion">{% render 'icon-42', name: 'accordion-plus' %}</span>
+                <span x-show="openAccordion">{% render 'icon-42', name: 'accordion-minus' %}</span>
+              </button>
+              <!-- Filter values list -->
+              <div
+                x-show="openAccordion"
+                x-collapse
+                x-cloak
+              >
+                <ul
+                  data-filters-update
+
+                  class="tw-grid tw-grid-cols-1 tw-gap-1 tw-w-full tw-mt-1"
+                >
+                  {% assign index = 0 %}
+                  <!-- Loop through each filter value -->
+                  {%- for filter_value in filter.values -%}
+                    {% assign index = forloop.index %}
+                    <li
+                      class="tw-w-full {% if filter_value.count == 0 and filter_value.active == false -%} tw-opacity-20 tw-pointer-events-none {%- endif %}"
+                    >
+                      <!-- Checkbox for filter option -->
+                      <label class="tw-flex tw-items-center tw-gap-2 tw-py-1 tw-cursor-pointer hover:tw-opacity-85 tw-transition-all tw-duration-300">
+                        {% assign checked = filter_value.active %}
+                        {% assign id = 'Filter-' | append: filter.param_name | append: '-' | append: forloop.index %}
+                        <div class="tw-relative tw-h-[14px] tw-w-[14px] tw-border-[1px] tw-border-sc-blue tw-border-solid">
+                          <input
+                            id="{{ id }}"
+                            class="tw-peer !tw-hidden"
+                            type="checkbox"
+                            name="{{- filter_value.param_name -}}"
+                            value="{{- filter_value.value -}}"
+                            {% if checked %}
+                              checked
+                            {% endif %}
+                          >
+                          <span
+                            class="peer-checked:!tw-opacity-100 tw-opacity-0 tw-absolute tw-z-5 tw-flex tw-bg-sc-blue tw-top-1/2 tw-left-1/2 -tw-translate-x-1/2 -tw-translate-y-1/2 tw-h-[10px] tw-w-[10px]"
+                          ></span>
+                        </div>
+
+                        <!-- SWATCHES -->
+                        {% if filter.label == 'Color' %}
+                          <span
+                            class="swatches tw-w-[14px] tw-h-[14px] tw-rounded-full"
+                            data-swatch="{{ filter_value.label | escape_once }}"
+                            style="--swatch: var(--{{ filter_value.label | handle }});background: var(--{{ filter_value.label | handle }});"
+                          ></span>
+                        {% endif %}
+                        <span class="tw-text-sm tw-text-black">
+                          {{- filter_value.label }} ({{ filter_value.count }})</span
+                        >
+                      </label>
+                    </li>
+                  {%- endfor -%}
+                </ul>
+              </div>
+            {%- when 'price_range' -%}
+              <!-- Filter label -->
+              <button
+                @click="openAccordion = !openAccordion"
+                type="button"
+                class="tw-flex tw-justify-between tw-gap-3 tw-items-center tw-w-full tw-py-4 lg:tw-py-5"
+              >
+                <h3 class="tw-text-sc-blue tw-font-medium lg:tw-text-xl tw-text-lg">{{ filter.label }}</h3>
+                <span x-show="!openAccordion">{% render 'icon-42', name: 'accordion-plus' %}</span>
+                <span x-show="openAccordion">{% render 'icon-42', name: 'accordion-minus' %}</span>
+              </button>
+              <div
+                x-show="openAccordion"
+                x-collapse
+                x-cloak
+              >
+                <div data-filters-update class="tw-flex tw-items-center tw-justify-between tw-gap-3">
+                  <input
+                    class="tw-text-sm tw-rounded-[4px] tw-border-sc-blue tw-border-solid tw-border-[1px] tw-h-8 tw-text-sc-black tw-px-2 tw-text-center"
+                    name="{{ filter.min_value.param_name }}"
+                    id="fromInput"
+                    {% if filter.min_value.value -%}
+                      value="{{ filter.min_value.value | money_without_currency | replace: ',', '' }}"
+                    {%- endif %}
+                    type="number"
+                    placeholder="$0"
+                    min="0"
+                    max="{{ filter.range_max | money_without_currency | replace: ',', '' }}"
+                    oninput="this.value = Math.max(0, this.value)"
+                  >
+                  <span class="tw-text-sc-black p-s">to</span>
+                  <input
+                    class="tw-text-sm tw-rounded-[4px] tw-border-sc-blue tw-border-solid tw-border-[1px] tw-h-8 tw-text-sc-black tw-px-2 tw-text-center"
+                    name="{{ filter.max_value.param_name }}"
+                    id="toInput"
+                    {% if filter.max_value.value -%}
+                      value="{{ filter.max_value.value | money_without_currency | replace: ',', '' }}"
+                    {%- endif %}
+                    type="number"
+                    placeholder="${{ filter.range_max | money_without_currency | replace: ',', '' }}"
+                    min="0"
+                    max="{{ filter.range_max | money_without_currency | replace: ',', '' }}"
+                    oninput="this.value = Math.max(0, this.value)"
+                  >
+                </div>
+              </div>
+          {%- endcase -%}
+        </div>
+      {%- endfor -%}
+    </form>
+  </div>
+</div>

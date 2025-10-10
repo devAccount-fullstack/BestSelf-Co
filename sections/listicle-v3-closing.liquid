@@ -1,0 +1,231 @@
+{%- comment -%}
+  Listicle V3 Closing Section
+  Displays empowering closing message with final CTA
+{%- endcomment -%}
+
+{%- liquid
+  assign listicle = shop.metaobjects.listicle_v3.values.first
+  
+  if section.settings.listicle_handle != blank
+    assign listicle = shop.metaobjects.listicle_v3[section.settings.listicle_handle]
+  endif
+  
+  assign product = listicle.featured_product.value
+  assign color_scheme = section.settings.color_scheme
+  assign padding_top = section.settings.padding_top
+  assign padding_bottom = section.settings.padding_bottom
+  assign layout_width = section.settings.layout_width | default: 'default'
+-%}
+
+{{ 'listicle-consolidated.css' | asset_url | stylesheet_tag }}
+
+<section class="listicle-closing color-{{ color_scheme }} section-{{ section.id }} {% if layout_width == 'moderate' %}listicle-moderate-width{% endif %}"
+         data-section-id="{{ section.id }}"
+         data-section-type="listicle-v3-closing">
+  <div class="listicle-closing__wrapper page-width {% if layout_width == 'moderate' %}moderate-width{% endif %}">
+    
+    {%- comment -%} Closing Content {%- endcomment -%}
+    {%- if listicle.closing_content != blank -%}
+      <div class="listicle-closing__content">
+        <h2 class="listicle-closing__heading h2">Start Where You Are</h2>
+        <div class="listicle-closing__text rte">
+          {{ listicle.closing_content }}
+        </div>
+      </div>
+    {%- endif -%}
+    
+    {%- comment -%} Final CTA {%- endcomment -%}
+    <div class="listicle-closing__cta">
+      <div class="listicle-closing__cta-content">
+        <h3 class="listicle-closing__cta-heading h3">
+          Ready to Transform Your {{ product.title | split: ' ' | first }} Experience?
+        </h3>
+        <p class="listicle-closing__cta-text">
+          Join thousands who have already started their journey.
+        </p>
+        <div class="listicle-closing__actions">
+          <a href="{{ listicle.cta_url | default: product.url }}" 
+             class="listicle-closing__button button button--primary">
+            {{ listicle.cta_text | default: 'Get Started Today' }}
+          </a>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+<style>
+  .listicle-closing {
+    padding-top: {{ padding_top }}px;
+    padding-bottom: {{ padding_bottom }}px;
+  }
+  
+  .listicle-closing__wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  /* Closing Content */
+  .listicle-closing__content {
+    margin-bottom: 3rem;
+  }
+  
+  .listicle-closing__heading {
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    color: var(--color-text-primary);
+  }
+  
+  .listicle-closing__text {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    opacity: 0.9;
+  }
+  
+  .listicle-closing__text p {
+    margin-bottom: 1rem;
+  }
+  
+  .listicle-closing__text p:last-child {
+    margin-bottom: 0;
+  }
+  
+  /* CTA Section */
+  .listicle-closing__cta {
+    background: linear-gradient(135deg, 
+                                var(--color-accent, #2B5CE6) 0%, 
+                                color-mix(in srgb, var(--color-accent, #2B5CE6) 80%, black) 100%);
+    border-radius: var(--border-radius, 12px);
+    padding: 3rem 2rem;
+    color: white;
+  }
+  
+  .listicle-closing__cta-heading {
+    margin-bottom: 1rem;
+    color: white;
+  }
+  
+  .listicle-closing__cta-text {
+    font-size: 1.125rem;
+    margin-bottom: 2rem;
+    opacity: 0.95;
+  }
+  
+  /* Button */
+  .listicle-closing__button {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background: white;
+    color: var(--color-accent, #2B5CE6);
+    text-decoration: none;
+    border-radius: var(--button-radius, 6px);
+    font-weight: 700;
+    font-size: 1.125rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .listicle-closing__button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Desktop Styles */
+  @media screen and (min-width: 768px) {
+    .listicle-closing__content {
+      margin-bottom: 4rem;
+    }
+    
+    .listicle-closing__heading {
+      font-size: 2.25rem;
+    }
+    
+    .listicle-closing__cta {
+      padding: 4rem 3rem;
+    }
+    
+    .listicle-closing__cta-heading {
+      font-size: 2rem;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Listicle V3 Closing",
+  "settings": [
+    {
+      "type": "text",
+      "id": "listicle_handle",
+      "label": "Listicle Handle",
+      "info": "Leave blank to use the first available listicle"
+    },
+    {
+      "type": "select",
+      "id": "layout_width",
+      "label": "Layout width",
+      "default": "default",
+      "options": [
+        {
+          "value": "default",
+          "label": "Default width"
+        },
+        {
+          "value": "moderate",
+          "label": "Moderate width (1200px)"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "background-1",
+      "options": [
+        {
+          "value": "accent",
+          "label": "Accent"
+        },
+        {
+          "value": "background-1",
+          "label": "Background 1"
+        },
+        {
+          "value": "background-2",
+          "label": "Background 2"
+        },
+        {
+          "value": "inverse",
+          "label": "Inverse"
+        }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 40
+    }
+  ],
+  "presets": [
+    {
+      "name": "Listicle V3 Closing"
+    }
+  ]
+}
+{% endschema %}

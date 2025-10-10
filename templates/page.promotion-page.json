@@ -1,0 +1,102 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "section_countdown_timer_LgrjE7": {
+      "type": "section-countdown-timer",
+      "blocks": {
+        "subheading_6mzEyG": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "Countdown is on"
+          }
+        },
+        "heading_gEUWXb": {
+          "type": "heading",
+          "settings": {
+            "title": "{{ page.metafields.custom.lander_cta | metafield_text }}"
+          }
+        },
+        "buttons_JqjpV6": {
+          "type": "buttons",
+          "settings": {
+            "button_text": "Shop now",
+            "button_url": "{{ page.metafields.custom.cta_url.value }}",
+            "button_type": "btn--primary",
+            "button_size": "",
+            "button_style": "btn--solid",
+            "show_arrow": false
+          }
+        }
+      },
+      "block_order": [
+        "subheading_6mzEyG",
+        "heading_gEUWXb",
+        "buttons_JqjpV6"
+      ],
+      "settings": {
+        "image": "{{ page.metafields.custom.header_htp.value }}",
+        "end_date": "{{ page.metafields.custom.promo_end_date | metafield_text }}",
+        "end_time": "11:59",
+        "period": "pm",
+        "end_message": "",
+        "hide_on_complete": true,
+        "width": "wrapper",
+        "text_align": "text-left",
+        "height": "four-fifty-height-hero",
+        "image_mobile": "shopify://shop_images/gifting_1.jpg",
+        "mobile_height": "four-fifty-height-hero--mobile",
+        "text_align_mobile": "text-left--mobile",
+        "digits_gradient": "",
+        "overlay_opacity": 30,
+        "show_overlay_text": false
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "subheading": "",
+        "show_title": false,
+        "show_content": true,
+        "align_text": "text-left",
+        "width": "wrapper--narrow",
+        "padding_top": 50,
+        "padding_bottom": 50
+      }
+    },
+    "section_collection_pcHhCf": {
+      "type": "section-collection",
+      "settings": {
+        "featured_collection": "{{ page.metafields.custom.collection.value }}",
+        "heading": "{{ section.settings.featured_collection.title }}",
+        "description": "<p>{{ section.settings.featured_collection.metafields.custom.benefit_subheadline | metafield_tag }}</p>",
+        "layout": "inline",
+        "link_text": "Shop Now",
+        "link_url": "",
+        "button_type": "btn--primary",
+        "button_size": "",
+        "button_style": "btn--solid",
+        "show_arrow": false,
+        "layout_desktop": "grid",
+        "grid": 4,
+        "rows": 3,
+        "width": "wrapper",
+        "layout_mobile": "slider",
+        "padding_top": 50,
+        "padding_bottom": 50
+      }
+    }
+  },
+  "order": [
+    "section_countdown_timer_LgrjE7",
+    "main",
+    "section_collection_pcHhCf"
+  ]
+}

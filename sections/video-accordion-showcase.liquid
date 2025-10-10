@@ -1,0 +1,698 @@
+{%- comment -%}
+  Video Accordion Showcase Section
+  
+  Desktop: [Video 60%] | [Accordions 40%]
+  Mobile:  [Video 100%]
+           [Accordions 100%]
+           
+  Features:
+  - Responsive video player with customizable settings
+  - Interactive accordion with rich text content
+  - Fully customizable through theme editor
+  - Supports step numbers, titles, and optional images
+  - Desktop/mobile layout options
+{%- endcomment -%}
+
+<section 
+  class="video-accordion-section {{ section.settings.desktop_layout }}"
+  data-video-accordion="true"
+  style="
+    background-color: {{ section.settings.background_color }};
+    padding-top: {{ section.settings.section_padding_top }}px;
+    padding-bottom: {{ section.settings.section_padding_bottom }}px;
+  ">
+  
+  <div class="container">
+    <!-- Section Header -->
+    {% if section.settings.section_subtitle != blank or section.settings.section_heading != blank %}
+      <div class="section-header">
+        {% if section.settings.section_subtitle != blank %}
+          <span class="section-subtitle">{{ section.settings.section_subtitle }}</span>
+        {% endif %}
+        {% if section.settings.section_heading != blank %}
+          <h2 class="section-title {{ section.settings.heading_size }}">
+            {{ section.settings.section_heading }}
+          </h2>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    <!-- Content Wrapper -->
+    <div class="content-wrapper">
+      <!-- Video Column -->
+      <div class="video-column">
+        {% if section.settings.main_video != blank %}
+          {{ section.settings.main_video | video_tag: 
+              autoplay: section.settings.video_autoplay,
+              loop: section.settings.video_loop,
+              muted: section.settings.video_muted,
+              controls: section.settings.video_controls,
+              class: 'showcase-video',
+              id: 'showcase-video'
+          }}
+        {% else %}
+          <div class="video-placeholder">
+            <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="64" height="64" rx="8" fill="#f0f0f0"/>
+              <path d="M24 20l16 12-16 12V20z" fill="#999"/>
+            </svg>
+            <p>Add a video in theme customizer</p>
+          </div>
+        {% endif %}
+      </div>
+
+      <!-- Accordion Column -->
+      <div class="accordion-column">
+        <div class="accordion-container" 
+             style="
+               --accordion-text-size: {{ section.settings.accordion_text_size }}px;
+               --accordion-bg: {{ section.settings.accordion_background }};
+               --accordion-text: {{ section.settings.accordion_text_color }};
+               --accordion-border: {{ section.settings.accordion_border_color }};
+             ">
+          {% for block in section.blocks %}
+            <div class="accordion-item {% if block.settings.default_open %}is-active{% endif %}" 
+                 {{ block.shopify_attributes }}>
+              <button class="accordion-header" 
+                      aria-expanded="{% if block.settings.default_open %}true{% else %}false{% endif %}"
+                      aria-controls="accordion-content-{{ block.id }}"
+                      type="button">
+                <span class="step-number">{{ block.settings.step_number }}</span>
+                <span class="step-title">{{ block.settings.step_title }}</span>
+                <span class="accordion-icon">
+                  <svg width="11" height="11" viewBox="0 0 11 11" fill="none">
+                    <path d="M5.5 1V10M1 5.5H10" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
+                  </svg>
+                </span>
+              </button>
+              <div class="accordion-content" 
+                   id="accordion-content-{{ block.id }}"
+                   {% unless block.settings.default_open %}hidden{% endunless %}>
+                <div class="accordion-inner">
+                  {{ block.settings.step_content }}
+                  {% if block.settings.step_image != blank %}
+                    <div class="step-image">
+                      {{ block.settings.step_image | image_url: width: 600 | image_tag: loading: 'lazy', alt: block.settings.step_title }}
+                    </div>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .video-accordion-section {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .video-accordion-section .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  .section-subtitle {
+    display: inline-block;
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0.6;
+    margin-bottom: 16px;
+    font-weight: 600;
+  }
+
+  .section-title {
+    margin: 0;
+    line-height: 1.2;
+    font-weight: 700;
+  }
+
+  .section-title.h1 {
+    font-size: clamp(32px, 5vw, 48px);
+  }
+
+  .section-title.h2 {
+    font-size: clamp(24px, 4vw, 36px);
+  }
+
+  .section-title.display {
+    font-size: clamp(40px, 6vw, 64px);
+  }
+
+  /* Desktop Layout */
+  @media (min-width: 768px) {
+    .content-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .video-accordion-section.video-right .content-wrapper {
+      direction: rtl;
+    }
+
+    .video-accordion-section.video-right .video-column,
+    .video-accordion-section.video-right .accordion-column {
+      direction: ltr;
+    }
+
+    .video-column {
+      position: sticky;
+      top: 100px;
+    }
+  }
+
+  /* Mobile Layout */
+  @media (max-width: 767px) {
+    .content-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .section-header {
+      margin-bottom: 40px;
+    }
+  }
+
+  /* Video Styles */
+  .showcase-video {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  }
+
+  .video-placeholder {
+    aspect-ratio: 16/9;
+    background: #f8f8f8;
+    border: 2px dashed #ddd;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+    gap: 16px;
+  }
+
+  .video-placeholder p {
+    margin: 0;
+    font-size: 16px;
+  }
+
+  /* Accordion Styles - Matching 42 Product Section */
+  .accordion-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .accordion-item {
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid rgba(44, 60, 96, 0.2);
+    background: var(--accordion-bg);
+  }
+
+  .accordion-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: center;
+    padding: 16px 14px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    font-family: inherit;
+    transition: all 0.2s ease;
+  }
+
+  @media (min-width: 768px) {
+    .accordion-header {
+      padding: 16px 14px;
+    }
+  }
+
+  .accordion-header:hover {
+    background: rgba(44, 60, 96, 0.02);
+  }
+
+  .accordion-header:focus {
+    outline: 2px solid #2c3c60;
+    outline-offset: -2px;
+  }
+
+  .step-number {
+    font-weight: 600;
+    color: #2c3c60;
+    font-size: 14px;
+    line-height: 1.2;
+    min-width: 24px;
+  }
+
+  .step-title {
+    flex: 1;
+    color: #2c3c60;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    text-align: left;
+  }
+
+  .accordion-icon {
+    width: 11px;
+    height: 11px;
+    transition: transform 0.3s ease;
+    color: #2c3c60;
+    flex-shrink: 0;
+  }
+
+
+  .accordion-content {
+    overflow: hidden;
+  }
+
+  .accordion-content[hidden] {
+    display: none;
+  }
+
+  .accordion-inner {
+    padding: 0 16px 16px 16px;
+    color: #2c3c60;
+  }
+
+  @media (min-width: 768px) {
+    .accordion-inner {
+      padding: 0 14px 16px 14px;
+    }
+  }
+
+  .accordion-inner p {
+    margin: 0 0 12px;
+    line-height: 1.6;
+    font-size: 14px;
+  }
+
+  .accordion-inner p:last-child {
+    margin-bottom: 0;
+  }
+
+  .accordion-inner ul,
+  .accordion-inner ol {
+    margin: 12px 0;
+    padding-left: 20px;
+  }
+
+  .accordion-inner li {
+    margin-bottom: 6px;
+    line-height: 1.6;
+    font-size: 14px;
+  }
+
+  .step-image {
+    margin-top: 16px;
+  }
+
+  .step-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  /* Mobile Adjustments */
+  @media (max-width: 767px) {
+    .accordion-header {
+      gap: 16px;
+    }
+
+    .step-number {
+      font-size: 13px;
+      min-width: 20px;
+    }
+
+    .step-title {
+      font-size: 15px;
+      line-height: 22px;
+    }
+  }
+
+  /* Targeted Debug Prevention - Only hide specific debug elements */
+  /* Hide only elements with exact template ID patterns */
+  [data-video-accordion] *[id^="template--"] {
+    display: none !important;
+    visibility: hidden !important;
+  }
+  
+  /* Hide text content containing template IDs */
+  [data-video-accordion] *::after,
+  [data-video-accordion] *::before {
+    content: none !important;
+  }
+  
+  /* Hide debug console elements only */
+  [data-video-accordion] .debug,
+  [data-video-accordion] .debug-info,
+  [data-video-accordion] [id*="debug"] {
+    display: none !important;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const section = document.querySelector('[data-video-accordion="true"]');
+    if (!section) return;
+
+    const accordionItems = section.querySelectorAll('.accordion-item');
+    const video = section.querySelector('#showcase-video');
+
+    // Accordion functionality
+    accordionItems.forEach(item => {
+      const header = item.querySelector('.accordion-header');
+      const content = item.querySelector('.accordion-content');
+
+      header.addEventListener('click', function() {
+        const isActive = item.classList.contains('is-active');
+        
+        // Close all accordions
+        accordionItems.forEach(otherItem => {
+          otherItem.classList.remove('is-active');
+          otherItem.querySelector('.accordion-content').hidden = true;
+          otherItem.querySelector('.accordion-header').setAttribute('aria-expanded', 'false');
+          
+          // Reset all icons to plus
+          const otherIcon = otherItem.querySelector('.accordion-icon svg path');
+          if (otherIcon) {
+            otherIcon.setAttribute('d', 'M5.5 1V10M1 5.5H10');
+          }
+        });
+
+        // Toggle current accordion
+        if (!isActive) {
+          item.classList.add('is-active');
+          content.hidden = false;
+          header.setAttribute('aria-expanded', 'true');
+          
+          // Update icon to minus sign
+          const icon = header.querySelector('.accordion-icon svg path');
+          if (icon) {
+            icon.setAttribute('d', 'M1 5.5H10');
+          }
+          
+          // Smooth scroll to accordion on mobile
+          if (window.innerWidth <= 767) {
+            setTimeout(() => {
+              header.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }, 300);
+          }
+        } else {
+          // Update icon back to plus sign
+          const icon = header.querySelector('.accordion-icon svg path');
+          if (icon) {
+            icon.setAttribute('d', 'M5.5 1V10M1 5.5H10');
+          }
+        }
+      });
+
+      // Keyboard navigation
+      header.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          header.click();
+        }
+      });
+    });
+
+    // Video interaction tracking (optional)
+    if (video) {
+      video.addEventListener('play', function() {
+        // Video started playing - tracking could be added here
+      });
+      
+      video.addEventListener('pause', function() {
+        // Video paused - tracking could be added here  
+      });
+    }
+
+    // Intersection Observer for animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    // Observe accordion items for entrance animation
+    accordionItems.forEach(item => {
+      item.style.opacity = '0';
+      item.style.transform = 'translateY(20px)';
+      item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(item);
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Video Accordion Showcase",
+  "tag": "section",
+  "class": "video-accordion-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section Settings"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#F5E6E0"
+    },
+    {
+      "type": "range",
+      "id": "section_padding_top",
+      "label": "Section Padding Top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "section_padding_bottom",
+      "label": "Section Padding Bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "section_subtitle",
+      "label": "Section Subtitle",
+      "default": "HOW IT WORKS"
+    },
+    {
+      "type": "text",
+      "id": "section_heading",
+      "label": "Section Heading",
+      "default": "Helm turns your phone back into a tool"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "label": "Heading Size",
+      "options": [
+        { "value": "h2", "label": "Small" },
+        { "value": "h1", "label": "Medium" },
+        { "value": "display", "label": "Large" }
+      ],
+      "default": "h1"
+    },
+    {
+      "type": "header",
+      "content": "Video Settings"
+    },
+    {
+      "type": "video",
+      "id": "main_video",
+      "label": "Main Video"
+    },
+    {
+      "type": "checkbox",
+      "id": "video_autoplay",
+      "label": "Autoplay Video",
+      "default": false,
+      "info": "Videos will be muted if autoplay is enabled"
+    },
+    {
+      "type": "checkbox",
+      "id": "video_loop",
+      "label": "Loop Video",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "video_muted",
+      "label": "Mute Video",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "video_controls",
+      "label": "Show Video Controls",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "select",
+      "id": "desktop_layout",
+      "label": "Desktop Layout",
+      "options": [
+        { "value": "video-left", "label": "Video Left" },
+        { "value": "video-right", "label": "Video Right" }
+      ],
+      "default": "video-left"
+    },
+    {
+      "type": "header",
+      "content": "Accordion Styling"
+    },
+    {
+      "type": "range",
+      "id": "accordion_text_size",
+      "label": "Accordion Text Size",
+      "min": 14,
+      "max": 24,
+      "step": 1,
+      "default": 18,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "accordion_background",
+      "label": "Accordion Background Color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "accordion_text_color",
+      "label": "Accordion Text Color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "accordion_border_color",
+      "label": "Accordion Border Color",
+      "default": "#E0E0E0"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "accordion_item",
+      "name": "Accordion Step",
+      "settings": [
+        {
+          "type": "text",
+          "id": "step_number",
+          "label": "Step Number",
+          "default": "01"
+        },
+        {
+          "type": "text",
+          "id": "step_title",
+          "label": "Step Title",
+          "default": "Select distractions to block"
+        },
+        {
+          "type": "richtext",
+          "id": "step_content",
+          "label": "Step Content",
+          "default": "<p>Choose which apps to block during your focus sessions. Helm gives you complete control over your digital environment.</p>"
+        },
+        {
+          "type": "image_picker",
+          "id": "step_image",
+          "label": "Optional Step Image",
+          "info": "Add an image to display within the accordion content"
+        },
+        {
+          "type": "checkbox",
+          "id": "default_open",
+          "label": "Open by Default",
+          "default": false,
+          "info": "This accordion will be expanded when the page loads"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Video Accordion Showcase",
+      "blocks": [
+        {
+          "type": "accordion_item",
+          "settings": {
+            "step_number": "01",
+            "step_title": "Select distractions to block",
+            "step_content": "<p>Choose which apps to block during your focus sessions. Helm gives you complete control over your digital environment.</p>",
+            "default_open": true
+          }
+        },
+        {
+          "type": "accordion_item",
+          "settings": {
+            "step_number": "02",
+            "step_title": "Activate Helm and track your focus",
+            "step_content": "<p>Start your focused work session with a simple tap. Helm tracks your productivity and helps you build better digital habits.</p>"
+          }
+        },
+        {
+          "type": "accordion_item",
+          "settings": {
+            "step_number": "03",
+            "step_title": "Distance yourself from distractions",
+            "step_content": "<p>Helm creates a barrier between you and distracting apps, giving you the space to focus on what matters most.</p>"
+          }
+        },
+        {
+          "type": "accordion_item",
+          "settings": {
+            "step_number": "04",
+            "step_title": "Unbrick with intention",
+            "step_content": "<p>When you're ready to end your session, Helm helps you transition mindfully back to regular phone use.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

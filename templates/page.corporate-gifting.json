@@ -1,0 +1,1100 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "mg_text_slider_iEmGkA": {
+      "type": "MG-Text-Slider",
+      "blocks": {
+        "text_b4Umbf": {
+          "type": "text",
+          "settings": {
+            "mg-slide-text": "Clients"
+          }
+        },
+        "text_EyJxxY": {
+          "type": "text",
+          "settings": {
+            "mg-slide-text": "Vendors"
+          }
+        },
+        "text_WWHLWD": {
+          "type": "text",
+          "settings": {
+            "mg-slide-text": "Promotions"
+          }
+        },
+        "text_UamLWJ": {
+          "type": "text",
+          "settings": {
+            "mg-slide-text": "New Hires"
+          }
+        },
+        "text_tkT78M": {
+          "type": "text",
+          "settings": {
+            "mg-slide-text": "Fundraisers"
+          }
+        },
+        "text_i3Mjd8": {
+          "type": "text",
+          "settings": {
+            "mg-slide-text": "Students"
+          }
+        },
+        "text_wB3LzU": {
+          "type": "text",
+          "settings": {
+            "mg-slide-text": "Everything"
+          }
+        }
+      },
+      "block_order": [
+        "text_b4Umbf",
+        "text_EyJxxY",
+        "text_WWHLWD",
+        "text_UamLWJ",
+        "text_tkT78M",
+        "text_i3Mjd8",
+        "text_wB3LzU"
+      ],
+      "settings": {
+        "bg_image": "shopify://shop_images/gift_733c2891-a43d-4e6b-a0c5-cd8748ccb0c3.jpg",
+        "heading": "Your Corporate Gift For",
+        "button_text": "GET PERSONALIZED HELP",
+        "button_link": "https://tally.so/r/3NJGDB",
+        "mg-active-slide-text": "Employees"
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "subheading": "",
+        "show_title": true,
+        "heading_font_size": "heading-large",
+        "show_content": true,
+        "text_font_size": "body-medium",
+        "align_text": "text-center",
+        "width": "wrapper",
+        "color_scheme": "",
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "heading_tag": "automatic"
+      }
+    },
+    "contact": {
+      "type": "contact-form",
+      "blocks": {
+        "Name": {
+          "type": "text",
+          "settings": {
+            "title": "Full Name",
+            "required": false
+          }
+        },
+        "Email": {
+          "type": "email",
+          "settings": {
+            "title": "Email",
+            "required": true
+          }
+        },
+        "Message": {
+          "type": "body",
+          "settings": {
+            "title": "Message",
+            "required": true
+          }
+        },
+        "Optional-text": {
+          "type": "formHeading",
+          "settings": {
+            "title": "Optional"
+          }
+        },
+        "Urgent-checkbox": {
+          "type": "checkbox",
+          "settings": {
+            "title": "This is urgent",
+            "required": false
+          }
+        },
+        "Options-select": {
+          "type": "select",
+          "disabled": true,
+          "settings": {
+            "title": "",
+            "required": false,
+            "label-one": "",
+            "label-two": "",
+            "label-three": "",
+            "label-four": "",
+            "label-five": "",
+            "label-six": ""
+          }
+        }
+      },
+      "block_order": [
+        "Name",
+        "Email",
+        "Message",
+        "Optional-text",
+        "Urgent-checkbox",
+        "Options-select"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "",
+        "heading_font_size": "heading-large",
+        "terms": true,
+        "width": "wrapper--narrow",
+        "color_scheme": "",
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "heading_tag": "automatic"
+      }
+    },
+    "faq": {
+      "type": "section-accordion-group",
+      "blocks": {
+        "heading-0": {
+          "type": "heading",
+          "settings": {
+            "title": "FAQ"
+          }
+        },
+        "question-1": {
+          "type": "question",
+          "settings": {
+            "default_open": false,
+            "title": "Frequently asked question",
+            "content": "<p>Share details about your shipping policies, item returns, or customer service.</p>",
+            "show_icon": false,
+            "icon_name": "icon-award",
+            "icon_size": 20,
+            "icon_color": "#545454"
+          }
+        },
+        "question-2": {
+          "type": "question",
+          "settings": {
+            "default_open": false,
+            "title": "Frequently asked question",
+            "content": "<p>Share details about your shipping policies, item returns, or customer service.</p>",
+            "show_icon": false,
+            "icon_name": "icon-award",
+            "icon_size": 20,
+            "icon_color": "#545454"
+          }
+        },
+        "question-3": {
+          "type": "question",
+          "settings": {
+            "default_open": false,
+            "title": "Frequently asked question",
+            "content": "<p>Share details about your shipping policies, item returns, or customer service.</p>",
+            "show_icon": false,
+            "icon_name": "icon-award",
+            "icon_size": 20,
+            "icon_color": "#545454"
+          }
+        }
+      },
+      "block_order": [
+        "heading-0",
+        "question-1",
+        "question-2",
+        "question-3"
+      ],
+      "disabled": true,
+      "settings": {
+        "heading_font_size": "heading-medium",
+        "question_font_size": "heading-small",
+        "width": "wrapper--narrow",
+        "columns": "1",
+        "color_scheme": "",
+        "padding_top": 50,
+        "padding_bottom": 50
+      }
+    },
+    "section_slideshow_cz9dpX": {
+      "type": "section-slideshow",
+      "blocks": {
+        "image_t4cCRy": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Self_Journal_2018_Large_e78fcf53-f760-4fca-9988-095140327d18.jpg",
+            "image_link": "",
+            "title": "Your corporate gift for",
+            "heading_font_size": "heading-x-large",
+            "description": "Employees",
+            "text_font_size": "body-large",
+            "first_button_text": "Get personalized help",
+            "first_button_link": "",
+            "first_button_type": "btn--primary",
+            "first_button_size": "",
+            "first_button_style": "btn--solid",
+            "first_button_show_arrow": false,
+            "second_button_text": "",
+            "second_button_link": "",
+            "second_button_type": "btn--white",
+            "second_button_size": "",
+            "second_button_style": "btn--solid",
+            "second_button_show_arrow": false,
+            "flex_align_desktop": "align--middle-center-desktop",
+            "flex_align_mobile": "align--middle-center-mobile",
+            "show_text_background": false,
+            "bg_color": "",
+            "color": "#ffffff",
+            "overlay_opacity": 40,
+            "overlay_color": "#242540",
+            "show_overlay_text": false,
+            "heading_tag": "automatic"
+          }
+        },
+        "image_J86F6a": {
+          "type": "image",
+          "settings": {
+            "image_link": "",
+            "title": "Image slide",
+            "heading_font_size": "heading-x-large",
+            "description": "Tell your brand's story through images.",
+            "text_font_size": "body-large",
+            "first_button_text": "View products",
+            "first_button_link": "",
+            "first_button_type": "btn--primary",
+            "first_button_size": "",
+            "first_button_style": "btn--solid",
+            "first_button_show_arrow": false,
+            "second_button_text": "",
+            "second_button_link": "",
+            "second_button_type": "btn--white",
+            "second_button_size": "",
+            "second_button_style": "btn--solid",
+            "second_button_show_arrow": false,
+            "flex_align_desktop": "align--middle-center-desktop",
+            "flex_align_mobile": "align--middle-center-mobile",
+            "show_text_background": false,
+            "bg_color": "",
+            "color": "#ffffff",
+            "overlay_opacity": 0,
+            "overlay_color": "#000000",
+            "show_overlay_text": false,
+            "heading_tag": "automatic"
+          }
+        }
+      },
+      "block_order": [
+        "image_t4cCRy",
+        "image_J86F6a"
+      ],
+      "disabled": true,
+      "custom_css": [],
+      "settings": {
+        "transition": "slide",
+        "show_arrows": false,
+        "autoplay": true,
+        "autoplay_speed": 4,
+        "width": "wrapper--full",
+        "height": "screen-height-one-half",
+        "content_width": 50,
+        "mobile_height": "screen-height-two-thirds--mobile",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "section_hero_WTfXTh": {
+      "type": "section-hero",
+      "blocks": {
+        "heading_yi6xJA": {
+          "type": "heading",
+          "settings": {
+            "title": "Transform Your Corporate Gifts into Tools for Success",
+            "heading_font_size": "heading-x-large",
+            "heading_tag": "automatic"
+          }
+        }
+      },
+      "block_order": [
+        "heading_yi6xJA"
+      ],
+      "disabled": true,
+      "settings": {
+        "image_1": "shopify://shop_images/Self_Journal_2018_Large_1.jpg",
+        "link": "",
+        "width": "wrapper--full",
+        "height": "screen-height-one-third",
+        "flex_align_desktop": "align--middle-center-desktop",
+        "content_width": 50,
+        "mobile_height": "screen-height-one-half--mobile",
+        "flex_align_mobile": "align--middle-center-mobile",
+        "color_scheme": "",
+        "show_text_background": false,
+        "overlay_opacity": 0,
+        "show_overlay_text": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "show_placeholder": true
+      }
+    },
+    "section_press_logos_rdfQkp": {
+      "type": "section-press-logos",
+      "blocks": {
+        "logo_item_header_UQVf7m": {
+          "type": "logo-item-header",
+          "settings": {
+            "logo": "shopify://shop_images/google.svg",
+            "logo_width": 110,
+            "link": "",
+            "text": "Include a brief quote from a brand that loves your products",
+            "heading_font_size": "heading-small"
+          }
+        },
+        "logo_item_header_3G7cB8": {
+          "type": "logo-item-header",
+          "settings": {
+            "logo": "shopify://shop_images/deloitte.svg",
+            "logo_width": 100,
+            "link": "",
+            "text": "Include a brief quote from a brand that loves your products",
+            "heading_font_size": "heading-small"
+          }
+        },
+        "logo_item_header_CKkH6g": {
+          "type": "logo-item-header",
+          "settings": {
+            "logo": "shopify://shop_images/orange-theory.svg",
+            "logo_width": 120,
+            "link": "",
+            "text": "Include a brief quote from a brand that loves your products",
+            "heading_font_size": "heading-small"
+          }
+        },
+        "logo_item_header_TkJVHV": {
+          "type": "logo-item-header",
+          "settings": {
+            "logo": "shopify://shop_images/shopify.svg",
+            "logo_width": 120,
+            "link": "",
+            "text": "Include a brief quote from a brand that loves your products",
+            "heading_font_size": "heading-small"
+          }
+        },
+        "logo_item_header_VeYg4q": {
+          "type": "logo-item-header",
+          "settings": {
+            "logo": "shopify://shop_images/tesla.svg",
+            "logo_width": 120,
+            "link": "",
+            "text": "Include a brief quote from a brand that loves your products",
+            "heading_font_size": "heading-small"
+          }
+        },
+        "logo_item_header_kDEy9i": {
+          "type": "logo-item-header",
+          "settings": {
+            "logo": "shopify://shop_images/morganstanley.svg",
+            "logo_width": 120,
+            "link": "",
+            "text": "Include a brief quote from a brand that loves your products",
+            "heading_font_size": "heading-small"
+          }
+        },
+        "logo_item_header_XN6c47": {
+          "type": "logo-item-header",
+          "settings": {
+            "logo": "shopify://shop_images/netflix.svg",
+            "logo_width": 100,
+            "link": "",
+            "text": "Include a brief quote from a brand that loves your products",
+            "heading_font_size": "heading-small"
+          }
+        },
+        "logo_item_header_TghQiG": {
+          "type": "logo-item-header",
+          "settings": {
+            "logo": "shopify://shop_images/pwc.svg",
+            "logo_width": 100,
+            "link": "",
+            "text": "Include a brief quote from a brand that loves your products",
+            "heading_font_size": "heading-small"
+          }
+        }
+      },
+      "block_order": [
+        "logo_item_header_UQVf7m",
+        "logo_item_header_3G7cB8",
+        "logo_item_header_CKkH6g",
+        "logo_item_header_TkJVHV",
+        "logo_item_header_VeYg4q",
+        "logo_item_header_kDEy9i",
+        "logo_item_header_XN6c47",
+        "logo_item_header_TghQiG"
+      ],
+      "settings": {
+        "enable_heading_slider": true,
+        "logo_opacity": 100,
+        "title": "Trusted By",
+        "color_scheme": "",
+        "padding_top": 20,
+        "padding_bottom": 30
+      }
+    },
+    "ss_feature_9_mnDfzN": {
+      "type": "ss-feature-9",
+      "blocks": {
+        "feature_9KXY6H": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/Asset_3.svg",
+            "title": "<h3><strong>Professional Development</strong></h3>",
+            "text": "<p>Our tools transform daily work into measurable progress. Each product is designed to enhance focus, productivity, and goal achievement—making your gift an investment in their success.</p>"
+          }
+        },
+        "feature_Y8EeBA": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/Asset_7.svg",
+            "title": "<h2><strong>Team Engagement</strong></h2>",
+            "text": "<p>Foster stronger teams and better communication through structured tools that promote collaboration, meaningful discussions, and shared goal-setting.</p>"
+          }
+        },
+        "feature_MUVQq8": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/Asset_8.svg",
+            "title": "<h3><strong>Leadership Growth</strong></h3>",
+            "text": "<p>Support emerging and established leaders with premium tools designed for strategic thinking, decision-making, and team management</p>"
+          }
+        },
+        "feature_EmgpRx": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/Asset_6.svg",
+            "title": "<h3><strong>Lasting Impact</strong></h3>",
+            "text": "<p>Unlike traditional corporate gifts, our products create daily value through consistent use. Recipients don't just remember the gift—they experience its benefits every day.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "feature_9KXY6H",
+        "feature_Y8EeBA",
+        "feature_MUVQq8",
+        "feature_EmgpRx"
+      ],
+      "settings": {
+        "grid_gap": 48,
+        "grid_gap_mobile": 40,
+        "heading": "<h3>Key Benefits for Corporate Gifting</h3>",
+        "heading_custom": false,
+        "heading_font": "josefin_sans_n4",
+        "heading_size": 44,
+        "heading_size_mobile": 32,
+        "heading_height": 110,
+        "heading_align": "left",
+        "heading_align_mobile": "left",
+        "items_row": 2,
+        "items_row_mobile": 1,
+        "items_gap": 50,
+        "items_gap_mobile": 20,
+        "items_mt": 48,
+        "icon_size": 40,
+        "icon_size_mobile": 32,
+        "icon_padding_vertical": 16,
+        "icon_padding_vertical_mobile": 12,
+        "icon_padding_horizontal": 16,
+        "icon_padding_horizontal_mobile": 12,
+        "icon_radius": 50,
+        "icon_border_thickness": 0,
+        "icon_align": "left",
+        "icon_align_mobile": "left",
+        "icon_row": false,
+        "icon_row_mobile": true,
+        "hide_icon": false,
+        "title_custom": false,
+        "title_font": "josefin_sans_n4",
+        "title_size": 20,
+        "title_size_mobile": 18,
+        "title_height": 130,
+        "title_align": "left",
+        "title_align_mobile": "left",
+        "title_mt": 20,
+        "text_custom": false,
+        "text_font": "josefin_sans_n4",
+        "text_size": 18,
+        "text_size_mobile": 16,
+        "text_height": 150,
+        "text_align": "left",
+        "text_align_mobile": "left",
+        "text_mt": 16,
+        "image": "shopify://shop_images/BestSelf_Medium_30d87335-a67d-4205-b8ad-eef6a8e21614.jpg",
+        "image_width": 35,
+        "image_width_mobile": 33,
+        "image_position": "row",
+        "image_row_position": "row-reverse",
+        "image_column_position": "column",
+        "image_column_position_mobile": "column",
+        "image_ratio": "square",
+        "image_ratio_mobile": "square",
+        "image_border_thickness": 0,
+        "image_radius": 6,
+        "hide_image": false,
+        "icon_bg_color": "#ffffff",
+        "icon_border_color": "#000000",
+        "title_color": "#ffffff",
+        "text_color": "#ffffff",
+        "heading_color": "#ffffff",
+        "image_border_color": "#000000",
+        "background_color": "#242540",
+        "background_gradient": "",
+        "border_color": "#000000",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top": 44,
+        "padding_bottom": 44,
+        "padding_horizontal": 5,
+        "padding_horizontal_mobile": 1.5,
+        "full_width": false,
+        "content_width": 100,
+        "border_thickness": 0,
+        "lazy": true
+      }
+    },
+    "section_rich_text_columns_BPDrpy": {
+      "type": "section-rich-text-columns",
+      "blocks": {
+        "heading_8V69NY": {
+          "type": "heading",
+          "settings": {
+            "title": "Meaningful Gifts, Made Effortless",
+            "heading_font_size": "heading-large",
+            "position": "left",
+            "padding_bottom": 16,
+            "heading_tag": "automatic"
+          }
+        },
+        "text_3YTXgg": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
+            "text_font_size": "body-medium",
+            "position": "right",
+            "padding_bottom": 16
+          }
+        },
+        "buttons_qrMegm": {
+          "type": "buttons",
+          "settings": {
+            "position": "right",
+            "button_text": "Learn more",
+            "button_url": "",
+            "button_type": "btn--primary",
+            "button_size": "",
+            "button_style": "btn--solid",
+            "show_arrow": false,
+            "button_secondary_text": "",
+            "button_secondary_url": "",
+            "button_secondary_type": "btn--primary",
+            "button_secondary_size": "",
+            "button_secondary_style": "btn--outline",
+            "show_secondary_arrow": false,
+            "padding_bottom": 16
+          }
+        }
+      },
+      "block_order": [
+        "heading_8V69NY",
+        "text_3YTXgg",
+        "buttons_qrMegm"
+      ],
+      "disabled": true,
+      "settings": {
+        "left_column_width": 60,
+        "right_column_width": 40,
+        "align_text": "text-left",
+        "width": "wrapper--full-padded",
+        "align_text_mobile": "text-left--mobile",
+        "color_scheme": "",
+        "padding_top": 100,
+        "padding_bottom": 100
+      }
+    },
+    "section_double_Xq7qw3": {
+      "type": "section-double",
+      "blocks": {
+        "heading_QqcEBz": {
+          "type": "heading",
+          "settings": {
+            "title": "Get Personalized Recommendations",
+            "heading_font_size": "heading-large",
+            "padding_bottom": 16,
+            "heading_tag": "automatic"
+          }
+        },
+        "text_Difq84": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Let our gifting specialists create the perfect solution. We'll consider your company culture, recipient groups, and goals to recommend products that align with your vision. From small teams to enterprise-scale programs, we'll help you make every gift count.</p>",
+            "text_font_size": "body-medium",
+            "padding_bottom": 16
+          }
+        },
+        "buttons_iEgzCk": {
+          "type": "buttons",
+          "settings": {
+            "button_text": "Contact Form",
+            "button_url": "https://tally.so/r/3NJGDB",
+            "button_type": "btn--primary",
+            "button_size": "",
+            "button_style": "btn--solid",
+            "show_arrow": true,
+            "padding_bottom": 16
+          }
+        },
+        "text_RkVgY9": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Or email us directly at partnerships@bestself.co</p>",
+            "text_font_size": "body-medium",
+            "padding_bottom": 16
+          }
+        }
+      },
+      "block_order": [
+        "heading_QqcEBz",
+        "text_Difq84",
+        "buttons_iEgzCk",
+        "text_RkVgY9"
+      ],
+      "settings": {
+        "image_1": "shopify://shop_images/gifting-header.jpg",
+        "image_width": "one-half",
+        "text_alignment": "text-left",
+        "layout": "is-reversed",
+        "width": "wrapper",
+        "height": "screen-height-three-quarters",
+        "mobile_height": "screen-height-one-half--mobile",
+        "reverse_blocks": true,
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "show_placeholder": true
+      }
+    },
+    "section_rich_text_KRCTjU": {
+      "type": "section-rich-text",
+      "blocks": {
+        "subheading_3PKxax": {
+          "type": "subheading",
+          "disabled": true,
+          "settings": {
+            "subheading": "Introducing",
+            "padding_bottom": 16
+          }
+        },
+        "heading_RJ8Kff": {
+          "type": "heading",
+          "settings": {
+            "title": "Meaningful Gifts, Made Effortless",
+            "heading_font_size": "heading-large",
+            "padding_bottom": 16,
+            "heading_tag": "automatic"
+          }
+        },
+        "text_8AXxdN": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Our carefully curated corporate catalog features our most impactful professional tools. Each product is designed to enhance productivity, foster development, and show you value their success. View pricing tiers and explore bundling options that match your vision and budget.</p>",
+            "text_font_size": "body-medium",
+            "padding_bottom": 0
+          }
+        }
+      },
+      "block_order": [
+        "subheading_3PKxax",
+        "heading_RJ8Kff",
+        "text_8AXxdN"
+      ],
+      "settings": {
+        "align_text": "text-left",
+        "width": "wrapper",
+        "color_scheme": "",
+        "overlay_opacity": 0,
+        "show_overlay_text": false,
+        "padding_top": 50,
+        "padding_bottom": 30
+      }
+    },
+    "section_columns_khVPXP": {
+      "type": "section-columns",
+      "blocks": {
+        "image_MiqtQd": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/self-journal-journal-personal-growth-forest-dreams-595898.jpg",
+            "image_shape": "normal",
+            "title": "Self Journal",
+            "heading_font_size": "heading-small",
+            "text": "",
+            "text_font_size": "body-medium",
+            "button_text": "",
+            "button_url": "shopify://products/self-journal",
+            "button_type": "btn--primary",
+            "button_size": "",
+            "button_style": "btn--solid",
+            "show_arrow": false,
+            "image_aspect_ratio": 1,
+            "mobile_image_aspect_ratio": 1,
+            "heading_tag": "automatic"
+          }
+        },
+        "image_yeqzYy": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Self-GrowthCollection-v2_c5c6a6a7-89b3-4b79-aa09-e5003100fd2c.jpg",
+            "image_shape": "normal",
+            "title": "Self-Growth Kit",
+            "heading_font_size": "heading-small",
+            "text": "",
+            "text_font_size": "body-medium",
+            "button_text": "",
+            "button_url": "shopify://products/self-journal",
+            "button_type": "btn--primary",
+            "button_size": "",
+            "button_style": "btn--solid",
+            "show_arrow": false,
+            "image_aspect_ratio": 1,
+            "mobile_image_aspect_ratio": 1,
+            "heading_tag": "automatic"
+          }
+        },
+        "image_BaXCmc": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/icebreaker-deck.jpg",
+            "image_shape": "normal",
+            "title": "Icebreaker Deck",
+            "heading_font_size": "heading-small",
+            "text": "",
+            "text_font_size": "body-medium",
+            "button_text": "",
+            "button_url": "shopify://products/self-journal",
+            "button_type": "btn--primary",
+            "button_size": "",
+            "button_style": "btn--solid",
+            "show_arrow": false,
+            "image_aspect_ratio": 1,
+            "mobile_image_aspect_ratio": 1,
+            "heading_tag": "automatic"
+          }
+        },
+        "image_86EFay": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/project-action-pad-notebooks-notepads-personal-growth-260460.jpg",
+            "image_shape": "normal",
+            "title": "Project Action Pad",
+            "heading_font_size": "heading-small",
+            "text": "",
+            "text_font_size": "body-medium",
+            "button_text": "",
+            "button_url": "shopify://products/self-journal",
+            "button_type": "btn--primary",
+            "button_size": "",
+            "button_style": "btn--solid",
+            "show_arrow": false,
+            "image_aspect_ratio": 1,
+            "mobile_image_aspect_ratio": 1,
+            "heading_tag": "automatic"
+          }
+        },
+        "image_WQpeDw": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/weekly-action-pad-digital-download-digital-download-personal-growth-459328.jpg",
+            "image_shape": "normal",
+            "title": "Weekly Action Pad",
+            "heading_font_size": "heading-small",
+            "text": "",
+            "text_font_size": "body-medium",
+            "button_text": "",
+            "button_url": "shopify://products/self-journal",
+            "button_type": "btn--primary",
+            "button_size": "",
+            "button_style": "btn--solid",
+            "show_arrow": false,
+            "image_aspect_ratio": 1,
+            "mobile_image_aspect_ratio": 1,
+            "heading_tag": "automatic"
+          }
+        },
+        "image_4zVzez": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/deeper-talk-deck-card-deck-social-connection-871016.jpg",
+            "image_shape": "normal",
+            "title": "Deeper Talk",
+            "heading_font_size": "heading-small",
+            "text": "",
+            "text_font_size": "body-medium",
+            "button_text": "",
+            "button_url": "shopify://products/deeper-talk-deck",
+            "button_type": "btn--primary",
+            "button_size": "",
+            "button_style": "btn--solid",
+            "show_arrow": false,
+            "image_aspect_ratio": 1,
+            "mobile_image_aspect_ratio": 1,
+            "heading_tag": "automatic"
+          }
+        },
+        "image_X6xJUc": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/overcoming-burnout-journal-journal-personal-growth-371864.jpg",
+            "image_shape": "normal",
+            "title": "Burnout Journal",
+            "heading_font_size": "heading-small",
+            "text": "",
+            "text_font_size": "body-medium",
+            "button_text": "",
+            "button_url": "shopify://products/self-journal",
+            "button_type": "btn--primary",
+            "button_size": "",
+            "button_style": "btn--solid",
+            "show_arrow": false,
+            "image_aspect_ratio": 1,
+            "mobile_image_aspect_ratio": 1,
+            "heading_tag": "automatic"
+          }
+        },
+        "image_g8Xx9L": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/the-one-thing-core-values.webp",
+            "image_shape": "normal",
+            "title": "Core Values Journal",
+            "heading_font_size": "heading-small",
+            "text": "",
+            "text_font_size": "body-medium",
+            "button_text": "",
+            "button_url": "shopify://products/self-journal",
+            "button_type": "btn--primary",
+            "button_size": "",
+            "button_style": "btn--solid",
+            "show_arrow": false,
+            "image_aspect_ratio": 1,
+            "mobile_image_aspect_ratio": 1,
+            "heading_tag": "automatic"
+          }
+        }
+      },
+      "block_order": [
+        "image_MiqtQd",
+        "image_yeqzYy",
+        "image_BaXCmc",
+        "image_86EFay",
+        "image_WQpeDw",
+        "image_4zVzez",
+        "image_X6xJUc",
+        "image_g8Xx9L"
+      ],
+      "settings": {
+        "title": "",
+        "heading_font_size": "heading-medium",
+        "align_heading": "text-center",
+        "align_text": "text-center",
+        "width": "wrapper",
+        "align_columns": "flex-align-top",
+        "layout": "grid",
+        "grid": 4,
+        "layout_mobile": "slider",
+        "color_scheme": "",
+        "padding_top": 20,
+        "padding_bottom": 50,
+        "heading_tag": "automatic"
+      }
+    },
+    "section_double_fidkkH": {
+      "type": "section-double",
+      "blocks": {
+        "heading_nAfQUg": {
+          "type": "heading",
+          "settings": {
+            "title": "Why Choose Us?",
+            "heading_font_size": "heading-large",
+            "padding_bottom": 16,
+            "heading_tag": "automatic"
+          }
+        },
+        "text_PCnXy3": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Beyond the traditional corporate gift, our products create lasting value through daily use. Recipients don't just receive a gift—they gain tools for transformation. </p><p><strong>Each product is thoughtfully designed to enhance professional success while serving as a constant reminder of your investment in their growth.</strong></p>",
+            "text_font_size": "body-medium",
+            "padding_bottom": 16
+          }
+        },
+        "buttons_QBDw4b": {
+          "type": "buttons",
+          "disabled": true,
+          "settings": {
+            "button_text": "Learn more",
+            "button_url": "",
+            "button_type": "btn--primary",
+            "button_size": "",
+            "button_style": "btn--solid",
+            "show_arrow": false,
+            "padding_bottom": 16
+          }
+        }
+      },
+      "block_order": [
+        "heading_nAfQUg",
+        "text_PCnXy3",
+        "buttons_QBDw4b"
+      ],
+      "settings": {
+        "image_1": "shopify://shop_images/BestSelf_Large_c711e378-4bfb-4839-be1b-0d19f4aa24b7.jpg",
+        "image_width": "one-half",
+        "text_alignment": "text-left",
+        "layout": "is-reversed",
+        "width": "wrapper--full-padded",
+        "height": "four-fifty-height-hero",
+        "mobile_height": "screen-height-one-half--mobile",
+        "reverse_blocks": false,
+        "color_scheme": "",
+        "padding_top": 70,
+        "padding_bottom": 70,
+        "show_placeholder": true
+      }
+    },
+    "section_double_UtQG9E": {
+      "type": "section-double",
+      "blocks": {
+        "heading_HYckXP": {
+          "type": "heading",
+          "settings": {
+            "title": "Self Journal",
+            "heading_font_size": "heading-large",
+            "padding_bottom": 16,
+            "heading_tag": "automatic"
+          }
+        },
+        "text_YBVhiU": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
+            "text_font_size": "body-medium",
+            "padding_bottom": 16
+          }
+        },
+        "buttons_WCkFjC": {
+          "type": "buttons",
+          "settings": {
+            "button_text": "Learn more",
+            "button_url": "",
+            "button_type": "btn--primary",
+            "button_size": "",
+            "button_style": "btn--solid",
+            "show_arrow": false,
+            "padding_bottom": 16
+          }
+        }
+      },
+      "block_order": [
+        "heading_HYckXP",
+        "text_YBVhiU",
+        "buttons_WCkFjC"
+      ],
+      "disabled": true,
+      "settings": {
+        "image_1": "shopify://shop_images/default-avatar-photo-placeholder-profile-picture-vector.jpg",
+        "image_width": "one-half",
+        "text_alignment": "text-left",
+        "layout": "",
+        "width": "wrapper--full-padded",
+        "height": "four-fifty-height-hero",
+        "mobile_height": "screen-height-one-half--mobile",
+        "reverse_blocks": false,
+        "color_scheme": "",
+        "padding_top": 70,
+        "padding_bottom": 70,
+        "show_placeholder": true
+      }
+    },
+    "section_rich_text_c3Dkwn": {
+      "type": "section-rich-text",
+      "blocks": {
+        "heading_zwhWFD": {
+          "type": "heading",
+          "settings": {
+            "title": "Make your Mark",
+            "heading_font_size": "heading-large",
+            "padding_bottom": 16,
+            "heading_tag": "automatic"
+          }
+        },
+        "text_8z4cKR": {
+          "type": "text",
+          "settings": {
+            "text": "<p>From onboarding welcomes to client appreciation, we'll help you create gifting programs that reflect your company's commitment to excellence. Our products don't just carry your brand—they carry your message of investing in people's success.</p>",
+            "text_font_size": "body-medium",
+            "padding_bottom": 16
+          }
+        },
+        "buttons_pJNVGh": {
+          "type": "buttons",
+          "settings": {
+            "button_text": "START YOUR GIFTING PROGRAM",
+            "button_url": "https://tally.so/r/3NJGDB",
+            "button_type": "btn--primary",
+            "button_size": "",
+            "button_style": "btn--solid",
+            "show_arrow": false,
+            "padding_bottom": 16
+          }
+        }
+      },
+      "block_order": [
+        "heading_zwhWFD",
+        "text_8z4cKR",
+        "buttons_pJNVGh"
+      ],
+      "settings": {
+        "align_text": "text-center",
+        "width": "wrapper",
+        "color_scheme": "",
+        "overlay_opacity": 0,
+        "show_overlay_text": false,
+        "padding_top": 100,
+        "padding_bottom": 100
+      }
+    }
+  },
+  "order": [
+    "mg_text_slider_iEmGkA",
+    "main",
+    "contact",
+    "faq",
+    "section_slideshow_cz9dpX",
+    "section_hero_WTfXTh",
+    "section_press_logos_rdfQkp",
+    "ss_feature_9_mnDfzN",
+    "section_rich_text_columns_BPDrpy",
+    "section_double_Xq7qw3",
+    "section_rich_text_KRCTjU",
+    "section_columns_khVPXP",
+    "section_double_fidkkH",
+    "section_double_UtQG9E",
+    "section_rich_text_c3Dkwn"
+  ]
+}

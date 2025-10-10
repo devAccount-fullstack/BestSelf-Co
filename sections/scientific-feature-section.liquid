@@ -1,0 +1,357 @@
+{% assign scientific_benefits = product.metafields.custom.scientific_benefits.value %}
+
+{% if scientific_benefits %}
+{% if section.settings.slideshow_on_mobile %}
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+{% endif %}
+{% style %}
+    .scientific__section-{{ section.id }}{
+        padding-top: {{section.settings.padding_top_desktop | append: "px"}};
+        padding-bottom: {{section.settings.padding_bottom_desktop | append: "px"}};
+        background: {{section.settings.bg_color}};
+    }
+    .scientific__section-{{ section.id }} .scientific__section-container{
+        width: 100%;
+        max-width: 1280px;
+        margin: 0 auto;
+    }
+    .scientific__section-{{ section.id }} .scientific__section-heading-block{
+        padding-bottom: 40px;
+    }
+    .scientific__section-{{ section.id }} .scientific__section-heading-block h2{
+        font-family: var(--FONT-STACK-HEADING);
+        font-size: 40px;
+        line-height: 50px;
+        font-weight: 700;
+        text-align: center;
+        letter-spacing: 0.6px;
+        color: {{section.settings.heading_color}};
+        word-break: break-word;
+        margin: 0;
+    }
+    .scientific__section-{{ section.id }} .scientific__section-text{
+        padding-top: 10px;
+    }
+    .scientific__section-{{ section.id }} .scientific__section-heading-block p{
+        font-family: var(--FONT-STACK-BODY);
+        max-width: 630px;
+        margin: 0 auto;
+        overflow-wrap: break-word;
+        font-size: 20px;
+        line-height: 30px;
+        font-weight: 400;
+        letter-spacing: 0.5px;
+        text-align: center;
+        color: {{section.settings.content_color}};
+    }
+    .scientific__section-{{ section.id }} .scientific__section-multicol-row-wrapper{
+        width: 100%;
+        margin: 0 auto;
+    }
+    .scientific__section-{{ section.id }} .scientific__section-multicol-row{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    {% unless section.settings.slideshow_on_mobile %}
+      .scientific__section-swiper-{{ section.id }}{
+        display: none!important;
+      }
+    {% endunless %}
+    .scientific__section-{{ section.id }} .scientific__section-multicol-row .scientific__section-col{
+        width: calc(33.33% - 20px * 2 / 3);
+        max-width: calc(33.33% - 20px * 2 / 3);
+    }
+    .scientific__section-{{ section.id }} .scientific__section-multicol-row .scientific__section-content-wrapper{
+      padding: 0 8px;
+    }
+    .scientific__section-{{ section.id }} .scientific__section-content-wrapper .scientific__col-media{
+        width: 100%;
+        text-align: center;
+    }
+    .scientific__section-{{ section.id }} .scientific__section-content-wrapper .scientific__col-media img{
+        width: 100%;
+        max-width: 60px;
+        height: auto;
+        aspect-ratio: 1/1;
+    }
+    .scientific__section-{{ section.id }} .scientific__section-content-wrapper .scientific__col-text{
+        padding-top: 12px;
+        padding-bottom: 24px;
+        text-align: center;
+    }
+    .scientific__section-{{ section.id }} .scientific__section-content-wrapper .scientific__col-text h4{
+        font-family: var(--FONT-STACK-HEADING);
+        margin: 0;
+        font-weight: 700;
+        font-size: 18px!important;
+        line-height: 32px;
+        color: #1a1a1a;
+        letter-spacing: 0.6px;
+    }
+    .scientific__section-{{ section.id }} .scientific__section-content-wrapper .scientific__col-text p{
+      margin: 0;
+      margin-top: 8px;
+      font-family: var(--FONT-STACK-BODY);
+      overflow-wrap: break-word;
+      font-size: 16px!important;
+      line-height: 24px;
+      font-weight: 400;
+      letter-spacing: 0.5px;
+      text-align: center;
+      color: {{section.settings.content_color}};
+    }
+    .scientific__section-swiper-{{ section.id }} .swiper-pagination-{{ section.id }}{
+      position: unset;
+      margin-top: 24px;
+    }
+    .scientific__section-swiper-{{ section.id }} .swiper-pagination-{{ section.id }} .swiper-pagination-bullet{
+      font-size: 0;
+      width: 20px;
+      height: 4px;
+      background-color: #cccccc;
+      border-radius: 100px;
+      border: 0;
+      color: transparent;
+      cursor: pointer;
+      opacity: 1;
+    }
+    .scientific__section-swiper-{{ section.id }} .swiper-pagination-{{ section.id }} .swiper-pagination-bullet.swiper-pagination-bullet-active{
+      background-color: #242540;
+    }
+    @media only screen and (max-width: 639px){
+        .scientific__section-{{ section.id }}{
+            padding-top: {{section.settings.padding_top_mobile | append: "px"}};
+            padding-bottom: {{section.settings.padding_bottom_mobile | append: "px"}};
+        }
+        {% if section.settings.slideshow_on_mobile %}
+          .scientific__section-{{ section.id }} .scientific__section-multicol-row{
+            display: none;
+          }
+        {% endif %}
+        .scientific__section-{{ section.id }} .scientific__section-heading-block h2{
+            font-size: 28px;
+            line-height: 36px;
+        }
+        .scientific__section-{{ section.id }} .scientific__section-heading-block p{
+          font-size: 16px;
+          line-height: 26px;
+          padding: 0 5px;
+        }
+        .scientific__section-{{ section.id }} .scientific__section-multicol-row .scientific__section-col{
+            width: 100%;
+            max-width: 100%;
+        }
+        .scientific__section-{{ section.id }} .scientific__section-content-wrapper .scientific__col-text p{
+          font-size: 14px!important;
+        }
+    }
+    @media (min-width: 640px) and (max-width: 991px){
+        .scientific__section-{{ section.id }} .scientific__section .scientific__section-heading-block h2{
+            font-size: 32px;
+        }
+        .scientific__section-{{ section.id }} .scientific__section-multicol-row .scientific__section-col{
+            width: calc(50% - 20px * 1 / 2);
+            max-width: calc(50% - 20px * 1 / 2);
+        }
+    }
+  @media only screen and (min-width: 640px){
+    .scientific__section-swiper-{{ section.id }}{
+      display: none!important;
+    }
+  }
+{% endstyle %}
+<section class="scientific__section-{{ section.id }}">
+    <div class="scientific__section-container">
+      
+        <div class="scientific__section-heading-block">
+            {% if section.settings.heading != blank %}
+              <h2>{{ section.settings.heading }}</h2>
+            {% endif %}
+            {% if section.settings.content != blank %}
+              <div class="scientific__section-text">
+                  {{ section.settings.content }}
+              </div>
+            {% endif %}
+        </div>
+        <div class="scientific__section-multicol-row-wrapper">
+            <div class="scientific__section-multicol-row">
+              {% for scientific_benefit in scientific_benefits %}
+                <div class="scientific__section-col">
+                    <div class="scientific__section-content-wrapper">
+                        <div class="scientific__col-media">
+                            <img src="{{ scientific_benefit.icon | image_url }}" alt = "{{ scientific_benefit.icon.alt | default: shop.name }}" width="{{ scientific_benefit.icon.width }}" height="{{ scientific_benefit.icon.height }}">
+                        </div>
+                        <div class="scientific__col-text">
+                            <h4>{{ scientific_benefit.text }}</h4>
+                            <p>{{ scientific_benefit.description }}</p>
+                        </div>
+                    </div>
+                </div>
+              {% endfor %}
+            </div>
+            {% if section.settings.slideshow_on_mobile %}
+            <div class="swiper scientific__section-swiper-{{ section.id }}">
+              <div class="swiper-wrapper">
+                {% for scientific_benefit in scientific_benefits %}
+                    <div class="swiper-slide">
+                      <div class="scientific__section-col">
+                      <div class="scientific__section-content-wrapper">
+                          <div class="scientific__col-media">
+                              <img src="{{ scientific_benefit.icon | image_url }}" alt = "{{ scientific_benefit.icon.alt | default: shop.name }}" width="{{ scientific_benefit.icon.width }}" height="{{ scientific_benefit.icon.height }}">
+                          </div>
+                          <div class="scientific__col-text">
+                              <h4>{{ scientific_benefit.text }}</h4>
+                              <p>{{ scientific_benefit.description }}</p>
+                          </div>
+                      </div>
+                  </div>
+                    </div>
+                {% endfor %}
+              </div>
+              <div class="swiper-pagination swiper-pagination-{{ section.id }}"></div>
+          </div>
+            {% endif %}
+        </div>
+      
+    </div>
+</section>
+
+{% if section.settings.slideshow_on_mobile %}
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+<script>
+  function slideShowInit(){
+      const slider = new Swiper('.scientific__section-swiper-{{ section.id }}', {
+        speed: 800,
+        loop: true,
+        autoplay: {
+          delay: {{section.settings.autoplay}},
+        },
+        pagination: {
+          el: '.swiper-pagination-{{ section.id }}',
+          type: 'bullets',
+          clickable:true
+        }
+      });
+  }
+  if (Shopify.designMode) {
+     document.addEventListener('shopify:section:load', slideShowInit);
+  }
+  document.addEventListener("DOMContentLoaded", slideShowInit);
+</script>
+{% endif %}
+{% endif %}
+
+{% schema %}
+  {
+    "name": "Scientific Section",
+    "class": "scientific-section",
+    "enabled_on": {
+      "templates": ["product"]
+    },
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading",
+        "default": "Scientifically backed benefits."
+      },
+      {
+        "type": "color",
+        "id": "heading_color",
+        "label": "Heading Color",
+        "default": "#1A1A1A"
+      },
+      {
+        "type": "richtext",
+        "id": "content",
+        "label": "Content",
+        "default": "<p>We developed MindJournal with input from psychology professors, therapists, and over 200 peer-reviewed papers.</p>"
+      },
+      {
+        "type": "color",
+        "id": "content_color",
+        "label": "Content Color",
+        "default": "#454545"
+      },
+      {
+        "type": "header",
+        "content": "Slideshow on Mobile"
+      },
+      {
+        "type": "checkbox",
+        "id": "slideshow_on_mobile",
+        "label": "Slidshow on mobile",
+        "default": true
+      },
+      {
+        "type": "range",
+        "id": "autoplay",
+        "label": "Autoplay",
+        "default": 5000,
+        "min": 0,
+        "max": 8000,
+        "step": 500,
+        "unit": "ms"
+      },
+      {
+        "type": "header",
+        "content": "Theme CSS"
+      },
+      {
+        "type": "color",
+        "id": "bg_color",
+        "label": "Background Color",
+        "default": "#ffffff"
+      },
+      {
+        "type": "range",
+        "id": "padding_top_desktop",
+        "label": "Padding Top (Desktop)",
+        "default": 64,
+        "min": 0,
+        "max": 120,
+        "step": 2,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom_desktop",
+        "label": "Padding Bottom (Desktop)",
+        "default": 64,
+        "min": 0,
+        "max": 120,
+        "step": 2,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "padding_top_mobile",
+        "label": "Padding Top (Mobile)",
+        "default": 40,
+        "min": 0,
+        "max": 60,
+        "step": 2,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom_mobile",
+        "label": "Padding Bottom (Mobile)",
+        "default": 32,
+        "min": 0,
+        "max": 40,
+        "step": 2,
+        "unit": "px"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Scientific Section"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,145 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "subheading": "",
+        "show_title": true,
+        "heading_font_size": "heading-large",
+        "show_content": true,
+        "text_font_size": "body-medium",
+        "align_text": "text-center",
+        "width": "wrapper",
+        "color_scheme": "",
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "heading_tag": "automatic"
+      }
+    },
+    "quiz_q64FNw": {
+      "type": "quiz",
+      "blocks": {
+        "block_pmxFtP": {
+          "type": "block",
+          "settings": {
+            "question": "What do you want to improve right now?",
+            "answer_1": "My relationships and communication",
+            "tags_1": "Romantic Relationships, Social Connections, deck",
+            "answer_2": "Productivity and focus",
+            "tags_2": "Productivity, Professional Growth, journals, pad",
+            "answer_3": "Personal growth",
+            "tags_3": "Personal Growth, Self-Discovery, Productivity",
+            "answer_4": "A bit of everything",
+            "tags_4": "Productivity, Professional Growth,Social Connections, Journals, pad, Personal Growth"
+          }
+        },
+        "block_hbPzKE": {
+          "type": "block",
+          "settings": {
+            "question": "Who do you want to go on this journey with?",
+            "answer_1": "My partner",
+            "tags_1": "Romantic Relationships",
+            "answer_2": "By myself",
+            "tags_2": "Personal Growth, Self-Discovery, deck",
+            "answer_3": "A friend",
+            "tags_3": "deck, Social Connections, Personal Growth, Productivity",
+            "answer_4": "A colleague or team",
+            "tags_4": "Social Connections, pad, Journals, Productivity, Professional Growth"
+          }
+        },
+        "block_zzKRMi": {
+          "type": "block",
+          "settings": {
+            "question": "What format do you prefer?",
+            "answer_1": "Conversation starter cards",
+            "tags_1": "",
+            "answer_2": "Goal planners and trackers",
+            "tags_2": "Journals, pad, habit, Planners & Action Pads",
+            "answer_3": "Interactive journals",
+            "tags_3": "Digital journal",
+            "answer_4": "Short challenges",
+            "tags_4": "deck, Social Connections, Romantic Relationships, Productivity, Card deck"
+          }
+        },
+        "block_mQnr4K": {
+          "type": "block",
+          "settings": {
+            "question": "How much time can you dedicate each day?",
+            "answer_1": "Less than 10 minutes",
+            "tags_1": "pad, tracker, deck",
+            "answer_2": "10–20 minutes",
+            "tags_2": "Productivity, Journals, deck, Card deck, Social Connection",
+            "answer_3": "30 minutes or more",
+            "tags_3": "Productivity, Journals, Card deck, deck, Social Connection, Romantic Relationships",
+            "answer_4": "Flexible, depending on the day",
+            "tags_4": "Productivity, Journals, Card deck, deck, Social Connection, Romantic Relationships"
+          }
+        },
+        "block_aTezUh": {
+          "type": "block",
+          "settings": {
+            "question": "What matters most to you?",
+            "answer_1": "Deep conversations and emotional connection",
+            "tags_1": "Romantic Relationships, Social Connections",
+            "answer_2": "Structure and results",
+            "tags_2": "Productivity, Personal Growth, Professional Growth",
+            "answer_3": "Mindfulness and self-reflection",
+            "tags_3": "Self-Discovery",
+            "answer_4": "Playfulness and engagement",
+            "tags_4": "Card deck, deck"
+          }
+        },
+        "block_rimjei": {
+          "type": "block",
+          "settings": {
+            "question": "Who are you buying this for?",
+            "answer_1": "Myself",
+            "tags_1": "Self-Discovery, Personal Growth",
+            "answer_2": "My partner",
+            "tags_2": "Romantic Relationships",
+            "answer_3": "A friend",
+            "tags_3": "Social Connections, Professional Growth, Self-Discovery, deck",
+            "answer_4": "A colleague",
+            "tags_4": "Productivity, Professional Growth"
+          }
+        }
+      },
+      "block_order": [
+        "block_pmxFtP",
+        "block_hbPzKE",
+        "block_zzKRMi",
+        "block_mQnr4K",
+        "block_aTezUh",
+        "block_rimjei"
+      ],
+      "name": "42 Quiz",
+      "settings": {
+        "anchor_id": "section-name",
+        "btn_back": "Back",
+        "btn_next": "Next",
+        "title_match": "Your Perfect Match:",
+        "title_not_result": "Not result",
+        "pt_mob": 56,
+        "pb_mob": 56,
+        "pt_tab": 80,
+        "pb_tab": 80,
+        "pt_desk": 90,
+        "pb_desk": 120
+      }
+    }
+  },
+  "order": [
+    "main",
+    "quiz_q64FNw"
+  ]
+}

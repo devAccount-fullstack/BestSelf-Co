@@ -1,0 +1,92 @@
+{% comment %}
+  PARAMS:
+    section_id => section.id
+    pt_mob  => padding-top
+    pb_mob  => padding-bottom
+    pt_tab  => padding-top
+    pb_tab  => padding-bottom
+    pt_desk => padding-top
+    pb_desk => padding-bottom
+
+  VARIABLES FOR SECTION:
+    {% liquid
+      assign pt_mob = section.settings.pt_mob
+      assign pb_mob = section.settings.pb_mob
+      assign pt_tab = section.settings.pt_tab
+      assign pb_tab = section.settings.pb_tab
+      assign pt_desk = section.settings.pt_desk
+      assign pb_desk = section.settings.pb_desk
+    %}
+
+  SNIPPET RENDER:
+    {% render 'section-paddings',
+      section_id: section.id,
+      pt_mob: pt_mob,
+      pb_mob: pb_mob,
+      pt_tab: pt_tab,
+      pb_tab: pb_tab,
+      pt_desk: pt_desk,
+      pb_desk: pb_desk
+    %}
+
+  SCHEMA:
+    {
+      "type": "header",
+      "content": "Padding Y settings"
+    },
+    {
+      "type": "number",
+      "id": "pt_mob",
+      "label": "Mobile padding top in px",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "pb_mob",
+      "label": "Mobile padding bottom in px",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "pt_tab",
+      "label": "Tablet padding top in px",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "pb_tab",
+      "label": "Tablet padding bottom in px",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "pt_desk",
+      "label": "Desktop padding top in px",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "pb_desk",
+      "label": "Desktop padding bottom in px",
+      "default": 0
+    },
+{% endcomment %}
+
+<style>
+  [data-section-id='{{ section_id }}'] {
+    padding-top: {{ pt_mob | divided_by: 16.00 }}rem;
+    padding-bottom: {{ pb_mob | divided_by: 16.00 }}rem;
+  }
+  @media (min-width: 768px) {
+    [data-section-id='{{ section_id }}'] {
+      padding-top: {{ pt_tab | divided_by: 16.00 }}rem;
+      padding-bottom: {{ pb_tab | divided_by: 16.00 }}rem;
+    }
+  }
+  @media (min-width: 1150px) {
+    [data-section-id='{{ section_id }}'] {
+      padding-top: {{ pt_desk | divided_by: 16.00 }}rem;
+      padding-bottom: {{ pb_desk | divided_by: 16.00 }}rem;
+    }
+  }
+</style>

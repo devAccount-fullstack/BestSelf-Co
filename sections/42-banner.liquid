@@ -1,0 +1,157 @@
+{% liquid
+  assign bg_image_desk = section.settings.bg_image_desk
+  assign bg_image_mob = section.settings.bg_image_mob
+
+  assign section_subtitle = section.settings.section_subtitle
+  assign section_title = section.settings.section_title
+  assign btn_text = section.settings.btn_text
+  assign btn_link = section.settings.btn_link
+
+  assign pt_mob = section.settings.pt_mob
+  assign pb_mob = section.settings.pb_mob
+  assign pt_tab = section.settings.pt_tab
+  assign pb_tab = section.settings.pb_tab
+  assign pt_desk = section.settings.pt_desk
+  assign pb_desk = section.settings.pb_desk
+%}
+
+{% render 'section-paddings',
+  section_id: section.id,
+  pt_mob: pt_mob,
+  pb_mob: pb_mob,
+  pt_tab: pt_tab,
+  pb_tab: pb_tab,
+  pt_desk: pt_desk,
+  pb_desk: pb_desk
+%}
+
+<style>
+  [data-section-id='{{ section.id }}'] {
+        background: url("{{ bg_image_mob | img_url: 'master' }}") no-repeat center center;
+        background-size: cover;
+        border-radius: 10px;
+      }
+    @media screen and (min-width: 768px) {
+      [data-section-id='{{ section.id }}'] {
+        background: url("{{ bg_image_desk | img_url: 'master' }}") no-repeat center center;
+        background-size: cover;
+        border-radius: 20px;
+      }
+    }
+</style>
+
+<div
+  class="container-42"
+>
+  <div data-section-id="{{ section.id }}">
+    <div class="tw-flex justify-center">
+      <div class="tw-max-w-[636px] tw-px-8.5  tw-flex tw-flex-col tw-items-center ">
+        {% if section_subtitle != blank %}
+          <div class="tw-text-white tw-text-[20px] tw-leading-[28px] tw-uppercase tw-mb-3">
+            {{ section_subtitle }}
+          </div>
+        {% endif %}
+        {% if section_title != blank %}
+          <div class="tw-text-white tw-text-[28px] lg:tw-text-[44px] lg:tw-leading-[54px] tw-leading-[35px] tw-text-center ">
+            {{ section_title }}
+          </div>
+        {% endif %}
+        {% if btn_text != blank %}
+          <div class=" tw-mt-[35px]  md:tw-mt-6">
+            <a
+              href="{{ btn_link }}"
+              class="btn-42 btn-42--primary !tw-min-h-10.5 md:!tw-min-h-12 tw-w-fit md:tw-min-w-[127px] tw-min-w-[121px]"
+            >
+              <span>{{ btn_text }}</span>
+              {% render 'icon-42', name: 'btn-arrow' %}
+            </a>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "42 Banner",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "bg_image_desk",
+      "label": "Background Image Desktop"
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_image_mob",
+      "label": "Background Image Mobile"
+    },
+    {
+      "type": "richtext",
+      "id": "section_subtitle",
+      "label": "Section Subtitle"
+    },
+    {
+      "type": "richtext",
+      "id": "section_title",
+      "label": "Section Title"
+    },
+    {
+      "type": "text",
+      "id": "btn_text",
+      "label": "Button text"
+    },
+    {
+      "type": "url",
+      "id": "btn_link",
+      "label": "Button link"
+    },
+    {
+      "type": "header",
+      "content": "Padding Y settings"
+    },
+    {
+      "type": "number",
+      "id": "pt_mob",
+      "label": "Mobile padding top in px",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "pb_mob",
+      "label": "Mobile padding bottom in px",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "pt_tab",
+      "label": "Tablet padding top in px",
+      "default": 228
+    },
+    {
+      "type": "number",
+      "id": "pb_tab",
+      "label": "Tablet padding bottom in px",
+      "default": 48
+    },
+    {
+      "type": "number",
+      "id": "pt_desk",
+      "label": "Desktop padding top in px",
+      "default": 228
+    },
+    {
+      "type": "number",
+      "id": "pb_desk",
+      "label": "Desktop padding bottom in px",
+      "default": 48
+    }
+  ],
+  "presets": [
+    {
+      "name": "42 Banner"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,255 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "section_hero_PhpLbb": {
+      "type": "section-hero",
+      "blocks": {
+        "heading_MnViQE": {
+          "type": "heading",
+          "settings": {
+            "title": "Trusted by 500,000+ People to Design Their Best Lives",
+            "heading_font_size": "heading-medium",
+            "heading_tag": "automatic"
+          }
+        },
+        "text_MCK38J": {
+          "type": "text",
+          "settings": {
+            "text": "<p>For nearly a decade, we’ve created tools that actually work—helping people transform their productivity, deepen their relationships, and live with greater purpose and intention.</p>",
+            "text_font_size": "body-large"
+          }
+        }
+      },
+      "block_order": [
+        "heading_MnViQE",
+        "text_MCK38J"
+      ],
+      "settings": {
+        "image_1": "shopify://shop_images/BestSelf_BestSellers-7.jpg",
+        "link": "",
+        "width": "wrapper--full",
+        "height": "four-fifty-height-hero",
+        "flex_align_desktop": "align--middle-center-desktop",
+        "content_width": 50,
+        "mobile_height": "image-height--mobile",
+        "flex_align_mobile": "align--middle-center-mobile",
+        "color_scheme": "scheme-10",
+        "show_text_background": false,
+        "overlay_opacity": 55,
+        "show_overlay_text": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "show_placeholder": true
+      }
+    },
+    "section_double_XRrVVQ": {
+      "type": "section-double",
+      "blocks": {
+        "subheading_GM7chk": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "our founding story",
+            "padding_bottom": 16
+          }
+        },
+        "heading_ymPgmn": {
+          "type": "heading",
+          "settings": {
+            "title": "From Chaos to Clarity",
+            "heading_font_size": "heading-large",
+            "padding_bottom": 16,
+            "heading_tag": "automatic"
+          }
+        },
+        "text_EMDqC8": {
+          "type": "text",
+          "settings": {
+            "text": "<p>When Cathryn Lavery designed her first productivity journal, she wasn't trying to build an empire—she was just trying to quiet her chaotic mind. </p><p></p><p>The founder turned her struggles with focus and productivity into BestSelf Co., a company that's sold over 1.3 million journals in 72 countries and built a community of over 500,000 members worldwide.</p>",
+            "text_font_size": "body-large",
+            "padding_bottom": 16
+          }
+        }
+      },
+      "block_order": [
+        "subheading_GM7chk",
+        "heading_ymPgmn",
+        "text_EMDqC8"
+      ],
+      "settings": {
+        "image_1": "shopify://shop_images/cathryn_8e76786d-ec14-4e23-a364-f95a69416d9c.png",
+        "image_width": "one-half",
+        "text_alignment": "text-left",
+        "layout": "",
+        "width": "wrapper",
+        "height": "sixty-fifty-height-hero",
+        "mobile_height": "four-fifty-height-hero--mobile",
+        "reverse_blocks": true,
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "show_placeholder": true
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "custom_css": [
+        ".hero__title.heading-large.aos-animate {display: none !important;}",
+        "p {font-size: 18px; /* Adjust size as needed */ line-height: 1.6; /* Improves readability */}"
+      ],
+      "settings": {
+        "subheading": "",
+        "show_title": true,
+        "heading_font_size": "heading-large",
+        "show_content": true,
+        "text_font_size": "body-medium",
+        "align_text": "text-left",
+        "width": "wrapper",
+        "color_scheme": "",
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "heading_tag": "automatic"
+      }
+    },
+    "section_blog_8K4hEj": {
+      "type": "section-blog",
+      "settings": {
+        "blog_name": "winning-wednesday",
+        "aspect_ratio": 1,
+        "title": "Weekly Newsletter",
+        "heading_font_size": "heading-medium",
+        "title_font_size": "heading-small",
+        "show_tags": false,
+        "show_author": true,
+        "show_date": true,
+        "show_button": true,
+        "show_comments": false,
+        "width": "wrapper",
+        "grid": 4,
+        "rows": 1,
+        "color_scheme": "",
+        "padding_top": 32,
+        "padding_bottom": 0,
+        "heading_tag": "automatic",
+        "title_tag": "automatic"
+      }
+    },
+    "announcement": {
+      "type": "section-announcement",
+      "blocks": {
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>Make an announcement</strong> | More info</p>",
+            "text_font_size": "body-small",
+            "color": "",
+            "target_device_enabled": false,
+            "target_device": "mobile"
+          }
+        }
+      },
+      "block_order": [
+        "text"
+      ],
+      "settings": {
+        "slider_speed": 7,
+        "text_alignment": "center",
+        "marquee_speed": 100,
+        "direction": "ticker-rtl",
+        "message_spacing": 10,
+        "show_border": false,
+        "layout": "marquee",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "collections-list": {
+      "type": "section-collections-list",
+      "blocks": {
+        "collection-1": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "title": ""
+          }
+        },
+        "collection-2": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "title": ""
+          }
+        },
+        "collection-3": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "title": ""
+          }
+        },
+        "collection-4": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "title": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection-1",
+        "collection-2",
+        "collection-3",
+        "collection-4"
+      ],
+      "settings": {
+        "title": "",
+        "heading_font_size": "heading-medium",
+        "description": "",
+        "text_font_size": "body-medium",
+        "button_text": "",
+        "button_url": "shopify://collections",
+        "button_type": "btn--primary",
+        "button_size": "",
+        "button_style": "btn--solid",
+        "show_arrow": false,
+        "aspect_ratio": 1.2,
+        "width": "wrapper--full-padded",
+        "layout": "grid",
+        "grid": 4,
+        "layout_mobile": "slider",
+        "color_scheme": "",
+        "padding_top": 50,
+        "padding_bottom": 32,
+        "heading_tag": "automatic"
+      }
+    },
+    "press-logos": {
+      "type": "section-press-logos",
+      "settings": {
+        "enable_heading_slider": false,
+        "logo_opacity": 60,
+        "title": "As seen in",
+        "padding_top": 50,
+        "padding_bottom": 50
+      }
+    }
+  },
+  "order": [
+    "section_hero_PhpLbb",
+    "section_double_XRrVVQ",
+    "main",
+    "section_blog_8K4hEj",
+    "announcement",
+    "collections-list",
+    "press-logos"
+  ]
+}

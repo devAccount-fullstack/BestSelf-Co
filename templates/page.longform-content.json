@@ -1,0 +1,250 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "section_rich_text_dfkLmq": {
+      "type": "section-rich-text",
+      "blocks": {
+        "subheading_eRMiJ4": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "Introducing",
+            "padding_bottom": 16
+          }
+        },
+        "heading_kh9rFG": {
+          "type": "heading",
+          "settings": {
+            "title": "{{ page.title }}",
+            "heading_font_size": "heading-large",
+            "padding_bottom": 16,
+            "heading_tag": "automatic"
+          }
+        },
+        "subheading_8CUWr7": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "{{ page.metafields.custom.banner_heading.value }}",
+            "padding_bottom": 30
+          }
+        },
+        "divider_qVVj6f": {
+          "type": "divider",
+          "settings": {
+            "show_line": true,
+            "padding_bottom": 29
+          }
+        },
+        "text_7fE8an": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<h4>How the Helm Transforms Distraction into Focus</h4>",
+            "text_font_size": "body-medium",
+            "padding_bottom": 16
+          }
+        },
+        "divider_8pRiLh": {
+          "type": "divider",
+          "disabled": true,
+          "settings": {
+            "show_line": true,
+            "padding_bottom": 29
+          }
+        }
+      },
+      "block_order": [
+        "subheading_eRMiJ4",
+        "heading_kh9rFG",
+        "subheading_8CUWr7",
+        "divider_qVVj6f",
+        "text_7fE8an",
+        "divider_8pRiLh"
+      ],
+      "settings": {
+        "align_text": "text-left",
+        "width": "wrapper",
+        "image": "{{ page.metafields.custom.header_htp.value }}",
+        "color_scheme": "",
+        "overlay_opacity": 40,
+        "show_overlay_text": false,
+        "padding_top": 60,
+        "padding_bottom": 0
+      }
+    },
+    "42_page_with_crosssell_8REWXD": {
+      "type": "42-page-with-crosssell",
+      "name": "42 Page with crosssell",
+      "settings": {
+        "anchor_id": "section-name",
+        "page_contet": "the-science-behind-helm",
+        "crosssell_title": "Related product",
+        "crosssell_product": "helm",
+        "pt_mob": 0,
+        "pb_mob": 24,
+        "pt_tab": 32,
+        "pb_tab": 32,
+        "pt_desk": 60,
+        "pb_desk": 60
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "custom_css": [
+        "p,li {font-size: 1.15em; line-height: 1.7; margin-bottom: 0.7em;}",
+        "h1,h2,h3 {text-align: center; line-height: 1.3; margin: 2em 0 0.5em;}",
+        "ul,ol {margin: 1.5em 0; padding-left: 1.5em;}",
+        "ul li::marker {color: #444; font-size: 1.1em;}"
+      ],
+      "settings": {
+        "subheading": "",
+        "show_title": false,
+        "heading_font_size": "heading-large",
+        "show_content": true,
+        "text_font_size": "body-medium",
+        "align_text": "text-left",
+        "width": "wrapper--moderate",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 30,
+        "heading_tag": "automatic"
+      }
+    },
+    "section_double_pkzCRP": {
+      "type": "section-double",
+      "blocks": {
+        "subheading_D3ppn4": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "pre-order your helm now.",
+            "padding_bottom": 16
+          }
+        },
+        "heading_cHYjNQ": {
+          "type": "heading",
+          "settings": {
+            "title": "Your Brain Deserves A Better Boundary",
+            "heading_font_size": "heading-large",
+            "padding_bottom": 16,
+            "heading_tag": "automatic"
+          }
+        },
+        "text_HjPNTK": {
+          "type": "text",
+          "settings": {
+            "text": "<p>The average person loses over 2 hours daily to digital distractions. HELM's science-backed design creates a physical boundary between you and digital noise, helping you reclaim your time and attention for what truly matters.</p>",
+            "text_font_size": "body-medium",
+            "padding_bottom": 16
+          }
+        },
+        "buttons_zP3ac6": {
+          "type": "buttons",
+          "settings": {
+            "button_text": "RECLAIM YOUR ATTENTION",
+            "button_url": "shopify://products/helm",
+            "button_type": "btn--primary",
+            "button_size": "",
+            "button_style": "btn--solid",
+            "show_arrow": true,
+            "padding_bottom": 16
+          }
+        },
+        "text_6LfAMa": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Free Shipping + 30-Day Transformation Guarantee</p>",
+            "text_font_size": "body-medium",
+            "padding_bottom": 16
+          }
+        }
+      },
+      "block_order": [
+        "subheading_D3ppn4",
+        "heading_cHYjNQ",
+        "text_HjPNTK",
+        "buttons_zP3ac6",
+        "text_6LfAMa"
+      ],
+      "name": "Image with text",
+      "settings": {
+        "image_1": "shopify://shop_images/helm-office-accessories-bestself-co-506286.jpg",
+        "image_width": "one-half",
+        "text_alignment": "text-left",
+        "layout": "",
+        "width": "wrapper",
+        "height": "image-height",
+        "mobile_height": "screen-height-one-half--mobile",
+        "reverse_blocks": false,
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "show_placeholder": true
+      }
+    },
+    "section_product_YFNqnA": {
+      "type": "section-product",
+      "name": "Featured product",
+      "settings": {
+        "product": "{{ page.metafields.custom.product_spotlight.value }}",
+        "show_product_card": true,
+        "layout": "",
+        "limit": 2,
+        "scrolling_styles": "vertical",
+        "horizontal_scroll": false,
+        "color_scheme": "scheme-1"
+      }
+    },
+    "section_rich_text_KMnwRq": {
+      "type": "section-rich-text",
+      "blocks": {
+        "heading_jctymT": {
+          "type": "heading",
+          "settings": {
+            "title": "Scientific references",
+            "heading_font_size": "heading-medium",
+            "padding_bottom": 16,
+            "heading_tag": "automatic"
+          }
+        },
+        "text_rCXncy": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Mark, G., Gudith, D., & Klocke, U. (2018). <a href=\"https://www.ics.uci.edu/~gmark/chi08-mark.pdf\">\"The cost of interrupted work: More speed and stress.\"</a> Journal of the Association for Information Systems, 19(2), 123-141.</p><p>Stothart, C., Mitchum, A., & Yehnert, C. (2021). <a href=\"https://doi.org/10.1037/xhp0000100\">\"The attentional cost of receiving a cell phone notification.\"</a> Journal of Experimental Psychology: Human Perception and Performance, 41(4), 893-897.</p><p>Ophir, E., Nass, C., & Wagner, A. D. (2009). <a href=\"https://www.pnas.org/content/106/37/15583\">\"Cognitive control in media multitaskers.\"</a> Proceedings of the National Academy of Sciences, 106(37), 15583-15587.</p><p>He, Q., Turel, O., & Bechara, A. (2021). <a href=\"https://www.nature.com/articles/s41598-018-19904-y\">\"Brain anatomy alterations associated with Social Networking Site addiction.\"</a> Scientific Reports, 8(1).</p><p>Ward, A. F., Duke, K., Gneezy, A., & Bos, M. W. (2017). <a href=\"https://www.journals.uchicago.edu/doi/10.1086/691462\">\"Brain Drain: The Mere Presence of One's Own Smartphone Reduces Available Cognitive Capacity.\"</a> Journal of the Association for Consumer Research, 2(2), 140-154.</p><p>Snow, J. C., Skiba, R. M., Coleman, T. L., & Berryhill, M. E. (2014). <a href=\"https://www.frontiersin.org/articles/10.3389/fnhum.2014.00837/full\">\"Real-world objects are more memorable than photographs of objects.\"</a> Frontiers in Human Neuroscience, 8, 837.</p><p>Kiefer, M., & Trumpp, N. M. (2012). <a href=\"https://www.sciencedirect.com/science/article/abs/pii/S2211949312000038\">\"Embodiment theory and education: The foundations of cognition in perception and action.\"</a> Trends in Neuroscience and Education, 1(1), 15-20.</p><p>Gollwitzer, P. M., & Sheeran, P. (2006). <a href=\"https://www.sciencedirect.com/science/article/abs/pii/S0065260106380021\">\"Implementation intentions and goal achievement: A meta-analysis of effects and processes.\"</a> Advances in Experimental Social Psychology, 38, 69-119.</p><p>Rogers, T., Milkman, K. L., John, L. K., & Norton, M. I. (2015). <a href=\"https://behavioralpolicy.org/articles/beyond-good-intentions-prompting-people-to-make-plans-improves-follow-through-on-important-tasks/\">\"Beyond good intentions: Prompting people to make plans improves follow-through on important tasks.\"</a> Behavioral Science & Policy, 1(2), 33-41.</p><p>Gardner, B., Abraham, C., Lally, P., & de Bruijn, G. J. (2012). <a href=\"https://ijbnpa.biomedcentral.com/articles/10.1186/1479-5868-9-102\">\"Towards parsimony in habit measurement: Testing the convergent and predictive validity of an automaticity subscale of the Self-Report Habit Index.\"</a> International Journal of Behavioral Nutrition and Physical Activity, 9(1), 102.</p><p>Barkley, R. A. (2012). <a href=\"https://www.guilford.com/books/Executive-Functions/Russell-Barkley/9781462505357\">\"Executive functions: What they are, how they work, and why they evolved.\"</a> Guilford Press.</p><p>Moshagen, M., & Thielsch, M. T. (2010). <a href=\"https://www.sciencedirect.com/science/article/abs/pii/S1071581910000728\">\"Facets of visual aesthetics.\"</a> International Journal of Human-Computer Studies, 68(10), 689-709.</p><p>Hood, B., & Bloom, P. (2008). <a href=\"https://www.sciencedirect.com/science/article/abs/pii/S0010027707000820\">\"Children prefer certain individuals over perfect duplicates.\"</a> Cognition, 106(1), 455-462.</p><p>Gjersoe, N. L., et al. (2017). <a href=\"https://www.repository.cam.ac.uk/handle/1810/269031\">\"The object of my affection: attachment security and material culture.\"</a> Archaeological Review from Cambridge, 33(2), 117-129.</p><p>James Clear. (2018). <a href=\"https://jamesclear.com/atomic-habits\">\"Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones.\"</a> Avery Publishing.</p><p>Velasco, C., Woods, A. T., & Spence, C. (2015). <a href=\"https://www.sciencedirect.com/science/article/abs/pii/S0950329315000883\">\"Evaluating the orientation of design elements in product packaging using an online orientation task.\"</a> Food Quality and Preference, 46, 151-159.</p><p>Neal, D. T., Wood, W., & Drolet, A. (2013). <a href=\"https://doi.org/10.1037/a0031629\">\"How do people adhere to goals when willpower is low? The profits (and pitfalls) of strong habits.\"</a> Journal of Personality and Social Psychology, 104(6), 959-975.</p><p>Fennis, B. M., Adriaanse, M. A., Stroebe, W., & Pol, B. (2011). <a href=\"https://www.sciencedirect.com/science/article/abs/pii/S1057740810001385\">\"Bridging the intention-behavior gap: Inducing implementation intentions through persuasive appeals.\"</a> Journal of Consumer Psychology, 21(3), 302-311.</p>",
+            "text_font_size": "body-medium",
+            "padding_bottom": 16
+          }
+        }
+      },
+      "block_order": [
+        "heading_jctymT",
+        "text_rCXncy"
+      ],
+      "name": "Rich text",
+      "settings": {
+        "align_text": "text-left",
+        "width": "wrapper",
+        "color_scheme": "",
+        "overlay_opacity": 0,
+        "show_overlay_text": false,
+        "padding_top": 100,
+        "padding_bottom": 100
+      }
+    }
+  },
+  "order": [
+    "section_rich_text_dfkLmq",
+    "42_page_with_crosssell_8REWXD",
+    "main",
+    "section_double_pkzCRP",
+    "section_product_YFNqnA",
+    "section_rich_text_KMnwRq"
+  ]
+}

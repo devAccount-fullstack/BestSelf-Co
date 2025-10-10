@@ -1,0 +1,45 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "42_collection_banner_zmXLpB": {
+      "type": "42-collection-banner",
+      "name": "42 Collection Banner",
+      "settings": {
+        "title": "{{ collection.title }}",
+        "text": "{{ collection.description }}",
+        "pt_mob": 20,
+        "pb_mob": 32,
+        "pt_tab": 48,
+        "pb_tab": 48,
+        "pt_desk": 72,
+        "pb_desk": 56
+      }
+    },
+    "42_main_collection_fH8xBa": {
+      "type": "42-main-collection",
+      "name": "42 Main Collection",
+      "settings": {
+        "anchor_id": "collection",
+        "product_per_page": 12,
+        "pt_mob": 0,
+        "pb_mob": 56,
+        "pt_tab": 0,
+        "pb_tab": 30,
+        "pt_desk": 0,
+        "pb_desk": 120
+      }
+    }
+  },
+  "order": [
+    "42_collection_banner_zmXLpB",
+    "42_main_collection_fH8xBa"
+  ]
+}

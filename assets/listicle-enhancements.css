@@ -1,0 +1,220 @@
+/* Listicle Page Enhancements - Mobile-First Design */
+
+/* Apply styles only to listicle template pages */
+.template-listicle {
+  /* Mobile-first spacing */
+  --listicle-section-spacing: 50px;
+}
+
+/* Tablet and up */
+@media screen and (min-width: 768px) {
+  .template-listicle {
+    --listicle-section-spacing: 80px;
+  }
+}
+
+/* Large decorative numbers for list items - using CSS counters */
+.template-listicle {
+  counter-reset: listicle-counter;
+}
+
+/* Style the Image with Text sections for numbered list items */
+.template-listicle .section-double .hero__title:first-child::before {
+  counter-increment: listicle-counter;
+  content: counter(listicle-counter) ".";
+  display: block;
+  font-size: 3rem; /* Mobile first */
+  font-weight: 900;
+  line-height: 1;
+  opacity: 0.1;
+  margin-bottom: -0.5em;
+  color: currentColor;
+  position: absolute;
+  left: 0;
+  top: -0.2em;
+  z-index: 0;
+}
+
+/* Larger numbers on desktop */
+@media screen and (min-width: 768px) {
+  .template-listicle .section-double .hero__title:first-child::before {
+    font-size: clamp(4rem, 8vw, 6rem);
+    opacity: 0.08;
+  }
+}
+
+/* Position adjustment for numbered headings */
+.template-listicle .section-double .hero__title:first-child {
+  position: relative;
+  padding-top: 0.5em;
+}
+
+/* Enhance visual hierarchy */
+.template-listicle .shopify-section {
+  padding-top: var(--listicle-section-spacing);
+  padding-bottom: var(--listicle-section-spacing);
+}
+
+/* First section (hero) needs less top padding */
+.template-listicle .shopify-section:first-child {
+  padding-top: 40px;
+}
+
+/* Style the hero/intro section - Mobile first */
+.template-listicle .index-rte .hero__title {
+  font-size: 2rem; /* 32px mobile */
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+  .template-listicle .index-rte .hero__title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1.1;
+  }
+}
+
+.template-listicle .index-rte .hero__subheading {
+  font-size: 1.125rem; /* 18px mobile */
+  opacity: 0.9;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (min-width: 768px) {
+  .template-listicle .index-rte .hero__subheading {
+    font-size: clamp(1.125rem, 2vw, 1.5rem);
+    opacity: 0.8;
+    max-width: 800px;
+  }
+}
+
+/* Alternating background colors for list items */
+.template-listicle .shopify-section:nth-child(even) .section-double {
+  background-color: var(--color-background-2);
+}
+
+/* Enhanced typography for list item content - Mobile first */
+.template-listicle .section-double .hero__rte {
+  font-size: 1.0625rem; /* 17px - Apple's recommended minimum */
+  line-height: 1.7;
+  max-width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .template-listicle .section-double .hero__rte {
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
+    max-width: 600px;
+  }
+}
+
+/* Make testimonial sections stand out */
+.template-listicle [class*="testimonial"] {
+  background: linear-gradient(135deg, var(--color-background-2) 0%, var(--color-background) 100%);
+  border-radius: 20px;
+  padding: 3rem 2rem;
+  margin: 2rem 0;
+}
+
+/* Style trust badges section */
+.template-listicle .ss-trust-badges-pro {
+  text-align: center;
+  padding: 3rem 0;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+/* Enhanced FAQ section styling */
+.template-listicle [data-section-type="42-faq"] {
+  background-color: var(--color-background-2);
+  border-radius: 20px;
+  padding: 3rem;
+  margin-top: 4rem;
+}
+
+/* CTA section enhancement */
+.template-listicle .shopify-section:last-child {
+  background: linear-gradient(180deg, transparent 0%, var(--color-background-2) 50%);
+  padding-bottom: 100px;
+}
+
+/* Ensure mobile image above text */
+@media screen and (max-width: 767px) {
+  /* Force image above text on mobile */
+  .template-listicle .section-double .hero__split {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  
+  .template-listicle .section-double .hero__image-container {
+    order: -1 !important; /* Image always first */
+  }
+  
+  /* Better mobile spacing */
+  .template-listicle .section-double .hero__content {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+/* Add visual interest with subtle animations */
+.template-listicle .section-double {
+  transition: transform 0.3s ease;
+}
+
+.template-listicle .section-double:hover {
+  transform: translateY(-2px);
+}
+
+/* Progress indicator styling (optional) */
+.template-listicle .listicle-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-primary) var(--scroll-progress, 0%), transparent 0%);
+  z-index: 1000;
+  transition: background 0.3s ease;
+}
+
+/* Button emphasis - Mobile first with proper touch targets */
+.template-listicle .btn--primary {
+  font-size: 1rem;
+  padding: 0.875rem 1.5rem;
+  margin-top: 1.5rem;
+  min-height: 44px; /* Apple's minimum touch target */
+  width: 100%; /* Full width on mobile */
+  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+@media screen and (min-width: 768px) {
+  .template-listicle .btn--primary {
+    font-size: 1.125rem;
+    padding: 1rem 2.5rem;
+    width: auto;
+    min-width: 200px;
+  }
+}
+
+.template-listicle .btn--primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+/* Enhanced visual breaks between major sections */
+.template-listicle .shopify-section + .shopify-section::before {
+  content: '';
+  display: block;
+  width: 100px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0,0,0,0.1), transparent);
+  margin: 0 auto 3rem;
+}
+
+/* Remove separator for consecutive image-with-text sections */
+.template-listicle .section-double + .section-double::before {
+  display: none;
+}

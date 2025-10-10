@@ -1,0 +1,180 @@
+{% liquid
+  assign anchor_id = section.settings.anchor_id | handleize
+
+  assign page_contet = section.settings.page_contet
+  assign crosssell_title = section.settings.crosssell_title
+  assign crosssell_product = section.settings.crosssell_product
+
+  assign pt_mob = section.settings.pt_mob
+  assign pb_mob = section.settings.pb_mob
+  assign pt_tab = section.settings.pt_tab
+  assign pb_tab = section.settings.pb_tab
+  assign pt_desk = section.settings.pt_desk
+  assign pb_desk = section.settings.pb_desk
+%}
+
+{% render 'section-paddings',
+  section_id: section.id,
+  pt_mob: pt_mob,
+  pb_mob: pb_mob,
+  pt_tab: pt_tab,
+  pb_tab: pb_tab,
+  pt_desk: pt_desk,
+  pb_desk: pb_desk
+%}
+
+<style>
+  [data-section-id='{{ section.id }}'] {
+    p,
+    li {
+      font-size: 1.15em;
+      line-height: 1.7;
+      margin-bottom: 0.7em;
+    }
+    h1,
+    h2,
+    h3 {
+      font-size: var(--font-heading-medium);
+      text-align: center;
+      line-height: 1.3;
+      margin: 2em 0 0.5em;
+    }
+    ul,
+    ol {
+      margin: 1.5em 0;
+      padding-left: 1.5em;
+    }
+    ul li::marker {
+      color: #444;
+      font-size: 1.1em;
+    }
+  }
+</style>
+
+<div
+  data-section-id="{{ section.id }}"
+  id="{{ anchor_id }}"
+>
+  <div class="tw-max-w-[var(--content-max)] tw-mx-auto tw-px-4 lg:tw-px-12.5">
+    <div class="tw-grid tw-grid-cols-1 tw-items-center tw-gap-5 md:tw-grid-cols-[minmax(500px,800px),300px] md:tw-justify-center xl:tw-grid-cols-[minmax(500px,800px),400px] lg:tw-gap-10">
+        <div class="rte">
+          <div>{{ page_contet.content }}</div>
+        </div>
+
+      <div class="tw-self-start tw-h-auto tw-sticky tw-top-[calc(var(--header-height)+40px)]">
+        {% if crosssell_title != blank %}
+          <h4 class="tw-mb-5 tw-text-xl tw-font-bold">{{ crosssell_title }}</h4>
+        {% endif %}
+        <a
+          href="{{ crosssell_product.url }}"
+          class="tw-border tw-border-solid tw-border-sc-light-blue tw-grid tw-grid-cols-[100px,1fr] lg:tw-grid-cols-[150px,1fr]"
+        >
+          <div class="tw-flex tw-bg-sc-ice-blue">
+            {% if crosssell_product.featured_image != blank %}
+              {{-
+                crosssell_product.featured_image
+                | image_url: width: crosssell_product.featured_image.width
+                | image_tag:
+                  loading: 'lazy',
+                  sizes: 'min(100vw, 2000px)',
+                  widths: '100,200,300,400,500,600,700,800,900,1000,1100,1200,1300,1400,1500,1600,1700,1800,1900,2000',
+                  alt: crosssell_product.title,
+                  class: 'tw-size-full tw-object-cover'
+              -}}
+            {% endif %}
+          </div>
+          <div class="tw-flex tw-flex-col tw-justify-center tw-px-5 tw-py-4">
+            <div class="tw-font-bold tw-font-primary tw-text-lg">{{ crosssell_product.title }}</div>
+            <div class="tw-font-secondary tw-text-base">
+              <strong class="tw-text-sc-blue">{{ crosssell_product.price | money }}</strong>
+              {% if crosssell_product.compare_at_price != blank
+                and crosssell_product.compare_at_price > crosssell_product.price
+              %}
+                <s>{{ crosssell_product.compare_at_price | money }}</s>
+              {% endif %}
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "42 Page with crosssell",
+  "tag": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "anchor_id",
+      "label": "Anchor id",
+      "default": "section-name"
+    },
+    {
+      "type": "page",
+      "id": "page_contet",
+      "label": "Page"
+    },
+    {
+      "type": "text",
+      "id": "crosssell_title",
+      "label": "Title",
+      "default": "Related product"
+    },
+    {
+      "type": "product",
+      "id": "crosssell_product",
+      "label": "Product"
+    },
+    {
+      "type": "header",
+      "content": "Padding Y settings"
+    },
+    {
+      "type": "number",
+      "id": "pt_mob",
+      "label": "Mobile padding top in px",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "pb_mob",
+      "label": "Mobile padding bottom in px",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "pt_tab",
+      "label": "Tablet padding top in px",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "pb_tab",
+      "label": "Tablet padding bottom in px",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "pt_desk",
+      "label": "Desktop padding top in px",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "pb_desk",
+      "label": "Desktop padding bottom in px",
+      "default": 0
+    }
+  ],
+  "presets": [
+    {
+      "name": "42 Page with crosssell"
+    }
+  ]
+}
+{% endschema %}

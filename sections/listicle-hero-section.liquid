@@ -1,0 +1,216 @@
+<!-- /sections/listicle-hero-section.liquid -->
+{%- comment -%}
+  Hero section for metaobject-based listicle pages
+  Displays title, subtitle, author, date, and introduction
+{%- endcomment -%}
+
+{%- liquid
+  assign listicle = page.metafields.custom.listicle_content.value
+  assign color_scheme = 'color-' | append: section.settings.color_scheme
+  assign animation_anchor = '#ListicleHero--' | append: section.id
+  assign animation_order = 0
+-%}
+
+{%- style -%}
+  #ListicleHero--{{ section.id }} {
+    --PT: {{ section.settings.padding_top }}px;
+    --PB: {{ section.settings.padding_bottom }}px;
+  }
+{%- endstyle -%}
+
+{%- comment -%} Include SEO enhancements {%- endcomment -%}
+{%- render 'listicle-metaobject-seo', listicle: listicle -%}
+
+<section
+  id="ListicleHero--{{ section.id }}"
+  class="index-rte section-padding {{ color_scheme }}"
+  data-section-id="{{ section.id }}"
+  data-section-type="listicle-hero"
+>
+  {%- if listicle -%}
+    <div class="hero__content__wrapper {{ section.settings.align_text }} {{ section.settings.width }}">
+      <div class="hero__content hero__content--compact hero__content--transparent">
+        
+        {%- comment -%} Main Title {%- endcomment -%}
+        {%- if listicle.title != blank -%}
+          {%- assign animation_order = animation_order | plus: 1 -%}
+          <h1
+            class="hero__title heading-x-large"
+            data-aos="hero"
+            data-aos-anchor="{{ animation_anchor }}"
+            data-aos-order="{{ animation_order }}"
+          >
+            {{ listicle.title }}
+          </h1>
+        {%- endif -%}
+
+        {%- comment -%} Subtitle {%- endcomment -%}
+        {%- if listicle.subtitle != blank -%}
+          {%- assign animation_order = animation_order | plus: 1 -%}
+          <p
+            class="hero__subheading body-large"
+            data-aos="hero"
+            data-aos-anchor="{{ animation_anchor }}"
+            data-aos-order="{{ animation_order }}"
+          >
+            {{ listicle.subtitle }}
+          </p>
+        {%- endif -%}
+
+        {%- comment -%} Author and Date {%- endcomment -%}
+        {%- if listicle.author != blank or listicle.publish_date != blank -%}
+          {%- assign animation_order = animation_order | plus: 1 -%}
+          <div
+            class="listicle-meta body-small"
+            data-aos="hero"
+            data-aos-anchor="{{ animation_anchor }}"
+            data-aos-order="{{ animation_order }}"
+          >
+            {%- if listicle.author != blank -%}
+              <span class="listicle-meta__author">
+                By {{ listicle.author }}
+              </span>
+            {%- endif -%}
+            
+            {%- if listicle.author != blank and listicle.publish_date != blank -%}
+              <span class="listicle-meta__separator"> • </span>
+            {%- endif -%}
+            
+            {%- if listicle.publish_date != blank -%}
+              <time class="listicle-meta__date" datetime="{{ listicle.publish_date | date: '%Y-%m-%d' }}">
+                {{ listicle.publish_date | date: '%B %d, %Y' }}
+              </time>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+
+        {%- comment -%} Introduction {%- endcomment -%}
+        {%- if listicle.introduction != blank -%}
+          {%- assign animation_order = animation_order | plus: 1 -%}
+          <div
+            class="hero__rte body-large"
+            data-aos="hero"
+            data-aos-anchor="{{ animation_anchor }}"
+            data-aos-order="{{ animation_order }}"
+          >
+            {{ listicle.introduction }}
+          </div>
+        {%- endif -%}
+
+      </div>
+    </div>
+  {%- else -%}
+    {%- comment -%} Fallback content when no listicle metaobject is found {%- endcomment -%}
+    <div class="hero__content__wrapper {{ section.settings.align_text }} {{ section.settings.width }}">
+      <div class="hero__content hero__content--compact hero__content--transparent">
+        <h1 class="hero__title heading-x-large">{{ page.title }}</h1>
+        {%- if page.content != blank -%}
+          <div class="hero__rte body-large">
+            {{ page.content }}
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+  {%- endif -%}
+</section>
+
+<style>
+  .listicle-meta {
+    margin: 1rem 0 1.5rem;
+    opacity: 0.8;
+  }
+  
+  .listicle-meta__author,
+  .listicle-meta__date {
+    font-style: italic;
+  }
+  
+  .listicle-meta__separator {
+    margin: 0 0.5rem;
+  }
+
+  @media screen and (max-width: 749px) {
+    .listicle-meta {
+      margin: 0.75rem 0 1rem;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Listicle Hero",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "select",
+      "id": "align_text",
+      "label": "Text alignment",
+      "default": "text-center",
+      "options": [
+        {"value": "text-left", "label": "Left"},
+        {"value": "text-center", "label": "Centered"}
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "select",
+      "id": "width",
+      "label": "Width",
+      "default": "wrapper",
+      "options": [
+        {"value": "wrapper--full-padded", "label": "Full width padded"},
+        {"value": "wrapper", "label": "Normal"},
+        {"value": "wrapper--narrow", "label": "Narrow"}
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "default": "scheme_1",
+      "label": "Color scheme"
+    },
+    {
+      "type": "header",
+      "content": "Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Top",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Bottom",
+      "default": 50
+    }
+  ],
+  "presets": [
+    {
+      "name": "Listicle Hero"
+    }
+  ],
+  "disabled_on": {
+    "groups": ["header", "aside", "footer"]
+  }
+}
+{% endschema %}

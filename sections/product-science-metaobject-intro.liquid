@@ -1,0 +1,207 @@
+<!-- /sections/product-science-metaobject-intro.liquid -->
+{%- liquid
+  # Get the metaobject based on page handle
+  assign science_pages = shop.metaobjects.product_science_page_v2.values
+  assign science_page = nil
+  
+  for sp in science_pages
+    if sp.original_page_handle == page.handle or sp.url_handle == page.handle
+      assign science_page = sp
+      break
+    endif
+  endfor
+  
+  # Fallback: try to match by similar handle
+  unless science_page
+    for sp in science_pages
+      if sp.url_handle contains page.handle or page.handle contains sp.url_handle
+        assign science_page = sp
+        break
+      endif
+    endfor
+  endunless
+  
+  # Get data from metaobject
+  if science_page
+    assign intro_heading = science_page.intro_heading.value
+    assign intro_content = science_page.intro_content
+  endif
+  
+  # Allow section settings to override if needed
+  if section.settings.override_heading != blank
+    assign intro_heading = section.settings.override_heading
+  endif
+  if section.settings.override_content != blank
+    assign intro_content = section.settings.override_content
+  endif
+-%}
+
+<style>
+  .wrapper--moderate {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding-left: var(--outer);
+    padding-right: var(--outer);
+  }
+</style>
+
+{%- if science_page or section.settings.show_fallback -%}
+  <div class="section-padding color-{{ section.settings.color_scheme }}" 
+       style="--PT: {{ section.settings.padding_top }}px; --PB: {{ section.settings.padding_bottom }}px;">
+    <div class="{{ section.settings.width }}">
+      {%- if intro_heading != blank -%}
+        <h2 class="{{ section.settings.heading_size }} text-{{ section.settings.text_align }}">
+          {{ intro_heading }}
+        </h2>
+      {%- endif -%}
+      
+      {%- if intro_content != blank -%}
+        <div class="rte text-{{ section.settings.text_align }} {{ section.settings.text_size }}">
+          {{ intro_content | metafield_tag }}
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+{%- else -%}
+  {%- if section.settings.show_debug -%}
+    <div style="padding: 40px; text-align: center; background: #f5f5f5;">
+      <p>No science page data found for handle: {{ page.handle }}</p>
+    </div>
+  {%- endif -%}
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "PS Intro (Metaobject)",
+  "tag": "section",
+  "class": "section-intro-metaobject",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Metaobject Connection"
+    },
+    {
+      "type": "paragraph",
+      "content": "This section automatically pulls intro data from the Product Science Page metaobject based on the current page handle."
+    },
+    {
+      "type": "checkbox",
+      "id": "show_fallback",
+      "label": "Show fallback content",
+      "default": false,
+      "info": "Display fallback when no metaobject is found"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_debug",
+      "label": "Show debug info",
+      "default": false,
+      "info": "Show debug message when no data found"
+    },
+    {
+      "type": "header",
+      "content": "Override Content"
+    },
+    {
+      "type": "text",
+      "id": "override_heading",
+      "label": "Override heading",
+      "info": "Leave blank to use metaobject data"
+    },
+    {
+      "type": "richtext",
+      "id": "override_content",
+      "label": "Override content",
+      "info": "Leave blank to use metaobject data"
+    },
+    {
+      "type": "header",
+      "content": "Layout Settings"
+    },
+    {
+      "type": "select",
+      "id": "width",
+      "label": "Content width",
+      "options": [
+        {"value": "wrapper", "label": "Full width"},
+        {"value": "wrapper--moderate", "label": "Moderate (1300px)"},
+        {"value": "wrapper--narrow", "label": "Narrow (670px)"},
+        {"value": "wrapper--tiny", "label": "Extra narrow"}
+      ],
+      "default": "wrapper--moderate"
+    },
+    {
+      "type": "select",
+      "id": "text_align",
+      "label": "Text alignment",
+      "options": [
+        {"value": "left", "label": "Left"},
+        {"value": "center", "label": "Center"},
+        {"value": "right", "label": "Right"}
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "label": "Heading size",
+      "options": [
+        {"value": "h1", "label": "Extra large"},
+        {"value": "h2", "label": "Large"},
+        {"value": "h3", "label": "Medium"},
+        {"value": "h4", "label": "Small"}
+      ],
+      "default": "h2"
+    },
+    {
+      "type": "select",
+      "id": "text_size",
+      "label": "Text size",
+      "options": [
+        {"value": "text-sm", "label": "Small"},
+        {"value": "", "label": "Normal"},
+        {"value": "text-lg", "label": "Large"}
+      ],
+      "default": ""
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "options": [
+        {"value": "", "label": "Default"},
+        {"value": "scheme-1", "label": "Scheme 1"},
+        {"value": "scheme-2", "label": "Scheme 2"},
+        {"value": "scheme-3", "label": "Scheme 3"},
+        {"value": "scheme-10", "label": "Scheme 10"}
+      ],
+      "default": ""
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 50
+    }
+  ],
+  "presets": [
+    {
+      "name": "PS Intro (Metaobject)"
+    }
+  ]
+}
+{% endschema %}

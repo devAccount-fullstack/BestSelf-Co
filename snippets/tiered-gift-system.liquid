@@ -1,0 +1,18 @@
+{% comment %}
+  Tiered Free Gift System
+  Include this in your theme.liquid file before closing </body> tag
+{% endcomment %}
+
+{{ 'tiered-gift-system.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'tiered-gift-system.js' | asset_url }}" defer></script>
+
+<script>
+  // Pass Shopify data to the gift system
+  window.tieredGiftConfig = {
+    currency: {{ shop.currency | json }},
+    moneyFormat: {{ shop.money_format | json }},
+    cartUrl: {{ routes.cart_url | json }},
+    addUrl: {{ routes.cart_add_url | json }},
+    updateUrl: {{ routes.cart_update_url | json }}
+  };
+</script>

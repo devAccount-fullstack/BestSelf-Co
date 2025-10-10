@@ -1,0 +1,139 @@
+{% comment %}
+METAOBJECT ACCESS TEST PAGE
+===========================
+Use this template to test if metaobjects are now accessible via shop.metaobjects.listicle
+{% endcomment %}
+
+<div style="max-width: 800px; margin: 0 auto; padding: 20px; font-family: Arial, sans-serif;">
+  <h1>Metaobject Access Test</h1>
+  
+  <div style="background: #f0f8ff; padding: 20px; border-radius: 8px; margin-bottom: 30px;">
+    <h2>Test Results</h2>
+    
+    {% comment %} Count metaobjects {% endcomment %}
+    {% assign metaobject_count = 0 %}
+    {% for metaobject in shop.metaobjects.listicle %}
+      {% assign metaobject_count = metaobject_count | plus: 1 %}
+    {% endfor %}
+    
+    {% if metaobject_count > 0 %}
+      <div style="background: #d4edda; color: #155724; padding: 15px; border-radius: 4px; margin-bottom: 20px;">
+        <strong>✅ SUCCESS!</strong> Found {{ metaobject_count }} listicle metaobjects!<br>
+        The publishing fix worked - shop.metaobjects.listicle is now accessible.
+      </div>
+    {% else %}
+      <div style="background: #f8d7da; color: #721c24; padding: 15px; border-radius: 4px; margin-bottom: 20px;">
+        <strong>❌ ISSUE PERSISTS:</strong> No metaobjects found via shop.metaobjects.listicle<br>
+        The metaobjects may need additional configuration or there may be a caching issue.
+      </div>
+    {% endif %}
+  </div>
+
+  {% if metaobject_count > 0 %}
+    <h2>Available Metaobjects ({{ metaobject_count }} found)</h2>
+    
+    <div style="display: grid; gap: 20px; margin-top: 20px;">
+      {% for metaobject in shop.metaobjects.listicle %}
+        <div style="border: 1px solid #ddd; padding: 20px; border-radius: 8px;">
+          <h3 style="margin-top: 0; color: #007acc;">{{ forloop.index }}. {{ metaobject.meta_title.value }}</h3>
+          
+          <div style="background: #f9f9f9; padding: 10px; border-radius: 4px; margin: 10px 0; font-family: monospace; font-size: 0.9rem;">
+            <strong>Handle:</strong> {{ metaobject.handle }}<br>
+            <strong>ID:</strong> {{ metaobject.id }}<br>
+            <strong>Access via:</strong> shop.metaobjects.listicle['{{ metaobject.handle }}']
+          </div>
+          
+          <div style="margin: 15px 0;">
+            <strong>Meta Description:</strong><br>
+            {{ metaobject.meta_description.value }}
+          </div>
+          
+          <div style="margin: 15px 0;">
+            <strong>Product:</strong> 
+            {% if metaobject.product.value %}
+              {{ metaobject.product.value.title }}
+            {% else %}
+              None
+            {% endif %}
+          </div>
+          
+          <div style="margin: 15px 0;">
+            <strong>CTA URL:</strong> 
+            {% if metaobject.cta_url.value %}
+              <a href="{{ metaobject.cta_url.value }}" target="_blank">{{ metaobject.cta_url.value }}</a>
+            {% else %}
+              None
+            {% endif %}
+          </div>
+          
+          <div style="margin: 15px 0;">
+            <strong>Format:</strong> {{ metaobject.listicle_format.value | default: "Not set" }}
+          </div>
+          
+          <div style="margin: 15px 0;">
+            <strong>Unified:</strong> {{ metaobject.unified.value | default: false }}
+          </div>
+          
+          {% comment %} Try to parse CTA text for items {% endcomment %}
+          {% if metaobject.cta_text.value %}
+            <div style="margin: 15px 0;">
+              <strong>Content Items:</strong>
+              {% assign cta_content = metaobject.cta_text.value %}
+              {% if cta_content contains '"items"' %}
+                <div style="background: #e8f5e8; padding: 10px; border-radius: 4px; margin-top: 5px;">
+                  ✅ Contains items data (JSON format detected)
+                </div>
+              {% else %}
+                <div style="background: #fff3cd; padding: 10px; border-radius: 4px; margin-top: 5px;">
+                  ⚠️ No items data detected in cta_text field
+                </div>
+              {% endif %}
+            </div>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+    
+    <div style="background: #d1ecf1; color: #0c5460; padding: 20px; border-radius: 8px; margin-top: 30px;">
+      <h3>✅ Success! Your metaobjects are now accessible</h3>
+      <p>You can now use the following patterns in your templates:</p>
+      <div style="background: #ffffff; padding: 15px; border-radius: 4px; font-family: monospace; margin: 10px 0;">
+        {%- raw -%}
+        <!-- List all metaobjects -->
+        {% for metaobject in shop.metaobjects.listicle %}
+          {{ metaobject.meta_title.value }}
+        {% endfor %}
+        
+        <!-- Access specific metaobject by handle -->
+        {% assign my_metaobject = shop.metaobjects.listicle['handle-name'] %}
+        {{ my_metaobject.meta_title.value }}
+        {%- endraw -%}
+      </div>
+    </div>
+    
+  {% else %}
+    <h2>Troubleshooting</h2>
+    <div style="background: #fff3cd; color: #856404; padding: 20px; border-radius: 8px;">
+      <h3>Possible Issues:</h3>
+      <ul>
+        <li><strong>Caching:</strong> Clear your browser cache and try in incognito mode</li>
+        <li><strong>Theme Cache:</strong> Some themes cache metaobject data</li>
+        <li><strong>Publication:</strong> Metaobjects might not be published to the current sales channel</li>
+        <li><strong>Timing:</strong> Changes might take a few minutes to propagate</li>
+      </ul>
+      
+      <h3>Next Steps:</h3>
+      <ol>
+        <li>Wait 5 minutes and refresh this page</li>
+        <li>Try accessing the page in incognito/private browsing mode</li>
+        <li>Check if metaobjects are published in Shopify admin</li>
+        <li>Contact support if issue persists</li>
+      </ol>
+    </div>
+  {% endif %}
+  
+  <div style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #ddd; font-size: 0.9rem; color: #666;">
+    <p><strong>Test Template:</strong> page.metaobject-test.liquid</p>
+    <p><strong>Last Updated:</strong> {{ 'now' | date: '%Y-%m-%d %H:%M:%S' }}</p>
+  </div>
+</div>

@@ -1,0 +1,339 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "section_collection_yk7m7w": {
+      "type": "section-collection",
+      "disabled": true,
+      "settings": {
+        "featured_collection": "{{ collection }}",
+        "heading": "{{ section.settings.featured_collection.title }}",
+        "heading_font_size": "heading-medium",
+        "description": "<p>{{ section.settings.featured_collection.metafields.custom.description | metafield_tag }}</p>",
+        "text_font_size": "body-medium",
+        "layout": "inline",
+        "link_text": "",
+        "link_url": "",
+        "button_type": "btn--primary",
+        "button_size": "",
+        "button_style": "btn--solid",
+        "show_arrow": false,
+        "layout_desktop": "grid",
+        "grid": 4,
+        "rows": 5,
+        "width": "wrapper",
+        "layout_mobile": "1",
+        "color_scheme": "",
+        "padding_top": 30,
+        "padding_bottom": 30,
+        "heading_tag": "automatic"
+      }
+    },
+    "section_rich_text_MhdAUY": {
+      "type": "section-rich-text",
+      "blocks": {
+        "heading_XMwpNr": {
+          "type": "heading",
+          "settings": {
+            "title": "{{ collection.title }}",
+            "heading_font_size": "heading-large",
+            "padding_bottom": 16,
+            "heading_tag": "automatic"
+          }
+        },
+        "text_f9f68P": {
+          "type": "text",
+          "settings": {
+            "text": "<p>{{ collection.metafields.custom.description | metafield_tag }}</p>",
+            "text_font_size": "body-medium",
+            "padding_bottom": 16
+          }
+        }
+      },
+      "block_order": [
+        "heading_XMwpNr",
+        "text_f9f68P"
+      ],
+      "settings": {
+        "align_text": "text-center",
+        "width": "wrapper",
+        "color_scheme": "",
+        "overlay_opacity": 0,
+        "show_overlay_text": false,
+        "padding_top": 50,
+        "padding_bottom": 30
+      }
+    },
+    "main": {
+      "type": "collection",
+      "blocks": {
+        "featured_image_kxnxt7": {
+          "type": "featured_image",
+          "disabled": true,
+          "settings": {
+            "position": 1,
+            "featured_heading": "Featured link",
+            "heading_font_size": "heading-large",
+            "featured_text": "<p>Promote products or collections</p>",
+            "featured_button_text": "",
+            "featured_button_link": "",
+            "button_type": "btn--primary",
+            "button_size": "",
+            "button_style": "btn--outline",
+            "show_arrow": false,
+            "featured_color_text": "#ffffff",
+            "featured_color_overlay": "#222222",
+            "featured_overlay_opacity": 10,
+            "heading_tag": "automatic"
+          }
+        }
+      },
+      "block_order": [
+        "featured_image_kxnxt7"
+      ],
+      "settings": {
+        "enable_sort": true,
+        "enable_filters": true,
+        "filter_layout": "inline-closed",
+        "default_open": false,
+        "collection_linklist": "",
+        "grid": 4,
+        "grid_mobile": "2",
+        "products_per_page": 24,
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "hero": {
+      "type": "collection-image-with-title",
+      "disabled": true,
+      "settings": {
+        "show_title": false,
+        "show_description": true,
+        "flex_align": "align--top-left",
+        "color_scheme": "",
+        "show_text_background": false,
+        "show_image": false,
+        "banner_layout": "overlay",
+        "height": "screen-height-one-third",
+        "mobile_height": "screen-height-one-half--mobile",
+        "overlay_opacity": 0,
+        "show_overlay_text": false,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "subcollections": {
+      "type": "subcollections",
+      "disabled": true,
+      "settings": {
+        "subcollection_layout": "grid",
+        "subcollection_description": false,
+        "select_image": "collection",
+        "color_scheme": "",
+        "color": "#ffffff",
+        "bg_color": "",
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    },
+    "section_collections_list_mb7Fyk": {
+      "type": "section-collections-list",
+      "blocks": {
+        "collection_HXGgfH": {
+          "type": "collection",
+          "settings": {
+            "collection": "personal-growth",
+            "collection_image": "shopify://shop_images/self-journal-journal-personal-growth-206582.jpg",
+            "title": ""
+          }
+        },
+        "collection_MEtVw4": {
+          "type": "collection",
+          "settings": {
+            "collection": "romantic-relationships",
+            "collection_image": "shopify://shop_images/front-view-cute-lovely-couple_1.jpg",
+            "title": ""
+          }
+        },
+        "collection_RafhGQ": {
+          "type": "collection",
+          "settings": {
+            "collection": "kids-collection",
+            "collection_image": "shopify://shop_images/little-heros-journal-journal-kids-family-179277.jpg",
+            "title": ""
+          }
+        },
+        "collection_rUKLYG": {
+          "type": "collection",
+          "settings": {
+            "collection": "social-connections",
+            "collection_image": "shopify://shop_images/Conection-Spanish.jpg",
+            "title": ""
+          }
+        },
+        "collection_iU6BFC": {
+          "type": "collection",
+          "settings": {
+            "collection": "professional-growth",
+            "collection_image": "shopify://shop_images/BestSelf_ProfessionalGrowth-53.jpg",
+            "title": ""
+          }
+        },
+        "collection_VdmKA9": {
+          "type": "collection",
+          "settings": {
+            "collection": "new-arrivals",
+            "collection_image": "shopify://shop_images/BEST_SELF_TALK_FAMILY-LITTLE_0182_2.jpg",
+            "title": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_HXGgfH",
+        "collection_MEtVw4",
+        "collection_RafhGQ",
+        "collection_rUKLYG",
+        "collection_iU6BFC",
+        "collection_VdmKA9"
+      ],
+      "custom_css": [
+        ".grid__heading-text {text-align: left; width: 100%;}",
+        ".grid__heading,.collection-item__info {text-transform: uppercase; font-size: 16px; font-weight: 600; line-height: 19.36px; letter-spacing: 0.05em;}"
+      ],
+      "settings": {
+        "title": "",
+        "heading_font_size": "heading-medium",
+        "description": "",
+        "text_font_size": "body-medium",
+        "button_text": "Shop by Category",
+        "button_url": "shopify://collections",
+        "button_type": "btn--white",
+        "button_size": "btn--small",
+        "button_style": "btn--text",
+        "show_arrow": false,
+        "aspect_ratio": 1,
+        "width": "wrapper--full-padded",
+        "layout": "grid",
+        "grid": 3,
+        "layout_mobile": "2",
+        "color_scheme": "",
+        "padding_top": 32,
+        "padding_bottom": 32,
+        "heading_tag": "automatic"
+      }
+    },
+    "section_highlights_djkixE": {
+      "type": "section-highlights",
+      "blocks": {
+        "highlight_jqDYnM": {
+          "type": "highlight",
+          "settings": {
+            "image": "shopify://shop_images/Group_1171275347.jpg",
+            "heading": "Journals",
+            "url": "shopify://collections/journals",
+            "color": "#ffffff",
+            "bg_color": "#f0f0f0",
+            "border_color": ""
+          }
+        },
+        "highlight_zRLcak": {
+          "type": "highlight",
+          "settings": {
+            "image": "shopify://shop_images/Group_1171275352.jpg",
+            "heading": "Games",
+            "url": "shopify://collections/activity-decks",
+            "color": "#ffffff",
+            "bg_color": "#f0f0f0",
+            "border_color": ""
+          }
+        },
+        "highlight_PtA8ej": {
+          "type": "highlight",
+          "settings": {
+            "image": "shopify://shop_images/digital.jpg",
+            "heading": "Digital Products",
+            "url": "shopify://collections/downloads",
+            "color": "#ffffff",
+            "bg_color": "#f0f0f0",
+            "border_color": ""
+          }
+        },
+        "highlight_ycVj36": {
+          "type": "highlight",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/Group_1171275345.jpg",
+            "heading": "Bulk Buy",
+            "url": "",
+            "color": "#ffffff",
+            "bg_color": "#f0f0f0",
+            "border_color": ""
+          }
+        },
+        "highlight_WUeVnw": {
+          "type": "highlight",
+          "settings": {
+            "image": "shopify://shop_images/new.jpg",
+            "heading": "New Arrivals",
+            "url": "shopify://collections/new-arrivals",
+            "color": "#ffffff",
+            "bg_color": "#f0f0f0",
+            "border_color": ""
+          }
+        },
+        "highlight_pPHqPQ": {
+          "type": "highlight",
+          "settings": {
+            "image": "shopify://shop_images/Group_1171275348.jpg",
+            "heading": "Sales",
+            "url": "shopify://collections/sale",
+            "color": "#ffffff",
+            "bg_color": "#f0f0f0",
+            "border_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "highlight_jqDYnM",
+        "highlight_zRLcak",
+        "highlight_PtA8ej",
+        "highlight_ycVj36",
+        "highlight_WUeVnw",
+        "highlight_pPHqPQ"
+      ],
+      "disabled": true,
+      "settings": {
+        "style": "circle",
+        "grid": 6,
+        "heading": "Product Categories",
+        "heading_position": "text-center",
+        "heading_font_size": "heading-large",
+        "text_font_size": "body-medium",
+        "width": "wrapper",
+        "layout_mobile": "2",
+        "color_scheme": "",
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "heading_tag": "automatic"
+      }
+    }
+  },
+  "order": [
+    "section_collection_yk7m7w",
+    "section_rich_text_MhdAUY",
+    "main",
+    "hero",
+    "subcollections",
+    "section_collections_list_mb7Fyk",
+    "section_highlights_djkixE"
+  ]
+}

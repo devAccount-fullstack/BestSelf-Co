@@ -1,0 +1,684 @@
+{{ 'section-article-cta.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+{%- comment -%} Determine which product to use based on source setting {%- endcomment -%}
+{%- assign cta_product = null -%}
+
+{%- if section.settings.product_source == 'article_metafield' -%}
+  {%- comment -%} Get product from article's featured_products metafield {%- endcomment -%}
+  {%- if article.metafields.custom.featured_products != blank -%}
+    {%- assign featured_products = article.metafields.custom.featured_products.value -%}
+    {%- assign product_index = section.settings.article_product_index | minus: 1 -%}
+    {%- if featured_products[product_index] != blank -%}
+      {%- assign cta_product = featured_products[product_index] -%}
+    {%- endif -%}
+  {%- endif -%}
+
+{%- elsif section.settings.product_source == 'listicle' -%}
+  {%- comment -%} Get product from listicle metaobject {%- endcomment -%}
+  {%- if section.settings.listicle_handle != blank -%}
+    {%- assign listicle = shop.metaobjects.listicle_v3[section.settings.listicle_handle] -%}
+    {%- if listicle != blank and listicle.featured_product != blank -%}
+      {%- assign cta_product = listicle.featured_product.value -%}
+    {%- endif -%}
+  {%- endif -%}
+
+{%- elsif section.settings.product_source == 'manual' -%}
+  {%- comment -%} Use manually selected product {%- endcomment -%}
+  {%- assign cta_product = section.settings.product -%}
+{%- endif -%}
+
+{%- comment -%} Fallback to manual product if no product found {%- endcomment -%}
+{%- if cta_product == blank and section.settings.product != blank -%}
+  {%- assign cta_product = section.settings.product -%}
+{%- endif -%}
+
+<div class="section-{{ section.id }}-padding color-{{ section.settings.color_scheme }} gradient">
+  
+  {%- if cta_product != blank -%}
+    {%- if section.settings.layout_style == 'hero' -%}
+      {%- comment -%} Hero CTA Layout - Newsletter/Benefits Style {%- endcomment -%}
+      {%- comment -%} Smart fallback for headline {%- endcomment -%}
+      {%- assign headline = section.settings.heading | default: cta_product.metafields.custom.cta_headline | default: cta_product.metafields.product.value_prop_1.value | default: cta_product.title -%}
+      
+      {%- comment -%} Smart fallback for subheadline {%- endcomment -%}
+      {%- assign subheadline = section.settings.description | default: cta_product.metafields.custom.cta_subheadline | default: cta_product.metafields.product.subtitle.value | default: cta_product.metafields.custom.description_tag | default: cta_product.metafields.global.description_tag -%}
+      
+      {%- comment -%} Smart fallback for benefits - check multiple sources {%- endcomment -%}
+      {%- liquid
+        assign benefit_1 = section.settings.feature_1
+        assign benefit_2 = section.settings.feature_2  
+        assign benefit_3 = section.settings.feature_3
+        
+        unless benefit_1 != blank and benefit_2 != blank and benefit_3 != blank
+          # Try product key outcomes first
+          assign key_outcome_1 = cta_product.metafields.product.key_outcome_1.value
+          assign key_outcome_2 = cta_product.metafields.product.key_outcome_2.value
+          assign key_outcome_3 = cta_product.metafields.product.key_outcome_3.value
+          
+          if key_outcome_1 != blank
+            assign benefit_1 = benefit_1 | default: key_outcome_1
+            assign benefit_2 = benefit_2 | default: key_outcome_2
+            assign benefit_3 = benefit_3 | default: key_outcome_3
+          else
+            # Try custom benefit metafields
+            assign benefit_1 = benefit_1 | default: cta_product.metafields.custom.cta_benefit_1
+            assign benefit_2 = benefit_2 | default: cta_product.metafields.custom.cta_benefit_2
+            assign benefit_3 = benefit_3 | default: cta_product.metafields.custom.cta_benefit_3
+            
+            # Try benefits_description as CSV
+            if benefit_1 == blank and cta_product.metafields.custom.benefits_description != blank
+              assign benefits_array = cta_product.metafields.custom.benefits_description | split: ','
+              assign benefit_1 = benefit_1 | default: benefits_array[0] | strip
+              assign benefit_2 = benefit_2 | default: benefits_array[1] | strip  
+              assign benefit_3 = benefit_3 | default: benefits_array[2] | strip
+            endif
+            
+            # Try feature_content as fallback
+            if benefit_1 == blank and cta_product.metafields.custom.feature_content != blank
+              assign features_text = cta_product.metafields.custom.feature_content | strip_html | truncatewords: 50
+              assign features_array = features_text | split: '. '
+              assign benefit_1 = benefit_1 | default: features_array[0]
+              assign benefit_2 = benefit_2 | default: features_array[1]
+              assign benefit_3 = benefit_3 | default: features_array[2]
+            endif
+            
+            # Check if we are using a listicle and can pull from there
+            if benefit_1 == blank and section.settings.product_source == 'listicle' and section.settings.listicle_handle != blank
+              assign listicle = shop.metaobjects.listicle_v3[section.settings.listicle_handle]
+              if listicle != blank
+                assign benefit_1 = benefit_1 | default: listicle.item_1_title.value
+                assign benefit_2 = benefit_2 | default: listicle.item_2_title.value
+                assign benefit_3 = benefit_3 | default: listicle.item_3_title.value
+              endif
+            endif
+          endif
+        endunless
+      -%}
+      {%- assign lifestyle_image = section.settings.lifestyle_image | default: cta_product.metafields.custom.cta_lifestyle_image | default: cta_product.featured_image -%}
+      {%- assign button_text = section.settings.button_label | default: cta_product.metafields.custom.cta_button_text | default: 'Get Started Today' -%}
+      
+      <section class="article-cta-hero">
+        <div class="cta-hero-container">
+          <div class="cta-hero-content">
+            <h2 class="cta-hero-headline">{{ headline }}</h2>
+            {% if subheadline != blank %}
+              <p class="cta-hero-subheadline">{{ subheadline }}</p>
+            {% endif %}
+            
+            <ul class="cta-hero-benefits">
+              {% if benefit_1 != blank %}<li>{{ benefit_1 }}</li>{% endif %}
+              {% if benefit_2 != blank %}<li>{{ benefit_2 }}</li>{% endif %}
+              {% if benefit_3 != blank %}<li>{{ benefit_3 }}</li>{% endif %}
+            </ul>
+            
+            <div class="cta-hero-buttons-wrapper">
+              {% if cta_product.variants.size > 1 %}
+                {%- comment -%} Check if variants are color-based {%- endcomment -%}
+                {%- assign has_color_variants = false -%}
+                {%- for variant in cta_product.variants -%}
+                  {%- if variant.option1 contains 'Color' or variant.option1 contains 'Colour' or variant.option2 contains 'Color' or variant.option2 contains 'Colour' -%}
+                    {%- assign has_color_variants = true -%}
+                    {%- break -%}
+                  {%- endif -%}
+                {%- endfor -%}
+                
+                {%- if has_color_variants -%}
+                  {%- comment -%} Visual color variant selector {%- endcomment -%}
+                  <div class="cta-variant-colors">
+                    {% for variant in cta_product.variants %}
+                      {%- assign color_name = variant.title | split: ' / ' | first -%}
+                      {%- assign color_handle = color_name | handle -%}
+                      <label class="cta-variant-color" title="{{ color_name }}">
+                        <input type="radio" 
+                               name="color-variant-{{ section.id }}" 
+                               value="{{ variant.id }}"
+                               {% if variant == cta_product.selected_or_first_available_variant %}checked{% endif %}
+                               data-price="{{ variant.price | money }}"
+                               data-compare-price="{{ variant.compare_at_price | money }}">
+                        <span class="color-swatch" 
+                              style="background-color: var(--color-{{ color_handle }}, {{ color_name | downcase | replace: ' ', '' }});">
+                        </span>
+                      </label>
+                    {% endfor %}
+                  </div>
+                {%- else -%}
+                  {%- comment -%} Standard dropdown for non-color variants {%- endcomment -%}
+                  <select name="id" class="cta-variant-selector" id="hero-variant-{{ section.id }}">
+                    {% for variant in cta_product.variants %}
+                      <option value="{{ variant.id }}" {% if variant == cta_product.selected_or_first_available_variant %}selected{% endif %}>
+                        {{ variant.title }} - {{ variant.price | money }}
+                      </option>
+                    {% endfor %}
+                  </select>
+                {%- endif -%}
+              {% endif %}
+              
+              <div class="cta-hero-buttons">
+                <form action="/cart/add" method="post" class="cta-hero-form-primary" style="display: inline-block;">
+                  {%- if has_color_variants -%}
+                    <input type="hidden" name="id" value="{{ cta_product.selected_or_first_available_variant.id }}" class="hero-variant-input-{{ section.id }}">
+                  {%- elsif cta_product.variants.size > 1 -%}
+                    <input type="hidden" name="id" value="{{ cta_product.selected_or_first_available_variant.id }}" class="hero-variant-input-{{ section.id }}">
+                  {%- else -%}
+                    <input type="hidden" name="id" value="{{ cta_product.first_available_variant.id }}">
+                  {%- endif -%}
+                  <button type="submit" class="btn btn--solid btn--primary">
+                    <span class="btn__text">{{ button_text | default: 'Add to Cart' }}</span>
+                  </button>
+                </form>
+                
+                <a href="{{ cta_product.url }}" class="btn btn--text">
+                  <span>Learn More →</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="cta-hero-image">
+            {% if lifestyle_image %}
+              {{ lifestyle_image | image_url: width: 600 | image_tag: loading: 'lazy', alt: cta_product.title }}
+            {% endif %}
+          </div>
+        </div>
+      </section>
+      
+    {%- else -%}
+      {%- comment -%} Product Showcase Layout {%- endcomment -%}
+      {%- assign product_image = cta_product.featured_image -%}
+      
+      {%- comment -%} Smart badge handling with percentage calculation {%- endcomment -%}
+      {%- liquid
+        assign discount_text = section.settings.discount_badge
+        
+        unless discount_text != blank
+          # Try various badge metafields
+          assign discount_text = cta_product.metafields.custom.cta_discount_badge
+          assign discount_text = discount_text | default: cta_product.metafields.product.badge.value
+          assign discount_text = discount_text | default: cta_product.metafields.custom.badge
+          
+          # Calculate savings percentage if compare_at_price exists
+          if discount_text == blank and cta_product.compare_at_price > cta_product.price
+            assign savings_amount = cta_product.compare_at_price | minus: cta_product.price
+            assign savings_percent = savings_amount | times: 100.0 | divided_by: cta_product.compare_at_price | round
+            assign discount_text = 'Save ' | append: savings_percent | append: '%'
+          endif
+        endunless
+      -%}
+      
+      {%- comment -%} Smart fallback for features/benefits in product showcase {%- endcomment -%}
+      {%- liquid
+        assign feature_1 = section.settings.feature_1
+        assign feature_2 = section.settings.feature_2
+        assign feature_3 = section.settings.feature_3
+        
+        unless feature_1 != blank and feature_2 != blank and feature_3 != blank
+          # Try product key outcomes first
+          assign key_outcome_1 = cta_product.metafields.product.key_outcome_1.value
+          assign key_outcome_2 = cta_product.metafields.product.key_outcome_2.value
+          assign key_outcome_3 = cta_product.metafields.product.key_outcome_3.value
+          
+          if key_outcome_1 != blank
+            assign feature_1 = feature_1 | default: key_outcome_1
+            assign feature_2 = feature_2 | default: key_outcome_2
+            assign feature_3 = feature_3 | default: key_outcome_3
+          else
+            # Try custom feature metafields
+            assign feature_1 = feature_1 | default: cta_product.metafields.custom.cta_feature_1
+            assign feature_2 = feature_2 | default: cta_product.metafields.custom.cta_feature_2
+            assign feature_3 = feature_3 | default: cta_product.metafields.custom.cta_feature_3
+            
+            # Try benefits_description as CSV
+            if feature_1 == blank and cta_product.metafields.custom.benefits_description != blank
+              assign benefits_array = cta_product.metafields.custom.benefits_description | split: ','
+              assign feature_1 = feature_1 | default: benefits_array[0] | strip
+              assign feature_2 = feature_2 | default: benefits_array[1] | strip
+              assign feature_3 = feature_3 | default: benefits_array[2] | strip
+            endif
+            
+            # Try feature_content as fallback
+            if feature_1 == blank and cta_product.metafields.custom.feature_content != blank
+              assign features_text = cta_product.metafields.custom.feature_content | strip_html | truncatewords: 50
+              assign features_array = features_text | split: '. '
+              assign feature_1 = feature_1 | default: features_array[0]
+              assign feature_2 = feature_2 | default: features_array[1]
+              assign feature_3 = feature_3 | default: features_array[2]
+            endif
+            
+            # Check if we are using a listicle and can pull from there
+            if feature_1 == blank and section.settings.product_source == 'listicle' and section.settings.listicle_handle != blank
+              assign listicle = shop.metaobjects.listicle_v3[section.settings.listicle_handle]
+              if listicle != blank
+                assign feature_1 = feature_1 | default: listicle.item_1_title.value
+                assign feature_2 = feature_2 | default: listicle.item_2_title.value
+                assign feature_3 = feature_3 | default: listicle.item_3_title.value
+              endif
+            endif
+          endif
+        endunless
+      -%}
+      
+      {%- assign button_text = section.settings.button_label | default: cta_product.metafields.custom.cta_button_text | default: 'Add to Cart' -%}
+      
+      <section class="article-cta-product">
+        <div class="cta-product-container">
+          <div class="cta-product-image">
+            {% if discount_text != blank %}
+              <span class="cta-discount-badge">{{ discount_text }}</span>
+            {% endif %}
+            {{ product_image | image_url: width: 500 | image_tag: loading: 'lazy', alt: cta_product.title }}
+          </div>
+          
+          <div class="cta-product-content">
+            <h3 class="cta-product-title">{{ section.settings.heading | default: cta_product.title }}</h3>
+            
+            {% if section.settings.show_price %}
+              <div class="cta-product-pricing">
+                {% if cta_product.compare_at_price > cta_product.price %}
+                  <span class="cta-compare-price">{{ cta_product.compare_at_price | money }}</span>
+                {% endif %}
+                <span class="cta-price">{{ cta_product.price | money }}</span>
+              </div>
+            {% endif %}
+            
+            {% if section.settings.description != blank %}
+              <p class="cta-product-description">{{ section.settings.description }}</p>
+            {% endif %}
+            
+            <ul class="cta-product-features">
+              {% if feature_1 != blank %}<li>{{ feature_1 }}</li>{% endif %}
+              {% if feature_2 != blank %}<li>{{ feature_2 }}</li>{% endif %}
+              {% if feature_3 != blank %}<li>{{ feature_3 }}</li>{% endif %}
+            </ul>
+            
+            <form action="/cart/add" method="post" class="cta-product-form">
+              {% if cta_product.variants.size > 1 %}
+                {%- comment -%} Check if variants are color-based {%- endcomment -%}
+                {%- assign has_color_variants = false -%}
+                {%- for variant in cta_product.variants -%}
+                  {%- if variant.option1 contains 'Color' or variant.option1 contains 'Colour' or variant.option2 contains 'Color' or variant.option2 contains 'Colour' -%}
+                    {%- assign has_color_variants = true -%}
+                    {%- break -%}
+                  {%- endif -%}
+                {%- endfor -%}
+                
+                {%- if has_color_variants -%}
+                  {%- comment -%} Visual color variant selector {%- endcomment -%}
+                  <div class="cta-variant-colors">
+                    {% for variant in cta_product.variants %}
+                      {%- assign color_name = variant.title | split: ' / ' | first -%}
+                      {%- assign color_handle = color_name | handle -%}
+                      <label class="cta-variant-color" title="{{ color_name }}">
+                        <input type="radio" 
+                               name="color-variant-product-{{ section.id }}" 
+                               value="{{ variant.id }}"
+                               {% if variant == cta_product.selected_or_first_available_variant %}checked{% endif %}
+                               data-price="{{ variant.price | money }}"
+                               data-compare-price="{{ variant.compare_at_price | money }}">
+                        <span class="color-swatch" 
+                              style="background-color: var(--color-{{ color_handle }}, {{ color_name | downcase | replace: ' ', '' }});">
+                        </span>
+                      </label>
+                    {% endfor %}
+                  </div>
+                  <input type="hidden" name="id" value="{{ cta_product.selected_or_first_available_variant.id }}" class="product-variant-input-{{ section.id }}">
+                {%- else -%}
+                  {%- comment -%} Standard dropdown for non-color variants {%- endcomment -%}
+                  <select name="id" class="cta-variant-selector">
+                    {% for variant in cta_product.variants %}
+                      <option value="{{ variant.id }}" {% if variant == cta_product.selected_or_first_available_variant %}selected{% endif %}>
+                        {{ variant.title }}
+                      </option>
+                    {% endfor %}
+                  </select>
+                {%- endif -%}
+              {% else %}
+                <input type="hidden" name="id" value="{{ cta_product.first_available_variant.id }}">
+              {% endif %}
+              
+              {% if section.settings.show_quantity_selector %}
+                <div class="cta-quantity-selector">
+                  <button type="button" class="qty-minus">-</button>
+                  <input type="number" name="quantity" value="1" min="1" class="qty-input">
+                  <button type="button" class="qty-plus">+</button>
+                </div>
+              {% else %}
+                <input type="hidden" name="quantity" value="1">
+              {% endif %}
+              
+              <button type="submit" class="btn btn--solid btn--primary">
+                <span class="btn__text">{{ button_text }}</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+    {%- endif -%}
+  {%- else -%}
+    {%- comment -%} No product found - show message in theme editor only {%- endcomment -%}
+    {%- if request.design_mode -%}
+      <div style="background: #fff3cd; border: 1px solid #ffeaa7; color: #856404; padding: 20px; margin: 20px auto; max-width: 1200px; border-radius: 4px; text-align: center;">
+        <h3>Product CTA Section</h3>
+        <p>No product selected or found. Please configure the product source in the section settings.</p>
+      </div>
+    {%- endif -%}
+  {%- endif -%}
+
+</div>
+
+{%- comment -%} Add JavaScript for functionality {%- endcomment -%}
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Quantity selector functionality
+    document.querySelectorAll('.qty-minus').forEach(function(button) {
+      button.addEventListener('click', function() {
+        const input = this.parentElement.querySelector('.qty-input');
+        const currentValue = parseInt(input.value);
+        if (currentValue > 1) {
+          input.value = currentValue - 1;
+        }
+      });
+    });
+    
+    document.querySelectorAll('.qty-plus').forEach(function(button) {
+      button.addEventListener('click', function() {
+        const input = this.parentElement.querySelector('.qty-input');
+        const currentValue = parseInt(input.value);
+        input.value = currentValue + 1;
+      });
+    });
+    
+    // Hero variant selector sync functionality
+    document.querySelectorAll('[id^="hero-variant-"]').forEach(function(select) {
+      select.addEventListener('change', function() {
+        const sectionId = this.id.replace('hero-variant-', '');
+        const hiddenInput = document.querySelector('.hero-variant-input-' + sectionId);
+        if (hiddenInput) {
+          hiddenInput.value = this.value;
+        }
+      });
+    });
+    
+    // Enhanced variant selection with color swatches
+    document.querySelectorAll('.cta-variant-color input[type="radio"]').forEach(function(radio) {
+      radio.addEventListener('change', function() {
+        if (this.checked) {
+          // Remove selected class from all color options
+          this.closest('.cta-variant-colors').querySelectorAll('.cta-variant-color').forEach(function(color) {
+            color.classList.remove('selected');
+          });
+          // Add selected class to current option
+          this.closest('.cta-variant-color').classList.add('selected');
+          
+          // Update hidden input with selected variant ID
+          const variantId = this.value;
+          // Find the nearest form (could be in parent or sibling)
+          const wrapper = this.closest('.cta-hero-buttons-wrapper, .cta-product-content');
+          if (wrapper) {
+            const form = wrapper.querySelector('form');
+            if (form) {
+              const hiddenInput = form.querySelector('input[name="id"]:not([type="radio"])');
+              if (hiddenInput) {
+                hiddenInput.value = variantId;
+              }
+            }
+            
+            // Update price display if variant has different price
+            const selectedOption = this.closest('.cta-variant-color');
+            const price = selectedOption.dataset.price;
+            const comparePrice = selectedOption.dataset.comparePrice;
+            
+            if (price) {
+              const priceDisplay = form.closest('.cta-hero-content, .cta-product-content').querySelector('.cta-price, .cta-hero-price');
+              if (priceDisplay) {
+                priceDisplay.textContent = price;
+              }
+            }
+            
+            if (comparePrice) {
+              const comparePriceDisplay = form.closest('.cta-hero-content, .cta-product-content').querySelector('.cta-compare-price, .cta-hero-compare-price');
+              if (comparePriceDisplay) {
+                comparePriceDisplay.textContent = comparePrice;
+              }
+            }
+          }
+        }
+      });
+    });
+    
+    // Initialize first color variant as selected
+    document.querySelectorAll('.cta-variant-colors').forEach(function(container) {
+      const firstColor = container.querySelector('.cta-variant-color input[type="radio"]');
+      if (firstColor && !container.querySelector('.cta-variant-color.selected')) {
+        firstColor.checked = true;
+        firstColor.closest('.cta-variant-color').classList.add('selected');
+      }
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Article Product CTA",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "Layout Style"
+    },
+    {
+      "type": "select",
+      "id": "layout_style",
+      "label": "CTA Layout",
+      "options": [
+        {
+          "value": "hero",
+          "label": "Hero Style (Newsletter/Benefits)"
+        },
+        {
+          "value": "product",
+          "label": "Product Showcase"
+        }
+      ],
+      "default": "hero",
+      "info": "Choose the CTA design layout"
+    },
+    {
+      "type": "header",
+      "content": "Product Source"
+    },
+    {
+      "type": "select",
+      "id": "product_source",
+      "label": "Product source",
+      "options": [
+        {
+          "value": "article_metafield",
+          "label": "From article featured products"
+        },
+        {
+          "value": "listicle",
+          "label": "From selected listicle"
+        },
+        {
+          "value": "manual",
+          "label": "Manual selection"
+        }
+      ],
+      "default": "article_metafield",
+      "info": "Choose how to select the product for this CTA"
+    },
+    {
+      "type": "number",
+      "id": "article_product_index",
+      "label": "Article product index",
+      "default": 1,
+      "info": "Which featured product from the article (1, 2, 3, etc.)"
+    },
+    {
+      "type": "text",
+      "id": "listicle_handle",
+      "label": "Listicle handle",
+      "info": "Enter the handle/ID of the listicle metaobject (only needed if using listicle source)"
+    },
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Manual product selection",
+      "info": "Select a product manually (only used if manual source is selected)"
+    },
+    {
+      "type": "header",
+      "content": "Content Customization"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Custom heading",
+      "info": "Override the product title or metafield value"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Custom description/subheadline",
+      "info": "Override the product description or subheadline metafield"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Custom button text",
+      "info": "Override the button text from metafields"
+    },
+    {
+      "type": "text",
+      "id": "feature_1",
+      "label": "Feature/Benefit 1",
+      "info": "Override first feature or benefit from metafields"
+    },
+    {
+      "type": "text",
+      "id": "feature_2",
+      "label": "Feature/Benefit 2",
+      "info": "Override second feature or benefit from metafields"
+    },
+    {
+      "type": "text",
+      "id": "feature_3",
+      "label": "Feature/Benefit 3",
+      "info": "Override third feature or benefit from metafields"
+    },
+    {
+      "type": "header",
+      "content": "Product Showcase Options"
+    },
+    {
+      "type": "text",
+      "id": "discount_badge",
+      "label": "Discount badge text",
+      "info": "Override discount badge from metafields (Product Showcase only)"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_price",
+      "label": "Show product pricing",
+      "default": true,
+      "info": "Display product price (Product Showcase only)"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_quantity_selector",
+      "label": "Show quantity selector",
+      "default": true,
+      "info": "Display quantity +/- buttons (Product Showcase only)"
+    },
+    {
+      "type": "header",
+      "content": "Hero Layout Options"
+    },
+    {
+      "type": "image_picker",
+      "id": "lifestyle_image",
+      "label": "Custom lifestyle image",
+      "info": "Override lifestyle image from metafields (Hero layout only)"
+    },
+    {
+      "type": "header",
+      "content": "Section Options"
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "options": [
+        {
+          "value": "accent-1",
+          "label": "Accent 1"
+        },
+        {
+          "value": "accent-2",
+          "label": "Accent 2"
+        },
+        {
+          "value": "background-1",
+          "label": "Background 1"
+        },
+        {
+          "value": "background-2",
+          "label": "Background 2"
+        },
+        {
+          "value": "inverse",
+          "label": "Inverse"
+        }
+      ],
+      "default": "background-1",
+      "label": "Color scheme"
+    },
+    {
+      "type": "header",
+      "content": "Section padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 36
+    }
+  ],
+  "presets": [
+    {
+      "name": "Article Product CTA"
+    }
+  ]
+}
+{% endschema %}

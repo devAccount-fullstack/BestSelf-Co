@@ -1,0 +1,294 @@
+{% liquid
+  assign anchor_id = section.settings.anchor_id | handleize
+
+  assign blocks = section.blocks
+
+  assign btn_back = section.settings.btn_back
+  assign btn_next = section.settings.btn_next
+  assign title_match = section.settings.title_match
+  assign title_not_result = section.settings.title_not_result
+
+  assign pt_mob = section.settings.pt_mob
+  assign pb_mob = section.settings.pb_mob
+  assign pt_tab = section.settings.pt_tab
+  assign pb_tab = section.settings.pb_tab
+  assign pt_desk = section.settings.pt_desk
+  assign pb_desk = section.settings.pb_desk
+%}
+
+{% render 'section-paddings',
+  section_id: section.id,
+  pt_mob: pt_mob,
+  pb_mob: pb_mob,
+  pt_tab: pt_tab,
+  pb_tab: pb_tab,
+  pt_desk: pt_desk,
+  pb_desk: pb_desk
+%}
+
+<div
+  id="{{ anchor_id }}"
+  data-section-id="{{ section.id }}"
+  class="tw-relative tw-bg-white tw-min-h-[90vh]"
+  x-data="quiz({ id: '{{ section.id }}', maxNumStep: {{- blocks.size -}} })"
+>
+  <div class="container-42">
+    <div x-cloak x-show="!isTodoRequest">
+      <h6
+        class="tw-mb-4 tw-font-semibold tw-text-base tw-text-center tw-text-black lg:tw-mb-5 lg:tw-text-[22px]"
+        x-text="`${currentStep} of ${maxNumStep}`"
+      ></h6>
+      <form
+        x-ref="quizForm"
+        @submit.prevent
+      >
+        {% for block in blocks %}
+          <div x-cloak x-show="currentStep == {{ forloop.index }}">
+            <h2 class="tw-font-bold tw-text-xl tw-text-center lg:tw-text-[35px] tw-leading-none">
+              {{ block.settings.question }}
+            </h2>
+            <div
+              class="tw-grid tw-grid-cols-2 tw-grid-rows-2 tw-gap-3 tw-my-8 sm:tw-grid-cols-4 sm:tw-grid-rows-1 lg:tw-my-20 lg:tw-gap-6"
+            >
+              {% for i in (1..4) %}
+                {% capture answer_key %}answer_{{- i -}} {% endcapture %}
+                {% capture tags_key %}tags_{{- i -}} {% endcapture %}
+                {% assign answer = block.settings[answer_key] %}
+                {% assign tags = block.settings[tags_key] %}
+                {% if answer != blank %}
+                  <label class="tw-flex tw-justify-center tw-items-center tw-rounded-ra-10 tw-p-4 tw-aspect-square tw-border tw-border-solid tw-border-sc-gray-third tw-text-black tw-transition-all tw-duration-100 has-checked:tw-bg-sc-blue has-checked:tw-border-transparent has-checked:tw-text-white">
+                    <span class="tw-font-secondary tw-font-normal tw-text-center tw-text-base lg:tw-text-2xl">
+                      {{- answer -}}
+                    </span>
+                    <input
+                      class="tw-appearance-none tw-opacity-0 tw-hidden"
+                      type="radio"
+                      id="{{ block.id | append: i }}"
+                      name="{{ block.id }}"
+                      value="{{ tags }}"
+                    >
+                  </label>
+                {% endif %}
+              {% endfor %}
+            </div>
+
+            <div class="tw-flex tw-justify-center tw-items-center tw-gap-9 lg:tw-gap-15">
+              <button
+                type="button"
+                @click="goToPrevStep"
+                x-cloak
+                x-show="currentStep > 1"
+                class="tw-flex tw-items-center tw-gap-2"
+              >
+                {% render 'icon-42', name: 'quiz-arrow', class: 'tw-rotate-180' %}
+                <span class="tw-font-secondary tw-font-bold tw-text-base tw-leading-none tw-uppercase lg:tw-text-xl lg:tw-leading-none">
+                  {{ btn_back }}
+                </span>
+              </button>
+              <button
+                type="button"
+                @click="currentStep < maxNumStep ? goToNextStep() : searchProduct()"
+                class="tw-flex tw-items-center tw-gap-2"
+                :class="{ 'tw-pointer-events-none tw-opacity-50': !isSomeChecked && currentStep === maxNumStep }"
+              >
+                <span class="tw-font-secondary tw-font-bold tw-text-base tw-leading-none tw-uppercase lg:tw-text-xl lg:tw-leading-none">
+                  {{ btn_next }}
+                </span>
+                {% render 'icon-42', name: 'quiz-arrow' %}
+              </button>
+            </div>
+          </div>
+        {% endfor %}
+      </form>
+    </div>
+
+    <div
+      x-cloak
+      x-show="isTodoRequest"
+    >
+      <div
+        x-cloak
+        x-show="!isNotSearchResult && isTodoRequest"
+      >
+        <h4 class="tw-font-bold tw-text-xl tw-text-center lg:tw-text-[35px] tw-leading-none tw-mb-8 lg:tw-mb-20">
+          {{ title_match }}
+        </h4>
+        <div id="42-quiz-products-result" class="tw-grid tw-grid-cols-2 tw-gap-3 lg:tw-grid-cols-4 lg:tw-gap-5">
+          {% for item in search.results %}
+            {% if item.object_type == 'product' %}
+              <div class="quiz-product-card-42">{% render '42-product-card', product: item %}</div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+      {% comment %} Not result {% endcomment %}
+      <div
+        class="tw-font-bold tw-text-xl tw-text-center lg:tw-text-[35px] tw-leading-none"
+        x-cloak
+        x-show="isNotSearchResult && isTodoRequest"
+      >
+        {{ title_not_result }}
+      </div>
+    </div>
+  </div>
+
+  {% comment %} Loader {% endcomment %}
+  <div
+    x-cloak
+    x-show="isLoading"
+    x-transition.opacity.200ms
+    class="tw-absolute tw-inset-0 tw-w-full tw-h-full tw-flex tw-justify-center tw-pt-50 tw-bg-black/20"
+  >
+    <div
+      class="tw-z-full tw-absolute tw-inset-0 tw-w-full tw-h-full tw-flex tw-justify-center tw-items-center tw-bg-black/30 tw-origin-center"
+    >
+      {%- render 'icon-42', name: 'loader' -%}
+      <span class="tw-sr-only">Loader</span>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "42 Quiz",
+  "tag": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "anchor_id",
+      "label": "Anchor id",
+      "default": "section-name"
+    },
+    {
+      "type": "text",
+      "id": "btn_back",
+      "label": "Button back",
+      "default": "Back"
+    },
+    {
+      "type": "text",
+      "id": "btn_next",
+      "label": "Button next",
+      "default": "Next"
+    },
+    {
+      "type": "text",
+      "id": "title_match",
+      "label": "Title (Match)",
+      "default": "Your Perfect Match:"
+    },
+    {
+      "type": "text",
+      "id": "title_not_result",
+      "label": "Title (Not fount)",
+      "default": "Not result"
+    },
+    {
+      "type": "header",
+      "content": "Padding Y settings"
+    },
+    {
+      "type": "number",
+      "id": "pt_mob",
+      "label": "Mobile padding top in px",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "pb_mob",
+      "label": "Mobile padding bottom in px",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "pt_tab",
+      "label": "Tablet padding top in px",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "pb_tab",
+      "label": "Tablet padding bottom in px",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "pt_desk",
+      "label": "Desktop padding top in px",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "pb_desk",
+      "label": "Desktop padding bottom in px",
+      "default": 0
+    }
+  ],
+  "blocks": [
+    {
+      "type": "block",
+      "name": "Block",
+      "limit": 6,
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question"
+        },
+        {
+          "type": "header",
+          "content": "Answers"
+        },
+        {
+          "type": "text",
+          "id": "answer_1",
+          "label": "Answer #1"
+        },
+        {
+          "type": "textarea",
+          "id": "tags_1",
+          "label": "Tags"
+        },
+        {
+          "type": "text",
+          "id": "answer_2",
+          "label": "Answer #2"
+        },
+        {
+          "type": "textarea",
+          "id": "tags_2",
+          "label": "Tags"
+        },
+        {
+          "type": "text",
+          "id": "answer_3",
+          "label": "Answer #3"
+        },
+        {
+          "type": "textarea",
+          "id": "tags_3",
+          "label": "Tags"
+        },
+        {
+          "type": "text",
+          "id": "answer_4",
+          "label": "Answer #4"
+        },
+        {
+          "type": "textarea",
+          "id": "tags_4",
+          "label": "Tags"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "42 Quiz"
+    }
+  ]
+}
+{% endschema %}

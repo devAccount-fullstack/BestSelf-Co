@@ -1,0 +1,264 @@
+<!-- /sections/listicle-products-section.liquid -->
+{%- comment -%}
+  Featured products section for metaobject-based listicle pages
+  Displays products from the metaobject's featured_products field
+{%- endcomment -%}
+
+{%- liquid
+  assign listicle = page.metafields.custom.listicle_content.value
+  assign color_scheme = 'color-' | append: section.settings.color_scheme
+  assign animation_anchor = '#ListicleProducts--' | append: section.id
+  assign products_to_show = section.settings.products_to_show
+  
+  if listicle and listicle.featured_products.size > 0
+    assign featured_products = listicle.featured_products
+  endif
+-%}
+
+{%- style -%}
+  #ListicleProducts--{{ section.id }} {
+    --PT: {{ section.settings.padding_top }}px;
+    --PB: {{ section.settings.padding_bottom }}px;
+  }
+{%- endstyle -%}
+
+<section
+  id="ListicleProducts--{{ section.id }}"
+  class="index-products section-padding {{ color_scheme }}"
+  data-section-id="{{ section.id }}"
+  data-section-type="listicle-products"
+>
+  {%- if featured_products.size > 0 -%}
+    <div class="{{ section.settings.width }}">
+      
+      {%- comment -%} Section heading {%- endcomment -%}
+      {%- if section.settings.title != blank -%}
+        <div class="section-header text-center">
+          <h2 class="section-header__title heading-large">
+            {{ section.settings.title }}
+          </h2>
+        </div>
+      {%- endif -%}
+
+      {%- comment -%} Products grid {%- endcomment -%}
+      <div class="grid grid--uniform products-grid">
+        {%- for product in featured_products limit: products_to_show -%}
+          {%- assign product_grid_columns = featured_products.size | at_most: products_to_show -%}
+          {%- if product_grid_columns > 4 -%}
+            {%- assign product_grid_columns = 4 -%}
+          {%- endif -%}
+          
+          <div class="grid-item grid-item--{{ product_grid_columns }}-columns">
+            {%- render 'product-grid-item',
+              product: product,
+              sizes: '(min-width: 750px) 25vw, 50vw',
+              show_product_card: true
+            -%}
+          </div>
+        {%- endfor -%}
+      </div>
+
+      {%- comment -%} View all products link {%- endcomment -%}
+      {%- if section.settings.show_view_all and section.settings.view_all_url != blank -%}
+        <div class="text-center">
+          <a
+            href="{{ section.settings.view_all_url }}"
+            class="btn btn--outline btn--primary"
+          >
+            {{ section.settings.view_all_text | default: "View All Products" }}
+          </a>
+        </div>
+      {%- endif -%}
+
+    </div>
+  {%- else -%}
+    {%- comment -%} Fallback when no products are specified {%- endcomment -%}
+    {%- if section.settings.show_fallback_products -%}
+      <div class="{{ section.settings.width }}">
+        
+        {%- if section.settings.title != blank -%}
+          <div class="section-header text-center">
+            <h2 class="section-header__title heading-large">
+              {{ section.settings.title }}
+            </h2>
+          </div>
+        {%- endif -%}
+
+        <div class="grid grid--uniform products-grid">
+          {%- for product in collections.all.products limit: products_to_show -%}
+            <div class="grid-item grid-item--3-columns">
+              {%- render 'product-grid-item',
+                product: product,
+                sizes: '(min-width: 750px) 33vw, 50vw',
+                show_product_card: true
+              -%}
+            </div>
+          {%- else -%}
+            {%- comment -%} Placeholder products if no products exist {%- endcomment -%}
+            {%- for i in (1..3) -%}
+              <div class="grid-item grid-item--3-columns">
+                {%- render 'onboarding-product-grid-item',
+                  index: forloop.index,
+                  animation_delay: forloop.index0,
+                  placeholder_root: 'product-',
+                  show_product_card: true
+                -%}
+              </div>
+            {%- endfor -%}
+          {%- endfor -%}
+        </div>
+
+      </div>
+    {%- endif -%}
+  {%- endif -%}
+</section>
+
+<style>
+  .products-grid {
+    margin-top: 2rem;
+  }
+  
+  .section-header {
+    margin-bottom: 2rem;
+  }
+  
+  .grid-item--2-columns {
+    width: calc(50% - 1rem);
+  }
+  
+  .grid-item--3-columns {
+    width: calc(33.333% - 1rem);
+  }
+  
+  .grid-item--4-columns {
+    width: calc(25% - 1rem);
+  }
+  
+  @media screen and (max-width: 749px) {
+    .grid-item--2-columns,
+    .grid-item--3-columns,
+    .grid-item--4-columns {
+      width: calc(50% - 1rem);
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .grid-item--2-columns,
+    .grid-item--3-columns,
+    .grid-item--4-columns {
+      width: 100%;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Listicle Products",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section heading",
+      "default": "Featured Products"
+    },
+    {
+      "type": "range",
+      "id": "products_to_show",
+      "min": 2,
+      "max": 12,
+      "step": 1,
+      "label": "Number of products to show",
+      "default": 6
+    },
+    {
+      "type": "checkbox",
+      "id": "show_view_all",
+      "label": "Show 'View All' button",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "view_all_text",
+      "label": "'View All' button text",
+      "default": "View All Products"
+    },
+    {
+      "type": "url",
+      "id": "view_all_url",
+      "label": "'View All' button URL"
+    },
+    {
+      "type": "header",
+      "content": "Fallback Options"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_fallback_products",
+      "label": "Show fallback products",
+      "default": true,
+      "info": "Display products from your catalog when no metaobject products are specified"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "select",
+      "id": "width",
+      "label": "Width",
+      "default": "wrapper",
+      "options": [
+        {"value": "wrapper--full", "label": "Full width"},
+        {"value": "wrapper--full-padded", "label": "Full width padded"},
+        {"value": "wrapper", "label": "Normal"}
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "default": "scheme_1",
+      "label": "Color scheme"
+    },
+    {
+      "type": "header",
+      "content": "Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Bottom",
+      "default": 80
+    }
+  ],
+  "presets": [
+    {
+      "name": "Listicle Products"
+    }
+  ],
+  "disabled_on": {
+    "groups": ["header", "aside", "footer"]
+  }
+}
+{% endschema %}

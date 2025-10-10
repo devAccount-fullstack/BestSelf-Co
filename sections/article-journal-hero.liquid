@@ -1,0 +1,320 @@
+{%- comment -%}
+  Article Journal Hero Section
+  Includes: Progress bar, hero image, sticky header transformation
+{%- endcomment -%}
+
+{%- liquid
+  assign hero_image = article.metafields.custom.image_header.value | default: article.image
+  assign reading_time = article.metafields.custom.reading_time | default: article.content | strip_html | split: ' ' | size | divided_by: 200
+  assign overlay_opacity = section.settings.overlay_opacity | divided_by: 100.0
+-%}
+
+{%- style -%}
+  #ArticleHero--{{ section.id }} {
+    --overlay-opacity: {{ overlay_opacity }};
+  }
+  
+  .article-progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: opacity 0.3s ease;
+  }
+  
+  .article-progress-fill {
+    height: 100%;
+    background: var(--pop);
+    width: 0%;
+    transition: width 0.1s linear;
+  }
+  
+  .article-sticky-header {
+    position: fixed;
+    top: -100px;
+    left: 0;
+    right: 0;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+    transition: transform 0.3s ease;
+    padding: 1rem 0;
+  }
+  
+  .article-sticky-header.is-visible {
+    transform: translateY(100px);
+  }
+  
+  .article-hero {
+    position: relative;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  
+  .article-hero__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+  }
+  
+  .article-hero__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .article-hero__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, var(--overlay-opacity));
+  }
+  
+  .article-hero__content {
+    position: relative;
+    z-index: 1;
+    text-align: {{ section.settings.text_alignment }};
+    color: white;
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .article-hero__category {
+    font-size: 0.875rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    opacity: 0.9;
+  }
+  
+  .article-hero__title {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 5vw, 4rem);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+  
+  .article-hero__meta {
+    display: flex;
+    align-items: center;
+    justify-content: {{ section.settings.text_alignment }};
+    gap: 1rem;
+    font-size: 0.875rem;
+    opacity: 0.9;
+  }
+  
+  .article-hero__author {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .article-hero__date {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .article-hero__reading-time {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  @media (max-width: 749px) {
+    .article-hero {
+      min-height: 50vh;
+    }
+    
+    .article-hero__title {
+      font-size: clamp(1.5rem, 6vw, 2.5rem);
+    }
+    
+    .article-hero__meta {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+{%- endstyle -%}
+
+{%- if section.settings.show_progress_bar -%}
+  <div class="article-progress-bar" data-article-progress>
+    <div class="article-progress-fill" data-article-progress-fill></div>
+  </div>
+{%- endif -%}
+
+{%- if section.settings.enable_sticky_header -%}
+  <div class="article-sticky-header" data-article-sticky-header>
+    <div class="wrapper wrapper--narrow">
+      <div class="article-sticky-header__content">
+        <h2 class="article-sticky-header__title">{{ article.title }}</h2>
+        <div class="article-sticky-header__meta">
+          <span class="article-sticky-header__reading-time">
+            {{ reading_time }} min read
+          </span>
+          <span class="article-sticky-header__progress" data-article-progress-text>0%</span>
+        </div>
+      </div>
+    </div>
+  </div>
+{%- endif -%}
+
+<section id="ArticleHero--{{ section.id }}" class="article-hero {{ section.settings.color_scheme }}" data-article-hero>
+  {%- if hero_image -%}
+    <div class="article-hero__bg">
+      {{ hero_image | image_url: width: 2400 | image_tag:
+        class: 'article-hero__image',
+        loading: 'eager',
+        sizes: '100vw',
+        widths: '375, 750, 1100, 1500, 1780, 2000, 2400'
+      }}
+      <div class="article-hero__overlay"></div>
+    </div>
+  {%- endif -%}
+  
+  <div class="article-hero__content">
+    {%- if article.tags.size > 0 -%}
+      <div class="article-hero__category">
+        {{ article.tags | first | upcase }}
+      </div>
+    {%- endif -%}
+    
+    <h1 class="article-hero__title">{{ article.title }}</h1>
+    
+    <div class="article-hero__meta">
+      <div class="article-hero__author">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+          <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4z"/>
+        </svg>
+        <span>{{ article.author }}</span>
+      </div>
+      
+      <div class="article-hero__date">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+          <path d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1z"/>
+          <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
+        </svg>
+        <time datetime="{{ article.published_at | date: '%Y-%m-%d' }}">
+          {{ article.published_at | date: '%B %d, %Y' }}
+        </time>
+      </div>
+      
+      {%- if section.settings.show_reading_time -%}
+        <div class="article-hero__reading-time">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+            <path d="M8.515 1.019A7 7 0 0 0 8 1V0a8 8 0 0 1 .589.022l-.074.997zm2.004.45a7.003 7.003 0 0 0-.985-.299l.219-.976c.383.086.76.2 1.126.342l-.36.933zm1.37.71a7.01 7.01 0 0 0-.439-.27l.493-.87a8.025 8.025 0 0 1 .979.654l-.615.789a6.996 6.996 0 0 0-.418-.302zm1.834 1.79a6.99 6.99 0 0 0-.653-.796l.724-.69c.27.285.52.59.747.91l-.818.576zm.744 1.352a7.08 7.08 0 0 0-.214-.468l.893-.45a7.976 7.976 0 0 1 .45 1.088l-.95.313a7.023 7.023 0 0 0-.179-.483zm.53 2.507a6.991 6.991 0 0 0-.1-1.025l.985-.17c.067.386.106.778.116 1.17l-1 .025zm-.131 1.538c.033-.17.06-.339.081-.51l.993.123a7.957 7.957 0 0 1-.23 1.155l-.964-.267c.046-.165.086-.332.12-.501zm-.952 2.379c.184-.29.346-.594.486-.908l.914.405c-.16.36-.345.706-.555 1.038l-.845-.535zm-.964 1.205c.122-.122.239-.248.35-.378l.758.653a8.073 8.073 0 0 1-.401.432l-.707-.707z"/>
+            <path d="M8 1a7 7 0 1 0 4.95 11.95l.707.707A8.001 8.001 0 1 1 8 0v1z"/>
+            <path d="M7.5 3a.5.5 0 0 1 .5.5v5.21l3.248 1.856a.5.5 0 0 1-.496.868l-3.5-2A.5.5 0 0 1 7 9V3.5a.5.5 0 0 1 .5-.5z"/>
+          </svg>
+          <span>{{ reading_time }} min read</span>
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Article Journal Hero",
+  "class": "article-journal-hero-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Progress Bar"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_progress_bar",
+      "label": "Show reading progress bar",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Sticky Header"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_sticky_header",
+      "label": "Enable sticky header on scroll",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Hero Settings"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "label": "Image overlay opacity",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "default": 60,
+      "unit": "%"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_reading_time",
+      "label": "Show estimated reading time",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "options": [
+        {
+          "value": "scheme-1",
+          "label": "Default"
+        },
+        {
+          "value": "scheme-10",
+          "label": "Dark"
+        },
+        {
+          "value": "scheme-11",
+          "label": "Light"
+        }
+      ],
+      "default": "scheme-10"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Article Journal Hero"
+    }
+  ]
+}
+{% endschema %}

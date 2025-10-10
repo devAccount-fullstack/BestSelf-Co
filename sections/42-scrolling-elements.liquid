@@ -1,0 +1,231 @@
+{% liquid
+  assign bg_color = section.settings.bg_color
+  assign common_text_color = section.settings.text_color
+  assign section_height = section.settings.section_height
+
+  assign speed = section.settings.speed
+  assign pause_on_hover = section.settings.pause_on_hover
+  assign gap_between_elements_mob = section.settings.gap_between_elements_mob | append: 'px'
+  assign gap_between_elements_desk = section.settings.gap_between_elements_desk | append: 'px'
+  assign separator = section.settings.separator
+
+  assign blocks = section.blocks
+
+  assign pt_mob = section.settings.pt_mob
+  assign pb_mob = section.settings.pb_mob
+  assign pt_tab = section.settings.pt_tab
+  assign pb_tab = section.settings.pb_tab
+  assign pt_desk = section.settings.pt_desk
+  assign pb_desk = section.settings.pb_desk
+%}
+
+{% render 'section-paddings',
+  section_id: section.id,
+  pt_mob: pt_mob,
+  pb_mob: pb_mob,
+  pt_tab: pt_tab,
+  pb_tab: pb_tab,
+  pt_desk: pt_desk,
+  pb_desk: pb_desk
+%}
+
+{% if blocks.size > 0 %}
+  <div
+    data-section-id="{{ section.id }}"
+    style="background: {{ bg_color }}; color: {{ common_text_color }}; height: {{ section_height }}px;"
+    class="tw-overflow-hidden tw-cursor-pointer"
+  >
+    <scrolling-elements
+      style="--gap-mob: {{ gap_between_elements_mob }}; --gap-desk: {{ gap_between_elements_desk }}"
+      class="tw-flex tw-items-center tw-h-full tw-gap-[--gap-mob] lg:tw-gap-[--gap-desk]"
+      data-scrolling-speed="{{ speed }}"
+      data-scrolling-direction="ltr"
+      data-pause-on-hover="{{ pause_on_hover }}"
+      dir="ltr"
+    >
+      <div
+        class="tw-grow-0 tw-shrink-0 tw-h-full tw-flex tw-gap-[--gap-mob] lg:tw-gap-[--gap-desk]"
+      >
+        {% for block in blocks %}
+          <div class="tw-flex tw-justify-center tw-items-center tw-gap-[--gap-mob] lg:tw-gap-[--gap-desk]">
+            {% case block.type %}
+              {% when 'text' %}
+                {% assign text_color = block.settings.text_color %}
+                {% assign text = block.settings.text %}
+
+                <h6
+                  {% if text_color != blank %}
+                    style="color: {{ text_color}};"
+                  {% endif %}
+                  class="tw-text-4xl tw-font-bold tw-capitalize tw-leading-none"
+                >
+                  {{ text }}
+                </h6>
+              {% when 'image' %}
+                {% assign image = block.settings.image %}
+                {% if image != blank %}
+                  {{-
+                    image
+                    | image_url: width: image.width
+                    | image_tag:
+                      loading: 'lazy',
+                      sizes: 'min(100vw, 2000px)',
+                      widths: '300,400,500,600,700,800,900,1000,1100,1200,1300,1400,1500,1600,1700,1800,1900,2000',
+                      alt: image.alt,
+                      class: 'tw-w-auto tw-h-15 tw-object-contain'
+                  -}}
+                {% endif %}
+            {% endcase %}
+            {% if separator != blank %}
+              <div class="tw-text-inherit tw-flex tw-justify-center tw-items-center tw-grow-0 tw-shrink-0">
+                {{ separator }}
+              </div>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    </scrolling-elements>
+  </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "42 Scrolling elements",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "BG Color",
+      "default": "#8EC2FD"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "number",
+      "id": "section_height",
+      "label": "Section height in px",
+      "default": 87
+    },
+    {
+      "type": "number",
+      "id": "speed",
+      "label": "Speed (in sec)",
+      "default": 20
+    },
+    {
+      "type": "checkbox",
+      "id": "pause_on_hover",
+      "label": "Pause on hover",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "direction",
+      "label": "Direction",
+      "options": [
+        { "label": "Left to Right (LTR)", "value": "ltr" },
+        { "label": "Right to Left (RTL)", "value": "rtl" }
+      ]
+    },
+    {
+      "type": "number",
+      "id": "gap_between_elements_mob",
+      "label": "Gap between elements",
+      "info": "Mobile screen",
+      "default": 5
+    },
+    {
+      "type": "number",
+      "id": "gap_between_elements_desk",
+      "label": "Gap between elements",
+      "info": "Desktop screen",
+      "default": 5
+    },
+    {
+      "type": "html",
+      "id": "separator",
+      "label": "Separator between elements"
+    },
+    {
+      "type": "header",
+      "content": "Padding Y settings"
+    },
+    {
+      "type": "number",
+      "id": "pt_mob",
+      "label": "Mobile padding top in px",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "pb_mob",
+      "label": "Mobile padding bottom in px",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "pt_tab",
+      "label": "Tablet padding top in px",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "pb_tab",
+      "label": "Tablet padding bottom in px",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "pt_desk",
+      "label": "Desktop padding top in px",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "pb_desk",
+      "label": "Desktop padding bottom in px",
+      "default": 0
+    }
+  ],
+  "blocks": [
+    {
+      "type": "text",
+      "name": "Text",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text Color",
+          "default": "#ffffff"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "name": "Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "42 Scrolling elements"
+    }
+  ]
+}
+{% endschema %}

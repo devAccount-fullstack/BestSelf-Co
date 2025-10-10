@@ -1,0 +1,495 @@
+{% comment %} Cart heading {% endcomment %}
+{% liquid
+  assign gift_products = section.settings.gift_products
+
+  assign heading = section.settings.heading
+
+  assign text_empty_cart = section.settings.text_empty_cart
+  assign btn_text_empty_cart = section.settings.btn_text_empty_cart
+  assign btn_link_empty_cart = section.settings.btn_link_empty_cart
+
+  assign cart_progress_bar_enabled = section.settings.cart_progress_bar_enabled
+  assign cart_progress_bar_threshold_1 = section.settings.cart_progress_bar_threshold_1 | times: 100
+  assign cart_progress_bar_threshold_2 = section.settings.cart_progress_bar_threshold_2 | times: 100
+
+  assign shipping_protection_heading = section.settings.shipping_protection_heading
+  assign shipping_protection_subheading = section.settings.shipping_protection_subheading
+  assign shipping_protection_product = section.settings.shipping_protection_product
+
+  assign total_heading = section.settings.total_heading
+  assign btn_checkout = section.settings.btn_checkout | default: 'Checkout'
+  assign bottom_link_text = section.settings.bottom_link_text
+  assign bottom_link_url = section.settings.bottom_link_url
+%}
+
+<script>
+  document.addEventListener('alpine:init', () => {
+    Alpine.store('cart').obj.item_count = {{ cart.item_count | json }};
+    Alpine.store('cart').obj.total_price = {{ cart.total_price | json }};
+    Alpine.store('cart').cart_progress_bar_threshold.value_1 = {{ cart_progress_bar_threshold_1 }};
+    Alpine.store('cart').cart_progress_bar_threshold.value_2 = {{ cart_progress_bar_threshold_2 }};
+    Alpine.store('cart').gifts = [
+      {% for gift_product in gift_products %}
+        {{ gift_product.first_available_variant.id }}{% unless forloop.last %},{% endunless %}
+      {% endfor %}
+    ];
+  });
+</script>
+
+
+
+<style>
+  [data-section-id='{{ section.id }}'] .drawer-cart-item[data-item-id='{{ shipping_protection_product.id }}'] {
+    display: none;
+  }
+</style>
+
+<div
+  data-section-id="{{ section.id }}"
+  x-init="
+    $watch('$store.cart.obj.item_count', () => {
+      const id = Number('{{ shipping_protection_product.id }}');
+      const item = $store.cart.obj?.items[0];
+      if ($store.cart.obj?.item_count === 1 && item?.product_id === id) {
+        $store.cart.removeItem(item.key);
+      }
+    })
+  "
+  x-cloak
+  x-show="$store.cart.visible"
+  @keydown.escape.window="$store.cart.hide()"
+  class="tw-fixed tw-inset-0 tw-z-full tw-flex tw-flex-col tw-items-end tw-w-full tw-h-full tw-bg-black/20"
+  :class="{ '!tw-pointer-events-none': $store.cart.isUpdating }"
+>
+  <div
+    x-cloak
+    x-show="$store.cart.visible"
+    x-transition:enter="tw-transition tw-duration-700"
+    x-transition:enter-start="tw-translate-x-full"
+    x-transition:enter-end="tw-translate-x-0"
+    x-transition:leave="tw-transition tw-duration-700"
+    x-transition:leave-start="tw-translate-x-0"
+    x-transition:leave-end="tw-translate-x-full"
+    class="tw-relative tw-z-full tw-flex tw-justify-end tw-h-dvh tw-bg-white max-lg:tw-w-full"
+    @click.outside="$store.cart.hide()"
+  >
+    {% comment %} You may also like. Only desktop {% endcomment %}
+    <div class="tw-hidden lg:tw-flex">
+      {% render 'cross-selling-products', type: 'ONE_COL_LIST', section: section %}
+    </div>
+
+    {% comment %} CART CONTENT {% endcomment %}
+    <div class="tw-relative tw-z-10 tw-grid tw-grid-cols-1 tw-grid-rows-[auto,1fr,auto] tw-gap-6 tw-w-full lg:tw-w-[494px] lg:tw-gap-5">
+      {% comment %} TOP {% endcomment %}
+      <div class="tw-flex tw-flex-col tw-gap-4 tw-px-4 tw-pt-5 md:tw-px-8 md:tw-pt-8 lg:tw-gap-5">
+        {% comment %} Title {% endcomment %}
+        <div class="tw-flex tw-justify-between tw-items-center tw-gap-2 tw-w-full">
+          <h4 class="tw-font-bold tw-text-xl md:tw-text-2xl">
+            <span class="tw-text-black">
+              {{-
+                heading
+                | replace: '[[count]]', '<span class="tw-text-sc-blue" x-text="$store.cart.obj.item_count"></span>'
+              -}}
+            </span>
+          </h4>
+
+          <button
+            type="button"
+            @click="$store.cart.hide()"
+            class="tw-flex-shrink-0 tw-size-3.5 tw-cursor-pointer tw-text-black tw-aspect-square lg:tw-size-5"
+          >
+            {% render 'icon-42', name: 'close', class: '!tw-size-full' %}
+          </button>
+        </div>
+
+        {% comment %} Progress bar {% endcomment %}
+        {% if cart_progress_bar_enabled %}
+          {% render '42-cart-progress-bar', section: section %}
+        {% endif %}
+      </div>
+
+      {% comment %} CONTENT {% endcomment %}
+      <div class="tw-overflow-y-auto custom-scroll">
+        {% comment %} Empty cart {% endcomment %}
+        <div
+          x-cloak
+          x-show="$store.cart.obj.item_count === 0"
+          class="tw-flex tw-flex-col tw-gap-5 tw-px-4 tw-py-10 md:tw-px-8"
+        >
+          <h6 class="tw-text-center">{{ text_empty_cart }}</h6>
+          {% if btn_text_empty_cart != blank and btn_link_empty_cart != blank %}
+            <a
+              href="{{ btn_link_empty_cart }}"
+              class="btn-42 btn-42--secondary tw-w-full tw-mt-4 tw-transition-all tw-duration-200 hover:tw-opacity-90"
+            >
+              {{ btn_text_empty_cart }}
+            </a>
+          {% endif %}
+        </div>
+
+        {% comment %} Items {% endcomment %}
+        <div x-cloak x-show="$store.cart.obj.item_count > 0">
+          <ul class="tw-grid tw-px-4 md:tw-px-8">
+            <li
+              class="tw-block tw-overflow-hidden"
+              x-cloak
+              x-show="$store.cart.show_gifts && $store.cart.obj.total_price >= $store.cart.cart_progress_bar_threshold.value_1"
+            >
+              <div
+                class="tw-overflow-hidden tw-bg-[#F6F6F6] tw-rounded-ra-10 tw-p-3 tw-mb-4"
+              >
+                <div class="tw-flex tw-items-center tw-justify-between tw-gap-2 tw-mb-3">
+                  <h6 class="tw-font-bold tw-text-[15px] tw-leading-[19px] tw-text-black">Gifts</h6>
+                  <div class="tw-flex tw-items-center tw-gap-7.5">
+                    <div
+                      class="gift-products-prev tw-flex-shrink-0 tw-text-sc-blue sw-nav-btn:!tw-opacity-20"
+                    >
+                      <svg width="10" height="15" viewBox="0 0 8 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-width="0.5" d="M0.168786 7.11582L7.02019 0.658317C7.24467 0.446868 7.6081 0.447224 7.8322 0.65941C8.05613 0.87157 8.05555 1.21525 7.83105 1.42686L1.38746 7.50002L7.83128 13.5732C8.05576 13.7848 8.05634 14.1283 7.83244 14.3404C7.7201 14.4468 7.57292 14.5 7.42575 14.5C7.27895 14.5 7.13236 14.4472 7.02022 14.3415L0.168786  7.8842C0.0606694 7.78254 0 7.64418 0 7.50002C0 7.35587 0.060843 7.21767 0.168786 7.11582Z" fill="currentColor" stroke="currentColor" />
+                      </svg>
+                    </div>
+                    <div
+                      class="gift-products-next tw-flex-shrink-0 tw-text-sc-blue sw-nav-btn:tw-text-sc-blue/50"
+                    >
+                      <svg width="10" height="15" viewBox="0 0 10 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-width="0.5" d="M8.83121 7.11582L1.97981 0.658317C1.75533 0.446868 1.3919 0.447224 1.1678 0.65941C0.943867 0.87157 0.944445 1.21525 1.16895 1.42686L7.61254 7.50002L1.16872 13.5732C0.944243 13.7848 0.943664 14.1283 1.16756 14.3404C1.2799 14.4468 1.42708 14.5 1.57425 14.5C1.72105 14.5 1.86764 14.4472 1.97978 14.3415L8.83121 7.8842C8.93933 7.78254 9 7.64418 9 7.50002C9 7.35587 8.93916 7.21767 8.83121 7.11582Z" fill="currentColor" stroke="currentColor" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  class="swiper"
+                  x-ignore
+                  ax-load
+                  x-data="swiperSlider($el, 'gift-products')"
+                >
+                  <div class="swiper-wrapper">
+                    {% for gift_product in gift_products %}
+                      {% assign gift_product_var = gift_product.first_available_variant %}
+                      <div class="swiper-slide">
+                        <div class="tw-flex tw-items-center tw-gap-2.5 tw-overflow-hidden md:tw-gap-[11px]">
+                          {% comment %} Image {% endcomment %}
+                          <a
+                            href="{{ gift_product.url }}"
+                            aria-busy="false"
+                            class="tw-relative tw-flex-shrink-0 tw-flex tw-justify-center tw-items-center tw-overflow-hidden tw-rounded-ra-10 tw-aspect-square tw-size-[60px] tw-bg-sc-blue/20 tw-border tw-border-sc-blue-20"
+                          >
+                            <img
+                              src="{{ gift_product.featured_image |  image_url: width: 300  }}"
+                              alt="{{ gift_product.title }}"
+                              height="90px"
+                              width="90px"
+                              class="tw-w-full tw-h-auto tw-object-cover"
+                            >
+                          </a>
+
+                          {% comment %} Product Content {% endcomment %}
+                          <div class="tw-flex tw-flex-col tw-justify-center tw-w-full">
+                            <div class="tw-flex tw-flex-col tw-gap-1 tw-max-w-full">
+                              {% comment %} Title {% endcomment %}
+                              <a
+                                href="{{ gift_product.url }}"
+                                class="!tw-line-clamp-2 tw-font-primary tw-block tw-text-sm tw-font-bold tw-text-black md:tw-text-base md:tw-leading-5"
+                              >
+                                {{ gift_product.title }}
+                              </a>
+
+                              {% comment %} Prices {% endcomment %}
+                              <div class="tw-flex tw-items-baseline tw-gap-0.5 tw-shrink-0">
+                                <s
+                                  class="tw-text-sm tw-leading-4 tw-font-medium tw-text-sc-gray-primary md:tw-text-[15px] md:tw-leading-[17px]"
+                                >
+                                  <span>Free</span>
+                                  <span>{{ gift_product_var.price | money }}</span>
+                                </s>
+                              </div>
+                            </div>
+                          </div>
+
+                          {% comment %} Add to cart {% endcomment %}
+
+                          <button
+                            @click="$store.cart.addToCart([{ id: '{{ gift_product_var.id }}', quantity: 1 }])"
+                            type="button"
+                            aria-label="Remove product from cart"
+                            class="tw-flex tw-justify-center tw-bg-sc-blue tw-items-center tw-size-10.5 tw-rounded-full tw-flex-shrink-0 hover:tw-opacity-80 tw-transition-all tw-duration-250 tw-touch-manipulation"
+                          >
+                            <svg
+                              width="18"
+                              height="18"
+                              viewBox="0 0 18 18"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <g clip-path="url(#clip0_138_1073)">
+                              <path d="M2.46529 7.6404L1.55762 15.8071L2.71729 15.9366L3.62496 7.76873L2.46529 7.6404ZM3.29712 17.7507H14.6908V16.5841H3.29712V17.7507ZM16.4303 15.8071L15.5226 7.6404L14.363 7.76873L15.2706 15.9366L16.4303 15.8071ZM13.782 6.08407H4.20596V7.25073H13.7843L13.782 6.08407ZM15.5226 7.6404C15.475 7.21241 15.2712 6.81701 14.9502 6.52987C14.6293 6.24273 14.2126 6.08401 13.782 6.08407L13.7831 7.25073C13.9267 7.25072 14.0653 7.30369 14.1723 7.39948C14.2793 7.49527 14.3472 7.62717 14.363 7.7699L15.5226 7.6404ZM14.6908 17.7507C14.9369 17.7506 15.1802 17.6986 15.4048 17.5981C15.6294 17.4975 15.8303 17.3508 15.9943 17.1674C16.1583 16.9839 16.2819 16.768 16.3568 16.5336C16.4317 16.2992 16.4575 16.0516 16.4303 15.8071L15.2706 15.9366C15.2798 16.0182 15.2717 16.0997 15.2467 16.1779C15.2218 16.2562 15.1806 16.3283 15.1259 16.3895C15.0711 16.4507 15.0041 16.4997 14.9291 16.5332C14.8541 16.5668 14.7729 16.5841 14.6908 16.5841V17.7507ZM1.55762 15.8071C1.53038 16.0517 1.55506 16.2994 1.63006 16.5339C1.70505 16.7683 1.82868 16.9843 1.99285 17.1678C2.15702 17.3512 2.35804 17.498 2.58279 17.5984C2.80754 17.6989 3.05095 17.7508 3.29712 17.7507V16.5841C3.2151 16.5841 3.134 16.5668 3.05912 16.5333C2.98423 16.4999 2.91724 16.451 2.86252 16.3899C2.80781 16.3288 2.76659 16.2568 2.74157 16.1787C2.71654 16.1006 2.70827 16.0181 2.71729 15.9366L1.55762 15.8071ZM3.62496 7.76873C3.64102 7.62621 3.70903 7.4946 3.81599 7.39905C3.92295 7.30349 4.06253 7.25069 4.20596 7.25073V6.08407C3.77552 6.08429 3.3591 6.24315 3.03841 6.53026C2.71772 6.81737 2.51293 7.21261 2.46529 7.6404L3.62496 7.76873ZM6.07729 4.9174V4.33407H4.91063V4.9174H6.07729ZM11.9106 4.33407V4.9174H13.0773V4.33407H11.9106ZM8.99396 1.4174C9.76751 1.4174 10.5094 1.72469 11.0564 2.27167C11.6033 2.81865 11.9106 3.56052 11.9106 4.33407H13.0773C13.0773 3.2511 12.6471 2.21249 11.8813 1.44671C11.1155 0.68094 10.0769 0.250732 8.99396 0.250732V1.4174ZM6.07729 4.33407C6.07729 3.56052 6.38458 2.81865 6.93156 2.27167C7.47855 1.72469 8.22041 1.4174 8.99396 1.4174V0.250732C7.91099 0.250732 6.87238 0.68094 6.10661 1.44671C5.34083 2.21249 4.91063 3.2511 4.91063 4.33407H6.07729Z" fill="white"/>
+                              </g>
+                              <defs>
+                              <clipPath id="clip0_138_1073">
+                              <rect width="17.5" height="17.5" fill="white" transform="translate(0.244141 0.250732)"/>
+                              </clipPath>
+                              </defs>
+                            </svg>
+                            <span class="tw-sr-only">Add to cart</span>
+                          </button>
+                        </div>
+                      </div>
+                    {% endfor %}
+                  </div>
+                </div>
+              </div>
+            </li>
+            <template x-for="(item, index) in $store['cart']?.obj?.items" :key="index">
+              <li
+                class="drawer-cart-item tw-overflow-hidden tw-pb-5 tw-mb-5 !tw-border !tw-border-t-0 !tw-border-x-0 !tw-border-solid !tw-border-sc-blue/20 md:tw-pb-6 md:tw-mb-6 last-child:tw-mb-0 last-child:tw-border-none"
+                :data-item-id="item?.product_id"
+              >
+                {% render '42-cart-drawer-item' %}
+              </li>
+            </template>
+          </ul>
+        </div>
+      </div>
+
+      {% comment %} BOTTOM {% endcomment %}
+      <div x-cloak x-show="$store.cart.obj.item_count > 0">
+        {% comment %} Cross sell {% endcomment %}
+        <div class="tw-px-4 tw-block lg:tw-hidden">
+          {% render 'cross-selling-products', type: 'SLIDER', section: section %}
+        </div>
+
+        {% comment %} Shipping protection {% endcomment %}
+        {% if shipping_protection_product != blank %}
+          <div class="tw-relative tw-z-0 tw-flex tw-justify-between tw-items-center tw-px-4 tw-py-2 tw-border tw-border-solid tw-border-x-0 tw-border-sc-blue/20 tw-bg-sc-light-gray md:tw-px-8 md:tw-py-3">
+            <p class="tw-flex tw-flex-col">
+              <span class="tw-font-primary tw-font-bold tw-text-black tw-text-sm tw-leading-[17px]">
+                {{- shipping_protection_heading -}}
+              </span>
+              <span class="tw-font-secondary tw-font-normal tw-text-black tw-text-xs tw-leading-4">
+                {{- shipping_protection_subheading -}}
+              </span>
+            </p>
+            <div class="tw-flex tw-items-center tw-justify-center tw-gap-1.25">
+              <span>
+                {{- shipping_protection_product.selected_or_first_available_variant.price | money_with_currency -}}
+              </span>
+              <input
+                type="checkbox"
+                name="Shipping protection"
+                class="!tw-appearance-none !tw-m-0 tw-h-5 tw-w-10 tw-border-2 tw-border-solid tw-border-sc-green tw-bg-sc-green/20 tw-rounded-full tw-overflow-hidden tw-relative after:tw-content-[''] after:tw-absolute after:tw-top-0 after:tw-left-0 after:tw-block after:tw-size-4 after:tw-rounded-full after:tw-bg-white after:tw-transition-all after:tw-duration-200 after:tw-pointer-events-none checked:after:tw-translate-x-5 checked:tw-bg-sc-green"
+                value="{{ shipping_protection_product.selected_or_first_available_variant.id }}"
+                @change="$store.cart.toggleShippingProdection($event)"
+                x-bind:checked="$store.cart?.obj?.items?.find(item => String(item?.id) === String('{{ shipping_protection_product.selected_or_first_available_variant.id }}'))"
+              >
+            </div>
+          </div>
+        {% endif %}
+
+        <div class="tw-p-4 tw-text-black md:tw-py-6 md:tw-px-8">
+          {% comment %} Total price {% endcomment %}
+          <div class="tw-flex tw-justify-between tw-items-center tw-mb-[15px]">
+            <h6 class="tw-font-bold tw-text-lg tw-leading-[22px]">{{ total_heading }}</h6>
+            <div class="tw-flex tw-items-center tw-gap-1">
+              <strong
+                x-text="window.formatMoney($store.cart.obj?.total_price)"
+                class="tw-font-bold tw-text-lg tw-leading-[23px]"
+              ></strong>
+              <s
+                x-cloak
+                x-show="$store.cart.obj?.cart_compared_price && $store.cart.obj?.cart_compared_price > $store.cart.obj?.total_price"
+                x-text="window.formatMoney($store.cart.obj?.cart_compared_price)"
+                class="tw-font-bold tw-text-lg tw-leading-[23px] tw-text-sc-gray-primary"
+              ></s>
+            </div>
+          </div>
+
+          {% comment %} Checkout {% endcomment %}
+          <button
+            @click="$store.cart.checkout()"
+            type="button"
+            class="btn-42 btn-42--secondary tw-w-full tw-transition-all tw-duration-200 hover:tw-opacity-90"
+          >
+            {{ btn_checkout }}
+          </button>
+
+          {% comment %} Continue Shopping {% endcomment %}
+          {% if bottom_link_text != blank and bottom_link_url != blank %}
+            <a
+              href="{{ bottom_link_url }}"
+              class="tw-mt-4 tw-mx-auto tw-block tw-w-full tw-text-sm tw-leading-4 tw-font-medium tw-text-sc-gray-secondary tw-text-center tw-transition-all tw-duration-200 hover:tw-opacity-90 lg:tw-mt-3.5"
+            >
+              {{ bottom_link_text }}
+            </a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "42 Cart Drawer",
+  "tag": "section",
+  "enabled_on": {
+    "groups": ["header"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "Cart heading"
+    },
+    {
+      "type": "product_list",
+      "id": "gift_products",
+      "label": "Gift products"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Cart ([[count]])",
+      "info": "[[count]] will be replaced with the number of items in the cart"
+    },
+    {
+      "type": "header",
+      "content": "Empty cart"
+    },
+    {
+      "type": "richtext",
+      "id": "text_empty_cart",
+      "label": "Text. Empty cart",
+      "default": "<p>Your cart is empty.<br> Fill it with something good.</p>"
+    },
+    {
+      "type": "text",
+      "id": "btn_text_empty_cart",
+      "label": "Button text. Empty cart",
+      "default": "Shop All"
+    },
+    {
+      "type": "url",
+      "id": "btn_link_empty_cart",
+      "label": "Button text. Empty cart",
+      "default": "/"
+    },
+    {
+      "type": "header",
+      "content": "Card drawer progress bar settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "cart_progress_bar_enabled",
+      "label": "Progress bar enabled?",
+      "default": true
+    },
+    {
+      "type": "number",
+      "id": "cart_progress_bar_threshold_1",
+      "label": "Progress bar threshold #1",
+      "default": 60
+    },
+    {
+      "type": "image_picker",
+      "id": "cart_progress_bar_icon_1",
+      "label": "Progress bar icon #1"
+    },
+    {
+      "type": "number",
+      "id": "cart_progress_bar_threshold_2",
+      "label": "Progress bar threshold #2",
+      "default": 75,
+      "info": "Must be bigger than the first one"
+    },
+    {
+      "type": "image_picker",
+      "id": "cart_progress_bar_icon_2",
+      "label": "Progress bar icon #2"
+    },
+    {
+      "type": "text",
+      "id": "cart_progress_message_1",
+      "label": "Progress bar message #1",
+      "default": "Spend [amount_left] more and receive Free Gift",
+      "info": "[amount_left] don't remove, will be replaced to value"
+    },
+    {
+      "type": "textarea",
+      "id": "cart_progress_message_2",
+      "label": "Progress bar message #2",
+      "default": "Spend [amount_left] more and get free shipping!",
+      "info": "[amount_left] don't remove, will be replaced to value"
+    },
+    {
+      "type": "text",
+      "id": "cart_progress_reached_message",
+      "label": "Progress bar reached message",
+      "default": "You are eligible for free shipping."
+    },
+    {
+      "type": "header",
+      "content": "Shipping protection"
+    },
+    {
+      "type": "text",
+      "id": "shipping_protection_heading",
+      "label": "Shipping protection heading",
+      "default": "Shipping Protection"
+    },
+    {
+      "type": "text",
+      "id": "shipping_protection_subheading",
+      "label": "Shipping protection subheading",
+      "default": "From damage, loss or theft."
+    },
+    {
+      "type": "product",
+      "id": "shipping_protection_product",
+      "label": "Shipping protection product"
+    },
+    {
+      "type": "header",
+      "content": "Summary"
+    },
+    {
+      "type": "text",
+      "id": "total_heading",
+      "label": "Heading for total",
+      "default": "Subtotal"
+    },
+    {
+      "type": "text",
+      "id": "btn_checkout",
+      "label": "Checkout button text",
+      "default": "Checkout"
+    },
+    {
+      "type": "text",
+      "id": "bottom_link_text",
+      "label": "Bottom link text",
+      "default": "Continue Shopping"
+    },
+    {
+      "type": "url",
+      "id": "bottom_link_url",
+      "label": "Bottom link url"
+    },
+    {
+      "type": "header",
+      "content": "You may also like"
+    },
+    {
+      "type": "text",
+      "id": "cross_selling_products_title",
+      "label": "Title",
+      "default": "You may also like"
+    }
+  ],
+  "presets": [
+    {
+      "name": "42 Cart Drawer"
+    }
+  ]
+}
+{% endschema %}

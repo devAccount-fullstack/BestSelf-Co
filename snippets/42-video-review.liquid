@@ -1,0 +1,31 @@
+{% if video != blank %}
+  <div class="tw-relative">
+    {{
+      video
+      | video_tag:
+        loop: true,
+        muted: false,
+        controls: false,
+        class: 'video-player-js tw-h-full tw-w-full tw-object-cover',
+        playsinline: true,
+        poster: poster
+    }}
+    <div class="play-btn-js changes__width__slide-js tw-cursor-pointer tw-absolute" style="top:50%;left:50%;transform:translate(-50%,-50%);">
+      {% render 'icon-42', name: 'video-play' %}
+    </div>
+    {% if avatar_user != blank and name_user != blank %}
+      <div class="tw-absolute tw-z-5 tw-top-[29px] md:tw-top-5 tw-left-5 tw-flex tw-items-center tw-gap-2">
+        <div class="tw-w-7.5 tw-duration-500 tw-h-7.5 tw-rounded-full tw-overflow-hidden tw-border-[#A5A5A5] tw-border-[0.5px] tw-flex tw-items-center tw-justify-center lg:tw-size-12.5">
+          <img
+            src="{{ avatar_user | img_url: 'master' }}"
+            alt="{{ name_user }}"
+            class="tw-max-w-full tw-object-cover"
+            height="100%"
+            width="100%"
+          >
+        </div>
+        <span class="tw-font-medium tw-text-white tw-text-[22px]">{{ name_user }}</span>
+      </div>
+    {% endif %}
+  </div>
+{% endif %}

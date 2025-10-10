@@ -1,0 +1,645 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "section_double_fLUik4": {
+      "type": "section-double",
+      "blocks": {
+        "image_GYBXkn": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/1m-customers.svg",
+            "image_width": 55,
+            "padding_bottom": 16
+          }
+        },
+        "heading_VdUnit": {
+          "type": "heading",
+          "settings": {
+            "title": "{{ metaobject.hero_title.value }}",
+            "heading_font_size": "heading-medium",
+            "padding_bottom": 16,
+            "heading_tag": "automatic"
+          }
+        },
+        "text_JQk76q": {
+          "type": "text",
+          "settings": {
+            "text": "<p>{{ metaobject.hero_subtitle.value }}</p>",
+            "text_font_size": "body-medium",
+            "padding_bottom": 16
+          }
+        },
+        "buttons_pRNxDx": {
+          "type": "buttons",
+          "settings": {
+            "button_text": "Shop Now",
+            "button_url": "{{ metaobject.cta_url.value }}",
+            "button_type": "btn--primary",
+            "button_size": "",
+            "button_style": "btn--solid",
+            "show_arrow": false,
+            "padding_bottom": 16
+          }
+        }
+      },
+      "block_order": [
+        "image_GYBXkn",
+        "heading_VdUnit",
+        "text_JQk76q",
+        "buttons_pRNxDx"
+      ],
+      "name": "Image with text",
+      "settings": {
+        "image_1": "{{ metaobject.hero_image.value }}",
+        "image_width": "one-half",
+        "text_alignment": "text-left",
+        "layout": "is-reversed",
+        "width": "wrapper--full",
+        "height": "image-height",
+        "mobile_height": "image-height--mobile",
+        "reverse_blocks": false,
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "show_placeholder": true
+      }
+    },
+    "ss_scrolling_logo_cloud_hkRFgk": {
+      "type": "ss-scrolling-logo-cloud",
+      "blocks": {
+        "slide_VUzLpY": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/new-york-times_e5522b91-2ccb-4449-b887-3adce2bca17e.svg",
+            "link": ""
+          }
+        },
+        "slide_LbetVE": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/wall-street-journal_55986035-2cf5-4a15-b8fc-6e5524d90b15.svg",
+            "link": ""
+          }
+        },
+        "slide_pnPePb": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/glamour-seeklogo_1_01faa3b1-d481-40e6-b66d-342c9f579bfe.svg",
+            "link": ""
+          }
+        },
+        "slide_ct7t9x": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Cosmopolitan_logo_1_a3068584-9a33-4bc8-aab8-2bb4394d1e75.svg",
+            "link": ""
+          }
+        },
+        "slide_qt4nGQ": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/theknot-logo_bc3b56dc-2766-47a6-bdc3-b5013c4ebe10.svg",
+            "link": ""
+          }
+        },
+        "slide_4tz96a": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/refinery29.svg",
+            "link": ""
+          }
+        },
+        "slide_GMqjrr": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Vector_f8e848c2-23ad-448a-81ed-8ca0ff20a2fc.svg",
+            "link": ""
+          }
+        },
+        "slide_L9q8jr": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Vector_1.svg",
+            "link": ""
+          }
+        },
+        "slide_wL9aqP": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Group_1171275371.svg",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "slide_VUzLpY",
+        "slide_LbetVE",
+        "slide_pnPePb",
+        "slide_ct7t9x",
+        "slide_qt4nGQ",
+        "slide_4tz96a",
+        "slide_GMqjrr",
+        "slide_L9q8jr",
+        "slide_wL9aqP"
+      ],
+      "settings": {
+        "ss-title": "",
+        "heading_custom": true,
+        "heading_font": "sans-serif",
+        "header_size": 14,
+        "header_align": "center",
+        "scrolling_velocity": 100,
+        "pause_hover": false,
+        "shadow": false,
+        "sliders_mt": 12,
+        "logo_padding_top": 0,
+        "logo_padding_bottom": 0,
+        "slider_gap": 58,
+        "slider_gap_mobile": 50,
+        "slider_direction": "left",
+        "icon_width": 60,
+        "header_color": "#ffffff",
+        "border_color": "#ffffff",
+        "background-color": "#242540",
+        "slider-background-color": "#242540",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top": 16,
+        "padding_bottom": 16,
+        "full_width": true,
+        "content_width": 120,
+        "border_thickness": 0,
+        "lazy": true
+      }
+    },
+    "section_rich_text_UB4eDL": {
+      "type": "section-rich-text",
+      "blocks": {
+        "text_jMJMkJ": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "{{ metaobject.intro_content | metafield_tag }}",
+            "text_font_size": "body-medium",
+            "padding_bottom": 16
+          }
+        }
+      },
+      "block_order": [
+        "text_jMJMkJ"
+      ],
+      "disabled": true,
+      "name": "Rich text",
+      "settings": {
+        "align_text": "text-left",
+        "width": "wrapper",
+        "color_scheme": "",
+        "overlay_opacity": 0,
+        "show_overlay_text": false,
+        "padding_top": 20,
+        "padding_bottom": 30
+      }
+    },
+    "section_double_ymdEWH": {
+      "type": "section-double",
+      "blocks": {
+        "heading_cGqCFz": {
+          "type": "heading",
+          "settings": {
+            "title": "1. {{ metaobject.item_1_title.value }}",
+            "heading_font_size": "heading-medium",
+            "padding_bottom": 16,
+            "heading_tag": "automatic"
+          }
+        },
+        "text_Ynxf7D": {
+          "type": "text",
+          "settings": {
+            "text": "{{ metaobject.item_1_content | metafield_tag }}",
+            "text_font_size": "body-medium",
+            "padding_bottom": 16
+          }
+        }
+      },
+      "block_order": [
+        "heading_cGqCFz",
+        "text_Ynxf7D"
+      ],
+      "name": "Image with text",
+      "settings": {
+        "image_1": "{{ metaobject.item_1_image.value }}",
+        "image_width": "one-half",
+        "text_alignment": "text-left",
+        "layout": "",
+        "width": "wrapper",
+        "height": "image-height",
+        "mobile_height": "image-height--mobile",
+        "reverse_blocks": false,
+        "color_scheme": "",
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "show_placeholder": true
+      }
+    },
+    "section_double_TampqT": {
+      "type": "section-double",
+      "blocks": {
+        "heading_TYPgXm": {
+          "type": "heading",
+          "settings": {
+            "title": "2. {{ metaobject.item_2_title.value }}",
+            "heading_font_size": "heading-medium",
+            "padding_bottom": 16,
+            "heading_tag": "automatic"
+          }
+        },
+        "text_BRfgti": {
+          "type": "text",
+          "settings": {
+            "text": "{{ metaobject.item_2_content | metafield_tag }}",
+            "text_font_size": "body-medium",
+            "padding_bottom": 16
+          }
+        }
+      },
+      "block_order": [
+        "heading_TYPgXm",
+        "text_BRfgti"
+      ],
+      "name": "Image with text",
+      "settings": {
+        "image_1": "{{ metaobject.item_2_image.value }}",
+        "image_width": "one-half",
+        "text_alignment": "text-left",
+        "layout": "",
+        "width": "wrapper",
+        "height": "image-height",
+        "mobile_height": "image-height--mobile",
+        "reverse_blocks": false,
+        "color_scheme": "",
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "show_placeholder": true
+      }
+    },
+    "section_double_XxU9Vg": {
+      "type": "section-double",
+      "blocks": {
+        "heading_HBHchd": {
+          "type": "heading",
+          "settings": {
+            "title": "3. {{ metaobject.item_3_title.value }}",
+            "heading_font_size": "heading-medium",
+            "padding_bottom": 16,
+            "heading_tag": "automatic"
+          }
+        },
+        "text_9VnxhU": {
+          "type": "text",
+          "settings": {
+            "text": "{{ metaobject.item_3_content | metafield_tag }}",
+            "text_font_size": "body-medium",
+            "padding_bottom": 16
+          }
+        }
+      },
+      "block_order": [
+        "heading_HBHchd",
+        "text_9VnxhU"
+      ],
+      "name": "Image with text",
+      "settings": {
+        "image_1": "{{ metaobject.item_3_image.value }}",
+        "image_width": "one-half",
+        "text_alignment": "text-left",
+        "layout": "",
+        "width": "wrapper",
+        "height": "image-height",
+        "mobile_height": "image-height--mobile",
+        "reverse_blocks": false,
+        "color_scheme": "",
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "show_placeholder": true
+      }
+    },
+    "section_double_Nn3dhh": {
+      "type": "section-double",
+      "blocks": {
+        "heading_6wa33e": {
+          "type": "heading",
+          "settings": {
+            "title": "4. {{ metaobject.item_4_title.value }}",
+            "heading_font_size": "heading-medium",
+            "padding_bottom": 16,
+            "heading_tag": "automatic"
+          }
+        },
+        "text_H9gdFG": {
+          "type": "text",
+          "settings": {
+            "text": "{{ metaobject.item_4_content | metafield_tag }}",
+            "text_font_size": "body-medium",
+            "padding_bottom": 16
+          }
+        }
+      },
+      "block_order": [
+        "heading_6wa33e",
+        "text_H9gdFG"
+      ],
+      "name": "Image with text",
+      "settings": {
+        "image_1": "{{ metaobject.item_4_image.value }}",
+        "image_width": "one-half",
+        "text_alignment": "text-left",
+        "layout": "",
+        "width": "wrapper",
+        "height": "image-height",
+        "mobile_height": "image-height--mobile",
+        "reverse_blocks": false,
+        "color_scheme": "",
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "show_placeholder": true
+      }
+    },
+    "section_double_pHLULJ": {
+      "type": "section-double",
+      "blocks": {
+        "heading_XqKLp4": {
+          "type": "heading",
+          "settings": {
+            "title": "5. {{ metaobject.item_5_title.value }}",
+            "heading_font_size": "heading-medium",
+            "padding_bottom": 16,
+            "heading_tag": "automatic"
+          }
+        },
+        "text_zbkPYd": {
+          "type": "text",
+          "settings": {
+            "text": "{{ metaobject.item_5_content | metafield_tag }}",
+            "text_font_size": "body-medium",
+            "padding_bottom": 16
+          }
+        }
+      },
+      "block_order": [
+        "heading_XqKLp4",
+        "text_zbkPYd"
+      ],
+      "name": "Image with text",
+      "settings": {
+        "image_1": "{{ metaobject.item_5_image.value }}",
+        "image_width": "one-half",
+        "text_alignment": "text-left",
+        "layout": "",
+        "width": "wrapper",
+        "height": "image-height",
+        "mobile_height": "image-height--mobile",
+        "reverse_blocks": false,
+        "color_scheme": "",
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "show_placeholder": true
+      }
+    },
+    "section_double_zKqr8M": {
+      "type": "section-double",
+      "blocks": {
+        "heading_Mh7nQp": {
+          "type": "heading",
+          "settings": {
+            "title": "6. {{ metaobject.item_6_title.value }}",
+            "heading_font_size": "heading-medium",
+            "padding_bottom": 16,
+            "heading_tag": "automatic"
+          }
+        },
+        "text_9kLmNx": {
+          "type": "text",
+          "settings": {
+            "text": "{{ metaobject.item_6_content | metafield_tag }}",
+            "text_font_size": "body-medium",
+            "padding_bottom": 16
+          }
+        }
+      },
+      "block_order": [
+        "heading_Mh7nQp",
+        "text_9kLmNx"
+      ],
+      "name": "Image with text",
+      "settings": {
+        "image_1": "{{ metaobject.item_6_image.value }}",
+        "image_width": "one-half",
+        "text_alignment": "text-left",
+        "layout": "",
+        "width": "wrapper",
+        "height": "image-height",
+        "mobile_height": "image-height--mobile",
+        "reverse_blocks": false,
+        "color_scheme": "",
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "show_placeholder": true
+      }
+    },
+    "section_double_aB7xYm": {
+      "type": "section-double",
+      "blocks": {
+        "heading_Uj9PqR": {
+          "type": "heading",
+          "settings": {
+            "title": "7. {{ metaobject.item_7_title.value }}",
+            "heading_font_size": "heading-medium",
+            "padding_bottom": 16,
+            "heading_tag": "automatic"
+          }
+        },
+        "text_Kw3nLs": {
+          "type": "text",
+          "settings": {
+            "text": "{{ metaobject.item_7_content | metafield_tag }}",
+            "text_font_size": "body-medium",
+            "padding_bottom": 16
+          }
+        }
+      },
+      "block_order": [
+        "heading_Uj9PqR",
+        "text_Kw3nLs"
+      ],
+      "name": "Image with text",
+      "settings": {
+        "image_1": "{{ metaobject.item_7_image.value }}",
+        "image_width": "one-half",
+        "text_alignment": "text-left",
+        "layout": "",
+        "width": "wrapper",
+        "height": "image-height",
+        "mobile_height": "image-height--mobile",
+        "reverse_blocks": false,
+        "color_scheme": "",
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "show_placeholder": true
+      }
+    },
+    "section_double_Px8mKn": {
+      "type": "section-double",
+      "blocks": {
+        "heading_Qr3nWp": {
+          "type": "heading",
+          "settings": {
+            "title": "8. {{ metaobject.item_8_title.value }}",
+            "heading_font_size": "heading-medium",
+            "padding_bottom": 16,
+            "heading_tag": "automatic"
+          }
+        },
+        "text_Lm9xYs": {
+          "type": "text",
+          "settings": {
+            "text": "{{ metaobject.item_8_content | metafield_tag }}",
+            "text_font_size": "body-medium",
+            "padding_bottom": 16
+          }
+        }
+      },
+      "block_order": [
+        "heading_Qr3nWp",
+        "text_Lm9xYs"
+      ],
+      "name": "Image with text",
+      "settings": {
+        "image_1": "{{ metaobject.item_8_image.value }}",
+        "image_width": "one-half",
+        "text_alignment": "text-left",
+        "layout": "",
+        "width": "wrapper",
+        "height": "image-height",
+        "mobile_height": "image-height--mobile",
+        "reverse_blocks": false,
+        "color_scheme": "",
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "show_placeholder": true
+      }
+    },
+    "section_double_Tz5nRs": {
+      "type": "section-double",
+      "blocks": {
+        "heading_Wp8kTx": {
+          "type": "heading",
+          "settings": {
+            "title": "9. {{ metaobject.item_9_title.value }}",
+            "heading_font_size": "heading-medium",
+            "padding_bottom": 16,
+            "heading_tag": "automatic"
+          }
+        },
+        "text_Jn4mKp": {
+          "type": "text",
+          "settings": {
+            "text": "{{ metaobject.item_9_content | metafield_tag }}",
+            "text_font_size": "body-medium",
+            "padding_bottom": 16
+          }
+        }
+      },
+      "block_order": [
+        "heading_Wp8kTx",
+        "text_Jn4mKp"
+      ],
+      "name": "Image with text",
+      "settings": {
+        "image_1": "{{ metaobject.item_9_image.value }}",
+        "image_width": "one-half",
+        "text_alignment": "text-left",
+        "layout": "",
+        "width": "wrapper",
+        "height": "image-height",
+        "mobile_height": "image-height--mobile",
+        "reverse_blocks": false,
+        "color_scheme": "",
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "show_placeholder": true
+      }
+    },
+    "17547026222d92696b": {
+      "type": "_blocks",
+      "settings": {}
+    },
+    "article_product_cta_NpcNGm": {
+      "type": "article-product-cta",
+      "name": "Article Product CTA",
+      "settings": {
+        "layout_style": "hero",
+        "product_source": "listicle",
+        "article_product_index": 1,
+        "listicle_handle": "",
+        "product": "{{ metaobject.featured_product.value }}",
+        "heading": "{{ section.settings.product.title }}",
+        "description": "",
+        "button_label": "ADD TO CART",
+        "feature_1": "{{ section.settings.product.metafields.product.key_outcome_1.value }}",
+        "feature_2": "{{ section.settings.product.metafields.product.key_outcome_2.value }}",
+        "feature_3": "{{ section.settings.product.metafields.product.key_outcome_3.value }}",
+        "discount_badge": "",
+        "show_price": true,
+        "show_quantity_selector": false,
+        "color_scheme": "background-1",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "42_bestsellers_BxRheE": {
+      "type": "42-bestsellers",
+      "name": "42 Bestsellers",
+      "settings": {
+        "metafield_product_list": [],
+        "border_top": false,
+        "border_bottom": false,
+        "section_title": "{{ section.settings.collection.title }}",
+        "show_title_arrow": false,
+        "collection": "best-sellers",
+        "btn_text": "SHOP ALL",
+        "btn_link": "{{ section.settings.collection.url }}",
+        "pt_mob": 20,
+        "pb_mob": 20,
+        "pt_tab": 30,
+        "pb_tab": 30,
+        "pt_desk": 50,
+        "pb_desk": 50
+      }
+    }
+  },
+  "order": [
+    "section_double_fLUik4",
+    "ss_scrolling_logo_cloud_hkRFgk",
+    "section_rich_text_UB4eDL",
+    "section_double_ymdEWH",
+    "section_double_TampqT",
+    "section_double_XxU9Vg",
+    "section_double_Nn3dhh",
+    "section_double_pHLULJ",
+    "section_double_zKqr8M",
+    "section_double_aB7xYm",
+    "section_double_Px8mKn",
+    "section_double_Tz5nRs",
+    "17547026222d92696b",
+    "article_product_cta_NpcNGm",
+    "42_bestsellers_BxRheE"
+  ]
+}

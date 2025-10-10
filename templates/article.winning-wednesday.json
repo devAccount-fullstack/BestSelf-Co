@@ -1,0 +1,149 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "section_rich_text_49txRY": {
+      "type": "section-rich-text",
+      "blocks": {
+        "subheading_h9aPpT": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "edition #{{ article.metafields.custom.ww_edition.value }}",
+            "padding_bottom": 16
+          }
+        },
+        "heading_PUah6q": {
+          "type": "heading",
+          "settings": {
+            "title": "{{ article.title }}",
+            "heading_font_size": "heading-large",
+            "padding_bottom": 16,
+            "heading_tag": "automatic"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_h9aPpT",
+        "heading_PUah6q"
+      ],
+      "name": "Rich text",
+      "settings": {
+        "align_text": "text-center",
+        "width": "wrapper",
+        "color_scheme": "",
+        "overlay_opacity": 0,
+        "show_overlay_text": false,
+        "padding_top": 40,
+        "padding_bottom": 0
+      }
+    },
+    "section_divider_kPVKCH": {
+      "type": "section-divider",
+      "name": "Divider",
+      "settings": {
+        "show_line": true,
+        "width": "wrapper",
+        "color_scheme": "",
+        "padding_top": 20,
+        "padding_bottom": 30
+      }
+    },
+    "article_journal_products_T9dcx8": {
+      "type": "article-journal-products",
+      "name": "Sticky Product Bar",
+      "settings": {
+        "heading": "Related products",
+        "fallback_collection": "",
+        "max_products": 4,
+        "enable_sticky": true
+      }
+    },
+    "main": {
+      "type": "article",
+      "blocks": {
+        "related-products": {
+          "type": "related",
+          "disabled": true,
+          "settings": {
+            "title": "Related products",
+            "product_list": "{{ article.metafields.custom.featured_products.value }}"
+          }
+        },
+        "recent_EHTqAc": {
+          "type": "recent",
+          "disabled": true,
+          "settings": {
+            "title": "Recent articles"
+          }
+        }
+      },
+      "block_order": [
+        "related-products",
+        "recent_EHTqAc"
+      ],
+      "custom_css": [
+        "h2,h3,h4 {font-family: Inter, sans-serif;}",
+        ".article__hero.text-center,.article__title {display: none !important;}",
+        "h1 {font-size: 40px; line-height: 1.3;}",
+        "h2 {font-size: 32px;}",
+        "h3 {font-size: 24px; font-weight: 700;}",
+        "h4 {font-size: 20px;}",
+        "h5,h6,li,ol,p,ul {font-size: 16px; line-height: 28px; font-family: \"Libre Baskerville\", serif;}",
+        "@media (max-width: 767px) {h1 {font-size: 32px; } h2 {font-size: 26px; } h3 {font-size: 20px; } h4 {font-size: 18px; } h5, h6, li, ol, p, ul {font-size: 14px; line-height: 24px; }}"
+      ],
+      "settings": {
+        "show_image": false,
+        "show_date": false,
+        "show_author": false,
+        "tags": false,
+        "show_sharing": false,
+        "arrows": true,
+        "height": "four-fifty-height-hero",
+        "mobile_height": "four-fifty-height-hero--mobile",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "section_collection_37F7j3": {
+      "type": "section-collection",
+      "settings": {
+        "featured_collection": "all",
+        "heading": "Explore Products",
+        "heading_font_size": "heading-medium",
+        "description": "",
+        "text_font_size": "body-medium",
+        "layout": "inline",
+        "link_text": "View All",
+        "link_url": "",
+        "button_type": "btn--primary",
+        "button_size": "",
+        "button_style": "btn--solid",
+        "show_arrow": false,
+        "layout_desktop": "grid",
+        "grid": 4,
+        "rows": 1,
+        "width": "wrapper",
+        "layout_mobile": "slider",
+        "color_scheme": "",
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "heading_tag": "automatic"
+      }
+    }
+  },
+  "order": [
+    "section_rich_text_49txRY",
+    "section_divider_kPVKCH",
+    "article_journal_products_T9dcx8",
+    "main",
+    "section_collection_37F7j3"
+  ]
+}

@@ -1,0 +1,117 @@
+{% liquid
+  assign border_top = section.settings.border_top
+  assign border_bottom = section.settings.border_bottom
+
+  assign title = section.settings.title
+  assign description = section.settings.description
+
+  assign pt_mob = section.settings.pt_mob
+  assign pb_mob = section.settings.pb_mob
+  assign pt_tab = section.settings.pt_tab
+  assign pb_tab = section.settings.pb_tab
+  assign pt_desk = section.settings.pt_desk
+  assign pb_desk = section.settings.pb_desk
+%}
+
+{% render 'section-paddings',
+  section_id: section.id,
+  pt_mob: pt_mob,
+  pb_mob: pb_mob,
+  pt_tab: pt_tab,
+  pb_tab: pb_tab,
+  pt_desk: pt_desk,
+  pb_desk: pb_desk
+%}
+
+<div
+  data-section-id="{{ section.id }}"
+  class="42-page-heading-section tw-overflow-hidden {% if border_top %}section-border-t-42{% endif %} {% if border_bottom %}section-border-b-42{% endif %}"
+>
+  <div class="container-42">
+    {% if title != blank %}
+      <h1 class="tw-font-bold tw-mb-2.5 tw-text-black tw-text-[28px] tw-leading-none lg:tw-text-[40px]">
+        {{ title }}
+      </h1>
+    {% endif %}
+
+    {% if description != blank %}
+      <div class="tw-text-sm tw-leading-[155%] lg:tw-text-[18px] tw-text- tw-text-black tw-w-full tw-max-w-[771px] tw-font-normal">
+        {{ description }}
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "42 Page Heading",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "border_top",
+      "label": "Border top"
+    },
+    {
+      "type": "checkbox",
+      "id": "border_bottom",
+      "label": "Border bottom"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "html",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "header",
+      "content": "Padding Y settings"
+    },
+    {
+      "type": "number",
+      "id": "pt_mob",
+      "label": "Mobile padding top in px",
+      "default": 32
+    },
+    {
+      "type": "number",
+      "id": "pb_mob",
+      "label": "Mobile padding bottom in px",
+      "default": 20
+    },
+    {
+      "type": "number",
+      "id": "pt_tab",
+      "label": "Tablet padding top in px",
+      "default": 52
+    },
+    {
+      "type": "number",
+      "id": "pb_tab",
+      "label": "Tablet padding bottom in px",
+      "default": 32
+    },
+    {
+      "type": "number",
+      "id": "pt_desk",
+      "label": "Desktop padding top in px",
+      "default": 72
+    },
+    {
+      "type": "number",
+      "id": "pb_desk",
+      "label": "Desktop padding bottom in px",
+      "default": 32
+    }
+  ],
+  "presets": [
+    {
+      "name": "42 Page Heading"
+    }
+  ]
+}
+{% endschema %}

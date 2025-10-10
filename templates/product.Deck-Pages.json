@@ -1,0 +1,1033 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "product",
+      "blocks": {
+        "icon_gKrh77": {
+          "type": "icon",
+          "settings": {
+            "icon_name": "icon-award",
+            "image": "shopify://shop_images/stars.png",
+            "icon_size": 80,
+            "icon_color": "#cba546",
+            "text": "<p><a href=\"#judgeme_product_reviews\" title=\"Product reviews\">{{ product.metafields.reviews.rating | metafield_tag }} / {{ product.metafields.reviews.rating_count.value }} Reviews</a></p>",
+            "text_font_size": "body-medium",
+            "width": "full",
+            "padding_bottom": 6
+          }
+        },
+        "title_k3GUnW": {
+          "type": "title",
+          "disabled": true,
+          "settings": {
+            "subheading_option": "vendor",
+            "heading_font_size": "heading-large",
+            "padding_bottom": 8
+          }
+        },
+        "divider_bgLQ4m": {
+          "type": "divider",
+          "settings": {
+            "show_line": true,
+            "padding_bottom": 10
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "text_font_size": "body-large",
+            "padding_bottom": 0
+          }
+        },
+        "icon_BjcatJ": {
+          "type": "icon",
+          "settings": {
+            "icon_name": "icon-check",
+            "icon_size": 20,
+            "icon_color": "",
+            "text": "<p>{{ product.metafields.product.key_outcome_1.value }}</p>",
+            "text_font_size": "body-small",
+            "width": "full",
+            "padding_bottom": 4
+          }
+        },
+        "icon_tbzmjx": {
+          "type": "icon",
+          "settings": {
+            "icon_name": "icon-check",
+            "icon_size": 20,
+            "icon_color": "",
+            "text": "<p>{{ product.metafields.product.key_outcome_2.value }}</p>",
+            "text_font_size": "body-small",
+            "width": "full",
+            "padding_bottom": 4
+          }
+        },
+        "icon_xh7iLV": {
+          "type": "icon",
+          "settings": {
+            "icon_name": "icon-check",
+            "icon_size": 20,
+            "icon_color": "",
+            "text": "<p>{{ product.metafields.product.key_outcome_3.value }}</p>",
+            "text_font_size": "body-small",
+            "width": "full",
+            "padding_bottom": 8
+          }
+        },
+        "divider_rVPRwQ": {
+          "type": "divider",
+          "settings": {
+            "show_line": false,
+            "padding_bottom": 15
+          }
+        },
+        "buttons": {
+          "type": "buttons",
+          "settings": {
+            "show_quantity": false,
+            "button_type": "btn--primary",
+            "button_style": "btn--solid",
+            "show_payment_button": true,
+            "button_type_dynamic": "btn--secondary",
+            "button_style_dynamic": "btn--solid",
+            "show_gift_card_recipient": false,
+            "padding_bottom": 6
+          }
+        },
+        "code_rzD3yc": {
+          "type": "code",
+          "settings": {
+            "custom_class": "",
+            "code": "<div id='ss-trust-badge'></div>",
+            "padding_bottom": 8
+          }
+        },
+        "accordion_hAnaT6": {
+          "type": "accordion",
+          "settings": {
+            "show_description": false,
+            "show_read_more": true,
+            "default_open": false,
+            "heading": "DETAILS & SPECS",
+            "text": "{{ product.metafields.custom.feature_content | metafield_tag }}",
+            "padding_bottom": 0
+          }
+        },
+        "accordion_rLDqMb": {
+          "type": "accordion",
+          "settings": {
+            "show_description": false,
+            "show_read_more": false,
+            "default_open": false,
+            "heading": "WHY IT WORKS",
+            "text": "{{ product.metafields.product.why_it_works | metafield_tag }}",
+            "padding_bottom": 0
+          }
+        },
+        "accordion_nqLCaa": {
+          "type": "accordion",
+          "settings": {
+            "show_description": false,
+            "show_read_more": false,
+            "default_open": false,
+            "heading": "HOW TO USE",
+            "text": "{{ product.metafields.product.how_to_use | metafield_tag }}",
+            "padding_bottom": 16
+          }
+        },
+        "code_h8d6PP": {
+          "type": "code",
+          "settings": {
+            "custom_class": "",
+            "code": "<a \n  href=\"#shopify-section-template--17075860144197__section_accordion_group_3XamJT\"\n  class=\"FAQ-link\"\n>\n  Frequently Asked Questions\n</a>",
+            "padding_bottom": 16
+          }
+        },
+        "judge_me_reviews_review_snippet_widget_d3cmtd": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_snippet_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        },
+        "upsell_by_amp_embedded_product_wVQabr": {
+          "type": "shopify://apps/upsell-by-amp/blocks/embedded-product/04a7ddf7-3a4c-4228-9a44-33ba2380f058",
+          "settings": {
+            "override_url": ""
+          }
+        },
+        "upsell_koala_bundles_deals_block_6zapcB": {
+          "type": "shopify://apps/upsell-koala-bundles/blocks/deals-block/2b951f75-113f-4fca-bdf3-c92703235716",
+          "disabled": true,
+          "settings": {
+            "product": "{{product}}"
+          }
+        }
+      },
+      "block_order": [
+        "icon_gKrh77",
+        "title_k3GUnW",
+        "divider_bgLQ4m",
+        "price",
+        "icon_BjcatJ",
+        "icon_tbzmjx",
+        "icon_xh7iLV",
+        "divider_rVPRwQ",
+        "buttons",
+        "code_rzD3yc",
+        "accordion_hAnaT6",
+        "accordion_rLDqMb",
+        "accordion_nqLCaa",
+        "code_h8d6PP",
+        "judge_me_reviews_review_snippet_widget_d3cmtd",
+        "upsell_by_amp_embedded_product_wVQabr",
+        "upsell_koala_bundles_deals_block_6zapcB"
+      ],
+      "custom_css": [
+        "/* Mobile (default) */.metafield-rich_text_field {font-size: 14px;}",
+        " /* Desktop media query (adjust 768px if needed) */@media (min-width: 768px) {.metafield-rich_text_field {font-size: 16px; }}"
+      ],
+      "settings": {
+        "product_sticky_enable": true,
+        "variant_image_scroll": true,
+        "show_cart_bar": true,
+        "enable_zoom": true,
+        "enable_video_looping": false,
+        "image_layout": "stacked",
+        "image_size": "small",
+        "mobile_image_style": "thumbs",
+        "color_scheme": "scheme-1",
+        "padding_top": 15,
+        "padding_bottom": 25
+      }
+    },
+    "ss_scrolling_logo_cloud_tdi9Hx": {
+      "type": "ss-scrolling-logo-cloud",
+      "blocks": {
+        "slide_iezTxD": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/new-york-times_e5522b91-2ccb-4449-b887-3adce2bca17e.svg",
+            "link": ""
+          }
+        },
+        "slide_PGQfxX": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/wall-street-journal_55986035-2cf5-4a15-b8fc-6e5524d90b15.svg",
+            "link": ""
+          }
+        },
+        "slide_aHXECg": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/glamour-seeklogo_1_01faa3b1-d481-40e6-b66d-342c9f579bfe.svg",
+            "link": ""
+          }
+        },
+        "slide_9wXCeC": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Cosmopolitan_logo_1_a3068584-9a33-4bc8-aab8-2bb4394d1e75.svg",
+            "link": ""
+          }
+        },
+        "slide_EmBVkf": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/theknot-logo_bc3b56dc-2766-47a6-bdc3-b5013c4ebe10.svg",
+            "link": ""
+          }
+        },
+        "slide_gaHCxz": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/refinery29.svg",
+            "link": ""
+          }
+        },
+        "slide_CE3TPi": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Vector_f8e848c2-23ad-448a-81ed-8ca0ff20a2fc.svg",
+            "link": ""
+          }
+        },
+        "slide_N7Kmtk": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Vector_1.svg",
+            "link": ""
+          }
+        },
+        "slide_KknyFy": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Group_1171275371.svg",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "slide_iezTxD",
+        "slide_PGQfxX",
+        "slide_aHXECg",
+        "slide_9wXCeC",
+        "slide_EmBVkf",
+        "slide_gaHCxz",
+        "slide_CE3TPi",
+        "slide_N7Kmtk",
+        "slide_KknyFy"
+      ],
+      "settings": {
+        "ss-title": "AS FEATURED ON",
+        "heading_custom": true,
+        "heading_font": "sans-serif",
+        "header_size": 14,
+        "header_align": "center",
+        "scrolling_velocity": 100,
+        "pause_hover": false,
+        "shadow": false,
+        "sliders_mt": 16,
+        "logo_padding_top": 0,
+        "logo_padding_bottom": 0,
+        "slider_gap": 58,
+        "slider_gap_mobile": 50,
+        "slider_direction": "left",
+        "icon_width": 100,
+        "header_color": "#ffffff",
+        "border_color": "#ffffff",
+        "background-color": "#242540",
+        "slider-background-color": "#242540",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top": 24,
+        "padding_bottom": 24,
+        "full_width": true,
+        "content_width": 120,
+        "border_thickness": 0,
+        "lazy": true
+      }
+    },
+    "ss_steps_6_TQrxKM": {
+      "type": "ss-steps-6",
+      "blocks": {
+        "step_i7peYr": {
+          "type": "step",
+          "settings": {
+            "title": "Pick a Card & Spark the Conversation",
+            "text": "<p>Each question is crafted to spark vulnerability, laughter, and real talk—helping you break free from routine and rediscover each other.</p>"
+          }
+        },
+        "step_br6VnQ": {
+          "type": "step",
+          "settings": {
+            "title": "Listen Deeply—No Distractions, Just Presence",
+            "text": "<p>Each question is <strong>crafted to spark vulnerability, laughter, and real talk</strong>—helping you <strong>break free from routine</strong> and rediscover each other.</p>"
+          }
+        },
+        "step_PGhmez": {
+          "type": "step",
+          "settings": {
+            "title": "Reflect & Deepen Your Bond",
+            "text": "<p>End each session with <strong>a guided reflection card</strong>, helping you <strong>process insights, appreciate each other, and grow together.</strong></p>"
+          }
+        }
+      },
+      "block_order": [
+        "step_i7peYr",
+        "step_br6VnQ",
+        "step_PGhmez"
+      ],
+      "disabled": true,
+      "settings": {
+        "heading": "<p>The 3-Step Science of Deeper Connection</p>",
+        "heading_custom": true,
+        "heading_font": "ibm_plex_sans_n7",
+        "heading_size": 28,
+        "heading_size_mobile": 22,
+        "heading_height": 130,
+        "heading_width": 86,
+        "heading_align": "left",
+        "heading_align_mobile": "left",
+        "sub_heading": "<p>The <strong>Intimacy Deck</strong> isn’t just a game—it’s a <strong>relationship catalyst</strong> powered by psychology. This <strong>simple yet powerful 3-step process</strong> helps you unlock deeper emotional intimacy, one conversation at a time.</p>",
+        "sub_heading_custom": true,
+        "sub_heading_font": "ibm_plex_sans_n5",
+        "sub_heading_size": 18,
+        "sub_heading_size_mobile": 16,
+        "sub_heading_height": 130,
+        "sub_heading_width": 70,
+        "sub_heading_mt": 16,
+        "sub_heading_mt_mobile": 12,
+        "sub_heading_align": "left",
+        "sub_heading_align_mobile": "left",
+        "items_gap": 26,
+        "items_gap_mobile": 22,
+        "items_mt_mobile": 24,
+        "step_gap": 6,
+        "step_gap_mobile": 12,
+        "number_custom": true,
+        "number_font": "ibm_plex_sans_n4",
+        "number_size": 32,
+        "number_size_mobile": 22,
+        "number_height": 100,
+        "title_custom": true,
+        "title_font": "ibm_plex_sans_n7",
+        "title_size": 20,
+        "title_size_mobile": 18,
+        "title_height": 130,
+        "text_custom": false,
+        "text_font": "ibm_plex_sans_n4",
+        "text_size": 18,
+        "text_size_mobile": 14,
+        "text_height": 150,
+        "text_mt": 6,
+        "text_mt_mobile": 6,
+        "number_color": "#ab8c52",
+        "title_color": "#242540",
+        "text_color": "#242540",
+        "heading_color": "#242540",
+        "sub_heading_color": "#242540",
+        "background_color": "#ffffff",
+        "background_gradient": "",
+        "border_color": "#000000",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "margin_horizontal": 0,
+        "margin_horizontal_mobile": 0,
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "padding_horizontal": 3,
+        "padding_horizontal_mobile": 1.5,
+        "full_width": false,
+        "content_width": 1200,
+        "border_thickness": 0,
+        "section_radius": 0
+      }
+    },
+    "section_press_logos_LRgM3U": {
+      "type": "section-press-logos",
+      "disabled": true,
+      "settings": {
+        "enable_heading_slider": true,
+        "logo_opacity": 100,
+        "title": "",
+        "color_scheme": "",
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    },
+    "ss_trust_badges_pro_FP6r9a": {
+      "type": "ss-trust-badges-pro",
+      "blocks": {
+        "item_mh8DrW": {
+          "type": "item",
+          "settings": {
+            "icon": "guarantee",
+            "text": "{{ product.metafields.product.cutline.value }}",
+            "url": "",
+            "action": false,
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "controls": true,
+            "autoplay": true,
+            "loop": true
+          }
+        },
+        "item_hQjtiC": {
+          "type": "item",
+          "settings": {
+            "icon": "time",
+            "text": "30-Day Returns",
+            "url": "",
+            "action": false,
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "controls": true,
+            "autoplay": true,
+            "loop": true
+          }
+        },
+        "item_fhe4rc": {
+          "type": "item",
+          "settings": {
+            "icon": "truck",
+            "text": "Free US Shipping*",
+            "url": "",
+            "action": false,
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "controls": true,
+            "autoplay": true,
+            "loop": true
+          }
+        }
+      },
+      "block_order": [
+        "item_mh8DrW",
+        "item_hQjtiC",
+        "item_fhe4rc"
+      ],
+      "settings": {
+        "badge_position": "below_buy",
+        "heading": "",
+        "heading_custom": false,
+        "heading_font": "assistant_n4",
+        "heading_size": 48,
+        "heading_size_mobile": 32,
+        "heading_height": 130,
+        "heading_align": "center",
+        "heading_align_mobile": "center",
+        "items_row": 3,
+        "items_row_mobile": 3,
+        "items_gap": 10,
+        "items_gap_mobile": 8,
+        "items_mt": 0,
+        "badge_icon_size": 26,
+        "badge_icon_size_mobile": 20,
+        "icon_align": "center",
+        "icon_align_mobile": "center",
+        "text_custom": false,
+        "text_font": "assistant_n4",
+        "text_size": 12,
+        "text_size_mobile": 12,
+        "text_height": 130,
+        "text_align": "center",
+        "text_align_mobile": "center",
+        "text_mt": 6,
+        "modal_width": 70,
+        "modal_width_mobile": 100,
+        "modal_padding_vertical": 0,
+        "modal_padding_vertical_mobile": 0,
+        "modal_padding_horizontal": 0,
+        "modal_padding_horizontal_mobile": 0,
+        "modal_radius": 16,
+        "modal_border_thickness": 0,
+        "modal_overlay": 50,
+        "close_size": 42,
+        "close_size_mobile": 42,
+        "close_icon_size": 16,
+        "close_icon_size_mobile": 16,
+        "modal_video_ratio": "landscape",
+        "modal_video_ratio_mobile": "landscape",
+        "text_color": "#242540",
+        "icon_color": "#ab8c52",
+        "close_bg": "#000000",
+        "close_icon": "#ffffff",
+        "heading_color": "#000000",
+        "background_color": "#ffffff",
+        "background_gradient": "",
+        "border_color": "#000000",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top": 12,
+        "padding_bottom": 12,
+        "padding_horizontal": 0,
+        "padding_horizontal_mobile": 0,
+        "border_thickness": 0,
+        "lazy": true
+      }
+    },
+    "1740941976c25ca2d4": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_featured_carousel_Fr8KeF": {
+          "type": "shopify://apps/judge-me-reviews/blocks/featured_carousel/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "maxwidth": 1080
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_featured_carousel_Fr8KeF"
+      ],
+      "disabled": true,
+      "settings": {
+        "include_margins": false
+      }
+    },
+    "section_rich_text_RejG6y": {
+      "type": "section-rich-text",
+      "blocks": {
+        "heading_dQkpVB": {
+          "type": "heading",
+          "settings": {
+            "title": "Why Couples Love the Intimacy Deck",
+            "heading_font_size": "heading-large",
+            "padding_bottom": 20,
+            "heading_tag": "automatic"
+          }
+        },
+        "text_q4UNn7": {
+          "type": "text",
+          "settings": {
+            "text": "<ul><li><strong>Reignite Your Connection:</strong> Turn everyday moments into meaningful conversations.</li></ul><p></p><ul><li><strong>Strengthen Emotional Intimacy:</strong> Build trust and understanding through guided prompts.</li></ul><p></p><ul><li><strong>Perfect for All Relationships:</strong> Designed for couples of any stage – dating, engaged, or married.</li></ul><p></p><ul><li><strong>Portable & Easy-to-Use:</strong> Take it anywhere – perfect for date nights, road trips, or quiet evenings.</li></ul><p></p><ul><li><strong>Expert-Backed Approach:</strong> Designed by relationship psychology for deeper, lasting connections.</li></ul>",
+            "text_font_size": "body-medium",
+            "padding_bottom": 16
+          }
+        }
+      },
+      "block_order": [
+        "heading_dQkpVB",
+        "text_q4UNn7"
+      ],
+      "disabled": true,
+      "custom_css": [
+        "@media (max-width: 768px) {#Rte--template--16977268408389__section_rich_text_RejG6y > div.hero__content__wrapper.text-left.wrapper > div > h2 {font-size: 22px !important; text-align: center !important; }}"
+      ],
+      "settings": {
+        "align_text": "text-left",
+        "width": "wrapper",
+        "image": "shopify://shop_images/Category_Romantic_Connection_1.jpg",
+        "image_mobile": "shopify://shop_images/Product_category-romantic_relationship_1.jpg",
+        "color_scheme": "scheme-10",
+        "overlay_opacity": 55,
+        "show_overlay_text": false,
+        "padding_top": 50,
+        "padding_bottom": 50
+      }
+    },
+    "scientific_feature_section_6ezxdA": {
+      "type": "scientific-feature-section",
+      "settings": {
+        "heading": "Conversation Magic, Backed by Science",
+        "heading_color": "#1a1a1a",
+        "content": "<p>Crafted with principles from psychology and behavioral science, the {{ product.title }} helps spark conversation, build trust, and create unforgettable moments — anytime, anywhere.</p>",
+        "content_color": "#454545",
+        "slideshow_on_mobile": true,
+        "autoplay": 5000,
+        "bg_color": "#ffffff",
+        "padding_top_desktop": 64,
+        "padding_bottom_desktop": 64,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 32
+      }
+    },
+    "section_rich_text_yiHCd4": {
+      "type": "section-rich-text",
+      "blocks": {
+        "heading_44wK3Q": {
+          "type": "heading",
+          "settings": {
+            "title": "Conversation Magic, Backed by Science",
+            "heading_font_size": "heading-large",
+            "padding_bottom": 16,
+            "heading_tag": "automatic"
+          }
+        },
+        "text_T3biJm": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Crafted with principles from psychology and behavioral science, the {{ product.title }} helps spark conversation, build trust, and create unforgettable moments — anytime, anywhere.</p>",
+            "text_font_size": "body-medium",
+            "padding_bottom": 16
+          }
+        }
+      },
+      "block_order": [
+        "heading_44wK3Q",
+        "text_T3biJm"
+      ],
+      "disabled": true,
+      "settings": {
+        "align_text": "text-center",
+        "width": "wrapper",
+        "color_scheme": "",
+        "overlay_opacity": 0,
+        "show_overlay_text": false,
+        "padding_top": 50,
+        "padding_bottom": 10
+      }
+    },
+    "section_text_row_LUEeFD": {
+      "type": "section-text-row",
+      "blocks": {
+        "icon_yaJwxW": {
+          "type": "icon",
+          "settings": {
+            "icon_name": "icon-shield",
+            "icon_size": 30,
+            "icon_color": "",
+            "title": "{{ product.metafields.product[\"P-Benefit-1-Title\"].value }}",
+            "heading_font_size": "heading-x-small",
+            "text": "",
+            "text_font_size": "body-small",
+            "heading_tag": "automatic"
+          }
+        }
+      },
+      "block_order": [
+        "icon_yaJwxW"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "",
+        "heading_font_size": "heading-medium",
+        "align_heading": "text-center",
+        "align_text": "text-center",
+        "icon_alignment": "icon--top",
+        "width": "wrapper",
+        "align_columns": "flex-align-top",
+        "layout": "grid",
+        "grid": 3,
+        "layout_mobile": "slider",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 50,
+        "heading_tag": "automatic"
+      }
+    },
+    "section_rich_text_XcAGaK": {
+      "type": "section-rich-text",
+      "blocks": {
+        "subheading_Naebf7": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "US VS THEM",
+            "padding_bottom": 10
+          }
+        },
+        "heading_QTWCCe": {
+          "type": "heading",
+          "settings": {
+            "title": "Build Intimacy Without Breaking the Bank",
+            "heading_font_size": "heading-large",
+            "padding_bottom": 16,
+            "heading_tag": "automatic"
+          }
+        },
+        "text_B3tLXa": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Over 200,000 couples have chosen this powerful tool to reconnect and strengthen their relationship—without the price of therapy</p>",
+            "text_font_size": "body-medium",
+            "padding_bottom": 0
+          }
+        }
+      },
+      "block_order": [
+        "subheading_Naebf7",
+        "heading_QTWCCe",
+        "text_B3tLXa"
+      ],
+      "disabled": true,
+      "settings": {
+        "align_text": "text-center",
+        "width": "wrapper--narrow",
+        "color_scheme": "scheme-3",
+        "overlay_opacity": 0,
+        "show_overlay_text": false,
+        "padding_top": 50,
+        "padding_bottom": 50
+      }
+    },
+    "ss_comparison_table_2_Kd697V": {
+      "type": "ss-comparison-table-2",
+      "blocks": {
+        "item_fDeaW8": {
+          "type": "item",
+          "settings": {
+            "row_heading": "Reignites the Spark in Relationships",
+            "first_icon": "yes",
+            "second_icon": "yes",
+            "third_icon": "no"
+          }
+        },
+        "item_prpR3U": {
+          "type": "item",
+          "settings": {
+            "row_heading": "Developed by Relationship Experts",
+            "first_icon": "yes",
+            "second_icon": "yes",
+            "third_icon": "no"
+          }
+        },
+        "item_VDA6RB": {
+          "type": "item",
+          "settings": {
+            "row_heading": "Trusted by Over 100,000 Couples",
+            "first_icon": "yes",
+            "second_icon": "yes",
+            "third_icon": "no"
+          }
+        },
+        "item_q7CdA8": {
+          "type": "item",
+          "settings": {
+            "row_heading": "Affordable and Accessible",
+            "first_icon": "yes",
+            "second_icon": "no",
+            "third_icon": "no"
+          }
+        },
+        "item_fYCjCG": {
+          "type": "item",
+          "settings": {
+            "row_heading": "Heals Emotional Disconnect",
+            "first_icon": "yes",
+            "second_icon": "yes",
+            "third_icon": "no"
+          }
+        }
+      },
+      "block_order": [
+        "item_fDeaW8",
+        "item_prpR3U",
+        "item_VDA6RB",
+        "item_q7CdA8",
+        "item_fYCjCG"
+      ],
+      "disabled": true,
+      "custom_css": [
+        ".section-template--16977268408389__ss_comparison_table_2_Kd697V-settings * {font-family: \"Inter\", sans-serif !important; font-size: 16px !important; font-weight: 500 !important; color: #333 !important;}",
+        ".product-other-item-template--16977268408389__ss_comparison_table_2_Kd697V.active h3 {color: #fff !important;}",
+        "@media (max-width: 768px) {.section-template--16977268408389__ss_comparison_table_2_Kd697V-settings * {font-size: 11px !important; }}"
+      ],
+      "settings": {
+        "heading": "",
+        "heading_custom": true,
+        "heading_font": "ibm_plex_sans_n5",
+        "heading_size": 36,
+        "heading_height": 100,
+        "heading_align": "center",
+        "table_mt": 0,
+        "table_radius": 10,
+        "table_border_thickness": 3,
+        "table_column_active": "1",
+        "table_column_active_radius": 10,
+        "first_heading": "Intimacy Deck",
+        "second_heading": "Therapists",
+        "third_heading": "Other Cards",
+        "table_heading_custom": true,
+        "table_heading_font": "ibm_plex_sans_n5",
+        "table_heading_size": 20,
+        "table_heading_size_mobile": 12,
+        "table_heading_height": 100,
+        "table_heading_align": "center",
+        "table_heading_padding_horizontal": 12,
+        "table_heading_padding_horizontal_mobile": 4,
+        "table_heading_padding_vertical": 16,
+        "table_heading_padding_vertical_mobile": 10,
+        "table_row_padding_horizontal": 10,
+        "table_row_padding_horizontal_mobile": 4,
+        "table_row_padding_vertical": 20,
+        "table_row_padding_vertical_mobile": 10,
+        "table_row_heading_custom": true,
+        "table_row_heading_font": "ibm_plex_sans_n4",
+        "table_row_heading_size": 20,
+        "table_row_heading_size_mobile": 10,
+        "table_row_heading_height": 100,
+        "table_row_heading_align": "center",
+        "table_icon_size": 26,
+        "table_icon_size_mobile": 20,
+        "heading_color": "#242540",
+        "table_border_color": "#d7d8d5",
+        "table_heading_color": "#242540",
+        "table_heading_active_color": "#ffffff",
+        "table_column_active_bg_color": "#be2933",
+        "table_row_heading_color": "#040200",
+        "table_icon_color": "#be2933",
+        "table_icon_active_color": "#ffffff",
+        "background_color": "#f4f4f4",
+        "background_gradient": "",
+        "border_color": "#000000",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top": 0,
+        "padding_bottom": 52,
+        "padding_horizontal": 5,
+        "padding_horizontal_mobile": 1.5,
+        "full_width": false,
+        "content_width": 150,
+        "border_thickness": 0
+      }
+    },
+    "section_accordion_group_3XamJT": {
+      "type": "section-accordion-group",
+      "blocks": {
+        "heading_KwVqRC": {
+          "type": "heading",
+          "settings": {
+            "title": "Frequently Asked Questions"
+          }
+        },
+        "question_6kbr7D": {
+          "type": "question",
+          "settings": {
+            "default_open": false,
+            "title": "{{ product.metafields.custom.faq_question_1.value }}",
+            "content": "{{ product.metafields.custom.faq_answer_1 | metafield_tag }}",
+            "show_icon": true,
+            "icon_name": "icon-award",
+            "icon_size": 20,
+            "icon_color": "#545454"
+          }
+        },
+        "question_BeqJKm": {
+          "type": "question",
+          "settings": {
+            "default_open": false,
+            "title": "{{ product.metafields.custom.faq_question_2.value }}",
+            "content": "{{ product.metafields.custom.faq_answer_2 | metafield_tag }}",
+            "show_icon": true,
+            "icon_name": "icon-chat",
+            "icon_size": 20,
+            "icon_color": "#545454"
+          }
+        },
+        "question_KGFLVP": {
+          "type": "question",
+          "settings": {
+            "default_open": false,
+            "title": "{{ product.metafields.custom.faq_question_3.value }}",
+            "content": "{{ product.metafields.custom.faq_answer_3 | metafield_tag }}",
+            "show_icon": true,
+            "icon_name": "icon-info-empty",
+            "icon_size": 20,
+            "icon_color": "#545454"
+          }
+        },
+        "question_4CKXjR": {
+          "type": "question",
+          "settings": {
+            "default_open": false,
+            "title": "{{ product.metafields.custom.faq_question_4.value }}",
+            "content": "{{ product.metafields.custom.faq_answer_4 | metafield_tag }}",
+            "show_icon": true,
+            "icon_name": "icon-cloud",
+            "icon_size": 20,
+            "icon_color": "#545454"
+          }
+        },
+        "question_apARV3": {
+          "type": "question",
+          "settings": {
+            "default_open": false,
+            "title": "{{ product.metafields.custom.faq_question_5.value }}",
+            "content": "{{ product.metafields.custom.faq_answer_5 | metafield_tag }}",
+            "show_icon": true,
+            "icon_name": "icon-leaf",
+            "icon_size": 20,
+            "icon_color": "#545454"
+          }
+        },
+        "question_wHKPdx": {
+          "type": "question",
+          "settings": {
+            "default_open": false,
+            "title": "{{ product.metafields.custom.faq_question_6.value }}",
+            "content": "{{ product.metafields.custom.faq_answer_6 | metafield_tag }}",
+            "show_icon": true,
+            "icon_name": "icon-flare",
+            "icon_size": 20,
+            "icon_color": "#545454"
+          }
+        },
+        "question_jPnjCe": {
+          "type": "question",
+          "settings": {
+            "default_open": false,
+            "title": "{{ product.metafields.custom.faq_question_7.value }}",
+            "content": "{{ product.metafields.custom.faq_answer_7 | metafield_tag }}",
+            "show_icon": true,
+            "icon_name": "icon-award",
+            "icon_size": 20,
+            "icon_color": "#545454"
+          }
+        },
+        "question_YDp6yE": {
+          "type": "question",
+          "settings": {
+            "default_open": false,
+            "title": "{{ product.metafields.custom.faq_question_8.value }}",
+            "content": "{{ product.metafields.custom.faq_answer_8 | metafield_tag }}",
+            "show_icon": true,
+            "icon_name": "icon-award",
+            "icon_size": 20,
+            "icon_color": "#545454"
+          }
+        }
+      },
+      "block_order": [
+        "heading_KwVqRC",
+        "question_6kbr7D",
+        "question_BeqJKm",
+        "question_KGFLVP",
+        "question_4CKXjR",
+        "question_apARV3",
+        "question_wHKPdx",
+        "question_jPnjCe",
+        "question_YDp6yE"
+      ],
+      "settings": {
+        "heading_font_size": "heading-medium",
+        "question_font_size": "heading-small",
+        "width": "wrapper",
+        "columns": "1",
+        "color_scheme": "",
+        "padding_top": 50,
+        "padding_bottom": 50
+      }
+    },
+    "1731961733f121455e": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_MG8rTP": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_MG8rTP"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "related": {
+      "type": "related",
+      "blocks": {
+        "related": {
+          "type": "related",
+          "settings": {
+            "product_recommendations_heading": "You Might Like...",
+            "limit": 5
+          }
+        }
+      },
+      "block_order": [
+        "related"
+      ],
+      "settings": {
+        "enable_tabs": true,
+        "heading_alignment": "text-center",
+        "heading_font_size": "heading-small",
+        "layout_mobile": "slider",
+        "color_scheme": "",
+        "padding_top": 25,
+        "padding_bottom": 35
+      }
+    }
+  },
+  "order": [
+    "main",
+    "ss_scrolling_logo_cloud_tdi9Hx",
+    "ss_steps_6_TQrxKM",
+    "section_press_logos_LRgM3U",
+    "ss_trust_badges_pro_FP6r9a",
+    "1740941976c25ca2d4",
+    "section_rich_text_RejG6y",
+    "scientific_feature_section_6ezxdA",
+    "section_rich_text_yiHCd4",
+    "section_text_row_LUEeFD",
+    "section_rich_text_XcAGaK",
+    "ss_comparison_table_2_Kd697V",
+    "section_accordion_group_3XamJT",
+    "1731961733f121455e",
+    "related"
+  ]
+}

@@ -1,0 +1,510 @@
+{%- comment -%}
+  Simple Video Section
+  
+  Clean video section with heading, text, and video
+  Based on the working video accordion section
+{%- endcomment -%}
+
+<section 
+  class="simple-video-section"
+  data-section-id="{{ section.id }}"
+  style="
+    background-color: {{ section.settings.background_color }};
+    padding-top: {{ section.settings.section_padding_top }}px;
+    padding-bottom: {{ section.settings.section_padding_bottom }}px;
+  ">
+  
+  <div class="container">
+    <!-- Section Header -->
+    {% if section.settings.section_subtitle != blank or section.settings.section_heading != blank or section.settings.section_text != blank %}
+      <div class="section-header">
+        {% if section.settings.section_subtitle != blank %}
+          <span class="section-subtitle">{{ section.settings.section_subtitle }}</span>
+        {% endif %}
+        {% if section.settings.section_heading != blank %}
+          <h2 class="section-title {{ section.settings.heading_size }}">
+            {{ section.settings.section_heading }}
+          </h2>
+        {% endif %}
+        {% if section.settings.section_text != blank %}
+          <div class="section-text">
+            {{ section.settings.section_text }}
+          </div>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    <!-- Video Container -->
+    <div class="video-container" style="max-width: {{ section.settings.video_max_width }}px;">
+      {% if section.settings.video != blank %}
+        {{ section.settings.video | video_tag: 
+            autoplay: section.settings.video_autoplay,
+            loop: section.settings.video_loop,
+            muted: section.settings.video_muted,
+            controls: section.settings.video_controls,
+            class: 'showcase-video',
+            id: 'showcase-video-' | append: section.id
+        }}
+      {% elsif section.settings.video_url != blank %}
+        {%- liquid
+          assign video_id = ''
+          assign video_type = ''
+          
+          if section.settings.video_url contains 'youtube.com/watch' or section.settings.video_url contains 'youtu.be/'
+            assign video_type = 'youtube'
+            if section.settings.video_url contains 'v='
+              assign video_id = section.settings.video_url | split: 'v=' | last | split: '&' | first
+            elsif section.settings.video_url contains 'youtu.be/'
+              assign video_id = section.settings.video_url | split: 'youtu.be/' | last | split: '?' | first
+            endif
+          elsif section.settings.video_url contains 'vimeo.com'
+            assign video_type = 'vimeo'
+            assign video_id = section.settings.video_url | split: 'vimeo.com/' | last | split: '/' | last | split: '?' | first
+          endif
+        -%}
+        
+        {%- if video_type == 'youtube' and video_id != '' -%}
+          <div class="video-embed">
+            <iframe
+              src="https://www.youtube.com/embed/{{ video_id }}?rel=0&showinfo=0&autoplay={{ section.settings.video_autoplay | default: 0 }}&loop={{ section.settings.video_loop | default: 0 }}&mute={{ section.settings.video_muted | default: 0 }}&controls=1"
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              loading="lazy"
+            ></iframe>
+          </div>
+        {%- elsif video_type == 'vimeo' and video_id != '' -%}
+          <div class="video-embed">
+            <iframe
+              src="https://player.vimeo.com/video/{{ video_id }}?autoplay={{ section.settings.video_autoplay | default: 0 }}&loop={{ section.settings.video_loop | default: 0 }}&muted={{ section.settings.video_muted | default: 0 }}"
+              title="Vimeo video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              loading="lazy"
+            ></iframe>
+          </div>
+        {%- endif -%}
+      {% else %}
+        <div class="video-placeholder">
+          <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="64" height="64" rx="8" fill="#f0f0f0"/>
+            <path d="M24 20l16 12-16 12V20z" fill="#999"/>
+          </svg>
+          <p>Add a video in theme customizer</p>
+        </div>
+      {% endif %}
+    </div>
+
+    <!-- Button (optional) -->
+    {% if section.settings.button_text != blank %}
+      <div class="button-container">
+        <a href="{{ section.settings.button_url | default: '#' }}" class="btn {{ section.settings.button_style }}">
+          {{ section.settings.button_text }}
+        </a>
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+<style>
+  .simple-video-section {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .simple-video-section .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .section-header {
+    text-align: {{ section.settings.text_alignment }};
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .section-subtitle {
+    display: inline-block;
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0.6;
+    margin-bottom: 16px;
+    font-weight: 600;
+    color: {{ section.settings.text_color }};
+  }
+
+  .section-title {
+    margin: 0 0 20px 0;
+    line-height: 1.2;
+    font-weight: 700;
+    color: {{ section.settings.heading_color }};
+  }
+
+  .section-title.h1 {
+    font-size: clamp(32px, 5vw, 48px);
+  }
+
+  .section-title.h2 {
+    font-size: clamp(24px, 4vw, 36px);
+  }
+
+  .section-title.h3 {
+    font-size: clamp(20px, 3vw, 28px);
+  }
+
+  .section-title.display {
+    font-size: clamp(40px, 6vw, 64px);
+  }
+
+  .section-text {
+    font-size: {{ section.settings.text_size }}px;
+    line-height: 1.6;
+    color: {{ section.settings.text_color }};
+    opacity: 0.9;
+  }
+
+  .section-text p {
+    margin-bottom: 1rem;
+  }
+
+  .section-text p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Video Styles */
+  .video-container {
+    margin: 0 auto 40px;
+  }
+
+  .showcase-video {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  }
+
+  .video-embed {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  }
+
+  .video-embed iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
+  .video-placeholder {
+    aspect-ratio: 16/9;
+    background: #f8f8f8;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  }
+
+  .video-placeholder p {
+    color: #999;
+    margin-top: 16px;
+    font-size: 14px;
+  }
+
+  /* Button Styles */
+  .button-container {
+    text-align: center;
+    margin-top: 40px;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 12px 32px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+  }
+
+  .btn--primary {
+    background: var(--color-button);
+    color: var(--color-button-text);
+  }
+
+  .btn--primary:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+  }
+
+  .btn--secondary {
+    background: transparent;
+    color: var(--color-text);
+    border: 2px solid var(--color-text);
+  }
+
+  .btn--secondary:hover {
+    background: var(--color-text);
+    color: var(--color-background);
+  }
+
+  /* Mobile Styles */
+  @media (max-width: 767px) {
+    .section-header {
+      margin-bottom: 30px;
+    }
+
+    .showcase-video,
+    .video-embed {
+      border-radius: 8px;
+    }
+
+    .section-text {
+      font-size: calc({{ section.settings.text_size }}px - 2px);
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Simple Video Section",
+  "tag": "section",
+  "class": "simple-video-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "section_subtitle",
+      "label": "Subtitle",
+      "default": "INTRODUCING"
+    },
+    {
+      "type": "textarea",
+      "id": "section_heading",
+      "label": "Heading",
+      "default": "Your Heading Here"
+    },
+    {
+      "type": "richtext",
+      "id": "section_text",
+      "label": "Text Content",
+      "default": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Video"
+    },
+    {
+      "type": "video",
+      "id": "video",
+      "label": "Shopify Hosted Video"
+    },
+    {
+      "type": "text",
+      "id": "video_url",
+      "label": "Or Video URL",
+      "placeholder": "https://www.youtube.com/watch?v=...",
+      "info": "YouTube or Vimeo URL. This takes precedence over Shopify hosted video."
+    },
+    {
+      "type": "checkbox",
+      "id": "video_autoplay",
+      "label": "Autoplay",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "video_loop",
+      "label": "Loop",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "video_muted",
+      "label": "Muted",
+      "default": false,
+      "info": "Videos must be muted to autoplay"
+    },
+    {
+      "type": "checkbox",
+      "id": "video_controls",
+      "label": "Show Controls",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "video_max_width",
+      "label": "Maximum Video Width",
+      "min": 400,
+      "max": 1400,
+      "step": 100,
+      "unit": "px",
+      "default": 800
+    },
+    {
+      "type": "header",
+      "content": "Button (Optional)"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Learn More"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button Link"
+    },
+    {
+      "type": "select",
+      "id": "button_style",
+      "label": "Button Style",
+      "options": [
+        {
+          "value": "btn--primary",
+          "label": "Primary"
+        },
+        {
+          "value": "btn--secondary",
+          "label": "Secondary"
+        }
+      ],
+      "default": "btn--primary"
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "label": "Heading Size",
+      "options": [
+        {
+          "value": "h3",
+          "label": "Small"
+        },
+        {
+          "value": "h2",
+          "label": "Medium"
+        },
+        {
+          "value": "h1",
+          "label": "Large"
+        },
+        {
+          "value": "display",
+          "label": "Extra Large"
+        }
+      ],
+      "default": "h1"
+    },
+    {
+      "type": "range",
+      "id": "text_size",
+      "label": "Text Size",
+      "min": 14,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text Alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading Color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#666666"
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "section_padding_top",
+      "label": "Top Padding",
+      "min": 0,
+      "max": 150,
+      "step": 10,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "section_padding_bottom",
+      "label": "Bottom Padding",
+      "min": 0,
+      "max": 150,
+      "step": 10,
+      "unit": "px",
+      "default": 60
+    }
+  ],
+  "presets": [
+    {
+      "name": "Simple Video Section",
+      "settings": {
+        "section_subtitle": "HOW IT WORKS",
+        "section_heading": "From endless scroll to endless possibility",
+        "section_text": "<p>Transform your relationship with technology. Take back control of your time and attention with Helm.</p>",
+        "heading_size": "h1",
+        "text_alignment": "center"
+      }
+    }
+  ],
+  "disabled_on": {
+    "groups": ["header", "footer", "aside"]
+  }
+}
+{% endschema %}

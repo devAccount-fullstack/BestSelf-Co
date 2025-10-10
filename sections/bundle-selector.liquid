@@ -1,0 +1,20 @@
+<div class="bundle-options">
+  <p><strong>Bundle and Save:</strong></p>
+  <div class="bundle-grid">
+    {% assign bundles = "Single|1|0,2-Pack|2|13,3-Pack|3|28" | split: "," %}
+    {% for bundle in bundles %}
+      {% assign parts = bundle | split: "|" %}
+      {% assign label = parts[0] %}
+      {% assign qty = parts[1] %}
+      {% assign discount = parts[2] %}
+
+      <div class="bundle-option" data-qty="{{ qty }}">
+        {% if discount != "0" %}
+          <span class="discount">{{ discount }}% OFF</span>
+        {% endif %}
+        <img src="{{ 'bundle-' | append: qty | append: '.png' | asset_url }}" alt="{{ label }}">
+        <p><strong>{{ label }}</strong></p>
+      </div>
+    {% endfor %}
+  </div>
+</div>

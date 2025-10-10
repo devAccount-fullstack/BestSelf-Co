@@ -1,0 +1,81 @@
+/* Collection List */
+@media (min-width: 768px) and (max-width: 1440px){
+  .collection-list.grid{
+    gap: 16px;
+  }
+  .collection-item__info{
+    padding: 12px 8px;
+    font-size: 14px!important; 
+  }
+}
+/* Variants */
+.radio__fieldset--swatches .radio__buttons{
+  margin: 0!important;
+}
+.radio__fieldset--swatches .swatch__button, .radio__button{
+  padding: 0!important;
+}
+
+.sold-out,
+.sold-out + label{
+  display: none!important;
+}
+.swatch__button.sale::before{
+  content: unset!important;
+}
+.swatch__button--circle .sibling__link, .swatch__button--circle .swatch__link, .swatch__button--circle input ~ label{
+  margin: 4px!important;
+}
+/* Quick Add Button Desing */
+.quick__add-custom-wrapper .quick-add__holder,
+.quick__add-custom-wrapper .quick-add__holder:focus{
+  opacity:1;
+  animation: unset;
+  backdrop-filter: none;
+  position: unset;
+}
+.quick__add-custom-wrapper .quick-add__holder .quick-add__button{
+  margin-top: 7px;
+}
+.quick__add-custom-wrapper .quick-add__holder .quick-add__button span{
+  transition: unset!important;
+}
+.quick__add-custom-wrapper .quick-add__holder .quick-add__button:hover{
+  background: #242540 !important;
+  color: #fff !important;
+}
+.quick__add-custom-wrapper.quick--cart-hidden .quick-add__holder{
+  display:none;
+}
+@media (max-width: 768px) {
+    /* Quick Add Custom */
+    .quick__add-custom-wrapper .quick-add__holder .quick-add__button{
+        padding: 6px;
+        font-size: 0.8rem;
+        border-width: 1px;
+        transition: all 0.2sease-in-out;
+    }
+    /* Variant Legend */
+  .select__fieldset, .radio__fieldset{
+    grid-template-columns: minmax(0, 4rem) minmax(0, 100%);
+  }
+}
+/* Custom Scroll Wrapper */
+.form__wrapper .form__width  .scroll___link-wrapper {
+    margin-bottom: 0;
+    padding: 1rem 0;
+    border-top: 1px solid #d1cdc4;
+}
+.form__wrapper .form__width  .scroll___link-wrapper a{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 12px;
+}
+.form__wrapper .form__width  .scroll___link-wrapper a svg{
+  width: 16px;
+  height: auto;
+}
+.form__wrapper .form__width  .scroll___link-wrapper a svg polyline{
+  stroke: #212121;
+}

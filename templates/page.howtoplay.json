@@ -1,0 +1,105 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "section_hero_iKnwxH": {
+      "type": "section-hero",
+      "blocks": {
+        "heading_9C34hL": {
+          "type": "heading",
+          "settings": {
+            "title": "{{ page.title }}"
+          }
+        },
+        "text_7RFCUQ": {
+          "type": "text",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "heading_9C34hL",
+        "text_7RFCUQ"
+      ],
+      "settings": {
+        "image_1": "shopify://shop_images/Birthday_Deck_-_Desktop_-_English.jpg",
+        "link": "",
+        "width": "wrapper--full",
+        "height": "screen-height-one-third",
+        "flex_align_desktop": "align--middle-center-desktop",
+        "mobile_height": "screen-height-three-quarters--mobile",
+        "flex_align_mobile": "align--middle-center-mobile",
+        "overlay_opacity": 0,
+        "show_overlay_text": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "show_placeholder": true
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "subheading": "",
+        "show_title": true,
+        "show_content": true,
+        "align_text": "text-center",
+        "width": "wrapper--narrow",
+        "padding_top": 30,
+        "padding_bottom": 30
+      }
+    },
+    "section_products_image_DeVHFj": {
+      "type": "section-products-image",
+      "blocks": {
+        "products_cGA33p": {
+          "type": "products",
+          "settings": {
+            "product_list": "{{ page.metafields.custom.featured_product.value }}",
+            "layout_mobile": "slider"
+          }
+        },
+        "image_AHEGbp": {
+          "type": "image",
+          "settings": {
+            "image": "{{ page.metafields.custom.featured_product_image.value }}",
+            "mobile_height": "screen-height-one-half--mobile",
+            "title": "",
+            "flex_align": "align--middle-center",
+            "overlay_opacity": 0,
+            "overlay_color": "#000000",
+            "show_overlay_text": false,
+            "link_text": "",
+            "link": "",
+            "button_type": "btn--primary",
+            "button_size": "",
+            "button_style": "btn--solid",
+            "show_arrow": false,
+            "bg_color": "",
+            "color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "products_cGA33p",
+        "image_AHEGbp"
+      ],
+      "settings": {
+        "width": "wrapper--full-padded",
+        "reverse_blocks": false,
+        "padding_top": 50,
+        "padding_bottom": 50
+      }
+    }
+  },
+  "order": [
+    "section_hero_iKnwxH",
+    "main",
+    "section_products_image_DeVHFj"
+  ]
+}

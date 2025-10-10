@@ -1,0 +1,153 @@
+{% liquid
+  assign image = section.settings.image
+  assign width_headings_desk = section.settings.width_headings_desk
+  assign section_text = section.settings.section_text
+  assign section_title = section.settings.section_title
+  assign btn_text = section.settings.btn_text
+  assign btn_link = section.settings.btn_link
+
+  assign pt_mob = section.settings.pt_mob
+  assign pb_mob = section.settings.pb_mob
+  assign pt_tab = section.settings.pt_tab
+  assign pb_tab = section.settings.pb_tab
+  assign pt_desk = section.settings.pt_desk
+  assign pb_desk = section.settings.pb_desk
+%}
+
+{% render 'section-paddings',
+  section_id: section.id,
+  pt_mob: pt_mob,
+  pb_mob: pb_mob,
+  pt_tab: pt_tab,
+  pb_tab: pb_tab,
+  pt_desk: pt_desk,
+  pb_desk: pb_desk
+%}
+
+<div data-section-id="{{ section.id }}">
+  <div class="container-42">
+    <div class="tw-flex tw-flex-col-reverse md:tw-flex-row md:tw-items-center tw-gap-[26px] md:tw-justify-between">
+      <div class="md:tw-max-w-[366px]">
+        {% if section_title != blank %}
+          <div
+            style="--width-headings-desk: {{ width_headings_desk | append: 'px' }}"
+            class="tw-max-w-[var(--width-headings-desk)] tw-text-black tw-text-[28px] lg:tw-text-[48px] lg:tw-leading-[64px] tw-leading-[35px]"
+          >
+            {{ section_title }}
+          </div>
+        {% endif %}
+        {% if section_text != blank %}
+          <p class="tw-text-black tw-font-normal tw-text-base tw-mt-[11px]">
+            {{ section_text }}
+          </p>
+        {% endif %}
+        {% if btn_text != blank %}
+          <div class="lg:tw-mt-6 tw-mt-[25px]">
+            <a
+              href="{{ btn_link }}"
+              class="btn-42 btn-42--secondary !tw-min-h-10.5 md:!tw-min-h-12 tw-w-full md:tw-w-fit md:tw-min-w-[224px]"
+            >
+              <span>{{ btn_text }}</span>
+              {% render 'icon-42', name: 'btn-arrow' %}
+            </a>
+          </div>
+        {% endif %}
+      </div>
+
+      <div class="md:tw-w-[65.85%]">
+        {% if image != blank %}
+          <img src="{{ image | img_url: 'master' }}" alt="{{ image.alt }}" loading="lazy" class="tw-max-w-full">
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "42 Self journal",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "richtext",
+      "id": "section_title",
+      "label": "Section Title"
+    },
+    {
+      "type": "range",
+      "id": "width_headings_desk",
+      "min": 250,
+      "max": 366,
+      "step": 2,
+      "unit": "px",
+      "label": "Width headings desktop",
+      "default": 324
+    },
+    {
+      "type": "textarea",
+      "id": "section_text",
+      "label": "Section text"
+    },
+    {
+      "type": "text",
+      "id": "btn_text",
+      "label": "Button text"
+    },
+    {
+      "type": "url",
+      "id": "btn_link",
+      "label": "Button link"
+    },
+    {
+      "type": "header",
+      "content": "Padding Y settings"
+    },
+    {
+      "type": "number",
+      "id": "pt_mob",
+      "label": "Mobile padding top in px",
+      "default": 55
+    },
+    {
+      "type": "number",
+      "id": "pb_mob",
+      "label": "Mobile padding bottom in px",
+      "default": 49
+    },
+    {
+      "type": "number",
+      "id": "pt_tab",
+      "label": "Tablet padding top in px",
+      "default": 60
+    },
+    {
+      "type": "number",
+      "id": "pb_tab",
+      "label": "Tablet padding bottom in px",
+      "default": 60
+    },
+    {
+      "type": "number",
+      "id": "pt_desk",
+      "label": "Desktop padding top in px",
+      "default": 120
+    },
+    {
+      "type": "number",
+      "id": "pb_desk",
+      "label": "Desktop padding bottom in px",
+      "default": 120
+    }
+  ],
+  "presets": [
+    {
+      "name": "42 Self journal"
+    }
+  ]
+}
+{% endschema %}

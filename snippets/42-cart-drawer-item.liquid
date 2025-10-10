@@ -1,0 +1,150 @@
+{% comment %}
+  PARAMS:
+      cart_type => drawer, page STRING
+
+  Usage:
+  {% render 'cart-item' %}
+{% endcomment %}
+
+<article
+  @click="$store.cart.itemKeyWhichUpdating = item?.key"
+  class="tw-flex tw-gap-2.5 tw-overflow-hidden md:tw-gap-[11px]"
+>
+  {% comment %} Image {% endcomment %}
+  <a
+    :data-line-item-img="item?.key"
+    :href="item?.url"
+    aria-busy="false"
+    class="tw-relative tw-flex-shrink-0 tw-flex tw-justify-center tw-items-center tw-overflow-hidden tw-rounded-ra-10 tw-aspect-square tw-self-center tw-size-[90px] tw-bg-sc-blue/20 tw-border tw-border-sc-blue-20 md:tw-size-[121px]"
+  >
+    <img
+      :src="item?.image"
+      :alt="`Image of ${item?.product_title}`"
+      height="90px"
+      width="90px"
+      class="tw-w-full tw-h-auto tw-object-cover"
+    >
+
+    <div
+      x-cloak
+      x-show="$store.cart.itemKeyWhichUpdating === item.key && $store.cart.isUpdating"
+      class="tw-z-full tw-absolute tw-inset-0 tw-w-full tw-h-full tw-flex tw-justify-center tw-items-center tw-bg-black/30 tw-origin-center"
+    >
+      {%- render 'icon-42', name: 'loader' -%}
+      <span class="tw-sr-only">Loader</span>
+    </div>
+  </a>
+
+  {% comment %} Product Content {% endcomment %}
+  <div class="tw-flex tw-flex-col tw-justify-center tw-w-full">
+    <div class="tw-flex tw-flex-col tw-gap-1 tw-max-w-full tw-mb-3.5 lg:tw-gap-1.5 lg:tw-mb-7.5">
+      {% comment %} Title {% endcomment %}
+      <h3 class="tw-text-sm tw-font-bold tw-text-black md:tw-text-base md:tw-leading-normal">
+        <a
+          :href="item?.url"
+          :title="item?.product_title"
+          x-text="item?.product_title"
+          class="tw-block"
+        ></a>
+        <span
+          x-cloak
+          x-show="item?.selling_plan_allocation"
+          x-text="item?.selling_plan_allocation?.selling_plan.name"
+          class="tw-block tw-text-xs tw-text-sc-gray-primary tw-font-medium"
+        ></span>
+
+        <template x-if="item?.line_level_discount_allocations">
+          <template
+            x-for="discount_item in item?.line_level_discount_allocations"
+            :key="discount_item.discount_application.key"
+          >
+            <span
+              x-html="discount_item.discount_application.title"
+              class="tw-block tw-text-xs tw-text-sc-gray-primary tw-font-medium"
+            ></span>
+          </template>
+        </template>
+
+        <template x-if="$store['cart'].itemError[item.key]">
+          <span
+            x-html="$store['cart'].itemError[item.key]"
+            class="tw-block tw-text-xs tw-text-red-800 tw-font-medium"
+          ></span>
+        </template>
+      </h3>
+
+      {% comment %} Prices {% endcomment %}
+      <div class="tw-flex tw-items-baseline tw-gap-0.5 tw-shrink-0">
+        <strong
+          class="tw-text-sm tw-leading-4 tw-font-medium tw-text-black md:tw-text-[15px] md:tw-leading-[17px]"
+          x-text="window.formatMoney(item?.line_price)"
+        ></strong>
+
+        <template x-if="item?.compare_at_price > item?.price && !item?.selling_plan_allocation && item?.line_price === (item?.price * item?.quantity)">
+          <s
+            class="tw-text-sc-gray-primary tw-font-medium tw-text-[13px] tw-leading-4 tw-line-through"
+            x-text="window.formatMoney(item?.compare_at_price * item?.quantity)"
+          ></s>
+        </template>
+
+        <template x-if="item?.line_price < item?.price">
+          <s
+            class="tw-text-sc-gray-primary tw-font-medium tw-text-[13px] tw-leading-4 tw-line-through"
+            x-text="window.formatMoney(item?.price * item?.quantity)"
+          ></s>
+        </template>
+
+        <template x-if="item?.selling_plan_allocation?.compare_at_price > item?.price && item?.selling_plan_allocation">
+          <s
+            class="tw-text-sc-gray-primary tw-font-medium tw-text-[13px] tw-leading-4 tw-line-through"
+            x-text="window.formatMoney(item?.selling_plan_allocation?.compare_at_price * item?.quantity)"
+          ></s>
+        </template>
+      </div>
+    </div>
+
+    {% comment %} Quantity Buttons {% endcomment %}
+    <div class="tw-relative tw-flex tw-w-fit tw-h-9 tw-border tw-border-solid tw-border-sc-blue/50 tw-rounded-full md:tw-h-11 md:tw-min-w-[94px]">
+      <button
+        aria-label="Decrease quantity"
+        type="button"
+        @click="$store['cart'].debouncedChangeQuantity({ key: item?.key, quantity: item?.quantity - 1 })"
+        class="tw-pl-3.5 tw-pr-1 tw-flex tw-justify-center tw-items-center hover:tw-opacity-70 tw-transition-all tw-duration-250 tw-touch-manipulation"
+        :disabled="$store['cart'].isUpdating"
+      >
+        {% render 'icon-42', name: 'quantity-minus', class: 'tw-size-2.5' %}
+      </button>
+
+      <span
+        role="status"
+        aria-live="polite"
+        class="tw-font-primary tw-flex tw-justify-center tw-items-center tw-text-center tw-px-4"
+        x-text="item?.quantity"
+      ></span>
+
+      <button
+        aria-label="Increase quantity"
+        type="button"
+        @click="$store['cart'].debouncedChangeQuantity({ key: item?.key, quantity: item?.quantity + 1 })"
+        class="tw-pr-3.5 tw-pl-1 tw-flex tw-justify-center tw-items-center hover:tw-opacity-70 tw-transition-all tw-duration-250 tw-touch-manipulation"
+        :disabled="$store['cart'].isUpdating"
+      >
+        {% render 'icon-42', name: 'quantity-plus', class: 'tw-size-2.5' %}
+      </button>
+    </div>
+  </div>
+
+  {% comment %} Remove Item Button {% endcomment %}
+  <button
+    type="button"
+    @click="$store.cart.removeItem(item?.key)"
+    aria-label="Remove product from cart"
+    class="tw-flex tw-justify-center tw-items-center tw-size-3.5 tw-mr-2.5 hover:tw-opacity-70 tw-transition-all tw-duration-250 tw-touch-manipulation md:tw-mr-0"
+    :disabled="$store['cart'].isUpdating"
+  >
+    <span class="tw-sr-only">Remove item</span>
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M1 13L13 1M1 1L13 13" stroke="#7C7C7C" stroke-linecap="round"/>
+    </svg>
+  </button>
+</article>

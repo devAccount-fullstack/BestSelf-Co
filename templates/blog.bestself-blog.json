@@ -1,0 +1,79 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "featured": {
+      "type": "featured-posts",
+      "blocks": {
+        "feat": {
+          "type": "featured_post",
+          "settings": {
+            "featured_post": "articles/how-to-achieve-professional-development-goals-bestself",
+            "subheading": "Featured post"
+          }
+        },
+        "featured_post_mecM6q": {
+          "type": "featured_post",
+          "settings": {
+            "featured_post": "articles/how-to-prioritize-selfcare-to-cultivate-mental-emotional-resilience-during-tough-times",
+            "subheading": "Featured post"
+          }
+        },
+        "featured_post_wUqVMV": {
+          "type": "featured_post",
+          "settings": {
+            "featured_post": "articles/konmari-method-in-the-bullet-journal",
+            "subheading": "Featured post"
+          }
+        }
+      },
+      "block_order": [
+        "feat",
+        "featured_post_mecM6q",
+        "featured_post_wUqVMV"
+      ],
+      "custom_css": [
+        "@media (max-width: 601px) {.row {display: flex; flex-direction: column; }}"
+      ],
+      "settings": {
+        "show_author": false,
+        "show_date": false,
+        "show_button": true,
+        "width": "wrapper--full-padded",
+        "height": "five-fifty-height-hero",
+        "mobile_height": "screen-height-one-half--mobile",
+        "padding_top": 50,
+        "padding_bottom": 30
+      }
+    },
+    "main": {
+      "type": "blog",
+      "settings": {
+        "show_title": true,
+        "show_rss": false,
+        "show_tag_nav": false,
+        "aspect_ratio": 1,
+        "show_tags": false,
+        "show_author": false,
+        "show_date": false,
+        "show_button": true,
+        "show_comments": false,
+        "grid": 4,
+        "rows": 2,
+        "padding_top": 32,
+        "padding_bottom": 0
+      }
+    }
+  },
+  "order": [
+    "featured",
+    "main"
+  ]
+}

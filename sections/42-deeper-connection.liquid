@@ -1,0 +1,192 @@
+{% liquid
+  assign metaobject_content = section.settings.metaobject_content
+
+  assign blocks = section.blocks
+
+  assign pt_mob = section.settings.pt_mob
+  assign pb_mob = section.settings.pb_mob
+  assign pt_tab = section.settings.pt_tab
+  assign pb_tab = section.settings.pb_tab
+  assign pt_desk = section.settings.pt_desk
+  assign pb_desk = section.settings.pb_desk
+%}
+
+{% render 'section-paddings',
+  section_id: section.id,
+  pt_mob: pt_mob,
+  pb_mob: pb_mob,
+  pt_tab: pt_tab,
+  pb_tab: pb_tab,
+  pt_desk: pt_desk,
+  pb_desk: pb_desk
+%}
+
+{% if blocks.size > 0 %}
+  <div
+    data-section-id="{{ section.id }}"
+    class="tw-overflow-hidden"
+  >
+    <div class="container-42">
+      <div
+        class="swiper tw-mt-4.5 tw-opacity-0 tw-duration-300 lg:tw-mt-0 !tw-overflow-visible"
+        x-ignore
+        ax-load
+        x-data="swiperSlider($el, 'video_slider')"
+      >
+        <div x-data="playVideo" class="swiper-wrapper tw-items-stretch">
+          {% if metaobject_content != blank %}
+            {% for item in metaobject_content %}
+              {% liquid
+                assign file = item.video_file.value
+                assign poster = file.preview_image | img_url: 'master'
+                assign avatar_user = item.reviewer_photo
+                assign name_user = item.reviewer_name
+              %}
+
+              {% if file.media_type == 'video' %}
+                <div class="swiper-slide tw-rounded-[10px] md:tw-max-w-[396px] tw-max-w-[320px] tw-overflow-hidden">
+                  {% render '42-video-review',
+                    video: file,
+                    poster: poster,
+                    avatar_user: avatar_user,
+                    name_user: name_user
+                  %}
+                </div>
+              {% else %}
+                <div class="swiper-slide tw-rounded-[10px] md:tw-max-w-[396px] tw-max-w-[320px] tw-overflow-hidden tw-w-full !tw-h-auto tw-object-cover">
+                  <div class="tw-relative tw-h-full">
+                    {{-
+                      file
+                      | image_url: width: 500
+                      | image_tag:
+                        loading: 'lazy',
+                        sizes: 'min(100vw, 500px)',
+                        widths: '100,200,300,400,500',
+                        alt: 'image',
+                        class: 'tw-w-full tw-h-full tw-object-cover'
+                    -}}
+
+                    {% if avatar_user != blank and name_user != blank %}
+                      <div class="tw-absolute tw-z-5 tw-top-[29px] md:tw-top-5 tw-left-5 tw-flex tw-items-center tw-gap-2">
+                        <div class="tw-w-7.5 tw-duration-500 tw-h-7.5 tw-rounded-full tw-overflow-hidden tw-border-[#A5A5A5] tw-border-[0.5px] tw-flex tw-items-center tw-justify-center lg:tw-size-12.5">
+                          <img
+                            src="{{ avatar_user | img_url: 'master' }}"
+                            alt="{{ name_user }}"
+                            class="tw-max-w-full tw-object-cover"
+                            height="100%"
+                            width="100%"
+                          >
+                        </div>
+                        <span class="tw-font-medium tw-text-white tw-text-[22px]">{{ name_user }}</span>
+                      </div>
+                    {% endif %}
+                  </div>
+                </div>
+              {% endif %}
+            {% endfor %}
+          {% else %}
+            {% for block in blocks %}
+              {% liquid
+                assign video = block.settings.video
+                assign poster = video.preview_image | img_url: 'master'
+                assign avatar_user = block.settings.avatar_user
+                assign name_user = block.settings.name_user
+              %}
+              <div class="swiper-slide tw-rounded-[10px] md:tw-max-w-[396px] tw-max-w-[320px] tw-overflow-hidden">
+                {% render '42-video-review',
+                  video: video,
+                  poster: poster,
+                  avatar_user: avatar_user,
+                  name_user: name_user
+                %}
+              </div>
+            {% endfor %}
+          {% endif %}
+        </div>
+        <div class="md:tw-hidden tw-flex tw-gap-[13px] tw-mt-4 justify-center">
+          <div class="video-slider-btn-prev">{% render 'icon-42', name: 'swiper-btn', class: 'tw-rotate-180' %}</div>
+          <div class="video-slider-btn-next">{% render 'icon-42', name: 'swiper-btn' %}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "42 Deeper Connection",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "metaobject_list",
+      "id": "metaobject_content",
+      "metaobject_type": "video_review",
+      "label": "Metaobject"
+    },
+    {
+      "type": "number",
+      "id": "pt_mob",
+      "label": "Mobile padding top in px",
+      "default": 60
+    },
+    {
+      "type": "number",
+      "id": "pb_mob",
+      "label": "Mobile padding bottom in px",
+      "default": 56
+    },
+    {
+      "type": "number",
+      "id": "pt_tab",
+      "label": "Tablet padding top in px",
+      "default": 80
+    },
+    {
+      "type": "number",
+      "id": "pb_tab",
+      "label": "Tablet padding bottom in px",
+      "default": 80
+    },
+    {
+      "type": "number",
+      "id": "pt_desk",
+      "label": "Desktop padding top in px",
+      "default": 122
+    },
+    {
+      "type": "number",
+      "id": "pb_desk",
+      "label": "Desktop padding bottom in px",
+      "default": 120
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Video",
+      "type": "block",
+      "settings": [
+        {
+          "type": "video",
+          "id": "video",
+          "label": "Video"
+        },
+        {
+          "type": "image_picker",
+          "id": "avatar_user",
+          "label": "Avatar user"
+        },
+        {
+          "type": "text",
+          "id": "name_user",
+          "label": "Name user"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "42 Deeper Connection"
+    }
+  ]
+}
+{% endschema %}

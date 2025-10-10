@@ -1,0 +1,636 @@
+{%- comment -%}
+  STICKY BOTTOM PRODUCT BAR - Fixed to viewport bottom
+  This is NOT a regular section - it's a fixed overlay like a cookie banner
+{%- endcomment -%}
+
+{%- liquid
+  assign featured_products = article.metafields.custom.featured_products.value
+  if featured_products == blank
+    assign featured_products = article.metafields.custom.related_products.value
+  endif
+  
+  # Fallback to best sellers or all products
+  if featured_products == blank
+    if collections['best-sellers'] != blank
+      assign featured_products = collections['best-sellers'].products
+    elsif collections['frontpage'] != blank  
+      assign featured_products = collections['frontpage'].products
+    else
+      assign featured_products = collections.all.products
+    endif
+  endif
+  
+  assign max_products = section.settings.max_products | default: 4
+-%}
+
+{%- if featured_products != blank -%}
+
+{%- style -%}
+  /* CRITICAL: Fixed positioning for sticky bottom bar */
+  #StickyProductBar--{{ section.id }} {
+    position: fixed !important; /* FIXED TO VIEWPORT */
+    bottom: 0 !important;       /* STUCK TO BOTTOM */
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    z-index: 9999 !important;   /* ABOVE EVERYTHING */
+    
+    /* TRANSPARENT GLASS EFFECT - NOT GRAY! */
+    background-color: transparent !important; /* NO SOLID COLOR */
+    background: rgba(255, 255, 255, 0.5) !important; /* VERY TRANSPARENT WHITE */
+    backdrop-filter: blur(20px) saturate(150%) !important;
+    -webkit-backdrop-filter: blur(20px) saturate(150%) !important;
+    
+    /* Remove any potential gray */
+    box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.04), 
+                0 -1px 8px rgba(0, 0, 0, 0.02);
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+    /* Smooth entrance animation */
+    animation: slideUpFade 0.5s ease-out;
+  }
+  
+  @keyframes slideUpFade {
+    from {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Fallback for browsers without backdrop-filter support */
+  @supports not (backdrop-filter: blur(20px)) {
+    #StickyProductBar--{{ section.id }} {
+      /* Still transparent, NOT GRAY */
+      background: rgba(255, 255, 255, 0.85) !important; /* Semi-transparent, not solid */
+    }
+    
+    #StickyProductBar--{{ section.id }} .bar-container {
+      background: rgba(255, 255, 255, 0.5) !important; /* Transparent */
+    }
+    
+    #StickyProductBar--{{ section.id }} .mini-product {
+      background: rgba(255, 255, 255, 0.9) !important; /* Mostly transparent */
+    }
+  }
+  
+  /* Add padding to article so content isn't hidden behind bar */
+  body.template-article {
+    padding-bottom: 120px !important; /* Space for desktop bar */
+  }
+  
+  @media (max-width: 989px) {
+    body.template-article {
+      padding-bottom: 60px !important; /* Space for mobile collapsed bar */
+    }
+    
+    body.template-article.products-expanded {
+      padding-bottom: 400px !important; /* Space when expanded */
+    }
+  }
+
+  /* Desktop Layout - Always Visible Horizontal Bar */
+  @media (min-width: 990px) {
+    #StickyProductBar--{{ section.id }} {
+      height: auto !important;
+      padding: 1rem 2rem 1.5rem;
+      display: block !important; /* Always visible on desktop */
+    }
+    
+    #StickyProductBar--{{ section.id }} .bar-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0.75rem 1.5rem;
+      height: 100%;
+      display: flex !important; /* Force flex display */
+      align-items: center;
+      gap: 1.5rem;
+      visibility: visible !important; /* Ensure visibility */
+      /* TRANSPARENT container - NO GRAY! */
+      background-color: transparent !important;
+      background: rgba(255, 255, 255, 0.2) !important; /* VERY TRANSPARENT */
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.03);
+    }
+    
+    #StickyProductBar--{{ section.id }} .bar-label {
+      font-family: var(--font-heading-family) !important;
+      font-size: 1.25rem;
+      font-weight: 400;
+      color: #2C3C60;
+      white-space: nowrap;
+      flex-shrink: 0;
+      letter-spacing: 0.5px;
+    }
+    
+    #StickyProductBar--{{ section.id }} .products-track {
+      display: flex !important;
+      flex-direction: row !important; /* Force horizontal */
+      gap: 1rem;
+      overflow-x: auto;
+      overflow-y: hidden;
+      flex: 1;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      align-items: center;
+    }
+    
+    #StickyProductBar--{{ section.id }} .products-track::-webkit-scrollbar {
+      display: none;
+    }
+    
+    #StickyProductBar--{{ section.id }} .mini-product {
+      display: flex;
+      align-items: center;
+      gap: 0.875rem;
+      /* TRANSPARENT card - NO GRAY! */
+      background-color: transparent !important;
+      background: rgba(255, 255, 255, 0.6) !important; /* TRANSPARENT WHITE */
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      border-radius: 12px;
+      padding: 0.875rem;
+      flex-shrink: 0;
+      min-width: 220px;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03),
+                  0 1px 2px rgba(0, 0, 0, 0.01);
+    }
+    
+    #StickyProductBar--{{ section.id }} .mini-product:hover {
+      background: rgba(255, 255, 255, 0.75) !important; /* Still transparent on hover */
+      border-color: rgba(255, 255, 255, 0.6);
+      transform: translateY(-4px) scale(1.02);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06),
+                  0 1px 4px rgba(0, 0, 0, 0.02);
+    }
+    
+    #StickyProductBar--{{ section.id }} .mini-product-image {
+      width: 70px;
+      height: 70px;
+      object-fit: contain;
+      background: transparent;
+      border-radius: 4px;
+      flex-shrink: 0;
+      padding: 4px;
+    }
+    
+    #StickyProductBar--{{ section.id }} .mini-product-info {
+      flex: 1;
+      min-width: 0;
+    }
+    
+    #StickyProductBar--{{ section.id }} .mini-product-title {
+      font-family: var(--font-body-family);
+      font-size: 0.9375rem;
+      font-weight: 500;
+      color: #2C3C60;
+      line-height: 1.3;
+      margin-bottom: 0.375rem;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-decoration: none;
+    }
+    
+    #StickyProductBar--{{ section.id }} .mini-product-price {
+      font-family: var(--font-body-family);
+      font-size: 1rem;
+      font-weight: 600;
+      color: #2C3C60;
+      margin-bottom: 0.5rem;
+    }
+    
+    #StickyProductBar--{{ section.id }} .mini-add-cart {
+      width: 36px;
+      height: 36px;
+      padding: 0;
+      background: #3B82F6;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    
+    #StickyProductBar--{{ section.id }} .mini-add-cart:hover {
+      background: #2563EB;
+      transform: scale(1.1);
+      box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+    }
+    
+    #StickyProductBar--{{ section.id }} .mini-add-cart:disabled {
+      background: #9CA3AF;
+      cursor: not-allowed;
+      opacity: 0.6;
+    }
+    
+    #StickyProductBar--{{ section.id }} .mini-add-cart:disabled:hover {
+      transform: none;
+      box-shadow: none;
+    }
+    
+    #StickyProductBar--{{ section.id }} .mini-add-cart svg {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+    }
+    
+    /* Hide mobile elements on desktop */
+    #StickyProductBar--{{ section.id }} .mobile-toggle {
+      display: none !important;
+    }
+    
+    #StickyProductBar--{{ section.id }} .mobile-products {
+      display: none !important; /* Hide mobile products on desktop */
+    }
+  }
+  
+  /* Force desktop layout above 990px */
+  @media screen and (min-width: 990px) {
+    #StickyProductBar--{{ section.id }}.expanded {
+      height: 140px !important; /* Keep desktop height even if expanded class exists */
+    }
+  }
+  
+  /* Mobile Layout - Collapsed/Expandable Tab */
+  @media screen and (max-width: 989px) {
+    #StickyProductBar--{{ section.id }} {
+      height: 50px; /* Collapsed height */
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+    
+    #StickyProductBar--{{ section.id }}.expanded {
+      height: auto !important;
+      max-height: 70vh !important; /* Don't cover entire screen */
+      overflow-y: auto !important;
+    }
+    
+    #StickyProductBar--{{ section.id }} .mobile-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 1rem;
+      height: 50px;
+      cursor: pointer;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+      background: rgba(255, 255, 255, 0.75);
+      backdrop-filter: blur(16px) saturate(180%);
+      -webkit-backdrop-filter: blur(16px) saturate(180%);
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
+    
+    #StickyProductBar--{{ section.id }} .mobile-toggle-text {
+      font-family: var(--font-heading-family);
+      font-size: 1rem;
+      font-weight: 400;
+      color: #2C3C60;
+      letter-spacing: 0.3px;
+    }
+    
+    #StickyProductBar--{{ section.id }} .mobile-toggle-icon {
+      width: 20px;
+      height: 20px;
+      transition: transform 0.3s ease;
+    }
+    
+    #StickyProductBar--{{ section.id }}.expanded .mobile-toggle-icon {
+      transform: rotate(180deg);
+    }
+    
+    #StickyProductBar--{{ section.id }} .mobile-products {
+      padding: 1rem;
+      display: none;
+    }
+    
+    #StickyProductBar--{{ section.id }}.expanded .mobile-products {
+      display: block !important;
+    }
+    
+    #StickyProductBar--{{ section.id }} .mobile-product {
+      display: flex;
+      gap: 1rem;
+      padding: 1rem;
+      /* Glass card effect for mobile */
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      border-radius: 12px;
+      margin-bottom: 0.75rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04),
+                  0 1px 3px rgba(0, 0, 0, 0.02);
+    }
+    
+    #StickyProductBar--{{ section.id }} .mobile-product-image {
+      width: 80px;
+      height: 80px;
+      object-fit: contain;
+      background: transparent;
+      border-radius: 4px;
+      flex-shrink: 0;
+      padding: 4px;
+    }
+    
+    #StickyProductBar--{{ section.id }} .mobile-product-info {
+      flex: 1;
+    }
+    
+    #StickyProductBar--{{ section.id }} .mobile-product-title {
+      font-family: var(--font-body-family);
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: #2C3C60;
+      margin-bottom: 0.375rem;
+      text-decoration: none;
+    }
+    
+    #StickyProductBar--{{ section.id }} .mobile-product-price {
+      font-family: var(--font-body-family);
+      font-size: 1rem;
+      font-weight: 600;
+      color: #2C3C60;
+      margin-bottom: 0.5rem;
+    }
+    
+    #StickyProductBar--{{ section.id }} .mobile-add-cart {
+      width: 40px;
+      height: 40px;
+      padding: 0;
+      background: #3B82F6;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    
+    #StickyProductBar--{{ section.id }} .mobile-add-cart:hover {
+      background: #2563EB;
+      transform: scale(1.1);
+      box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+    }
+    
+    #StickyProductBar--{{ section.id }} .mobile-add-cart:disabled {
+      background: #9CA3AF;
+      cursor: not-allowed;
+      opacity: 0.6;
+    }
+    
+    #StickyProductBar--{{ section.id }} .mobile-add-cart:disabled:hover {
+      transform: none;
+      box-shadow: none;
+    }
+    
+    #StickyProductBar--{{ section.id }} .mobile-add-cart svg {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+    }
+    
+    /* Desktop bar hidden on mobile */
+    #StickyProductBar--{{ section.id }} .bar-container {
+      display: none;
+    }
+  }
+{%- endstyle -%}
+
+<!-- STICKY BOTTOM PRODUCT BAR - FIXED TO VIEWPORT -->
+<div id="StickyProductBar--{{ section.id }}" class="sticky-product-bar" x-data="{ expanded: false }" :class="{ 'expanded': expanded }">
+  
+  <!-- Mobile Toggle (only visible on mobile) -->
+  <div class="mobile-toggle" @click="expanded = !expanded; document.body.classList.toggle('products-expanded')">
+    <span class="mobile-toggle-text">{{ section.settings.heading | default: 'Related products' }}</span>
+    <svg class="mobile-toggle-icon" fill="currentColor" viewBox="0 0 20 20">
+      <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"/>
+    </svg>
+  </div>
+  
+  <!-- Desktop Horizontal Bar -->
+  <div class="bar-container">
+    <span class="bar-label">{{ section.settings.heading | default: 'Related products:' }}</span>
+    
+    <div class="products-track">
+      {%- for product in featured_products limit: max_products -%}
+        {%- assign selected_variant = product.selected_or_first_available_variant -%}
+        
+        <div class="mini-product">
+          <a href="{{ product.url }}">
+            {%- if product.featured_image -%}
+              {{ product.featured_image | image_url: width: 120 | image_tag:
+                class: 'mini-product-image',
+                loading: 'lazy',
+                alt: product.title
+              }}
+            {%- endif -%}
+          </a>
+          
+          <div class="mini-product-info">
+            <a href="{{ product.url }}" class="mini-product-title">
+              {{ product.title | truncate: 40 }}
+            </a>
+            <div class="mini-product-price">
+              {{ product.price | money_without_trailing_zeros }}
+            </div>
+            {%- if product.available -%}
+              <button 
+                type="button"
+                class="mini-add-cart"
+                onclick="addStickyProductToCart({{ selected_variant.id }})"
+                title="Add to cart"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/>
+                </svg>
+              </button>
+            {%- else -%}
+              <button type="button" class="mini-add-cart" disabled title="Sold out">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/>
+                </svg>
+              </button>
+            {%- endif -%}
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+  
+  <!-- Mobile Expanded Products -->
+  <div class="mobile-products">
+    {%- for product in featured_products limit: max_products -%}
+      {%- assign selected_variant = product.selected_or_first_available_variant -%}
+      
+      <div class="mobile-product">
+        <a href="{{ product.url }}">
+          {%- if product.featured_image -%}
+            {{ product.featured_image | image_url: width: 160 | image_tag:
+              class: 'mobile-product-image',
+              loading: 'lazy',
+              alt: product.title
+            }}
+          {%- endif -%}
+        </a>
+        
+        <div class="mobile-product-info">
+          <a href="{{ product.url }}" class="mobile-product-title">
+            {{ product.title | truncate: 50 }}
+          </a>
+          <div class="mobile-product-price">
+            {{ product.price | money_without_trailing_zeros }}
+          </div>
+          {%- if product.available -%}
+            <button 
+              type="button"
+              class="mobile-add-cart"
+              onclick="addStickyProductToCart({{ selected_variant.id }})"
+              title="Add to cart"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/>
+              </svg>
+            </button>
+          {%- else -%}
+            <button type="button" class="mobile-add-cart" disabled title="Sold out">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/>
+              </svg>
+            </button>
+          {%- endif -%}
+        </div>
+      </div>
+    {%- endfor -%}
+  </div>
+</div>
+
+<script>
+  // Ensure correct layout on load and resize
+  function checkStickyBarLayout() {
+    const bar = document.getElementById('StickyProductBar--{{ section.id }}');
+    if (!bar) return;
+    
+    const width = window.innerWidth;
+    const isMobile = width < 990;
+    
+    if (!isMobile) {
+      // Force desktop layout
+      bar.classList.remove('expanded');
+      document.body.classList.remove('products-expanded');
+      
+      // Ensure desktop elements are visible
+      const barContainer = bar.querySelector('.bar-container');
+      const mobileProducts = bar.querySelector('.mobile-products');
+      const mobileToggle = bar.querySelector('.mobile-toggle');
+      
+      if (barContainer) barContainer.style.display = 'flex';
+      if (mobileProducts) mobileProducts.style.display = 'none';
+      if (mobileToggle) mobileToggle.style.display = 'none';
+    }
+  }
+  
+  // Run on load and resize
+  document.addEventListener('DOMContentLoaded', checkStickyBarLayout);
+  window.addEventListener('resize', checkStickyBarLayout);
+  
+  // Add to cart function for sticky bar
+  function addStickyProductToCart(variantId) {
+    // Use Alpine.js cart store if available
+    if (window.Alpine && window.Alpine.store && window.Alpine.store('cart')) {
+      window.Alpine.store('cart').addToCart([{ id: variantId, quantity: 1 }], true);
+      return;
+    }
+    
+    // Fallback to standard Shopify cart API
+    fetch(window.Shopify.routes.root + 'cart/add.js', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        items: [{
+          id: variantId,
+          quantity: 1
+        }]
+      })
+    })
+    .then(response => response.json())
+    .then(data => {
+      // Update cart drawer if available
+      if (window.Broadcast && window.Broadcast.theme) {
+        window.Broadcast.theme.updateCartDrawer();
+      }
+      
+      // Open cart drawer
+      if (document.querySelector('[data-drawer="drawer-cart"]')) {
+        document.querySelector('[data-drawer-open="drawer-cart"]')?.click();
+      }
+    })
+    .catch((error) => {
+      console.error('Error adding to cart:', error);
+    });
+  }
+</script>
+
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Sticky Product Bar",
+  "class": "sticky-product-bar-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Bar heading",
+      "default": "Related products"
+    },
+    {
+      "type": "collection",
+      "id": "fallback_collection",
+      "label": "Fallback collection",
+      "info": "Products to show if article has no featured products"
+    },
+    {
+      "type": "range",
+      "id": "max_products",
+      "label": "Maximum products",
+      "min": 2,
+      "max": 8,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_sticky",
+      "label": "Enable sticky bar",
+      "default": true,
+      "info": "Keep product bar fixed to bottom of screen"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Sticky Product Bar"
+    }
+  ]
+}
+{% endschema %}
