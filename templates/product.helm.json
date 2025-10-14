@@ -28,6 +28,10 @@
         "title_WDMUEe": {
           "type": "title",
           "settings": {
+            "custom_title": "",
+            "title_metafield": "",
+            "text_size_mobile": 28,
+            "text_size_desktop": 32,
             "mt_desk": 8,
             "mt_mob": 8,
             "hide_on_mobile": false
@@ -57,6 +61,18 @@
             "mt_mob": 10,
             "show_badge_save": true,
             "hide_on_mobile": false
+          }
+        },
+        "smile_io_smile_points_on_product_page_bNhMtX": {
+          "type": "shopify://apps/smile-io/blocks/smile-points-on-product-page/2fae4e25-1841-4ea2-bc02-bd548478c4f6",
+          "settings": {
+            "primary_colour": "#121212",
+            "secondary_colour": "#f8f8f8",
+            "preview_scenario": "customer_can_earn_points",
+            "should_show_icon": true,
+            "should_show_points_label": true,
+            "points_text_logged_in": "",
+            "points_text_logged_out": ""
           }
         },
         "text_Tc7kCE": {
@@ -267,6 +283,7 @@
         "text_GGwLik",
         "separator_aEnxCj",
         "price_Bt9rH4",
+        "smile_io_smile_points_on_product_page_bNhMtX",
         "text_Tc7kCE",
         "separator_MJrkbg",
         "text_xBpiAB",

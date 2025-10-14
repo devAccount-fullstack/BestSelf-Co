@@ -24,6 +24,10 @@
         "title_94egmG": {
           "type": "title",
           "settings": {
+            "custom_title": "",
+            "title_metafield": "",
+            "text_size_mobile": 28,
+            "text_size_desktop": 32,
             "mt_desk": 8,
             "mt_mob": 8,
             "hide_on_mobile": false
@@ -36,6 +40,18 @@
             "mt_mob": 10,
             "show_badge_save": true,
             "hide_on_mobile": false
+          }
+        },
+        "smile_io_smile_points_on_product_page_cdCrRG": {
+          "type": "shopify://apps/smile-io/blocks/smile-points-on-product-page/2fae4e25-1841-4ea2-bc02-bd548478c4f6",
+          "settings": {
+            "primary_colour": "#121212",
+            "secondary_colour": "#f8f8f8",
+            "preview_scenario": "customer_can_earn_points",
+            "should_show_icon": true,
+            "should_show_points_label": true,
+            "points_text_logged_in": "",
+            "points_text_logged_out": ""
           }
         },
         "judge_me_reviews_preview_badge_heVfeN": {
@@ -193,6 +209,7 @@
         "badge_VgjydL",
         "title_94egmG",
         "price_gJnzPr",
+        "smile_io_smile_points_on_product_page_cdCrRG",
         "judge_me_reviews_preview_badge_heVfeN",
         "buy_buttons_At4W4B",
         "privacy_policy_6kiBQM",
@@ -259,6 +276,18 @@
           "settings": {
             "text_font_size": "body-large",
             "padding_bottom": 0
+          }
+        },
+        "smile_io_smile_points_on_product_page_6BjWjz": {
+          "type": "shopify://apps/smile-io/blocks/smile-points-on-product-page/2fae4e25-1841-4ea2-bc02-bd548478c4f6",
+          "settings": {
+            "primary_colour": "#121212",
+            "secondary_colour": "#f8f8f8",
+            "preview_scenario": "customer_can_earn_points",
+            "should_show_icon": true,
+            "should_show_points_label": true,
+            "points_text_logged_in": "",
+            "points_text_logged_out": ""
           }
         },
         "description_r8BT87": {
@@ -345,6 +374,7 @@
         "title_k3GUnW",
         "divider_bgLQ4m",
         "price",
+        "smile_io_smile_points_on_product_page_6BjWjz",
         "description_r8BT87",
         "buttons",
         "code_rzD3yc",
@@ -378,64 +408,55 @@
         "slide_iezTxD": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/new-york-times_e5522b91-2ccb-4449-b887-3adce2bca17e.svg",
-            "link": ""
+            "image": "shopify://shop_images/new-york-times_e5522b91-2ccb-4449-b887-3adce2bca17e.svg"
           }
         },
         "slide_PGQfxX": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/wall-street-journal_55986035-2cf5-4a15-b8fc-6e5524d90b15.svg",
-            "link": ""
+            "image": "shopify://shop_images/wall-street-journal_55986035-2cf5-4a15-b8fc-6e5524d90b15.svg"
           }
         },
         "slide_aHXECg": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/glamour-seeklogo_1_01faa3b1-d481-40e6-b66d-342c9f579bfe.svg",
-            "link": ""
+            "image": "shopify://shop_images/glamour-seeklogo_1_01faa3b1-d481-40e6-b66d-342c9f579bfe.svg"
           }
         },
         "slide_9wXCeC": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/Cosmopolitan_logo_1_a3068584-9a33-4bc8-aab8-2bb4394d1e75.svg",
-            "link": ""
+            "image": "shopify://shop_images/Cosmopolitan_logo_1_a3068584-9a33-4bc8-aab8-2bb4394d1e75.svg"
           }
         },
         "slide_EmBVkf": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/theknot-logo_bc3b56dc-2766-47a6-bdc3-b5013c4ebe10.svg",
-            "link": ""
+            "image": "shopify://shop_images/theknot-logo_bc3b56dc-2766-47a6-bdc3-b5013c4ebe10.svg"
           }
         },
         "slide_gaHCxz": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/refinery29.svg",
-            "link": ""
+            "image": "shopify://shop_images/refinery29.svg"
           }
         },
         "slide_CE3TPi": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/Vector_f8e848c2-23ad-448a-81ed-8ca0ff20a2fc.svg",
-            "link": ""
+            "image": "shopify://shop_images/Vector_f8e848c2-23ad-448a-81ed-8ca0ff20a2fc.svg"
           }
         },
         "slide_N7Kmtk": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/Vector_1.svg",
-            "link": ""
+            "image": "shopify://shop_images/Vector_1.svg"
           }
         },
         "slide_KknyFy": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/Group_1171275371.svg",
-            "link": ""
+            "image": "shopify://shop_images/Group_1171275371.svg"
           }
         }
       },
@@ -453,7 +474,7 @@
       "settings": {
         "ss-title": "AS FEATURED ON",
         "heading_custom": true,
-        "heading_font": "sans-serif",
+        "heading_font": "system_ui_n4",
         "header_size": 14,
         "header_align": "center",
         "scrolling_velocity": 100,
@@ -780,6 +801,8 @@
           "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
           "settings": {
             "review_data": "sample_data",
+            "show_shop_reviews": false,
+            "empty_state": "empty_widget",
             "max_width": 1200
           }
         }
