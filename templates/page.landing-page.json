@@ -25,9 +25,22 @@
         "padding_bottom": 50,
         "heading_tag": "automatic"
       }
+    },
+    "landing_banner_A7VeQB": {
+      "type": "landing-banner",
+      "name": "Landing Page Banner",
+      "settings": {
+        "heading": "$500+ Transformation Toolkit",
+        "subheading": "Win the Life You Actually Want",
+        "description": "Enter for a chance to win our exclusive productivity bundle designed for total life transformation.",
+        "cta_text": "Enter Free + Get Loyalty Points",
+        "cta_link": "",
+        "days_left": 7
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "landing_banner_A7VeQB"
   ]
 }
