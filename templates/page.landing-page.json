@@ -37,10 +37,141 @@
         "cta_link": "",
         "days_left": 7
       }
+    },
+    "landing_entry_8xUEC9": {
+      "type": "landing-entry",
+      "blocks": {
+        "grid_item_GGk3UU": {
+          "type": "grid_item",
+          "settings": {
+            "number": "1",
+            "text": "Just drop <br>your email"
+          }
+        },
+        "grid_item_AANQxb": {
+          "type": "grid_item",
+          "settings": {
+            "number": "2",
+            "text": "Get loyalty points <br>instantly"
+          }
+        },
+        "grid_item_yn9mzG": {
+          "type": "grid_item",
+          "settings": {
+            "number": "3",
+            "text": "You’re in <br>the running"
+          }
+        }
+      },
+      "block_order": [
+        "grid_item_GGk3UU",
+        "grid_item_AANQxb",
+        "grid_item_yn9mzG"
+      ],
+      "name": "Landing Entry",
+      "settings": {
+        "eyebrow": "How to Enter",
+        "heading": "3 Seconds to Entry. Instant Rewards.",
+        "heading_margin_bottom": 53,
+        "subheading": "",
+        "button_text": "Yes, I Want In!",
+        "button_url": "shopify://pages/customer-acquisition-giveaway",
+        "button_style": "primary"
+      }
+    },
+    "landing_testimonial_slider_W8QV6x": {
+      "type": "landing-testimonial-slider",
+      "blocks": {
+        "slide_zWRJjU": {
+          "type": "slide",
+          "settings": {
+            "message": "I ditched my phone addiction thanks to Helm. I actually feel present now.",
+            "name": "Jasmine K."
+          }
+        },
+        "slide_af4T7z": {
+          "type": "slide",
+          "settings": {
+            "message": "The Self Journal helped me finish my book in 11 weeks.",
+            "name": "Tony R."
+          }
+        }
+      },
+      "block_order": [
+        "slide_zWRJjU",
+        "slide_af4T7z"
+      ],
+      "name": "Landing Testimonial",
+      "settings": {
+        "heading": "<i>Join 10,000+</i> Who've Transformed Their Focus & Relationships"
+      }
+    },
+    "landing_entry_JdnPht": {
+      "type": "landing-entry",
+      "name": "Landing Entry",
+      "settings": {
+        "eyebrow": "",
+        "countdown_number": 7,
+        "heading": "Days Left",
+        "heading_margin_bottom": 12,
+        "subheading": "Don’t miss the transformation that could change everything.",
+        "button_text": "Enter the Giveaway Now",
+        "button_url": "shopify://pages/customer-acquisition-giveaway",
+        "button_style": "secondary"
+      }
+    },
+    "landing_faq_wBdny4": {
+      "type": "landing-faq",
+      "blocks": {
+        "faq_item_kCf4qj": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is this really free?",
+            "answer": "<p>Yes. No tricks.</p>"
+          }
+        },
+        "faq_item_dJBhdp": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Who can enter?",
+            "answer": "<p>Anyone in the U.S. who wants more out of life</p>"
+          }
+        },
+        "faq_item_Re3KfD": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Do I need to buy anything?",
+            "answer": "<p>Nope. Just your email</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_kCf4qj",
+        "faq_item_dJBhdp",
+        "faq_item_Re3KfD"
+      ],
+      "name": "Landing FAQ",
+      "settings": {
+        "heading": "Frequently Asked Questions"
+      }
+    },
+    "landing_footer_EPteKM": {
+      "type": "landing-footer",
+      "name": "Landing Footer",
+      "settings": {
+        "logo": "shopify://shop_images/bc4f5bb6def0700ad71e3d30dd75536b39e4dbef.png",
+        "copyright": "© 2025 BestSelf Co. All rights reserved.",
+        "policy_links": "<p><a href=\"/pages/privacy-policy\">Privacy Policy</a> | <a href=\"/pages/terms-conditions\">Terms & Conditions</a> | <a href=\"/pages/shipping-policy\">Shipping Policy</a></p>"
+      }
     }
   },
   "order": [
     "main",
-    "landing_banner_A7VeQB"
+    "landing_banner_A7VeQB",
+    "landing_entry_8xUEC9",
+    "landing_testimonial_slider_W8QV6x",
+    "landing_entry_JdnPht",
+    "landing_faq_wBdny4",
+    "landing_footer_EPteKM"
   ]
 }

@@ -1,0 +1,183 @@
+<section class="landing-two-column-slider">
+  <div class="container">
+    <div class="landing-two-column-slider__wrapper">
+      <!-- Left Column - Heading -->
+      <div class="landing-two-column-slider__content">
+        
+        {% if section.settings.heading != blank %}
+          <h2 class="landing-two-column-slider__heading">{{ section.settings.heading }}</h2>
+        {% endif %}
+      </div>
+      
+      <!-- Right Column - Vertical Slider -->
+      <div class="landing-two-column-slider__slider-container">
+        {% if section.blocks.size > 0 %}
+          <div class="landing-two-column-slider__slider" data-slider="vertical">
+            {% for block in section.blocks %}
+              <div class="landing-two-column-slider__slide" {{ block.shopify_attributes }}>
+                {% if block.settings.name != blank or block.settings.message != blank %}
+                  <div class="landing-two-column-slider__slide-content">
+                    {% if block.settings.message != blank %}
+                      <p class="landing-two-column-slider__slide-text">"{{ block.settings.message }}"</p>
+                    {% endif %}
+                    {% if block.settings.name != blank %}
+                      <h3 class="landing-two-column-slider__slide-title">- {{ block.settings.name }}</h3>
+                    {% endif %}
+                  </div>
+                {% endif %}
+              </div>
+            {% endfor %}
+          </div>
+          
+          <!-- Navigation Arrows -->
+          <div class="landing-two-column-slider__navigation">
+            <button class="landing-two-column-slider__nav-arrow landing-two-column-slider__nav-arrow--up" data-direction="prev">
+              <svg width="12" height="8" viewBox="0 0 12 8" fill="none">
+                <path d="M6 0L0 6L1.5 7.5L6 3L10.5 7.5L12 6L6 0Z" fill="currentColor"/>
+              </svg>
+            </button>
+            <button class="landing-two-column-slider__nav-arrow landing-two-column-slider__nav-arrow--down" data-direction="next">
+              <svg width="12" height="8" viewBox="0 0 12 8" fill="none">
+                <path d="M6 8L12 2L10.5 0.5L6 5L1.5 0.5L0 2L6 8Z" fill="currentColor"/>
+              </svg>
+            </button>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const sliders = document.querySelectorAll('[data-slider="vertical"]');
+    
+    sliders.forEach(slider => {
+      const slides = slider.querySelectorAll('.landing-two-column-slider__slide');
+      const arrows = slider.parentElement.querySelectorAll('.landing-two-column-slider__nav-arrow');
+      let currentSlide = 0;
+      let autoplayInterval;
+      
+      // Initialize first slide
+      if (slides.length > 0) {
+        updateSlides();
+        startAutoplay();
+      }
+      
+      // Navigation arrows click handlers
+      arrows.forEach(arrow => {
+        arrow.addEventListener('click', () => {
+          const direction = arrow.getAttribute('data-direction');
+          if (direction === 'next') {
+            nextSlide();
+          } else {
+            prevSlide();
+          }
+          resetAutoplay();
+        });
+      });
+      
+      function updateSlides() {
+        slides.forEach((slide, index) => {
+          slide.classList.remove('active', 'next', 'prev');
+          
+          if (index === currentSlide) {
+            slide.classList.add('active');
+          } else if (index === (currentSlide + 1) % slides.length) {
+            slide.classList.add('next');
+          } else {
+            slide.classList.add('prev');
+          }
+        });
+      }
+      
+      function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        updateSlides();
+      }
+      
+      function prevSlide() {
+        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+        updateSlides();
+      }
+      
+      function startAutoplay() {
+        if (slides.length > 1) {
+          autoplayInterval = setInterval(nextSlide, 4000);
+        }
+      }
+      
+      function resetAutoplay() {
+        clearInterval(autoplayInterval);
+        startAutoplay();
+      }
+      
+      // Pause autoplay on hover
+      slider.parentElement.addEventListener('mouseenter', () => {
+        clearInterval(autoplayInterval);
+      });
+      
+      slider.parentElement.addEventListener('mouseleave', () => {
+        startAutoplay();
+      });
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Landing Testimonial",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Join 10,000+ Who've Transformed Their Focus & Relationships"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "Slide",
+      "limit": 5,
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "message",
+          "label": "Message",
+          "default": "Add your slide message here"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Name",
+          "default": "Slide Name"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Landing Testimonial",
+      "blocks": [
+        {
+          "type": "slide",
+          "settings": {
+            "name": "Jasmine K.",
+            "message": "I ditched my phone addiction thanks to Helm. I actually feel present now."
+          }
+        },
+        {
+          "type": "slide",
+          "settings": {
+            "name": "Tony R.",
+            "message": "The Self Journal helped me finish my book in 11 weeks."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

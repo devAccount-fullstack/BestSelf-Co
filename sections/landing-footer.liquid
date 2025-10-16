@@ -1,0 +1,64 @@
+<footer class="landing-footer">
+  <div class="container">
+    <div class="landing-footer__wrapper">
+      <!-- Logo -->
+      {% if section.settings.logo != blank %}
+        <div class="landing-footer__logo">
+          {{
+            section.settings.logo
+            | image_url: width: 496
+            | image_tag: loading: 'lazy', alt: shop.name, width: 496, height: 768
+          }}
+        </div>
+      {% endif %}
+
+      <!-- Copyright -->
+      {% if section.settings.copyright != blank %}
+        <div class="landing-footer__copyright">
+          {{ section.settings.copyright }}
+        </div>
+      {% endif %}
+
+      <!-- Policy Links -->
+      {% if section.settings.policy_links != blank %}
+        <div class="landing-footer__links">
+          {{ section.settings.policy_links }}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Landing Footer",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo",
+      "info": "Recommended size: 120px width"
+    },
+    {
+      "type": "text",
+      "id": "copyright",
+      "label": "Copyright Text",
+      "default": "© 2025 BestSelf Co. All rights reserved."
+    },
+    {
+      "type": "richtext",
+      "id": "policy_links",
+      "label": "Policy Links",
+      "default": "<p><a href=\"/pages/privacy-policy\">Privacy Policy</a> | <a href=\"/pages/terms-conditions\">Terms & Conditions</a> | <a href=\"/pages/shipping-policy\">Shipping Policy</a></p>"
+    }
+  ],
+  "blocks": [],
+  "presets": [
+    {
+      "name": "Landing Footer"
+    }
+  ]
+}
+{% endschema %}
