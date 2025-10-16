@@ -30,17 +30,129 @@
       "type": "landing-banner",
       "name": "Landing Page Banner",
       "settings": {
-        "heading": "$500+ Transformation Toolkit",
-        "subheading": "Win the Life You Actually Want",
-        "description": "Enter for a chance to win our exclusive productivity bundle designed for total life transformation.",
-        "cta_text": "Enter Free + Get Loyalty Points",
-        "cta_link": "",
-        "days_left": 7
+        "heading1": "Giveaway",
+        "heading2": "$500+ Transformation Toolkit",
+        "hightlight": "Win the Life You Actually Want",
+        "description": "Don’t just survive. THRIVE. Enter to win BestSelf's bestselling productivity & relationship tools.",
+        "tooltip": "In Just 13 Weeks",
+        "hero_image": "shopify://shop_images/3a559920ddc409372e62b6e57264ff1a883a34c8.png",
+        "cta_email": "Enter for free"
+      }
+    },
+    "landing_life_control_8tdewD": {
+      "type": "landing-life-control",
+      "blocks": {
+        "product_KN3x4X": {
+          "type": "product",
+          "settings": {
+            "image": "shopify://shop_images/helm-office-accessories-bestself-co-509577.jpg",
+            "title": "Helm",
+            "content": "Break screen addiction + reclaim your time"
+          }
+        },
+        "product_aAMWge": {
+          "type": "product",
+          "settings": {
+            "image": "shopify://shop_images/self-journal-1-year-pack-bundle-bestself-co-coral-781927.jpg",
+            "title": "Self Journal Pack",
+            "content": "Crush goals with a 13-week focus system"
+          }
+        },
+        "product_pacNzd": {
+          "type": "product",
+          "settings": {
+            "image": "shopify://shop_images/intimacy-deck-card-deck-romantic-connection-529185.jpg",
+            "title": "Intimacy Deck",
+            "content": "Deepen relationships with 170 real prompts"
+          }
+        },
+        "product_eDYiz3": {
+          "type": "product",
+          "settings": {
+            "image": "shopify://shop_images/relationship-journals-journal-romantic-connection-688613_fc36b255-7bd6-4316-ad05-720320b4606d.jpg",
+            "title": "Relationship Journals",
+            "content": "Build emotional intelligence with your partner"
+          }
+        },
+        "product_phx4QQ": {
+          "type": "product",
+          "settings": {
+            "image": "shopify://shop_images/meeting-mastery-notebooks-notepads-professional-growth-565396.jpg",
+            "title": "Meeting Mastery Pad",
+            "content": "Own your day (and your team’s respect)"
+          }
+        }
+      },
+      "block_order": [
+        "product_KN3x4X",
+        "product_aAMWge",
+        "product_pacNzd",
+        "product_eDYiz3",
+        "product_phx4QQ"
+      ],
+      "name": "Life Control Bundle",
+      "settings": {
+        "subheading": "WHAT YOU'LL WIN",
+        "heading": "This Isn’t Just a Bundle.",
+        "description": "It’s a System for Total Life Control."
+      }
+    },
+    "landing_why_section_MY4RtR": {
+      "type": "landing-why-section",
+      "blocks": {
+        "list_item_iXTa8E": {
+          "type": "list_item",
+          "settings": {
+            "text": "Escape Overwhelm: Tools that bring clarity and calm to chaos."
+          }
+        },
+        "list_item_y9XRjU": {
+          "type": "list_item",
+          "settings": {
+            "text": "Achieve More in Less Time: 90-day system trusted by 1M+ achievers"
+          }
+        },
+        "list_item_U4eriN": {
+          "type": "list_item",
+          "settings": {
+            "text": "Fix Your Focus & Relationships: Finally feel seen and in control"
+          }
+        },
+        "list_item_mkaCia": {
+          "type": "list_item",
+          "settings": {
+            "text": "$500+ of Value—Yours Free: No cost. Just transformation."
+          }
+        }
+      },
+      "block_order": [
+        "list_item_iXTa8E",
+        "list_item_y9XRjU",
+        "list_item_U4eriN",
+        "list_item_mkaCia"
+      ],
+      "name": "Why Bundle Section",
+      "settings": {
+        "alt_layout": false,
+        "subtitle": "Why You Should Enter",
+        "title": "Why Are People Fighting Over This Bundle?",
+        "description": "",
+        "use_list": true,
+        "image": "shopify://shop_images/Frame_838_1.png",
+        "bg_color": "#1a1a1a",
+        "text_color": "#f9f9f9",
+        "accent_color": "#c49b3f",
+        "text_alignment": "left",
+        "content_width": 70,
+        "button_text": "Enter Giveaway",
+        "button_link": "shopify://collections"
       }
     }
   },
   "order": [
     "main",
-    "landing_banner_A7VeQB"
+    "landing_banner_A7VeQB",
+    "landing_life_control_8tdewD",
+    "landing_why_section_MY4RtR"
   ]
 }

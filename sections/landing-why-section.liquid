@@ -1,0 +1,173 @@
+{{ 'giveaway-landing.css' | asset_url | stylesheet_tag }}
+
+<section class="why-bundle-section {% if section.settings.alt_layout %}alt-layout{% endif %}">
+  <div class="why-bundle-inner">
+    <div class="image">
+      {% if section.settings.image != blank %}
+        <img
+          src="{{ section.settings.image | image_url: width: 1000 }}"
+          alt=""
+          width="1000"
+          height="auto"
+        >
+      {% endif %}
+    </div>
+
+    <div class="content"
+      style="
+        text-align: {{ section.settings.text_alignment }};
+        background-color: {{ section.settings.bg_color }};
+        color: {{ section.settings.text_color }};
+      ">
+      <div class="content-inner">
+        {% if section.settings.subtitle != blank %}
+          <p class="subtitle">{{ section.settings.subtitle }}</p>
+        {% endif %}
+
+        {% if section.settings.title != blank %}
+          <h2 class="title">{{ section.settings.title }}</h2>
+        {% endif %}
+
+        {% if section.settings.use_list %}
+          <ul class="list">
+            {% for block in section.blocks %}
+              {% if block.type == 'list_item' %}
+                <li>{{ block.settings.text }}</li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+        {% else %}
+          {% if section.settings.description != blank %}
+            <div class="description">{{ section.settings.description }}</div>
+          {% endif %}
+        {% endif %}
+
+        <a
+          href="{{ section.settings.button_link }}"
+          class="btn-secondary {{ section.settings.button_style }}"
+        >
+          {{ section.settings.button_text }}
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<script>
+  document.querySelectorAll('.why-bundle-section').forEach(section => {
+    section.style.setProperty('--accent-color', '{{ section.settings.accent_color }}');
+  });
+</script>
+
+
+{% schema %}
+{
+  "name": "Why Bundle Section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "alt_layout",
+      "label": "Use Alternate Layout (Design 2)",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "WHY YOU SHOULD ENTER"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Why Are People Fighting Over This Bundle?"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description (if not using list)",
+      "default": "Escape Overwhelm. Tools that bring clarity and calm to chaos."
+    },
+    {
+      "type": "checkbox",
+      "id": "use_list",
+      "label": "Use list instead of description",
+      "default": false
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Main Image"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#f5f5f5"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Accent Color",
+      "default": "#c49b3f"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text Alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "range",
+      "id": "content_width",
+      "label": "Content Width (%)",
+      "min": 40,
+      "max": 70,
+      "step": 5,
+      "default": 50
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Shop Now"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "list_item",
+      "name": "List Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "List text",
+          "default": "Escape Overwhelm: Tools that bring clarity and calm to chaos."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Why Bundle Section"
+    }
+  ]
+}
+{% endschema %}

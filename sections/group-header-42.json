@@ -91,7 +91,6 @@
     },
     "header": {
       "type": "header",
-      "disabled": true,
       "settings": {
         "header_sticky": true,
         "header_style": "logo_center_menu_left",
@@ -129,10 +128,19 @@
         "padding_top": 10,
         "padding_bottom": 10
       }
+    },
+    "landing_header_EXTeMG": {
+      "type": "landing-header",
+      "disabled": true,
+      "name": "Landing Header",
+      "settings": {
+        "logo": "shopify://shop_images/bc4f5bb6def0700ad71e3d30dd75536b39e4dbef.png"
+      }
     }
   },
   "order": [
     "announcement",
-    "header"
+    "header",
+    "landing_header_EXTeMG"
   ]
 }

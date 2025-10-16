@@ -1,22 +1,26 @@
-<section class="landing-hero">
-  <div class="container">
-    <h1 class="heading">{{ section.settings.heading }}</h1>
-    <h2 class="subheading">{{ section.settings.subheading }}</h2>
-    <p class="description">{{ section.settings.description }}</p>
+<section style="position: relative;">
+  <div class="landing-hero">
+    <div class="container">
+      <h1 class="heading1">{{ section.settings.heading1 }}</h1>
+      <h2 class="heading2">{{ section.settings.heading2 }}</h2>
+      <div class="hightlight-container">
+        <h2 class="heading-highlight">{{ section.settings.hightlight }}</h2>
+        <p class="tooltip-heading">{{ section.settings.tooltip }}</p>
+      </div>
+      <p class="description">{{ section.settings.description }}</p>
 
-    {% if section.settings.hero_image != blank %}
-      <img src="{{ section.settings.hero_image | image_url: width: 800 }}" alt="Bundle Image" class="hero-image" />
-    {% endif %}
-
-    <a href="{{ section.settings.cta_link }}" class="btn-primary">
-      {{ section.settings.cta_text }}
-    </a>
-
-    <div class="days-left">
-      <span>{{ section.settings.days_left }}</span>
-      <p>Days Left</p>
+      <form class="cta-form">
+        <input type="text" class="cta-input" placeholder="{{ section.settings.cta_email }}">
+        <button type="submit" class="btn-primary">Enter Now</button>
+      </form>
     </div>
   </div>
+
+  {% if section.settings.hero_image != blank %}
+    <div class="hero-image-container">
+        <img src="{{ section.settings.hero_image | image_url: width:1025 }}" width="1025" height="auto" alt="Bundle Image" class="hero-image" />
+    </div>
+  {% endif %}
 </section>
 
 {{ 'giveaway-landing.css' | asset_url | stylesheet_tag }}
@@ -28,14 +32,20 @@
   "settings": [
     {
       "type": "text",
-      "id": "heading",
+      "id": "heading1",
+      "label": "Main Heading",
+      "default": "Giveaway"
+    },
+    {
+      "type": "text",
+      "id": "heading2",
       "label": "Main Heading",
       "default": "$500+ Transformation Toolkit"
     },
     {
       "type": "text",
-      "id": "subheading",
-      "label": "Subheading",
+      "id": "hightlight",
+      "label": "Hightlight",
       "default": "Win the Life You Actually Want"
     },
     {
@@ -45,29 +55,21 @@
       "default": "Enter for a chance to win our exclusive productivity bundle designed for total life transformation."
     },
     {
+      "type": "textarea",
+      "id": "tooltip",
+      "label": "Tooltip",
+      "default": "Tooltip text"
+    },
+    {
       "type": "image_picker",
       "id": "hero_image",
       "label": "Hero Image"
     },
     {
       "type": "text",
-      "id": "cta_text",
-      "label": "Button Text",
-      "default": "Enter Free + Get Loyalty Points"
-    },
-    {
-      "type": "url",
-      "id": "cta_link",
-      "label": "Button Link"
-    },
-    {
-      "type": "range",
-      "id": "days_left",
-      "label": "Days Left Counter",
-      "default": 7,
-      "min": 1,
-      "max": 30,
-      "step": 1
+      "id": "cta_email",
+      "label": "Email Input Placeholder",
+      "default": "Enter for free"
     }
   ],
   "presets": [

@@ -1,0 +1,87 @@
+<section class="life-control-bundle">
+  <div class="container">
+    <div class="bundle-header">
+      {% if section.settings.subheading != blank %}
+        <p class="bundle-subheading">{{ section.settings.subheading }}</p>
+      {% endif %}
+      {% if section.settings.heading != blank %}
+        <h2 class="bundle-heading">{{ section.settings.heading }}</h2>
+      {% endif %}
+      {% if section.settings.description != blank %}
+        <h2 class="bundle-description">{{ section.settings.description }}</h2>
+      {% endif %}
+    </div>
+
+    <div class="bundle-products-grid">
+      {% for block in section.blocks %}
+        <div class="bundle-item">
+          {% if block.settings.image %}
+            <img src="{{ block.settings.image | image_url: width:200 }}" width="200" height="200" alt="{{ block.settings.title }}">
+          {% endif %}
+          <h3 class="bundle-item-title">{{ block.settings.title }}</h3>
+          <p class="bundle-item-desc">{{ block.settings.content }}</p>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{{ 'giveaway-landing.css' | asset_url | stylesheet_tag }}
+
+{% schema %}
+{
+  "name": "Life Control Bundle",
+  "settings": [
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "WHAT YOU'LL WIN"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Main Heading",
+      "default": "This Isn’t Just a Bundle."
+    },
+    {
+      "type": "text",
+      "id": "description",
+      "label": "Subtitle / Description",
+      "default": "It’s a System for Total Life Control."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Product Item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Product Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Product Title",
+          "default": "Product Name"
+        },
+        {
+          "type": "text",
+          "id": "content",
+          "label": "Product Description",
+          "default": "Your customizable content here."
+        }
+      ]
+    }
+  ],
+  "max_blocks": 5,
+  "presets": [
+    {
+      "name": "Life Control Bundle",
+      "category": "Custom Sections"
+    }
+  ]
+}
+{% endschema %}
