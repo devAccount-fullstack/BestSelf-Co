@@ -70,13 +70,14 @@
       ],
       "name": "Landing Entry",
       "settings": {
+        "bg_color": "#2d3c61",
         "eyebrow": "How to Enter",
-        "heading": "3 Seconds to Entry. Instant Rewards.",
+        "heading": "3 Seconds to Entry. <i>Instant Rewards.</i>",
         "heading_margin_bottom": 53,
         "subheading": "",
         "button_text": "Yes, I Want In!",
         "button_url": "shopify://pages/customer-acquisition-giveaway",
-        "button_style": "primary"
+        "button_margin_top": 53
       }
     },
     "landing_testimonial_slider_W8QV6x": {
@@ -85,6 +86,7 @@
         "slide_zWRJjU": {
           "type": "slide",
           "settings": {
+            "background_image": "shopify://shop_images/landing-testimonial.png",
             "message": "I ditched my phone addiction thanks to Helm. I actually feel present now.",
             "name": "Jasmine K."
           }
@@ -92,6 +94,7 @@
         "slide_af4T7z": {
           "type": "slide",
           "settings": {
+            "background_image": "shopify://shop_images/landing-testimonial2.png",
             "message": "The Self Journal helped me finish my book in 11 weeks.",
             "name": "Tony R."
           }
@@ -110,6 +113,7 @@
       "type": "landing-entry",
       "name": "Landing Entry",
       "settings": {
+        "bg_color": "#1a1a1a",
         "eyebrow": "",
         "countdown_number": 7,
         "heading": "Days Left",
@@ -117,7 +121,7 @@
         "subheading": "Don’t miss the transformation that could change everything.",
         "button_text": "Enter the Giveaway Now",
         "button_url": "shopify://pages/customer-acquisition-giveaway",
-        "button_style": "secondary"
+        "button_margin_top": 36
       }
     },
     "landing_faq_wBdny4": {
@@ -161,7 +165,7 @@
       "settings": {
         "logo": "shopify://shop_images/bc4f5bb6def0700ad71e3d30dd75536b39e4dbef.png",
         "copyright": "© 2025 BestSelf Co. All rights reserved.",
-        "policy_links": "<p><a href=\"/pages/privacy-policy\">Privacy Policy</a> | <a href=\"/pages/terms-conditions\">Terms & Conditions</a> | <a href=\"/pages/shipping-policy\">Shipping Policy</a></p>"
+        "policy_links": "<p><a href=\"/policies/privacy-policy\" title=\"Privacy Policy\">Privacy Policy</a> | <a href=\"/policies/terms-of-service\" title=\"Terms of Service\">Terms & Conditions</a> | <a href=\"/policies/refund-policy\" title=\"Refund Policy\">Shipping Policy</a></p>"
       }
     }
   },

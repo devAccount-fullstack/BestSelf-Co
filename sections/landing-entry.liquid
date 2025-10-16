@@ -34,8 +34,8 @@
     {% endif %}
     
     {% if section.settings.button_text != blank and section.settings.button_url != blank %}
-      <div class="landing-entry__button-wrapper">
-        <a href="{{ section.settings.button_url }}" class="landing-entry__button landing-entry__button--{{ section.settings.button_style }} btn">
+      <div class="landing-entry__button-wrapper" style="--button-margin-top: {{ section.settings.button_margin_top }}px;">
+        <a href="{{ section.settings.button_url }}" class="landing-entry__button btn">
           {{ section.settings.button_text }}
         </a>
       </div>
@@ -43,11 +43,25 @@
   </div>
 </section>
 
-<style>
+{% style %}
   .landing-entry__heading {
     margin-bottom: var(--heading-margin-bottom, 20px);
   }
-</style>
+
+  .landing-entry__button-wrapper {
+    margin-top: var(--button-margin-top, 20px);
+  }
+
+  #shopify-section-{{ section.id }} .landing-entry {
+    background-color: {{ section.settings.bg_color }};
+  }
+
+  @media (max-width: 849px) {
+    .landing-entry__heading {
+      margin-bottom: 18px;
+    }
+  }
+{% endstyle %}
 
 {% schema %}
 {
@@ -55,6 +69,12 @@
   "tag": "section",
   "class": "section",
   "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#2D3C61"
+    },
     {
       "type": "text",
       "id": "eyebrow",
@@ -67,7 +87,7 @@
       "label": "Countdown Number"
     },
     {
-      "type": "text",
+      "type": "textarea",
       "id": "heading",
       "label": "Heading",
       "default": "3 Seconds to Entry. <i>Instant Rewards.</i>"
@@ -99,20 +119,13 @@
       "label": "Button URL"
     },
     {
-      "type": "select",
-      "id": "button_style",
-      "label": "Button Style",
-      "default": "primary",
-      "options": [
-        {
-          "value": "primary",
-          "label": "Primary (Dark background, White text)"
-        },
-        {
-          "value": "secondary",
-          "label": "Secondary (White background, Dark text)"
-        }
-      ]
+      "type": "range",
+      "id": "button_margin_top",
+      "label": "Button Margin Top",
+      "min": 0,
+      "max": 100,
+      "unit": "px",
+      "default": 20
     }
   ],
   "blocks": [

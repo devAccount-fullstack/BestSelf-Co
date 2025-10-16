@@ -1,16 +1,14 @@
-<section class="landing-two-column-slider">
+<section class="landing-faq">
   <div class="container">
     <div class="landing-two-column-slider__wrapper faq">
       <!-- Left Column - Heading -->
       <div class="landing-two-column-slider__content">
-        
         {% if section.settings.heading != blank %}
           <h2 class="landing-two-column-slider__heading">{{ section.settings.heading }}</h2>
         {% endif %}
       </div>
       
       <!-- Right Column - FAQ Content -->
-      <div class="landing-two-column-slider__slider-container">
         {% if section.blocks.size > 0 %}
           <div class="landing-faq__content">
             {% for block in section.blocks %}
@@ -25,7 +23,6 @@
             {% endfor %}
           </div>
         {% endif %}
-      </div>
     </div>
   </div>
 </section>
