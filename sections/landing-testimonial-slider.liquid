@@ -51,6 +51,8 @@
   </div>
 </section>
 
+{{ 'giveaway-landing.css' | asset_url | stylesheet_tag }}
+
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     const sliders = document.querySelectorAll('[data-slider="horizontal"]');

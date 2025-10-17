@@ -26,122 +26,36 @@
         "heading_tag": "automatic"
       }
     },
-    "landing_banner_A7VeQB": {
+    "landing_banner_YBFcjr": {
       "type": "landing-banner",
       "name": "Landing Page Banner",
       "settings": {
-        "heading": "$500+ Transformation Toolkit",
-        "subheading": "Win the Life You Actually Want",
+        "heading1": "Giveaway",
+        "heading2": "$500+ Transformation Toolkit",
+        "hightlight": "Win the Life You Actually Want",
         "description": "Enter for a chance to win our exclusive productivity bundle designed for total life transformation.",
-        "cta_text": "Enter Free + Get Loyalty Points",
-        "cta_link": "",
-        "days_left": 7
+        "tooltip": "Tooltip text",
+        "cta_email": "Enter for free"
       }
     },
-    "landing_entry_8xUEC9": {
-      "type": "landing-entry",
-      "blocks": {
-        "grid_item_GGk3UU": {
-          "type": "grid_item",
-          "settings": {
-            "number": "1",
-            "text": "Just drop <br>your email"
-          }
-        },
-        "grid_item_AANQxb": {
-          "type": "grid_item",
-          "settings": {
-            "number": "2",
-            "text": "Get loyalty points <br>instantly"
-          }
-        },
-        "grid_item_yn9mzG": {
-          "type": "grid_item",
-          "settings": {
-            "number": "3",
-            "text": "You’re in <br>the running"
-          }
-        }
-      },
-      "block_order": [
-        "grid_item_GGk3UU",
-        "grid_item_AANQxb",
-        "grid_item_yn9mzG"
-      ],
-      "name": "Landing Entry",
-      "settings": {
-        "bg_color": "#2d3c61",
-        "eyebrow": "How to Enter",
-        "heading": "3 Seconds to Entry. <i>Instant Rewards.</i>",
-        "heading_margin_bottom": 53,
-        "subheading": "",
-        "button_text": "Yes, I Want In!",
-        "button_url": "shopify://pages/customer-acquisition-giveaway",
-        "button_margin_top": 53
-      }
-    },
-    "landing_testimonial_slider_W8QV6x": {
-      "type": "landing-testimonial-slider",
-      "blocks": {
-        "slide_zWRJjU": {
-          "type": "slide",
-          "settings": {
-            "background_image": "shopify://shop_images/landing-testimonial.png",
-            "message": "I ditched my phone addiction thanks to Helm. I actually feel present now.",
-            "name": "Jasmine K."
-          }
-        },
-        "slide_af4T7z": {
-          "type": "slide",
-          "settings": {
-            "background_image": "shopify://shop_images/landing-testimonial2.png",
-            "message": "The Self Journal helped me finish my book in 11 weeks.",
-            "name": "Tony R."
-          }
-        }
-      },
-      "block_order": [
-        "slide_zWRJjU",
-        "slide_af4T7z"
-      ],
-      "name": "Landing Testimonial",
-      "settings": {
-        "heading": "<i>Join 10,000+</i> Who've Transformed Their Focus & Relationships"
-      }
-    },
-    "landing_entry_JdnPht": {
-      "type": "landing-entry",
-      "name": "Landing Entry",
-      "settings": {
-        "bg_color": "#1a1a1a",
-        "eyebrow": "",
-        "countdown_number": 7,
-        "heading": "Days Left",
-        "heading_margin_bottom": 12,
-        "subheading": "Don’t miss the transformation that could change everything.",
-        "button_text": "Enter the Giveaway Now",
-        "button_url": "shopify://pages/customer-acquisition-giveaway",
-        "button_margin_top": 36
-      }
-    },
-    "landing_faq_wBdny4": {
+    "landing_faq_R7QQNp": {
       "type": "landing-faq",
       "blocks": {
-        "faq_item_kCf4qj": {
+        "faq_item_8icbPb": {
           "type": "faq_item",
           "settings": {
             "question": "Is this really free?",
             "answer": "<p>Yes. No tricks.</p>"
           }
         },
-        "faq_item_dJBhdp": {
+        "faq_item_V9BwVa": {
           "type": "faq_item",
           "settings": {
             "question": "Who can enter?",
             "answer": "<p>Anyone in the U.S. who wants more out of life</p>"
           }
         },
-        "faq_item_Re3KfD": {
+        "faq_item_4JV4YD": {
           "type": "faq_item",
           "settings": {
             "question": "Do I need to buy anything?",
@@ -150,32 +64,90 @@
         }
       },
       "block_order": [
-        "faq_item_kCf4qj",
-        "faq_item_dJBhdp",
-        "faq_item_Re3KfD"
+        "faq_item_8icbPb",
+        "faq_item_V9BwVa",
+        "faq_item_4JV4YD"
       ],
       "name": "Landing FAQ",
       "settings": {
         "heading": "Frequently Asked Questions"
       }
     },
-    "landing_footer_EPteKM": {
-      "type": "landing-footer",
-      "name": "Landing Footer",
+    "landing_testimonial_slider_AHqCJr": {
+      "type": "landing-testimonial-slider",
+      "blocks": {
+        "slide_Aqnpby": {
+          "type": "slide",
+          "settings": {
+            "message": "I ditched my phone addiction thanks to Helm. I actually feel present now.",
+            "name": "Jasmine K."
+          }
+        },
+        "slide_gW7Xn9": {
+          "type": "slide",
+          "settings": {
+            "message": "The Self Journal helped me finish my book in 11 weeks.",
+            "name": "Tony R."
+          }
+        }
+      },
+      "block_order": [
+        "slide_Aqnpby",
+        "slide_gW7Xn9"
+      ],
+      "name": "Landing Testimonial",
       "settings": {
-        "logo": "shopify://shop_images/bc4f5bb6def0700ad71e3d30dd75536b39e4dbef.png",
-        "copyright": "© 2025 BestSelf Co. All rights reserved.",
-        "policy_links": "<p><a href=\"/policies/privacy-policy\" title=\"Privacy Policy\">Privacy Policy</a> | <a href=\"/policies/terms-of-service\" title=\"Terms of Service\">Terms & Conditions</a> | <a href=\"/policies/refund-policy\" title=\"Refund Policy\">Shipping Policy</a></p>"
+        "heading": "Join 10,000+ Who've Transformed Their Focus & Relationships"
+      }
+    },
+    "landing_entry_9pwY8W": {
+      "type": "landing-entry",
+      "blocks": {
+        "grid_item_4daYma": {
+          "type": "grid_item",
+          "settings": {
+            "number": "1",
+            "text": "Just drop your email"
+          }
+        },
+        "grid_item_YbB8LD": {
+          "type": "grid_item",
+          "settings": {
+            "number": "2",
+            "text": "Get loyalty points instantly"
+          }
+        },
+        "grid_item_fx6q7M": {
+          "type": "grid_item",
+          "settings": {
+            "number": "3",
+            "text": "You're in the running"
+          }
+        }
+      },
+      "block_order": [
+        "grid_item_4daYma",
+        "grid_item_YbB8LD",
+        "grid_item_fx6q7M"
+      ],
+      "name": "Landing Entry",
+      "settings": {
+        "bg_color": "#2D3C61",
+        "eyebrow": "How to Enter",
+        "heading": "3 Seconds to Entry. <i>Instant Rewards.</i>",
+        "heading_margin_bottom": 20,
+        "subheading": "",
+        "button_text": "Yes, I Want In!",
+        "button_url": "",
+        "button_margin_top": 20
       }
     }
   },
   "order": [
     "main",
-    "landing_banner_A7VeQB",
-    "landing_entry_8xUEC9",
-    "landing_testimonial_slider_W8QV6x",
-    "landing_entry_JdnPht",
-    "landing_faq_wBdny4",
-    "landing_footer_EPteKM"
+    "landing_banner_YBFcjr",
+    "landing_faq_R7QQNp",
+    "landing_testimonial_slider_AHqCJr",
+    "landing_entry_9pwY8W"
   ]
 }

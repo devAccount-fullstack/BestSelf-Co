@@ -91,6 +91,82 @@
     },
     "header": {
       "type": "header",
+      "blocks": {
+        "image_UPwr6X": {
+          "type": "image",
+          "settings": {
+            "position": "1",
+            "image": "shopify://shop_images/its-a-date-card-deck-romantic-connection-940344.jpg",
+            "aspect_ratio": 1,
+            "wide_image": true,
+            "overlay_opacity": 60,
+            "overlay_color": "#242540",
+            "title": "Romantic Connection",
+            "heading_font_size": "heading-small",
+            "link_text": "SHOP NOW",
+            "text_font_size": "body-small",
+            "link": "shopify://collections/romantic-relationships",
+            "text_color": "#ffffff"
+          }
+        },
+        "image_87RUwz": {
+          "type": "image",
+          "settings": {
+            "position": "1",
+            "image": "shopify://shop_images/BestSelf_PersonalGrowth-16.jpg",
+            "aspect_ratio": 1,
+            "wide_image": true,
+            "overlay_opacity": 50,
+            "overlay_color": "#242540",
+            "title": "Personal Growth",
+            "heading_font_size": "heading-small",
+            "link_text": "SHOP NOW",
+            "text_font_size": "body-small",
+            "link": "shopify://collections/personal-growth",
+            "text_color": "#ffffff"
+          }
+        },
+        "image_8ArN9P": {
+          "type": "image",
+          "settings": {
+            "position": "1",
+            "image": "shopify://shop_images/BestSelf_Family-211-Retouched.jpg",
+            "aspect_ratio": 1,
+            "wide_image": true,
+            "overlay_opacity": 50,
+            "overlay_color": "#000000",
+            "title": "Kids & Family",
+            "heading_font_size": "heading-small",
+            "link_text": "SHOP NOW",
+            "text_font_size": "body-small",
+            "link": "shopify://collections/kids-family",
+            "text_color": "#ffffff"
+          }
+        },
+        "image_pjKf7j": {
+          "type": "image",
+          "settings": {
+            "position": "1",
+            "image": "shopify://shop_images/BestSelf_SocialConnection-107_Retouched_V1.00_small_53310ec2-2603-4e79-bd9b-d7351da29dce.jpg",
+            "aspect_ratio": 1,
+            "wide_image": true,
+            "overlay_opacity": 50,
+            "overlay_color": "#242540",
+            "title": "Social Connection",
+            "heading_font_size": "heading-small",
+            "link_text": "SHOP NOW",
+            "text_font_size": "body-small",
+            "link": "shopify://collections/social-connections",
+            "text_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "image_UPwr6X",
+        "image_87RUwz",
+        "image_8ArN9P",
+        "image_pjKf7j"
+      ],
       "disabled": true,
       "settings": {
         "header_sticky": true,
@@ -129,10 +205,166 @@
         "padding_top": 10,
         "padding_bottom": 10
       }
+    },
+    "header_42_n73VqG": {
+      "type": "header-42",
+      "blocks": {
+        "image_UPwr6X": {
+          "type": "image",
+          "settings": {
+            "position": "1",
+            "image": "shopify://shop_images/its-a-date-card-deck-romantic-connection-940344.jpg",
+            "aspect_ratio": 1,
+            "wide_image": true,
+            "overlay_opacity": 60,
+            "overlay_color": "#242540",
+            "title": "Romantic Connection",
+            "heading_font_size": "heading-small",
+            "link_text": "SHOP NOW",
+            "text_font_size": "body-small",
+            "link": "shopify://collections/romantic-relationships",
+            "text_color": "#ffffff"
+          }
+        },
+        "image_87RUwz": {
+          "type": "image",
+          "settings": {
+            "position": "1",
+            "image": "shopify://shop_images/BestSelf_PersonalGrowth-16.jpg",
+            "aspect_ratio": 1,
+            "wide_image": true,
+            "overlay_opacity": 50,
+            "overlay_color": "#242540",
+            "title": "Personal Growth",
+            "heading_font_size": "heading-small",
+            "link_text": "SHOP NOW",
+            "text_font_size": "body-small",
+            "link": "shopify://collections/personal-growth",
+            "text_color": "#ffffff"
+          }
+        },
+        "image_8ArN9P": {
+          "type": "image",
+          "settings": {
+            "position": "1",
+            "image": "shopify://shop_images/BestSelf_Family-211-Retouched.jpg",
+            "aspect_ratio": 1,
+            "wide_image": true,
+            "overlay_opacity": 50,
+            "overlay_color": "#000000",
+            "title": "Kids & Family",
+            "heading_font_size": "heading-small",
+            "link_text": "SHOP NOW",
+            "text_font_size": "body-small",
+            "link": "shopify://collections/kids-family",
+            "text_color": "#ffffff"
+          }
+        },
+        "image_pjKf7j": {
+          "type": "image",
+          "settings": {
+            "position": "1",
+            "image": "shopify://shop_images/BestSelf_SocialConnection-107_Retouched_V1.00_small_53310ec2-2603-4e79-bd9b-d7351da29dce.jpg",
+            "aspect_ratio": 1,
+            "wide_image": true,
+            "overlay_opacity": 50,
+            "overlay_color": "#242540",
+            "title": "Social Connection",
+            "heading_font_size": "heading-small",
+            "link_text": "SHOP NOW",
+            "text_font_size": "body-small",
+            "link": "shopify://collections/social-connections",
+            "text_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "image_UPwr6X",
+        "image_87RUwz",
+        "image_8ArN9P",
+        "image_pjKf7j"
+      ],
+      "disabled": true,
+      "name": "Header 42",
+      "settings": {
+        "url_logo": "/",
+        "header_sticky": true,
+        "header_style": "logo_center_menu_left",
+        "show_separator_line": true,
+        "header_border_color": "rgba(0,0,0,0)",
+        "separator_opacity": 10,
+        "show_icons": true,
+        "icon_as_circle": false,
+        "cart_icon_family": "bag",
+        "logo": "{{ shop.brand.logo }}",
+        "logo_max_limit": 100,
+        "logo_max_limit_mobile": 90,
+        "main_menu_linklist": "main-menu-broadcast",
+        "mobile_menu_linklist": "mobile-menu",
+        "enable_search": true,
+        "show_social_icons": false,
+        "button_text": "",
+        "button_link": "",
+        "button_type": "btn--primary",
+        "show_locale_selector": false,
+        "show_globe_icon": false,
+        "show_country_selector": false,
+        "show_country_name": false,
+        "show_country_flag": false,
+        "highlight_item": "",
+        "highlight_item_color": "#f73c3c",
+        "transparent_logo": "{{ shop.brand.logo }}",
+        "transparent_home": false,
+        "transparent_collection": false,
+        "transparent_article": false,
+        "transparent_page": false,
+        "transparent_product_page": false,
+        "secondary_menu_linklist": "",
+        "tertiary_menu_linklist": "",
+        "padding_top": 10,
+        "padding_bottom": 5
+      }
+    },
+    "42_cart_drawer_V6f7WC": {
+      "type": "42-cart-drawer",
+      "disabled": true,
+      "name": "42 Cart Drawer",
+      "settings": {
+        "gift_products": [
+          "30-day-gratitude-journal",
+          "doodle-deck",
+          "its-a-date",
+          "kids-win-the-day-pads-3-pack",
+          "little-talk-deck-expansion-pack",
+          "intimacy-deck-expansion-pack"
+        ],
+        "heading": "Cart ([[count]])",
+        "text_empty_cart": "<p>Your cart is empty.<br/>Fill it with something good.</p>",
+        "btn_text_empty_cart": "Shop All",
+        "btn_link_empty_cart": "/",
+        "cart_progress_bar_enabled": true,
+        "cart_progress_bar_threshold_1": 60,
+        "cart_progress_bar_icon_1": "shopify://shop_images/gift.png",
+        "cart_progress_bar_threshold_2": 75,
+        "cart_progress_bar_icon_2": "shopify://shop_images/delivery-truck.png",
+        "cart_progress_message_1": "Spend [amount_left] more and receive Free Gift",
+        "cart_progress_message_2": "Spend  [amount_left] more and get free US* shipping!",
+        "cart_progress_reached_message": "Congratulations! You get free US* shipping",
+        "shipping_protection_heading": "Shipping Protection",
+        "shipping_protection_subheading": "From damage, loss or theft.",
+        "shipping_protection_product": "shipping-protection-1",
+        "total_heading": "Subtotal",
+        "btn_checkout": "Checkout",
+        "bottom_link_text": "Continue Shopping",
+        "bottom_link_url": "/",
+        "cross_selling_products_title": "You may also like"
+      }
     }
   },
   "order": [
     "announcement",
-    "header"
+    "header",
+    "header_42_n73VqG",
+    "42_cart_drawer_V6f7WC"
   ]
 }
