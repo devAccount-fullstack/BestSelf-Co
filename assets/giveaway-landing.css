@@ -1,8 +1,44 @@
-.landing-hero {
-  background-color: #0e0e0e;
+.landing-entry__eyebrow,
+.landing-entry__subheading,
+.landing-faq__question {
+  font-size: 20px;
+}
+
+.landing-entry__eyebrow,
+.landing-entry__subheading,
+.landing-faq__question,
+.landing-entry__number,
+.landing-entry__text,
+.landing-entry__button,
+.landing-faq__answer {
+  line-height: 160%;
+  letter-spacing: 0.01em;
+}
+
+.landing-entry__eyebrow,
+.landing-entry__number,
+.landing-entry__text,
+.landing-entry__button,
+.landing-entry__subheading,
+.landing-faq__answer p,
+.landing-footer {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+.landing-entry__countdown-number,
+.landing-two-column-slider__wrapper {
+  font-family: 'Libre Baskerville', Georgia, serif !important;
+}
+
+.landing-hero,
+.landing-entry {
   color: #fff;
   padding: 80px 20px;
   text-align: center;
+}
+
+.landing-hero {
+  background-color: #0e0e0e;
 }
 
 .landing-hero .container {
@@ -62,18 +98,11 @@
 /* Entry Section */
 .landing-entry {
   background-color: #1a1a1a;
-  color: #fff;
-  padding: 80px 20px;
-  text-align: center;
 }
 
 .landing-entry__eyebrow {
-  font-size: 20px;
   text-transform: uppercase;
-  line-height: 160%;
-  letter-spacing: 0.01em;
   margin-bottom: 12px;
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
   color: #FAC848;
 }
 
@@ -106,11 +135,10 @@
 }
 
 .landing-entry__number {
-  background-color: #FAC848;
+  background: #FAC848;
 }
 
 .landing-entry__number {
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
   width: 56px;
   height: 56px;
   border-radius: 13px;
@@ -120,30 +148,22 @@
   font-size: 30px;
   font-weight: 700;
   margin-bottom: 24px;
-  line-height: 160%;
-  letter-spacing: 0.01em;
   color: #404040;
 }
 
 .landing-entry__text {
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
   font-size: 24px;
   font-weight: 700;
-  line-height: 160%;
-  letter-spacing: 0.01em;
   max-width: 249px;
 }
 
 .landing-entry__button {
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
   display: inline-block;
   padding: 16px 36px;
   text-decoration: none;
   border-radius: 108px;
   font-weight: 600;
   font-size: 24px;
-  line-height: 160%;
-  letter-spacing: 0.01em;
   transition: background-color 0.3s ease;
   text-transform: none;
   border: 1px solid #fff;
@@ -154,7 +174,6 @@
   background-color: #fff;
   color: #0e0e0e;
 }
-
 
 .landing-entry__countdown {
   text-align: center;
@@ -167,19 +186,14 @@
   background: #FAC848;
   color: #2D3C61;
   width: 101px;
-  height: 101px;
+  height: 96px;
   border-radius: 22px;
   margin-bottom: 18px;
   box-shadow: 0px 12px 22.4px rgba(0, 0, 0, 0.93);
-  font-family: 'Libre Baskerville', Georgia, serif !important;
 }
 
 .landing-entry__subheading {
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  font-size: 20px;
   color: #fff;
-  line-height: 160%;
-  letter-spacing: 0.01em;
   max-width: 388px;
   margin: 0 auto;
 }
@@ -198,7 +212,6 @@
 }
 
 .landing-two-column-slider__wrapper {
-  font-family: 'Libre Baskerville', Georgia, serif !important;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 60px;
@@ -283,7 +296,7 @@
   height: 100%;
   min-height: 589px;
   background-size: cover;
-  background-position: center;
+  background-position: top center;
   background-repeat: no-repeat;
   border-radius: 12px;
   overflow: hidden;
@@ -393,29 +406,22 @@
 }
 
 .landing-faq__question {
-  font-size: 20px;
   font-weight: 700;
   color: #FAC848;
   margin-bottom: 8px;
-  line-height: 160%;
-  letter-spacing: 0.01em;
 }
 
 .landing-faq__answer {
   font-size: 18px;
-  line-height: 160%;
-  letter-spacing: 0.01em;
   color: #E3E3E3;
 }
 
 .landing-faq__answer p {
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
   margin: 0;
 }
 
 /* Footer Section */
 .landing-footer {
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
   background-color: #131313;
   color: #fff;
   padding: 100px 20px;

@@ -1,7 +1,6 @@
 <footer class="landing-footer">
   <div class="container">
     <div class="landing-footer__wrapper">
-      <!-- Logo -->
       {% if section.settings.logo != blank %}
         <div class="landing-footer__logo">
           {{
@@ -12,14 +11,12 @@
         </div>
       {% endif %}
 
-      <!-- Copyright -->
       {% if section.settings.copyright != blank %}
         <div class="landing-footer__copyright">
           {{ section.settings.copyright }}
         </div>
       {% endif %}
 
-      <!-- Policy Links -->
       {% if section.settings.policy_links != blank %}
         <div class="landing-footer__links">
           {{ section.settings.policy_links }}
