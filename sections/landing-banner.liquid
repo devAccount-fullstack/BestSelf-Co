@@ -1,0 +1,79 @@
+<section class="landing-hero">
+  <div class="container">
+    <h1 class="heading">{{ section.settings.heading }}</h1>
+    <h2 class="subheading">{{ section.settings.subheading }}</h2>
+    <p class="description">{{ section.settings.description }}</p>
+
+    {% if section.settings.hero_image != blank %}
+      <img src="{{ section.settings.hero_image | image_url: width: 800 }}" alt="Bundle Image" class="hero-image" />
+    {% endif %}
+
+    <a href="{{ section.settings.cta_link }}" class="btn-primary">
+      {{ section.settings.cta_text }}
+    </a>
+
+    <div class="days-left">
+      <span>{{ section.settings.days_left }}</span>
+      <p>Days Left</p>
+    </div>
+  </div>
+</section>
+
+{{ 'giveaway-landing.css' | asset_url | stylesheet_tag }}
+
+
+{% schema %}
+{
+  "name": "Landing Page Section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Main Heading",
+      "default": "$500+ Transformation Toolkit"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Win the Life You Actually Want"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Enter for a chance to win our exclusive productivity bundle designed for total life transformation."
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Hero Image"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "Button Text",
+      "default": "Enter Free + Get Loyalty Points"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "range",
+      "id": "days_left",
+      "label": "Days Left Counter",
+      "default": 7,
+      "min": 1,
+      "max": 30,
+      "step": 1
+    }
+  ],
+  "presets": [
+    {
+      "name": "Landing Page Banner"
+    }
+  ]
+}
+{% endschema %}
