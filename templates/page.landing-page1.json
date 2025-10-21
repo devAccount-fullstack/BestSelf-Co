@@ -38,11 +38,11 @@
       "name": "Landing Page Banner",
       "settings": {
         "heading1": "Giveaway",
-        "heading2": "$500+ Transformation Toolkit",
-        "hightlight": "Win the Life You Actually Want",
-        "description": "Enter for a chance to win our exclusive productivity bundle designed for total life transformation.",
+        "heading2": "You’re Invited: Unlock Your Next-Level Life",
+        "hightlight": "An Exclusive Founder Workshop",
+        "description": "VIP access to $500+ transformation bundle + private AI workshop with Cathryn Lavery",
         "tooltip": "In Just 13 Weeks",
-        "hero_image": "shopify://shop_images/3a559920ddc409372e62b6e57264ff1a883a34c8.png",
+        "hero_image": "shopify://shop_images/Hero_banner_graphic.png",
         "cta_email": "Enter for free"
       }
     },
@@ -198,6 +198,38 @@
         "button_link": ""
       }
     },
+    "landing_testimonial_gT8frK": {
+      "type": "landing-testimonial",
+      "blocks": {
+        "quote_kqUHmQ": {
+          "type": "quote",
+          "settings": {
+            "quote_text": "“I just need something that finally helps me build better habits but keep getting overwhelmed.”"
+          }
+        },
+        "quote_bwhRHJ": {
+          "type": "quote",
+          "settings": {
+            "quote_text": "“I just need something that finally helps me build better habits but keep getting overwhelmed.”"
+          }
+        },
+        "quote_M6zQ3K": {
+          "type": "quote",
+          "settings": {
+            "quote_text": "“I just need something that finally helps me build better habits but keep getting overwhelmed.”"
+          }
+        }
+      },
+      "block_order": [
+        "quote_kqUHmQ",
+        "quote_bwhRHJ",
+        "quote_M6zQ3K"
+      ],
+      "name": "Testimonial Content",
+      "settings": {
+        "background_color": "#1b1d3b"
+      }
+    },
     "landing_faq_R7QQNp": {
       "type": "landing-faq",
       "blocks": {
@@ -288,8 +320,8 @@
     "landing_life_control_FHVDzE",
     "landing_entry_fQ8jb3",
     "landing_why_section_Qx7MqE",
+    "landing_testimonial_gT8frK",
     "landing_faq_R7QQNp",
-    "testimonial_content_9XxDgB",
     "landing_testimonial_slider_AHqCJr",
     "landing_footer_7exntJ"
   ]

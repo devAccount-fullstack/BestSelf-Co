@@ -3,19 +3,19 @@
     <div class="landing-two-column-slider__wrapper">
       <!-- Left Column - Heading -->
       <div class="landing-two-column-slider__content">
-        
+
         {% if section.settings.heading != blank %}
           <h2 class="landing-two-column-slider__heading">{{ section.settings.heading }}</h2>
         {% endif %}
       </div>
-      
+
       <!-- Right Column - Horizontal Slider -->
       <div class="landing-two-column-slider__slider-container">
         {% if section.blocks.size > 0 %}
           <div class="landing-two-column-slider__slider" data-slider="horizontal">
             {% for block in section.blocks %}
               <div class="landing-two-column-slider__slide" {{ block.shopify_attributes }}>
-                <div class="landing-two-column-slider__slide-inner" 
+                <div class="landing-two-column-slider__slide-inner"
                      {% if block.settings.background_image != blank %}
                        style="background-image: url('{{ block.settings.background_image | image_url: width: 429 }}');"
                      {% endif %}>
@@ -26,13 +26,13 @@
                       width="54"
                       height="44"
                     >
-                    
+
                     {% if block.settings.message != blank %}
                       <p class="landing-two-column-slider__slide-text">
                         {{ block.settings.message }}
                       </p>
                     {% endif %}
-                    
+
                     {% if block.settings.name != blank %}
                       <cite class="landing-two-column-slider__slide-title">
                         {{ block.settings.name }}
@@ -51,29 +51,27 @@
   </div>
 </section>
 
-{{ 'giveaway-landing.css' | asset_url | stylesheet_tag }}
-
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     const sliders = document.querySelectorAll('[data-slider="horizontal"]');
-    
+
     sliders.forEach(slider => {
       const slides = slider.querySelectorAll('.landing-two-column-slider__slide');
       let currentSlide = 0;
       let autoplayInterval;
       let isTransitioning = false;
-      
+
       // Initialize slider
       if (slides.length > 0) {
         updateSlides();
         startAutoplay();
-        
+
         // Add drag/swipe support for both mobile and desktop
         let startX = 0;
         let endX = 0;
         let isDragging = false;
         let hasMoved = false;
-        
+
         // Touch events (mobile)
         slider.addEventListener('touchstart', (e) => {
           startX = e.touches[0].clientX;
@@ -82,13 +80,13 @@
           clearInterval(autoplayInterval);
           slider.style.cursor = 'grabbing';
         });
-        
+
         slider.addEventListener('touchmove', (e) => {
           if (!isDragging) return;
           hasMoved = true;
           e.preventDefault();
         });
-        
+
         slider.addEventListener('touchend', (e) => {
           if (!isDragging) return;
           endX = e.changedTouches[0].clientX;
@@ -97,7 +95,7 @@
           slider.style.cursor = 'grab';
           startAutoplay();
         });
-        
+
         // Mouse events (desktop)
         slider.addEventListener('mousedown', (e) => {
           startX = e.clientX;
@@ -107,13 +105,13 @@
           slider.style.cursor = 'grabbing';
           e.preventDefault();
         });
-        
+
         slider.addEventListener('mousemove', (e) => {
           if (!isDragging) return;
           hasMoved = true;
           e.preventDefault();
         });
-        
+
         slider.addEventListener('mouseup', (e) => {
           if (!isDragging) return;
           endX = e.clientX;
@@ -122,7 +120,7 @@
           slider.style.cursor = 'grab';
           startAutoplay();
         });
-        
+
         slider.addEventListener('mouseleave', (e) => {
           if (isDragging) {
             endX = e.clientX;
@@ -132,14 +130,14 @@
             startAutoplay();
           }
         });
-        
+
         // Set initial cursor
         slider.style.cursor = 'grab';
-        
+
         function handleDragEnd() {
           const dragThreshold = 50;
           const diff = startX - endX;
-          
+
           if (Math.abs(diff) > dragThreshold) {
             if (diff > 0) {
               nextSlide();
@@ -149,47 +147,47 @@
           }
         }
       }
-      
+
       function updateSlides() {
         if (isTransitioning) return;
         isTransitioning = true;
-        
+
         slides.forEach((slide, index) => {
           slide.classList.remove('active');
           if (index === currentSlide) {
             slide.classList.add('active');
           }
         });
-        
+
         // Reset transition flag after animation
         setTimeout(() => {
           isTransitioning = false;
         }, 600);
       }
-      
+
       function nextSlide() {
         if (isTransitioning) return;
         currentSlide = (currentSlide + 1) % slides.length;
         updateSlides();
       }
-      
+
       function prevSlide() {
         if (isTransitioning) return;
         currentSlide = (currentSlide - 1 + slides.length) % slides.length;
         updateSlides();
       }
-      
+
       function startAutoplay() {
         if (slides.length > 1) {
           autoplayInterval = setInterval(nextSlide, 5000);
         }
       }
-      
+
       // Pause autoplay on hover
       slider.addEventListener('mouseenter', () => {
         clearInterval(autoplayInterval);
       });
-      
+
       slider.addEventListener('mouseleave', () => {
         startAutoplay();
       });

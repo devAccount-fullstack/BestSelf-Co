@@ -1,0 +1,143 @@
+<section class="testimonial-content" style="background-color: {{ section.settings.background_color }}">
+  <div class="testimonial-list">
+    {% for block in section.blocks %}
+      <div class="testimonial-row" data-index="{{ forloop.index }}">
+        <div class="testimonial-text">
+          <p>{{ block.settings.quote_text }}</p>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+
+  <style>
+    .testimonial-content {
+      position: relative;
+      overflow: hidden;
+      padding: 100px 0;
+      background-color: #0f1133;
+    }
+
+    .testimonial-list {
+      display: flex;
+      flex-direction: column;
+      gap: 60px;
+      width: 100%;
+    }
+
+    .testimonial-row {
+      width: 100%;
+      overflow-x: auto;
+      overflow-y: hidden;
+      white-space: nowrap;
+      scroll-behavior: smooth;
+      scrollbar-width: none; /* Firefox */
+    }
+
+    .testimonial-row::-webkit-scrollbar {
+      display: none; /* Chrome, Safari */
+    }
+
+    .testimonial-text {
+      display: inline-block;
+      white-space: nowrap;
+    }
+
+    .testimonial-text p {
+      font-family: 'Georgia', serif;
+      font-style: italic;
+      font-size: 64px;
+      font-weight: 400;
+      line-height: 1.2;
+      color: rgba(255, 255, 255, 0.8);
+      margin: 0;
+      padding: 0 5%;
+      display: inline-block;
+    }
+
+    /* Wider fade effect (300px each side) */
+    .testimonial-content::before,
+    .testimonial-content::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      width: 300px;
+      height: 100%;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .testimonial-content::before {
+      left: 0;
+      background: linear-gradient(to right, #0f1133 0%, transparent 100%);
+    }
+
+    .testimonial-content::after {
+      right: 0;
+      background: linear-gradient(to left, #0f1133 0%, transparent 100%);
+    }
+
+    @media (max-width: 768px) {
+      .testimonial-text p {
+        font-size: 36px;
+      }
+
+      .testimonial-content::before,
+      .testimonial-content::after {
+        width: 150px;
+      }
+    }
+  </style>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const rows = document.querySelectorAll(".testimonial-row");
+      rows.forEach((row, index) => {
+        const scrollWidth = row.scrollWidth - row.clientWidth;
+        if (scrollWidth > 0) {
+          if (index === 1) {
+            row.scrollLeft = scrollWidth / 2; // 2nd one in middle
+          } else if (index === 2) {
+            row.scrollLeft = 0; // 3rd one back at start
+          } else {
+            row.scrollLeft = 0; // 1st one start as usual
+          }
+        }
+      });
+    });
+  </script>
+
+  {% schema %}
+  {
+    "name": "Testimonial Content",
+    "settings": [
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "Background color",
+        "default": "#0f1133"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "quote",
+        "name": "Testimonial Quote",
+        "settings": [
+          {
+            "type": "text",
+            "id": "quote_text",
+            "label": "Quote text",
+            "default": "“I just need something that finally helps me build better habits but keep getting overwhelmed.”"
+          }
+        ]
+      }
+    ],
+    "max_blocks": 3,
+    "presets": [
+      {
+        "name": "Testimonial Content",
+        "category": "Testimonials"
+      }
+    ]
+  }
+  {% endschema %}
+</section>

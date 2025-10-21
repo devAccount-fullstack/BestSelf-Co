@@ -80,19 +80,25 @@
         <script src="https://ds0wlyksfn0sb.cloudfront.net/redirect.js"></script>
       {%- endunless -%}
     {%- endif -%}
-    
+
     {%- comment -%}Consolidated listicle styles - loads for all listicle pages{%- endcomment -%}
-    {%- if (template.name == 'page' and template.suffix == 'listicle') 
-         or (template.name == 'metaobject' and metaobject.type == 'listicle') 
-         or (template.name == 'article' and template.suffix == 'lander-listicle') -%}
+    {%- if template.name == 'page' and template.suffix == 'listicle'
+         or template.name == 'metaobject' and metaobject.type == 'listicle'
+         or template.name == 'article' and template.suffix == 'lander-listicle' -%}
       {{ 'listicle-consolidated.css' | asset_url | stylesheet_tag }}
     {%- endif -%}
-    
+
+    {%- comment -%}Giveaway Landing VIP{%- endcomment -%}
+    {%- if template.name == 'page' and template.suffix == 'landing-page'
+       or template.name == 'page' and template.suffix == 'landing-page1' -%}
+      {{ 'giveaway-landing.css' | asset_url | stylesheet_tag }}
+    {%- endif -%}
+
     {%- comment -%}Article Journal Template Assets{%- endcomment -%}
     {%- if template.name == 'article' and template.suffix == 'journal' -%}
       {{ 'article-journal.css' | asset_url | stylesheet_tag }}
     {%- endif -%}
-    
+
     {%- comment -%}Critical fix for mobile visibility issues with Tailwind classes{%- endcomment -%}
     {{ 'mobile-visibility-fix.css' | asset_url | stylesheet_tag }}
   </head>
@@ -128,24 +134,38 @@
       {{- 'general.accessibility.skip_to_content' | t -}}
     </a>
 
-    <div class="container" data-site-container>
-      <div class="header-sections tw-relative tw-z-10">
-        {% sections 'group-header-42' %}
-      </div>
+    {%- if template.name == 'page' and template.suffix == 'landing-page'
+    or template.name == 'page' and template.suffix == 'landing-page1' -%}
 
-      {% sections 'group-overlay' %}
-
-      <!-- CONTENT -->
+      <!-- Landing Page layout -->
       <main role="main" id="MainContent" class="main-content">
         {{ content_for_layout }}
       </main>
-    </div>
 
-    {% sections 'group-pre-footer-42' %}
+    {%- else -%}
 
-    <footer class="footer-sections">
-      {% sections 'group-footer-42' %}
-    </footer>
+      <!-- Default layout -->
+      <div class="container" data-site-container>
+        <div class="header-sections tw-relative tw-z-10">
+          {% sections 'group-header-42' %}
+        </div>
+
+        {% sections 'group-overlay' %}
+
+        <!-- CONTENT -->
+        <main role="main" id="MainContent" class="main-content">
+          {{ content_for_layout }}
+        </main>
+      </div>
+
+      {% sections 'group-pre-footer-42' %}
+
+      <footer class="footer-sections">
+        {% sections 'group-footer-42' %}
+      </footer>
+
+    {%- endif -%}
+
 
     {%- if settings.swatches_type != 'disabled' -%}
       {% render 'template-swatch' %}
@@ -179,11 +199,11 @@
     <!-- webpack bundle -->
     <script src="{{ 'bundle.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'shopify-cart-events.min.js' | asset_url }}" defer="defer"></script>
-    
+
     {%- comment -%}Article Journal Template JavaScript{%- endcomment -%}
     {%- if template.name == 'article' and template.suffix == 'journal' -%}
       <script src="{{ 'article-journal.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
-    
+
   </body>
 </html>

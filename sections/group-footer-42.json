@@ -11,6 +11,14 @@
   "type": "footer",
   "name": "Footer 42",
   "sections": {
+    "landing_footer_wdeiXj": {
+      "type": "landing-footer",
+      "name": "Landing Footer",
+      "settings": {
+        "copyright": "© 2025 BestSelf Co. All rights reserved.",
+        "policy_links": "<p><a href=\"/pages/privacy-policy\">Privacy Policy</a> | <a href=\"/pages/terms-conditions\">Terms & Conditions</a> | <a href=\"/pages/shipping-policy\">Shipping Policy</a></p>"
+      }
+    },
     "footer": {
       "type": "footer",
       "blocks": {
@@ -96,6 +104,7 @@
     }
   },
   "order": [
+    "landing_footer_wdeiXj",
     "footer"
   ]
 }

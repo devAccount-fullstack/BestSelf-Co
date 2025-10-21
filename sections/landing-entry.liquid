@@ -3,13 +3,13 @@
     {% if section.settings.eyebrow != blank %}
       <p class="landing-entry__eyebrow">{{ section.settings.eyebrow }}</p>
     {% endif %}
-    
+
     {% if section.settings.countdown_number != blank %}
       <div class="landing-entry__countdown">
         <div class="landing-entry__countdown-number">{{ section.settings.countdown_number }}</div>
       </div>
     {% endif %}
-		
+
     {% if section.settings.heading != blank %}
 			<h2 class="landing-entry__heading">{{ section.settings.heading }}</h2>
     {% endif %}
@@ -17,7 +17,7 @@
 		{% if section.settings.subheading != blank %}
 			<p class="landing-entry__subheading">{{ section.settings.subheading }}</p>
 		{% endif %}
-    
+
     {% if section.blocks.size > 0 %}
       <div class="landing-entry__grid">
         {% for block in section.blocks %}
@@ -32,7 +32,7 @@
         {% endfor %}
       </div>
     {% endif %}
-    
+
     {% if section.settings.button_text != blank and section.settings.button_url != blank %}
       <div class="landing-entry__button-wrapper" style="--button-margin-top: {{ section.settings.button_margin_top }}px;">
         <a href="{{ section.settings.button_url }}" class="landing-entry__button btn">
@@ -40,10 +40,13 @@
         </a>
       </div>
     {% endif %}
+
+    <form class="cta-form-entry">
+      <input type="text" class="cta-input" placeholder="{{ section.settings.cta_email }}">
+      <button type="submit" class="btn-primary">Enter Now</button>
+    </form>
   </div>
 </section>
-
-{{ 'giveaway-landing.css' | asset_url | stylesheet_tag }}
 
 {% style %}
   .landing-entry__heading {
@@ -128,13 +131,19 @@
       "max": 100,
       "unit": "px",
       "default": 20
+    },
+    {
+      "type": "text",
+      "id": "cta_email",
+      "label": "Email Input Placeholder",
+      "default": "Enter for free"
     }
   ],
   "blocks": [
     {
       "type": "grid_item",
       "name": "Grid Item",
-      "limit": 3,
+      "limit": 5,
       "settings": [
         {
           "type": "text",

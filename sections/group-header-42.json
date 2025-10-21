@@ -71,6 +71,7 @@
         "text_bipwxy",
         "text_4mEmfk"
       ],
+      "disabled": true,
       "custom_css": [
         "announcement-bar {position: sticky top: 0;}"
       ],
@@ -359,12 +360,21 @@
         "bottom_link_url": "/",
         "cross_selling_products_title": "You may also like"
       }
+    },
+    "landing_header_36xgUX": {
+      "type": "landing-header",
+      "disabled": true,
+      "name": "Landing Header",
+      "settings": {
+        "logo": "shopify://shop_images/bc4f5bb6def0700ad71e3d30dd75536b39e4dbef_45145d83-2ebe-4a6f-8ce4-e70c600acb00.png"
+      }
     }
   },
   "order": [
     "announcement",
     "header",
     "header_42_n73VqG",
-    "42_cart_drawer_V6f7WC"
+    "42_cart_drawer_V6f7WC",
+    "landing_header_36xgUX"
   ]
 }
