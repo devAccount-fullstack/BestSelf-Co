@@ -5,14 +5,13 @@
       <h2 class="heading2">{{ section.settings.heading2 }}</h2>
       <div class="hightlight-container">
         <h2 class="heading-highlight">{{ section.settings.hightlight }}</h2>
-        <p class="tooltip-heading">{{ section.settings.tooltip }}</p>
+        {% if section.settings.tooltip != blank %}
+          <p class="tooltip-heading">{{ section.settings.tooltip }}</p>
+        {% endif %}
       </div>
       <p class="description">{{ section.settings.description }}</p>
 
-      <form class="cta-form">
-        <input type="text" class="cta-input" placeholder="{{ section.settings.cta_email }}">
-        <button type="submit" class="btn-primary">Enter Now</button>
-      </form>
+      <div class="klaviyo-form-URKe4P"></div>
     </div>
   </div>
 

@@ -17,6 +17,9 @@
 		{% if section.settings.subheading != blank %}
 			<p class="landing-entry__subheading">{{ section.settings.subheading }}</p>
 		{% endif %}
+    {% if section.settings.yellow_heading != blank %}
+			<p class="landing-entry__yellow_heading">{{ section.settings.yellow_heading }}</p>
+		{% endif %}
 
     {% if section.blocks.size > 0 %}
       <div class="landing-entry__grid">
@@ -41,10 +44,9 @@
       </div>
     {% endif %}
 
-    <form class="cta-form-entry">
-      <input type="text" class="cta-input" placeholder="{{ section.settings.cta_email }}">
-      <button type="submit" class="btn-primary">Enter Now</button>
-    </form>
+    <div class="klaviyo-container">
+      <div class="klaviyo-form-URKe4P"></div>
+    </div>
   </div>
 </section>
 
@@ -111,6 +113,11 @@
       "id": "subheading",
       "label": "Subheading",
       "info": "Text below the countdown number"
+    },
+    {
+      "type": "textarea",
+      "id": "yellow_heading",
+      "label": "Yellow Heading"
     },
     {
       "type": "text",

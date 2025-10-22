@@ -41,29 +41,51 @@
 .landing-hero .description {
   font-family: Inter, sans-serif;
   font-size: 20px;
-  margin: 30px 10px;
+  margin: 30px 0;
   font-weight: 500;
 }
-.cta-input {
-  width: 300px;
-  padding: 15px;
-  border-radius: 50px;
-  color: #fff;
-  text-align: center;
+.klaviyo-form-URKe4P {
+    max-width: 500px;
+    display: flex;
+    text-align: start !important;
+    margin: 0;
+    padding: 0;
+    font-family: Inter, sans-serif !important;
 }
-.cta-input::placeholder {
-  color: #fff;
+.klaviyo-form-URKe4P h1,.klaviyo-form-URKe4P span{
+    display: none !important;
 }
-.btn-primary {
-  display: inline-block;
-  background: #fc0;
-  color: #212121;
-  padding: 15px 35px;
-  font-weight: 500;
-  text-transform: uppercase;
-  border-radius: 50px;
-  transition: background .3s;
-  width: 300px;
+.needsclick.kl-private-reset-css-Xuajs1 span {
+    color: #fff;
+}
+.needsclick.kl-private-reset-css-Xuajs1 {
+    display: flex;
+}
+.needsclick.kl-private-reset-css-Xuajs1 {
+    display: block;
+}
+input#email_01K83TE0AHT5CAMPJP91S5471M {
+    border-radius: 50px !important;
+    text-align: center !important;
+    color: #fff !important;
+    background-color: transparent !important;
+}
+input#email_01K83TE0AHT5CAMPJP91S5471M::placeholder {
+    color: #fff !important;
+}
+
+button.needsclick.go300628013.kl-private-reset-css-Xuajs1 {
+  font-weight: normal !important;
+  font-size: 18px !important;
+  color: #1a1a1a !important;
+}
+.needsclick.kl-private-reset-css-Xuajs1 {
+    width: 350px !important;
+    border-radius: 50px !important;
+    color: #fff !important;
+    display: block !important;
+    padding: 0 !important;
+    margin-bottom: 20px;
 }
 .hero-image-container {
   display: flex;
@@ -80,12 +102,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-.cta-form {
-  display: flex;
-  gap: 20px;
-  flex-direction: column;
-  align-items: flex-start;
+  width: 265px;
 }
 
 /* Landing Life Control */
@@ -131,7 +148,7 @@
   align-items: center;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 200px;
+  gap: 24px;
   margin-top: 80px;
 }
 
@@ -289,6 +306,16 @@
   font-size: 20px;
 }
 
+.landing-entry__yellow_heading {
+  font-size: 36px;
+  font-weight: 600;
+  color: #FAC848;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-style: italic;
+  font-family: Libre Baskerville, serif;
+}
+
 .landing-entry__eyebrow,
 .landing-entry__subheading,
 .landing-faq__question,
@@ -354,13 +381,18 @@
 
 .landing-entry__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
-  margin-bottom: 40px;
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 40px auto;
+  max-width: 70%;
 }
+
+.klaviyo-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
 
 .landing-entry__item {
   display: flex;
@@ -709,7 +741,7 @@
   }
 
   .bundle-products-grid {
-    gap: 120px;
+    gap: 100px;
   }
 
 
@@ -736,7 +768,7 @@
 
 @media (max-width: 849px) {
   .landing-entry__grid {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 20px;
   }
 
@@ -897,12 +929,6 @@
     font-size: 34px;
     line-height: 50px;
   }
-  .cta-form {
-    align-items: center;
-  }
-  .cta-input {
-    text-align: center;
-  }
   .hero-image-container {
     height: 480px;
   }
@@ -941,17 +967,6 @@
   }
   .hightlight-container {
     display: block;
-  }
-  .cta-form {
-    display: block;
-  }
-  .cta-input {
-    width: 100%;
-    margin: 10px 0;
-  }
-  .btn-primary {
-    width: 100%;
-    margin: 10px 0;
   }
   .landing-entry__grid {
     grid-template-columns: 1fr;
