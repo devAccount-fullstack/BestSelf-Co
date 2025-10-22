@@ -100,8 +100,8 @@
       "name": "Life Control Bundle",
       "settings": {
         "subheading": "WHAT YOU'LL WIN",
-        "heading": "This Isn’t Just a Bundle.",
-        "description": "It’s a System for Total Life Control."
+        "heading": "",
+        "description": ""
       }
     },
     "landing_entry_fQ8jb3": {
@@ -127,12 +127,28 @@
             "number": "3",
             "text": "You're in the running"
           }
+        },
+        "grid_item_iffpqd": {
+          "type": "grid_item",
+          "settings": {
+            "number": "1",
+            "text": "Add your description text here"
+          }
+        },
+        "grid_item_4cddmN": {
+          "type": "grid_item",
+          "settings": {
+            "number": "1",
+            "text": "Add your description text here"
+          }
         }
       },
       "block_order": [
         "grid_item_rcm4ED",
         "grid_item_zDxaQY",
-        "grid_item_q9M9kQ"
+        "grid_item_q9M9kQ",
+        "grid_item_iffpqd",
+        "grid_item_4cddmN"
       ],
       "name": "Landing Entry",
       "settings": {
