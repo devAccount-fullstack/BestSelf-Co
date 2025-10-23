@@ -43,10 +43,11 @@
         </a>
       </div>
     {% endif %}
-
-    <div class="klaviyo-container">
-      <div class="klaviyo-form-URKe4P"></div>
-    </div>
+    {% if section.settings.show_klaviyo %}
+      <div class="klaviyo-container">
+        <div class="klaviyo-form-URKe4P"></div>
+      </div>
+    {% endif %}
   </div>
 </section>
 
@@ -118,6 +119,12 @@
       "type": "textarea",
       "id": "yellow_heading",
       "label": "Yellow Heading"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_klaviyo",
+      "label": "Show Klaviyo Form",
+      "default": true
     },
     {
       "type": "text",

@@ -9,7 +9,14 @@
           <p class="tooltip-heading">{{ section.settings.tooltip }}</p>
         {% endif %}
       </div>
-      <p class="description">{{ section.settings.description }}</p>
+      <div class="description-image-container">
+        <p class="description">{{ section.settings.description }}</p>
+        {% if section.settings.show_image %}
+          <div class="overflow-image-container">
+            <img src="{{ section.settings.overflow_image | image_url: width:300 }}" width="300" height="auto" alt="Overflow Image" class="overflow-image" />
+          </div>
+        {% endif %}
+      </div>
 
       <div class="klaviyo-form-URKe4P"></div>
     </div>
@@ -43,6 +50,17 @@
       "id": "hightlight",
       "label": "Hightlight",
       "default": "Win the Life You Actually Want"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_image",
+      "label": "Show Image",
+      "default": false
+    },
+    {
+      "type": "image_picker",
+      "id": "overflow_image",
+      "label": "Overflow Image"
     },
     {
       "type": "textarea",

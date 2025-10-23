@@ -44,48 +44,104 @@
   margin: 30px 0;
   font-weight: 500;
 }
-.klaviyo-form-URKe4P {
-    max-width: 500px;
-    display: flex;
-    text-align: start !important;
-    margin: 0;
-    padding: 0;
-    font-family: Inter, sans-serif !important;
-}
-.klaviyo-form-URKe4P h1,.klaviyo-form-URKe4P span{
-    display: none !important;
-}
-.needsclick.kl-private-reset-css-Xuajs1 span {
-    color: #fff;
-}
-.needsclick.kl-private-reset-css-Xuajs1 {
-    display: flex;
-}
-.needsclick.kl-private-reset-css-Xuajs1 {
-    display: block;
-}
-input#email_01K83TE0AHT5CAMPJP91S5471M {
-    border-radius: 50px !important;
-    text-align: center !important;
-    color: #fff !important;
-    background-color: transparent !important;
-}
-input#email_01K83TE0AHT5CAMPJP91S5471M::placeholder {
-    color: #fff !important;
+
+.description-image-container {
+    position: relative;
+    display: inline-block;
+    max-width: 100%;
+    margin: 40px 0;
 }
 
-button.needsclick.go300628013.kl-private-reset-css-Xuajs1 {
-  font-weight: normal !important;
+.description {
+  display: inline;
+  font-size: 1.2rem;
+  line-height: 1.4;
+}
+
+/* The image stays absolutely placed near the end of the text */
+.overflow-image {
+  position: absolute;
+  top: 303%;
+  transform: translateY(-50%);
+  right: -225px;
+  width: 300px;
+  height: auto;
+  max-width: none;
+  z-index: 2;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .overflow-image {
+    right: -120px;
+    width: auto;
+    top: 120px;
+  }
+}
+
+@media (max-width: 992px) {
+  .overflow-image {
+    position: static;
+    display: block;
+    margin: 1rem auto 0;
+    transform: none;
+    width: auto;
+  }
+}
+
+@media (max-width: 576px) {
+  .overflow-image {
+    width: auto;
+  }
+}
+
+
+/* klaviyo Styling*/
+.klaviyo-form-URKe4P.klaviyo-form.form-version-cid-1 {
+    position: relative;
+    z-index: 10000;
+}
+.klaviyo-form-URKe4P span {
+  font-size: 14px !important;
+  font-family: Inter, sans-serif !important;
+  text-align: start !important;
+}
+.klaviyo-form-URKe4P h1 {
+  text-align: start !important;
+}
+.klaviyo-container .klaviyo-form-URKe4P h1 {
+  text-align: center !important;
+}
+.needsclick.go300628013.kl-private-reset-css-Xuajs1 {
+  width: 300px;
+  border-radius: 50px !important;
+  color: #1e1e1e !important;
   font-size: 18px !important;
-  color: #1a1a1a !important;
+  font-family: Inter, sans-serif !important;
+}
+.needsclick.kl-private-reset-css-Xuajs1 input {
+  width: 315px !important;
+  border-radius: 50px !important;
+  height: 53px !important;
+  background-color: transparent !important;
+  color: #fff !important;
+  border-color: #fff !important;
+}
+.needsclick.kl-private-reset-css-Xuajs1 input::placeholder {
+  color: #fff !important;
+}
+.go2544359273.go2544359273.go2544359273:hover {
+  border-color: #fff !important;
 }
 .needsclick.kl-private-reset-css-Xuajs1 {
-    width: 350px !important;
-    border-radius: 50px !important;
-    color: #fff !important;
-    display: block !important;
-    padding: 0 !important;
-    margin-bottom: 20px;
+  display: block !important;
+  position: relative;
+  width: 300px;
+}
+.go3176171171 {
+  color: #fff !important;
+  font-family: Inter, sans-serif !important;
+  font-size: 20px !important;
 }
 .hero-image-container {
   display: flex;
@@ -96,7 +152,7 @@ button.needsclick.go300628013.kl-private-reset-css-Xuajs1 {
 .hero-image {
   object-fit: cover;
   position: absolute;
-  top: 30%;
+  bottom: 0;
 }
 .bundle-item {
   display: flex;
@@ -229,7 +285,14 @@ button.needsclick.go300628013.kl-private-reset-css-Xuajs1 {
   padding: 10px 20px;
   border-radius: 50px;
   margin-top: 20px;
-  font-size: 20px;
+  font-size: 18px;
+}
+
+.btn-secondary:hover {
+  border: solid 1px #fff;
+  color: #1e1e1e;
+  background-color: #FAC848;
+  border: solid 1px #FAC848;
 }
 
 .why-bundle-inner .image,
@@ -425,12 +488,12 @@ button.needsclick.go300628013.kl-private-reset-css-Xuajs1 {
 
 .landing-entry__button {
   display: inline-block;
-  padding: 16px 36px;
+  padding: 10px 20px;
   text-decoration: none;
   border-radius: 108px;
   font-weight: 600;
-  font-size: 24px;
-  transition: background-color 0.3s ease;
+  font-size: 18px;
+  transition: background-color .3s ease;
   text-transform: none;
   border: 1px solid #fff;
 }

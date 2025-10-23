@@ -30,7 +30,8 @@
       "type": "landing-header",
       "name": "Landing Header",
       "settings": {
-        "logo": "shopify://shop_images/bc4f5bb6def0700ad71e3d30dd75536b39e4dbef_d357d9b1-886b-47bb-bca7-0e71e6090492.png"
+        "logo": "shopify://shop_images/bc4f5bb6def0700ad71e3d30dd75536b39e4dbef_d357d9b1-886b-47bb-bca7-0e71e6090492.png",
+        "logo_link": "/"
       }
     },
     "landing_banner_YBFcjr": {
@@ -40,9 +41,11 @@
         "heading1": "Giveaway",
         "heading2": "You’re Invited: Unlock Your Next-Level Life",
         "hightlight": "An Exclusive Founder Workshop",
+        "show_image": true,
+        "overflow_image": "shopify://shop_images/Hero_Asset_1.png",
         "description": "VIP access to $500+ transformation bundle + private AI workshop with Cathryn Lavery",
-        "tooltip": "In Just 13 Weeks",
-        "hero_image": "shopify://shop_images/Hero_banner_graphic.png",
+        "tooltip": "",
+        "hero_image": "shopify://shop_images/Hero_Asset_2.png",
         "cta_email": "Enter for free"
       }
     },
@@ -52,41 +55,46 @@
         "product_bdFWnn": {
           "type": "product",
           "settings": {
-            "image": "shopify://shop_images/helm-office-accessories-bestself-co-509577.jpg",
-            "title": "Helm",
-            "content": "Break screen addiction + reclaim your time"
+            "product": "",
+            "image": "shopify://shop_images/Frame_817.png",
+            "title": "Private AI Workshopwith Cathryn Lavery",
+            "content": "(Recorded Video)"
           }
         },
         "product_6tBTFU": {
           "type": "product",
           "settings": {
-            "image": "shopify://shop_images/self-journal-1-year-pack-bundle-bestself-co-coral-781927.jpg",
-            "title": "Self Journal Pack",
-            "content": "Crush goals with a 13-week focus system"
+            "product": "meeting-mastery",
+            "image": "shopify://shop_images/image_111_1.png",
+            "title": "Meeting Mastery Pad",
+            "content": "Own your day (and your team’s respect)"
           }
         },
         "product_7K3BTN": {
           "type": "product",
           "settings": {
-            "image": "shopify://shop_images/intimacy-deck-card-deck-romantic-connection-529185.jpg",
-            "title": "Intimacy Deck",
-            "content": "Deepen relationships with 170 real prompts"
+            "product": "helm",
+            "image": "shopify://shop_images/Frame_817_1.png",
+            "title": "Helm",
+            "content": "Quiet the noise,  find your rhythm"
           }
         },
         "product_A6K9dU": {
           "type": "product",
           "settings": {
-            "image": "shopify://shop_images/relationship-journals-journal-romantic-connection-688613_fc36b255-7bd6-4316-ad05-720320b4606d.jpg",
-            "title": "Relationship Journals",
-            "content": "Build emotional intelligence with your partner"
+            "product": "intimacy-deck",
+            "image": "shopify://shop_images/Frame_842.png",
+            "title": "Intimacy Deck + Relationship Journals",
+            "content": "Reignite connection"
           }
         },
         "product_gGEYGq": {
           "type": "product",
           "settings": {
-            "image": "shopify://shop_images/meeting-mastery-pad-notebooks-notepads-professional-growth-899437.jpg",
-            "title": "Meeting Mastery Pad",
-            "content": "Own your day (and your team’s respect)"
+            "product": "self-journal-4-pack",
+            "image": "shopify://shop_images/image_111_2.png",
+            "title": "Self Journal Pack  (1-year pack)",
+            "content": "Build unstoppable momentum"
           }
         }
       },
@@ -111,14 +119,14 @@
           "type": "grid_item",
           "settings": {
             "number": "1",
-            "text": "Just drop your email"
+            "text": "Complete this very short form"
           }
         },
         "grid_item_zDxaQY": {
           "type": "grid_item",
           "settings": {
             "number": "2",
-            "text": "Get loyalty points instantly"
+            "text": "Bonus entry. Leave a product review"
           }
         },
         "grid_item_q9M9kQ": {
@@ -127,38 +135,24 @@
             "number": "3",
             "text": "You're in the running"
           }
-        },
-        "grid_item_iffpqd": {
-          "type": "grid_item",
-          "settings": {
-            "number": "1",
-            "text": "Add your description text here"
-          }
-        },
-        "grid_item_4cddmN": {
-          "type": "grid_item",
-          "settings": {
-            "number": "1",
-            "text": "Add your description text here"
-          }
         }
       },
       "block_order": [
         "grid_item_rcm4ED",
         "grid_item_zDxaQY",
-        "grid_item_q9M9kQ",
-        "grid_item_iffpqd",
-        "grid_item_4cddmN"
+        "grid_item_q9M9kQ"
       ],
       "name": "Landing Entry",
       "settings": {
         "bg_color": "#2d3c61",
         "eyebrow": "How to Enter",
-        "heading": "3 Seconds to Entry. <i>Instant Rewards.</i>",
+        "heading": "Step-by-step",
         "heading_margin_bottom": 20,
         "subheading": "",
-        "button_text": "Yes, I Want In!",
-        "button_url": "",
+        "yellow_heading": "",
+        "show_klaviyo": false,
+        "button_text": "Complete form",
+        "button_url": "https://tally.so/r/wbabXe",
         "button_margin_top": 20,
         "cta_email": "Enter for free"
       }
@@ -200,17 +194,17 @@
       "name": "Why Bundle Section",
       "settings": {
         "alt_layout": false,
-        "subtitle": "WHY YOU SHOULD ENTER",
-        "title": "Why Are People Fighting Over This Bundle?",
-        "description": "Escape Overwhelm. Tools that bring clarity and calm to chaos.",
-        "use_list": true,
-        "image": "shopify://shop_images/Frame_838_1.png",
+        "subtitle": "Why You’re Invited",
+        "title": "You’ve Already Started  Your Transformation.  Let’s Take It Further.",
+        "description": "You’ve used our tools. You’ve made progress. Now we want to hear from you — and reward you with something even bigger.\n\nThis giveaway is your backstage pass. Your responses help us build better tools for you. And in return, you get a shot at the ultimate bundle (and the founder’s playbook).",
+        "use_list": false,
+        "image": "shopify://shop_images/Frame_838_2.png",
         "bg_color": "#212121",
         "text_color": "#ffffff",
         "accent_color": "#c49b3f",
         "text_alignment": "left",
         "content_width": 50,
-        "button_text": "Shop Now",
+        "button_text": "Enter Giveaway",
         "button_link": ""
       }
     },
@@ -246,6 +240,23 @@
         "background_color": "#1b1d3b"
       }
     },
+    "landing_entry_XK3M7w": {
+      "type": "landing-entry",
+      "name": "Landing Entry",
+      "settings": {
+        "bg_color": "#1a1a1a",
+        "eyebrow": "How to Enter",
+        "heading": "You’ve Invested in Your Growth.",
+        "heading_margin_bottom": 0,
+        "subheading": "",
+        "yellow_heading": "This Is Your Next Step.",
+        "show_klaviyo": true,
+        "button_text": "",
+        "button_url": "",
+        "button_margin_top": 20,
+        "cta_email": ""
+      }
+    },
     "landing_faq_R7QQNp": {
       "type": "landing-faq",
       "blocks": {
@@ -267,62 +278,41 @@
           "type": "faq_item",
           "settings": {
             "question": "Do I need to buy anything?",
-            "answer": "<p>Nope. Just your email</p>"
+            "answer": "<p>Nope. <strong>Just submit </strong>the email you used for your most recent BestSelf purchase.<br/><br/></p>"
+          }
+        },
+        "faq_item_iDgbXX": {
+          "type": "faq_item",
+          "settings": {
+            "question": "When will the winner be announced ?",
+            "answer": "<p><strong>Thursday, October 30, 2025</strong></p>"
+          }
+        },
+        "faq_item_DnRPzA": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Can the prize be converted to cash ?",
+            "answer": "<p>No<br/></p>"
           }
         }
       },
       "block_order": [
         "faq_item_8icbPb",
         "faq_item_V9BwVa",
-        "faq_item_4JV4YD"
+        "faq_item_4JV4YD",
+        "faq_item_iDgbXX",
+        "faq_item_DnRPzA"
       ],
       "name": "Landing FAQ",
       "settings": {
         "heading": "Frequently Asked Questions"
       }
     },
-    "landing_testimonial_slider_AHqCJr": {
-      "type": "landing-testimonial-slider",
-      "blocks": {
-        "slide_Aqnpby": {
-          "type": "slide",
-          "settings": {
-            "background_image": "shopify://shop_images/little-talk-deck-card-deck-kids-family-221238.jpg",
-            "message": "I ditched my phone addiction thanks to Helm. I actually feel present now.",
-            "name": "Jasmine K."
-          }
-        },
-        "slide_KEy4Bz": {
-          "type": "slide",
-          "settings": {
-            "background_image": "shopify://shop_images/landing-testimonial2.png",
-            "message": "Add your testimonial message here",
-            "name": "Customer Name"
-          }
-        },
-        "slide_gW7Xn9": {
-          "type": "slide",
-          "settings": {
-            "background_image": "shopify://shop_images/landing-testimonial.png",
-            "message": "The Self Journal helped me finish my book in 11 weeks.",
-            "name": "Tony R."
-          }
-        }
-      },
-      "block_order": [
-        "slide_Aqnpby",
-        "slide_KEy4Bz",
-        "slide_gW7Xn9"
-      ],
-      "name": "Landing Testimonial",
-      "settings": {
-        "heading": "Join 10,000+ Who've Transformed Their Focus & Relationships"
-      }
-    },
     "landing_footer_7exntJ": {
       "type": "landing-footer",
       "name": "Landing Footer",
       "settings": {
+        "logo_link": "/",
         "logo": "shopify://shop_images/bc4f5bb6def0700ad71e3d30dd75536b39e4dbef_d357d9b1-886b-47bb-bca7-0e71e6090492.png",
         "copyright": "© 2025 BestSelf Co. All rights reserved.",
         "policy_links": "<p><a href=\"/pages/privacy-policy\">Privacy Policy</a> | <a href=\"/pages/terms-conditions\">Terms & Conditions</a> | <a href=\"/pages/shipping-policy\">Shipping Policy</a></p>"
@@ -337,8 +327,8 @@
     "landing_entry_fQ8jb3",
     "landing_why_section_Qx7MqE",
     "landing_testimonial_gT8frK",
+    "landing_entry_XK3M7w",
     "landing_faq_R7QQNp",
-    "landing_testimonial_slider_AHqCJr",
     "landing_footer_7exntJ"
   ]
 }

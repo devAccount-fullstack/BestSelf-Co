@@ -1,5 +1,7 @@
 <header style="background: #000; display: flex; justify-content: center; align-items: center; height: 80px;">
-    <img src="{{ section.settings.logo | image_url: width:192, height:36 }}" width="192px" height="36px" alt="Logo">
+    <a href="{{ section.settings.logo_link }}">
+      <img src="{{ section.settings.logo | image_url: width:192, height:36 }}" width="192px" height="36px" alt="Logo">
+    </a>
 </header>
 
 {% schema %}
@@ -10,6 +12,12 @@
       "type": "image_picker",
       "id": "logo",
       "label": "Logo Image"
+    },
+    {
+      "type": "url",
+      "id": "logo_link",
+      "label": "Logo Link",
+      "default": "/"
     }
   ],
     "presets": [

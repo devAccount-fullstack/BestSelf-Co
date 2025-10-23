@@ -15,13 +15,19 @@
     <div class="bundle-products-grid">
       {% for block in section.blocks %}
         <div class="bundle-item">
-          {% if block.settings.image %}
-            <img src="{{ block.settings.image | image_url: width:200 }}" width="200" height="200" alt="{{ block.settings.title }}">
-          {% endif %}
+          <a href="{{ block.settings.product.url }}">
+            {% if block.settings.image %}
+              <img src="{{ block.settings.image | image_url: width:200 }}" width="200" height="200" alt="{{ block.settings.title }}">
+            {% endif %}
+          </a>
           <h3 class="bundle-item-title">{{ block.settings.title }}</h3>
           <p class="bundle-item-desc">{{ block.settings.content }}</p>
         </div>
       {% endfor %}
+    </div>
+
+    <div class="klaviyo-container">
+      <div class="klaviyo-form-URKe4P"></div>
     </div>
   </div>
 </section>
@@ -54,6 +60,11 @@
       "type": "product",
       "name": "Product Item",
       "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Select Product"
+        },
         {
           "type": "image_picker",
           "id": "image",

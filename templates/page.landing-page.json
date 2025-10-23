@@ -30,7 +30,8 @@
       "type": "landing-header",
       "name": "Landing Header",
       "settings": {
-        "logo": "shopify://shop_images/bc4f5bb6def0700ad71e3d30dd75536b39e4dbef_d357d9b1-886b-47bb-bca7-0e71e6090492.png"
+        "logo": "shopify://shop_images/bc4f5bb6def0700ad71e3d30dd75536b39e4dbef_d357d9b1-886b-47bb-bca7-0e71e6090492.png",
+        "logo_link": "/"
       }
     },
     "landing_banner_YBFcjr": {
@@ -42,7 +43,7 @@
         "hightlight": "Win the Life You Actually Want",
         "description": "Enter for a chance to win our exclusive productivity bundle designed for total life transformation.",
         "tooltip": "In Just 13 Weeks",
-        "hero_image": "shopify://shop_images/3a559920ddc409372e62b6e57264ff1a883a34c8.png",
+        "hero_image": "shopify://shop_images/Hero_Asset_2.png",
         "cta_email": "Enter for free"
       }
     },
@@ -52,6 +53,7 @@
         "product_bdFWnn": {
           "type": "product",
           "settings": {
+            "product": "helm",
             "image": "shopify://shop_images/helm-office-accessories-bestself-co-509577.jpg",
             "title": "Helm",
             "content": "Break screen addiction + reclaim your time"
@@ -60,6 +62,7 @@
         "product_6tBTFU": {
           "type": "product",
           "settings": {
+            "product": "self-journal-4-pack",
             "image": "shopify://shop_images/self-journal-1-year-pack-bundle-bestself-co-coral-781927.jpg",
             "title": "Self Journal Pack",
             "content": "Crush goals with a 13-week focus system"
@@ -68,6 +71,7 @@
         "product_7K3BTN": {
           "type": "product",
           "settings": {
+            "product": "intimacy-deck",
             "image": "shopify://shop_images/intimacy-deck-card-deck-romantic-connection-529185.jpg",
             "title": "Intimacy Deck",
             "content": "Deepen relationships with 170 real prompts"
@@ -76,6 +80,7 @@
         "product_A6K9dU": {
           "type": "product",
           "settings": {
+            "product": "relationship-journals",
             "image": "shopify://shop_images/relationship-journals-journal-romantic-connection-688613_fc36b255-7bd6-4316-ad05-720320b4606d.jpg",
             "title": "Relationship Journals",
             "content": "Build emotional intelligence with your partner"
@@ -84,6 +89,7 @@
         "product_gGEYGq": {
           "type": "product",
           "settings": {
+            "product": "meeting-mastery",
             "image": "shopify://shop_images/meeting-mastery-pad-notebooks-notepads-professional-growth-899437.jpg",
             "title": "Meeting Mastery Pad",
             "content": "Own your day (and your team’s respect)"
@@ -111,7 +117,7 @@
           "type": "grid_item",
           "settings": {
             "number": "1",
-            "text": "Just drop your email"
+            "text": "Just drop  your email"
           }
         },
         "grid_item_zDxaQY": {
@@ -125,7 +131,7 @@
           "type": "grid_item",
           "settings": {
             "number": "3",
-            "text": "You're in the running"
+            "text": "You’re in  the running"
           }
         }
       },
@@ -141,8 +147,10 @@
         "heading": "3 Seconds to Entry. <i>Instant Rewards.</i>",
         "heading_margin_bottom": 20,
         "subheading": "",
-        "button_text": "Yes, I Want In!",
-        "button_url": "",
+        "yellow_heading": "",
+        "show_klaviyo": true,
+        "button_text": "",
+        "button_url": "https://tally.so/r/wbabXe",
         "button_margin_top": 20,
         "cta_email": "Enter for free"
       }
@@ -195,7 +203,25 @@
         "text_alignment": "left",
         "content_width": 50,
         "button_text": "Shop Now",
-        "button_link": ""
+        "button_link": "shopify://collections/all"
+      }
+    },
+    "landing_entry_URwPfH": {
+      "type": "landing-entry",
+      "name": "Landing Entry",
+      "settings": {
+        "bg_color": "#1a1a1a",
+        "eyebrow": "",
+        "countdown_number": 23,
+        "heading": "Days Left",
+        "heading_margin_bottom": 20,
+        "subheading": "Don’t miss the transformation that could change everything.",
+        "yellow_heading": "",
+        "show_klaviyo": true,
+        "button_text": "",
+        "button_url": "",
+        "button_margin_top": 20,
+        "cta_email": "Enter for free"
       }
     },
     "landing_faq_R7QQNp": {
@@ -219,14 +245,30 @@
           "type": "faq_item",
           "settings": {
             "question": "Do I need to buy anything?",
-            "answer": "<p>Nope. Just your email</p>"
+            "answer": "<p>Nope. <strong>Just submit </strong>your email<br/><br/></p>"
+          }
+        },
+        "faq_item_qfaQLj": {
+          "type": "faq_item",
+          "settings": {
+            "question": "When will the winner be announced?",
+            "answer": "<p>Friday Nov 14, 2025<br/><br/></p>"
+          }
+        },
+        "faq_item_L6PKCJ": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Can the prize be converted to cash ?",
+            "answer": "<p>No<br/><br/></p>"
           }
         }
       },
       "block_order": [
         "faq_item_8icbPb",
         "faq_item_V9BwVa",
-        "faq_item_4JV4YD"
+        "faq_item_4JV4YD",
+        "faq_item_qfaQLj",
+        "faq_item_L6PKCJ"
       ],
       "name": "Landing FAQ",
       "settings": {
@@ -288,6 +330,7 @@
     "landing_life_control_FHVDzE",
     "landing_entry_fQ8jb3",
     "landing_why_section_Qx7MqE",
+    "landing_entry_URwPfH",
     "landing_faq_R7QQNp",
     "landing_testimonial_slider_AHqCJr",
     "landing_footer_7exntJ"
