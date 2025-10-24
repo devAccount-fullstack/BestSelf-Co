@@ -5,8 +5,20 @@
     {% endif %}
 
     {% if section.settings.countdown_number != blank %}
+      {% comment %}Add a "countdown_start_date" date/text setting to your schema. If absent, countdown starts today (no decrement yet).{% endcomment %}
+      {% if section.settings.countdown_start_date != blank %}
+        {% assign start_ts = section.settings.countdown_start_date | date: "%s" %}
+      {% else %}
+        {% assign start_ts = 'now' | date: "%s" %}
+      {% endif %}
+      {% assign now_ts = 'now' | date: "%s" %}
+      {% assign elapsed_seconds = now_ts | minus: start_ts %}
+      {% assign elapsed_days = elapsed_seconds | divided_by: 86400 | floor %}
+      {% assign initial = section.settings.countdown_number | times: 1 %}
+      {% assign current_count = initial | minus: elapsed_days %}
+      {% if current_count < 0 %}{% assign current_count = 0 %}{% endif %}
       <div class="landing-entry__countdown">
-        <div class="landing-entry__countdown-number">{{ section.settings.countdown_number }}</div>
+        <div class="landing-entry__countdown-number">{{ current_count }}</div>
       </div>
     {% endif %}
 

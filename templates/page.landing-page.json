@@ -41,9 +41,13 @@
         "heading1": "Giveaway",
         "heading2": "$500+ Transformation Toolkit",
         "hightlight": "Win the Life You Actually Want",
+        "show_image": false,
         "description": "Enter for a chance to win our exclusive productivity bundle designed for total life transformation.",
         "tooltip": "In Just 13 Weeks",
         "hero_image": "shopify://shop_images/Hero_Asset_2.png",
+        "show_klaviyo": true,
+        "button_text": "Yes, I Want In!",
+        "button_url": "",
         "cta_email": "Enter for free"
       }
     },
@@ -212,7 +216,7 @@
       "settings": {
         "bg_color": "#1a1a1a",
         "eyebrow": "",
-        "countdown_number": 23,
+        "countdown_number": 22,
         "heading": "Days Left",
         "heading_margin_bottom": 20,
         "subheading": "Don’t miss the transformation that could change everything.",
@@ -317,6 +321,7 @@
       "type": "landing-footer",
       "name": "Landing Footer",
       "settings": {
+        "logo_link": "/",
         "logo": "shopify://shop_images/bc4f5bb6def0700ad71e3d30dd75536b39e4dbef_d357d9b1-886b-47bb-bca7-0e71e6090492.png",
         "copyright": "© 2025 BestSelf Co. All rights reserved.",
         "policy_links": "<p><a href=\"/pages/privacy-policy\">Privacy Policy</a> | <a href=\"/pages/terms-conditions\">Terms & Conditions</a> | <a href=\"/pages/shipping-policy\">Shipping Policy</a></p>"

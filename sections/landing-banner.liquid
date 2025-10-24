@@ -17,8 +17,15 @@
           </div>
         {% endif %}
       </div>
-
-      <div class="klaviyo-form-URKe4P"></div>
+      {% if section.settings.show_klaviyo %}
+        <div class="klaviyo-form-URKe4P"></div>
+      {% else %}
+        <div class="landing-entry__button-wrapper" style="--button-margin-top: {{ section.settings.button_margin_top }}px;">
+          <a href="{{ section.settings.button_url }}" class="landing-entry__button btn">
+            {{ section.settings.button_text }}
+          </a>
+        </div>
+      {% endif %}
     </div>
   </div>
 
@@ -78,6 +85,23 @@
       "type": "image_picker",
       "id": "hero_image",
       "label": "Hero Image"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_klaviyo",
+      "label": "Show Email",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Yes, I Want In!"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button URL"
     },
     {
       "type": "text",

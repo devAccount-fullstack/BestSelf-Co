@@ -40,12 +40,15 @@
       "settings": {
         "heading1": "Giveaway",
         "heading2": "You’re Invited: Unlock Your Next-Level Life",
-        "hightlight": "An Exclusive Founder Workshop",
+        "hightlight": "+ An Exclusive Founder Workshop",
         "show_image": true,
         "overflow_image": "shopify://shop_images/Hero_Asset_1.png",
         "description": "VIP access to $500+ transformation bundle + private AI workshop with Cathryn Lavery",
         "tooltip": "",
         "hero_image": "shopify://shop_images/Hero_Asset_2.png",
+        "show_klaviyo": false,
+        "button_text": "Enter to win",
+        "button_url": "https://tally.so/r/wbabXe",
         "cta_email": "Enter for free"
       }
     },
