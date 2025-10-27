@@ -1,0 +1,215 @@
+{% if section.settings.enable_section %}
+<section class="growth-savings-section" style="background-color: {{ section.settings.bg_color }};">
+  <div class="growth-savings-container">
+    <div class="growth-left">
+      <h2 class="growth-title">
+        {{ section.settings.title | escape }}
+        <span class="growth-highlight">{{ section.settings.subtitle | escape }}</span>
+      </h2>
+      <p class="growth-offer">{{ section.settings.offer_text }}</p>
+      <p class="growth-member">{{ section.settings.member_text }}</p>
+      <a href="{{ section.settings.button_link }}" class="growth-button">
+        {{ section.settings.button_label }}
+      </a>
+    </div>
+
+    <div class="growth-right">
+      <ul class="growth-list">
+        {% for block in section.blocks %}
+        <li class="growth-item" style="background-color: {{ block.settings.bg_color }}">
+          <div class="growth-discount">{{ block.settings.discount_text }}</div>
+          {% if block.settings.sub_text != blank %}
+            <div class="growth-sub">{{ block.settings.sub_text }}</div>
+          {% endif %}
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<style>
+.growth-savings-section {
+  padding: 60px 20px;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+}
+.growth-savings-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 30px;
+}
+.growth-left {
+  flex: 1 1 45%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.growth-title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 0;
+}
+.growth-highlight {
+  color: #d4af37;
+  font-style: italic;
+}
+.growth-offer {
+  background-color: #2d5be3;
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+.growth-member {
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+.growth-button {
+  background-color: transparent;
+  border: 1px solid #fff;
+  padding: 10px 20px;
+  border-radius: 25px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: background 0.3s;
+}
+.growth-button:hover {
+  background-color: #fff;
+  color: #000;
+}
+.growth-right {
+  flex: 1 1 45%;
+}
+.growth-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.growth-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #333;
+  color: #fff;
+  border-radius: 6px;
+  padding: 15px 20px;
+  font-weight: 600;
+}
+.growth-sub {
+  font-size: 0.85rem;
+  color: #000;
+  background: #ffd75a;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .growth-savings-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .growth-right {
+    width: 100%;
+  }
+}
+</style>
+
+{% schema %}
+{
+  "name": "Black Friday Growth",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_section",
+      "label": "Enable section",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background color",
+      "default": "#0c0c0c"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Main title",
+      "default": "The More You Grow,"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "The More You Save"
+    },
+    {
+      "type": "text",
+      "id": "offer_text",
+      "label": "Offer text",
+      "default": "Today only — earn 2X points on every purchase."
+    },
+    {
+      "type": "text",
+      "id": "member_text",
+      "label": "Member text",
+      "default": "Not a member yet?"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Join now and snag 500 bonus points instantly!"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link",
+      "default": "/"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "discount_block",
+      "name": "Discount Block",
+      "settings": [
+        {
+          "type": "text",
+          "id": "discount_text",
+          "label": "Discount text",
+          "default": "20% OFF any order"
+        },
+        {
+          "type": "text",
+          "id": "sub_text",
+          "label": "Sub text (optional)",
+          "default": "Subtext goes here"
+        },
+        {
+          "type": "color",
+          "id": "bg_color",
+          "label": "Block background color",
+          "default": "#1c1c1c"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Black Friday Growth",
+      "category": "Black Friday"
+    }
+  ]
+}
+{% endschema %}
