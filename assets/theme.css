@@ -24603,6 +24603,32 @@ span[class*="review"] {
 }
 
 /* --- Product card container --- */
+.product-card__media {
+  position: relative;
+}
+
+.product-card__media .product-card__badge-group {
+  position: absolute;
+  top: var(--space-3, 12px);
+  left: 0;
+  right: auto;
+  bottom: auto;
+  z-index: 2;
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: var(--space-1, 4px);
+  justify-content: flex-start;
+  align-items: flex-start;
+  transform: none;
+}
+
+.product-card__media .product-card__badge-group .product-badge {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .product-card {
   display: block;
   width: 100%;

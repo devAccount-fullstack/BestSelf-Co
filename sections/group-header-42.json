@@ -55,7 +55,7 @@
         "text_4mEmfk": {
           "type": "text",
           "settings": {
-            "text": "<p>FREE MYSTERY GIFT WITH EVERY <a href=\"/collections/best-sellers\" target=\"_blank\" title=\"Best Sellers\"><strong>PURCHASE</strong></a></p>",
+            "text": "<p><a href=\"/products/helm\" target=\"_blank\" title=\"Helm\"><strong>20% OFF EVERYTHING </strong></a>— AUTOMATICALLY APPLIED AT CHECKOUT</p>",
             "target_url_enabled": false,
             "target_url": "",
             "target_referrer_enabled": false,
@@ -71,7 +71,6 @@
         "text_bipwxy",
         "text_4mEmfk"
       ],
-      "disabled": true,
       "custom_css": [
         "announcement-bar {position: sticky top: 0;}"
       ],
@@ -285,7 +284,6 @@
         "image_8ArN9P",
         "image_pjKf7j"
       ],
-      "disabled": true,
       "name": "Header 42",
       "settings": {
         "url_logo": "/",
@@ -328,7 +326,6 @@
     },
     "42_cart_drawer_V6f7WC": {
       "type": "42-cart-drawer",
-      "disabled": true,
       "name": "42 Cart Drawer",
       "settings": {
         "gift_products": [
@@ -360,21 +357,12 @@
         "bottom_link_url": "/",
         "cross_selling_products_title": "You may also like"
       }
-    },
-    "landing_header_36xgUX": {
-      "type": "landing-header",
-      "disabled": true,
-      "name": "Landing Header",
-      "settings": {
-        "logo": "shopify://shop_images/bc4f5bb6def0700ad71e3d30dd75536b39e4dbef_45145d83-2ebe-4a6f-8ce4-e70c600acb00.png"
-      }
     }
   },
   "order": [
     "announcement",
     "header",
     "header_42_n73VqG",
-    "42_cart_drawer_V6f7WC",
-    "landing_header_36xgUX"
+    "42_cart_drawer_V6f7WC"
   ]
 }

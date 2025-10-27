@@ -35,7 +35,7 @@
           "settings": {
             "default_open": false,
             "title": "Do you offer a money-back guarantee?",
-            "content": "<p>Yes! We’re confident in the impact our products will have on your life that we offer a <strong>30-day money-back guarantee</strong>. If you don’t see the change you expected, just reach out to our support team—we’re here to help.<br/><br/><strong>To qualify for a full refund, items must be unopened and in their original shrink-wrapped packaging.</strong> If your product has been opened or used, no worries—just email us at support@bestself.co and we’ll do our best to make it right.</p>",
+            "content": "<p>Yes! We stand behind the quality of every BestSelf Co. product and want you to feel confident in your purchase. If your order isn’t what you expected, you may request a return for a refund — no hard feelings.</p><p><br/></p><p>To qualify, please contact us within <strong>15 days of receiving your order</strong> and complete the return within <strong>15 days after notifying us</strong>. Items must be <strong>unopened, unused, and in their original shrink-wrapped packaging.</strong></p><p><br/></p><p>A <strong>10% restocking fee</strong> applies to customer-initiated returns to help cover processing and inspection costs. Return shipping is the responsibility of the customer.</p><p><br/></p><p>We also believe in <strong>mindful shopping</strong> — each return adds to packaging waste and carbon emissions. By choosing carefully before purchasing, you help us reduce our collective environmental impact.</p><p><br/></p><p>For assistance, reach out to us anytime at <strong>support@bestself.co</strong> — our team is happy to help.</p>",
             "show_icon": false,
             "icon_name": "icon-award",
             "icon_size": 20,
@@ -186,16 +186,16 @@
             "icon_color": "#545454"
           }
         },
-        "question_HTWz3z": {
+        "question_RX78MJ": {
           "type": "question",
           "settings": {
             "default_open": true,
             "title": "Do you ship internationally?",
-            "content": "<p><strong>YES! We now ship to Canada 🇨🇦, Ireland 🇮🇪, and the United Kingdom 🇬🇧.</strong></p><ul><li><strong>Shipping Costs</strong>: Calculated at checkout based on your delivery address.</li><li><strong>Carrier</strong>: All international orders are shipped via DHL Express.</li><li><strong>Delivery Time</strong>: Estimated 2–5 business days, though customs processing may cause delays.</li><li><strong>Duties & Taxes</strong>: These are the responsibility of the customer and are not included in the shipping cost.</li><li><strong>Returns: Please note that international returns are not accepted.</strong></li></ul>",
+            "content": "<p><strong>YES!</strong> We now ship to <strong>Canada</strong> 🇨🇦, <strong>Ireland</strong> 🇮🇪, and <strong>the United Kingdom</strong> 🇬🇧 — with <strong>more European Union countries 🇪🇺 coming soon</strong>!</p><p></p><p></p><ul><li><strong>Shipping Costs</strong>: Calculated at checkout based on your delivery address.</li><li><strong>Delivery Time</strong>: Estimated 6-15 business days, though customs processing may cause delays.</li><li><strong>Duties & Taxes</strong>: These are the responsibility of the customer and are not included in the shipping cost.</li><li><strong>Returns:</strong> If you need to return an item, please contact us at <strong>support@bestself.co</strong> within <strong>15 days of delivery</strong>. Returns must be completed within <strong>15 days after notification</strong>, and items must be in <strong>unused, original condition with shrink wrap intact</strong>. Return shipping and a <strong>10% processing fee</strong> apply.</li><li><strong>Order Tracking</strong>: Tracking numbers will sent to your order in <strong>24-36 business hours</strong> from order placement.<br/></li></ul><p></p><p></p><p>We always recommend contacting our team first — we’ll help find the best and most cost-effective solution for your situation.</p>",
             "show_icon": false,
             "icon_name": "icon-award",
             "icon_size": 20,
-            "icon_color": ""
+            "icon_color": "#545454"
           }
         }
       },
@@ -215,7 +215,7 @@
         "question_yUe6pp",
         "question_g7eQp9",
         "question_9YH3Td",
-        "question_HTWz3z"
+        "question_RX78MJ"
       ],
       "settings": {
         "heading_font_size": "heading-medium",

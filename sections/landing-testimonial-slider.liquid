@@ -20,12 +20,12 @@
                        style="background-image: url('{{ block.settings.background_image | image_url: width: 429 }}');"
                      {% endif %}>
                   <div class="landing-two-column-slider__slide-content">
-                    <img
+                    {% comment %} <img
                       src="{{ 'quote-icon.svg' | asset_url }}"
                       alt="Quote Icon"
                       width="54"
                       height="44"
-                    >
+                    > {% endcomment %}
 
                     {% if block.settings.message != blank %}
                       <p class="landing-two-column-slider__slide-text">

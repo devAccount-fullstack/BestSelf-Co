@@ -34,9 +34,9 @@
       </div>
     {% endif %}
 
-    <div class="tw-relative tw-flex tw-items-center tw-justify-center {% if _badge_position == 'above' %}tw-pt-0{% else %}tw-pt-12{% endif %} tw-mb-3.5">
+    <div class="product-card__media tw-relative tw-flex tw-items-center tw-justify-center {% if _badge_position == 'above' %}tw-pt-0{% else %}tw-pt-12{% endif %} tw-mb-3.5">
       {% if _badge_position == 'overlay' %}
-        <div class="tw-absolute tw-top-2 tw-left-2 tw-z-10 tw-flex tw-gap-1 tw-flex-wrap">
+        <div class="product-card__badge-group tw-absolute tw-top-2 tw-left-0 tw-z-10 tw-flex tw-gap-1 tw-flex-wrap">
           {% render '42-product-badge', product: product %}
         </div>
       {% endif %}

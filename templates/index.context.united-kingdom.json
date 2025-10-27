@@ -1,0 +1,28 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "index.json",
+  "context": {
+    "market": "united-kingdom"
+  },
+  "sections": {
+    "42_hero_9X4NCw": {
+      "settings": {
+        "bg_image_desk": "shopify://shop_images/UK_-_Desktop.jpg",
+        "section_title": "<h1><strong>Hello! BestSelf Now Ships to UK.</strong></h1>",
+        "section_text": "Welcome to clarity, focus, and meaningful connection. Plus, get FREE SHIPPING on Helm to celebrate!",
+        "btn_text": "SHOP HELM - FREE SHIPPING",
+        "btn_link": "shopify://products/helm",
+        "bg_image_mob": "shopify://shop_images/UK_-_Mobile.png"
+      },
+      "blocks": {}
+    }
+  }
+}
