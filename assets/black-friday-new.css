@@ -135,3 +135,209 @@
   font-weight: normal;
   color: #d00;
 }
+
+/* ============================= */
+/* 📱 Responsive Adjustments by Breakpoint */
+/* ============================= */
+
+/* 💻 1440px (Large screens & laptops) */
+@media (max-width: 1440px) {
+  .black-friday-banner {
+    padding: 50px 0;
+    height: auto;
+  }
+
+  .black-friday-container {
+    max-width: 85%;
+  }
+
+  .headline {
+    font-size: 42px;
+    line-height: 70px;
+    width: 85%;
+  }
+
+  .subtext {
+    width: 40%;
+    font-size: 22px;
+    line-height: 32px;
+  }
+
+  .note {
+    width: 45%;
+    font-size: 24px;
+  }
+
+  .black-friday-image {
+    right: -30%;
+    top: 20%;
+  }
+
+  .black-friday-image img {
+    max-width: 550px;
+  }
+}
+
+/* 💻 1024px (Tablets landscape / small laptops) */
+@media (max-width: 1024px) {
+  .black-friday-banner {
+    padding: 40px 0;
+    height: auto;
+  }
+
+  .black-friday-content {
+    align-items: center;
+    text-align: center;
+  }
+
+  .headline {
+    font-size: 34px;
+    line-height: 52px;
+    width: 100%;
+  }
+
+  .subtext {
+    width: 60%;
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  .note {
+    width: 70%;
+    font-size: 20px;
+  }
+
+  .countdown {
+    justify-content: center;
+  }
+
+  .count-box {
+    font-size: 50px;
+    min-width: 100px;
+  }
+
+  .black-friday-image {
+    position: relative;
+    right: 0;
+    top: 0;
+    margin-top: 40px;
+    text-align: center;
+  }
+
+  .black-friday-image img {
+    max-width: 420px;
+    width: 90%;
+  }
+}
+
+/* 📱 768px (Tablets portrait) */
+@media (max-width: 768px) {
+  .black-friday-container {
+    max-width: 90%;
+  }
+
+  .headline {
+    font-size: 28px;
+    line-height: 44px;
+  }
+
+  .subtext {
+    width: 90%;
+    font-size: 16px;
+    line-height: 26px;
+  }
+
+  .cta-button {
+    font-size: 16px;
+    padding: 10px 22px;
+  }
+
+  .count-box {
+    font-size: 40px;
+    min-width: 80px;
+  }
+
+  .note {
+    width: 90%;
+    font-size: 18px;
+  }
+
+  .black-friday-image img {
+    max-width: 320px;
+  }
+}
+
+/* 📱 425px (Mobile large) */
+@media (max-width: 425px) {
+  .black-friday-banner {
+    padding: 30px 0;
+  }
+
+  .headline {
+    font-size: 24px;
+    line-height: 36px;
+  }
+
+  .subtext {
+    font-size: 15px;
+    width: 100%;
+    line-height: 24px;
+  }
+
+  .count-box {
+    font-size: 32px;
+    padding: 8px 12px;
+    min-width: 70px;
+  }
+
+  .cta-button {
+    font-size: 14px;
+    padding: 8px 20px;
+  }
+
+  .note {
+    font-size: 16px;
+    width: 100%;
+  }
+
+  .black-friday-image img {
+    max-width: 260px;
+  }
+}
+
+/* 📱 320px (Small mobile phones) */
+@media (max-width: 320px) {
+  .black-friday-banner {
+    padding: 25px 0;
+  }
+
+  .headline {
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  .subtext {
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  .count-box {
+    font-size: 28px;
+    padding: 6px 10px;
+    min-width: 60px;
+  }
+
+  .cta-button {
+    font-size: 13px;
+    padding: 8px 16px;
+  }
+
+  .note {
+    font-size: 14px;
+    width: 100%;
+  }
+
+  .black-friday-image img {
+    max-width: 220px;
+  }
+}
