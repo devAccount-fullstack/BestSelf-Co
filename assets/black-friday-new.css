@@ -33,7 +33,7 @@
 .subtext {
     font-size: 24px;
     font-family: "Inter", sans-serif;
-    margin-bottom: 35px;
+    margin-bottom: 37px;
     color: #ddd;
     width: 32%;
     line-height: 30px
@@ -47,7 +47,7 @@
   border-radius: 50px;
   font-size: 20px;
   font-weight: 600;
-  margin-bottom: 35px;
+  margin-bottom: 37px;
 }
 .cta-button:hover {
   background: #fff;
