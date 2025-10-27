@@ -34,11 +34,11 @@
         <img src="{{ section.settings.product_image | image_url: width: 600, height: 600, crop: 'center' }}" alt="Product" width="600" height="600" />
       {% endif %}
 
-      <div class="price-tag">
+      {% comment %} <div class="price-tag">
         <span class="discounted">{{ section.settings.discounted_price }}</span>
         <span class="original">{{ section.settings.original_price }}</span>
         <small>{{ section.settings.stock_message }}</small>
-      </div>
+      </div> {% endcomment %}
     </div>
   </div>
 </section>
