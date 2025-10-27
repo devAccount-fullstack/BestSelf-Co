@@ -119,7 +119,7 @@
           "settings": {
             "discount_text": "20% OFF any order",
             "sub_text": "Subtext goes here",
-            "bg_color": "#1c1c1c"
+            "bg_color": "#ffffff"
           }
         },
         "discount_block_igWmbe": {
@@ -127,7 +127,7 @@
           "settings": {
             "discount_text": "20% OFF any order",
             "sub_text": "Subtext goes here",
-            "bg_color": "#1c1c1c"
+            "bg_color": "#ffffff"
           }
         }
       },
