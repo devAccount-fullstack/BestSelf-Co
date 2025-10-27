@@ -1,264 +1,110 @@
-<section class="landing-two-column-slider" {% if section.settings.background_color != blank %}style="background-color: {{ section.settings.background_color }};"{% endif %}>
-  <div class="container">
-    <div class="landing-two-column-slider__wrapper">
-      <!-- Left Column - Heading -->
-      <div class="landing-two-column-slider__content">
-
-        {% if section.settings.heading != blank %}
-          <h2 class="landing-two-column-slider__heading">{{ section.settings.heading }}</h2>
-        {% endif %}
+<section class="black-friday-slider" style="background-color: {{ section.settings.bg_color }}">
+  <div class="black-friday-container">
+    <div class="black-friday-logos splide" id="black-friday-slider-{{ section.id }}">
+      <div class="splide__track">
+        <ul class="splide__list">
+          {% for block in section.blocks %}
+            <li class="splide__slide">
+              {% if block.settings.logo != blank %}
+                <img
+                  src="{{ block.settings.logo | image_url: width: 200, height: 100 }}"
+                  width="200"
+                  height="100"
+                  alt="Logo {{ forloop.index }}"
+                  loading="lazy"
+                >
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ul>
       </div>
-
-      <!-- Right Column - Horizontal Slider -->
-      <div class="landing-two-column-slider__slider-container">
-        {% if section.blocks.size > 0 %}
-          <div class="landing-two-column-slider__slider" data-slider="horizontal">
-            {% for block in section.blocks %}
-              <div class="landing-two-column-slider__slide" {{ block.shopify_attributes }}>
-                <div class="landing-two-column-slider__slide-inner"
-                     {% if block.settings.background_image != blank %}
-                       style="background-image: url('{{ block.settings.background_image | image_url: width: 429 }}');"
-                     {% endif %}>
-                  <div class="landing-two-column-slider__slide-content">
-                    {% comment %} <img
-                      src="{{ 'quote-icon.svg' | asset_url }}"
-                      alt="Quote Icon"
-                      width="54"
-                      height="44"
-                    > {% endcomment %}
-
-                    {% if block.settings.message != blank %}
-                      <p class="landing-two-column-slider__slide-text">
-                        {{ block.settings.message }}
-                      </p>
-                    {% endif %}
-
-                    {% if block.settings.name != blank %}
-                      <cite class="landing-two-column-slider__slide-title">
-                        {{ block.settings.name }}
-                      </cite>
-                    {% endif %}
-                  </div>
-                </div>
-              </div>
-            {% endfor %}
-          </div>
-        {% endif %}
-      </div>
-
     </div>
-    <div class="faq-overlay"></div>
   </div>
-</section>
 
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const sliders = document.querySelectorAll('[data-slider="horizontal"]');
+  <style>
+    /* Splide core styles */
+    @import url('https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css');
 
-    sliders.forEach(slider => {
-      const slides = slider.querySelectorAll('.landing-two-column-slider__slide');
-      let currentSlide = 0;
-      let autoplayInterval;
-      let isTransitioning = false;
-
-      // Initialize slider
-      if (slides.length > 0) {
-        updateSlides();
-        startAutoplay();
-
-        // Add drag/swipe support for both mobile and desktop
-        let startX = 0;
-        let endX = 0;
-        let isDragging = false;
-        let hasMoved = false;
-
-        // Touch events (mobile)
-        slider.addEventListener('touchstart', (e) => {
-          startX = e.touches[0].clientX;
-          isDragging = true;
-          hasMoved = false;
-          clearInterval(autoplayInterval);
-          slider.style.cursor = 'grabbing';
-        });
-
-        slider.addEventListener('touchmove', (e) => {
-          if (!isDragging) return;
-          hasMoved = true;
-          e.preventDefault();
-        });
-
-        slider.addEventListener('touchend', (e) => {
-          if (!isDragging) return;
-          endX = e.changedTouches[0].clientX;
-          handleDragEnd();
-          isDragging = false;
-          slider.style.cursor = 'grab';
-          startAutoplay();
-        });
-
-        // Mouse events (desktop)
-        slider.addEventListener('mousedown', (e) => {
-          startX = e.clientX;
-          isDragging = true;
-          hasMoved = false;
-          clearInterval(autoplayInterval);
-          slider.style.cursor = 'grabbing';
-          e.preventDefault();
-        });
-
-        slider.addEventListener('mousemove', (e) => {
-          if (!isDragging) return;
-          hasMoved = true;
-          e.preventDefault();
-        });
-
-        slider.addEventListener('mouseup', (e) => {
-          if (!isDragging) return;
-          endX = e.clientX;
-          handleDragEnd();
-          isDragging = false;
-          slider.style.cursor = 'grab';
-          startAutoplay();
-        });
-
-        slider.addEventListener('mouseleave', (e) => {
-          if (isDragging) {
-            endX = e.clientX;
-            handleDragEnd();
-            isDragging = false;
-            slider.style.cursor = 'grab';
-            startAutoplay();
-          }
-        });
-
-        // Set initial cursor
-        slider.style.cursor = 'grab';
-
-        function handleDragEnd() {
-          const dragThreshold = 50;
-          const diff = startX - endX;
-
-          if (Math.abs(diff) > dragThreshold) {
-            if (diff > 0) {
-              nextSlide();
-            } else {
-              prevSlide();
-            }
-          }
-        }
+    .black-friday-slider {
+      padding: 40px 0;
+    }
+    .black-friday-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    .black-friday-logos img {
+      max-height: 40px;
+      object-fit: contain;
+      width: auto;
+      filter: brightness(0) invert(1);
+      opacity: 0.9;
+      transition: opacity 0.3s ease;
+    }
+    .black-friday-logos img:hover {
+      opacity: 1;
+    }
+    @media (max-width: 768px) {
+      .black-friday-logos img {
+        max-height: 30px;
       }
+    }
+  </style>
 
-      function updateSlides() {
-        if (isTransitioning) return;
-        isTransitioning = true;
-
-        slides.forEach((slide, index) => {
-          slide.classList.remove('active');
-          if (index === currentSlide) {
-            slide.classList.add('active');
-          }
-        });
-
-        // Reset transition flag after animation
-        setTimeout(() => {
-          isTransitioning = false;
-        }, 600);
+  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var splideEl = document.querySelector('#black-friday-slider-{{ section.id }}');
+      if (splideEl) {
+        new Splide(splideEl, {
+          type: 'loop',
+          perPage: 5,
+          autoplay: true,
+          interval: 3000,
+          pauseOnHover: false,
+          arrows: false,
+          pagination: false,
+          speed: 800,
+          gap: '2rem',
+          breakpoints: {
+            1024: { perPage: 4 },
+            768: { perPage: 3 },
+            480: { perPage: 2 },
+          },
+        }).mount();
       }
-
-      function nextSlide() {
-        if (isTransitioning) return;
-        currentSlide = (currentSlide + 1) % slides.length;
-        updateSlides();
-      }
-
-      function prevSlide() {
-        if (isTransitioning) return;
-        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-        updateSlides();
-      }
-
-      function startAutoplay() {
-        if (slides.length > 1) {
-          autoplayInterval = setInterval(nextSlide, 5000);
-        }
-      }
-
-      // Pause autoplay on hover
-      slider.addEventListener('mouseenter', () => {
-        clearInterval(autoplayInterval);
-      });
-
-      slider.addEventListener('mouseleave', () => {
-        startAutoplay();
-      });
     });
-  });
-</script>
+  </script>
+</section>
 
 {% schema %}
 {
-  "name": "Landing Testimonial",
-  "tag": "section",
-  "class": "section",
+  "name": "Black Friday Logo Slider",
   "settings": [
     {
       "type": "color",
-      "id": "background_color",
-      "label": "Background Color",
-      "default": "#232440"
-    },
-    {
-      "type": "textarea",
-      "id": "heading",
-      "label": "Heading",
-      "default": "Join 10,000+ Who've Transformed Their Focus & Relationships"
+      "id": "bg_color",
+      "label": "Background color",
+      "default": "#000000"
     }
   ],
   "blocks": [
     {
-      "type": "slide",
-      "name": "Testimonial",
-      "limit": 8,
+      "type": "logo",
+      "name": "Logo",
       "settings": [
         {
           "type": "image_picker",
-          "id": "background_image",
-          "label": "Background Image"
-        },
-        {
-          "type": "textarea",
-          "id": "message",
-          "label": "Testimonial Message",
-          "default": "Add your testimonial message here"
-        },
-        {
-          "type": "text",
-          "id": "name",
-          "label": "Customer Name",
-          "default": "Customer Name"
+          "id": "logo",
+          "label": "Logo Image"
         }
       ]
     }
   ],
   "presets": [
     {
-      "name": "Landing Testimonial",
-      "blocks": [
-        {
-          "type": "slide",
-          "settings": {
-            "name": "Jasmine K.",
-            "message": "I ditched my phone addiction thanks to Helm. I actually feel present now."
-          }
-        },
-        {
-          "type": "slide",
-          "settings": {
-            "name": "Tony R.",
-            "message": "The Self Journal helped me finish my book in 11 weeks."
-          }
-        }
-      ]
+      "name": "Black Friday Logo Slider",
+      "category": "Black Friday"
     }
   ]
 }
