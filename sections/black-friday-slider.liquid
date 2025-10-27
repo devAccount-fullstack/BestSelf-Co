@@ -6,7 +6,13 @@
           {% for block in section.blocks %}
             <li class="splide__slide">
               {% if block.settings.logo != blank %}
-                 <img src="{{ block.settings.logo | image_url: width: 200, height: 100 }}" width="200px" height="100px" alt="Logo {{ forloop.index }}">
+                <img
+                  src="{{ block.settings.logo | image_url: width: 200, height: 100 }}"
+                  width="200"
+                  height="100"
+                  alt="Logo {{ forloop.index }}"
+                  loading="lazy"
+                >
               {% endif %}
             </li>
           {% endfor %}
@@ -16,6 +22,9 @@
   </div>
 
   <style>
+    /* Splide core styles */
+    @import url('https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css');
+
     .black-friday-slider {
       padding: 40px 0;
     }
@@ -42,6 +51,7 @@
     }
   </style>
 
+  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       var splideEl = document.querySelector('#black-friday-slider-{{ section.id }}');
@@ -54,6 +64,8 @@
           pauseOnHover: false,
           arrows: false,
           pagination: false,
+          speed: 800,
+          gap: '2rem',
           breakpoints: {
             1024: { perPage: 4 },
             768: { perPage: 3 },
