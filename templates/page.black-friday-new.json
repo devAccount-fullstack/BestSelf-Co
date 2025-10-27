@@ -34,6 +34,17 @@
         "logo_link": "/"
       }
     },
+    "black_friday_banner_bL8cN7": {
+      "type": "black-friday-banner",
+      "name": "Black Friday Banner",
+      "settings": {
+        "discount_percent": "30%",
+        "discounted_price": "$90.30",
+        "original_price": "$129",
+        "cta_link": "#",
+        "end_date": "2025-12-31T10:30:00"
+      }
+    },
     "landing_testimonial_slider_AHqCJr": {
       "type": "landing-testimonial-slider",
       "blocks": {
@@ -87,6 +98,7 @@
   "order": [
     "main",
     "landing_header_r3qRK8",
+    "black_friday_banner_bL8cN7",
     "landing_testimonial_slider_AHqCJr",
     "landing_footer_7exntJ"
   ]
