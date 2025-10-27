@@ -69,6 +69,7 @@
       ],
       "name": "Landing Testimonial",
       "settings": {
+        "background_color": "#1a1a1a",
         "heading": "Join 10,000+ Who've Transformed Their Focus & Relationships"
       }
     },
