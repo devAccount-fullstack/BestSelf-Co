@@ -18,19 +18,19 @@
       </a>
 
       <div class="countdown">
-        <div>
+        <div class="count-down-flex">
           <span id="days-{{ section.id }}" class="count-box">00</span>
           <small>Days</small>
         </div>
-        <div>
+        <div class="count-down-flex">
           <span id="hours-{{ section.id }}" class="count-box">00</span>
           <small>Hours</small>
         </div>
-        <div>
+        <div class="count-down-flex">
           <span id="minutes-{{ section.id }}" class="count-box">00</span>
           <small>Minutes</small>
         </div>
-        <div>
+        <div class="count-down-flex">
           <span id="seconds-{{ section.id }}" class="count-box">00</span>
           <small>Seconds</small>
         </div>
@@ -244,6 +244,12 @@ document.addEventListener("DOMContentLoaded", function() {
   gap: 10px;
   flex-wrap: wrap;
   margin-bottom: 20px;
+}
+.count-down-flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 10px;
 }
 .count-box {
   background: #f0b000;
