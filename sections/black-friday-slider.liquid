@@ -7,8 +7,10 @@
             <li class="splide__slide">
               {% if block.settings.logo != blank %}
                 <img
-                  src="{{ block.settings.logo | img_url: '300x' }}"
+                  src="{{ block.settings.logo | image_url: '300x' }}"
                   alt="{{ block.settings.logo.alt | escape }}"
+                  width="{{ block.settings.logo.width }}"
+                  height="{{ block.settings.logo.height }}"
                   loading="lazy"
                 >
               {% endif %}
