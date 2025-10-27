@@ -125,9 +125,10 @@
 }
 .image-overflow {
     position: absolute;
-    bottom: -4%;
-    right: 15%;
+    bottom: 0%;
+    right: -5%;
 }
+
 /* ============================= */
 /* 📱 Responsive Adjustments */
 /* ============================= */
