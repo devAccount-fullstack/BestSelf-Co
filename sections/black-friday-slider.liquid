@@ -1,4 +1,4 @@
-<section class="black-friday-slider">
+<section class="black-friday-slider" style="background-color: {{ section.settings.bg_color }}">
   <div class="black-friday-container">
     <div class="black-friday-logos splide" id="black-friday-slider-{{ section.id }}">
       <div class="splide__track">
@@ -23,7 +23,6 @@
 
   <style>
     .black-friday-slider {
-      background: #000;
       padding: 40px 0;
     }
     .black-friday-container {
@@ -75,7 +74,14 @@
 {% schema %}
 {
   "name": "Black Friday Logo Slider",
-  "settings": [],
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background color",
+      "default": "#000000"
+    }
+  ],
   "blocks": [
     {
       "type": "logo",
