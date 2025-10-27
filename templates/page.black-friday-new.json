@@ -100,7 +100,52 @@
       ],
       "name": "Black Friday Logo Slider",
       "settings": {
-        "bg_color": "#433a3a"
+        "bg_color": "#000000"
+      }
+    },
+    "black_friday_growth_K6Ke9F": {
+      "type": "black-friday-growth",
+      "blocks": {
+        "discount_block_pbn4UM": {
+          "type": "discount_block",
+          "settings": {
+            "discount_text": "20% OFF any order",
+            "sub_text": "Subtext goes here",
+            "bg_color": "#1c1c1c"
+          }
+        },
+        "discount_block_6ahxiy": {
+          "type": "discount_block",
+          "settings": {
+            "discount_text": "20% OFF any order",
+            "sub_text": "Subtext goes here",
+            "bg_color": "#1c1c1c"
+          }
+        },
+        "discount_block_igWmbe": {
+          "type": "discount_block",
+          "settings": {
+            "discount_text": "20% OFF any order",
+            "sub_text": "Subtext goes here",
+            "bg_color": "#1c1c1c"
+          }
+        }
+      },
+      "block_order": [
+        "discount_block_pbn4UM",
+        "discount_block_6ahxiy",
+        "discount_block_igWmbe"
+      ],
+      "name": "Black Friday Growth",
+      "settings": {
+        "enable_section": true,
+        "bg_color": "#0c0c0c",
+        "title": "The More You Grow,",
+        "subtitle": "The More You Save",
+        "offer_text": "Today only — earn 2X points on every purchase.",
+        "member_text": "Not a member yet?",
+        "button_label": "Join now and snag 500 bonus points instantly!",
+        "button_link": "/"
       }
     },
     "landing_testimonial_slider_AHqCJr": {
@@ -138,7 +183,7 @@
       ],
       "name": "Landing Testimonial",
       "settings": {
-        "background_color": "#1a1a1a",
+        "bg_color": "#232440",
         "heading": "Join 10,000+ Who've Transformed Their Focus & Relationships"
       }
     },
@@ -158,6 +203,7 @@
     "landing_header_r3qRK8",
     "black_friday_banner_bL8cN7",
     "black_friday_slider_xyP7TK",
+    "black_friday_growth_K6Ke9F",
     "landing_testimonial_slider_AHqCJr",
     "landing_footer_7exntJ"
   ]
