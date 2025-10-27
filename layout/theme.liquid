@@ -99,6 +99,10 @@
       {{ 'giveaway-landing.css' | asset_url | stylesheet_tag }}
     {%- endif -%}
 
+    {%- if template.name == 'page' and template.suffix == 'black-friday-new' -%}
+      {{ 'black-friday-new.css' | asset_url | stylesheet_tag }}
+    {%- endif -%}
+
     {%- comment -%}Critical fix for mobile visibility issues with Tailwind classes{%- endcomment -%}
     {{ 'mobile-visibility-fix.css' | asset_url | stylesheet_tag }}
   </head>
