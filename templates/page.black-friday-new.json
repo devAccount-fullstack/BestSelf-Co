@@ -38,10 +38,19 @@
       "type": "black-friday-banner",
       "name": "Black Friday Banner",
       "settings": {
-        "discount_percent": "30%",
-        "discounted_price": "$90.30",
-        "original_price": "$129",
-        "cta_link": "#",
+        "left_bg_color": "#0c0b1a",
+        "right_bg_color": "#111b36",
+        "highlight_text": "Black Friday:",
+        "headline_text": "Up to 35% OFF + Free Gifts — Tools That Actually Stick.",
+        "subtext": "End your phone addiction with Helm. Buy now and get the desktop app for free.",
+        "cta_text": "Unlock My Discount",
+        "button_link": "/",
+        "discount_percent": "",
+        "product_image": "shopify://shop_images/5b0ffd57a3a3658d378d5e698bb86670e2b8dfd3.png",
+        "discounted_price": "",
+        "original_price": "",
+        "stock_message": "",
+        "loyalty_message": "Today only — earn 2X loyalty points on every purchase.",
         "end_date": "2025-12-31T10:30:00"
       }
     },
