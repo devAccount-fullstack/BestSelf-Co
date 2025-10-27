@@ -28,7 +28,7 @@
     </div>
 
     <div class="black-friday-image">
-      <div class="discount-badge">{{ section.settings.discount_percent }} off</div>
+      {% comment %} <div class="discount-badge">{{ section.settings.discount_percent }} off</div> {% endcomment %}
 
       {% if section.settings.product_image != blank %}
         <img src="{{ section.settings.product_image | image_url: width: 600, height: 600, crop: 'center' }}" alt="Product" width="600" height="600" />
