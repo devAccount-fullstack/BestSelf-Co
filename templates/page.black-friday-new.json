@@ -110,22 +110,30 @@
           "type": "discount_block",
           "settings": {
             "discount_text": "20% OFF any order",
-            "sub_text": "Subtext goes here",
+            "sub_text": "",
             "bg_color": "#ffffff"
           }
         },
         "discount_block_6ahxiy": {
           "type": "discount_block",
           "settings": {
-            "discount_text": "20% OFF any order",
-            "sub_text": "Subtext goes here",
+            "discount_text": "25% OFF $75+",
+            "sub_text": "",
             "bg_color": "#ffffff"
           }
         },
         "discount_block_igWmbe": {
           "type": "discount_block",
           "settings": {
-            "discount_text": "20% OFF any order",
+            "discount_text": "30% OFF $125+",
+            "sub_text": "",
+            "bg_color": "#ffffff"
+          }
+        },
+        "discount_block_P7dJQP": {
+          "type": "discount_block",
+          "settings": {
+            "discount_text": "35% OFF $175+",
             "sub_text": "Subtext goes here",
             "bg_color": "#ffffff"
           }
@@ -134,7 +142,8 @@
       "block_order": [
         "discount_block_pbn4UM",
         "discount_block_6ahxiy",
-        "discount_block_igWmbe"
+        "discount_block_igWmbe",
+        "discount_block_P7dJQP"
       ],
       "name": "Black Friday Growth",
       "settings": {
