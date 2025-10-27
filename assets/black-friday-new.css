@@ -169,8 +169,12 @@
   }
 
   .black-friday-image {
-    right: -40%;
+    right: -30%;
     top: 20%;
+  }
+
+  .black-friday-image img {
+    max-width: 550px;
   }
 }
 
