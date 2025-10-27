@@ -111,7 +111,7 @@
           "settings": {
             "discount_text": "20% OFF any order",
             "sub_text": "Subtext goes here",
-            "bg_color": "#1c1c1c"
+            "bg_color": "#ffffff"
           }
         },
         "discount_block_6ahxiy": {
@@ -139,7 +139,7 @@
       "name": "Black Friday Growth",
       "settings": {
         "enable_section": true,
-        "bg_color": "#0c0c0c",
+        "bg_color": "#2d3c61",
         "title": "The More You Grow,",
         "subtitle": "The More You Save",
         "offer_text": "Today only — earn 2X points on every purchase.",
