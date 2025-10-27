@@ -24,11 +24,16 @@
     </div>
 
     <div class="black-friday-image">
-      <div class="discount-badge">30% off</div>
-      <img src="{{ 'black-friday-product.png' | asset_url }}" alt="Product" />
+      <div class="discount-badge">{{ section.settings.discount_percent }}</div>
+      {% if section.settings.product_image != blank %}
+        {% assign img_url = section.settings.product_image | img_url: '600x600' %}
+        <img src="{{ img_url }}" width="600" height="600" alt="Product" loading="lazy" />
+      {% else %}
+        <img src="https://via.placeholder.com/600x600?text=Product" width="600" height="600" alt="Product placeholder" loading="lazy" />
+      {% endif %}
       <div class="price-tag">
-        <span class="discounted">$90.30</span>
-        <span class="original">$129</span>
+        <span class="discounted">{{ section.settings.discounted_price }}</span>
+        <span class="original">{{ section.settings.original_price }}</span>
         <small>Only X Left</small>
       </div>
     </div>
