@@ -89,12 +89,6 @@
   width: 34%;
   text-align: center;
 }
-.black-friday-image {
-  position: absolute;
-  bottom: -27px;
-  right: 11%;
-}
-
 .discount-badge {
   position: absolute;
   top: 10px;
@@ -129,6 +123,11 @@
   font-weight: normal;
   color: #d00;
 }
+.image-overflow {
+    position: absolute;
+    bottom: -7%;
+    right: 0;
+}
 /* ============================= */
 /* 📱 Responsive Adjustments */
 /* ============================= */
@@ -136,8 +135,8 @@
 /* 💻 1440px */
 @media (max-width: 1440px) {
   .black-friday-banner {
-    padding: 50px 0;
     height: auto;
+    padding: 50px 0;
   }
 
   .headline {
@@ -148,8 +147,8 @@
 
   .subtext {
     font-size: 22px;
-    width: 40%;
     line-height: 32px;
+    width: 40%;
   }
 
   .note {
@@ -157,9 +156,9 @@
     font-size: 24px;
   }
 
-  .black-friday-image {
+  .image-overflow {
+    bottom: -5%;
     right: 5%;
-    bottom: -20px;
   }
 }
 
@@ -186,8 +185,8 @@
   }
 
   .subtext {
-    font-size: 18px;
     width: 70%;
+    font-size: 18px;
     margin: 0 auto 30px;
     line-height: 28px;
   }
@@ -206,17 +205,17 @@
     min-width: 100px;
   }
 
-  .black-friday-image {
+  .image-overflow {
     position: relative;
-    right: 0;
     bottom: 0;
+    right: 0;
     margin-top: 40px;
     text-align: center;
   }
 
-  .black-friday-image img {
-    width: 100%;
+  .image-overflow img {
     max-width: 420px;
+    width: 100%;
   }
 }
 
@@ -252,7 +251,7 @@
     font-size: 18px;
   }
 
-  .black-friday-image img {
+  .image-overflow img {
     max-width: 320px;
   }
 }
@@ -291,7 +290,7 @@
     width: 100%;
   }
 
-  .black-friday-image img {
+  .image-overflow img {
     max-width: 260px;
   }
 }
@@ -328,7 +327,7 @@
     width: 100%;
   }
 
-  .black-friday-image img {
+  .image-overflow img {
     max-width: 220px;
   }
 }
