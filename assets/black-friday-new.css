@@ -91,14 +91,8 @@
 }
 .black-friday-image {
   position: absolute;
-  width: 100%;
-  top: 19%;
-  right: -40%;
-}
-.black-friday-image img {
-  width: 100%;
-  max-width: 606.79px;
-  border-radius: 10px;
+  bottom: -27px;
+  right: 11%;
 }
 
 .discount-badge {
