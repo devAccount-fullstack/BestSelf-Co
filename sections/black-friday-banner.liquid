@@ -38,19 +38,9 @@
 
       <p class="note">{{ section.settings.loyalty_message }}</p>
 
-        <div class="black-friday-image">
-        {% comment %} <div class="discount-badge">{{ section.settings.discount_percent }} off</div> {% endcomment %}
-
-        {% if section.settings.product_image != blank %}
-            <img src="{{ section.settings.product_image | image_url: width: 600, height: 600 }}" alt="Product" width="600px" height="600px" />
-        {% endif %}
-
-        {% comment %} <div class="price-tag">
-            <span class="discounted">{{ section.settings.discounted_price }}</span>
-            <span class="original">{{ section.settings.original_price }}</span>
-            <small>{{ section.settings.stock_message }}</small>
-        </div> {% endcomment %}
-        </div>
+      {% if section.settings.product_image != blank %}
+          <img src="{{ section.settings.product_image | image_url: width: 600, height: 600 }}" alt="Product" width="600px" height="600px" />
+      {% endif %}
     </div>
   </div>
 </section>
