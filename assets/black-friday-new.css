@@ -33,10 +33,10 @@
 .subtext {
     font-size: 24px;
     font-family: "Inter", sans-serif;
+    margin-bottom: 30px;
     color: #ddd;
     width: 32%;
     line-height: 30px
-    margin-bottom: 30px;
 }
 .cta-button {
   font-family: "Inter", sans-serif;
