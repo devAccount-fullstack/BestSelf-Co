@@ -45,13 +45,62 @@
         "subtext": "End your phone addiction with Helm. Buy now and get the desktop app for free.",
         "cta_text": "Unlock My Discount",
         "button_link": "/",
-        "discount_percent": "",
         "product_image": "shopify://shop_images/5b0ffd57a3a3658d378d5e698bb86670e2b8dfd3.png",
-        "discounted_price": "",
-        "original_price": "",
-        "stock_message": "",
         "loyalty_message": "Today only — earn 2X loyalty points on every purchase.",
         "end_date": "2025-12-31T10:30:00"
+      }
+    },
+    "black_friday_slider_xyP7TK": {
+      "type": "black-friday-slider",
+      "blocks": {
+        "logo_837Cnk": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/Group_1171275371_300x300_1.png"
+          }
+        },
+        "logo_ex7Jf4": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/Union.png"
+          }
+        },
+        "logo_Bi3xPA": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/new-york-times_e5522b91-2ccb-4449-b887-3adce2bca17e_300x300_1.png"
+          }
+        },
+        "logo_mUiEfY": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/Union_1.png"
+          }
+        },
+        "logo_deXHEK": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/Group_1171275371_300x300_1.png"
+          }
+        },
+        "logo_Fjmpez": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/Vector_1_300x300_1.png"
+          }
+        }
+      },
+      "block_order": [
+        "logo_837Cnk",
+        "logo_ex7Jf4",
+        "logo_Bi3xPA",
+        "logo_mUiEfY",
+        "logo_deXHEK",
+        "logo_Fjmpez"
+      ],
+      "name": "Black Friday Logo Slider",
+      "settings": {
+        "bg_color": "#433a3a"
       }
     },
     "landing_testimonial_slider_AHqCJr": {
@@ -108,6 +157,7 @@
     "main",
     "landing_header_r3qRK8",
     "black_friday_banner_bL8cN7",
+    "black_friday_slider_xyP7TK",
     "landing_testimonial_slider_AHqCJr",
     "landing_footer_7exntJ"
   ]
