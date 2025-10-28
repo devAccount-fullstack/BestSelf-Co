@@ -164,6 +164,14 @@
 }
 
 /* 💻 1024px (tablet landscape) */
+@media (min-width: 1024px) and (max-width: 1362px) {
+  .image-overflow {
+    bottom: -5%;
+    right: -8%;
+  }
+}
+
+/* 💻 1024px (tablet landscape) */
 @media (max-width: 1024px) {
   .black-friday-banner {
     padding: 40px 0;
@@ -208,8 +216,8 @@
 
   .image-overflow {
     position: relative;
-    bottom: -5%;
-    right: -8%;
+    bottom: 0;
+    right: 0;
     margin-top: 40px;
     text-align: center;
   }
