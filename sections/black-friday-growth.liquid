@@ -18,9 +18,11 @@
         {% for block in section.blocks %}
         <li class="growth-item">
           <div class="growth-discount" style="background-color: {{ block.settings.bg_color }}">
+            <img src="{{ 'percentage.svg' | asset_url }}" alt="Star Icon" width="20" height="20" />
             {{ block.settings.discount_text }}
          </div>
           {% if block.settings.sub_text != blank %}
+            <img src="{{ 'gift.svg' | asset_url }}" alt="Star Icon" width="20" height="20" />
             <div class="growth-sub">{{ block.settings.sub_text }}</div>
           {% endif %}
         </li>
