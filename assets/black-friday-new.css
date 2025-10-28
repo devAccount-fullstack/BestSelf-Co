@@ -164,10 +164,10 @@
 }
 
 /* 💻 1024px (tablet landscape) */
-@media (min-width: 1024px) and (max-width: 1362px) {
+@media (min-width: 1026px) and (max-width: 1362px) {
   .image-overflow {
     bottom: -5%;
-    right: -8%;
+    right: -10%;
   }
 }
 
