@@ -148,12 +148,12 @@
       "name": "Black Friday Growth",
       "settings": {
         "second-layout_enable": true,
-        "bg_color": "#1a1a1a",
+        "bg_color": "#2d3c61",
         "title": "The More You Grow,",
         "subtitle": "The More You Save",
-        "offer_text": "Today only — earn 2X points on every purchase.",
-        "member_text": "Not a member yet?",
-        "button_label": "Join now and snag 500 bonus points instantly!",
+        "offer_text": "",
+        "member_text": "",
+        "button_label": "",
         "button_link": "/"
       }
     },
