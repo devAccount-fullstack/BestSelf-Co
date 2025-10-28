@@ -1,6 +1,6 @@
 <section class="growth-savings-section" style="background-color: {{ section.settings.bg_color }};">
-  <div class="growth-savings-container" style="{% if section.settings.second-layout_enable %}display:block{% endif %}display: flex; align-items: center;">
-    <div class="growth-left">
+  <div class="growth-savings-container" style="{% if section.settings.second-layout_enable %}display:block{% else %}display: flex; align-items: center;{% endif %}">
+    <div class="growth-left" style="{% if section.settings.second-layout_enable %}width: 100%;{% else %}  width: 50%;{% endif %}">
       <h2 class="growth-title">
         {{ section.settings.title | escape }}<br/>
         <span class="growth-highlight">{{ section.settings.subtitle | escape }}</span>
@@ -12,7 +12,7 @@
       </a>
     </div>
 
-    <div class="growth-right">
+    <div class="growth-right" style="{% if section.settings.second-layout_enable %}width: 100%;{% else %}  width: 50%;{% endif %}">
       <ul class="growth-list">
         {% for block in section.blocks %}
         <li class="growth-item">
@@ -47,7 +47,6 @@
 }
 
 .growth-left {
-  width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -55,7 +54,6 @@
   align-items: flex-start;
 }
 .growth-right {
-  width: 50%;
 }
 
 .growth-title {
