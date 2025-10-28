@@ -1,5 +1,5 @@
 <section class="growth-savings-section" style="background-color: {{ section.settings.bg_color }};">
-  <div class="growth-savings-container" style="{% if section.settings.second-layout_enable %}display:block{% endif %}">
+  <div class="growth-savings-container" style="{% if section.settings.second-layout_enable %}display:block{% endif %}display: flex; align-items: center;">
     <div class="growth-left">
       <h2 class="growth-title">
         {{ section.settings.title | escape }}<br/>
@@ -41,7 +41,6 @@
 }
 
 .growth-savings-container {
-  display: flex;
   max-width: 80%;
   gap: 50px;
   margin: auto;
