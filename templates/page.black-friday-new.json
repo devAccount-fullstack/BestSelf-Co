@@ -147,7 +147,7 @@
       ],
       "name": "Black Friday Growth",
       "settings": {
-        "enable_section": true,
+        "second-layout_enable": true,
         "bg_color": "#1a1a1a",
         "title": "The More You Grow,",
         "subtitle": "The More You Save",
