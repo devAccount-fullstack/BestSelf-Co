@@ -5,11 +5,17 @@
         {{ section.settings.title | escape }}<br/>
         <span class="growth-highlight">{{ section.settings.subtitle | escape }}</span>
       </h2>
-      <p class="growth-offer">{{ section.settings.offer_text }}</p>
-      <p class="growth-member">{{ section.settings.member_text }}</p>
-      <a href="{{ section.settings.button_link }}" class="growth-button">
-        {{ section.settings.button_label }}
-      </a>
+      {% if section.settings.offer_text != blank %}
+        <p class="growth-offer">{{ section.settings.offer_text }}</p>
+      {% endif %}
+      {% if section.settings.member_text != blank %}
+        <p class="growth-member">{{ section.settings.member_text }}</p>
+      {% endif %}
+      {% if section.settings.button_label != blank and section.settings.button_link %}
+        <a href="{{ section.settings.button_link }}" class="growth-button">
+          {{ section.settings.button_label }}
+        </a>
+      {% endif %}
     </div>
 
     <div class="growth-right" style="{% if section.settings.second-layout_enable %}width: 100%; margin-top: 50px;{% else %}  width: 50%;{% endif %}">
