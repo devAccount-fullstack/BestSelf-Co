@@ -23,8 +23,8 @@
          </div>
           {% if block.settings.sub_text != blank %}
             <div class="growth-sub">
-                <img src="{{ 'gift.svg' | asset_url }}" alt="Star Icon" width="30" height="auto" />
                 <span class="text-d">{{ block.settings.sub_text }}</span>
+                <img src="{{ 'gift.svg' | asset_url }}" alt="Star Icon" width="30" height="auto" />
             </div>
           {% endif %}
         </li>
@@ -121,7 +121,7 @@
 .growth-sub {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 16px;
   background: yellow;
   padding: 10px;
   border-radius: 0 0 12px 12px;
@@ -131,7 +131,7 @@
 .growth-discount {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 16px;
   padding: 10px;
 }
 
