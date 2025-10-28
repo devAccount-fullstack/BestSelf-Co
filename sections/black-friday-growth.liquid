@@ -22,8 +22,10 @@
             {{ block.settings.discount_text }}
          </div>
           {% if block.settings.sub_text != blank %}
-            <img src="{{ 'gift.svg' | asset_url }}" alt="Star Icon" width="20" height="20" />
-            <div class="growth-sub">{{ block.settings.sub_text }}</div>
+            <div class="growth-sub">
+                <img src="{{ 'gift.svg' | asset_url }}" alt="Star Icon" width="20" height="20" />
+                {{ block.settings.sub_text }}
+            </div>
           {% endif %}
         </li>
         {% endfor %}
