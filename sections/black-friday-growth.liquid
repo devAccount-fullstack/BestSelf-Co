@@ -16,8 +16,8 @@
     <div class="growth-right">
       <ul class="growth-list">
         {% for block in section.blocks %}
-        <li>
-          <div class="growth-discount" style="background-color: {{ block.settings.bg_color }}>{{ block.settings.discount_text }}"></div>
+        <li class="growth-item">
+          <div class="growth-discount" style="background-color: {{ block.settings.bg_color }}">{{ block.settings.discount_text }}</div>
           {% if block.settings.sub_text != blank %}
             <div class="growth-sub">{{ block.settings.sub_text }}</div>
           {% endif %}
