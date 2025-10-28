@@ -134,7 +134,7 @@
           "type": "discount_block",
           "settings": {
             "discount_text": "35% OFF $175+",
-            "sub_text": "Subtext goes here",
+            "sub_text": "+ Free Gift",
             "bg_color": "#ffffff"
           }
         }
