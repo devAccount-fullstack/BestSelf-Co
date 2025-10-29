@@ -12,6 +12,9 @@
             {% for product in collection.products %}
               <li class="splide__slide black-friday-item">
                 <div class="black-friday-card">
+                  <p class="product-quantity">
+                    {{ product.total_inventory }} in stock
+                  </p>
                   <div class="product-image">
                     <a href="{{ product.url }}">
                       {% if product.featured_image %}
@@ -36,7 +39,6 @@
                       <span class="sold-out">Sold Out</span>
                     {% endunless %}
                   </div>
-
                   <div class="product-info">
                     <h3 class="product-title">
                       <a href="{{ product.url }}">{{ product.title }}</a>
