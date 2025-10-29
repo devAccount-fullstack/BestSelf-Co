@@ -103,6 +103,15 @@
         "bg_color": "#000000"
       }
     },
+    "black_friday_product_slider_rErbLd": {
+      "type": "black-friday-product-slider",
+      "name": "Black Friday Product Slider",
+      "settings": {
+        "heading": "Shop Bestsellers",
+        "collection": "best-sellers",
+        "bg_color": "#000000"
+      }
+    },
     "black_friday_growth_K6Ke9F": {
       "type": "black-friday-growth",
       "blocks": {
@@ -205,15 +214,6 @@
         "copyright": "© 2025 BestSelf Co. All rights reserved.",
         "policy_links": "<p><a href=\"/pages/privacy-policy\">Privacy Policy</a> | <a href=\"/pages/terms-conditions\">Terms & Conditions</a> | <a href=\"/pages/shipping-policy\">Shipping Policy</a></p>"
       }
-    },
-    "black_friday_product_slider_rErbLd": {
-      "type": "black-friday-product-slider",
-      "name": "Black Friday Product Slider",
-      "settings": {
-        "heading": "Shop Bestsellers",
-        "collection": "best-sellers",
-        "bg_color": "#000000"
-      }
     }
   },
   "order": [
@@ -222,8 +222,8 @@
     "black_friday_banner_bL8cN7",
     "black_friday_slider_xyP7TK",
     "black_friday_growth_K6Ke9F",
+    "black_friday_product_slider_rErbLd",
     "landing_testimonial_slider_AHqCJr",
-    "landing_footer_7exntJ",
-    "black_friday_product_slider_rErbLd"
+    "landing_footer_7exntJ"
   ]
 }
