@@ -26,7 +26,14 @@
 
     {% if section.settings.image != blank %}
       <div class="analog-image">
-        {{ section.settings.image | img_tag: section.settings.title, '1240x' | replace: '<img ', '<img loading="lazy" ' }}
+        <img
+          src="{{ section.settings.image | image_url: width: 1240 }}"
+          alt="UGC thumbnail"
+          class="ugc-thumbnail"
+          width="100%"
+          height="auto"
+          loading="lazy"
+        >
       </div>
     {% endif %}
   </div>
