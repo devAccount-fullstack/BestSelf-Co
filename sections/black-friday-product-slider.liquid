@@ -19,13 +19,13 @@
                 <div class="black-friday-card">
                   <div class="product-image">
                     <a href="{{ product.url }}">
-                      <img
+                        <img
                         src="{{ product.featured_image | image_url: '600x600' }}"
+                        width="200"
+                        height="100"
                         alt="{{ product.title | escape }}"
                         loading="lazy"
-                        width="600"
-                        height="600"
-                      >
+                        >
                     </a>
                     {% unless product.available %}
                       <span class="sold-out">Sold Out</span>
