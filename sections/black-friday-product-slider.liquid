@@ -1,9 +1,3 @@
-{% liquid
-  assign images = product.media | where: 'media_type', 'image'
-  assign custom_image = custom_image | default: images[0]
-  assign _badge_position = badge_position | default: 'overlay'
-%}
-
 <section class="black-friday-slider-section" style="background-color: {{ section.settings.bg_color }}">
   <div class="black-friday-slider-container page-width">
     {% if section.settings.heading != blank %}
@@ -12,7 +6,7 @@
 
     {% assign collection = collections[section.settings.collection] %}
     {% if collection and collection.products_count > 0 %}
-      <div class="black-friday-product-slider splide" id="black-friday-slider-{{ section.id }}">
+      <div class="black-friday-product-slider splide" id="black-friday-sliders-{{ section.id }}">
         <div class="splide__track">
           <ul class="splide__list">
             {% for product in collection.products %}
@@ -97,7 +91,7 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function() {
-    const slider = document.querySelector('#black-friday-slider-{{ section.id }}');
+    const slider = document.querySelector('#black-friday-sliders-{{ section.id }}');
     if (slider && typeof Splide !== 'undefined') {
       new Splide(slider, {
         type: 'loop',
