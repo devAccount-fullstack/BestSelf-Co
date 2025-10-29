@@ -83,12 +83,6 @@
                           <span class="tw-text-sc-blue tw-text-sm tw-leading-[24px] tw-font-medium tw-uppercase">
                             {{- 'products.product.quick_view' | t -}}
                           </span>
-                          <span
-                            x-show="$store.ajaxProductPage.loader === '{{ selected_or_first_available_variant.id }}'"
-                            class="tw-absolute tw-inset-0 tw-flex tw-justify-center tw-items-center"
-                          >
-                            {%- render 'icon-42', name: 'loader', class: 'md:tw-w-7 tw-w-5' -%}
-                          </span>
                         </button>
                       </div>
                       <form method="post" action="/cart/add">
