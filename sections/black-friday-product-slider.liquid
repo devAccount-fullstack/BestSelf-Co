@@ -45,7 +45,7 @@
                       <a href="{{ product.url }}">{{ product.title }}</a>
                     </h3>
 
-                  <!-- Judge.me REVIEW STAR -->
+                                      <!-- Judge.me REVIEW STAR -->
                   {% if product.metafields.judgeme.badge != blank%}
                   <div class="product-reviews">
                     <div
@@ -153,6 +153,13 @@
   margin-bottom: 40px;
   font-size: 2rem;
   font-weight: 700;
+}
+
+.product-info {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: space-between;
 }
 
 #black-friday-sliders-{{ section.id }} .splide__list {
