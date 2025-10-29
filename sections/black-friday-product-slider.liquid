@@ -43,23 +43,23 @@
                   </div>
 
                   <div class="product-info">
+                    <!-- Judge.me REVIEW STAR -->
+                    {% if product.metafields.judgeme.badge != blank%}
+                    <div class="product-reviews">
+                      <div
+                        style="{{ jm_style }}"
+                        class="jdgm-widget jdgm-preview-badge"
+                        data-id="{{ product.id }}"
+                        data-auto-install="false"
+                      >
+                        {{ product.metafields.judgeme.badge }}
+                      </div>
+                    </div>
+                    {% endif %}
+
                     <h3 class="product-title">
                       <a href="{{ product.url }}">{{ product.title }}</a>
                     </h3>
-
-                                      <!-- Judge.me REVIEW STAR -->
-                  {% if product.metafields.judgeme.badge != blank%}
-                  <div class="product-reviews">
-                    <div
-                      style="{{ jm_style }}"
-                      class="jdgm-widget jdgm-preview-badge"
-                      data-id="{{ product.id }}"
-                      data-auto-install="false"
-                    >
-                      {{ product.metafields.judgeme.badge }}
-                    </div>
-                  </div>
-                  {% endif %}
 
                     {% if product.description != blank %}
                       <p class="product-description">
