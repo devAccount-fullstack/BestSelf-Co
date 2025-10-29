@@ -238,6 +238,18 @@
         "image": "shopify://shop_images/Frame_847.png"
       }
     },
+    "black_friday_claim_cyH94d": {
+      "type": "black-friday-claim",
+      "name": "Black Friday Claim",
+      "settings": {
+        "bg_color": "#1c1e36",
+        "heading": "Because your best self — and the people you love —",
+        "highlight_text": "can’t wait.",
+        "end_date": "2025-12-31T10:30:00",
+        "button_text": "Claim My Black Friday Discount",
+        "button_link": "/"
+      }
+    },
     "landing_footer_7exntJ": {
       "type": "landing-footer",
       "name": "Landing Footer",
@@ -259,6 +271,7 @@
     "black_friday_ugc_PRWPqF",
     "landing_testimonial_slider_AHqCJr",
     "black_friday_analog_C8An8p",
+    "black_friday_claim_cyH94d",
     "landing_footer_7exntJ"
   ]
 }
