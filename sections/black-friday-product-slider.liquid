@@ -1,5 +1,3 @@
-{% assign first_variant = product.variants.first %}
-
 <section class="black-friday-slider-section" style="background-color: {{ section.settings.bg_color }}">
   <div class="black-friday-slider-container page-width">
     {% if section.settings.heading != blank %}
@@ -16,6 +14,7 @@
                 <div class="black-friday-card">
                   <div class="product-image">
                     <div class="product-quantity">
+                      {% assign first_variant = product.variants.first %}
                       {% if first_variant.inventory_management %}
                         <p>
                           Only {{ first_variant.inventory_quantity }} left
