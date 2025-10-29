@@ -240,10 +240,11 @@
 document.addEventListener("DOMContentLoaded", function () {
   var splide = new Splide("#ugc-slider-{{ section.id }}", {
     type: "loop",
-    perPage: 3.2,
+    perPage: 3.8,
     arrows: false,
     gap: "1rem",
       breakpoints: {
+        1440: { perPage: 3.2 },
         1200: { perPage: 2.5 },
         768: { perPage: 2 },
         480: { perPage: 1 }
