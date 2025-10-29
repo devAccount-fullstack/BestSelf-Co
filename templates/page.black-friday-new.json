@@ -225,6 +225,19 @@
         "heading": "Join 10,000+ Who've Transformed Their Focus & Relationships"
       }
     },
+    "black_friday_analog_C8An8p": {
+      "type": "black-friday-analog",
+      "name": "Black Friday Analog Section",
+      "settings": {
+        "bg_color": "#232440",
+        "title": "Why",
+        "analog_text": "Analog",
+        "svg_icon": "&gt;",
+        "digital_text": "Digital",
+        "subcontent": "A message from our founder to you",
+        "image": "shopify://shop_images/Frame_847.png"
+      }
+    },
     "landing_footer_7exntJ": {
       "type": "landing-footer",
       "name": "Landing Footer",
@@ -245,6 +258,7 @@
     "black_friday_product_slider_rErbLd",
     "black_friday_ugc_PRWPqF",
     "landing_testimonial_slider_AHqCJr",
+    "black_friday_analog_C8An8p",
     "landing_footer_7exntJ"
   ]
 }
