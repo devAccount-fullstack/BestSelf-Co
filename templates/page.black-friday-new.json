@@ -173,7 +173,7 @@
           "type": "video_block",
           "settings": {
             "thumbnail": "shopify://shop_images/meeting-mastery-pad-50-off-professional-growth-189305.jpg",
-            "video_url": "https://www.youtube.com/watch?v=C0DPdy98e4c"
+            "video_url": "https://www.youtube.com/embed/abcd1234?autoplay=1"
           }
         }
       },
