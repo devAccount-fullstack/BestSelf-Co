@@ -89,7 +89,7 @@
                       <form method="post" action="/cart/add">
                         <input type="hidden" name="id" value="{{ product.variants.first.id }}">
                         <button type="submit" class="add-to-cart-btn" {% unless product.available %}disabled{% endunless %}>
-                          Add to Cart
+                          <img src="{{ 'cart-icons.svg' | asset_url }}" alt="Add to Cart" width="16" height="16">
                         </button>
                       </form>
                     </div>
