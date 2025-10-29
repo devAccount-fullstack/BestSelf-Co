@@ -85,57 +85,49 @@
         "slide_iezTxD": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/new-york-times_e5522b91-2ccb-4449-b887-3adce2bca17e.svg",
-            "link": ""
+            "image": "shopify://shop_images/new-york-times_e5522b91-2ccb-4449-b887-3adce2bca17e.svg"
           }
         },
         "slide_PGQfxX": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/Barnes_and_Noble.svg",
-            "link": ""
+            "image": "shopify://shop_images/Barnes_and_Noble.svg"
           }
         },
         "slide_aHXECg": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/wall-street-journal.svg",
-            "link": ""
+            "image": "shopify://shop_images/wall-street-journal.svg"
           }
         },
         "slide_9wXCeC": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/theknot-logo.svg",
-            "link": ""
+            "image": "shopify://shop_images/theknot-logo.svg"
           }
         },
         "slide_EmBVkf": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/Vector_f8e848c2-23ad-448a-81ed-8ca0ff20a2fc.svg",
-            "link": ""
+            "image": "shopify://shop_images/Vector_f8e848c2-23ad-448a-81ed-8ca0ff20a2fc.svg"
           }
         },
         "slide_gaHCxz": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/MTV.svg",
-            "link": ""
+            "image": "shopify://shop_images/MTV.svg"
           }
         },
         "slide_CE3TPi": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/Good_Housekeeping_df9eaf91-cbb5-4f52-83c9-bb19a9de3882.svg",
-            "link": ""
+            "image": "shopify://shop_images/Good_Housekeeping_df9eaf91-cbb5-4f52-83c9-bb19a9de3882.svg"
           }
         },
         "slide_N7Kmtk": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/Forbes_d092df57-a6aa-4870-948d-1f63a4d866e3.svg",
-            "link": ""
+            "image": "shopify://shop_images/Forbes_d092df57-a6aa-4870-948d-1f63a4d866e3.svg"
           }
         }
       },

@@ -1,0 +1,151 @@
+<section
+    class="black-friday-banner"
+    style="
+        width: 100%;
+        background: linear-gradient(to bottom, {{ section.settings.left_bg_color }} 0%, {{ section.settings.left_bg_color }} 70%, {{ section.settings.right_bg_color }} 70%, {{ section.settings.right_bg_color }} 100%);
+    "
+>
+  <div class="black-friday-container">
+    <div class="black-friday-content">
+      <h2 class="headline">
+        <span class="highlight">{{ section.settings.highlight_text }}</span>
+        {{ section.settings.headline_text }}
+      </h2>
+
+      <p class="subtext">{{ section.settings.subtext }}</p>
+      <a href="{{ section.settings.button_link }}" class="cta-button">
+        {{ section.settings.cta_text }}
+      </a>
+
+      <div class="countdown">
+        <div class="count-down-flex">
+          <span id="days-{{ section.id }}" class="count-box">00</span>
+          <small>Days</small>
+        </div>
+        <div class="count-down-flex">
+          <span id="hours-{{ section.id }}" class="count-box">00</span>
+          <small>Hours</small>
+        </div>
+        <div class="count-down-flex">
+          <span id="minutes-{{ section.id }}" class="count-box">00</span>
+          <small>Minutes</small>
+        </div>
+        <div class="count-down-flex">
+          <span id="seconds-{{ section.id }}" class="count-box">00</span>
+          <small>Seconds</small>
+        </div>
+      </div>
+
+      <p class="note">{{ section.settings.loyalty_message }}</p>
+
+      {% if section.settings.product_image != blank %}
+          <img src="{{ section.settings.product_image | image_url: width: 600, height: 600 }}" alt="Product" width="600px" height="600px"  class="image-overflow">
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Black Friday Banner",
+  "settings": [
+    {
+      "type": "color",
+      "id": "left_bg_color",
+      "label": "Left Background Color",
+      "default": "#0c0b1a"
+    },
+    {
+      "type": "color",
+      "id": "right_bg_color",
+      "label": "Right Background Color",
+      "default": "#111b36"
+    },
+    {
+      "type": "text",
+      "id": "highlight_text",
+      "label": "Highlighted Text",
+      "default": "Black Friday:"
+    },
+    {
+      "type": "text",
+      "id": "headline_text",
+      "label": "Headline Text",
+      "default": "Up to 35% OFF + Free Gifts — Tools That Actually Stick."
+    },
+    {
+      "type": "textarea",
+      "id": "subtext",
+      "label": "Subtext",
+      "default": "End your phone addiction with Helm. Buy now and get the desktop app for free."
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "Button Text",
+      "default": "Unlock My Discount"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link",
+      "default": "/"
+    },
+    {
+      "type": "image_picker",
+      "id": "product_image",
+      "label": "Product Image"
+    },
+    {
+      "type": "text",
+      "id": "loyalty_message",
+      "label": "Loyalty Message",
+      "default": "Today only — earn 2X loyalty points on every purchase."
+    },
+    {
+      "type": "text",
+      "id": "end_date",
+      "label": "Countdown End Date (YYYY-MM-DDTHH:MM:SS)",
+      "default": "2025-11-30T23:59:59"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Black Friday Banner",
+      "category": "Black Friday"
+    }
+  ]
+}
+{% endschema %}
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const endDate = new Date("{{ section.settings.end_date }}").getTime();
+
+  const daysEl = document.getElementById("days-{{ section.id }}");
+  const hoursEl = document.getElementById("hours-{{ section.id }}");
+  const minutesEl = document.getElementById("minutes-{{ section.id }}");
+  const secondsEl = document.getElementById("seconds-{{ section.id }}");
+
+  const timer = setInterval(function() {
+    const now = new Date().getTime();
+    const distance = endDate - now;
+
+    if (distance < 0) {
+      clearInterval(timer);
+      daysEl.innerText = hoursEl.innerText = minutesEl.innerText = secondsEl.innerText = "00";
+      return;
+    }
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    daysEl.innerText = days.toString().padStart(2, "0");
+    hoursEl.innerText = hours.toString().padStart(2, "0");
+    minutesEl.innerText = minutes.toString().padStart(2, "0");
+    secondsEl.innerText = seconds.toString().padStart(2, "0");
+  }, 1000);
+});
+</script>

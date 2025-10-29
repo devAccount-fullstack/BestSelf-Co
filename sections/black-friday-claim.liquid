@@ -1,0 +1,202 @@
+<section
+  id="black-friday-claim-{{ section.id }}"
+  class="black-friday-claim-section"
+  style="background-color: {{ section.settings.bg_color }};"
+>
+  <div class="claim-container">
+    {% if section.settings.heading != blank or section.settings.highlight_text != blank %}
+      <h2 class="claim-heading">
+        {{ section.settings.heading }}
+        {% if section.settings.highlight_text != blank %}
+          <span class="claim-highlight">{{ section.settings.highlight_text }}</span>
+        {% endif %}
+      </h2>
+    {% endif %}
+
+    <div class="claim-countdown">
+      <div class="claim-count-box">
+        <span id="days-{{ section.id }}" class="claim-count-value">00</span>
+        <small>Days</small>
+      </div>
+      <div class="claim-count-box">
+        <span id="hours-{{ section.id }}" class="claim-count-value">00</span>
+        <small>Hours</small>
+      </div>
+      <div class="claim-count-box">
+        <span id="minutes-{{ section.id }}" class="claim-count-value">00</span>
+        <small>Minutes</small>
+      </div>
+      <div class="claim-count-box">
+        <span id="seconds-{{ section.id }}" class="claim-count-value">00</span>
+        <small>Seconds</small>
+      </div>
+    </div>
+
+    {% if section.settings.button_text != blank %}
+      <a href="{{ section.settings.button_link }}" class="claim-btn">
+        {{ section.settings.button_text }}
+      </a>
+    {% endif %}
+  </div>
+
+  <style>
+    #black-friday-claim-{{ section.id }} {
+      text-align: center;
+      font-family: "Poppins", sans-serif;
+      padding: 60px 20px;
+      color: #fff;
+    }
+    .claim-container {
+      max-width: 80%;
+      margin: 0 auto;
+    }
+
+    #black-friday-claim-{{ section.id }} .claim-heading {
+      font-size: 28px;
+      font-weight: 500;
+      line-height: 1.5;
+      margin-bottom: 40px;
+    }
+
+    #black-friday-claim-{{ section.id }} .claim-highlight {
+      color: #f5c542;
+      font-style: italic;
+      font-weight: 600;
+      margin-left: 5px;
+    }
+
+    #black-friday-claim-{{ section.id }} .claim-countdown {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+
+    #black-friday-claim-{{ section.id }} .claim-count-box {
+      background: #fff;
+      color: #000;
+      border-radius: 10px;
+      padding: 15px 20px;
+      min-width: 70px;
+      text-align: center;
+    }
+
+    #black-friday-claim-{{ section.id }} .claim-count-value {
+      display: block;
+      font-size: 32px;
+      font-weight: 600;
+    }
+
+    #black-friday-claim-{{ section.id }} .claim-count-box small {
+      display: block;
+      font-size: 12px;
+      text-transform: uppercase;
+      color: #333;
+      margin-top: 4px;
+    }
+
+    #black-friday-claim-{{ section.id }} .claim-btn {
+      display: inline-block;
+      background: #f5c542;
+      color: #000;
+      font-weight: 600;
+      padding: 14px 36px;
+      border-radius: 30px;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+
+    #black-friday-claim-{{ section.id }} .claim-btn:hover {
+      background: #ffd75e;
+    }
+
+    @media (max-width: 768px) {
+      #black-friday-claim-{{ section.id }} .claim-heading {
+        font-size: 22px;
+      }
+    }
+  </style>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const endDate = new Date("{{ section.settings.end_date }}").getTime();
+
+      const daysEl = document.getElementById("days-{{ section.id }}");
+      const hoursEl = document.getElementById("hours-{{ section.id }}");
+      const minutesEl = document.getElementById("minutes-{{ section.id }}");
+      const secondsEl = document.getElementById("seconds-{{ section.id }}");
+
+      const timer = setInterval(function() {
+        const now = new Date().getTime();
+        const distance = endDate - now;
+
+        if (distance < 0) {
+          clearInterval(timer);
+          daysEl.innerText = hoursEl.innerText = minutesEl.innerText = secondsEl.innerText = "00";
+          return;
+        }
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        daysEl.innerText = days.toString().padStart(2, "0");
+        hoursEl.innerText = hours.toString().padStart(2, "0");
+        minutesEl.innerText = minutes.toString().padStart(2, "0");
+        secondsEl.innerText = seconds.toString().padStart(2, "0");
+      }, 1000);
+    });
+  </script>
+</section>
+
+{% schema %}
+{
+  "name": "Black Friday Claim",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#1c1e36"
+    },
+    {
+      "type": "textarea",
+      "id": "heading",
+      "label": "Main Heading",
+      "default": "Because your best self — and the people you love —"
+    },
+    {
+      "type": "text",
+      "id": "highlight_text",
+      "label": "Highlighted (Yellow) Text",
+      "default": "can’t wait."
+    },
+    {
+      "type": "text",
+      "id": "end_date",
+      "label": "Countdown End Date (YYYY-MM-DDTHH:MM:SS)",
+      "default": "2025-11-30T23:59:59"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Claim My Black Friday Discount"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button URL",
+      "default": "/"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Black Friday Claim",
+      "category": "Black Friday"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,277 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "subheading": "",
+        "show_title": true,
+        "heading_font_size": "heading-large",
+        "show_content": false,
+        "text_font_size": "body-medium",
+        "align_text": "text-center",
+        "width": "wrapper",
+        "color_scheme": "",
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "heading_tag": "automatic"
+      }
+    },
+    "landing_header_r3qRK8": {
+      "type": "landing-header",
+      "name": "Landing Header",
+      "settings": {
+        "logo": "shopify://shop_images/bc4f5bb6def0700ad71e3d30dd75536b39e4dbef_d357d9b1-886b-47bb-bca7-0e71e6090492.png",
+        "logo_link": "/"
+      }
+    },
+    "black_friday_banner_bL8cN7": {
+      "type": "black-friday-banner",
+      "name": "Black Friday Banner",
+      "settings": {
+        "left_bg_color": "#0c0b1a",
+        "right_bg_color": "#111b36",
+        "highlight_text": "Black Friday:",
+        "headline_text": "Up to 35% OFF + Free Gifts — Tools That Actually Stick.",
+        "subtext": "End your phone addiction with Helm. Buy now and get the desktop app for free.",
+        "cta_text": "Unlock My Discount",
+        "button_link": "/",
+        "product_image": "shopify://shop_images/5b0ffd57a3a3658d378d5e698bb86670e2b8dfd3.png",
+        "loyalty_message": "Today only — earn 2X loyalty points on every purchase.",
+        "end_date": "2025-12-31T10:30:00"
+      }
+    },
+    "black_friday_slider_xyP7TK": {
+      "type": "black-friday-slider",
+      "blocks": {
+        "logo_837Cnk": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/Group_1171275371_300x300_1.png"
+          }
+        },
+        "logo_ex7Jf4": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/Union.png"
+          }
+        },
+        "logo_Bi3xPA": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/new-york-times_e5522b91-2ccb-4449-b887-3adce2bca17e_300x300_1.png"
+          }
+        },
+        "logo_mUiEfY": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/Union_1.png"
+          }
+        },
+        "logo_deXHEK": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/Group_1171275371_300x300_1.png"
+          }
+        },
+        "logo_Fjmpez": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/Vector_1_300x300_1.png"
+          }
+        }
+      },
+      "block_order": [
+        "logo_837Cnk",
+        "logo_ex7Jf4",
+        "logo_Bi3xPA",
+        "logo_mUiEfY",
+        "logo_deXHEK",
+        "logo_Fjmpez"
+      ],
+      "name": "Black Friday Logo Slider",
+      "settings": {
+        "bg_color": "#000000"
+      }
+    },
+    "black_friday_growth_K6Ke9F": {
+      "type": "black-friday-growth",
+      "blocks": {
+        "discount_block_pbn4UM": {
+          "type": "discount_block",
+          "settings": {
+            "discount_text": "20% OFF any order",
+            "sub_text": "",
+            "bg_color": "#ffffff"
+          }
+        },
+        "discount_block_6ahxiy": {
+          "type": "discount_block",
+          "settings": {
+            "discount_text": "25% OFF $75+",
+            "sub_text": "",
+            "bg_color": "#ffffff"
+          }
+        },
+        "discount_block_igWmbe": {
+          "type": "discount_block",
+          "settings": {
+            "discount_text": "30% OFF $125+",
+            "sub_text": "",
+            "bg_color": "#ffffff"
+          }
+        },
+        "discount_block_P7dJQP": {
+          "type": "discount_block",
+          "settings": {
+            "discount_text": "35% OFF $175+",
+            "sub_text": "+ Free Gift",
+            "bg_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "discount_block_pbn4UM",
+        "discount_block_6ahxiy",
+        "discount_block_igWmbe",
+        "discount_block_P7dJQP"
+      ],
+      "name": "Black Friday Growth",
+      "settings": {
+        "second-layout_enable": true,
+        "bg_color": "#2d3c61",
+        "title": "The More You Grow,",
+        "subtitle": "The More You Save",
+        "offer_text": "",
+        "member_text": "",
+        "button_label": "",
+        "button_link": "/"
+      }
+    },
+    "black_friday_product_slider_rErbLd": {
+      "type": "black-friday-product-slider",
+      "name": "Black Friday Product Slider",
+      "settings": {
+        "heading": "Shop Bestsellers",
+        "collection": "best-sellers",
+        "bg_color": "#000000"
+      }
+    },
+    "black_friday_ugc_PRWPqF": {
+      "type": "black-friday-ugc",
+      "blocks": {
+        "video_block_XaNEhM": {
+          "type": "video_block",
+          "settings": {
+            "thumbnail": "shopify://shop_images/meeting-mastery-pad-50-off-professional-growth-189305.jpg",
+            "video_url": "https://www.youtube.com/watch?v=C0DPdy98e4c"
+          }
+        }
+      },
+      "block_order": [
+        "video_block_XaNEhM"
+      ],
+      "name": "Black Friday UGC",
+      "settings": {
+        "bg_color": "#232440",
+        "heading": "UGC display here"
+      }
+    },
+    "landing_testimonial_slider_AHqCJr": {
+      "type": "landing-testimonial-slider",
+      "blocks": {
+        "slide_Aqnpby": {
+          "type": "slide",
+          "settings": {
+            "background_image": "shopify://shop_images/little-talk-deck-card-deck-kids-family-221238.jpg",
+            "message": "I ditched my phone addiction thanks to Helm. I actually feel present now.",
+            "name": "Jasmine K."
+          }
+        },
+        "slide_KEy4Bz": {
+          "type": "slide",
+          "settings": {
+            "background_image": "shopify://shop_images/landing-testimonial2.png",
+            "message": "Add your testimonial message here",
+            "name": "Customer Name"
+          }
+        },
+        "slide_gW7Xn9": {
+          "type": "slide",
+          "settings": {
+            "background_image": "shopify://shop_images/landing-testimonial.png",
+            "message": "The Self Journal helped me finish my book in 11 weeks.",
+            "name": "Tony R."
+          }
+        }
+      },
+      "block_order": [
+        "slide_Aqnpby",
+        "slide_KEy4Bz",
+        "slide_gW7Xn9"
+      ],
+      "name": "Landing Testimonial",
+      "settings": {
+        "bg_color": "#1a1a1a",
+        "heading": "Join 10,000+ Who've Transformed Their Focus & Relationships"
+      }
+    },
+    "black_friday_analog_C8An8p": {
+      "type": "black-friday-analog",
+      "name": "Black Friday Analog Section",
+      "settings": {
+        "bg_color": "#232440",
+        "title": "Why",
+        "analog_text": "Analog",
+        "svg_icon": "&gt;",
+        "digital_text": "Digital",
+        "subcontent": "A message from our founder to you",
+        "image": "shopify://shop_images/Frame_847.png"
+      }
+    },
+    "black_friday_claim_cyH94d": {
+      "type": "black-friday-claim",
+      "name": "Black Friday Claim",
+      "settings": {
+        "bg_color": "#232440",
+        "heading": "Because your best self — and the people you love —",
+        "highlight_text": "can’t wait.",
+        "end_date": "2025-11-01T10:30:00",
+        "button_text": "Claim My Black Friday Discount",
+        "button_link": "/"
+      }
+    },
+    "landing_footer_7exntJ": {
+      "type": "landing-footer",
+      "name": "Landing Footer",
+      "settings": {
+        "logo_link": "/",
+        "logo": "shopify://shop_images/bc4f5bb6def0700ad71e3d30dd75536b39e4dbef_d357d9b1-886b-47bb-bca7-0e71e6090492.png",
+        "copyright": "© 2025 BestSelf Co. All rights reserved.",
+        "policy_links": "<p><a href=\"/pages/privacy-policy\">Privacy Policy</a> | <a href=\"/pages/terms-conditions\">Terms & Conditions</a> | <a href=\"/pages/shipping-policy\">Shipping Policy</a></p>"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "landing_header_r3qRK8",
+    "black_friday_banner_bL8cN7",
+    "black_friday_slider_xyP7TK",
+    "black_friday_growth_K6Ke9F",
+    "black_friday_product_slider_rErbLd",
+    "black_friday_ugc_PRWPqF",
+    "landing_testimonial_slider_AHqCJr",
+    "black_friday_analog_C8An8p",
+    "black_friday_claim_cyH94d",
+    "landing_footer_7exntJ"
+  ]
+}

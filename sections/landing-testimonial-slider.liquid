@@ -1,4 +1,4 @@
-<section class="landing-two-column-slider">
+<section class="landing-two-column-slider" style="background-color: {{ section.settings.bg_color }}">
   <div class="container">
     <div class="landing-two-column-slider__wrapper">
       <!-- Left Column - Heading -->
@@ -201,6 +201,12 @@
   "tag": "section",
   "class": "section",
   "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background color",
+      "default": "#232440"
+    },
     {
       "type": "textarea",
       "id": "heading",

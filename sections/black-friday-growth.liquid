@@ -1,0 +1,256 @@
+<section class="growth-savings-section" style="background-color: {{ section.settings.bg_color }};">
+  <div class="growth-savings-container" style="{% if section.settings.second-layout_enable %}display:block{% else %}display: flex; align-items: center;{% endif %}">
+    <div class="growth-left" style="{% if section.settings.second-layout_enable %}width: 100%; align-items: center;{% else %}width: 50%; align-items: flex-start;{% endif %}">
+      <h2 class="growth-title">
+        {{ section.settings.title | escape }}<br/>
+        <span class="growth-highlight">{{ section.settings.subtitle | escape }}</span>
+      </h2>
+      {% if section.settings.offer_text != blank %}
+        <p class="growth-offer">{{ section.settings.offer_text }}</p>
+      {% endif %}
+      {% if section.settings.member_text != blank %}
+        <p class="growth-member">{{ section.settings.member_text }}</p>
+      {% endif %}
+      {% if section.settings.button_label != blank and section.settings.button_link %}
+        <a href="{{ section.settings.button_link }}" class="growth-button">
+          {{ section.settings.button_label }}
+        </a>
+      {% endif %}
+    </div>
+
+    <div class="growth-right" style="{% if section.settings.second-layout_enable %}width: 100%; margin-top: 50px;{% else %}  width: 50%;{% endif %}">
+      <ul class="growth-list">
+        {% for block in section.blocks %}
+        <li class="growth-item">
+          <div class="growth-discount" style="background-color: {{ block.settings.bg_color }}">
+            <img src="{{ 'percentage.svg' | asset_url }}" alt="Star Icon" width="30" height="auto" />
+            <span class="text-d">{{ block.settings.discount_text }}</span>
+         </div>
+          {% if block.settings.sub_text != blank %}
+            <div class="growth-sub">
+                <span class="text-d">{{ block.settings.sub_text }}</span>
+                <img src="{{ 'gift.svg' | asset_url }}" alt="Star Icon" width="30" height="auto" />
+            </div>
+          {% endif %}
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<style>
+.growth-savings-section {
+  padding: 60px 20px;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+}
+
+.growth-savings-container {
+  max-width: 80%;
+  gap: 50px;
+  margin: auto;
+}
+
+.growth-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 20px;
+}
+
+.growth-title {
+  font-size: 48px;
+  font-family: Libre Baskerville, serif;
+  font-weight: 600;
+  margin: 0;
+}
+
+.growth-highlight {
+  color: #d4af37;
+  font-style: italic;
+}
+
+.growth-offer {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 24px;
+  font-family: Inter, sans-serif;
+  color: #fff;
+  background: linear-gradient(90deg, #6887D5 0%, #1A1A1A 100%);
+}
+
+.growth-member {
+  font-size: 24px;
+  font-family: Inter, sans-serif;
+  font-weight: 400;
+  opacity: 0.9;
+}
+
+.growth-button {
+  background-color: transparent;
+  border: 1px solid #fff;
+  padding: 10px 20px;
+  border-radius: 25px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+  font-family: Inter, sans-serif;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.growth-button:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.growth-list {
+  list-style: none;
+  padding: 0;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 375px;
+}
+
+.growth-item {
+  color: #000;
+}
+
+.growth-sub {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: yellow;
+  padding: 10px;
+  border-radius: 0 0 12px 12px;
+  justify-content: center;
+}
+
+.growth-discount {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 10px;
+}
+
+.text-d {
+  font-weight: 600;
+  font-size: 24px;
+  font-family: Inter ,sans-serif;
+}
+
+.growth-item:not(:last-child) .growth-discount {
+  border-radius: 12px !important;
+}
+
+.growth-item:last-child .growth-discount {
+  border-radius: 12px 12px 0 0 !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .growth-savings-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .growth-list {
+    width: 100%;
+  }
+  .growth-right {
+    width: 100%;
+  }
+}
+</style>
+
+{% schema %}
+{
+  "name": "Black Friday Growth",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "second-layout_enable",
+      "label": "Enable Second Layout",
+      "default": false
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background color",
+      "default": "#0c0c0c"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Main title",
+      "default": "The More You Grow,"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "The More You Save"
+    },
+    {
+      "type": "text",
+      "id": "offer_text",
+      "label": "Offer text",
+      "default": "Today only — earn 2X points on every purchase."
+    },
+    {
+      "type": "text",
+      "id": "member_text",
+      "label": "Member text",
+      "default": "Not a member yet?"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Join now and snag 500 bonus points instantly!"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link",
+      "default": "/"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "discount_block",
+      "name": "Discount Block",
+      "settings": [
+        {
+          "type": "text",
+          "id": "discount_text",
+          "label": "Discount text",
+          "default": "20% OFF any order"
+        },
+        {
+          "type": "text",
+          "id": "sub_text",
+          "label": "Sub text (optional)",
+          "default": "Subtext goes here"
+        },
+        {
+          "type": "color",
+          "id": "bg_color",
+          "label": "Block background color",
+          "default": "#fff"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Black Friday Growth",
+      "category": "Black Friday"
+    }
+  ]
+}
+{% endschema %}

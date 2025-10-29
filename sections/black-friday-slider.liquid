@@ -1,0 +1,103 @@
+<section class="black-friday-slider1" style="background-color: {{ section.settings.bg_color }}">
+  <div class="black-friday-slider-container">
+    <div class="black-friday-logos splide" id="black-friday-slider-{{ section.id }}">
+      <div class="splide__track">
+        <ul class="splide__list">
+          {% for block in section.blocks %}
+            <li class="splide__slide">
+              {% if block.settings.logo != blank %}
+                <img
+                  src="{{ block.settings.logo | image_url: width: 200, height: 100 }}"
+                  width="200"
+                  height="100"
+                  alt="Logo {{ forloop.index }}"
+                  loading="lazy"
+                >
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .black-friday-slider1 {
+      padding: 40px 0;
+    }
+    .black-friday-logos img {
+      max-height: 40px;
+      object-fit: contain;
+      width: auto;
+      filter: brightness(0) invert(1);
+      opacity: 0.9;
+      transition: opacity 0.3s ease;
+    }
+    .black-friday-logos img:hover {
+      opacity: 1;
+    }
+    @media (max-width: 768px) {
+      .black-friday-logos img {
+        max-height: 30px;
+      }
+    }
+  </style>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var splideEl = document.querySelector('#black-friday-slider-{{ section.id }}');
+      if (splideEl) {
+        new Splide(splideEl, {
+          type: 'loop',
+          perPage: 8,
+          autoplay: true,
+          interval: 1000,
+          pauseOnHover: false,
+          arrows: false,
+          pagination: false,
+          speed: 800,
+          gap: '1rem',
+          focus: 'center',
+          breakpoints: {
+            1024: { perPage: 4 },
+            768: { perPage: 3 },
+            480: { perPage: 2 },
+          },
+        }).mount();
+      }
+    });
+  </script>
+</section>
+
+{% schema %}
+{
+  "name": "Black Friday Logo Slider",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background color",
+      "default": "#000000"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "logo",
+      "name": "Logo",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "logo",
+          "label": "Logo Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Black Friday Logo Slider",
+      "category": "Black Friday"
+    }
+  ]
+}
+{% endschema %}

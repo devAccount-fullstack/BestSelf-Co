@@ -1,0 +1,165 @@
+<section
+  id="black-friday-analog-{{ section.id }}"
+  class="black-friday-analog-section"
+  style="background-color: {{ section.settings.bg_color }};"
+>
+  <div class="analog-container">
+    {% if section.settings.title != blank %}
+      <h2 class="analog-title">{{ section.settings.title }}</h2>
+    {% endif %}
+
+    <div class="analog-subtitle">
+      {% if section.settings.analog_text != blank %}
+        <span class="analog-text">{{ section.settings.analog_text }}</span>
+      {% endif %}
+      {% if section.settings.svg_icon != blank %}
+        <span class="analog-icon">{{ section.settings.svg_icon }}</span>
+      {% endif %}
+      {% if section.settings.digital_text != blank %}
+        <span class="digital-text">{{ section.settings.digital_text }}</span>
+      {% endif %}
+    </div>
+
+    {% if section.settings.subcontent != blank %}
+      <p class="analog-subcontent">{{ section.settings.subcontent }}</p>
+    {% endif %}
+
+    {% if section.settings.image != blank %}
+      <div class="analog-image">
+        <img
+          src="{{ section.settings.image | image_url: width: 1240 }}"
+          alt="UGC thumbnail"
+          class="ugc-thumbnail"
+          width="100%"
+          height="auto"
+          loading="lazy"
+        >
+      </div>
+    {% endif %}
+  </div>
+
+  <style>
+    #black-friday-analog-{{ section.id }} {
+      padding: 60px;
+      text-align: center;
+      color: #fff;
+      font-family: "Poppins", sans-serif;
+    }
+
+    .analog-container {
+      max-width: 80%;
+      margin: 0 auto;
+    }
+
+    #black-friday-analog-{{ section.id }} .analog-title {
+      font-size: 36px;
+      color: #fff;
+      margin-bottom: 10px;
+      font-family: Libre Baskerville, serif;
+    }
+
+    #black-friday-analog-{{ section.id }} .analog-subtitle {
+      font-size: 56px;
+      font-weight: 600;
+      font-family: Libre Baskerville, serif;
+      color: #f5c542;
+      margin-bottom: 10px;
+    }
+
+    #black-friday-analog-{{ section.id }} .analog-icon {
+      margin: 0 10px;
+      color: #f5c542;
+    }
+
+    #black-friday-analog-{{ section.id }} .analog-subcontent {
+      font-size: 36px;
+      font-family: Libre Baskerville, serif;
+      color: #fff;
+      margin-bottom: 40px;
+    }
+
+    #black-friday-analog-{{ section.id }} .analog-image img {
+      width: 100%;
+      max-width: auto;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    @media (max-width: 768px) {
+      #black-friday-analog-{{ section.id }} .analog-subtitle {
+        font-size: 21px;
+      }
+
+      #black-friday-analog-{{ section.id }} .analog-title {
+        font-size: 22px;
+        color: #fff;
+        margin-bottom: 10px;
+        font-family: Libre Baskerville, serif;
+      }
+
+      #black-friday-analog-{{ section.id }} .analog-subcontent {
+        font-size: 16px;
+      }
+      #black-friday-analog-{{ section.id }} {
+        padding: 50px 20px;
+        text-align: center;
+        color: #fff;
+        font-family: "Poppins", sans-serif;
+      }
+    }
+  </style>
+</section>
+
+{% schema %}
+{
+  "name": "Black Friday Analog",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#1c1e36"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title (e.g. Why)",
+      "default": "Why"
+    },
+    {
+      "type": "text",
+      "id": "analog_text",
+      "label": "Analog Text",
+      "default": "Analog"
+    },
+    {
+      "type": "html",
+      "id": "svg_icon",
+      "label": "SVG Icon (insert SVG code)"
+    },
+    {
+      "type": "text",
+      "id": "digital_text",
+      "label": "Digital Text",
+      "default": "Digital"
+    },
+    {
+      "type": "text",
+      "id": "subcontent",
+      "label": "Subcontent",
+      "default": "A message from our founder to you"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Main Image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Black Friday Analog Section",
+      "category": "Black Friday"
+    }
+  ]
+}
+{% endschema %}

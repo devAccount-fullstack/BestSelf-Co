@@ -29,7 +29,6 @@
         ]
       }
     </script>
-
    {% render 'replo-head' %}
     {%- if content_for_header contains 'tapita-seo-script-tags' -%}{%- include 'tapita-seo-schema' -%}{%- endif -%}
 
@@ -40,6 +39,18 @@
     {{ 'bundle.css' | asset_url | stylesheet_tag: preload: true }}
 
     {{ content_for_header }}
+
+    <!-- Splide CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
+    />
+
+    <!-- Splide JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"
+      defer
+    ></script>
 
     <!-- GROWIFY -->
     <script type="application/javascript">
@@ -80,14 +91,14 @@
         <script src="https://ds0wlyksfn0sb.cloudfront.net/redirect.js"></script>
       {%- endunless -%}
     {%- endif -%}
-    
+
     {%- comment -%}Consolidated listicle styles - loads for all listicle pages{%- endcomment -%}
-    {%- if (template.name == 'page' and template.suffix == 'listicle') 
-         or (template.name == 'metaobject' and metaobject.type == 'listicle') 
+    {%- if (template.name == 'page' and template.suffix == 'listicle')
+         or (template.name == 'metaobject' and metaobject.type == 'listicle')
          or (template.name == 'article' and template.suffix == 'lander-listicle') -%}
       {{ 'listicle-consolidated.css' | asset_url | stylesheet_tag }}
     {%- endif -%}
-    
+
     {%- comment -%}Article Journal Template Assets{%- endcomment -%}
     {%- if template.name == 'article' and template.suffix == 'journal' -%}
       {{ 'article-journal.css' | asset_url | stylesheet_tag }}
@@ -95,10 +106,14 @@
 
     {%- comment -%}Giveaway Landing VIP{%- endcomment -%}
     {%- if template.name == 'page' and template.suffix == 'customer-acquisition'
-       or template.name == 'page' and template.suffix == 'landing-page1' -%}
+       or template.name == 'page' and template.suffix == 'black-friday-new' -%}
       {{ 'giveaway-landing.css' | asset_url | stylesheet_tag }}
     {%- endif -%}
-    
+
+    {%- if template.name == 'page' and template.suffix == 'black-friday-new' -%}
+      {{ 'black-friday-new.css' | asset_url | stylesheet_tag }}
+    {%- endif -%}
+
     {%- comment -%}Critical fix for mobile visibility issues with Tailwind classes{%- endcomment -%}
     {{ 'mobile-visibility-fix.css' | asset_url | stylesheet_tag }}
   </head>
@@ -135,7 +150,7 @@
     </a>
 
     {%- if template.name == 'page' and template.suffix == 'customer-acquisition'
-    or template.name == 'page' and template.suffix == 'landing-page1' -%}
+    or template.name == 'page' and template.suffix == 'black-friday-new' -%}
 
       <!-- Landing Page layout -->
       <main role="main" id="MainContent" class="main-content">
@@ -196,11 +211,11 @@
     <!-- webpack bundle -->
     <script src="{{ 'bundle.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'shopify-cart-events.min.js' | asset_url }}" defer="defer"></script>
-    
+
     {%- comment -%}Article Journal Template JavaScript{%- endcomment -%}
     {%- if template.name == 'article' and template.suffix == 'journal' -%}
       <script src="{{ 'article-journal.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
-    
+
   </body>
 </html>
