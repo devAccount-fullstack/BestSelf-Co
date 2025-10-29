@@ -26,11 +26,7 @@
 
     {% if section.settings.image != blank %}
       <div class="analog-image">
-        <img
-          src="{{ section.settings.image | image_url: width: 1240 }}"
-          alt="{{ section.settings.title | escape }}"
-          loading="lazy"
-        >
+        {{ section.settings.image | img_tag: section.settings.title, '1240x' | replace: '<img ', '<img loading="lazy" ' }}
       </div>
     {% endif %}
   </div>
