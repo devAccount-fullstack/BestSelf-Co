@@ -12,7 +12,7 @@
 
     {% assign collection = collections[section.settings.collection] %}
     {% if collection and collection.products_count > 0 %}
-      <div class="black-friday-product-slider splide" id="black-friday-slider1-{{ section.id }}">
+      <div class="black-friday-product-slider splide" id="black-friday-slider-{{ section.id }}">
         <div class="splide__track">
           <ul class="splide__list">
             {% for product in collection.products %}
