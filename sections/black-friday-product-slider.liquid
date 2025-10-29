@@ -13,7 +13,7 @@
               <li class="splide__slide black-friday-item">
                 <div class="black-friday-card">
                   {% assign first_variant = product.variants.first %}
-                  {% if first_variant.inventory_management %}
+                  {% if first_variant.inventory_management != blank %}
                     <p class="product-quantity">
                       Only {{ first_variant.inventory_quantity }} left
                     </p>
