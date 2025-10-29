@@ -103,15 +103,6 @@
         "bg_color": "#000000"
       }
     },
-    "black_friday_product_slider_rErbLd": {
-      "type": "black-friday-product-slider",
-      "name": "Black Friday Product Slider",
-      "settings": {
-        "heading": "Shop Bestsellers",
-        "collection": "best-sellers",
-        "bg_color": "#000000"
-      }
-    },
     "black_friday_growth_K6Ke9F": {
       "type": "black-friday-growth",
       "blocks": {
@@ -166,6 +157,35 @@
         "button_link": "/"
       }
     },
+    "black_friday_product_slider_rErbLd": {
+      "type": "black-friday-product-slider",
+      "name": "Black Friday Product Slider",
+      "settings": {
+        "heading": "Shop Bestsellers",
+        "collection": "best-sellers",
+        "bg_color": "#000000"
+      }
+    },
+    "black_friday_ugc_PRWPqF": {
+      "type": "black-friday-ugc",
+      "blocks": {
+        "video_block_XaNEhM": {
+          "type": "video_block",
+          "settings": {
+            "thumbnail": "shopify://shop_images/meeting-mastery-pad-50-off-professional-growth-189305.jpg",
+            "video_url": "https://www.youtube.com/watch?v=C0DPdy98e4c&themeRefresh=1"
+          }
+        }
+      },
+      "block_order": [
+        "video_block_XaNEhM"
+      ],
+      "name": "Black Friday UGC",
+      "settings": {
+        "bg_color": "#232440",
+        "heading": "UGC display here"
+      }
+    },
     "landing_testimonial_slider_AHqCJr": {
       "type": "landing-testimonial-slider",
       "blocks": {
@@ -201,7 +221,7 @@
       ],
       "name": "Landing Testimonial",
       "settings": {
-        "bg_color": "#232440",
+        "bg_color": "#1a1a1a",
         "heading": "Join 10,000+ Who've Transformed Their Focus & Relationships"
       }
     },
@@ -223,6 +243,7 @@
     "black_friday_slider_xyP7TK",
     "black_friday_growth_K6Ke9F",
     "black_friday_product_slider_rErbLd",
+    "black_friday_ugc_PRWPqF",
     "landing_testimonial_slider_AHqCJr",
     "landing_footer_7exntJ"
   ]
