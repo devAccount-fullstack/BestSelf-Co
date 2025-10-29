@@ -13,7 +13,7 @@
               <li class="splide__slide black-friday-item">
                 <div class="black-friday-card">
                   {% assign first_variant = product.variants.first %}
-                  {% if first_variant.inventory_management != blank %}
+                  {% if first_variant.inventory_management %}
                     <p class="product-quantity">
                       Only {{ first_variant.inventory_quantity }} left
                     </p>
@@ -46,6 +46,7 @@
                     </h3>
 
                   <!-- Judge.me REVIEW STAR -->
+                  {% if product.metafields.judgeme.badge != blank%}
                   <div class="tw-flex tw-h-6">
                     <div
                       style="{{ jm_style }}"
@@ -56,6 +57,7 @@
                       {{ product.metafields.judgeme.badge }}
                     </div>
                   </div>
+                  {% endif %}
 
                     {% if product.description != blank %}
                       <p class="product-description">
