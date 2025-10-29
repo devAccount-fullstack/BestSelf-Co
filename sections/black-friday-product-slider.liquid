@@ -38,16 +38,17 @@
                       <a href="{{ product.url }}">{{ product.title }}</a>
                     </h3>
 
-                    {% if product.metafields.reviews.rating.value %}
-                      <div class="product-reviews">
-                        {% for i in (1..product.metafields.reviews.rating.value) %}
-                          ★
-                        {% endfor %}
-                        <span class="review-count">
-                          ({{ product.metafields.reviews.rating_count }})
-                        </span>
-                      </div>
-                    {% endif %}
+                  <!-- Judge.me REVIEW STAR -->
+                  <div class="tw-flex tw-h-6">
+                    <div
+                      style="{{ jm_style }}"
+                      class="jdgm-widget jdgm-preview-badge"
+                      data-id="{{ product.id }}"
+                      data-auto-install="false"
+                    >
+                      {{ product.metafields.judgeme.badge }}
+                    </div>
+                  </div>
 
                     {% if product.description != blank %}
                       <p class="product-description">
