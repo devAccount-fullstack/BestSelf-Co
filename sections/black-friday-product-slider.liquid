@@ -114,7 +114,7 @@
     if (slider && typeof Splide !== 'undefined') {
       new Splide(slider, {
         type: 'loop',
-        perPage: 4.5,
+        perPage: 4,
         perMove: 1,
         focus: 'center',
         gap: '1rem',
@@ -130,6 +130,18 @@
 </script>
 
 <style>
+#black-friday-sliders-{{ section.id }} .splide__track {
+  overflow: visible;
+}
+
+#black-friday-sliders-{{ section.id }} .splide__slide {
+  transform: scale(0.95);
+  transition: transform 0.3s ease;
+}
+
+#black-friday-sliders-{{ section.id }} .splide__slide.is-active {
+  transform: scale(1);
+}
 .black-friday-slider-container.page-width {
   padding: 60px 0;
 }
