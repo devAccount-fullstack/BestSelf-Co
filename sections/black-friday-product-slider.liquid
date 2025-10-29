@@ -112,8 +112,10 @@
     if (slider && typeof Splide !== 'undefined') {
       new Splide(slider, {
         type: 'loop',
-        perPage: 4,
+        perPage: 5,
         perMove: 1,
+        arrows: false,
+        focus: 'center',
         gap: '1rem',
         pagination: false,
         breakpoints: {
