@@ -1,7 +1,8 @@
-{% comment %}
-  Black Friday Product Slider
-  Automatically loads all products from a selected collection.
-{% endcomment %}
+{% liquid
+  assign images = product.media | where: 'media_type', 'image'
+  assign custom_image = custom_image | default: images[0]
+  assign _badge_position = badge_position | default: 'overlay'
+%}
 
 <section class="black-friday-slider-section" style="background-color: {{ section.settings.bg_color }}">
   <div class="black-friday-slider-container page-width">
