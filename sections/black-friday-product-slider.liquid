@@ -86,23 +86,12 @@
                           </span>
                         </button>
                       </div>
-        <button
-          class="tw-relative tw-w-10.5 tw-h-10.5 lg:tw-w-[46px] lg:tw-h-[46px] tw-flex tw-items-center tw-justify-center tw-bg-sc-blue tw-shrink-0 tw-rounded-full tw-transition-all tw-duration-200 hover:tw-bg-sc-blue/90"
-          :aria-busy="isAddingToCart"
-          @click="addToCart()"
-          type="button"
-          :class="{'tw-pointer-events-none tw-opacity-70' : selectedVariant?.available === false}"
-        >
-          <span x-show="!loader">
-            {% render 'icon-42', name: 'cart-icon' %}
-          </span>
-          <span
-            x-show="loader"
-            class="tw-absolute tw-inset-0 tw-flex tw-justify-center tw-items-center"
-          >
-            {%- render 'icon-42', name: 'loader', class: 'tw-w-5 !tw-text-white !tw-fill-sc-blue' -%}
-          </span>
-        </button>
+                      <form method="post" action="/cart/add">
+                        <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+                        <button type="submit" class="add-to-cart-btn" {% unless product.available %}disabled{% endunless %}>
+                          Add to Cart
+                        </button>
+                      </form>
                     </div>
                   </div>
                 </div>
