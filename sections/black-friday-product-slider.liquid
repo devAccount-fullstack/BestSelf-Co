@@ -158,14 +158,20 @@
   width: 100%;
   border-radius: 8px;
 }
-.sold-out {
-  position: absolute;
-  top: 8px;
-  left: 8px;
-  background: #ff4444;
-  padding: 4px 8px;
-  font-size: 12px;
-  border-radius: 4px;
+
+/* ✅ Fix image size to 300x300 */
+.product-image {
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 8px;
+}
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
 }
 .product-title {
   font-size: 18px;
