@@ -18,20 +18,42 @@
             {% for product in collection.products %}
               <li class="splide__slide black-friday-item">
                 <div class="black-friday-card">
-                  <div class="product-image">
-                    <a href="{{ product.url }}">
-                      <img
-                        src="{{ product.featured_image | image_url: '600x600' }}"
-                        width="200"
-                        height="100"
-                        alt="{{ product.title | escape }}"
-                        loading="lazy"
-                      >
-                    </a>
-                    {% unless product.available %}
-                      <span class="sold-out">Sold Out</span>
-                    {% endunless %}
-                  </div>
+    <div class="product-card__media tw-relative tw-flex tw-items-center tw-justify-center {% if _badge_position == 'above' %}tw-pt-0{% else %}tw-pt-12{% endif %} tw-mb-3.5">
+      {% if _badge_position == 'overlay' %}
+        <div class="product-card__badge-group tw-absolute tw-top-2 tw-left-0 tw-z-10 tw-flex tw-gap-1 tw-flex-wrap">
+          {% render '42-product-badge', product: product %}
+        </div>
+      {% endif %}
+
+      {% if custom_image != blank %}
+        <!-- PRODUCT CARD IMAGE -->
+        <a
+          :href="selectedVariant?.link"
+          class="tw-flex tw-relative"
+          x-data="{ isShowHoverImg: false }"
+          @mouseenter="isShowHoverImg = hoverImage ? true : false"
+          @mouseleave="isShowHoverImg = false"
+        >
+          <img
+            class="tw-w-full tw-h-auto tw-object-cover tw-aspect-square tw-relative tw-z-0"
+            :class="{ 'tw-opacity-0': isShowHoverImg }"
+            :src="productImage"
+            :alt="`${product?.title} - ${selectedVariant?.name}`"
+            height="100%"
+            width="100%"
+          >
+          <img
+            x-cloak
+            x-show="isShowHoverImg"
+            class="tw-absolute tw-top-0 tw-left-0 tw-w-full tw-h-auto tw-object-cover tw-aspect-square tw-z-5"
+            :src="hoverImage"
+            :alt="`${product?.title} - ${selectedVariant?.name}`"
+            height="100%"
+            width="100%"
+          >
+        </a>
+      {% endif %}
+    </div>
 
                   <div class="product-info">
                     <h3 class="product-title">
