@@ -141,4 +141,61 @@
         const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-        d
+        daysEl.innerText = days.toString().padStart(2, "0");
+        hoursEl.innerText = hours.toString().padStart(2, "0");
+        minutesEl.innerText = minutes.toString().padStart(2, "0");
+        secondsEl.innerText = seconds.toString().padStart(2, "0");
+      }, 1000);
+    });
+  </script>
+</section>
+
+{% schema %}
+{
+  "name": "Black Friday Claim",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#1c1e36"
+    },
+    {
+      "type": "textarea",
+      "id": "heading",
+      "label": "Main Heading",
+      "default": "Because your best self — and the people you love —"
+    },
+    {
+      "type": "text",
+      "id": "highlight_text",
+      "label": "Highlighted (Yellow) Text",
+      "default": "can’t wait."
+    },
+    {
+      "type": "text",
+      "id": "end_date",
+      "label": "Countdown End Date (YYYY-MM-DDTHH:MM:SS)",
+      "default": "2025-11-30T23:59:59"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Claim My Black Friday Discount"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button URL",
+      "default": "/"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Black Friday Claim Section",
+      "category": "Black Friday"
+    }
+  ]
+}
+{% endschema %}
