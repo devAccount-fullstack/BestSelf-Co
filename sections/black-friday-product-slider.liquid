@@ -20,13 +20,23 @@
                 <div class="black-friday-card">
                   <div class="product-image">
                     <a href="{{ product.url }}">
-                      <img
-                        src="{{ product.featured_image | image_url: width: 600 }}"
-                        alt="{{ product.title | escape }}"
-                        loading="lazy"
-                        width="600"
-                        height="600"
-                      />
+                      {% if product.featured_image %}
+                        <img
+                          src="{{ product.featured_image | image_url: width: 300, height: 300, crop: 'center' }}"
+                          alt="{{ product.title | escape }}"
+                          loading="lazy"
+                          class="product-img"
+                        >
+                      {% else %}
+                        <img
+                          src="{{ 'placeholder.jpg' | asset_url }}"
+                          alt="No image available"
+                          loading="lazy"
+                          width="300"
+                          height="300"
+                          class="product-img"
+                        >
+                      {% endif %}
                     </a>
                     {% unless product.available %}
                       <span class="sold-out">Sold Out</span>
