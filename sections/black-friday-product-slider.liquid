@@ -20,9 +20,11 @@
                   <div class="product-image">
                     <a href="{{ product.url }}">
                       <img
-                        src="{{ product.featured_image | img_url: '600x600' }}"
+                        src="{{ product.featured_image | image_url: '600x600' }}"
                         alt="{{ product.title | escape }}"
                         loading="lazy"
+                        width="600"
+                        height="600"
                       >
                     </a>
                     {% unless product.available %}
@@ -81,7 +83,6 @@
   </div>
 </section>
 
-<script defer src="{{ 'splide.min.js' | asset_url }}"></script>
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     const slider = document.querySelector('#black-friday-slider-{{ section.id }}');
