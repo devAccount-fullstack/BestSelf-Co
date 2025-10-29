@@ -12,22 +12,22 @@
             {% for product in collection.products %}
               <li class="splide__slide black-friday-item">
                 <div class="black-friday-card">
-                  <p class="product-quantity">
-                    {{ product.total_inventory }} in stock
-                  </p>
+{% assign first_variant = product.variants.first %}
+{% if first_variant.inventory_management %}
+  <p class="product-quantity">
+    {{ first_variant.inventory_quantity }} in stock
+  </p>
+{% else %}
+  <p class="product-quantity">
+    Available
+  </p>
+{% endif %}
                   <div class="product-image">
                     <a href="{{ product.url }}">
                       {% if product.featured_image %}
                         <img
                           src="{{ product.featured_image | image_url: width: 300, height: 300, crop: 'center' }}"
                           alt="{{ product.title | escape }}"
-                          loading="lazy"
-                          class="product-img"
-                        >
-                      {% else %}
-                        <img
-                          src="{{ 'placeholder.jpg' | asset_url }}"
-                          alt="No image available"
                           loading="lazy"
                           width="300"
                           height="300"
@@ -39,6 +39,7 @@
                       <span class="sold-out">Sold Out</span>
                     {% endunless %}
                   </div>
+
                   <div class="product-info">
                     <h3 class="product-title">
                       <a href="{{ product.url }}">{{ product.title }}</a>
