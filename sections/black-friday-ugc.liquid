@@ -227,12 +227,14 @@
 document.addEventListener("DOMContentLoaded", function () {
   var splide = new Splide("#ugc-slider-{{ section.id }}", {
     type: "loop",
-    perPage: 3,
+    perPage: 4.5,
+    arrows: false,
     gap: "1rem",
-    breakpoints: {
-      768: { perPage: 2 },
-      480: { perPage: 1 },
-    },
+      breakpoints: {
+        1200: { perPage: 3.5 },
+        768: { perPage: 2 },
+        480: { perPage: 1 }
+      }
   });
   splide.mount();
 
