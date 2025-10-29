@@ -242,7 +242,7 @@
       "type": "black-friday-claim",
       "name": "Black Friday Claim",
       "settings": {
-        "bg_color": "#1c1e36",
+        "bg_color": "#232440",
         "heading": "Because your best self — and the people you love —",
         "highlight_text": "can’t wait.",
         "end_date": "2025-11-01T10:30:00",
