@@ -3,36 +3,36 @@
   class="black-friday-ugc"
   style="background-color: {{ section.settings.bg_color }};"
 >
-<section class="black-friday-ugc" style="background-color: {{ section.settings.bg_color }}">
-  <div class="ugc-container">
-    <h2 class="ugc-heading">{{ section.settings.heading }}</h2>
+  <section class="black-friday-ugc" style="background-color: {{ section.settings.bg_color }}">
+    <div class="ugc-container">
+      <h2 class="ugc-heading">{{ section.settings.heading }}</h2>
 
-    <div class="splide" id="ugc-slider-{{ section.id }}">
-      <div class="splide__track">
-        <ul class="splide__list">
-          {% for block in section.blocks %}
-            <li class="splide__slide">
-              <div class="ugc-video-item">
-                <div class="ugc-video-thumb" data-video="{{ block.settings.video_url }}">
-                  <img src="{{ block.settings.thumbnail | img_url: '720x' }}" alt="Video Thumbnail" />
-                  <div class="play-btn">▶</div>
+      <div class="splide" id="ugc-slider-{{ section.id }}">
+        <div class="splide__track">
+          <ul class="splide__list">
+            {% for block in section.blocks %}
+              <li class="splide__slide">
+                <div class="ugc-video-item">
+                  <div class="ugc-video-thumb" data-video="{{ block.settings.video_url }}">
+                    <img class="ugc-thumbnail" src="{{ block.settings.thumbnail | image_url: '720x720' }}" width="720" height="720" alt="Video Thumbnail" />
+                    <div class="play-btn">▶</div>
+                  </div>
                 </div>
-              </div>
-            </li>
-          {% endfor %}
-        </ul>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- Modal -->
-  <div class="ugc-modal" id="ugcModal">
-    <div class="ugc-modal-content">
-      <span class="ugc-close">&times;</span>
-      <iframe id="ugcVideoFrame" src="" frameborder="0" allowfullscreen></iframe>
+    <!-- Modal -->
+    <div class="ugc-modal" id="ugcModal">
+      <div class="ugc-modal-content">
+        <span class="ugc-close">&times;</span>
+        <iframe id="ugcVideoFrame" src="" frameborder="0" allowfullscreen></iframe>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 </section>
 
 {% schema %}
