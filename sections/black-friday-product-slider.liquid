@@ -17,6 +17,10 @@
                     <p class="product-quantity">
                       Only {{ first_variant.inventory_quantity }} left
                     </p>
+                  {% else %}
+                    <p class="product-quantity">
+                      Sold Out
+                    </p>
                   {% endif %}
                   <div class="product-image">
                     <a href="{{ product.url }}">
