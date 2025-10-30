@@ -37,6 +37,10 @@
           {{ section.settings.button_label }}
         </a>
       {% endif %}
+
+      {% if section.settings.italic_subcontent != blank %}
+        <p class="bf-italic-subcontent">{{ section.settings.italic_subcontent  }}</p>
+      {% endif %}
     </div>
   </div>
 
@@ -151,6 +155,12 @@
   "name": "Black Friday Image Text",
   "settings": [
     {
+      "type": "checkbox",
+      "id": "image_right",
+      "label": "Show image on right side",
+      "default": false
+    },
+    {
       "type": "color",
       "id": "bg_color",
       "label": "Section background color",
@@ -189,10 +199,9 @@
       "label": "Button link"
     },
     {
-      "type": "checkbox",
-      "id": "image_right",
-      "label": "Show image on right side",
-      "default": false
+      "type": "textarea",
+      "id": "italic_subcontent",
+      "label": "Italic Subcontent"
     }
   ],
   "presets": [
