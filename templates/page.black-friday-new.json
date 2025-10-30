@@ -225,6 +225,24 @@
         "heading": "Join 10,000+ Who've Transformed Their Focus & Relationships"
       }
     },
+    "black_friday_icon_text_tP98U9": {
+      "type": "black-friday-icon-text",
+      "name": "Black Friday Icon + Text",
+      "settings": {
+        "bg_color": "#111111",
+        "icon": "shopify://shop_images/heart.svg",
+        "heading": "Thank you for being part of the  BestSelf journey. This Black Friday,",
+        "heading_color": "#ffffff",
+        "subheading": "the best is reserved for you.",
+        "subheading_color": "#fac848",
+        "button_label": "Shop My Black Friday Deal",
+        "button_link": "shopify://pages/advertorial-page-relationship-journal",
+        "button_bg": "#fac848",
+        "button_text_color": "#000000",
+        "button_hover_bg": "#ffffff",
+        "button_hover_text": "#000000"
+      }
+    },
     "black_friday_analog_C8An8p": {
       "type": "black-friday-analog",
       "name": "Black Friday Analog Section",
@@ -273,24 +291,6 @@
         "logo": "shopify://shop_images/bc4f5bb6def0700ad71e3d30dd75536b39e4dbef_d357d9b1-886b-47bb-bca7-0e71e6090492.png",
         "copyright": "© 2025 BestSelf Co. All rights reserved.",
         "policy_links": "<p><a href=\"/pages/privacy-policy\">Privacy Policy</a> | <a href=\"/pages/terms-conditions\">Terms & Conditions</a> | <a href=\"/pages/shipping-policy\">Shipping Policy</a></p>"
-      }
-    },
-    "black_friday_icon_text_tP98U9": {
-      "type": "black-friday-icon-text",
-      "name": "Black Friday Icon + Text",
-      "settings": {
-        "bg_color": "#111111",
-        "icon": "shopify://shop_images/heart.svg",
-        "heading": "Thank you for being part of the  BestSelf journey. This Black Friday,",
-        "heading_color": "#ffffff",
-        "subheading": "the best is reserved for you.",
-        "subheading_color": "#facc15",
-        "button_label": "Shop My Black Friday Deal",
-        "button_link": "shopify://pages/advertorial-page-relationship-journal",
-        "button_bg": "#facc15",
-        "button_text_color": "#000000",
-        "button_hover_bg": "#ffffff",
-        "button_hover_text": "#000000"
       }
     }
   },
