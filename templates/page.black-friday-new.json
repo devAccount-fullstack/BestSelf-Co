@@ -271,6 +271,21 @@
         "italic_subcontent": "If it doesn’t transform your life, you don’t pay. "
       }
     },
+    "black_friday_image_text_fRJwrx": {
+      "type": "black-friday-image-text",
+      "name": "Black Friday Image Text",
+      "settings": {
+        "image_right": false,
+        "bg_color": "#000000",
+        "content_bg_color": "#131313",
+        "image": "shopify://shop_images/image_120.png",
+        "title": "Helm",
+        "subcontent": "Your evolution beyond the Journal — special BF batch nearly gone ",
+        "button_label": "Shop now - Only X left at discounted price",
+        "button_link": "shopify://pages/advertorial-page-relationship-journal",
+        "italic_subcontent": "If it doesn’t transform your life, you don’t pay. "
+      }
+    },
     "black_friday_claim_cyH94d": {
       "type": "black-friday-claim",
       "name": "Black Friday Claim",
@@ -306,6 +321,7 @@
     "black_friday_icon_text_tP98U9",
     "black_friday_analog_C8An8p",
     "black_friday_image_text_TCw6JG",
+    "black_friday_image_text_fRJwrx",
     "black_friday_claim_cyH94d",
     "landing_footer_7exntJ"
   ]
