@@ -5,7 +5,6 @@
   <div class="bf-container">
     <div class="bf-image-wrapper">
       {% if section.settings.image != blank %}
-        <div class="bf-image-bg">
           {% assign scaled_width = 800 %}
           {% if section.settings.image != blank and section.settings.image.width and section.settings.image.height %}
             {% assign scaled_height = section.settings.image.height | times: scaled_width | divided_by: section.settings.image.width | round %}
@@ -21,7 +20,6 @@
             loading="lazy"
             decoding="async"
           >
-        </div>
       {% endif %}
     </div>
 
