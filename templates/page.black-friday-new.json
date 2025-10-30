@@ -259,6 +259,20 @@
         "copyright": "© 2025 BestSelf Co. All rights reserved.",
         "policy_links": "<p><a href=\"/pages/privacy-policy\">Privacy Policy</a> | <a href=\"/pages/terms-conditions\">Terms & Conditions</a> | <a href=\"/pages/shipping-policy\">Shipping Policy</a></p>"
       }
+    },
+    "black_friday_image_text_TCw6JG": {
+      "type": "black-friday-image-text",
+      "name": "Black Friday Image Text",
+      "settings": {
+        "bg_color": "#000000",
+        "content_bg_color": "#111111",
+        "image": "shopify://shop_images/Frame_817_1.png",
+        "title": "Helm",
+        "subcontent": "Your evolution beyond the Journal — special BF batch nearly gone ",
+        "button_label": "Shop now - Only X left at discounted price",
+        "button_link": "shopify://pages/advertorial-page-relationship-journal",
+        "image_right": false
+      }
     }
   },
   "order": [
@@ -272,6 +286,7 @@
     "landing_testimonial_slider_AHqCJr",
     "black_friday_analog_C8An8p",
     "black_friday_claim_cyH94d",
-    "landing_footer_7exntJ"
+    "landing_footer_7exntJ",
+    "black_friday_image_text_TCw6JG"
   ]
 }
