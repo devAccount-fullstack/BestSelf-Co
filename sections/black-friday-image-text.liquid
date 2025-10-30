@@ -1,0 +1,206 @@
+<section
+  id="black-friday-image-text-{{ section.id }}"
+  class="black-friday-image-text {% if section.settings.image_right %}image-right{% endif %}"
+>
+  <div class="bf-container">
+    <div class="bf-image-wrapper">
+      {% if section.settings.image != blank %}
+        <div class="bf-image-bg">
+          {% assign scaled_width = 800 %}
+          {% if section.settings.image != blank and section.settings.image.width and section.settings.image.height %}
+            {% assign scaled_height = section.settings.image.height | times: scaled_width | divided_by: section.settings.image.width | round %}
+          {% else %}
+            {% assign scaled_height = scaled_width %}
+          {% endif %}
+          <img
+            src="{{ section.settings.image | image_url: width: scaled_width }}"
+            alt="{{ section.settings.title | escape }}"
+            width="{{ scaled_width }}"
+            height="{{ scaled_height }}"
+            class="bf-image"
+            loading="lazy"
+            decoding="async"
+          >
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="bf-content" style="background-color: {{ section.settings.content_bg_color }};">
+      {% if section.settings.title != blank %}
+        <h2 class="bf-title">{{ section.settings.title }}</h2>
+      {% endif %}
+
+      {% if section.settings.subcontent != blank %}
+        <p class="bf-subcontent">{{ section.settings.subcontent }}</p>
+      {% endif %}
+
+      {% if section.settings.button_label != blank and section.settings.button_link != blank %}
+        <a href="{{ section.settings.button_link }}" class="bf-button">
+          {{ section.settings.button_label }}
+        </a>
+      {% endif %}
+    </div>
+  </div>
+
+  <style>
+    #black-friday-image-text-{{ section.id }} {
+      padding: 60px 20px;
+      background-color: {{ section.settings.bg_color }};
+      font-family: "Inter", sans-serif;
+    }
+
+    .bf-container {
+      display: flex;
+      align-items: stretch;
+      justify-content: space-between;
+      gap: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+    }
+
+    .bf-image-wrapper {
+      flex: 1 1 45%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .bf-image-bg {
+      background-color: #ffffff;
+      border-radius: 12px;
+      padding: 30px;
+      width: 100%;
+      max-width: 420px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .bf-image {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      display: block;
+    }
+
+    .bf-content {
+      flex: 1 1 45%;
+      color: #fff;
+      text-align: left;
+      border-radius: 12px;
+      padding: 40px;
+    }
+
+    .bf-title {
+      font-family: "Libre Baskerville", serif;
+      font-size: 2rem;
+      color: #facc15; /* yellow */
+      margin-bottom: 15px;
+    }
+
+    .bf-subcontent {
+      font-family: "Inter", sans-serif;
+      font-size: 1rem;
+      color: #e5e5e5;
+      margin-bottom: 25px;
+      line-height: 1.6;
+    }
+
+    .bf-button {
+      display: inline-block;
+      background: #fff;
+      color: #000;
+      padding: 12px 24px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .bf-button:hover {
+      background: #facc15;
+      color: #000;
+    }
+
+    /* Swap layout when image_right is enabled */
+    .black-friday-image-text.image-right .bf-container {
+      flex-direction: row-reverse;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .bf-container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .bf-content {
+        text-align: center;
+        padding: 30px 20px;
+      }
+
+      .bf-image-wrapper {
+        margin-bottom: 20px;
+      }
+    }
+  </style>
+</section>
+
+{% schema %}
+{
+  "name": "Black Friday Image Text",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Section background color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "content_bg_color",
+      "label": "Content background color",
+      "default": "#111111"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading (Yellow)"
+    },
+    {
+      "type": "textarea",
+      "id": "subcontent",
+      "label": "Subcontent"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Shop now"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "checkbox",
+      "id": "image_right",
+      "label": "Show image on right side",
+      "default": false
+    }
+  ],
+  "presets": [
+    {
+      "name": "Black Friday Image Text",
+      "category": "Black Friday"
+    }
+  ]
+}
+{% endschema %}
