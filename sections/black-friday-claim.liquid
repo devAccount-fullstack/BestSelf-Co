@@ -13,43 +13,24 @@
       </h2>
     {% endif %}
 
-    <div class="countdown">
-      <div class="count-down-flex">
+    <div class="claim-countdown">
+      <div class="claim-count-box">
         <span id="days-{{ section.id }}" class="claim-count-value">00</span>
         <small>Days</small>
       </div>
-      <div class="count-down-flex">
+      <div class="claim-count-box">
         <span id="hours-{{ section.id }}" class="claim-count-value">00</span>
         <small>Hours</small>
       </div>
-      <div class="count-down-flex">
+      <div class="claim-count-box">
         <span id="minutes-{{ section.id }}" class="claim-count-value">00</span>
         <small>Minutes</small>
       </div>
-      <div class="count-down-flex">
+      <div class="claim-count-box">
         <span id="seconds-{{ section.id }}" class="claim-count-value">00</span>
         <small>Seconds</small>
       </div>
     </div>
-
-      <div class="countdown">
-        <div class="count-down-flex">
-          <span id="days-{{ section.id }}" class="count-box">00</span>
-          <small>Days</small>
-        </div>
-        <div class="count-down-flex">
-          <span id="hours-{{ section.id }}" class="count-box">00</span>
-          <small>Hours</small>
-        </div>
-        <div class="count-down-flex">
-          <span id="minutes-{{ section.id }}" class="count-box">00</span>
-          <small>Minutes</small>
-        </div>
-        <div class="count-down-flex">
-          <span id="seconds-{{ section.id }}" class="count-box">00</span>
-          <small>Seconds</small>
-        </div>
-      </div>
 
     {% if section.settings.button_text != blank %}
       <a href="{{ section.settings.button_link }}" class="claim-btn">
