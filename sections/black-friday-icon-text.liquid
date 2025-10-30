@@ -7,9 +7,11 @@
     {% if section.settings.icon != blank %}
       <div class="bf-icon-wrapper">
         <img
-          src="{{ section.settings.icon | img_url: '200x' }}"
+          src="{{ section.settings.icon | image_url }}"
           alt="Icon"
           class="bf-icon"
+          width="200"
+          height="200"
         >
       </div>
     {% endif %}
