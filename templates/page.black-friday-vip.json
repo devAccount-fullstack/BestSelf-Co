@@ -11,6 +11,7 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "subheading": "",
         "show_title": true,
@@ -24,9 +25,19 @@
         "padding_bottom": 50,
         "heading_tag": "automatic"
       }
+    },
+    "landing_header_wYmeEg": {
+      "type": "landing-header",
+      "name": "Landing Header",
+      "settings": {
+        "logo": "shopify://shop_images/bc4f5bb6def0700ad71e3d30dd75536b39e4dbef_d357d9b1-886b-47bb-bca7-0e71e6090492.png",
+        "logo_link": "/",
+        "vip-header": false
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "landing_header_wYmeEg"
   ]
 }
