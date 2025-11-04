@@ -1,39 +1,11 @@
 <header style=
-  "{% if section.settings.vip-header == true %}position: relative;background: radial-gradient(circle at center, #0f0f0f 40%, #000 100%); overflow: hidden; border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  "{% if section.settings.vip-header == true %}position: relative; background-color: #4D4D4D; overflow: hidden; border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   {% else %}background: #000;{% endif %}display: flex; justify-content: center; align-items: center; height: 80px;">
-
-  {% if section.settings.vip-headers == true %}
-    <div class="vip-bg-left-header"></div>
-    <div class="vip-bg-right-header"></div>
-  {% endif %}
 
   <a href="{{ section.settings.logo_link }}">
     <img src="{{ section.settings.logo | image_url: width:192, height:36 }}" width="192px" height="36px" alt="Logo">
   </a>
 </header>
-
-<style>
-  /* Soft glowing yellow sides */
-  .vip-bg-left-header,
-  .vip-bg-right-header {
-    position: absolute;
-    top: 0;
-    height: 100%;
-    width: 10%;
-    z-index: 1;
-    pointer-events: none;
-  }
-
-  .vip-bg-left-header {
-    left: 0;
-    background: radial-gradient(circle at left, rgba(230, 184, 92, 0.1), transparent 70%);
-  }
-
-  .vip-bg-right-header {
-    right: 0;
-    background: radial-gradient(circle at right, rgba(230, 184, 92, 0.1), transparent 70%);
-  }
-</style>
 
 {% schema %}
 {
