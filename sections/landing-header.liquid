@@ -1,7 +1,10 @@
-<header style="background: #000; display: flex; justify-content: center; align-items: center; height: 80px;">
-    <a href="{{ section.settings.logo_link }}">
-      <img src="{{ section.settings.logo | image_url: width:192, height:36 }}" width="192px" height="36px" alt="Logo">
-    </a>
+<header style=
+  "{% if section.settings.vip-header == true %}background: #131516; position: relative; overflow: hidden; border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  {% else %}background: #000;{% endif %}display: flex; justify-content: center; align-items: center; height: 80px;">
+
+  <a href="{{ section.settings.logo_link }}">
+    <img src="{{ section.settings.logo | image_url: width:192, height:36 }}" width="192px" height="36px" alt="Logo">
+  </a>
 </header>
 
 {% schema %}
@@ -18,6 +21,12 @@
       "id": "logo_link",
       "label": "Logo Link",
       "default": "/"
+    },
+    {
+      "type": "checkbox",
+      "id": "vip-header",
+      "label": "VIP Header Style",
+      "default": false
     }
   ],
     "presets": [
