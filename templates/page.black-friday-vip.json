@@ -26,37 +26,18 @@
         "heading_tag": "automatic"
       }
     },
-    "landing_header_y7MYGi": {
+    "landing_header_wYmeEg": {
       "type": "landing-header",
       "name": "Landing Header",
       "settings": {
         "logo": "shopify://shop_images/bc4f5bb6def0700ad71e3d30dd75536b39e4dbef_d357d9b1-886b-47bb-bca7-0e71e6090492.png",
-<<<<<<< HEAD
-        "logo_link": "/"
-=======
         "logo_link": "/",
-        "vip-header": true
->>>>>>> 404f3906d34e06ff0414dc1c4088eba680890448
-      }
-    },
-    "black_vip_password_QnpVLB": {
-      "type": "black-vip-password",
-      "name": "Black VIP Password",
-      "settings": {
-        "image": "shopify://shop_images/lock.png",
-        "welcome_text": "Welcome to Your",
-        "heading": "Private VIP Black Friday Experience",
-        "subheading": "You're among the top 5% of our community. This event is just for you.",
-        "password_placeholder": "Enter password",
-        "button_label": "Let's go",
-        "italic_text": "Early VIP Access Opens: November 19",
-        "bg_color": "#131516"
+        "vip-header": false
       }
     }
   },
   "order": [
     "main",
-    "landing_header_y7MYGi",
-    "black_vip_password_QnpVLB"
+    "landing_header_wYmeEg"
   ]
 }
