@@ -1,4 +1,7 @@
-<header style="background: #000; display: flex; justify-content: center; align-items: center; height: 80px;">'
+<header style=
+  "{% if section.settings.checkbox == true %}position: relative;background: radial-gradient(circle at center, #0f0f0f 40%, #000 100%);
+  {% else %}background: #000; display: flex; justify-content: center; align-items: center; height: 80px;{% endif %}">'
+
   {% if section.settings.checkbox == true %}
     <div class="vip-bg-left"></div>
     <div class="vip-bg-right"></div>
@@ -10,6 +13,16 @@
 </header>
 
 <style>
+  #black-vip-password-{{ section.id }} {
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    padding: 60px 20px;
+    background: radial-gradient(circle at center, #0f0f0f 40%, #000 100%);
+    height: calc(100vh - 80px);
+  }
   /* Soft glowing yellow sides */
   .vip-bg-left,
   .vip-bg-right {
