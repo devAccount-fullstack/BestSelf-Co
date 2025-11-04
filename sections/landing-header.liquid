@@ -1,4 +1,6 @@
-<header style="background: #000; display: flex; justify-content: center; align-items: center; height: 80px;">
+<header style="background: #000; display: flex; justify-content: center; align-items: center; height: 80px;">'
+  {%- if section.setting.checkbox == true -%}
+  {% endif %}
     <a href="{{ section.settings.logo_link }}">
       <img src="{{ section.settings.logo | image_url: width:192, height:36 }}" width="192px" height="36px" alt="Logo">
     </a>
