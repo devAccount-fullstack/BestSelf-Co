@@ -2,34 +2,35 @@
   {%- if section.setting.checkbox == true -%}
       <div class="vip-bg-left"></div>
       <div class="vip-bg-right"></div>
-      <style>
-        /* Soft glowing yellow sides */
-        .vip-bg-left,
-        .vip-bg-right {
-          position: absolute;
-          top: 0;
-          width: 25%;
-          height: 100%;
-          z-index: 1;
-          pointer-events: none;
-        }
-
-        .vip-bg-left {
-          left: 0;
-          background: radial-gradient(circle at left center, rgba(230, 184, 92, 0.2), transparent 70%);
-        }
-
-        .vip-bg-right {
-          right: 0;
-          background: radial-gradient(circle at right center, rgba(230, 184, 92, 0.2), transparent 70%);
-        }
-      </style>
    {% endif %}
 
     <a href="{{ section.settings.logo_link }}">
       <img src="{{ section.settings.logo | image_url: width:192, height:36 }}" width="192px" height="36px" alt="Logo">
     </a>
 </header>
+
+<style>
+  /* Soft glowing yellow sides */
+  .vip-bg-left,
+  .vip-bg-right {
+    position: absolute;
+    top: 0;
+    width: 25%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .vip-bg-left {
+    left: 0;
+    background: radial-gradient(circle at left center, rgba(230, 184, 92, 0.2), transparent 70%);
+  }
+
+  .vip-bg-right {
+    right: 0;
+    background: radial-gradient(circle at right center, rgba(230, 184, 92, 0.2), transparent 70%);
+  }
+</style>
 
 {% schema %}
 {
