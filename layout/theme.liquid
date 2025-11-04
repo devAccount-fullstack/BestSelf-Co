@@ -106,7 +106,8 @@
 
     {%- comment -%}Giveaway Landing VIP{%- endcomment -%}
     {%- if template.name == 'page' and template.suffix == 'customer-acquisition'
-       or template.name == 'page' and template.suffix == 'black-friday-new' -%}
+       or template.name == 'page' and template.suffix == 'black-friday-new'
+       or template.name == 'page' and template.suffix == 'black-vip-password' -%}
       {{ 'giveaway-landing.css' | asset_url | stylesheet_tag }}
     {%- endif -%}
 
