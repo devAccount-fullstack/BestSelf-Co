@@ -20,10 +20,10 @@
     {% if section.settings.image != blank %}
         <img src="{{ section.settings.image | image_url: width: 600, height: 600 }}" alt="banner-image" width="600px" height="600px"  class="vip-image">
     {% endif %}
-    <div class="vip-price-box left">
+    <div class="vip-price-box">
       <span class="vip-price">${{ section.settings.price }}</span>
       {% if section.settings.old_price != blank %}
-        <span class="vip-old-price">${{ section.settings.old_price }}</span>
+        <span class="vip-oldprice">${{ section.settings.old_price }}</span>
       {% endif %}
       <span class="vip-left">Only {{ section.settings.items_left }} Left</span>
       <span class="vip-discount">{{ section.settings.discount_text }}</span>
