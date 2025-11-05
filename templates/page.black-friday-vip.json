@@ -34,10 +34,21 @@
         "logo_link": "/",
         "vip-header": false
       }
+    },
+    "landing_footer_aqYdtb": {
+      "type": "landing-footer",
+      "name": "Landing Footer",
+      "settings": {
+        "logo_link": "/",
+        "logo": "shopify://shop_images/bc4f5bb6def0700ad71e3d30dd75536b39e4dbef_d357d9b1-886b-47bb-bca7-0e71e6090492.png",
+        "copyright": "© 2025 BestSelf Co. All rights reserved.",
+        "policy_links": "<p><a href=\"/pages/privacy-policy\">Privacy Policy</a> | <a href=\"/pages/terms-conditions\">Terms & Conditions</a> | <a href=\"/pages/shipping-policy\">Shipping Policy</a></p>"
+      }
     }
   },
   "order": [
     "main",
-    "landing_header_wYmeEg"
+    "landing_header_wYmeEg",
+    "landing_footer_aqYdtb"
   ]
 }
