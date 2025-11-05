@@ -1,0 +1,268 @@
+<section id="black-banner-vip-{{ section.id }}" class="black-banner-vip">
+<div class="black-banner-container">
+  {% if section.settings.subheading != blank %}
+    <p class="vip-subheading">{{ section.settings.subheading }}</p>
+  {% endif %}
+  {% if section.settings.heading != blank %}
+    <h2 class="vip-heading">{{ section.settings.heading }}</h2>
+  {% endif %}
+  {% if section.settings.content != blank %}
+    <p class="vip-content">{{ section.settings.content }}</p>
+  {% endif %}
+
+  {% if section.settings.button_text != blank and section.settings.button_link != blank %}
+    <a href="{{ section.settings.button_link }}" class="vip-button">
+      {{ section.settings.button_text }}
+    </a>
+  {% endif %}
+
+  <div class="vip-image-wrapper">
+    {% if section.settings.image != blank %}
+        <img src="{{ section.settings.image | image_url: width: 600, height: 600 }}" alt="Product" width="600px" height="600px"  class="image-overflow">
+    {% endif %}
+    <div class="vip-price-box left">
+      <span class="vip-price">${{ section.settings.price }}</span>
+      {% if section.settings.old_price != blank %}
+        <span class="vip-old-price">${{ section.settings.old_price }}</span>
+      {% endif %}
+      <p class="vip-left">Only {{ section.settings.items_left }} Left</p>
+    </div>
+    <div class="vip-discount-box right">
+      <span class="vip-discount">{{ section.settings.discount_text }}</span>
+    </div>
+  </div>
+</div>
+
+<style>
+  #black-banner-vip-{{ section.id }} {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    background: radial-gradient(circle at center, {{ section.settings.gradient_center_color }} 0%, {{ section.settings.gradient_outer_color }} 100%);
+    padding: 100px 20px;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    overflow: hidden;
+  }
+
+  #black-banner-vip-{{ section.id }} .vip-subheading {
+    color: {{ section.settings.subheading_color }};
+    font-family: 'Libre Baskerville', serif;
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+
+  #black-banner-vip-{{ section.id }} .vip-heading {
+    font-family: 'Libre Baskerville', serif;
+    color: {{ section.settings.heading_color }};
+    font-size: 48px;
+    font-weight: 700;
+    margin: 10px 0;
+  }
+
+  #black-banner-vip-{{ section.id }} .vip-content {
+    color: {{ section.settings.content_color }};
+    font-size: 20px;
+    line-height: 1.5;
+    max-width: 700px;
+    margin: 0 auto 30px;
+  }
+
+  #black-banner-vip-{{ section.id }} .vip-button {
+    display: inline-block;
+    padding: 12px 28px;
+    border: 1px solid #fff;
+    border-radius: 8px;
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+
+  #black-banner-vip-{{ section.id }} .vip-button:hover {
+    background-color: #fff;
+    color: #000;
+  }
+
+  #black-banner-vip-{{ section.id }} .vip-image-wrapper {
+    position: relative;
+    margin-top: 60px;
+  }
+
+  #black-banner-vip-{{ section.id }} .vip-image {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    width: 300px;
+    max-width: 80%;
+  }
+
+  #black-banner-vip-{{ section.id }} .vip-price-box,
+  #black-banner-vip-{{ section.id }} .vip-discount-box {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 15px 25px;
+    border-radius: 10px;
+    z-index: 5;
+    font-family: 'Inter', sans-serif;
+  }
+
+  #black-banner-vip-{{ section.id }} .vip-price-box.left {
+    left: 10%;
+    text-align: left;
+  }
+
+  #black-banner-vip-{{ section.id }} .vip-price {
+    font-size: 32px;
+    color: #fff;
+    font-weight: 700;
+    display: inline-block;
+    margin-right: 10px;
+  }
+
+  #black-banner-vip-{{ section.id }} .vip-old-price {
+    text-decoration: line-through;
+    opacity: 0.7;
+    font-size: 18px;
+  }
+
+  #black-banner-vip-{{ section.id }} .vip-left {
+    font-size: 18px;
+    margin-top: 5px;
+  }
+
+  #black-banner-vip-{{ section.id }} .vip-discount-box.right {
+    right: 10%;
+  }
+
+  #black-banner-vip-{{ section.id }} .vip-discount {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 42px;
+    color: #fff;
+  }
+
+  @media (max-width: 768px) {
+    #black-banner-vip-{{ section.id }} .vip-heading {
+      font-size: 36px;
+    }
+    #black-banner-vip-{{ section.id }} .vip-content {
+      font-size: 18px;
+    }
+    #black-banner-vip-{{ section.id }} .vip-image {
+      width: 220px;
+    }
+    #black-banner-vip-{{ section.id }} .vip-discount-box.right {
+      right: 5%;
+    }
+    #black-banner-vip-{{ section.id }} .vip-price-box.left {
+      left: 5%;
+    }
+  }
+</style>
+</section>
+
+{% schema %}
+{
+"name": "Black Banner VIP",
+"settings": [
+  {
+    "type": "text",
+    "id": "subheading",
+    "label": "Subheading",
+    "default": "For Our VIP BestSelf Family"
+  },
+  {
+    "type": "color",
+    "id": "subheading_color",
+    "label": "Subheading Color",
+    "default": "#f5c84c"
+  },
+  {
+    "type": "text",
+    "id": "heading",
+    "label": "Heading",
+    "default": "Up to 35% OFF + Exclusive Gifts"
+  },
+  {
+    "type": "color",
+    "id": "heading_color",
+    "label": "Heading Color",
+    "default": "#ffffff"
+  },
+  {
+    "type": "textarea",
+    "id": "content",
+    "label": "Content",
+    "default": "Your loyalty earned you this moment. Stock up, gift what you love, and unlock the transformation tools that helped you get here."
+  },
+  {
+    "type": "color",
+    "id": "content_color",
+    "label": "Content Color",
+    "default": "#ffffff"
+  },
+  {
+    "type": "text",
+    "id": "button_text",
+    "label": "Button Text",
+    "default": "Unlock My VIP Access"
+  },
+  {
+    "type": "url",
+    "id": "button_link",
+    "label": "Button Link"
+  },
+  {
+    "type": "image_picker",
+    "id": "image",
+    "label": "Center Image"
+  },
+  {
+    "type": "text",
+    "id": "price",
+    "label": "New Price",
+    "default": "90.30"
+  },
+  {
+    "type": "text",
+    "id": "old_price",
+    "label": "Old Price",
+    "default": "129"
+  },
+  {
+    "type": "text",
+    "id": "items_left",
+    "label": "Items Left Text",
+    "default": "X"
+  },
+  {
+    "type": "text",
+    "id": "discount_text",
+    "label": "Discount Text",
+    "default": "30% off"
+  },
+  {
+    "type": "color",
+    "id": "gradient_center_color",
+    "label": "Gradient Center Color",
+    "default": "#2b2b2b"
+  },
+  {
+    "type": "color",
+    "id": "gradient_outer_color",
+    "label": "Gradient Outer Color",
+    "default": "#000000"
+  }
+],
+"presets": [
+  {
+    "name": "Black Banner VIP",
+    "category": "Black Friday"
+  }
+]
+}
+{% endschema %}
