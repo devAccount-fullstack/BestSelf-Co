@@ -26,8 +26,10 @@
         {% if section.settings.old_price != blank %}
           <span class="vip-oldprice">${{ section.settings.old_price }}</span>
         {% endif %}
+        <div>
+          <span class="vip-left">Only {{ section.settings.items_left }} Left</span>
+        </div>
       </div>
-      <span class="vip-left">Only {{ section.settings.items_left }} Left</span>
       <span class="vip-discount">{{ section.settings.discount_text }}</span>
     </div>
   </div>
