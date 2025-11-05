@@ -56,16 +56,6 @@
         "gradient_outer_color": "#131516"
       }
     },
-    "landing_footer_aqYdtb": {
-      "type": "landing-footer",
-      "name": "Landing Footer",
-      "settings": {
-        "logo_link": "/",
-        "logo": "shopify://shop_images/bc4f5bb6def0700ad71e3d30dd75536b39e4dbef_d357d9b1-886b-47bb-bca7-0e71e6090492.png",
-        "copyright": "© 2025 BestSelf Co. All rights reserved.",
-        "policy_links": "<p><a href=\"/pages/privacy-policy\">Privacy Policy</a> | <a href=\"/pages/terms-conditions\">Terms & Conditions</a> | <a href=\"/pages/shipping-policy\">Shipping Policy</a></p>"
-      }
-    },
     "black_vip_table_xUDGdi": {
       "type": "black-vip-table",
       "blocks": {
@@ -113,7 +103,7 @@
         "eyebrow_text": "Today only — Earn 2.5X points on every purchase.",
         "heading": "The More You Love,",
         "subheading": "The More You Save (and Get!)",
-        "cta_text": "Join now and snag 600 bonus points instantly!",
+        "cta_text": "Not a loyalty member yet? Join now and snag 600 bonus points instantly!",
         "cta_link": "",
         "footer_text": "Because you're not just a shopper. You're a builder of habits, a giver of meaningful gifts, and a part of this journey with us.",
         "gradient_center_color": "#e6b85c",
@@ -129,6 +119,16 @@
         "button_text_color": "#ffffff",
         "button_hover_bg": "#ffffff",
         "button_hover_text": "#000000"
+      }
+    },
+    "landing_footer_aqYdtb": {
+      "type": "landing-footer",
+      "name": "Landing Footer",
+      "settings": {
+        "logo_link": "/",
+        "logo": "shopify://shop_images/bc4f5bb6def0700ad71e3d30dd75536b39e4dbef_d357d9b1-886b-47bb-bca7-0e71e6090492.png",
+        "copyright": "© 2025 BestSelf Co. All rights reserved.",
+        "policy_links": "<p><a href=\"/pages/privacy-policy\">Privacy Policy</a> | <a href=\"/pages/terms-conditions\">Terms & Conditions</a> | <a href=\"/pages/shipping-policy\">Shipping Policy</a></p>"
       }
     }
   },
