@@ -10,23 +10,24 @@
   "
 >
   <div class="vip-content-container">
+    <div class="vip-row">
+        {% if section.settings.heading != blank %}
+        <h2 class="vip-heading">
+            {{ section.settings.heading }}
+            {% if section.settings.subheading != blank %}
+            <em>{{ section.settings.subheading }}</em>
+            {% endif %}
+        </h2>
+        {% endif %}
+
+        {% if section.settings.cta_text != blank %}
+        <a href="{{ section.settings.cta_link }}" class="vip-cta-btn">
+            {{ section.settings.cta_text }}
+        </a>
+        {% endif %}
+    </div>
     {% if section.settings.eyebrow_text != blank %}
       <div class="vip-eyebrow">{{ section.settings.eyebrow_text }}</div>
-    {% endif %}
-
-    {% if section.settings.heading != blank %}
-      <h2 class="vip-heading">
-        {{ section.settings.heading }}
-        {% if section.settings.subheading != blank %}
-          <em>{{ section.settings.subheading }}</em>
-        {% endif %}
-      </h2>
-    {% endif %}
-
-    {% if section.settings.cta_text != blank %}
-      <a href="{{ section.settings.cta_link }}" class="vip-cta-btn">
-        {{ section.settings.cta_text }}
-      </a>
     {% endif %}
 
     <div class="vip-table-wrapper">
