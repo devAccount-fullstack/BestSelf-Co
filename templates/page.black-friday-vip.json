@@ -65,12 +65,78 @@
         "copyright": "© 2025 BestSelf Co. All rights reserved.",
         "policy_links": "<p><a href=\"/pages/privacy-policy\">Privacy Policy</a> | <a href=\"/pages/terms-conditions\">Terms & Conditions</a> | <a href=\"/pages/shipping-policy\">Shipping Policy</a></p>"
       }
+    },
+    "black_vip_table_xUDGdi": {
+      "type": "black-vip-table",
+      "blocks": {
+        "tier_VD9dQN": {
+          "type": "tier",
+          "settings": {
+            "tier": "Tier 1",
+            "reward": "25% OFF (all orders)",
+            "threshold": "No minimum"
+          }
+        },
+        "tier_yUdLg3": {
+          "type": "tier",
+          "settings": {
+            "tier": "Tier 2",
+            "reward": "25% OFF + Free VIP Gift",
+            "threshold": "$75+"
+          }
+        },
+        "tier_6AekfG": {
+          "type": "tier",
+          "settings": {
+            "tier": "Tier 3",
+            "reward": "30% OFF + Free VIP Gift",
+            "threshold": "$100–149"
+          }
+        },
+        "tier_BrVjTV": {
+          "type": "tier",
+          "settings": {
+            "tier": "Tier 4",
+            "reward": "35% OFF + Free VIP Gift",
+            "threshold": "$150–199"
+          }
+        }
+      },
+      "block_order": [
+        "tier_VD9dQN",
+        "tier_yUdLg3",
+        "tier_6AekfG",
+        "tier_BrVjTV"
+      ],
+      "name": "Black VIP Table",
+      "settings": {
+        "eyebrow_text": "Today only — Earn 2.5X points on every purchase.",
+        "heading": "The More You Love,",
+        "subheading": "The More You Save (and Get!)",
+        "cta_text": "Join now and snag 600 bonus points instantly!",
+        "cta_link": "",
+        "footer_text": "Because you're not just a shopper. You're a builder of habits, a giver of meaningful gifts, and a part of this journey with us.",
+        "gradient_center_color": "#e6b85c",
+        "gradient_outer_color": "#131516",
+        "text_color": "#ffffff",
+        "eyebrow_color": "#ffffff",
+        "heading_color": "#ffffff",
+        "subheading_color": "#e6b85c",
+        "table_head_color": "#ffffff",
+        "table_text_color": "#ffffff",
+        "footer_color": "#ffffff",
+        "button_border_color": "#ffffff",
+        "button_text_color": "#ffffff",
+        "button_hover_bg": "#ffffff",
+        "button_hover_text": "#000000"
+      }
     }
   },
   "order": [
     "main",
     "landing_header_wYmeEg",
     "black_banner_vip_yTiAKe",
+    "black_vip_table_xUDGdi",
     "landing_footer_aqYdtb"
   ]
 }
