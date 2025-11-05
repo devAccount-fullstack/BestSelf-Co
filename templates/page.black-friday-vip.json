@@ -32,7 +32,7 @@
       "settings": {
         "logo": "shopify://shop_images/bc4f5bb6def0700ad71e3d30dd75536b39e4dbef_d357d9b1-886b-47bb-bca7-0e71e6090492.png",
         "logo_link": "/",
-        "vip-header": false
+        "vip-header": true
       }
     },
     "landing_footer_aqYdtb": {
