@@ -1,58 +1,143 @@
 <section
   id="black-vip-table-{{ section.id }}"
   class="black-vip-table"
-  style="
-    background: radial-gradient(circle at 50% 65%, {{ section.settings.gradient_center_color }} -50%, {{ section.settings.gradient_outer_color }} 30%);
-    color: {{ section.settings.text_color }};
-    padding: 60px 20px;
-    text-align: center;
-    font-family: 'Inter', sans-serif;
-  "
+  style="background: radial-gradient(circle at 50% 65%, {{ section.settings.gradient_center_color }} -50%, {{ section.settings.gradient_outer_color }} 30%);"
 >
-  <div class="vip-content-container">
-    <div class="vip-row">
-      {% if section.settings.heading != blank %}
-        <h2 class="vip-heading">
-          {{ section.settings.heading }}
-          {% if section.settings.subheading != blank %}
-            <em>{{ section.settings.subheading }}</em>
-          {% endif %}
-        </h2>
-      {% endif %}
+  <div class="vip-container">
+    <div class="vip-header">
+      <div class="vip-eyebrow">{{ section.settings.eyebrow_text }}</div>
+      <h2 class="vip-title">
+        {{ section.settings.heading }}<br>
+        <span>{{ section.settings.subheading }}</span>
+      </h2>
 
-      {% if section.settings.cta_text != blank %}
-        <a href="{{ section.settings.cta_link }}" class="vip-cta-btn">
-          {{ section.settings.cta_text }}
+      {% if section.settings.button_label != blank %}
+        <a href="{{ section.settings.button_link }}" class="vip-btn">
+          {{ section.settings.button_label }}
         </a>
       {% endif %}
     </div>
 
-    {% if section.settings.eyebrow_text != blank %}
-      <div class="vip-eyebrow">{{ section.settings.eyebrow_text }}</div>
-    {% endif %}
-  </div>
-
-  <div class="vip-table-wrapper">
     <div class="vip-table">
       <div class="vip-table-header">
-        <div class="vip-col vip-tier">VIP Tier</div>
-        <div class="vip-col vip-reward">Your Reward</div>
-        <div class="vip-col vip-threshold">Threshold</div>
+        <div>VIP Tier</div>
+        <div>Your Reward</div>
+        <div>Threshold</div>
       </div>
 
       {% for block in section.blocks %}
-        <div class="vip-row-item">
-          <div class="vip-col vip-tier">{{ block.settings.tier }}</div>
-          <div class="vip-col vip-reward">{{ block.settings.reward }}</div>
-          <div class="vip-col vip-threshold">{{ block.settings.threshold }}</div>
+        <div class="vip-row">
+          <div>{{ block.settings.tier }}</div>
+          <div>{{ block.settings.reward }}</div>
+          <div>{{ block.settings.threshold }}</div>
         </div>
       {% endfor %}
     </div>
+
+    {% if section.settings.footer_text != blank %}
+      <p class="vip-footer">{{ section.settings.footer_text }}</p>
+    {% endif %}
   </div>
 
-  {% if section.settings.footer_text != blank %}
-    <p class="vip-footer">{{ section.settings.footer_text }}</p>
-  {% endif %}
+  <style>
+    #black-vip-table-{{ section.id }} {
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+      text-align: center;
+      padding: 60px 20px;
+      overflow: hidden;
+    }
+
+    #black-vip-table-{{ section.id }} .vip-container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    #black-vip-table-{{ section.id }} .vip-eyebrow {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 8px 20px;
+      display: inline-block;
+      border-radius: 50px;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    #black-vip-table-{{ section.id }} .vip-title {
+      font-size: 32px;
+      line-height: 1.3;
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+
+    #black-vip-table-{{ section.id }} .vip-title span {
+      font-style: italic;
+      color: #e6b85c;
+      font-weight: 400;
+    }
+
+    #black-vip-table-{{ section.id }} .vip-btn {
+      display: inline-block;
+      background: transparent;
+      color: #fff;
+      border: 1px solid #fff;
+      padding: 10px 25px;
+      border-radius: 50px;
+      font-size: 14px;
+      transition: all 0.3s ease;
+      margin-top: 20px;
+    }
+
+    #black-vip-table-{{ section.id }} .vip-btn:hover {
+      background: #fff;
+      color: #000;
+    }
+
+    #black-vip-table-{{ section.id }} .vip-table {
+      margin-top: 50px;
+      text-align: left;
+      border-top: 1px solid rgba(255,255,255,0.2);
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+    }
+
+    #black-vip-table-{{ section.id }} .vip-table-header,
+    #black-vip-table-{{ section.id }} .vip-row {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr 1fr;
+      gap: 10px;
+      padding: 15px 10px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    #black-vip-table-{{ section.id }} .vip-table-header {
+      font-size: 12px;
+      opacity: 0.8;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-weight: 500;
+    }
+
+    #black-vip-table-{{ section.id }} .vip-row:last-child {
+      border-bottom: none;
+    }
+
+    #black-vip-table-{{ section.id }} .vip-footer {
+      font-size: 14px;
+      opacity: 0.8;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 768px) {
+      #black-vip-table-{{ section.id }} .vip-table-header,
+      #black-vip-table-{{ section.id }} .vip-row {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      #black-vip-table-{{ section.id }} .vip-row div {
+        padding: 4px 0;
+      }
+    }
+  </style>
 </section>
 
 {% schema %}
@@ -62,117 +147,62 @@
     {
       "type": "text",
       "id": "eyebrow_text",
-      "label": "Eyebrow Text",
+      "label": "Eyebrow text",
       "default": "Today only — Earn 2.5X points on every purchase."
     },
     {
       "type": "text",
       "id": "heading",
-      "label": "Heading",
+      "label": "Main heading",
       "default": "The More You Love,"
     },
     {
       "type": "text",
       "id": "subheading",
-      "label": "Subheading (italic text)",
+      "label": "Subheading",
       "default": "The More You Save (and Get!)"
     },
     {
       "type": "text",
-      "id": "cta_text",
-      "label": "Button Text",
+      "id": "button_label",
+      "label": "Button label",
       "default": "Join now and snag 600 bonus points instantly!"
     },
     {
       "type": "url",
-      "id": "cta_link",
-      "label": "Button Link"
+      "id": "button_link",
+      "label": "Button link"
     },
     {
       "type": "text",
       "id": "footer_text",
-      "label": "Footer Text",
+      "label": "Footer text",
       "default": "Because you're not just a shopper. You're a builder of habits, a giver of meaningful gifts, and a part of this journey with us."
     },
     {
       "type": "color",
       "id": "gradient_center_color",
-      "label": "Gradient Center Color",
+      "label": "Gradient center color",
       "default": "#e6b85c"
     },
     {
       "type": "color",
       "id": "gradient_outer_color",
-      "label": "Gradient Outer Color",
+      "label": "Gradient outer color",
       "default": "#131516"
-    },
-    {
-      "type": "color",
-      "id": "text_color",
-      "label": "Default Text Color",
-      "default": "#ffffff"
-    },
-    {
-      "type": "color",
-      "id": "eyebrow_color",
-      "label": "Eyebrow Text Color",
-      "default": "#ffffff"
-    },
-    {
-      "type": "color",
-      "id": "heading_color",
-      "label": "Heading Color",
-      "default": "#ffffff"
-    },
-    {
-      "type": "color",
-      "id": "subheading_color",
-      "label": "Subheading Color",
-      "default": "#e6b85c"
-    },
-    {
-      "type": "color",
-      "id": "footer_color",
-      "label": "Footer Text Color",
-      "default": "#ffffff"
-    },
-    {
-      "type": "color",
-      "id": "button_border_color",
-      "label": "Button Border Color",
-      "default": "#ffffff"
-    },
-    {
-      "type": "color",
-      "id": "button_text_color",
-      "label": "Button Text Color",
-      "default": "#ffffff"
-    },
-    {
-      "type": "color",
-      "id": "button_hover_bg",
-      "label": "Button Hover Background",
-      "default": "#ffffff"
-    },
-    {
-      "type": "color",
-      "id": "button_hover_text",
-      "label": "Button Hover Text Color",
-      "default": "#000000"
     }
   ],
   "blocks": [
     {
       "type": "tier",
-      "name": "VIP Tier",
+      "name": "VIP Tier Row",
       "settings": [
-        { "type": "text", "id": "tier", "label": "Tier", "default": "Tier 1" },
+        { "type": "text", "id": "tier", "label": "Tier name", "default": "Tier 1" },
         { "type": "text", "id": "reward", "label": "Reward", "default": "25% OFF (all orders)" },
         { "type": "text", "id": "threshold", "label": "Threshold", "default": "No minimum" }
       ]
     }
   ],
-  "max_blocks": 6,
   "presets": [
     {
       "name": "Black VIP Table",
@@ -186,142 +216,3 @@
   ]
 }
 {% endschema %}
-
-<style>
-  #black-vip-table-{{ section.id }} {
-    position: relative;
-    overflow: hidden;
-  }
-
-  .vip-content-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 80%;
-    margin: 0 auto 40px;
-    flex-wrap: wrap;
-  }
-
-  .vip-row {
-    text-align: left;
-    width: 70%;
-  }
-
-  .vip-eyebrow {
-    background: linear-gradient(90deg, #e6b85c -90%, #131516 95%);
-    padding: 12px 20px;
-    font-size: 16px;
-    border-radius: 10px 0 0 10px;
-    color: {{ section.settings.eyebrow_color }};
-    text-align: left;
-    width: fit-content;
-    font-weight: 500;
-  }
-
-  .vip-heading {
-    font-size: 2.5rem;
-    font-weight: 700;
-    line-height: 1.3;
-    color: {{ section.settings.heading_color }};
-    margin-bottom: 15px;
-  }
-
-  .vip-heading em {
-    display: block;
-    font-style: italic;
-    color: {{ section.settings.subheading_color }};
-  }
-
-  .vip-cta-btn {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 12px 26px;
-    border: 1px solid {{ section.settings.button_border_color }};
-    border-radius: 30px;
-    color: {{ section.settings.button_text_color }};
-    text-decoration: none;
-    transition: all 0.3s ease;
-    font-size: 16px;
-  }
-
-  .vip-cta-btn:hover {
-    background: {{ section.settings.button_hover_bg }};
-    color: {{ section.settings.button_hover_text }};
-  }
-
-  .vip-table {
-    width: 80%;
-    margin: 0 auto;
-    border-top: 1px solid rgba(255, 255, 255, 0.15);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-  }
-
-  .vip-table-header,
-  .vip-row-item {
-    display: flex;
-    justify-content: space-between;
-    padding: 18px 10px;
-  }
-
-  .vip-table-header {
-    font-weight: 700;
-    color: {{ section.settings.text_color }};
-    opacity: 0.9;
-  }
-
-  .vip-row-item {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    color: {{ section.settings.text_color }};
-  }
-
-  .vip-row-item:last-child {
-    border-bottom: none;
-  }
-
-  .vip-col {
-    flex: 1;
-    text-align: left;
-    font-size: 16px;
-  }
-
-  .vip-footer {
-    font-size: 14px;
-    margin-top: 40px;
-    color: {{ section.settings.footer_color }};
-    line-height: 1.6;
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  @media (max-width: 768px) {
-    .vip-content-container {
-      width: 100%;
-      text-align: center;
-    }
-
-    .vip-row {
-      width: 100%;
-      text-align: center;
-    }
-
-    .vip-eyebrow {
-      margin: 20px auto 0;
-      font-size: 14px;
-    }
-
-    .vip-table {
-      width: 100%;
-      font-size: 14px;
-    }
-
-    .vip-table-header, .vip-row-item {
-      flex-direction: column;
-      text-align: center;
-    }
-
-    .vip-col {
-      margin: 6px 0;
-    }
-  }
-</style>
