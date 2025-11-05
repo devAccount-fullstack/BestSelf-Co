@@ -21,11 +21,13 @@
         <img src="{{ section.settings.image | image_url: width: 600, height: 600 }}" alt="banner-image" width="600px" height="600px"  class="vip-image">
     {% endif %}
     <div class="vip-price-box">
-      <div class="price-container">
-        <span class="vip-price">${{ section.settings.price }}</span>
-        {% if section.settings.old_price != blank %}
-          <span class="vip-old-price">${{ section.settings.old_price }}</span>
-        {% endif %}
+      <div>
+        <div class="price-container">
+          <span class="vip-price">${{ section.settings.price }}</span>
+          {% if section.settings.old_price != blank %}
+            <span class="vip-old-price">${{ section.settings.old_price }}</span>
+          {% endif %}
+        </div>
         <div>
           <span class="vip-left">Only {{ section.settings.items_left }} Left</span>
         </div>
