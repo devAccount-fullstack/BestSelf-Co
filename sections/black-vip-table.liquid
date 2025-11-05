@@ -55,104 +55,6 @@
       <p class="vip-footer">{{ section.settings.footer_text }}</p>
     {% endif %}
   </div>
-
-  <style>
-    #black-vip-table-{{ section.id }} {
-      position: relative;
-      overflow: hidden;
-    }
-
-    #black-vip-table-{{ section.id }} .vip-eyebrow {
-      background: rgba(255, 255, 255, 0.1);
-      display: inline-block;
-      padding: 6px 16px;
-      border-radius: 30px;
-      font-size: 14px;
-      margin-bottom: 20px;
-      color: {{ section.settings.eyebrow_color }};
-    }
-
-    #black-vip-table-{{ section.id }} .vip-heading {
-      font-size: 2.4rem;
-      font-weight: 700;
-      line-height: 1.3;
-      color: {{ section.settings.heading_color }};
-      margin-bottom: 10px;
-    }
-
-    #black-vip-table-{{ section.id }} .vip-heading em {
-      display: block;
-      font-style: italic;
-      color: {{ section.settings.subheading_color }};
-    }
-
-    #black-vip-table-{{ section.id }} .vip-cta-btn {
-      display: inline-block;
-      margin: 20px 0;
-      padding: 10px 24px;
-      border: 1px solid {{ section.settings.button_border_color }};
-      border-radius: 30px;
-      color: {{ section.settings.button_text_color }};
-      text-decoration: none;
-      transition: all 0.3s ease;
-    }
-
-    #black-vip-table-{{ section.id }} .vip-cta-btn:hover {
-      background: {{ section.settings.button_hover_bg }};
-      color: {{ section.settings.button_hover_text }};
-    }
-
-    #black-vip-table-{{ section.id }} .vip-table-wrapper {
-      overflow-x: auto;
-      margin-top: 30px;
-    }
-
-    #black-vip-table-{{ section.id }} .vip-table {
-      width: 100%;
-      max-width: 800px;
-      margin: 0 auto;
-      border-collapse: collapse;
-      font-size: 16px;
-    }
-
-    #black-vip-table-{{ section.id }} .vip-table th,
-    #black-vip-table-{{ section.id }} .vip-table td {
-      padding: 16px 10px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    #black-vip-table-{{ section.id }} .vip-table th {
-      font-weight: 700;
-      color: {{ section.settings.table_head_color }};
-    }
-
-    #black-vip-table-{{ section.id }} .vip-table td {
-      color: {{ section.settings.table_text_color }};
-    }
-
-    #black-vip-table-{{ section.id }} .vip-footer {
-      font-size: 14px;
-      margin-top: 30px;
-      color: {{ section.settings.footer_color }};
-      line-height: 1.6;
-    }
-
-    @media (max-width: 768px) {
-      #black-vip-table-{{ section.id }} {
-        padding: 40px 15px;
-      }
-
-      #black-vip-table-{{ section.id }} .vip-heading {
-        font-size: 1.8rem;
-      }
-
-      #black-vip-table-{{ section.id }} .vip-table th,
-      #black-vip-table-{{ section.id }} .vip-table td {
-        font-size: 14px;
-        padding: 12px 8px;
-      }
-    }
-  </style>
 </section>
 
 {% schema %}
@@ -313,3 +215,101 @@
   ]
 }
 {% endschema %}
+
+<style>
+    #black-vip-table-{{ section.id }} {
+      position: relative;
+      overflow: hidden;
+    }
+
+    #black-vip-table-{{ section.id }} .vip-eyebrow {
+      background: rgba(255, 255, 255, 0.1);
+      display: inline-block;
+      padding: 6px 16px;
+      border-radius: 30px;
+      font-size: 14px;
+      margin-bottom: 20px;
+      color: {{ section.settings.eyebrow_color }};
+    }
+
+    #black-vip-table-{{ section.id }} .vip-heading {
+      font-size: 2.4rem;
+      font-weight: 700;
+      line-height: 1.3;
+      color: {{ section.settings.heading_color }};
+      margin-bottom: 10px;
+    }
+
+    #black-vip-table-{{ section.id }} .vip-heading em {
+      display: block;
+      font-style: italic;
+      color: {{ section.settings.subheading_color }};
+    }
+
+    #black-vip-table-{{ section.id }} .vip-cta-btn {
+      display: inline-block;
+      margin: 20px 0;
+      padding: 10px 24px;
+      border: 1px solid {{ section.settings.button_border_color }};
+      border-radius: 30px;
+      color: {{ section.settings.button_text_color }};
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    #black-vip-table-{{ section.id }} .vip-cta-btn:hover {
+      background: {{ section.settings.button_hover_bg }};
+      color: {{ section.settings.button_hover_text }};
+    }
+
+    #black-vip-table-{{ section.id }} .vip-table-wrapper {
+      overflow-x: auto;
+      margin-top: 30px;
+    }
+
+    #black-vip-table-{{ section.id }} .vip-table {
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+      border-collapse: collapse;
+      font-size: 16px;
+    }
+
+    #black-vip-table-{{ section.id }} .vip-table th,
+    #black-vip-table-{{ section.id }} .vip-table td {
+      padding: 16px 10px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    #black-vip-table-{{ section.id }} .vip-table th {
+      font-weight: 700;
+      color: {{ section.settings.table_head_color }};
+    }
+
+    #black-vip-table-{{ section.id }} .vip-table td {
+      color: {{ section.settings.table_text_color }};
+    }
+
+    #black-vip-table-{{ section.id }} .vip-footer {
+      font-size: 14px;
+      margin-top: 30px;
+      color: {{ section.settings.footer_color }};
+      line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+      #black-vip-table-{{ section.id }} {
+        padding: 40px 15px;
+      }
+
+      #black-vip-table-{{ section.id }} .vip-heading {
+        font-size: 1.8rem;
+      }
+
+      #black-vip-table-{{ section.id }} .vip-table th,
+      #black-vip-table-{{ section.id }} .vip-table td {
+        font-size: 14px;
+        padding: 12px 8px;
+      }
+    }
+  </style>
