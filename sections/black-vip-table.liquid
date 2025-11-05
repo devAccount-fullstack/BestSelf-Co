@@ -1,40 +1,37 @@
 <section
-  id="black-vip-table-{{ section.id }}"
-  class="black-vip-table"
-  style="
-    background: radial-gradient(circle at 50% 65%, {{ section.settings.gradient_center_color }} -50%, {{ section.settings.gradient_outer_color }} 30%);
-    color: {{ section.settings.text_color }};
-    padding: 60px 20px;
-    text-align: center;
-    font-family: 'Inter', sans-serif;
-  "
+id="black-vip-table-{{ section.id }}"
+class="black-vip-table"
+style="
+  background: radial-gradient(circle at 50% 65%, {{ section.settings.gradient_center_color }} -50%, {{ section.settings.gradient_outer_color }} 30%);
+  color: {{ section.settings.text_color }};
+  padding: 60px 20px;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+"
 >
-  <div class="vip-content-container">
-    <div class="vip-row">
+<div class="vip-content-container">
+  <div class="vip-row">
       {% if section.settings.heading != blank %}
-        <h2 class="vip-heading">
+      <h2 class="vip-heading">
           {{ section.settings.heading }}
           {% if section.settings.subheading != blank %}
-            <em>{{ section.settings.subheading }}</em>
+          <em>{{ section.settings.subheading }}</em>
           {% endif %}
-        </h2>
+      </h2>
       {% endif %}
 
       {% if section.settings.cta_text != blank %}
-        <a href="{{ section.settings.cta_link }}" class="vip-cta-btn">
+      <a href="{{ section.settings.cta_link }}" class="vip-cta-btn">
           {{ section.settings.cta_text }}
-        </a>
+      </a>
       {% endif %}
-    </div>
-
-    {% if section.settings.eyebrow_text != blank %}
-      <div class="vip-eyebrow">
-        {{ section.settings.eyebrow_text }}
-      </div>
-    {% endif %}
   </div>
+  {% if section.settings.eyebrow_text != blank %}
+    <div class="vip-eyebrow">{{ section.settings.eyebrow_text }}</div>
+  {% endif %}
+</div>
 
-  <div class="vip-table-wrapper">
+    <div class="vip-table-wrapper">
     <table class="vip-table">
       <thead>
         <tr>
@@ -62,160 +59,160 @@
 
 {% schema %}
 {
-  "name": "Black VIP Table",
-  "settings": [
-    {
-      "type": "text",
-      "id": "eyebrow_text",
-      "label": "Eyebrow Text",
-      "default": "Today only — Earn 2.5X points on every purchase."
-    },
-    {
-      "type": "text",
-      "id": "heading",
-      "label": "Heading",
-      "default": "The More You Love,"
-    },
-    {
-      "type": "text",
-      "id": "subheading",
-      "label": "Subheading (italic text)",
-      "default": "The More You Save (and Get!)"
-    },
-    {
-      "type": "text",
-      "id": "cta_text",
-      "label": "Button Text",
-      "default": "Join now and snag 600 bonus points instantly!"
-    },
-    {
-      "type": "url",
-      "id": "cta_link",
-      "label": "Button Link"
-    },
-    {
-      "type": "text",
-      "id": "footer_text",
-      "label": "Footer Text",
-      "default": "Because you're not just a shopper. You're a builder of habits, a giver of meaningful gifts, and a part of this journey with us."
-    },
-    {
-      "type": "color",
-      "id": "gradient_center_color",
-      "label": "Gradient Center Color",
-      "default": "#e6b85c"
-    },
-    {
-      "type": "color",
-      "id": "gradient_outer_color",
-      "label": "Gradient Outer Color",
-      "default": "#131516"
-    },
-    {
-      "type": "color",
-      "id": "text_color",
-      "label": "Default Text Color",
-      "default": "#ffffff"
-    },
-    {
-      "type": "color",
-      "id": "eyebrow_color",
-      "label": "Eyebrow Text Color",
-      "default": "#ffffff"
-    },
-    {
-      "type": "color",
-      "id": "heading_color",
-      "label": "Heading Color",
-      "default": "#ffffff"
-    },
-    {
-      "type": "color",
-      "id": "subheading_color",
-      "label": "Subheading Color",
-      "default": "#e6b85c"
-    },
-    {
-      "type": "color",
-      "id": "table_head_color",
-      "label": "Table Header Text Color",
-      "default": "#ffffff"
-    },
-    {
-      "type": "color",
-      "id": "table_text_color",
-      "label": "Table Body Text Color",
-      "default": "#ffffff"
-    },
-    {
-      "type": "color",
-      "id": "footer_color",
-      "label": "Footer Text Color",
-      "default": "#ffffff"
-    },
-    {
-      "type": "color",
-      "id": "button_border_color",
-      "label": "Button Border Color",
-      "default": "#ffffff"
-    },
-    {
-      "type": "color",
-      "id": "button_text_color",
-      "label": "Button Text Color",
-      "default": "#ffffff"
-    },
-    {
-      "type": "color",
-      "id": "button_hover_bg",
-      "label": "Button Hover Background",
-      "default": "#ffffff"
-    },
-    {
-      "type": "color",
-      "id": "button_hover_text",
-      "label": "Button Hover Text Color",
-      "default": "#000000"
-    }
-  ],
-  "blocks": [
-    {
-      "type": "tier",
-      "name": "VIP Tier",
-      "settings": [
-        {
-          "type": "text",
-          "id": "tier",
-          "label": "Tier",
-          "default": "Tier 1"
-        },
-        {
-          "type": "text",
-          "id": "reward",
-          "label": "Reward",
-          "default": "25% OFF (all orders)"
-        },
-        {
-          "type": "text",
-          "id": "threshold",
-          "label": "Threshold",
-          "default": "No minimum"
-        }
-      ]
-    }
-  ],
-  "max_blocks": 6,
-  "presets": [
-    {
-      "name": "Black VIP Table",
-      "blocks": [
-        { "type": "tier", "settings": { "tier": "Tier 1", "reward": "25% OFF (all orders)", "threshold": "No minimum" } },
-        { "type": "tier", "settings": { "tier": "Tier 2", "reward": "25% OFF + Free VIP Gift", "threshold": "$75+" } },
-        { "type": "tier", "settings": { "tier": "Tier 3", "reward": "30% OFF + Free VIP Gift", "threshold": "$100–149" } },
-        { "type": "tier", "settings": { "tier": "Tier 4", "reward": "35% OFF + Free VIP Gift", "threshold": "$150–199" } }
-      ]
-    }
-  ]
+"name": "Black VIP Table",
+"settings": [
+  {
+    "type": "text",
+    "id": "eyebrow_text",
+    "label": "Eyebrow Text",
+    "default": "Today only — Earn 2.5X points on every purchase."
+  },
+  {
+    "type": "text",
+    "id": "heading",
+    "label": "Heading",
+    "default": "The More You Love,"
+  },
+  {
+    "type": "text",
+    "id": "subheading",
+    "label": "Subheading (italic text)",
+    "default": "The More You Save (and Get!)"
+  },
+  {
+    "type": "text",
+    "id": "cta_text",
+    "label": "Button Text",
+    "default": "Join now and snag 600 bonus points instantly!"
+  },
+  {
+    "type": "url",
+    "id": "cta_link",
+    "label": "Button Link"
+  },
+  {
+    "type": "text",
+    "id": "footer_text",
+    "label": "Footer Text",
+    "default": "Because you're not just a shopper. You're a builder of habits, a giver of meaningful gifts, and a part of this journey with us."
+  },
+  {
+    "type": "color",
+    "id": "gradient_center_color",
+    "label": "Gradient Center Color",
+    "default": "#e6b85c"
+  },
+  {
+    "type": "color",
+    "id": "gradient_outer_color",
+    "label": "Gradient Outer Color",
+    "default": "#131516"
+  },
+  {
+    "type": "color",
+    "id": "text_color",
+    "label": "Default Text Color",
+    "default": "#ffffff"
+  },
+  {
+    "type": "color",
+    "id": "eyebrow_color",
+    "label": "Eyebrow Text Color",
+    "default": "#ffffff"
+  },
+  {
+    "type": "color",
+    "id": "heading_color",
+    "label": "Heading Color",
+    "default": "#ffffff"
+  },
+  {
+    "type": "color",
+    "id": "subheading_color",
+    "label": "Subheading Color",
+    "default": "#e6b85c"
+  },
+  {
+    "type": "color",
+    "id": "table_head_color",
+    "label": "Table Header Text Color",
+    "default": "#ffffff"
+  },
+  {
+    "type": "color",
+    "id": "table_text_color",
+    "label": "Table Body Text Color",
+    "default": "#ffffff"
+  },
+  {
+    "type": "color",
+    "id": "footer_color",
+    "label": "Footer Text Color",
+    "default": "#ffffff"
+  },
+  {
+    "type": "color",
+    "id": "button_border_color",
+    "label": "Button Border Color",
+    "default": "#ffffff"
+  },
+  {
+    "type": "color",
+    "id": "button_text_color",
+    "label": "Button Text Color",
+    "default": "#ffffff"
+  },
+  {
+    "type": "color",
+    "id": "button_hover_bg",
+    "label": "Button Hover Background",
+    "default": "#ffffff"
+  },
+  {
+    "type": "color",
+    "id": "button_hover_text",
+    "label": "Button Hover Text Color",
+    "default": "#000000"
+  }
+],
+"blocks": [
+  {
+    "type": "tier",
+    "name": "VIP Tier",
+    "settings": [
+      {
+        "type": "text",
+        "id": "tier",
+        "label": "Tier",
+        "default": "Tier 1"
+      },
+      {
+        "type": "text",
+        "id": "reward",
+        "label": "Reward",
+        "default": "25% OFF (all orders)"
+      },
+      {
+        "type": "text",
+        "id": "threshold",
+        "label": "Threshold",
+        "default": "No minimum"
+      }
+    ]
+  }
+],
+"max_blocks": 6,
+"presets": [
+  {
+    "name": "Black VIP Table",
+    "blocks": [
+      { "type": "tier", "settings": { "tier": "Tier 1", "reward": "25% OFF (all orders)", "threshold": "No minimum" } },
+      { "type": "tier", "settings": { "tier": "Tier 2", "reward": "25% OFF + Free VIP Gift", "threshold": "$75+" } },
+      { "type": "tier", "settings": { "tier": "Tier 3", "reward": "30% OFF + Free VIP Gift", "threshold": "$100–149" } },
+      { "type": "tier", "settings": { "tier": "Tier 4", "reward": "35% OFF + Free VIP Gift", "threshold": "$150–199" } }
+    ]
+  }
+]
 }
 {% endschema %}
 
@@ -228,29 +225,26 @@
   .vip-content-container {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    max-width: 1100px;
-    margin: 0 auto 40px;
+    align-items: center;
+    width: 70%;
+    margin: 0 auto;
   }
 
   .vip-row {
-    text-align: left;
-    flex: 1 1 70%;
-    min-width: 280px;
+    text-align: start;
+    width: 80%;
   }
 
   #black-vip-table-{{ section.id }} .vip-eyebrow {
-    background: linear-gradient(90deg, {{ section.settings.gradient_center_color }} 0%, {{ section.settings.gradient_outer_color }} 100%);
+    background: rgba(255, 255, 255, 0.1);
     display: inline-block;
-    padding: 16px 24px;
+    padding: 18px 24px;
     font-size: 14px;
+    margin-bottom: 20px;
     color: {{ section.settings.eyebrow_color }};
-    border-radius: 10px;
-    flex: 1 1 25%;
-    text-align: center;
-    white-space: nowrap;
-    margin-top: 10px;
+    border-radius: 10px 0 0 10px;
+    width: 20%;
+    text-align: start;
   }
 
   #black-vip-table-{{ section.id }} .vip-heading {
@@ -269,14 +263,13 @@
 
   #black-vip-table-{{ section.id }} .vip-cta-btn {
     display: inline-block;
-    margin-top: 15px;
-    padding: 12px 28px;
+    margin: 20px 0;
+    padding: 10px 24px;
     border: 1px solid {{ section.settings.button_border_color }};
     border-radius: 30px;
     color: {{ section.settings.button_text_color }};
     text-decoration: none;
     transition: all 0.3s ease;
-    font-size: 15px;
   }
 
   #black-vip-table-{{ section.id }} .vip-cta-btn:hover {
@@ -284,11 +277,12 @@
     color: {{ section.settings.button_hover_text }};
   }
 
-  .vip-table-wrapper {
+  #black-vip-table-{{ section.id }} .vip-table-wrapper {
     overflow-x: auto;
+    margin-top: 30px;
   }
 
-  .vip-table {
+  #black-vip-table-{{ section.id }} .vip-table {
     width: 100%;
     max-width: 800px;
     margin: 0 auto;
@@ -296,64 +290,39 @@
     font-size: 16px;
   }
 
-  .vip-table thead tr {
-    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
-  }
-
-  .vip-table th,
-  .vip-table td {
-    padding: 16px 12px;
-    text-align: center;
-  }
-
-  .vip-table th {
-    color: {{ section.settings.table_head_color }};
-    font-weight: 700;
-    font-size: 15px;
-  }
-
-  .vip-table td {
-    color: {{ section.settings.table_text_color }};
-    font-size: 15px;
-  }
-
-  .vip-table tbody tr:not(:last-child) {
+  #black-vip-table-{{ section.id }} .vip-table th,
+  #black-vip-table-{{ section.id }} .vip-table td {
+    padding: 16px 10px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
 
-  .vip-footer {
+  #black-vip-table-{{ section.id }} .vip-table th {
+    font-weight: 700;
+    color: {{ section.settings.table_head_color }};
+  }
+
+  #black-vip-table-{{ section.id }} .vip-table td {
+    color: {{ section.settings.table_text_color }};
+  }
+
+  #black-vip-table-{{ section.id }} .vip-footer {
     font-size: 14px;
-    margin-top: 40px;
+    margin-top: 30px;
     color: {{ section.settings.footer_color }};
     line-height: 1.6;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
   }
 
   @media (max-width: 768px) {
-    .vip-content-container {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
+    #black-vip-table-{{ section.id }} {
+      padding: 40px 15px;
     }
 
-    .vip-row {
-      width: 100%;
-      text-align: center;
-    }
-
-    .vip-eyebrow {
-      width: 100%;
-      margin-top: 20px;
-    }
-
-    .vip-heading {
+    #black-vip-table-{{ section.id }} .vip-heading {
       font-size: 1.8rem;
     }
 
-    .vip-table th,
-    .vip-table td {
+    #black-vip-table-{{ section.id }} .vip-table th,
+    #black-vip-table-{{ section.id }} .vip-table td {
       font-size: 14px;
       padding: 12px 8px;
     }
