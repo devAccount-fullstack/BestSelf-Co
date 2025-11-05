@@ -18,7 +18,7 @@
 
   <div class="vip-image-wrapper">
     {% if section.settings.image != blank %}
-        <img src="{{ section.settings.image | image_url: width: 600, height: 600 }}" alt="banner-image" width="600px" height="600px"  class="image-overflow">
+        <img src="{{ section.settings.image | image_url: width: 600, height: 600 }}" alt="banner-image" width="600px" height="600px"  class="vip-image">
     {% endif %}
     <div class="vip-price-box left">
       <span class="vip-price">${{ section.settings.price }}</span>
