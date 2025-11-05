@@ -35,6 +35,27 @@
         "vip-header": true
       }
     },
+    "black_banner_vip_yTiAKe": {
+      "type": "black-banner-vip",
+      "name": "Black Banner VIP",
+      "settings": {
+        "subheading": "For Our VIP BestSelf Family",
+        "subheading_color": "#f5c84c",
+        "heading": "Up to 35% OFF + Exclusive Gifts",
+        "heading_color": "#ffffff",
+        "content": "Your loyalty earned you this moment. Stock up, gift what you love, and unlock the transformation tools that helped you get here.",
+        "content_color": "#ffffff",
+        "button_text": "Unlock My VIP Access",
+        "button_link": "/",
+        "image": "shopify://shop_images/helm.png",
+        "price": "90.30",
+        "old_price": "129",
+        "items_left": "X",
+        "discount_text": "30% off",
+        "gradient_center_color": "#2b2b2b",
+        "gradient_outer_color": "#000000"
+      }
+    },
     "landing_footer_aqYdtb": {
       "type": "landing-footer",
       "name": "Landing Footer",
@@ -49,6 +70,7 @@
   "order": [
     "main",
     "landing_header_wYmeEg",
+    "black_banner_vip_yTiAKe",
     "landing_footer_aqYdtb"
   ]
 }
