@@ -154,12 +154,6 @@
     margin: 0 auto;
   }
 
-  @media (max-width: 375px) {
-    #black-banner-vip-{{ section.id }} .vip-image {
-      display: none;
-    }
-  }
-
   @media (max-width: 600px) {
     #black-banner-vip-{{ section.id }} .vip-image {
       top: 146%;
@@ -185,6 +179,12 @@
     }
     #black-banner-vip-{{ section.id }} .vip-price-box.left {
       left: 5%;
+    }
+  }
+
+  @media (max-width: 375px) {
+    #black-banner-vip-{{ section.id }} .vip-image {
+      display: none;
     }
   }
 </style>
