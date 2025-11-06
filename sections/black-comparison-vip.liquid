@@ -1,0 +1,219 @@
+<section id="black-comparison-vip-{{ section.id }}" class="black-comparison-vip" style="background-color: {{ section.settings.bg_color }};">
+  <div class="container">
+    {% if section.settings.title != blank %}
+      <h2 class="comparison-title" style="color: {{ section.settings.title_color }};">
+        {{ section.settings.title }}
+      </h2>
+    {% endif %}
+    {% if section.settings.subtitle != blank %}
+      <p class="comparison-subtitle" style="color: {{ section.settings.subtitle_color }};">
+        {{ section.settings.subtitle }}
+      </p>
+    {% endif %}
+
+    <div class="comparison-table">
+      {% for block in section.blocks %}
+        <div class="comparison-row">
+          <div class="feature">
+            {% if block.settings.icon != blank %}
+              <img src="{{ block.settings.icon | img_url: '100x' }}" alt="" class="feature-icon" />
+            {% endif %}
+            <span class="feature-text" style="color: {{ section.settings.feature_color }};">{{ block.settings.feature_text }}</span>
+          </div>
+
+          <div class="vip-access">
+            <span class="vip-text" style="color: {{ section.settings.vip_color }};">{{ block.settings.vip_text }}</span>
+          </div>
+
+          <div class="general-access">
+            <span class="general-text" style="color: {{ section.settings.general_color }};">{{ block.settings.general_text }}</span>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <style>
+    #black-comparison-vip-{{ section.id }} {
+      padding: 60px 20px;
+      font-family: 'Inter', sans-serif;
+      color: #fff;
+    }
+
+    #black-comparison-vip-{{ section.id }} .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .comparison-title {
+      font-size: 2.2rem;
+      text-align: center;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .comparison-subtitle {
+      text-align: center;
+      font-size: 1.1rem;
+      margin-bottom: 40px;
+    }
+
+    .comparison-table {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .comparison-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      padding: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .comparison-row > div {
+      flex: 1;
+      text-align: center;
+    }
+
+    .feature {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-align: left;
+      flex: 2;
+    }
+
+    .feature-icon {
+      width: 30px;
+      height: 30px;
+      object-fit: contain;
+    }
+
+    .vip-access {
+      flex: 1;
+      border: 2px solid #e6b85c;
+      border-radius: 8px;
+      padding: 10px;
+      font-weight: 600;
+    }
+
+    .general-access {
+      flex: 1;
+      opacity: 0.8;
+      font-weight: 400;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .comparison-row {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+      }
+
+      .comparison-row > div {
+        width: 100%;
+        text-align: left;
+      }
+
+      .vip-access,
+      .general-access {
+        margin-top: 10px;
+      }
+    }
+  </style>
+</section>
+
+{% schema %}
+{
+  "name": "Black Comparison VIP",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle"
+    },
+    {
+      "type": "color",
+      "id": "subtitle_color",
+      "label": "Subtitle Color",
+      "default": "#e6b85c"
+    },
+    {
+      "type": "color",
+      "id": "feature_color",
+      "label": "Feature Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "vip_color",
+      "label": "VIP Text Color",
+      "default": "#e6b85c"
+    },
+    {
+      "type": "color",
+      "id": "general_color",
+      "label": "General Text Color",
+      "default": "#bfbfbf"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#000000"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "row",
+      "name": "Feature Row",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Feature Icon"
+        },
+        {
+          "type": "text",
+          "id": "feature_text",
+          "label": "Feature Text",
+          "default": "Exclusive Lounge Access"
+        },
+        {
+          "type": "text",
+          "id": "vip_text",
+          "label": "VIP Access Text",
+          "default": "Included"
+        },
+        {
+          "type": "text",
+          "id": "general_text",
+          "label": "General Access Text",
+          "default": "Not Included"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Black Comparison VIP"
+    }
+  ]
+}
+{% endschema %}
