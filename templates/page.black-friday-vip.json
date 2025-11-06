@@ -162,14 +162,13 @@
             "general_text": "2X"
           }
         },
-        "feature_row_yHWtjF": {
+        "feature_row_aJUfy7": {
           "type": "feature_row",
           "settings": {
-            "icon": "shopify://shop_images/Icon_3.png",
-            "feature_text": "Password-Protected",
-            "vip_text": "Yes",
-            "vip_content": "25%",
-            "general_text": "No"
+            "feature_text": "Starting Discount",
+            "vip_text": "25%",
+            "vip_content": "asd",
+            "general_text": "20%"
           }
         }
       },
@@ -178,7 +177,7 @@
         "feature_row_MNUkjC",
         "feature_row_JzNYLW",
         "feature_row_MckwVw",
-        "feature_row_yHWtjF"
+        "feature_row_aJUfy7"
       ],
       "name": "Black Comparison VIP",
       "settings": {
