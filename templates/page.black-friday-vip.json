@@ -125,6 +125,7 @@
         "feature_row_MdzgGC": {
           "type": "feature_row",
           "settings": {
+            "icon": "shopify://shop_images/icon1.png",
             "feature_text": "Starting Discount",
             "vip_text": "25%",
             "general_text": "20%"
