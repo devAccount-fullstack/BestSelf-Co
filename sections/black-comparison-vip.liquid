@@ -44,6 +44,93 @@ style="background-color: {{ section.settings.bg_color }};"
       {% endfor %}
   </div>
 </div>
+</section>
+
+{% schema %}
+{
+"name": "Black Comparison VIP",
+"settings": [
+  {
+    "type": "text",
+    "id": "title",
+    "label": "Section Title",
+    "default": "VIP vs. General Access Comparison"
+  },
+  {
+    "type": "color",
+    "id": "title_color",
+    "label": "Title Color",
+    "default": "#e6b85c"
+  },
+  {
+    "type": "color",
+    "id": "feature_text_color",
+    "label": "Feature Text Color",
+    "default": "#ffffff"
+  },
+  {
+    "type": "color",
+    "id": "vip_text_color",
+    "label": "VIP Text Color",
+    "default": "#e6b85c"
+  },
+  {
+    "type": "color",
+    "id": "vip_border_color",
+    "label": "VIP Border Color",
+    "default": "#e6b85c"
+  },
+  {
+    "type": "color",
+    "id": "general_text_color",
+    "label": "General Text Color",
+    "default": "#b3b3b3"
+  },
+  {
+    "type": "color",
+    "id": "bg_color",
+    "label": "Background Color",
+    "default": "#000000"
+  }
+],
+"blocks": [
+  {
+    "type": "feature_row",
+    "name": "Feature Row",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "icon",
+        "label": "Feature Icon"
+      },
+      {
+        "type": "text",
+        "id": "feature_text",
+        "label": "Feature Text",
+        "default": "Starting Discount"
+      },
+      {
+        "type": "text",
+        "id": "vip_text",
+        "label": "VIP Text",
+        "default": "25%"
+      },
+      {
+        "type": "text",
+        "id": "general_text",
+        "label": "General Text",
+        "default": "20%"
+      }
+    ]
+  }
+],
+"presets": [
+  {
+    "name": "Black Comparison VIP"
+  }
+]
+}
+{% endschema %}
 
 <style>
   #black-comparison-vip-{{ section.id }} {
@@ -152,90 +239,3 @@ style="background-color: {{ section.settings.bg_color }};"
   }
 
 </style>
-</section>
-
-{% schema %}
-{
-"name": "Black Comparison VIP",
-"settings": [
-  {
-    "type": "text",
-    "id": "title",
-    "label": "Section Title",
-    "default": "VIP vs. General Access Comparison"
-  },
-  {
-    "type": "color",
-    "id": "title_color",
-    "label": "Title Color",
-    "default": "#e6b85c"
-  },
-  {
-    "type": "color",
-    "id": "feature_text_color",
-    "label": "Feature Text Color",
-    "default": "#ffffff"
-  },
-  {
-    "type": "color",
-    "id": "vip_text_color",
-    "label": "VIP Text Color",
-    "default": "#e6b85c"
-  },
-  {
-    "type": "color",
-    "id": "vip_border_color",
-    "label": "VIP Border Color",
-    "default": "#e6b85c"
-  },
-  {
-    "type": "color",
-    "id": "general_text_color",
-    "label": "General Text Color",
-    "default": "#b3b3b3"
-  },
-  {
-    "type": "color",
-    "id": "bg_color",
-    "label": "Background Color",
-    "default": "#000000"
-  }
-],
-"blocks": [
-  {
-    "type": "feature_row",
-    "name": "Feature Row",
-    "settings": [
-      {
-        "type": "image_picker",
-        "id": "icon",
-        "label": "Feature Icon"
-      },
-      {
-        "type": "text",
-        "id": "feature_text",
-        "label": "Feature Text",
-        "default": "Starting Discount"
-      },
-      {
-        "type": "text",
-        "id": "vip_text",
-        "label": "VIP Text",
-        "default": "25%"
-      },
-      {
-        "type": "text",
-        "id": "general_text",
-        "label": "General Text",
-        "default": "20%"
-      }
-    ]
-  }
-],
-"presets": [
-  {
-    "name": "Black Comparison VIP"
-  }
-]
-}
-{% endschema %}
