@@ -188,7 +188,8 @@
         "vip_text_color": "#ffffff",
         "vip_border_color": "#e6b85c",
         "general_text_color": "#ffffff",
-        "bg_color": "#131516",
+        "gradient_center_color": "#e6b85c",
+        "gradient_outer_color": "#131516",
         "vip_bg_color": "rgba(0,0,0,0)"
       }
     },
