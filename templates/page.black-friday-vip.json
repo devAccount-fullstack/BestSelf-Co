@@ -112,13 +112,48 @@
         "eyebrow_color": "#ffffff",
         "heading_color": "#ffffff",
         "subheading_color": "#e6b85c",
-        "table_head_color": "#ffffff",
-        "table_text_color": "#ffffff",
         "footer_color": "#ffffff",
         "button_border_color": "#ffffff",
         "button_text_color": "#ffffff",
         "button_hover_bg": "#ffffff",
         "button_hover_text": "#000000"
+      }
+    },
+    "black_comparison_vip_UTnXA4": {
+      "type": "black-comparison-vip",
+      "blocks": {
+        "row_6hi63P": {
+          "type": "row",
+          "settings": {
+            "icon": "shopify://shop_images/icon1.png",
+            "feature_text": "Starting Discount",
+            "vip_text": "25%",
+            "general_text": "20%"
+          }
+        },
+        "row_Pwx6tf": {
+          "type": "row",
+          "settings": {
+            "feature_text": "Exclusive Lounge Access",
+            "vip_text": "Included",
+            "general_text": "Not Included"
+          }
+        }
+      },
+      "block_order": [
+        "row_6hi63P",
+        "row_Pwx6tf"
+      ],
+      "name": "Black Comparison VIP",
+      "settings": {
+        "title": "VIP vs. General Access Comparison",
+        "title_color": "#e6b85c",
+        "subtitle": "",
+        "subtitle_color": "#e6b85c",
+        "feature_color": "#ffffff",
+        "vip_color": "#e6b85c",
+        "general_color": "#bfbfbf",
+        "bg_color": "#000000"
       }
     },
     "landing_footer_aqYdtb": {
@@ -137,6 +172,7 @@
     "landing_header_wYmeEg",
     "black_banner_vip_yTiAKe",
     "black_vip_table_xUDGdi",
+    "black_comparison_vip_UTnXA4",
     "landing_footer_aqYdtb"
   ]
 }
