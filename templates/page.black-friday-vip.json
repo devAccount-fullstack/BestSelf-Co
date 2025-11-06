@@ -122,37 +122,53 @@
     "black_comparison_vip_UTnXA4": {
       "type": "black-comparison-vip",
       "blocks": {
-        "row_6hi63P": {
-          "type": "row",
+        "feature_row_MdzgGC": {
+          "type": "feature_row",
           "settings": {
-            "icon": "shopify://shop_images/icon1.png",
             "feature_text": "Starting Discount",
             "vip_text": "25%",
             "general_text": "20%"
           }
         },
-        "row_Pwx6tf": {
-          "type": "row",
+        "feature_row_MNUkjC": {
+          "type": "feature_row",
           "settings": {
-            "feature_text": "Exclusive Lounge Access",
-            "vip_text": "Included",
-            "general_text": "Not Included"
+            "feature_text": "Starting Discount",
+            "vip_text": "25%",
+            "general_text": "20%"
+          }
+        },
+        "feature_row_JzNYLW": {
+          "type": "feature_row",
+          "settings": {
+            "feature_text": "Starting Discount",
+            "vip_text": "25%",
+            "general_text": "20%"
+          }
+        },
+        "feature_row_MckwVw": {
+          "type": "feature_row",
+          "settings": {
+            "feature_text": "Starting Discount",
+            "vip_text": "25%",
+            "general_text": "20%"
           }
         }
       },
       "block_order": [
-        "row_6hi63P",
-        "row_Pwx6tf"
+        "feature_row_MdzgGC",
+        "feature_row_MNUkjC",
+        "feature_row_JzNYLW",
+        "feature_row_MckwVw"
       ],
       "name": "Black Comparison VIP",
       "settings": {
         "title": "VIP vs. General Access Comparison",
         "title_color": "#e6b85c",
-        "subtitle": "",
-        "subtitle_color": "#e6b85c",
-        "feature_color": "#ffffff",
-        "vip_color": "#e6b85c",
-        "general_color": "#bfbfbf",
+        "feature_text_color": "#ffffff",
+        "vip_text_color": "#e6b85c",
+        "vip_border_color": "#e6b85c",
+        "general_text_color": "#b3b3b3",
         "bg_color": "#000000"
       }
     },
