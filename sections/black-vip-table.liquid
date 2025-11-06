@@ -32,24 +32,21 @@
     {% endif %}
   </div>
 
-  <div class="vip-table-wrapper">
-    <div class="vip-table">
-      <div class="vip-table-header">
-        <div class="vip-col vip-tier">VIP Tier</div>
-        <div class="vip-col vip-reward">Your Reward</div>
-        <div class="vip-col vip-threshold">Threshold</div>
-      </div>
-
-      {% for block in section.blocks %}
-        <div class="vip-row-item">
-          <div class="vip-col vip-tier">{{ block.settings.tier }}</div>
-          <div class="vip-col vip-reward">{{ block.settings.reward }}</div>
-          <div class="vip-col vip-threshold">{{ block.settings.threshold }}</div>
-        </div>
-      {% endfor %}
-    </div>
+<div class="vip-table">
+  <div class="vip-table-header">
+    <div class="vip-col vip-tier-head">VIP Tier</div>
+    <div class="vip-col vip-reward-head">Your Reward</div>
+    <div class="vip-col vip-threshold-head">Threshold</div>
   </div>
 
+  {% for block in section.blocks %}
+    <div class="vip-row">
+      <div class="vip-col">{{ block.settings.tier }}</div>
+      <div class="vip-col">{{ block.settings.reward }}</div>
+      <div class="vip-col">{{ block.settings.threshold }}</div>
+    </div>
+  {% endfor %}
+</div>
   {% if section.settings.footer_text != blank %}
     <p class="vip-footer">{{ section.settings.footer_text }}</p>
   {% endif %}
