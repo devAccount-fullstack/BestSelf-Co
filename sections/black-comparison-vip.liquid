@@ -18,7 +18,7 @@
         <div class="comparison-row">
           <div class="comparison-feature">
             {% if block.settings.icon != blank %}
-              <img src="{{ block.settings.icon | img_url: '64x64' }}" alt="" class="feature-icon">
+              <img src="{{ block.settings.icon | img_url: '64x64' }}" alt="" width="64px" height="auto" class="feature-icon">
             {% endif %}
             <span class="feature-text" style="color: {{ section.settings.feature_text_color }};">
               {{ block.settings.feature_text }}
