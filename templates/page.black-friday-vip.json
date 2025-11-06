@@ -221,6 +221,31 @@
         "bg_color": "#131516"
       }
     },
+    "landing_testimonial_rBA7NT": {
+      "type": "landing-testimonial",
+      "blocks": {
+        "quote_MTAQQw": {
+          "type": "quote",
+          "settings": {
+            "quote_text": " 'I’ve used the Self Journal every day for 3 years — this bundle is my go-to gift now.'"
+          }
+        },
+        "quote_j9KnHm": {
+          "type": "quote",
+          "settings": {
+            "quote_text": " 'Helm helped me reset my screen time. It works, plain and simple.'"
+          }
+        }
+      },
+      "block_order": [
+        "quote_MTAQQw",
+        "quote_j9KnHm"
+      ],
+      "name": "Testimonial Content",
+      "settings": {
+        "background_color": "#131516"
+      }
+    },
     "landing_footer_aqYdtb": {
       "type": "landing-footer",
       "name": "Landing Footer",
@@ -240,6 +265,7 @@
     "black_comparison_vip_UTnXA4",
     "black_friday_ugc_9TEbT3",
     "black_friday_product_slider_BpdgDq",
+    "landing_testimonial_rBA7NT",
     "landing_footer_aqYdtb"
   ]
 }
