@@ -32,6 +32,97 @@
       {% endfor %}
     </div>
   </div>
+</section>
+
+{% schema %}
+{
+  "name": "Black Comparison VIP",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle"
+    },
+    {
+      "type": "color",
+      "id": "subtitle_color",
+      "label": "Subtitle Color",
+      "default": "#e6b85c"
+    },
+    {
+      "type": "color",
+      "id": "feature_color",
+      "label": "Feature Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "vip_color",
+      "label": "VIP Text Color",
+      "default": "#e6b85c"
+    },
+    {
+      "type": "color",
+      "id": "general_color",
+      "label": "General Text Color",
+      "default": "#bfbfbf"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#000000"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "row",
+      "name": "Feature Row",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Feature Icon"
+        },
+        {
+          "type": "text",
+          "id": "feature_text",
+          "label": "Feature Text",
+          "default": "Exclusive Lounge Access"
+        },
+        {
+          "type": "text",
+          "id": "vip_text",
+          "label": "VIP Access Text",
+          "default": "Included"
+        },
+        {
+          "type": "text",
+          "id": "general_text",
+          "label": "General Access Text",
+          "default": "Not Included"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Black Comparison VIP"
+    }
+  ]
+}
+{% endschema %}
 
   <style>
     #black-comparison-vip-{{ section.id }} {
@@ -126,94 +217,3 @@
       }
     }
   </style>
-</section>
-
-{% schema %}
-{
-  "name": "Black Comparison VIP",
-  "settings": [
-    {
-      "type": "text",
-      "id": "title",
-      "label": "Section Title"
-    },
-    {
-      "type": "color",
-      "id": "title_color",
-      "label": "Title Color",
-      "default": "#ffffff"
-    },
-    {
-      "type": "text",
-      "id": "subtitle",
-      "label": "Subtitle"
-    },
-    {
-      "type": "color",
-      "id": "subtitle_color",
-      "label": "Subtitle Color",
-      "default": "#e6b85c"
-    },
-    {
-      "type": "color",
-      "id": "feature_color",
-      "label": "Feature Text Color",
-      "default": "#ffffff"
-    },
-    {
-      "type": "color",
-      "id": "vip_color",
-      "label": "VIP Text Color",
-      "default": "#e6b85c"
-    },
-    {
-      "type": "color",
-      "id": "general_color",
-      "label": "General Text Color",
-      "default": "#bfbfbf"
-    },
-    {
-      "type": "color",
-      "id": "bg_color",
-      "label": "Background Color",
-      "default": "#000000"
-    }
-  ],
-  "blocks": [
-    {
-      "type": "row",
-      "name": "Feature Row",
-      "settings": [
-        {
-          "type": "image_picker",
-          "id": "icon",
-          "label": "Feature Icon"
-        },
-        {
-          "type": "text",
-          "id": "feature_text",
-          "label": "Feature Text",
-          "default": "Exclusive Lounge Access"
-        },
-        {
-          "type": "text",
-          "id": "vip_text",
-          "label": "VIP Access Text",
-          "default": "Included"
-        },
-        {
-          "type": "text",
-          "id": "general_text",
-          "label": "General Access Text",
-          "default": "Not Included"
-        }
-      ]
-    }
-  ],
-  "presets": [
-    {
-      "name": "Black Comparison VIP"
-    }
-  ]
-}
-{% endschema %}
