@@ -186,7 +186,6 @@
         "title_color": "#e6b85c",
         "feature_text_color": "#ffffff",
         "vip_text_color": "#ffffff",
-        "vip_border_color": "#e6b85c",
         "general_text_color": "#ffffff",
         "gradient_center_color": "#e6b85c",
         "gradient_outer_color": "#131516",
@@ -213,6 +212,15 @@
         "heading": "UGC display here"
       }
     },
+    "black_friday_product_slider_BpdgDq": {
+      "type": "black-friday-product-slider",
+      "name": "Black Friday Product Slider",
+      "settings": {
+        "heading": "Shop Bestsellers",
+        "collection": "best-sellers",
+        "bg_color": "#000000"
+      }
+    },
     "landing_footer_aqYdtb": {
       "type": "landing-footer",
       "name": "Landing Footer",
@@ -231,6 +239,7 @@
     "black_vip_table_xUDGdi",
     "black_comparison_vip_UTnXA4",
     "black_friday_ugc_9TEbT3",
+    "black_friday_product_slider_BpdgDq",
     "landing_footer_aqYdtb"
   ]
 }
