@@ -18,16 +18,33 @@
         <div class="comparison-row">
           <div class="comparison-feature">
             {% if block.settings.icon != blank %}
-              <img src="{{ block.settings.icon | img_url: '64x64' }}" alt="" width="64px" height="auto" class="feature-icon">
+              <img
+                src="{{ block.settings.icon | img_url: '64x64' }}"
+                alt=""
+                width="64"
+                height="auto"
+                class="feature-icon"
+              >
             {% endif %}
-            <span class="feature-text" style="color: {{ section.settings.feature_text_color }};">
+            <span
+              class="feature-text"
+              style="color: {{ section.settings.feature_text_color }};"
+            >
               {{ block.settings.feature_text }}
             </span>
           </div>
-          <div class="comparison-vip" style="border-color: {{ section.settings.vip_border_color }}; color: {{ section.settings.vip_text_color }};">
+
+          <div
+            class="comparison-vip"
+            style="border-color: {{ section.settings.vip_border_color }}; color: {{ section.settings.vip_text_color }};"
+          >
             {{ block.settings.vip_text }}
           </div>
-          <div class="comparison-general" style="color: {{ section.settings.general_text_color }};">
+
+          <div
+            class="comparison-general"
+            style="color: {{ section.settings.general_text_color }};"
+          >
             {{ block.settings.general_text }}
           </div>
         </div>
@@ -38,7 +55,7 @@
   <style>
     #black-comparison-vip-{{ section.id }} {
       font-family: 'Inter', sans-serif;
-      padding: 60px 20px;
+      padding: 80px 20px;
       color: #fff;
     }
 
@@ -48,53 +65,71 @@
       text-align: center;
     }
 
+    /* Title */
     #black-comparison-vip-{{ section.id }} .comparison-title {
-      font-size: 32px;
+      font-size: 36px;
       font-weight: 700;
-      margin-bottom: 40px;
+      margin-bottom: 50px;
+      letter-spacing: 0.4px;
     }
 
-    /* Table */
+    /* Table layout */
     #black-comparison-vip-{{ section.id }} .comparison-table {
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      gap: 20px;
     }
 
     #black-comparison-vip-{{ section.id }} .comparison-row {
       display: grid;
       grid-template-columns: 1.5fr 0.8fr 0.8fr;
       align-items: center;
-      background-color: #111;
-      border-radius: 10px;
-      padding: 20px;
+      background-color: #0f0f0f;
+      border-radius: 14px;
+      padding: 20px 24px;
       border: 1px solid rgba(255, 255, 255, 0.1);
-      gap: 20px;
+      transition: background 0.3s ease, transform 0.2s ease;
     }
 
-    .comparison-feature {
+    #black-comparison-vip-{{ section.id }} .comparison-row:hover {
+      background-color: #1a1a1a;
+      transform: translateY(-2px);
+    }
+
+    /* Feature column */
+    #black-comparison-vip-{{ section.id }} .comparison-feature {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
       justify-content: flex-start;
+      text-align: left;
     }
 
-    .feature-icon {
-      width: 24px;
-      height: 24px;
+    #black-comparison-vip-{{ section.id }} .feature-icon {
+      width: 26px;
+      height: 26px;
       object-fit: contain;
-    }
-
-    .comparison-vip {
-      border: 2px solid #e6b85c;
-      border-radius: 8px;
-      padding: 10px 0;
-      font-weight: 600;
-    }
-
-    .comparison-general {
-      font-weight: 400;
       opacity: 0.9;
+    }
+
+    #black-comparison-vip-{{ section.id }} .feature-text {
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    /* VIP block */
+    #black-comparison-vip-{{ section.id }} .comparison-vip {
+      border: 2px solid #e6b85c;
+      border-radius: 10px;
+      padding: 12px 0;
+      font-weight: 600;
+      background: rgba(230, 184, 92, 0.05);
+    }
+
+    /* General block */
+    #black-comparison-vip-{{ section.id }} .comparison-general {
+      font-weight: 400;
+      opacity: 0.85;
     }
 
     /* Responsive */
@@ -102,14 +137,20 @@
       #black-comparison-vip-{{ section.id }} .comparison-row {
         grid-template-columns: 1fr;
         text-align: center;
+        gap: 10px;
       }
 
-      .comparison-feature {
+      #black-comparison-vip-{{ section.id }} .comparison-feature {
         justify-content: center;
       }
 
-      .comparison-vip, .comparison-general {
+      #black-comparison-vip-{{ section.id }} .comparison-vip,
+      #black-comparison-vip-{{ section.id }} .comparison-general {
         width: 100%;
+      }
+
+      #black-comparison-vip-{{ section.id }} .comparison-vip {
+        padding: 10px;
       }
     }
   </style>
