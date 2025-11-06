@@ -32,21 +32,22 @@
     {% endif %}
   </div>
 
-<div class="vip-table">
-  <div class="vip-table-header">
-    <div class="vip-col vip-tier-head">VIP Tier</div>
-    <div class="vip-col vip-reward-head">Your Reward</div>
-    <div class="vip-col vip-threshold-head">Threshold</div>
+  <div class="vip-table">
+    <div class="vip-table-header">
+      <div class="vip-col vip-tier-head">VIP Tier</div>
+      <div class="vip-col vip-reward-head">Your Reward</div>
+      <div class="vip-col vip-threshold-head">Threshold</div>
+    </div>
+
+    {% for block in section.blocks %}
+      <div class="vip-rows">
+        <div class="vip-col">{{ block.settings.tier }}</div>
+        <div class="vip-col">{{ block.settings.reward }}</div>
+        <div class="vip-col">{{ block.settings.threshold }}</div>
+      </div>
+    {% endfor %}
   </div>
 
-  {% for block in section.blocks %}
-    <div class="vip-rows">
-      <div class="vip-col">{{ block.settings.tier }}</div>
-      <div class="vip-col">{{ block.settings.reward }}</div>
-      <div class="vip-col">{{ block.settings.threshold }}</div>
-    </div>
-  {% endfor %}
-</div>
   {% if section.settings.footer_text != blank %}
     <p class="vip-footer">{{ section.settings.footer_text }}</p>
   {% endif %}
@@ -266,7 +267,7 @@
   }
 
   #black-vip-table-{{ section.id }} .vip-table-header,
-  #black-vip-table-{{ section.id }} .vip-row {
+  #black-vip-table-{{ section.id }} .vip-rows {
     display: grid;
     grid-template-columns: 1fr 1.5fr 1fr;
     align-items: center;
