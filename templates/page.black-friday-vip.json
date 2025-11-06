@@ -165,10 +165,11 @@
         "feature_row_aJUfy7": {
           "type": "feature_row",
           "settings": {
-            "feature_text": "Starting Discount",
-            "vip_text": "25%",
+            "icon": "shopify://shop_images/Icon_3.png",
+            "feature_text": "Password-Protected",
+            "vip_text": "Yes",
             "vip_content": "",
-            "general_text": "20%"
+            "general_text": "No"
           }
         }
       },
@@ -207,7 +208,7 @@
       ],
       "name": "Black Friday UGC",
       "settings": {
-        "bg_color": "#1e1f3a",
+        "bg_color": "#131516",
         "heading": "UGC display here"
       }
     },
