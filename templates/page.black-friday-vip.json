@@ -134,25 +134,37 @@
         "feature_row_MNUkjC": {
           "type": "feature_row",
           "settings": {
-            "feature_text": "Starting Discount",
-            "vip_text": "25%",
-            "general_text": "20%"
+            "icon": "shopify://shop_images/Icon_d3ba4c80-35bc-4991-b08e-64479fc25573.png",
+            "feature_text": "Exclusive Free Gift",
+            "vip_text": "Yes",
+            "general_text": "No"
           }
         },
         "feature_row_JzNYLW": {
           "type": "feature_row",
           "settings": {
-            "feature_text": "Starting Discount",
-            "vip_text": "25%",
-            "general_text": "20%"
+            "icon": "shopify://shop_images/Icon_1.png",
+            "feature_text": "Early Access",
+            "vip_text": "Yes",
+            "general_text": "No"
           }
         },
         "feature_row_MckwVw": {
           "type": "feature_row",
           "settings": {
-            "feature_text": "Starting Discount",
-            "vip_text": "25%",
-            "general_text": "20%"
+            "icon": "shopify://shop_images/Icon_2.png",
+            "feature_text": "Loyalty Points",
+            "vip_text": "2.5X",
+            "general_text": "2X"
+          }
+        },
+        "feature_row_yHWtjF": {
+          "type": "feature_row",
+          "settings": {
+            "icon": "shopify://shop_images/Icon_3.png",
+            "feature_text": "Password-Protected",
+            "vip_text": "Yes",
+            "general_text": "No"
           }
         }
       },
@@ -160,7 +172,8 @@
         "feature_row_MdzgGC",
         "feature_row_MNUkjC",
         "feature_row_JzNYLW",
-        "feature_row_MckwVw"
+        "feature_row_MckwVw",
+        "feature_row_yHWtjF"
       ],
       "name": "Black Comparison VIP",
       "settings": {
