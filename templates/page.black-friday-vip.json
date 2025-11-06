@@ -180,7 +180,7 @@
         "title": "VIP vs. General Access Comparison",
         "title_color": "#e6b85c",
         "feature_text_color": "#ffffff",
-        "vip_text_color": "#e6b85c",
+        "vip_text_color": "#ffffff",
         "vip_border_color": "#e6b85c",
         "general_text_color": "#0076ff",
         "bg_color": "#131516",
