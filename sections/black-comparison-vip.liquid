@@ -16,17 +16,29 @@
         <div class="comparison-row">
           <div class="feature">
             {% if block.settings.icon != blank %}
-                <img src="{{ block.settings.icon | image_url: width: 100 }}" alt="banner-image" width="100px" height="auto"  class="feature-icon">
+              <img
+                src="{{ block.settings.icon | image_url: width: 100 }}"
+                alt="banner-image"
+                width="100px"
+                height="auto"
+                class="feature-icon"
+              >
             {% endif %}
-            <span class="feature-text" style="color: {{ section.settings.feature_color }};">{{ block.settings.feature_text }}</span>
+            <span class="feature-text" style="color: {{ section.settings.feature_color }};">
+              {{ block.settings.feature_text }}
+            </span>
           </div>
 
           <div class="vip-access">
-            <span class="vip-text" style="color: {{ section.settings.vip_color }};">{{ block.settings.vip_text }}</span>
+            <span class="vip-text" style="color: {{ section.settings.vip_color }};">
+              {{ block.settings.vip_text }}
+            </span>
           </div>
 
           <div class="general-access">
-            <span class="general-text" style="color: {{ section.settings.general_color }};">{{ block.settings.general_text }}</span>
+            <span class="general-text" style="color: {{ section.settings.general_color }};">
+              {{ block.settings.general_text }}
+            </span>
           </div>
         </div>
       {% endfor %}
@@ -47,7 +59,7 @@
       "type": "color",
       "id": "title_color",
       "label": "Title Color",
-      "default": "#ffffff"
+      "default": "#e6b85c"
     },
     {
       "type": "text",
@@ -58,7 +70,7 @@
       "type": "color",
       "id": "subtitle_color",
       "label": "Subtitle Color",
-      "default": "#e6b85c"
+      "default": "#ffffff"
     },
     {
       "type": "color",
@@ -125,96 +137,118 @@
 }
 {% endschema %}
 
-  <style>
-    #black-comparison-vip-{{ section.id }} {
-      padding: 60px 20px;
-      font-family: 'Inter', sans-serif;
-      color: #fff;
-    }
+<style>
+  #black-comparison-vip-{{ section.id }} {
+    padding: 60px 20px;
+    font-family: 'Inter', sans-serif;
+    color: #fff;
+  }
 
-    #black-comparison-vip-{{ section.id }} .container {
-      max-width: 1100px;
-      margin: 0 auto;
-    }
+  #black-comparison-vip-{{ section.id }} .container {
+    max-width: 950px;
+    margin: 0 auto;
+  }
 
-    .comparison-title {
-      font-size: 2.2rem;
-      text-align: center;
-      font-weight: 700;
-      margin-bottom: 10px;
-    }
+  .comparison-title {
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 40px;
+    letter-spacing: 0.5px;
+  }
 
-    .comparison-subtitle {
-      text-align: center;
-      font-size: 1.1rem;
-      margin-bottom: 40px;
-    }
+  .comparison-subtitle {
+    text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+  }
 
-    .comparison-table {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
+  .comparison-table {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
 
+  .comparison-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #111;
+    border-radius: 10px;
+    padding: 20px 25px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .feature {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 2;
+    font-weight: 500;
+  }
+
+  .feature-icon {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+    filter: brightness(0) saturate(100%) invert(81%) sepia(43%) saturate(626%) hue-rotate(7deg) brightness(95%) contrast(89%);
+  }
+
+  .feature-text {
+    font-size: 1rem;
+  }
+
+  .vip-access {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+
+  .vip-text {
+    display: inline-block;
+    border: 1.5px solid #e6b85c;
+    border-radius: 8px;
+    padding: 10px 25px;
+    text-align: center;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+
+  .vip-text:hover {
+    background-color: rgba(230, 184, 92, 0.1);
+    box-shadow: 0 0 10px rgba(230, 184, 92, 0.3);
+  }
+
+  .general-access {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    opacity: 0.8;
+  }
+
+  .general-text {
+    font-weight: 400;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
     .comparison-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background-color: rgba(255, 255, 255, 0.05);
-      border-radius: 12px;
-      padding: 20px;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .comparison-row > div {
-      flex: 1;
-      text-align: center;
-    }
-
-    .feature {
-      display: flex;
-      align-items: center;
-      gap: 10px;
+      flex-direction: column;
+      align-items: flex-start;
       text-align: left;
-      flex: 2;
+      gap: 10px;
+      padding: 20px;
     }
 
-    .feature-icon {
-      width: 30px;
-      height: 30px;
-      object-fit: contain;
-    }
-
-    .vip-access {
-      flex: 1;
-      border: 2px solid #e6b85c;
-      border-radius: 8px;
-      padding: 10px;
-      font-weight: 600;
-    }
-
+    .feature,
+    .vip-access,
     .general-access {
-      flex: 1;
-      opacity: 0.8;
-      font-weight: 400;
+      width: 100%;
+      justify-content: flex-start;
     }
 
-    /* Responsive */
-    @media (max-width: 768px) {
-      .comparison-row {
-        flex-direction: column;
-        align-items: flex-start;
-        text-align: left;
-      }
-
-      .comparison-row > div {
-        width: 100%;
-        text-align: left;
-      }
-
-      .vip-access,
-      .general-access {
-        margin-top: 10px;
-      }
+    .vip-text {
+      padding: 8px 18px;
     }
-  </style>
+  }
+</style>
