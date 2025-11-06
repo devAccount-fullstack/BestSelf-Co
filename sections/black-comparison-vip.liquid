@@ -36,7 +36,7 @@
               </span>
             </div>
             <div class="comparison-col vip-col" style="color: {{ section.settings.vip_text_color }};">
-              {{ block.settings.vip_text }}
+              {{ block.settings.vip_text }}{{ block.settings.content }}
             </div>
             <div class="comparison-col general-col" style="color: {{ section.settings.general_text_color }};">
               {{ block.settings.general_text }}
@@ -121,6 +121,12 @@
       {
         "type": "text",
         "id": "vip_text",
+        "label": "VIP Text",
+        "default": "25%"
+      },
+      {
+        "type": "text",
+        "id": "vip_content",
         "label": "VIP Text",
         "default": "25%"
       },
