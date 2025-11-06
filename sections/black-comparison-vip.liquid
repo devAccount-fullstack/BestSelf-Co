@@ -14,41 +14,46 @@
     {% endif %}
 
     <div class="comparison-table">
-      {% for block in section.blocks %}
-        <div class="comparison-row">
-          <div class="comparison-feature">
-            {% if block.settings.icon != blank %}
-              <img
-                src="{{ block.settings.icon | img_url: '64x64' }}"
-                alt=""
-                width="64"
-                height="auto"
-                class="feature-icon"
-              >
-            {% endif %}
-            <span
-              class="feature-text"
-              style="color: {{ section.settings.feature_text_color }};"
-            >
-              {{ block.settings.feature_text }}
-            </span>
-          </div>
-
-          <div
-            class="comparison-vip"
-            style="border-color: {{ section.settings.vip_border_color }}; color: {{ section.settings.vip_text_color }};"
-          >
-            {{ block.settings.vip_text }}
-          </div>
-
-          <div
-            class="comparison-general"
-            style="color: {{ section.settings.general_text_color }};"
-          >
-            {{ block.settings.general_text }}
-          </div>
+        <div class="vip-table-header">
+        <div class="vip-col vip-tier-head">VIP Tier</div>
+        <div class="vip-col vip-reward-head">Your Reward</div>
+        <div class="vip-col vip-threshold-head">Threshold</div>
         </div>
-      {% endfor %}
+        {% for block in section.blocks %}
+            <div class="comparison-row">
+            <div class="comparison-feature">
+                {% if block.settings.icon != blank %}
+                <img
+                    src="{{ block.settings.icon | img_url: '64x64' }}"
+                    alt=""
+                    width="64"
+                    height="auto"
+                    class="feature-icon"
+                >
+                {% endif %}
+                <span
+                class="feature-text"
+                style="color: {{ section.settings.feature_text_color }};"
+                >
+                {{ block.settings.feature_text }}
+                </span>
+            </div>
+
+            <div
+                class="comparison-vip"
+                style="border-color: {{ section.settings.vip_border_color }}; color: {{ section.settings.vip_text_color }};"
+            >
+                {{ block.settings.vip_text }}
+            </div>
+
+            <div
+                class="comparison-general"
+                style="color: {{ section.settings.general_text_color }};"
+            >
+                {{ block.settings.general_text }}
+            </div>
+            </div>
+        {% endfor %}
     </div>
   </div>
 
