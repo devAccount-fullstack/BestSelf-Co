@@ -164,21 +164,19 @@ style="background-color: {{ section.settings.bg_color }};"
     text-align: left;
     width: 80%;
     margin: 40px auto;
-    border-collapse: collapse;
   }
-
   #black-comparison-vip-{{ section.id }} .feature-icon {
     width: 26px;
     height: 26px;
     object-fit: contain;
     opacity: 0.9;
   }
-
   #black-comparison-vip-{{ section.id }} .comparison-table-header,
   #black-comparison-vip-{{ section.id }} .comparison-rows {
     display: grid;
-    grid-template-columns: 1.5fr 0.8fr 0.8fr;
-    align-items: stretch;
+    grid-template-columns: 1.5fr .8fr .8fr;
+    align-items: center;
+    padding: 14px 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   }
 
@@ -199,7 +197,10 @@ style="background-color: {{ section.settings.bg_color }};"
     font-size: 20px;
     font-family: 'Inter', sans-serif;
     color: #fff;
-    padding: 20px;
+  }
+
+  .comparison-table .comparison-rows {
+    border-bottom: none;
   }
 
   #black-comparison-vip-{{ section.id }} .comparison-col:nth-child(1) {
@@ -209,32 +210,16 @@ style="background-color: {{ section.settings.bg_color }};"
     gap: 20px;
   }
 
-  /* ✅ VIP Access full background */
+  /* ✅ Make VIP Access background dynamic */
   #black-comparison-vip-{{ section.id }} .comparison-col:nth-child(2) {
     font-weight: 400;
     text-align: start;
     background: {{ section.settings.vip_bg_color }};
-    border-left: 1px solid {{ section.settings.vip_border_color }};
-    border-right: 1px solid {{ section.settings.vip_border_color }};
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
 
   #black-comparison-vip-{{ section.id }} .comparison-col:nth-child(3) {
     text-align: start;
     font-weight: 400;
-  }
-
-  /* ✅ Remove gaps or unwanted space between rows */
-  #black-comparison-vip-{{ section.id }} .comparison-rows {
-    gap: 0;
-  }
-
-  /* ✅ Remove any default border-bottom for last row */
-  #black-comparison-vip-{{ section.id }} .comparison-rows:last-child .comparison-col {
-    border-bottom: none;
   }
 
   @media (max-width: 768px) {
@@ -251,7 +236,6 @@ style="background-color: {{ section.settings.bg_color }};"
     #black-comparison-vip-{{ section.id }} .comparison-col {
       padding: 4px 0;
     }
-
     #black-comparison-vip-{{ section.id }} .comparison-col:nth-child(2),
     #black-comparison-vip-{{ section.id }} .comparison-col:nth-child(3) {
       text-align: center;
