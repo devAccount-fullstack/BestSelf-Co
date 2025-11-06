@@ -182,8 +182,9 @@
         "feature_text_color": "#ffffff",
         "vip_text_color": "#e6b85c",
         "vip_border_color": "#e6b85c",
-        "general_text_color": "#b3b3b3",
-        "bg_color": "#000000"
+        "general_text_color": "#0076ff",
+        "bg_color": "#000000",
+        "vip_bg_color": "#fbc94b"
       }
     },
     "black_friday_ugc_9TEbT3": {
