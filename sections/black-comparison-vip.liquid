@@ -1,0 +1,278 @@
+<section id="black-comparison-vip-{{ section.id }}" class="black-comparison-vip">
+  <div class="container">
+    {% if section.settings.title != blank %}
+      <h2 class="comparison-title" style="color: {{ section.settings.title_color }};">
+        {{ section.settings.title }}
+      </h2>
+    {% endif %}
+
+    <div class="comparison-table">
+      <div class="comparison-table-header">
+        <div class="comparison-col comparison-tier-head">Feature</div>
+        <div class="comparison-col comparison-reward-head">VIP Access</div>
+        <div class="comparison-col comparison-general-head">General Access</div>
+      </div>
+
+      <div class="comparison-table-body">
+        <div class="vip-bg"></div> <!-- ✅ full background layer for VIP -->
+        {% for block in section.blocks %}
+          <div class="comparison-rows">
+            <div class="comparison-col feature-col">
+              {% if block.settings.icon != blank %}
+                <img
+                  src="{{ block.settings.icon | img_url: '64x64' }}"
+                  alt=""
+                  width="26"
+                  height="26"
+                  class="feature-icon"
+                >
+              {% endif %}
+              <span class="feature-text" style="color: {{ section.settings.feature_text_color }};">
+                {{ block.settings.feature_text }}
+              </span>
+            </div>
+            <div class="comparison-col vip-col" style="color: {{ section.settings.vip_text_color }};">
+              <span>{{ block.settings.vip_text }}</span>
+              {% if block.settings.vip_content != blank %}
+                <span class="vip-content">{{ block.settings.vip_content }}</span>
+              {% endif %}
+            </div>
+            <div class="comparison-col general-col" style="color: {{ section.settings.general_text_color }};">
+              {{ block.settings.general_text }}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+
+{% schema %}
+{
+"name": "Black Comparison VIP",
+"settings": [
+  {
+    "type": "text",
+    "id": "title",
+    "label": "Section Title",
+    "default": "VIP vs. General Access Comparison"
+  },
+  {
+    "type": "color",
+    "id": "title_color",
+    "label": "Title Color",
+    "default": "#e6b85c"
+  },
+  {
+    "type": "color",
+    "id": "feature_text_color",
+    "label": "Feature Text Color",
+    "default": "#ffffff"
+  },
+  {
+    "type": "color",
+    "id": "vip_text_color",
+    "label": "VIP Text Color",
+    "default": "#e6b85c"
+  },
+  {
+    "type": "color",
+    "id": "general_text_color",
+    "label": "General Text Color",
+    "default": "#b3b3b3"
+  },
+  {
+    "type": "color",
+    "id": "gradient_center_color",
+    "label": "Background center",
+    "default": "#000000"
+  },
+  {
+    "type": "color",
+    "id": "gradient_outer_color",
+    "label": "Background outer",
+    "default": "#000000"
+  },
+  {
+    "type": "color",
+    "id": "vip_bg_color",
+    "label": "VIP Column Background Color",
+    "default": "#ff0000"
+  }
+],
+"blocks": [
+  {
+    "type": "feature_row",
+    "name": "Feature Row",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "icon",
+        "label": "Feature Icon"
+      },
+      {
+        "type": "text",
+        "id": "feature_text",
+        "label": "Feature Text",
+        "default": "Starting Discount"
+      },
+      {
+        "type": "text",
+        "id": "vip_text",
+        "label": "VIP Text",
+        "default": "25%"
+      },
+      {
+        "type": "text",
+        "id": "vip_content",
+        "label": "VIP Content"
+      },
+      {
+        "type": "text",
+        "id": "general_text",
+        "label": "General Text",
+        "default": "20%"
+      }
+    ]
+  }
+],
+"presets": [
+  {
+    "name": "Black Comparison VIP"
+  }
+]
+}
+{% endschema %}
+
+<style>
+  #black-comparison-vip-{{ section.id }} {
+    background: radial-gradient(circle at right, {{ section.settings.gradient_center_color }} -50%, {{ section.settings.gradient_outer_color }} 19%);
+    color: {{ section.settings.text_color }};
+    padding: 60px 20px;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+  }
+
+  #black-comparison-vip-{{ section.id }} .container {
+    max-width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+  }
+
+  /* Title */
+  #black-comparison-vip-{{ section.id }} .comparison-title {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 50px;
+    letter-spacing: 0.4px;
+  }
+
+  /* Table structure */
+  #black-comparison-vip-{{ section.id }} .comparison-table {
+    position: relative;
+    text-align: left;
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  #black-comparison-vip-{{ section.id }} .comparison-table-body {
+    position: relative;
+  }
+
+  .vip-content {
+    font-size: 14px;
+    margin-left: 15px;
+    padding: 4px 12px;
+    background: #C9A062;
+    border-radius: 50px;
+    color: #1C1A17;
+  }
+
+  /* ✅ VIP full background behind column */
+  #black-comparison-vip-{{ section.id }} .vip-bg {
+    position: absolute;
+    top: -20%;
+    bottom: 0;
+    left: 44.5%;
+    width: 25.5%;
+    background: #C9A0624D;
+    border-radius: 14px;
+    z-index: 0;
+  }
+
+  #black-comparison-vip-{{ section.id }} .comparison-table-header,
+  #black-comparison-vip-{{ section.id }} .comparison-rows {
+    display: grid;
+    grid-template-columns: 1.5fr 0.8fr 0.8fr;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    position: relative;
+    z-index: 1;
+  }
+
+  #black-comparison-vip-{{ section.id }} .comparison-table-header {
+    font-size: 12px;
+    text-transform: uppercase;
+    opacity: 0.7;
+    letter-spacing: 0.4px;
+    font-weight: 500;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    color: #FFFFFF99;
+  }
+
+  #black-comparison-vip-{{ section.id }} .comparison-rows:last-child {
+    border-bottom: none;
+  }
+
+  #black-comparison-vip-{{ section.id }} .comparison-col {
+    font-size: 20px;
+    padding: 18px 0;
+    z-index: 2;
+  }
+
+  #black-comparison-vip-{{ section.id }} .feature-col {
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  #black-comparison-vip-{{ section.id }} .vip-col {
+    font-weight: 400;
+    text-align: start;
+  }
+
+  #black-comparison-vip-{{ section.id }} .general-col {
+    font-weight: 400;
+    text-align: start;
+  }
+
+  /* Icons */
+  #black-comparison-vip-{{ section.id }} .feature-icon {
+    width: 26px;
+    height: 26px;
+    object-fit: contain;
+  }
+
+  @media (max-width: 768px) {
+    #black-comparison-vip-{{ section.id }} .comparison-table-header {
+      display: none;
+    }
+
+    #black-comparison-vip-{{ section.id }} .vip-bg {
+      display: none; /* Hide background on mobile for stacked layout */
+    }
+
+    #black-comparison-vip-{{ section.id }} .comparison-rows {
+      grid-template-columns: 1fr;
+      text-align: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    #black-comparison-vip-{{ section.id }} .comparison-col {
+      padding: 8px 0;
+    }
+  }
+</style>
