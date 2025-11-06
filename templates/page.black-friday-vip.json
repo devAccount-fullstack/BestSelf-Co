@@ -156,6 +156,26 @@
         "bg_color": "#000000"
       }
     },
+    "black_friday_ugc_9TEbT3": {
+      "type": "black-friday-ugc",
+      "blocks": {
+        "video_block_9ff33U": {
+          "type": "video_block",
+          "settings": {
+            "thumbnail": "shopify://shop_images/bestself-planner-journal-personal-growth-forest-green-406020.jpg",
+            "video_url": "https://www.youtube.com/watch?v=K4TOrB7at0Y"
+          }
+        }
+      },
+      "block_order": [
+        "video_block_9ff33U"
+      ],
+      "name": "Black Friday UGC",
+      "settings": {
+        "bg_color": "#1e1f3a",
+        "heading": "UGC display here"
+      }
+    },
     "landing_footer_aqYdtb": {
       "type": "landing-footer",
       "name": "Landing Footer",
@@ -173,6 +193,7 @@
     "black_banner_vip_yTiAKe",
     "black_vip_table_xUDGdi",
     "black_comparison_vip_UTnXA4",
+    "black_friday_ugc_9TEbT3",
     "landing_footer_aqYdtb"
   ]
 }
