@@ -127,7 +127,7 @@
           "type": "discount_block",
           "settings": {
             "discount_text": "35% OFF $100+",
-            "sub_text": "+ Free Gift",
+            "sub_text": "+ Free Gift & Shipping",
             "bg_color": "#ffffff"
           }
         }
