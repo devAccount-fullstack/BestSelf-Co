@@ -180,42 +180,104 @@
       ],
       "name": "Black Comparison VIP",
       "settings": {
+        "bg_color": "#131516",
         "title": "VIP vs. General Access Comparison",
         "title_color": "#e6b85c",
         "feature_text_color": "#ffffff",
         "vip_text_color": "#ffffff",
-        "general_text_color": "#ffffff",
-        "gradient_center_color": "#e6b85c",
-        "gradient_outer_color": "#131516",
-        "vip_bg_color": "rgba(0,0,0,0)"
+        "general_text_color": "#ffffff"
       }
     },
-    "black_friday_ugc_9TEbT3": {
+    "black_friday_ugc_H4Tkmr": {
       "type": "black-friday-ugc",
       "blocks": {
-        "video_block_9ff33U": {
+        "video_block_WbgtrE": {
           "type": "video_block",
           "settings": {
-            "thumbnail": "shopify://shop_images/bestself-planner-journal-personal-growth-forest-green-406020.jpg",
+            "thumbnail": "shopify://shop_images/meeting-mastery-pad-50-off-professional-growth-189305.jpg",
             "video_url": "https://www.youtube.com/watch?v=K4TOrB7at0Y"
           }
         }
       },
       "block_order": [
-        "video_block_9ff33U"
+        "video_block_WbgtrE"
       ],
       "name": "Black Friday UGC",
       "settings": {
+        "bg_color": "#1e1f3a",
+        "heading": "UGC display here",
+        "heading_title": "UGC display here"
+      }
+    },
+    "black_vip_accordion_J9qrbH": {
+      "type": "black-vip-accordion",
+      "blocks": {
+        "accordion_item_Y8znAW": {
+          "type": "accordion_item",
+          "settings": {
+            "title": "Helm ",
+            "content": "<p>Your evolution beyond the Journal —  special BF batch nearly gone </p>",
+            "italic_note": "If it doesn’t transform your life, you don’t pay. ",
+            "button_link": "/",
+            "button_label": "Shop now - Only X left at discounted price",
+            "image": "shopify://shop_images/image_120.png"
+          }
+        },
+        "accordion_item_jEFChq": {
+          "type": "accordion_item",
+          "settings": {
+            "title": "Productivity",
+            "content": "<p>3-pack Journals — so you can gift clarity,  which means you’ll inspire someone’s best year yet.</p>",
+            "italic_note": "If it doesn’t transform your life, you don’t pay. ",
+            "button_link": "/",
+            "button_label": "Shop now - Only X left at discounted price",
+            "image": "shopify://shop_images/image_111_256da114-b7d8-470f-932d-8ab5fc4cbd7c.png"
+          }
+        },
+        "accordion_item_Jd3Rtg": {
+          "type": "accordion_item",
+          "settings": {
+            "title": "Relationships",
+            "content": "<p>Bring people closer this holiday — which means no small talk, only real connection </p>",
+            "italic_note": "If it doesn’t transform your life, you don’t pay. ",
+            "button_link": "/",
+            "button_label": "Shop now – Only X left at discounted price",
+            "image": "shopify://shop_images/intimacy-deck-card-deck-romantic-connection-529185.jpg"
+          }
+        },
+        "accordion_item_N3HWtd": {
+          "type": "accordion_item",
+          "settings": {
+            "title": "Parenting",
+            "content": "<p>170 Conversation starters for kids that build emotional intelligence and strengthen bonds</p>",
+            "italic_note": "If it doesn’t transform your life, you don’t pay.",
+            "button_link": "",
+            "button_label": "Shop now – Only X left at discounted price",
+            "image": "shopify://shop_images/little-talk-deck-card-deck-kids-family-555313.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "accordion_item_Y8znAW",
+        "accordion_item_jEFChq",
+        "accordion_item_Jd3Rtg",
+        "accordion_item_N3HWtd"
+      ],
+      "name": "Black VIP Accordion",
+      "settings": {
         "bg_color": "#131516",
-        "heading": "UGC display here"
+        "text_color": "#ffffff",
+        "accent_color": "#c9a062"
       }
     },
     "black_friday_product_slider_BpdgDq": {
       "type": "black-friday-product-slider",
       "name": "Black Friday Product Slider",
       "settings": {
-        "heading": "Your Loyalty Unlocks  a Gift That Money Can’t Buy",
-        "collection": "best-sellers",
+        "heading": "Your Loyalty Unlocks",
+        "heading_vip": "a Gift That Money Can’t Buy",
+        "content_vip": "Every qualifying VIP order ($75+) receives a limited-edition BestSelf item — not available to the public.",
+        "collection": "be-your-best-you",
         "bg_color": "#131516"
       }
     },
@@ -241,7 +303,8 @@
       ],
       "name": "Testimonial Content",
       "settings": {
-        "background_color": "#131516"
+        "background_color": "#131516",
+        "gradient_color": "rgba(0,0,0,0)"
       }
     },
     "landing_footer_aqYdtb": {
@@ -261,7 +324,8 @@
     "black_banner_vip_yTiAKe",
     "black_vip_table_xUDGdi",
     "black_comparison_vip_UTnXA4",
-    "black_friday_ugc_9TEbT3",
+    "black_friday_ugc_H4Tkmr",
+    "black_vip_accordion_J9qrbH",
     "black_friday_product_slider_BpdgDq",
     "landing_testimonial_rBA7NT",
     "landing_footer_aqYdtb"

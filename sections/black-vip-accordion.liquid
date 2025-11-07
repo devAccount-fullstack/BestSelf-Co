@@ -1,0 +1,450 @@
+<section id="black-vip-accordion-{{ section.id }}" class="black-vip-accordion" style="background-color: {{ section.settings.bg_color }}; color: {{ section.settings.text_color }};">
+  <div class="acc-gradient-right"></div>
+  <div class="accordion-wrapper">
+    <div class="accordion-left">
+      {% for block in section.blocks %}
+        <div class="accordion-item {% if forloop.first %}active{% endif %}" data-index="{{ forloop.index0 }}">
+          <button class="accordion-header">
+            <span class="accordion-title">{{ block.settings.title }}</span>
+            <span class="accordion-icon">
+              <svg class="icon-open" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="{{ section.settings.accent_color }}" viewBox="0 0 24 24"><path d="M12 15.5l-7-7 1.41-1.42L12 12.67l5.59-5.59L19 8.5z"/></svg>
+              <svg class="icon-close" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="{{ section.settings.accent_color }}" viewBox="0 0 24 24"><path d="M12 8.5l7 7-1.41 1.42L12 11.33l-5.59 5.59L5 15.5z"/></svg>
+            </span>
+          </button>
+          <div class="accordion-body" {% if forloop.first %}style="display:block; max-height:500px;"{% endif %}>
+            <div class="accordion-content">
+              {{ block.settings.content }}
+              <a href="{{ block.settings.button_link }}" class="accordion-btn">{{ block.settings.button_label }}</a>
+              {% if block.settings.italic_note != blank %}
+                <p class="italic-note"><em>{{ block.settings.italic_note }}</em></p>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+    <div class="accordion-right">
+      {% for block in section.blocks %}
+        {% if block.settings.image != blank %}
+          <div class="img-frame {% if forloop.first %}active{% endif %}" data-index="{{ forloop.index0 }}">
+            <img src="{{ block.settings.image | img_url: 'master' }}" width="570px" height="auto" alt="{{ block.settings.title }}">
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<style>
+#black-vip-accordion-{{ section.id }} {
+    position: relative;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+    padding: 60px 20px;
+    overflow: visible;
+}
+.acc-gradient-right {
+  position: absolute;
+  width: 100%;
+  height: 125%;
+  z-index: 100000;
+  pointer-events: none;
+  left: 0;
+  top: 0;
+  overflow: visible;
+  background: radial-gradient(circle at 83% 54%, rgba(230, 184, 92, 0.2), transparent 20%);
+}
+.accordion-wrapper {
+  display: flex;
+  max-width: 80%;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: space-between;
+}
+.accordion-left {
+  flex: 1;
+  max-width: 50%;
+}
+.accordion-header {
+  background: none;
+  border: none;
+  color: {{ section.settings.accent_color }};
+  font-family: 'Libre Baskerville', serif;
+  font-weight: 600;
+  width: 100%;
+  text-align: left;
+  padding: 15px 0;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+.accordion-item.active .accordion-header {
+  border-bottom: unset;
+}
+
+.accordion-item {
+  width: 80%;
+}
+
+.accordion-title {
+  font-size: 24px;
+  transition: all 0.4s ease;
+}
+.accordion-item.active .accordion-title {
+  font-size: 48px;
+  text-decoration: none;
+}
+.accordion-icon svg {
+  display: none;
+  transition: transform 0.3s ease;
+}
+.accordion-item.active .icon-close {
+  display: inline;
+}
+.accordion-item:not(.active) .icon-open {
+  display: inline;
+}
+.accordion-body {
+  display: none;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  max-height: 0;
+}
+.accordion-item.active .accordion-body {
+  display: block;
+  max-height: 500px;
+}
+.accordion-content {
+  font-size: 20px;
+  line-height: 1.7;
+  margin-top: 10px;
+  text-align: start;
+}
+.accordion-btn {
+  display: inline-block;
+  background: none;
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 16px 36px;
+  border-radius: 9999px;
+  text-decoration: none;
+  margin-top: 15px;
+  font-size: 20px;
+  transition: all 0.3s ease;
+}
+.accordion-btn:hover {
+  background: #fff;
+  color: #000;
+}
+.italic-note {
+  margin-top: 15px;
+  font-style: italic;
+  font-size: 16px;
+  opacity: 0.7;
+}
+.accordion-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.img-frame {
+  display: none;
+  background: #fff;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+  transition: opacity 0.5s ease;
+}
+.img-frame img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+.img-frame.active {
+  display: block;
+  opacity: 1;
+}
+
+/* Responsive Enhancements */
+
+/* 2550px and up — very large screens */
+@media (min-width: 1921px) and (max-width: 2550px) {
+  #black-vip-accordion-{{ section.id }} {
+    padding: 100px 0;
+  }
+  .accordion-wrapper {
+    max-width: 70%;
+    gap: 100px;
+  }
+  .accordion-title {
+    font-size: 36px;
+  }
+  .accordion-item.active .accordion-title {
+    font-size: 60px;
+  }
+  .accordion-content {
+    font-size: 22px;
+  }
+  .accordion-btn {
+    font-size: 22px;
+    padding: 18px 42px;
+  }
+}
+
+/* 1440px (desktop widescreen) */
+@media (max-width: 1440px) {
+  .accordion-wrapper {
+    max-width: 85%;
+    gap: 80px;
+  }
+  .accordion-title {
+    font-size: 22px;
+  }
+  .accordion-item.active .accordion-title {
+    font-size: 42px;
+  }
+  .accordion-content {
+    font-size: 18px;
+  }
+  .accordion-btn {
+    font-size: 18px;
+    padding: 14px 32px;
+  }
+}
+
+/* 1024px (tablet landscape) */
+@media (max-width: 1024px) {
+  .accordion-wrapper {
+    align-items: center;
+    text-align: center;
+    gap: 50px;
+    max-width: 90%;
+  }
+  .accordion-left, .accordion-right {
+    max-width: 100%;
+  }
+  .accordion-title {
+    font-size: 20px;
+  }
+  .accordion-item.active .accordion-title {
+    font-size: 36px;
+  }
+  .accordion-content {
+    font-size: 18px;
+  }
+  .accordion-btn {
+    font-size: 16px;
+    padding: 12px 28px;
+  }
+  .img-frame {
+    width: 80%;
+    padding: 25px;
+  }
+  .accordion-item {
+    width: 100%;
+  }
+}
+
+/* 768px (tablet portrait) */
+@media (max-width: 768px) {
+  .accordion-wrapper {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 40px;
+    max-width: 95%;
+  }
+  .accordion-title {
+    font-size: 18px;
+  }
+  .accordion-item.active .accordion-title {
+    font-size: 32px;
+  }
+  .accordion-content {
+    font-size: 16px;
+  }
+  .accordion-btn {
+    font-size: 14px;
+    padding: 10px 24px;
+  }
+  .img-frame {
+    width: 90%;
+    padding: 20px;
+  }
+  .accordion-item {
+    width: 100%;
+  }
+}
+
+/* 425px (mobile large) */
+@media (max-width: 425px) {
+  #black-vip-accordion-{{ section.id }} {
+    padding: 50px 0;
+  }
+  .accordion-wrapper {
+    flex-direction: column;
+    gap: 30px;
+    max-width: 95%;
+  }
+  .accordion-title {
+    font-size: 18px;
+  }
+  .accordion-item.active .accordion-title {
+    font-size: 28px;
+  }
+  .accordion-content {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  .accordion-btn {
+    font-size: 14px;
+    padding: 10px 22px;
+  }
+  .italic-note {
+    font-size: 12px;
+  }
+  .img-frame {
+    width: 100%;
+    padding: 18px;
+  }
+  .accordion-item {
+    width: 100%;
+  }
+}
+
+/* 375px (mobile small) */
+@media (max-width: 375px) {
+  #black-vip-accordion-{{ section.id }} {
+    padding: 40px 0;
+  }
+  .accordion-wrapper {
+    gap: 25px;
+  }
+  .accordion-title {
+    font-size: 16px;
+  }
+  .accordion-item.active .accordion-title {
+    font-size: 26px;
+  }
+  .accordion-content {
+    font-size: 13px;
+  }
+  .accordion-btn {
+    font-size: 13px;
+    padding: 8px 20px;
+  }
+  .italic-note {
+    font-size: 12px;
+  }
+  .img-frame {
+    padding: 15px;
+  }
+  .accordion-item {
+    width: 100%;
+  }
+}
+
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const section = document.querySelector('#black-vip-accordion-{{ section.id }}');
+  const items = section.querySelectorAll('.accordion-item');
+  const images = section.querySelectorAll('.img-frame');
+
+  items.forEach((item, index) => {
+    const header = item.querySelector('.accordion-header');
+    const body = item.querySelector('.accordion-body');
+    header.addEventListener('click', () => {
+      if (item.classList.contains('active')) return;
+      items.forEach((el, i) => {
+        el.classList.remove('active');
+        el.querySelector('.accordion-body').style.maxHeight = null;
+        images[i]?.classList.remove('active');
+      });
+      item.classList.add('active');
+      body.style.maxHeight = body.scrollHeight + "px";
+      images[index]?.classList.add('active');
+    });
+  });
+});
+</script>
+
+{% schema %}
+{
+  "name": "Black VIP Accordion",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#0d0d0d"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Accent (Gold)",
+      "default": "#d4af37"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "accordion_item",
+      "name": "Accordion Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Accordion Title",
+          "default": "Productivity"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Accordion Content",
+          "default": "<p>3-pack Journals — so you can gift clarity, which means you'll inspire someone's best year yet.</p>"
+        },
+        {
+          "type": "text",
+          "id": "italic_note",
+          "label": "Italic Note",
+          "default": "If it doesn’t transform your life, you don’t pay."
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button Link"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button Label",
+          "default": "Shop now – Only X left at discounted price"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Right Side Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Black VIP Accordion"
+    }
+  ]
+}
+{% endschema %}

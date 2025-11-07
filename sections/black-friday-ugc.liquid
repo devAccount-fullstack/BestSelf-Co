@@ -8,6 +8,10 @@
       <h2 class="ugc-heading">{{ section.settings.heading }}</h2>
     {% endif %}
 
+    {% if section.settings.heading_title != blank %}
+      <h2 class="ugc-heading_title">{{ section.settings.heading_title }}</h2>
+    {% endif %}
+
     <div class="ugc-slider splide" id="ugc-slider-{{ section.id }}">
       <div class="splide__track">
         <ul class="splide__list">
@@ -68,6 +72,12 @@
       "id": "heading",
       "label": "Section Heading",
       "default": "UGC display here"
+    },
+    {
+      "type": "text",
+      "id": "heading_title",
+      "label": "Section Heading",
+      "default": "UGC display here"
     }
   ],
   "blocks": [
@@ -108,17 +118,26 @@
 
 .ugc-container {
   max-width: 90%;
-  margin: 0 auto;
+  margin:0 auto;
 }
 
 .ugc-heading {
   font-size: 36px;
   font-family: Libre Baskerville, serif;
   font-weight: 700;
-  margin-bottom: 50px;
+  line-height: 60px;
+}
+
+.ugc-heading_title {
+  font-size: 36px;
+  font-family: Libre Baskerville, serif;
+  font-weight: 700;
+  color: #C9A062;
+  font-style: italic;
 }
 
 .splide__slide {
+  margin-top: 50px;
   display: flex;
   justify-content: center;
 }

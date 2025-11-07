@@ -68,12 +68,12 @@
 
     .testimonial-content::before {
       left: 0;
-      background: linear-gradient(to right, #0f1133 0%, transparent 100%);
+      background: linear-gradient(to right, {{ section.settings.gradient_color }} 0%, transparent 100%);
     }
 
     .testimonial-content::after {
       right: 0;
-      background: linear-gradient(to left, #0f1133 0%, transparent 100%);
+      background: linear-gradient(to left, {{ section.settings.gradient_color }} 0%, transparent 100%);
     }
 
     @media (max-width: 768px) {
@@ -114,6 +114,12 @@
         "type": "color",
         "id": "background_color",
         "label": "Background color",
+        "default": "#0f1133"
+      },
+      {
+        "type": "color",
+        "id": "gradient_color",
+        "label": "Gradient color",
         "default": "#0f1133"
       }
     ],

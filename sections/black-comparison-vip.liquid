@@ -1,4 +1,7 @@
-<section id="black-comparison-vip-{{ section.id }}" class="black-comparison-vip">
+<section id="black-comparison-vip-{{ section.id }}" class="black-comparison-vip"
+style="background-color: {{ section.settings.bg_color }};"
+>
+  <div class="comparison-right"></div>
   <div class="container">
     {% if section.settings.title != blank %}
       <h2 class="comparison-title" style="color: {{ section.settings.title_color }};">
@@ -53,6 +56,12 @@
 "name": "Black Comparison VIP",
 "settings": [
   {
+    "type": "color",
+    "id": "bg_color",
+    "label": "Background Color",
+    "default": "#000"
+  },
+  {
     "type": "text",
     "id": "title",
     "label": "Section Title",
@@ -81,24 +90,6 @@
     "id": "general_text_color",
     "label": "General Text Color",
     "default": "#b3b3b3"
-  },
-  {
-    "type": "color",
-    "id": "gradient_center_color",
-    "label": "Background center",
-    "default": "#000000"
-  },
-  {
-    "type": "color",
-    "id": "gradient_outer_color",
-    "label": "Background outer",
-    "default": "#000000"
-  },
-  {
-    "type": "color",
-    "id": "vip_bg_color",
-    "label": "VIP Column Background Color",
-    "default": "#ff0000"
   }
 ],
 "blocks": [
@@ -147,11 +138,24 @@
 
 <style>
   #black-comparison-vip-{{ section.id }} {
-    background: radial-gradient(circle at right, {{ section.settings.gradient_center_color }} -50%, {{ section.settings.gradient_outer_color }} 19%);
-    color: {{ section.settings.text_color }};
-    padding: 60px 20px;
-    text-align: center;
+    position: relative;
+    color: #fff;
     font-family: 'Inter', sans-serif;
+    text-align: center;
+    padding: 60px 20px;
+    overflow: visible;
+  }
+
+  .comparison-right {
+    position: absolute;
+    width: 100%;
+    height: 139%;
+    z-index: 100000;
+    pointer-events: none;
+    left: 0;
+    top: -34%;
+    overflow: visible;
+    background: radial-gradient(circle at right, rgba(230, 184, 92, 0.2), transparent 22%);
   }
 
   #black-comparison-vip-{{ section.id }} .container {
@@ -256,23 +260,144 @@
     object-fit: contain;
   }
 
-  @media (max-width: 768px) {
-    #black-comparison-vip-{{ section.id }} .comparison-table-header {
-      display: none;
-    }
+/* ============================= */
+/* RESPONSIVE STYLES – VIP TABLE */
+/* ============================= */
 
-    #black-comparison-vip-{{ section.id }} .vip-bg {
-      display: none; /* Hide background on mobile for stacked layout */
-    }
-
-    #black-comparison-vip-{{ section.id }} .comparison-rows {
-      grid-template-columns: 1fr;
-      text-align: center;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    #black-comparison-vip-{{ section.id }} .comparison-col {
-      padding: 8px 0;
-    }
+/* 2550px and up — Ultra widescreen */
+@media (min-width: 1921px) and (max-width: 2550px) {
+  #black-comparison-vip-{{ section.id }} {
+    padding: 120px 0;
   }
+  #black-comparison-vip-{{ section.id }} .comparison-title {
+    font-size: 56px;
+    margin-bottom: 80px;
+  }
+  #black-comparison-vip-{{ section.id }} .comparison-col {
+    font-size: 26px;
+    padding: 24px 0;
+  }
+  #black-comparison-vip-{{ section.id }} .vip-bg {
+    left: 45%;
+    width: 26%;
+  }
+}
+
+/* 1440px (desktop widescreen) */
+@media (max-width: 1440px) {
+  #black-comparison-vip-{{ section.id }} .comparison-title {
+    font-size: 40px;
+    margin-bottom: 60px;
+  }
+  #black-comparison-vip-{{ section.id }} .comparison-col {
+    font-size: 20px;
+    padding: 18px 0;
+  }
+  #black-comparison-vip-{{ section.id }} .vip-bg {
+    left: 44.5%;
+    width: 25.5%;
+  }
+}
+
+/* 1024px (tablet landscape) */
+@media (max-width: 1024px) {
+  #black-comparison-vip-{{ section.id }} .comparison-title {
+    font-size: 34px;
+  }
+  #black-comparison-vip-{{ section.id }} .comparison-table {
+    width: 90%;
+  }
+  #black-comparison-vip-{{ section.id }} .container {
+    max-width: 100%;
+  }
+  #black-comparison-vip-{{ section.id }} .comparison-col {
+    font-size: 18px;
+    padding: 14px 0;
+  }
+  #black-comparison-vip-{{ section.id }} .vip-bg {
+    left: 44%;
+    width: 27%;
+  }
+}
+
+/* 768px (tablet portrait) */
+@media (max-width: 768px) {
+  #black-comparison-vip-{{ section.id }} {
+    padding: 60px 10px;
+  }
+  #black-comparison-vip-{{ section.id }} .comparison-title {
+    font-size: 30px;
+    margin-bottom: 40px;
+  }
+  #black-comparison-vip-{{ section.id }} .comparison-table {
+    width: 95%;
+  }
+  #black-comparison-vip-{{ section.id }} .comparison-rows {
+    grid-template-columns: 1fr;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 10px 0;
+  }
+  #black-comparison-vip-{{ section.id }} .feature-col {
+    justify-content: center;
+    text-align: center;
+  }
+  #black-comparison-vip-{{ section.id }} .vip-col,
+  #black-comparison-vip-{{ section.id }} .general-col {
+    text-align: center;
+  }
+  #black-comparison-vip-{{ section.id }} .comparison-table-header {
+    display: none;
+  }
+  #black-comparison-vip-{{ section.id }} .vip-bg {
+    display: none;
+  }
+  #black-comparison-vip-{{ section.id }} .feature-icon {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+/* 425px (mobile large) */
+@media (max-width: 425px) {
+  #black-comparison-vip-{{ section.id }} {
+    padding: 50px 10px;
+  }
+  #black-comparison-vip-{{ section.id }} .comparison-title {
+    font-size: 26px;
+    margin-bottom: 30px;
+  }
+  #black-comparison-vip-{{ section.id }} .comparison-col {
+    font-size: 15px;
+    line-height: 1.5;
+  }
+  #black-comparison-vip-{{ section.id }} .vip-contents {
+    font-size: 12px;
+    padding: 3px 10px;
+  }
+  #black-comparison-vip-{{ section.id }} .feature-icon {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* 375px (mobile small) */
+@media (max-width: 375px) {
+  #black-comparison-vip-{{ section.id }} {
+    padding: 40px 8px;
+  }
+  #black-comparison-vip-{{ section.id }} .comparison-title {
+    font-size: 22px;
+  }
+  #black-comparison-vip-{{ section.id }} .comparison-col {
+    font-size: 14px;
+  }
+  #black-comparison-vip-{{ section.id }} .vip-contents {
+    font-size: 11px;
+  }
+  #black-comparison-vip-{{ section.id }} .feature-icon {
+    width: 18px;
+    height: 18px;
+  }
+}
+
 </style>
