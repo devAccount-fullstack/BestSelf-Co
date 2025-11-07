@@ -73,7 +73,7 @@
           "type": "tier",
           "settings": {
             "tier": "Tier 1",
-            "reward": "25% OFF (all orders)",
+            "reward": "25% OFF + Free VIP Gift",
             "threshold": "No minimum"
           }
         },
