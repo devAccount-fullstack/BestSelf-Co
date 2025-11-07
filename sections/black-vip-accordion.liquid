@@ -27,7 +27,7 @@
       {% for block in section.blocks %}
         {% if block.settings.image != blank %}
           <div class="img-frame {% if forloop.first %}active{% endif %}" data-index="{{ forloop.index0 }}">
-            <img src="{{ block.settings.image | img_url: 'master' }}" width="auto" height="570px" alt="{{ block.settings.title }}">
+            <img src="{{ block.settings.image | img_url: 'master' }}" width="570px" height="auto" alt="{{ block.settings.title }}">
           </div>
         {% endif %}
       {% endfor %}
