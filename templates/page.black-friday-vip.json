@@ -274,7 +274,9 @@
       "type": "black-friday-product-slider",
       "name": "Black Friday Product Slider",
       "settings": {
-        "heading": "Your Loyalty Unlocks  a Gift That Money Can’t Buy",
+        "heading": "Your Loyalty Unlocks",
+        "heading_vip": "a Gift That Money Can’t Buy",
+        "content_vip": "Every qualifying VIP order ($75+) receives a limited-edition BestSelf item — not available to the public.",
         "collection": "best-sellers",
         "bg_color": "#131516"
       }
