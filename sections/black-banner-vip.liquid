@@ -1,42 +1,45 @@
-<section id="black-banner-vip-{{ section.id }}" class="black-banner-vip">
-<div class="vip-bg-center"></div>
-<div class="black-banner-container">
-  {% if section.settings.subheading != blank %}
-    <p class="vip-subheading">{{ section.settings.subheading }}</p>
-  {% endif %}
-  {% if section.settings.heading != blank %}
-    <h2 class="vip-heading">{{ section.settings.heading }}</h2>
-  {% endif %}
-  {% if section.settings.content != blank %}
-    <p class="vip-content">{{ section.settings.content }}</p>
-  {% endif %}
-
-  {% if section.settings.button_text != blank and section.settings.button_link != blank %}
-    <a href="{{ section.settings.button_link }}" class="vip-button">
-      {{ section.settings.button_text }}
-    </a>
-  {% endif %}
-
-  <div class="vip-image-wrapper">
-    {% if section.settings.image != blank %}
-        <img src="{{ section.settings.image | image_url: width: 600, height: 600 }}" alt="banner-image" width="600px" height="600px"  class="vip-image">
+<section id="black-banner-vip-{{ section.id }}" 
+class="black-banner-vip"  
+style="background-color: {{ section.settings.bg_color }};"
+>
+  <div class="vip-bg-center"></div>
+  <div class="black-banner-container">
+    {% if section.settings.subheading != blank %}
+      <p class="vip-subheading">{{ section.settings.subheading }}</p>
     {% endif %}
-    <div class="vip-price-box">
-      <div>
-        <div class="price-container">
-          <span class="vip-price">${{ section.settings.price }}</span>
-          {% if section.settings.old_price != blank %}
-            <span class="vip-old-price">${{ section.settings.old_price }}</span>
-          {% endif %}
+    {% if section.settings.heading != blank %}
+      <h2 class="vip-heading">{{ section.settings.heading }}</h2>
+    {% endif %}
+    {% if section.settings.content != blank %}
+      <p class="vip-content">{{ section.settings.content }}</p>
+    {% endif %}
+
+    {% if section.settings.button_text != blank and section.settings.button_link != blank %}
+      <a href="{{ section.settings.button_link }}" class="vip-button">
+        {{ section.settings.button_text }}
+      </a>
+    {% endif %}
+
+    <div class="vip-image-wrapper">
+      {% if section.settings.image != blank %}
+          <img src="{{ section.settings.image | image_url: width: 600, height: 600 }}" alt="banner-image" width="600px" height="600px"  class="vip-image">
+      {% endif %}
+      <div class="vip-price-box">
+        <div>
+          <div class="price-container">
+            <span class="vip-price">${{ section.settings.price }}</span>
+            {% if section.settings.old_price != blank %}
+              <span class="vip-old-price">${{ section.settings.old_price }}</span>
+            {% endif %}
+          </div>
+          <div style="text-align: start;">
+            <span class="vip-left">Only {{ section.settings.items_left }} Left</span>
+          </div>
         </div>
-        <div style="text-align: start;">
-          <span class="vip-left">Only {{ section.settings.items_left }} Left</span>
-        </div>
+        <span class="vip-discount">{{ section.settings.discount_text }}</span>
       </div>
-      <span class="vip-discount">{{ section.settings.discount_text }}</span>
     </div>
   </div>
-</div>
 
 <style>
   #black-banner-vip-{{ section.id }} {
