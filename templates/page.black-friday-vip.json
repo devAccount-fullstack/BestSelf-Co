@@ -205,7 +205,8 @@
       "name": "Black Friday UGC",
       "settings": {
         "bg_color": "#131516",
-        "heading": "UGC display here"
+        "heading": "UGC display here",
+        "heading_title": "Title Here"
       }
     },
     "black_friday_product_slider_BpdgDq": {
