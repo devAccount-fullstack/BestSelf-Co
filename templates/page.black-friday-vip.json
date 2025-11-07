@@ -234,16 +234,6 @@
             "image": "shopify://shop_images/image_111_256da114-b7d8-470f-932d-8ab5fc4cbd7c.png"
           }
         },
-        "accordion_item_9nFbGe": {
-          "type": "accordion_item",
-          "settings": {
-            "title": "Productivity",
-            "content": "<p>3-pack Journals — so you can gift clarity, which means you'll inspire someone's best year yet.</p>",
-            "italic_note": "If it doesn’t transform your life, you don’t pay.",
-            "button_link": "",
-            "button_label": "Shop now – Only X left at discounted price"
-          }
-        },
         "accordion_item_Jd3Rtg": {
           "type": "accordion_item",
           "settings": {
@@ -270,7 +260,6 @@
       "block_order": [
         "accordion_item_Y8znAW",
         "accordion_item_jEFChq",
-        "accordion_item_9nFbGe",
         "accordion_item_Jd3Rtg",
         "accordion_item_N3HWtd"
       ],
