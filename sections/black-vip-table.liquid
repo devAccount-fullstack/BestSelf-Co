@@ -1,14 +1,4 @@
-<section
-  id="black-vip-table-{{ section.id }}"
-  class="black-vip-table"
-  style="
-    background: radial-gradient(circle at left, {{ section.settings.gradient_center_color }} -50%, {{ section.settings.gradient_outer_color }} 19%);
-    color: {{ section.settings.text_color }};
-    padding: 60px 20px;
-    text-align: center;
-    font-family: 'Inter', sans-serif;
-  "
->
+<section id="black-vip-table-{{ section.id }}" class="black-vip-table">
   <div class="vip-content-container">
     <div class="vip-row">
       {% if section.settings.heading != blank %}
@@ -189,6 +179,11 @@
   #black-vip-table-{{ section.id }} {
     position: relative;
     overflow: hidden;
+    background: radial-gradient(circle at left, {{ section.settings.gradient_center_color }} -50%, {{ section.settings.gradient_outer_color }} 19%);
+    color: {{ section.settings.text_color }};
+    padding: 60px 20px;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
   }
 
   .vip-content-container {
