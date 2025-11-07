@@ -1,14 +1,16 @@
 <section class="black-friday-slider-section" style="background-color: {{ section.settings.bg_color }}">
   <div class="black-friday-slider-container page-width">
-    {% if section.settings.heading != blank %}
-      <h2 class="black-friday-slider-heading">{{ section.settings.heading }}</h2>
-    {% endif %}
-    {% if section.settings.heading_vip != blank %}
-      <h2 class="black-friday-slider-heading_vip">{{ section.settings.heading_vip }}</h2>
-    {% endif %}
-    {% if section.settings.content_vip != blank %}
-      <h2 class="black-friday-slider-content_vip">{{ section.settings.content_vip }}</h2>
-    {% endif %}
+    <div class="content-container">
+      {% if section.settings.heading != blank %}
+        <h2 class="black-friday-slider-heading">{{ section.settings.heading }}</h2>
+      {% endif %}
+      {% if section.settings.heading_vip != blank %}
+        <h2 class="black-friday-slider-heading_vip">{{ section.settings.heading_vip }}</h2>
+      {% endif %}
+      {% if section.settings.content_vip != blank %}
+        <h2 class="black-friday-slider-content_vip">{{ section.settings.content_vip }}</h2>
+      {% endif %}
+    </div>
 
     {% assign collection = collections[section.settings.collection] %}
     {% if collection and collection.products_count > 0 %}
