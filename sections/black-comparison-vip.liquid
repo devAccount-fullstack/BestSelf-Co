@@ -150,11 +150,24 @@ style="background-color: {{ section.settings.bg_color }};"
 
 <style>
   #black-comparison-vip-{{ section.id }} {
-    background: radial-gradient(circle at right, {{ section.settings.gradient_center_color }} -50%, {{ section.settings.gradient_outer_color }} 19%);
-    color: {{ section.settings.text_color }};
-    padding: 60px 20px;
+    position: relative;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
     text-align: center;
-    font-family: 'Inter', sans-serif;
+    padding: 60px 20px;
+    overflow: visible;
+  }
+
+  .comparison-right {
+    position: absolute;
+    width: 100%;
+    height: 130%;
+    z-index: 100000;
+    pointer-events: none;
+    left: 0;
+    top: -34%;
+    overflow: visible;
+    background: radial-gradient(circle at right, rgba(230, 184, 92, 0.2), transparent 22%);
   }
 
   #black-comparison-vip-{{ section.id }} .container {
