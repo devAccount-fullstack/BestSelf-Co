@@ -39,6 +39,7 @@
       "type": "black-banner-vip",
       "name": "Black Banner VIP",
       "settings": {
+        "bg_color": "#131516",
         "subheading": "For Our VIP BestSelf Family",
         "subheading_color": "#c9a062",
         "heading": "Up to 35% OFF + Exclusive Gifts",
@@ -51,9 +52,7 @@
         "price": "90.30",
         "old_price": "129",
         "items_left": "104",
-        "discount_text": "30% off",
-        "gradient_center_color": "#e6b85c",
-        "gradient_outer_color": "#131516"
+        "discount_text": "30% off"
       }
     },
     "black_vip_table_xUDGdi": {
