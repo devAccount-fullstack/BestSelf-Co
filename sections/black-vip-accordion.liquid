@@ -1,88 +1,3 @@
-{% schema %}
-{
-  "name": "Black VIP Accordion",
-  "settings": [
-    {
-      "type": "color",
-      "id": "bg_color",
-      "label": "Background Color",
-      "default": "#0d0d0d"
-    },
-    {
-      "type": "color",
-      "id": "text_color",
-      "label": "Text Color",
-      "default": "#ffffff"
-    },
-    {
-      "type": "color",
-      "id": "accent_color",
-      "label": "Accent (Gold)",
-      "default": "#d4af37"
-    },
-    {
-      "type": "text",
-      "id": "main_title",
-      "label": "Main Heading",
-      "default": "Helm"
-    },
-    {
-      "type": "text",
-      "id": "subtitle",
-      "label": "Subtitle",
-      "default": "Your evolution beyond the Journal — special BF batch nearly gone"
-    }
-  ],
-  "blocks": [
-    {
-      "type": "accordion_item",
-      "name": "Accordion Item",
-      "settings": [
-        {
-          "type": "text",
-          "id": "title",
-          "label": "Accordion Title",
-          "default": "Productivity"
-        },
-        {
-          "type": "richtext",
-          "id": "content",
-          "label": "Accordion Content",
-          "default": "<p>3-pack Journals — so you can gift clarity, which means you'll inspire someone's best year yet.</p>"
-        },
-        {
-          "type": "text",
-          "id": "italic_note",
-          "label": "Italic Note",
-          "default": "If it doesn’t transform your life, you don’t pay."
-        },
-        {
-          "type": "url",
-          "id": "button_link",
-          "label": "Button Link"
-        },
-        {
-          "type": "text",
-          "id": "button_label",
-          "label": "Button Label",
-          "default": "Shop now – Only X left at discounted price"
-        },
-        {
-          "type": "image_picker",
-          "id": "image",
-          "label": "Right Side Image"
-        }
-      ]
-    }
-  ],
-  "presets": [
-    {
-      "name": "Black VIP Accordion"
-    }
-  ]
-}
-{% endschema %}
-
 <section id="black-vip-accordion-{{ section.id }}" class="black-vip-accordion" style="background-color: {{ section.settings.bg_color }}; color: {{ section.settings.text_color }};">
   <div class="accordion-wrapper">
     <div class="accordion-left">
@@ -287,3 +202,88 @@
     });
   });
 </script>
+
+{% schema %}
+{
+  "name": "Black VIP Accordion",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#0d0d0d"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Accent (Gold)",
+      "default": "#d4af37"
+    },
+    {
+      "type": "text",
+      "id": "main_title",
+      "label": "Main Heading",
+      "default": "Helm"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Your evolution beyond the Journal — special BF batch nearly gone"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "accordion_item",
+      "name": "Accordion Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Accordion Title",
+          "default": "Productivity"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Accordion Content",
+          "default": "<p>3-pack Journals — so you can gift clarity, which means you'll inspire someone's best year yet.</p>"
+        },
+        {
+          "type": "text",
+          "id": "italic_note",
+          "label": "Italic Note",
+          "default": "If it doesn’t transform your life, you don’t pay."
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button Link"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button Label",
+          "default": "Shop now – Only X left at discounted price"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Right Side Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Black VIP Accordion"
+    }
+  ]
+}
+{% endschema %}
