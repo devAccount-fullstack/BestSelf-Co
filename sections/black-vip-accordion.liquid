@@ -66,11 +66,14 @@
   justify-content: space-between;
   align-items: center;
   transition: all 0.3s ease;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+.accordion-item.active .accordion-header {
+  border-bottom: unset;
 }
 .accordion-title {
   font-size: 24px;
   transition: all 0.4s ease;
-  border-bottom: 1px solid rgba(255,255,255,0.2);
 }
 .accordion-item.active .accordion-title {
   font-size: 48px;
