@@ -138,14 +138,14 @@
             "feature_text": "Starting Discount",
             "vip_text": "25%",
             "vip_content": "",
-            "general_text": "20%"
+            "general_text": "25%"
           }
         },
         "feature_row_MNUkjC": {
           "type": "feature_row",
           "settings": {
             "icon": "shopify://shop_images/Icon_d3ba4c80-35bc-4991-b08e-64479fc25573.png",
-            "feature_text": "Exclusive Free Gift",
+            "feature_text": "Exclusive Free Gifts",
             "vip_text": "Yes",
             "vip_content": "",
             "general_text": "No"
