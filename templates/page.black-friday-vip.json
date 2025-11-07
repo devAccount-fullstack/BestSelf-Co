@@ -175,7 +175,7 @@
           "type": "feature_row",
           "settings": {
             "icon": "shopify://shop_images/Icon_3.png",
-            "feature_text": "Password-Protected",
+            "feature_text": "Password + Secured Stock",
             "vip_text": "Yes",
             "vip_content": "",
             "general_text": "No"
