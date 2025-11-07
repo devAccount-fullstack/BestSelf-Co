@@ -303,7 +303,8 @@
       ],
       "name": "Testimonial Content",
       "settings": {
-        "background_color": "#131516"
+        "background_color": "#131516",
+        "gradient_color": "rgba(0,0,0,0)"
       }
     },
     "landing_footer_aqYdtb": {
