@@ -1,4 +1,4 @@
-<section id="black-vip-table-{{ section.id }}" class="black-vip-table" style="background-color: {{ section.settings.bg_color }};">
+<section id="black-vip-table-{{ section.id }}" class="black-vip-table" style="background-color: background: {{ section.settings.bg_color }};">
   <div class="table-left"></div>
   <div class="vip-content-container">
     <div class="vip-row">
@@ -171,13 +171,13 @@
 {% endschema %}
 
 <style>
-  .black-vip-table {
+  #black-vip-table-{{ section.id }} {
     position: relative;
     color: #fff;
     font-family: 'Poppins', sans-serif;
     text-align: center;
     padding: 60px 20px;
-    overflow: hidden;
+    overflow: visible;
   }
 
   .table-left {
@@ -188,7 +188,7 @@
     pointer-events: none;
     left: 0;
     overflow: visible;
-    background: radial-gradient(circle at left, rgba(230, 184, 92, 0.2), transparent 57%);
+    background: radial-gradient(circle at 50% 77%, rgba(230, 184, 92, 0.2), transparent 57%);
   }
 
   .vip-content-container {
