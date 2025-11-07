@@ -188,25 +188,25 @@
         "general_text_color": "#ffffff"
       }
     },
-    "black_friday_ugc_9TEbT3": {
+    "black_friday_ugc_H4Tkmr": {
       "type": "black-friday-ugc",
       "blocks": {
-        "video_block_9ff33U": {
+        "video_block_WbgtrE": {
           "type": "video_block",
           "settings": {
-            "thumbnail": "shopify://shop_images/bestself-planner-journal-personal-growth-forest-green-406020.jpg",
+            "thumbnail": "shopify://shop_images/meeting-mastery-pad-50-off-professional-growth-189305.jpg",
             "video_url": "https://www.youtube.com/watch?v=K4TOrB7at0Y"
           }
         }
       },
       "block_order": [
-        "video_block_9ff33U"
+        "video_block_WbgtrE"
       ],
       "name": "Black Friday UGC",
       "settings": {
-        "bg_color": "#131516",
+        "bg_color": "#1e1f3a",
         "heading": "UGC display here",
-        "heading_title": "Title Here"
+        "heading_title": "UGC display here"
       }
     },
     "black_vip_accordion_J9qrbH": {
@@ -324,7 +324,7 @@
     "black_banner_vip_yTiAKe",
     "black_vip_table_xUDGdi",
     "black_comparison_vip_UTnXA4",
-    "black_friday_ugc_9TEbT3",
+    "black_friday_ugc_H4Tkmr",
     "black_vip_accordion_J9qrbH",
     "black_friday_product_slider_BpdgDq",
     "landing_testimonial_rBA7NT",
