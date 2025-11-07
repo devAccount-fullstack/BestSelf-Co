@@ -3,6 +3,12 @@
     {% if section.settings.heading != blank %}
       <h2 class="black-friday-slider-heading">{{ section.settings.heading }}</h2>
     {% endif %}
+    {% if section.settings.heading != blank %}
+      <h2 class="black-friday-slider-heading">{{ section.settings.heading }}</h2>
+    {% endif %}
+    {% if section.settings.heading != blank %}
+      <h2 class="black-friday-slider-heading">{{ section.settings.heading }}</h2>
+    {% endif %}
 
     {% assign collection = collections[section.settings.collection] %}
     {% if collection and collection.products_count > 0 %}
@@ -283,6 +289,11 @@
       "id": "heading",
       "label": "Heading",
       "default": "Shop Bestsellers"
+    },
+    {
+      "type": "text",
+      "id": "heading_vip",
+      "label": "Heading VIP"
     },
     {
       "type": "collection",
