@@ -8,6 +8,10 @@
       <h2 class="ugc-heading">{{ section.settings.heading }}</h2>
     {% endif %}
 
+    {% if section.settings.heading_title != blank %}
+      <h2 class="ugc-heading_title">{{ section.settings.heading_title }}</h2>
+    {% endif %}
+
     <div class="ugc-slider splide" id="ugc-slider-{{ section.id }}">
       <div class="splide__track">
         <ul class="splide__list">
@@ -66,6 +70,12 @@
     {
       "type": "text",
       "id": "heading",
+      "label": "Section Heading",
+      "default": "UGC display here"
+    },
+    {
+      "type": "text",
+      "id": "heading_title",
       "label": "Section Heading",
       "default": "UGC display here"
     }
