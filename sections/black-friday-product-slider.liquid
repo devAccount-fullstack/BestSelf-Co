@@ -3,11 +3,11 @@
     {% if section.settings.heading != blank %}
       <h2 class="black-friday-slider-heading">{{ section.settings.heading }}</h2>
     {% endif %}
-    {% if section.settings.heading != blank %}
-      <h2 class="black-friday-slider-heading">{{ section.settings.heading }}</h2>
+    {% if section.settings.heading_vip != blank %}
+      <h2 class="black-friday-slider-heading_vip">{{ section.settings.heading_vip }}</h2>
     {% endif %}
-    {% if section.settings.heading != blank %}
-      <h2 class="black-friday-slider-heading">{{ section.settings.heading }}</h2>
+    {% if section.settings.content_vip != blank %}
+      <h2 class="black-friday-slider-content_vip">{{ section.settings.content_vip }}</h2>
     {% endif %}
 
     {% assign collection = collections[section.settings.collection] %}
@@ -294,6 +294,11 @@
       "type": "text",
       "id": "heading_vip",
       "label": "Heading VIP"
+    },
+    {
+      "type": "text",
+      "id": "content_vip",
+      "label": "Content VIP"
     },
     {
       "type": "collection",
