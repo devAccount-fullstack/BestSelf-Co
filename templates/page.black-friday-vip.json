@@ -55,6 +55,17 @@
         "discount_text": "35% off"
       }
     },
+    "black_friday_product_slider_BpdgDq": {
+      "type": "black-friday-product-slider",
+      "name": "Black Friday Product Slider",
+      "settings": {
+        "heading": "Your Loyalty Unlocks",
+        "heading_vip": "a Gift That Money Can’t Buy",
+        "content_vip": "Every VIP order receives a limited-edition BestSelf item — not available to the public.",
+        "collection": "be-your-best-you",
+        "bg_color": "#131516"
+      }
+    },
     "black_vip_table_xUDGdi": {
       "type": "black-vip-table",
       "blocks": {
@@ -270,17 +281,6 @@
         "accent_color": "#c9a062"
       }
     },
-    "black_friday_product_slider_BpdgDq": {
-      "type": "black-friday-product-slider",
-      "name": "Black Friday Product Slider",
-      "settings": {
-        "heading": "Your Loyalty Unlocks",
-        "heading_vip": "a Gift That Money Can’t Buy",
-        "content_vip": "Every qualifying VIP order ($75+) receives a limited-edition BestSelf item — not available to the public.",
-        "collection": "be-your-best-you",
-        "bg_color": "#131516"
-      }
-    },
     "landing_testimonial_rBA7NT": {
       "type": "landing-testimonial",
       "blocks": {
@@ -322,11 +322,11 @@
     "main",
     "landing_header_wYmeEg",
     "black_banner_vip_yTiAKe",
+    "black_friday_product_slider_BpdgDq",
     "black_vip_table_xUDGdi",
     "black_comparison_vip_UTnXA4",
     "black_friday_ugc_H4Tkmr",
     "black_vip_accordion_J9qrbH",
-    "black_friday_product_slider_BpdgDq",
     "landing_testimonial_rBA7NT",
     "landing_footer_aqYdtb"
   ]
