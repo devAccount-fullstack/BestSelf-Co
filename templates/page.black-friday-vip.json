@@ -180,14 +180,12 @@
       ],
       "name": "Black Comparison VIP",
       "settings": {
+        "bg_color": "#131516",
         "title": "VIP vs. General Access Comparison",
         "title_color": "#e6b85c",
         "feature_text_color": "#ffffff",
         "vip_text_color": "#ffffff",
-        "general_text_color": "#ffffff",
-        "gradient_center_color": "#e6b85c",
-        "gradient_outer_color": "#131516",
-        "vip_bg_color": "rgba(0,0,0,0)"
+        "general_text_color": "#ffffff"
       }
     },
     "black_friday_ugc_9TEbT3": {
