@@ -1,53 +1,66 @@
-<section id="black-banner-vip-{{ section.id }}" class="black-banner-vip">
-<div class="black-banner-container">
-  {% if section.settings.subheading != blank %}
-    <p class="vip-subheading">{{ section.settings.subheading }}</p>
-  {% endif %}
-  {% if section.settings.heading != blank %}
-    <h2 class="vip-heading">{{ section.settings.heading }}</h2>
-  {% endif %}
-  {% if section.settings.content != blank %}
-    <p class="vip-content">{{ section.settings.content }}</p>
-  {% endif %}
-
-  {% if section.settings.button_text != blank and section.settings.button_link != blank %}
-    <a href="{{ section.settings.button_link }}" class="vip-button">
-      {{ section.settings.button_text }}
-    </a>
-  {% endif %}
-
-  <div class="vip-image-wrapper">
-    {% if section.settings.image != blank %}
-        <img src="{{ section.settings.image | image_url: width: 600, height: 600 }}" alt="banner-image" width="600px" height="600px"  class="vip-image">
+<section id="black-banner-vip-{{ section.id }}" 
+class="black-banner-vip"  
+style="background-color: {{ section.settings.bg_color }};"
+>
+  <div class="vip-bg-center"></div>
+  <div class="black-banner-container">
+    {% if section.settings.subheading != blank %}
+      <p class="vip-subheading">{{ section.settings.subheading }}</p>
     {% endif %}
-    <div class="vip-price-box">
-      <div>
-        <div class="price-container">
-          <span class="vip-price">${{ section.settings.price }}</span>
-          {% if section.settings.old_price != blank %}
-            <span class="vip-old-price">${{ section.settings.old_price }}</span>
-          {% endif %}
+    {% if section.settings.heading != blank %}
+      <h2 class="vip-heading">{{ section.settings.heading }}</h2>
+    {% endif %}
+    {% if section.settings.content != blank %}
+      <p class="vip-content">{{ section.settings.content }}</p>
+    {% endif %}
+
+    {% if section.settings.button_text != blank and section.settings.button_link != blank %}
+      <a href="{{ section.settings.button_link }}" class="vip-button">
+        {{ section.settings.button_text }}
+      </a>
+    {% endif %}
+
+    <div class="vip-image-wrapper">
+      {% if section.settings.image != blank %}
+          <img src="{{ section.settings.image | image_url: width: 600, height: 600 }}" alt="banner-image" width="600px" height="600px"  class="vip-image">
+      {% endif %}
+      <div class="vip-price-box">
+        <div>
+          <div class="price-container">
+            <span class="vip-price">${{ section.settings.price }}</span>
+            {% if section.settings.old_price != blank %}
+              <span class="vip-old-price">${{ section.settings.old_price }}</span>
+            {% endif %}
+          </div>
+          <div style="text-align: start;">
+            <span class="vip-left">Only {{ section.settings.items_left }} Left</span>
+          </div>
         </div>
-        <div style="text-align: start;">
-          <span class="vip-left">Only {{ section.settings.items_left }} Left</span>
-        </div>
+        <span class="vip-discount">{{ section.settings.discount_text }}</span>
       </div>
-      <span class="vip-discount">{{ section.settings.discount_text }}</span>
     </div>
   </div>
-</div>
 
 <style>
   #black-banner-vip-{{ section.id }} {
     position: relative;
-    width: 100%;
-    text-align: center;
-    background: radial-gradient(circle at 50% 65%, {{ section.settings.gradient_center_color }} -50%, {{ section.settings.gradient_outer_color }} 30%);
-    padding: 60px 20px;
     color: #fff;
-    font-family: 'Inter', sans-serif;
-    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    padding: 60px 20px;
     height: calc(100vh - 80px);
+  }
+
+  .vip-bg-center {
+    position: absolute;
+    width: 100%;
+    height: 158%;
+    z-index: 100000;
+    pointer-events: none;
+    left: 0;
+    top: -30%;
+    overflow: visible;
+    background: radial-gradient(circle at 50% 66%, rgba(230, 184, 92, 0.2), transparent 36%);
   }
 
   #black-banner-vip-{{ section.id }} .vip-subheading {
@@ -195,6 +208,12 @@
 "name": "Black Banner VIP",
 "settings": [
   {
+    "type": "color",
+    "id": "bg_color",
+    "label": "Background Color",
+    "default": "#2b2b2b"
+  },
+  {
     "type": "text",
     "id": "subheading",
     "label": "Subheading",
@@ -269,18 +288,6 @@
     "id": "discount_text",
     "label": "Discount Text",
     "default": "30% off"
-  },
-  {
-    "type": "color",
-    "id": "gradient_center_color",
-    "label": "Gradient Center Color",
-    "default": "#2b2b2b"
-  },
-  {
-    "type": "color",
-    "id": "gradient_outer_color",
-    "label": "Gradient Outer Color",
-    "default": "#000000"
   }
 ],
 "presets": [

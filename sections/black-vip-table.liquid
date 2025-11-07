@@ -1,14 +1,7 @@
-<section
-  id="black-vip-table-{{ section.id }}"
-  class="black-vip-table"
-  style="
-    background: radial-gradient(circle at left, {{ section.settings.gradient_center_color }} -50%, {{ section.settings.gradient_outer_color }} 19%);
-    color: {{ section.settings.text_color }};
-    padding: 60px 20px;
-    text-align: center;
-    font-family: 'Inter', sans-serif;
-  "
+<section id="black-vip-table-{{ section.id }}" class="black-vip-table" 
+style="background-color: {{ section.settings.bg_color }};"
 >
+  <div class="table-left"></div>
   <div class="vip-content-container">
     <div class="vip-row">
       {% if section.settings.heading != blank %}
@@ -58,6 +51,12 @@
   "name": "Black VIP Table",
   "settings": [
     {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#2b2b2b"
+    },
+    {
       "type": "text",
       "id": "eyebrow_text",
       "label": "Eyebrow Text",
@@ -91,18 +90,6 @@
       "id": "footer_text",
       "label": "Footer Text",
       "default": "Because you're not just a shopper. You're a builder of habits, a giver of meaningful gifts, and a part of this journey with us."
-    },
-    {
-      "type": "color",
-      "id": "gradient_center_color",
-      "label": "Gradient Center Color",
-      "default": "#e6b85c"
-    },
-    {
-      "type": "color",
-      "id": "gradient_outer_color",
-      "label": "Gradient Outer Color",
-      "default": "#131516"
     },
     {
       "type": "color",
@@ -188,9 +175,23 @@
 <style>
   #black-vip-table-{{ section.id }} {
     position: relative;
-    overflow: hidden;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    padding: 60px 20px;
+    overflow: visible;
   }
-
+  .table-left {
+    position: absolute;
+    width: 100%;
+    height: 130%;
+    z-index: 100000;
+    pointer-events: none;
+    left: 0;
+    top: -34%;
+    overflow: visible;
+    background: radial-gradient(circle at left, rgba(230, 184, 92, 0.2), transparent 22%);
+  }
   .vip-content-container {
     display: flex;
     justify-content: space-between;

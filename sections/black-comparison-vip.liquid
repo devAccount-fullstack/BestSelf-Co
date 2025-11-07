@@ -34,7 +34,7 @@
             <div class="comparison-col vip-col" style="color: {{ section.settings.vip_text_color }};">
               <span>{{ block.settings.vip_text }}</span>
               {% if block.settings.vip_content != blank %}
-                <span class="vip-content">{{ block.settings.vip_content }}</span>
+                <span class="vip-contents">{{ block.settings.vip_content }}</span>
               {% endif %}
             </div>
             <div class="comparison-col general-col" style="color: {{ section.settings.general_text_color }};">
@@ -181,7 +181,7 @@
     position: relative;
   }
 
-  .vip-content {
+  .vip-contents {
     font-size: 14px;
     margin-left: 15px;
     padding: 4px 12px;
