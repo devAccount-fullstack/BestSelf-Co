@@ -1,0 +1,289 @@
+{% schema %}
+{
+  "name": "Black VIP Accordion",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#0d0d0d"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Accent (Gold)",
+      "default": "#d4af37"
+    },
+    {
+      "type": "text",
+      "id": "main_title",
+      "label": "Main Heading",
+      "default": "Helm"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Your evolution beyond the Journal — special BF batch nearly gone"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "accordion_item",
+      "name": "Accordion Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Accordion Title",
+          "default": "Productivity"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Accordion Content",
+          "default": "<p>3-pack Journals — so you can gift clarity, which means you'll inspire someone's best year yet.</p>"
+        },
+        {
+          "type": "text",
+          "id": "italic_note",
+          "label": "Italic Note",
+          "default": "If it doesn’t transform your life, you don’t pay."
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button Link"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button Label",
+          "default": "Shop now – Only X left at discounted price"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Right Side Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Black VIP Accordion"
+    }
+  ]
+}
+{% endschema %}
+
+<section id="black-vip-accordion-{{ section.id }}" class="black-vip-accordion" style="background-color: {{ section.settings.bg_color }}; color: {{ section.settings.text_color }};">
+  <div class="accordion-wrapper">
+    <div class="accordion-left">
+      <h2 class="main-title" style="color: {{ section.settings.accent_color }};">{{ section.settings.main_title }}</h2>
+      <p class="subtitle">{{ section.settings.subtitle }}</p>
+
+      {% for block in section.blocks %}
+        <div class="accordion-item {% if forloop.first %}active{% endif %}" data-index="{{ forloop.index0 }}">
+          <button class="accordion-header">{{ block.settings.title }}</button>
+          <div class="accordion-body" {% if forloop.first %}style="display:block;"{% endif %}>
+            <div class="accordion-content">
+              {{ block.settings.content }}
+              <a href="{{ block.settings.button_link }}" class="accordion-btn">{{ block.settings.button_label }}</a>
+              {% if block.settings.italic_note != blank %}
+                <p class="italic-note"><em>{{ block.settings.italic_note }}</em></p>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+    <div class="accordion-right">
+      {% for block in section.blocks %}
+        {% if block.settings.image != blank %}
+          <div class="img-frame {% if forloop.first %}active{% endif %}" data-index="{{ forloop.index0 }}">
+            <img src="{{ block.settings.image | img_url: 'master' }}" alt="{{ block.settings.title }}">
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<style>
+  #black-vip-accordion-{{ section.id }} {
+    font-family: 'Inter', sans-serif;
+    padding: 80px 5%;
+  }
+
+  .accordion-wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 60px;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+
+  .accordion-left {
+    flex: 1;
+    max-width: 480px;
+  }
+
+  .main-title {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 48px;
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+
+  .subtitle {
+    font-size: 16px;
+    opacity: 0.85;
+    margin-bottom: 25px;
+    line-height: 1.6;
+  }
+
+  .accordion-header {
+    background: none;
+    border: none;
+    color: {{ section.settings.accent_color }};
+    font-size: 20px;
+    font-family: 'Libre Baskerville', serif;
+    font-weight: 600;
+    width: 100%;
+    text-align: left;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+
+  .accordion-header:hover {
+    opacity: 0.8;
+  }
+
+  .accordion-item.active .accordion-header {
+    text-decoration: underline;
+  }
+
+  .accordion-body {
+    display: none;
+    padding: 20px 0;
+  }
+
+  .accordion-content {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  .accordion-btn {
+    display: inline-block;
+    background: none;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 10px 25px;
+    border-radius: 9999px;
+    text-decoration: none;
+    margin-top: 15px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+  }
+
+  .accordion-btn:hover {
+    background: #fff;
+    color: #000;
+  }
+
+  .italic-note {
+    margin-top: 8px;
+    font-style: italic;
+    font-size: 13px;
+    opacity: 0.7;
+  }
+
+  .accordion-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .img-frame {
+    display: none;
+    background: #fff;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    transition: opacity 0.5s ease;
+  }
+
+  .img-frame img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .img-frame.active {
+    display: block;
+  }
+
+  @media (max-width: 900px) {
+    .accordion-wrapper {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .accordion-left {
+      max-width: 100%;
+    }
+
+    .accordion-right {
+      width: 100%;
+      margin-top: 40px;
+    }
+
+    .main-title {
+      font-size: 36px;
+    }
+
+    .accordion-header {
+      text-align: center;
+      font-size: 18px;
+    }
+
+    .img-frame {
+      padding: 20px;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const section = document.querySelector('#black-vip-accordion-{{ section.id }}');
+    const items = section.querySelectorAll('.accordion-item');
+    const images = section.querySelectorAll('.img-frame');
+
+    items.forEach((item, index) => {
+      const header = item.querySelector('.accordion-header');
+      header.addEventListener('click', () => {
+        items.forEach((el, i) => {
+          el.classList.remove('active');
+          el.querySelector('.accordion-body').style.display = 'none';
+          images[i]?.classList.remove('active');
+        });
+        item.classList.add('active');
+        item.querySelector('.accordion-body').style.display = 'block';
+        images[index]?.classList.add('active');
+      });
+    });
+  });
+</script>
