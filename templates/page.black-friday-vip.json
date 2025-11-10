@@ -49,10 +49,21 @@
         "button_text": "Unlock My VIP Access",
         "button_link": "/",
         "image": "shopify://shop_images/helm.png",
-        "price": "90.30",
+        "price": "87.72",
         "old_price": "129",
         "items_left": "104",
-        "discount_text": "30% off"
+        "discount_text": "35% off"
+      }
+    },
+    "black_friday_product_slider_BpdgDq": {
+      "type": "black-friday-product-slider",
+      "name": "Black Friday Product Slider",
+      "settings": {
+        "heading": "Your Loyalty Unlocks",
+        "heading_vip": "Gifts Money Can’t Buy",
+        "content_vip": "Every VIP order receives a limited-edition BestSelf item — not available to the public.",
+        "collection": "be-your-best-you",
+        "bg_color": "#131516"
       }
     },
     "black_vip_table_xUDGdi": {
@@ -62,7 +73,7 @@
           "type": "tier",
           "settings": {
             "tier": "Tier 1",
-            "reward": "25% OFF (all orders)",
+            "reward": "25% OFF + Free VIP Gift",
             "threshold": "No minimum"
           }
         },
@@ -127,14 +138,14 @@
             "feature_text": "Starting Discount",
             "vip_text": "25%",
             "vip_content": "",
-            "general_text": "20%"
+            "general_text": "25%"
           }
         },
         "feature_row_MNUkjC": {
           "type": "feature_row",
           "settings": {
             "icon": "shopify://shop_images/Icon_d3ba4c80-35bc-4991-b08e-64479fc25573.png",
-            "feature_text": "Exclusive Free Gift",
+            "feature_text": "Exclusive Free Gifts",
             "vip_text": "Yes",
             "vip_content": "",
             "general_text": "No"
@@ -164,7 +175,7 @@
           "type": "feature_row",
           "settings": {
             "icon": "shopify://shop_images/Icon_3.png",
-            "feature_text": "Password-Protected",
+            "feature_text": "Password + Secured Stock",
             "vip_text": "Yes",
             "vip_content": "",
             "general_text": "No"
@@ -270,17 +281,6 @@
         "accent_color": "#c9a062"
       }
     },
-    "black_friday_product_slider_BpdgDq": {
-      "type": "black-friday-product-slider",
-      "name": "Black Friday Product Slider",
-      "settings": {
-        "heading": "Your Loyalty Unlocks",
-        "heading_vip": "a Gift That Money Can’t Buy",
-        "content_vip": "Every qualifying VIP order ($75+) receives a limited-edition BestSelf item — not available to the public.",
-        "collection": "be-your-best-you",
-        "bg_color": "#131516"
-      }
-    },
     "landing_testimonial_rBA7NT": {
       "type": "landing-testimonial",
       "blocks": {
@@ -322,11 +322,11 @@
     "main",
     "landing_header_wYmeEg",
     "black_banner_vip_yTiAKe",
+    "black_friday_product_slider_BpdgDq",
     "black_vip_table_xUDGdi",
     "black_comparison_vip_UTnXA4",
     "black_friday_ugc_H4Tkmr",
     "black_vip_accordion_J9qrbH",
-    "black_friday_product_slider_BpdgDq",
     "landing_testimonial_rBA7NT",
     "landing_footer_aqYdtb"
   ]

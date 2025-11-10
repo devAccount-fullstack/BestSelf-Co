@@ -110,40 +110,31 @@
         "discount_block_pbn4UM": {
           "type": "discount_block",
           "settings": {
-            "discount_text": "20% OFF any order",
+            "discount_text": "25% OFF any order",
             "sub_text": "",
             "bg_color": "#ffffff"
           }
         },
-        "discount_block_6ahxiy": {
+        "discount_block_9JyLh7": {
           "type": "discount_block",
           "settings": {
-            "discount_text": "25% OFF $75+",
-            "sub_text": "",
-            "bg_color": "#ffffff"
-          }
-        },
-        "discount_block_igWmbe": {
-          "type": "discount_block",
-          "settings": {
-            "discount_text": "30% OFF $125+",
-            "sub_text": "",
+            "discount_text": "30% OFF $75+",
+            "sub_text": "+ Free Shipping",
             "bg_color": "#ffffff"
           }
         },
         "discount_block_P7dJQP": {
           "type": "discount_block",
           "settings": {
-            "discount_text": "35% OFF $175+",
-            "sub_text": "+ Free Gift",
+            "discount_text": "35% OFF $100+",
+            "sub_text": "+ Free Gift & Shipping",
             "bg_color": "#ffffff"
           }
         }
       },
       "block_order": [
         "discount_block_pbn4UM",
-        "discount_block_6ahxiy",
-        "discount_block_igWmbe",
+        "discount_block_9JyLh7",
         "discount_block_P7dJQP"
       ],
       "name": "Black Friday Growth",
