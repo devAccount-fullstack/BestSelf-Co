@@ -2,16 +2,16 @@
   <div class="container">
     <div class="landing-footer__wrapper">
       <a href="{{ section.settings.logo_link }}">
-          {% if section.settings.logo != blank %}
-            <div class="landing-footer__logo">
-              {{
-                section.settings.logo
-                | image_url: width: 496
-                | image_tag: loading: 'lazy', alt: shop.name, width: 496, height: 768
-              }}
-            </div>
-          {% endif %}
-        </a>
+        {% if section.settings.logo != blank %}
+          <div class="landing-footer__logo">
+            {{
+              section.settings.logo
+              | image_url: width: 496
+              | image_tag: loading: 'lazy', alt: shop.name, width: 496, height: 768
+            }}
+          </div>
+        {% endif %}
+      </a>
       {% if section.settings.copyright != blank %}
         <div class="landing-footer__copyright">
           {{ section.settings.copyright }}
