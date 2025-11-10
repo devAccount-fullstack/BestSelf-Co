@@ -316,6 +316,20 @@
         "copyright": "© 2025 BestSelf Co. All rights reserved.",
         "policy_links": "<p><a href=\"/pages/privacy-policy\">Privacy Policy</a> | <a href=\"/pages/terms-conditions\">Terms & Conditions</a> | <a href=\"/pages/shipping-policy\">Shipping Policy</a></p>"
       }
+    },
+    "footer_countdown_3iknWM": {
+      "type": "footer-countdown",
+      "name": "Footer Countdown",
+      "settings": {
+        "title": "VIP Access Closes Soon",
+        "content": "This private offer disappears when the public Black Friday sale opens. Once it’s gone, so are the free gifts.",
+        "button_label": "Unlock My VIP Bundle Now",
+        "button_link": "",
+        "gradient_start": "#3e2b1f",
+        "gradient_end": "#000000",
+        "text_color": "#ffffff",
+        "end_date": "Nov 29, 2025 23:59:59"
+      }
     }
   },
   "order": [
@@ -328,6 +342,7 @@
     "black_friday_ugc_H4Tkmr",
     "black_vip_accordion_J9qrbH",
     "landing_testimonial_rBA7NT",
+    "footer_countdown_3iknWM",
     "landing_footer_aqYdtb"
   ]
 }
