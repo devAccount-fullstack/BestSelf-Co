@@ -1,0 +1,69 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "subheading": "",
+        "show_title": true,
+        "heading_font_size": "heading-large",
+        "show_content": false,
+        "text_font_size": "body-medium",
+        "align_text": "text-center",
+        "width": "wrapper",
+        "color_scheme": "",
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "heading_tag": "automatic"
+      }
+    },
+    "landing_header_HxbQ69": {
+      "type": "landing-header",
+      "name": "Landing Header",
+      "settings": {
+        "logo": "shopify://shop_images/bc4f5bb6def0700ad71e3d30dd75536b39e4dbef.png",
+        "logo_link": "/",
+        "vip-header": false
+      }
+    },
+    "landing_page_cta_kFnPfT": {
+      "type": "landing-page-cta",
+      "name": "Landing Page CTA",
+      "settings": {
+        "badge_text": "Only XXX discounted units left!",
+        "units_text": "XXX units left!",
+        "product_image": "shopify://shop_images/Remove_tool_edits_1_1.png",
+        "starburst_image": "shopify://shop_images/Star_6.png",
+        "discount_text": "20% off",
+        "sale_price": "$103.20",
+        "original_price_label": "Original price:",
+        "original_price": "$129"
+      }
+    },
+    "landing_footer_X3FcKw": {
+      "type": "landing-footer",
+      "name": "Landing Footer",
+      "settings": {
+        "logo_link": "/",
+        "logo": "shopify://shop_images/bc4f5bb6def0700ad71e3d30dd75536b39e4dbef.png",
+        "copyright": "© 2025 BestSelf Co. All rights reserved.",
+        "policy_links": "<p><a href=\"/pages/privacy-policy\">Privacy Policy</a> | <a href=\"/pages/terms-conditions\">Terms & Conditions</a> | <a href=\"/pages/shipping-policy\">Shipping Policy</a></p>"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "landing_header_HxbQ69",
+    "landing_page_cta_kFnPfT",
+    "landing_footer_X3FcKw"
+  ]
+}

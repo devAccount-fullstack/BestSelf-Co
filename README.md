@@ -8,6 +8,9 @@ To start developing:
 ## Theme ID
 shopify theme dev -s bestselfco.myshopify.com -t 142251917381  --theme-editor-sync
 
+# Additional Landing Pages
+shopify theme dev -s bestselfco.myshopify.com -t 142759592005  --theme-editor-sync
+
 ## To check theme name and IDs
 shopify theme list --store=bestselfco.myshopify.com
 shopify theme dev --theme-editor-sync
