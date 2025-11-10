@@ -1,0 +1,211 @@
+<section
+  id="footer-countdown-{{ section.id }}"
+  class="footer-countdown"
+  style="background: linear-gradient(90deg, {{ section.settings.gradient_start }} 0%, {{ section.settings.gradient_end }} 100%); color: {{ section.settings.text_color }};"
+>
+  <div class="countdown-container">
+    <div class="countdown-left">
+      {% if section.settings.title != blank %}
+        <h3 class="countdown-title">{{ section.settings.title }}</h3>
+      {% endif %}
+      {% if section.settings.content != blank %}
+        <p class="countdown-content">{{ section.settings.content }}</p>
+      {% endif %}
+      {% if section.settings.button_label != blank %}
+        <a href="{{ section.settings.button_link }}" class="countdown-btn">{{ section.settings.button_label }}</a>
+      {% endif %}
+    </div>
+
+    <div class="countdown-right">
+      <div id="timer-{{ section.id }}" class="timer">
+        <div><span class="time days">00</span><small>Days</small></div>
+        <div><span class="time hours">00</span><small>Hours</small></div>
+        <div><span class="time minutes">00</span><small>Minutes</small></div>
+        <div><span class="time seconds">00</span><small>Seconds</small></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const countdownEl = document.querySelector("#timer-{{ section.id }}");
+      const endDate = new Date("{{ section.settings.end_date }}").getTime();
+
+      function updateCountdown() {
+        const now = new Date().getTime();
+        const distance = endDate - now;
+
+        if (distance < 0) {
+          countdownEl.innerHTML = "<p>Offer Closed</p>";
+          return;
+        }
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        countdownEl.querySelector(".days").innerText = String(days).padStart(2, '0');
+        countdownEl.querySelector(".hours").innerText = String(hours).padStart(2, '0');
+        countdownEl.querySelector(".minutes").innerText = String(minutes).padStart(2, '0');
+        countdownEl.querySelector(".seconds").innerText = String(seconds).padStart(2, '0');
+      }
+
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+    });
+  </script>
+
+  <style>
+    #footer-countdown-{{ section.id }} {
+      padding: 40px 20px;
+      border-radius: 12px;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .countdown-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .countdown-left {
+      flex: 1 1 300px;
+      max-width: 400px;
+    }
+
+    .countdown-title {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .countdown-content {
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .countdown-btn {
+      display: inline-block;
+      padding: 10px 20px;
+      border: 1px solid {{ section.settings.text_color }};
+      border-radius: 30px;
+      text-decoration: none;
+      color: {{ section.settings.text_color }};
+      transition: all 0.3s ease;
+    }
+
+    .countdown-btn:hover {
+      background: {{ section.settings.text_color }};
+      color: {{ section.settings.gradient_end }};
+    }
+
+    .countdown-right {
+      display: flex;
+      flex: 1 1 300px;
+      justify-content: center;
+    }
+
+    .timer {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      text-align: center;
+    }
+
+    .timer div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .time {
+      font-size: 48px;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .timer small {
+      font-size: 12px;
+      margin-top: 6px;
+    }
+
+    @media (max-width: 768px) {
+      .countdown-container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .timer {
+        justify-content: center;
+      }
+
+      .time {
+        font-size: 36px;
+      }
+    }
+  </style>
+</section>
+
+{% schema %}
+{
+  "name": "Footer Countdown",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "VIP Access Closes Soon"
+    },
+    {
+      "type": "textarea",
+      "id": "content",
+      "label": "Content",
+      "default": "This private offer disappears when the public Black Friday sale opens. Once it’s gone, so are the free gifts."
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Label",
+      "default": "Unlock My VIP Bundle Now"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "color",
+      "id": "gradient_start",
+      "label": "Gradient Start Color",
+      "default": "#3e2b1f"
+    },
+    {
+      "type": "color",
+      "id": "gradient_end",
+      "label": "Gradient End Color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "text",
+      "id": "end_date",
+      "label": "Countdown End Date (e.g. Nov 29, 2025 23:59:59)",
+      "default": "Nov 29, 2025 23:59:59"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Footer Countdown"
+    }
+  ]
+}
+{% endschema %}
