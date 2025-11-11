@@ -116,6 +116,7 @@
   font-family: 'Inter', sans-serif;
   font-weight: 400;
   color: #000000;
+  text-decoration: line-through;
 }
 
 .avail-product {
