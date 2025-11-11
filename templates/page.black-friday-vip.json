@@ -208,10 +208,50 @@
             "thumbnail": "shopify://shop_images/meeting-mastery-pad-50-off-professional-growth-189305.jpg",
             "video_url": "https://www.youtube.com/watch?v=K4TOrB7at0Y"
           }
+        },
+        "video_block_xaDCFw": {
+          "type": "video_block",
+          "settings": {
+            "thumbnail": "shopify://shop_images/its-a-date-100-off-romantic-connection-462551.jpg",
+            "video_url": "https://www.youtube.com/watch?v=K4TOrB7at0Y"
+          }
+        },
+        "video_block_Dzebnw": {
+          "type": "video_block",
+          "settings": {
+            "thumbnail": "shopify://shop_images/meeting-mastery-pad-digital-download-digital-download-personal-growth-998894.jpg",
+            "video_url": ""
+          }
+        },
+        "video_block_dwN9Cg": {
+          "type": "video_block",
+          "settings": {
+            "thumbnail": "shopify://shop_images/680b803d8892baa85c5ff13a6438e391c02adeb8.png",
+            "video_url": "https://www.youtube.com/watch?v=K4TOrB7at0Y"
+          }
+        },
+        "video_block_nm8jhY": {
+          "type": "video_block",
+          "settings": {
+            "thumbnail": "shopify://shop_images/SCRIBE_FOREST_ac051637-aff9-41a4-a2e5-5c3dacfb91ed.jpg",
+            "video_url": "https://www.youtube.com/watch?v=K4TOrB7at0Y"
+          }
+        },
+        "video_block_dD9agX": {
+          "type": "video_block",
+          "settings": {
+            "thumbnail": "shopify://shop_images/scribe-classic-notebook-journal-personal-growth-gray-mist-425764.jpg",
+            "video_url": "https://www.youtube.com/watch?v=K4TOrB7at0Y"
+          }
         }
       },
       "block_order": [
-        "video_block_WbgtrE"
+        "video_block_WbgtrE",
+        "video_block_xaDCFw",
+        "video_block_Dzebnw",
+        "video_block_dwN9Cg",
+        "video_block_nm8jhY",
+        "video_block_dD9agX"
       ],
       "name": "Black Friday UGC",
       "settings": {
