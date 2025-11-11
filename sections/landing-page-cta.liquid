@@ -225,10 +225,17 @@
   }
 
   .landing-cta__features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-top: 8px;
+  }
+
+  .landing-cta__features-left,
+  .landing-cta__features-right {
     display: flex;
     flex-direction: column;
     gap: 12px;
-    margin-top: 8px;
   }
 
   .landing-cta__feature {
@@ -448,32 +455,36 @@
 
       <!-- Features -->
       <div class="landing-cta__features">
-        {% if section.settings.feature_1 != blank %}
-          <div class="landing-cta__feature">
-            <svg class="landing-cta__feature-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
-            </svg>
-            <span class="landing-cta__feature-text">{{ section.settings.feature_1 }}</span>
-          </div>
-        {% endif %}
+        <div class="landing-cta__features-left">
+          {% if section.settings.feature_1 != blank %}
+            <div class="landing-cta__feature">
+              <svg class="landing-cta__feature-icon" width="24" height="24" viewBox="0 0 18 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9 21C9 21 17 17 17 11V4L9 1L1 4V11C1 17 9 21 9 21Z" stroke="#FAC848" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span class="landing-cta__feature-text">{{ section.settings.feature_1 }}</span>
+            </div>
+          {% endif %}
 
-        {% if section.settings.feature_2 != blank %}
-          <div class="landing-cta__feature">
-            <svg class="landing-cta__feature-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"/>
-            </svg>
-            <span class="landing-cta__feature-text">{{ section.settings.feature_2 }}</span>
-          </div>
-        {% endif %}
+          {% if section.settings.feature_2 != blank %}
+            <div class="landing-cta__feature">
+              <svg class="landing-cta__feature-icon" width="24" height="24" viewBox="0 0 24 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 14V1H1V14H16ZM16 14H23V9L20 6H16V14ZM8 16.5C8 17.8807 6.88071 19 5.5 19C4.11929 19 3 17.8807 3 16.5C3 15.1193 4.11929 14 5.5 14C6.88071 14 8 15.1193 8 16.5ZM21 16.5C21 17.8807 19.8807 19 18.5 19C17.1193 19 16 17.8807 16 16.5C16 15.1193 17.1193 14 18.5 14C19.8807 14 21 15.1193 21 16.5Z" stroke="#FAC848" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span class="landing-cta__feature-text">{{ section.settings.feature_2 }}</span>
+            </div>
+          {% endif %}
+        </div>
 
-        {% if section.settings.feature_3 != blank %}
-          <div class="landing-cta__feature">
-            <svg class="landing-cta__feature-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-            </svg>
-            <span class="landing-cta__feature-text">{{ section.settings.feature_3 }}</span>
-          </div>
-        {% endif %}
+        <div class="landing-cta__features-right">
+          {% if section.settings.feature_3 != blank %}
+            <div class="landing-cta__feature">
+              <svg class="landing-cta__feature-icon" width="24" height="24" viewBox="0 0 20 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15 1L19 5M19 5L15 9M19 5H5C3.93913 5 2.92172 5.42143 2.17157 6.17157C1.42143 6.92172 1 7.93913 1 9V11M5 23L1 19M1 19L5 15M1 19H15C16.0609 19 17.0783 18.5786 17.8284 17.8284C18.5786 17.0783 19 16.0609 19 15V13" stroke="#FAC848" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span class="landing-cta__feature-text">{{ section.settings.feature_3 }}</span>
+            </div>
+          {% endif %}
+        </div>
       </div>
 
       <!-- CTA Button -->
