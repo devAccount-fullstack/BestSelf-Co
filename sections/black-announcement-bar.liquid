@@ -1,0 +1,91 @@
+<section
+  id="announcement-bar-{{ section.id }}"
+  class="announcement-bar"
+  style="background-color: {{ section.settings.background_color }}; color: {{ section.settings.text_color }};"
+>
+  <div class="announcement-content">
+    {% assign parts = section.settings.announcement_text | split: '[' %}
+    {% assign main_text = parts[0] %}
+    {% if parts.size > 1 %}
+      {% assign link_text = parts[1] | remove: ']' %}
+    {% endif %}
+
+    {{ main_text | escape }}
+    {% if link_text %}
+      <a href="{{ section.settings.announcement_link }}" class="announcement-link" style="color: {{ section.settings.text_color }};">
+        {{ link_text }}
+      </a>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Announcement Bar",
+  "settings": [
+    {
+      "type": "text",
+      "id": "announcement_text",
+      "label": "Announcement text",
+      "default": "💝 Looking for the perfect gift? [Shop Gift Ideas ›]"
+    },
+    {
+      "type": "url",
+      "id": "announcement_link",
+      "label": "Announcement link",
+      "default": "/"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#f8d7da"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#000000"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Announcement Bar",
+      "category": "Banner"
+    }
+  ]
+}
+{% endschema %}
+
+
+<style>
+  #announcement-bar-{{ section.id }} {
+    text-align: center;
+    padding: 12px 15px;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+  }
+
+  #announcement-bar-{{ section.id }} .announcement-content {
+    display: inline-block;
+  }
+
+  #announcement-bar-{{ section.id }} .announcement-link {
+    text-decoration: underline;
+    margin-left: 6px;
+    font-weight: 600;
+    transition: opacity 0.3s ease;
+  }
+
+  #announcement-bar-{{ section.id }} .announcement-link:hover {
+    opacity: 0.8;
+  }
+
+  @media (max-width: 768px) {
+    #announcement-bar-{{ section.id }} {
+      font-size: 14px;
+      padding: 10px;
+    }
+  }
+</style>
