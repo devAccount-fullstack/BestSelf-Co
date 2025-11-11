@@ -104,6 +104,12 @@
   padding: 10px 20px;
   border-radius: 12px;
 }
+.price {
+  font-size: 28px;
+  font-family: "Inter", 'sans-serif';
+  font-weight: bold;
+  color: #B3261E;
+}
 
 .image-overflow {
     position: absolute;
