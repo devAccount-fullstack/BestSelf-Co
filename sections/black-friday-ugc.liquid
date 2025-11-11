@@ -258,10 +258,13 @@
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   var splide = new Splide("#ugc-slider-{{ section.id }}", {
-    type: "loop",
-    perPage: 3.8,
+    type: 'loop',
+    perPage: 4,
     perMove: 1,
     arrows: false,
+    focus: 'center',
+    gap: '1rem',
+    pagination: false,
     gap: "1rem",
       breakpoints: {
         1620: {
