@@ -112,7 +112,9 @@
 }
 
 .compare-price {
-
+  font-size: 22.47px;
+  font-family: 'Inter', sans-serif;
+  font-weight: normal;
 }
 
 .image-overflow {
