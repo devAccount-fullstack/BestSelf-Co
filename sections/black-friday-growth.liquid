@@ -22,16 +22,18 @@
       <ul class="growth-list">
         {% for block in section.blocks %}
         <li class="growth-item">
-          <div class="growth-discount" style="background-color: {{ block.settings.bg_color }}">
-            <img src="{{ 'percentage.svg' | asset_url }}" alt="Star Icon" width="30" height="auto" />
-            <span class="text-d">{{ block.settings.discount_text }}</span>
-         </div>
-          {% if block.settings.sub_text != blank %}
-            <div class="growth-sub">
-                <span class="text-d">{{ block.settings.sub_text }}</span>
-                <img src="{{ 'gift.svg' | asset_url }}" alt="Star Icon" width="30" height="auto" />
-            </div>
-          {% endif %}
+          <a href="{{ block.settings.block_link }}">
+            <div class="growth-discount" style="background-color: {{ block.settings.bg_color }}">
+              <img src="{{ 'percentage.svg' | asset_url }}" alt="Star Icon" width="30" height="auto" />
+              <span class="text-d">{{ block.settings.discount_text }}</span>
+          </div>
+            {% if block.settings.sub_text != blank %}
+              <div class="growth-sub">
+                  <span class="text-d">{{ block.settings.sub_text }}</span>
+                  <img src="{{ 'gift.svg' | asset_url }}" alt="Star Icon" width="30" height="auto" />
+              </div>
+            {% endif %}
+          </a>
         </li>
         {% endfor %}
       </ul>
@@ -228,7 +230,7 @@
         {
           "type": "url",
           "id": "block_link",
-          "label": "Blocks link",
+          "label": "Block link",
           "default": "/"
         },
         {
