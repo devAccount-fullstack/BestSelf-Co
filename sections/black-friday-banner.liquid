@@ -38,9 +38,11 @@
 
       <p class="note">{{ section.settings.loyalty_message }}</p>
 
-      {% if section.settings.product_image != blank %}
-          <img src="{{ section.settings.product_image | image_url: width: 600, height: 600 }}" alt="Product" width="600px" height="600px"  class="image-overflow">
-      {% endif %}
+      <div>
+        {% if section.settings.product_image != blank %}
+            <img src="{{ section.settings.product_image | image_url: width: 600, height: 600 }}" alt="Product" width="600px" height="600px"  class="image-overflow">
+        {% endif %}
+      </div>
     </div>
   </div>
 </section>
