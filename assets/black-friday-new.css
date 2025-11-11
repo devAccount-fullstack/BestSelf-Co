@@ -90,14 +90,12 @@
   text-align: center;
 }
 .image-container {
-  position: relative;
+  position: absolute;
   width: 100%;
+  top: 55%;
 }
 
 .discount-badge {
-  position: absolute;
-  top: 50%;
-  right: 10%;
   background-color: #fff;
   color: #000;
   padding: 10px 20px;
