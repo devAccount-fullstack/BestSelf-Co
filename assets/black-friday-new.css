@@ -89,40 +89,16 @@
   width: 34%;
   text-align: center;
 }
-.discount-badge {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  background: #f0b000;
-  color: #000;
-  padding: 8px 14px;
-  border-radius: 50%;
-  font-weight: 700;
-  font-size: 0.9rem;
+.image-container {
+  position: relative;
 }
 
-.price-tag {
+.discount-badge {
   position: absolute;
-  bottom: 15px;
-  right: 10px;
-  background: #fff;
-  color: #000;
-  padding: 6px 12px;
-  border-radius: 8px;
-  font-weight: 700;
-  text-align: left;
+  top: 50%;
+  right: 10%;
 }
-.price-tag .original {
-  text-decoration: line-through;
-  color: #888;
-  margin-left: 5px;
-}
-.price-tag small {
-  display: block;
-  font-size: 0.75rem;
-  font-weight: normal;
-  color: #d00;
-}
+
 .image-overflow {
     position: absolute;
     bottom: 0%;
