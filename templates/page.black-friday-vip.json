@@ -317,8 +317,8 @@
         "policy_links": "<p><a href=\"/pages/privacy-policy\">Privacy Policy</a> | <a href=\"/pages/terms-conditions\">Terms & Conditions</a> | <a href=\"/pages/shipping-policy\">Shipping Policy</a></p>"
       }
     },
-    "footer_countdown_3iknWM": {
-      "type": "footer-countdown",
+    "black_vip_countdown_m4PKeb": {
+      "type": "black-vip-countdown",
       "name": "Footer Countdown",
       "settings": {
         "title": "VIP Access Closes Soon",
@@ -342,7 +342,7 @@
     "black_friday_ugc_H4Tkmr",
     "black_vip_accordion_J9qrbH",
     "landing_testimonial_rBA7NT",
-    "footer_countdown_3iknWM",
+    "black_vip_countdown_m4PKeb",
     "landing_footer_aqYdtb"
   ]
 }
