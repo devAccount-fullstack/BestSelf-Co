@@ -13,21 +13,21 @@
       </h2>
     {% endif %}
 
-    <div class="claim-footer-countdown">
-      <div class="claim-footer-box">
-        <span id="days-{{ section.id }}" class="claim-footer-value">00</span>
+    <div class="claim-countdown">
+      <div class="claim-count-box">
+        <span id="days-{{ section.id }}" class="claim-count-value">00</span>
         <small>Days</small>
       </div>
-      <div class="claim-footer-box">
-        <span id="hours-{{ section.id }}" class="claim-footer-value">00</span>
+      <div class="claim-count-box">
+        <span id="hours-{{ section.id }}" class="claim-count-value">00</span>
         <small>Hours</small>
       </div>
-      <div class="claim-footer-box">
-        <span id="minutes-{{ section.id }}" class="claim-footer-value">00</span>
+      <div class="claim-count-box">
+        <span id="minutes-{{ section.id }}" class="claim-count-value">00</span>
         <small>Minutes</small>
       </div>
-      <div class="claim-footer-box">
-        <span id="seconds-{{ section.id }}" class="claim-footer-value">00</span>
+      <div class="claim-count-box">
+        <span id="seconds-{{ section.id }}" class="claim-count-value">00</span>
         <small>Seconds</small>
       </div>
     </div>
@@ -80,16 +80,16 @@
     }
 
     #black-friday-claim-{{ section.id }} .claim-count-value {
-      background: #fff;
-      color: #000;
-      padding: 10px 15px;
-      border-radius: 13px;
-      text-align: center;
-      min-width: 120px;
-      display: block;
-      font-size: 68px;
-      font-weight: 400;
-      font-family: libre baskerville, serif;
+    background: #fff;
+    color: #000;
+    padding: 10px 15px;
+    border-radius: 13px;
+    text-align: center;
+    min-width: 120px;
+    display: block;
+    font-size: 68px;
+    font-weight: 400;
+    font-family: libre baskerville, serif;
     }
 
     #black-friday-claim-{{ section.id }} .claim-count-box small {
