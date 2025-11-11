@@ -38,18 +38,18 @@
 
       <p class="note">{{ section.settings.loyalty_message }}</p>
 
-      <div class="image-container">
         {% if section.settings.product_image != blank %}
             <img src="{{ section.settings.product_image | image_url: width: 600, height: 600 }}" alt="Product" width="600px" height="600px"  class="image-overflow">
         {% endif %}
-        <div class="discount-badge">
-          <div style="display: flex; align-items: center">
-            <h4>$90.30</h4>
-            <p>$129</p>
+        <div class="image-container">
+          <div class="discount-badge">
+            <div style="display: flex; align-items: center">
+              <h4>$90.30</h4>
+              <p>$129</p>
+            </div>
+            <p>Only X Left</p>
           </div>
-          <p>Only X Left</p>
         </div>
-      </div>
     </div>
   </div>
 </section>
