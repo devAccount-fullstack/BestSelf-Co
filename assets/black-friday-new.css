@@ -183,6 +183,9 @@
     margin-top: 40px;
     text-align: center;
   }
+  .discount-badge {
+    right: 10%;
+  }
 }
 
 /* 💻 1024px (tablet landscape) */
