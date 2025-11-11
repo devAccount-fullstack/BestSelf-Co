@@ -260,14 +260,30 @@ document.addEventListener("DOMContentLoaded", function () {
   var splide = new Splide("#ugc-slider-{{ section.id }}", {
     type: "loop",
     perPage: 3.8,
+    perMove: 1,
     arrows: false,
     gap: "1rem",
       breakpoints: {
-        1620: { perPage: 3.2 },
-        1440: { perPage: 3.2 },
-        1305: { perPage: 2.5 },
-        768: { perPage: 2 },
-        480: { perPage: 1 }
+        1620: {
+          perPage: 3.2,
+          perMove: 1
+         },
+        1440: {
+          perPage: 3.2,
+          perMove: 1
+         },
+        1305: {
+          perPage: 2.5,
+          perMove: 1
+         },
+        768: {
+          perPage: 2,
+          perMove: 1
+         },
+        480: {
+          perPage: 1,
+          perMove: 1
+         }
       }
   });
   splide.mount();
