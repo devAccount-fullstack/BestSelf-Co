@@ -118,6 +118,14 @@
   color: #000000;
 }
 
+.avail-product {
+  font-size: 16px;
+  font-family: 'Inter', sans-serif;
+  font-weight: semi-bold;
+  color: #000000;
+  text-align: center;
+}
+
 .image-overflow {
     position: absolute;
     bottom: 0%;
