@@ -109,7 +109,9 @@
        or template.name == 'page' and template.suffix == 'black-friday-new'
        or template.name == 'page' and template.suffix == 'black-vip-password'
        or template.name == 'page' and template.suffix == 'black-friday-vip'
-       or template.name == 'page' and template.suffix == 'helm-landing-page' -%}
+       or template.name == 'page' and template.suffix == 'helm-landing-page'
+       or template.name == 'page' and template.suffix == 'intimacydeck-landing-page'
+       or template.name == 'page' and template.suffix == 'journal-landing-page' -%}
       {{ 'giveaway-landing.css' | asset_url | stylesheet_tag }}
     {%- endif -%}
 
@@ -156,7 +158,9 @@
     or template.name == 'page' and template.suffix == 'black-friday-new'
     or template.name == 'page' and template.suffix == 'black-vip-password'
     or template.name == 'page' and template.suffix == 'black-friday-vip'
-    or template.name == 'page' and template.suffix == 'helm-landing-page' -%}
+    or template.name == 'page' and template.suffix == 'helm-landing-page'
+    or template.name == 'page' and template.suffix == 'intimacydeck-landing-page'
+    or template.name == 'page' and template.suffix == 'journal-landing-page' -%}
 
       <!-- Landing Page layout -->
       <main role="main" id="MainContent" class="main-content">

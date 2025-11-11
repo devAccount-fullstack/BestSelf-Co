@@ -1,0 +1,383 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "subheading": "",
+        "show_title": true,
+        "heading_font_size": "heading-large",
+        "show_content": false,
+        "text_font_size": "body-medium",
+        "align_text": "text-center",
+        "width": "wrapper",
+        "color_scheme": "",
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "heading_tag": "automatic"
+      }
+    },
+    "landing_header_hetdmr": {
+      "type": "landing-header",
+      "name": "Landing Header",
+      "settings": {
+        "logo": "shopify://shop_images/bc4f5bb6def0700ad71e3d30dd75536b39e4dbef_d357d9b1-886b-47bb-bca7-0e71e6090492.png",
+        "logo_link": "/",
+        "vip-header": false
+      }
+    },
+    "landing_page_cta_HkyRm6": {
+      "type": "landing-page-cta",
+      "name": "Landing Page CTA",
+      "settings": {
+        "badge_text": "Only XXX discounted units left!",
+        "units_text": "XXX units left!",
+        "product_image": "shopify://shop_images/412126e077cf7938544cede15861d192889024d7.png",
+        "starburst_image": "shopify://shop_images/Star_6.png",
+        "discount_percent": "20%",
+        "discount_off": "off",
+        "sale_price": "$103.20",
+        "original_price_label": "Original price:",
+        "original_price": "$129",
+        "star_rating": 5,
+        "reviews_text": "500+ Reviews",
+        "promo_text": "Black Friday: 20% OFF — This Weekend Only!",
+        "headline": "Your Phone Is Stealing 6 Hours of Your Day. This Is How You Get It Back",
+        "description": "Used by 10,000+ professionals to reclaim their focus and win back their time.",
+        "feature_1": "Secure Checkout",
+        "feature_2": "Free Shipping $75+",
+        "feature_3": "90-Day Guarantee",
+        "cta_text": "Get Helm for $103.20 → Save $25.80",
+        "gift_text": "Free Gift Included in Every Purchase"
+      }
+    },
+    "black_friday_ugc_q4RprW": {
+      "type": "black-friday-ugc",
+      "name": "Black Friday UGC",
+      "settings": {
+        "bg_color": "#1e1f3a",
+        "heading": "UGC display here",
+        "heading_title": "UGC display here"
+      }
+    },
+    "landing_page_value_proposition_U4iY6B": {
+      "type": "landing-page-value-proposition",
+      "name": "Landing Page Value Proposition",
+      "settings": {
+        "heading_primary": "You Know the Problem.",
+        "heading_secondary": "Helm Breaks the Cycle.",
+        "description": "Apps failed. Willpower's gone. You're not lazy— your phone is designed to hijack your brain.",
+        "show_stats": true,
+        "stat_1_number": "$15k",
+        "stat_1_label": "Lost Productivity",
+        "stat_2_number": "156",
+        "stat_2_label": "Phone Pickups Per Day",
+        "stat_3_number": "38",
+        "stat_3_label": "Days Lost Annually",
+        "quote_text": "Every app blocker failed me. Helm is the first thing that actually made me stop reaching for my phone",
+        "quote_author": "— Anonymous"
+      }
+    },
+    "landing_page_product_positioning_eDVEJP": {
+      "type": "landing-page-product-positioning",
+      "blocks": {
+        "step_TTbqtL": {
+          "type": "step",
+          "settings": {
+            "step_number": "1",
+            "step_title": "Place on Your Desk",
+            "step_description": "Signals focus with its brass, elegant design."
+          }
+        },
+        "step_RBVe4M": {
+          "type": "step",
+          "settings": {
+            "step_number": "2",
+            "step_title": "Tap Your Phone",
+            "step_description": "Activates your custom focus mode instantly."
+          }
+        },
+        "step_RpMFC3": {
+          "type": "step",
+          "settings": {
+            "step_number": "3",
+            "step_title": "Enter Deep Work",
+            "step_description": "No willpower needed. To stop, tap again"
+          }
+        }
+      },
+      "block_order": [
+        "step_TTbqtL",
+        "step_RBVe4M",
+        "step_RpMFC3"
+      ],
+      "name": "Landing Page Product Positioning",
+      "settings": {
+        "heading_primary": "The Physical Key to",
+        "heading_secondary": "Digital Freedom",
+        "cta_text": "Get Helm for $103.20 — Save $25.80 Now",
+        "units_text": "Only XXX discounted units left!"
+      }
+    },
+    "landing_page_benefits_cVEqyF": {
+      "type": "landing-page-benefits",
+      "blocks": {
+        "benefit_8L6z84": {
+          "type": "benefit",
+          "settings": {
+            "benefit_title": "Works With Your Brain",
+            "benefit_description": "Physical action creates a powerful mental shift."
+          }
+        },
+        "benefit_rfFMNP": {
+          "type": "benefit",
+          "settings": {
+            "benefit_title": "Instant Activation",
+            "benefit_description": "No setup or passwords, just tap to focus."
+          }
+        },
+        "benefit_p9Jj4G": {
+          "type": "benefit",
+          "settings": {
+            "benefit_title": "Premium For Life",
+            "benefit_description": "Solid brass. One-time buy. Lasts forever."
+          }
+        },
+        "benefit_cDxUdC": {
+          "type": "benefit",
+          "settings": {
+            "benefit_title": "Actually Effective",
+            "benefit_description": "Unlike apps, Helm is hard to ignore or override."
+          }
+        }
+      },
+      "block_order": [
+        "benefit_8L6z84",
+        "benefit_rfFMNP",
+        "benefit_p9Jj4G",
+        "benefit_cDxUdC"
+      ],
+      "name": "Landing Page Benefits",
+      "settings": {
+        "section_title": "Benefits"
+      }
+    },
+    "landing_page_feature_comparison_PArEkc": {
+      "type": "landing-page-feature-comparison",
+      "blocks": {
+        "comparison_item_zCM8r8": {
+          "type": "comparison_item",
+          "settings": {
+            "is_disabled": true,
+            "title": "App Blockers",
+            "description": "Easy to bypass"
+          }
+        },
+        "comparison_item_C6fTiJ": {
+          "type": "comparison_item",
+          "settings": {
+            "is_disabled": true,
+            "title": "Willpower",
+            "description": "Drains quickly, inconsistent"
+          }
+        },
+        "comparison_item_79ymGr": {
+          "type": "comparison_item",
+          "settings": {
+            "is_disabled": false,
+            "title": "Helm",
+            "description": "Physical boundary, consistent behavior cue"
+          }
+        }
+      },
+      "block_order": [
+        "comparison_item_zCM8r8",
+        "comparison_item_C6fTiJ",
+        "comparison_item_79ymGr"
+      ],
+      "name": "Landing Page Comparison",
+      "settings": {}
+    },
+    "landing_page_customers_comments_nEwWqa": {
+      "type": "landing-page-customers-comments",
+      "blocks": {
+        "testimonial_wbgrxt": {
+          "type": "testimonial",
+          "settings": {
+            "video_url": "",
+            "quote_text": "I've tried everything. Helm is the first thing that actually helped me focus.",
+            "author": "John doe"
+          }
+        },
+        "testimonial_gwm9pe": {
+          "type": "testimonial",
+          "settings": {
+            "video_url": "",
+            "quote_text": "It's sculptural, meets form and function. I love how it looks and works.",
+            "author": "John doe"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_wbgrxt",
+        "testimonial_gwm9pe"
+      ],
+      "name": "Landing Page Comments",
+      "settings": {
+        "heading_primary": "Here's What",
+        "heading_secondary": "Our Customers Are Saying",
+        "star_rating": 5,
+        "reviews_text": "500+ Reviews"
+      }
+    },
+    "landing_page_bundle_ChDzAF": {
+      "type": "landing-page-bundle",
+      "blocks": {
+        "card_hHppxN": {
+          "type": "card",
+          "settings": {
+            "primary_text": "Free Gift Included",
+            "secondary_text": "in Every Purchase",
+            "show_discount": false,
+            "discount_text": "Save 30%"
+          }
+        },
+        "card_3zPH6J": {
+          "type": "card",
+          "settings": {
+            "primary_text": "Free Gift Included",
+            "secondary_text": "Couple's Bundle: Intimacy Deck + Icebreaker Deck",
+            "show_discount": true,
+            "discount_text": "Save 30%"
+          }
+        },
+        "card_qamJ74": {
+          "type": "card",
+          "settings": {
+            "primary_text": "Free Gift Included",
+            "secondary_text": "Spend $75+ =",
+            "show_discount": true,
+            "discount_text": "Free Shipping"
+          }
+        }
+      },
+      "block_order": [
+        "card_hHppxN",
+        "card_3zPH6J",
+        "card_qamJ74"
+      ],
+      "name": "Landing Page Bundle",
+      "settings": {
+        "bg_color": "#232440",
+        "card_bg_color": "#3B3D72",
+        "accent_color": "#FAC848",
+        "gradient_end_color": "#7074D8",
+        "main_title": "Bundle +",
+        "subtitle": "Black Friday Offer",
+        "countdown_heading": "Black Friday",
+        "countdown_subheading": "Pricing Ends Soon!",
+        "units_text": "Only XXX discounted units left!",
+        "end_date": "2024-12-31T23:59:59",
+        "timezone": "+00:00"
+      }
+    },
+    "landing_page_faq_pAUxt7": {
+      "type": "landing-page-faq",
+      "blocks": {
+        "faq_item_Mkkq8G": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is this really free?",
+            "answer": "<p>Yes. No tricks.</p>"
+          }
+        },
+        "faq_item_r7jFVz": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Who can enter?",
+            "answer": "<p>Anyone in the U.S. who wants more out of life</p>"
+          }
+        },
+        "faq_item_KDETJw": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Do I need to buy anything?",
+            "answer": "<p>Nope. Just your email</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_Mkkq8G",
+        "faq_item_r7jFVz",
+        "faq_item_KDETJw"
+      ],
+      "name": "Landing FAQ",
+      "settings": {
+        "heading": "Frequently Asked Questions"
+      }
+    },
+    "landing_page_get_product_CiKATe": {
+      "type": "landing-page-get-product",
+      "name": "Landing Page Get Product",
+      "settings": {
+        "background_color": "#232440",
+        "sale_price": "$103.20",
+        "price_color": "#000000",
+        "price_bg_color": "#FFFFFF",
+        "badge_text": "Black Friday Only",
+        "badge_bg_color": "#000000",
+        "badge_text_color": "#E3E3E3",
+        "original_price": "Original price: $129",
+        "original_price_color": "#666666",
+        "stock_text": "Limited Black Friday Stock — Only XXX Discounted Units Left",
+        "stock_text_color": "#FAC848",
+        "headline": "Reclaim Your Time.",
+        "headline_color": "#FFFFFF",
+        "subheadline": "Protect Your Focus.",
+        "subheadline_color": "#FAC848",
+        "description": "Helm makes deep work a habit, not a hope.",
+        "description_color": "#FFFFFF",
+        "button_text": "Get Helm Now",
+        "button_link": "",
+        "button_bg_color": "#FAC848",
+        "button_text_color": "#232440",
+        "guarantee_text": "90-Day No-Risk Return Policy",
+        "guarantee_color": "#E3E3E3"
+      }
+    },
+    "landing_footer_dwwWFY": {
+      "type": "landing-footer",
+      "name": "Landing Footer",
+      "settings": {
+        "logo_link": "/",
+        "logo": "shopify://shop_images/bc4f5bb6def0700ad71e3d30dd75536b39e4dbef_d357d9b1-886b-47bb-bca7-0e71e6090492.png",
+        "copyright": "© 2025 BestSelf Co. All rights reserved.",
+        "policy_links": "<p><a href=\"/pages/privacy-policy\">Privacy Policy</a> | <a href=\"/pages/terms-conditions\">Terms & Conditions</a> | <a href=\"/pages/shipping-policy\">Shipping Policy</a></p>"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "landing_header_hetdmr",
+    "landing_page_cta_HkyRm6",
+    "black_friday_ugc_q4RprW",
+    "landing_page_value_proposition_U4iY6B",
+    "landing_page_product_positioning_eDVEJP",
+    "landing_page_benefits_cVEqyF",
+    "landing_page_feature_comparison_PArEkc",
+    "landing_page_customers_comments_nEwWqa",
+    "landing_page_bundle_ChDzAF",
+    "landing_page_faq_pAUxt7",
+    "landing_page_get_product_CiKATe",
+    "landing_footer_dwwWFY"
+  ]
+}
