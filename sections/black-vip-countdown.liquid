@@ -34,6 +34,61 @@
       </div>
     </div>
   </div>
+</section>
+
+{% schema %}
+{
+  "name": "Footer Countdown",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Gradient Start Color",
+      "default": "#3e2b1f"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "VIP Access Closes Soon"
+    },
+    {
+      "type": "textarea",
+      "id": "content",
+      "label": "Content",
+      "default": "This private offer disappears when the public Black Friday sale opens. Once it’s gone, so are the free gifts."
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Label",
+      "default": "Unlock My VIP Bundle Now"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "text",
+      "id": "end_date",
+      "label": "Countdown End Date (e.g. Nov 29, 2025 23:59:59)",
+      "default": "Nov 29, 2025 23:59:59"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Footer Countdown"
+    }
+  ]
+}
+{% endschema %}
 
   <script>
     document.addEventListener("DOMContentLoaded", function() {
@@ -113,58 +168,3 @@
     @media (max-width: 768px) {
     }
   </style>
-</section>
-
-{% schema %}
-{
-  "name": "Footer Countdown",
-  "settings": [
-    {
-      "type": "color",
-      "id": "bg_color",
-      "label": "Gradient Start Color",
-      "default": "#3e2b1f"
-    },
-    {
-      "type": "text",
-      "id": "title",
-      "label": "Title",
-      "default": "VIP Access Closes Soon"
-    },
-    {
-      "type": "textarea",
-      "id": "content",
-      "label": "Content",
-      "default": "This private offer disappears when the public Black Friday sale opens. Once it’s gone, so are the free gifts."
-    },
-    {
-      "type": "text",
-      "id": "button_label",
-      "label": "Button Label",
-      "default": "Unlock My VIP Bundle Now"
-    },
-    {
-      "type": "url",
-      "id": "button_link",
-      "label": "Button Link"
-    },
-    {
-      "type": "color",
-      "id": "text_color",
-      "label": "Text Color",
-      "default": "#ffffff"
-    },
-    {
-      "type": "text",
-      "id": "end_date",
-      "label": "Countdown End Date (e.g. Nov 29, 2025 23:59:59)",
-      "default": "Nov 29, 2025 23:59:59"
-    }
-  ],
-  "presets": [
-    {
-      "name": "Footer Countdown"
-    }
-  ]
-}
-{% endschema %}
