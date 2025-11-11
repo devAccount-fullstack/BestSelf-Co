@@ -1,5 +1,15 @@
 document.addEventListener('DOMContentLoaded', function() {
-  const currentPath = window.location.pathname;
+  // Normalize the path (remove trailing slash)
+  const currentPath = window.location.pathname.replace(/\/$/, '');
+
+  // ----------- VIP Page Protection Logic -----------
+  if (currentPath === '/pages/black-friday-vip') {
+    if (localStorage.getItem('vipAccessGranted') !== 'true') {
+      // Redirect to the password page
+      window.location.href = "/pages/password-gate";
+      return;
+    }
+  }
 
   // ----------- Password / Code Page Logic -----------
   if (currentPath === '/pages/password-gate') {
@@ -37,13 +47,5 @@ document.addEventListener('DOMContentLoaded', function() {
         input.focus();
       }
     });
-  }
-
-  // ----------- VIP Page Protection Logic -----------
-  if (currentPath === '/pages/black-friday-vip') {
-    if (localStorage.getItem('vipAccessGranted') !== 'true') {
-      // Redirect to the password page
-      window.location.href = "/pages/password-gate";
-    }
   }
 });
