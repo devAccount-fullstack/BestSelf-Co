@@ -1,19 +1,19 @@
 document.addEventListener('DOMContentLoaded', function() {
   const currentPath = window.location.pathname;
 
-  // ----------- Code Page Logic -----------
+  // ----------- Password / Code Page Logic -----------
   if (currentPath === '/pages/password-gate') {
-    const form = document.querySelector('#black-friday-validation .vip-form');
+    const form = document.querySelector('.vip-form');
     if (!form) return;
 
     const input = form.querySelector('input');
     const button = form.querySelector('button');
 
-    // Update placeholder and button text
+    // Update placeholder and button text to "Enter code"
     input.placeholder = "Enter code";
     button.textContent = "Submit";
 
-    // Add error message element below button if it doesn't exist
+    // Create error message element below the button if not exists
     let errorMessage = form.querySelector('.vip-error-message');
     if (!errorMessage) {
       errorMessage = document.createElement('p');
@@ -25,14 +25,14 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     form.addEventListener('submit', function(e) {
-      e.preventDefault();
+      e.preventDefault(); // prevent refresh
       const code = input.value.trim();
 
       if (code === "BLACKFRIDAY") {
         localStorage.setItem('vipAccessGranted', 'true');
         window.location.href = "/pages/black-friday-vip";
       } else {
-        errorMessage.textContent = "Invalid Promo code";
+        errorMessage.textContent = "Invalid Code";
         input.value = '';
         input.focus();
       }
@@ -42,6 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // ----------- VIP Page Protection Logic -----------
   if (currentPath === '/pages/black-friday-vip') {
     if (localStorage.getItem('vipAccessGranted') !== 'true') {
+      // Redirect to the password page
       window.location.href = "/pages/password-gate";
     }
   }
