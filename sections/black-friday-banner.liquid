@@ -38,9 +38,18 @@
 
       <p class="note">{{ section.settings.loyalty_message }}</p>
 
-      {% if section.settings.product_image != blank %}
-          <img src="{{ section.settings.product_image | image_url: width: 600, height: 600 }}" alt="Product" width="600px" height="600px"  class="image-overflow">
-      {% endif %}
+        {% if section.settings.product_image != blank %}
+            <img src="{{ section.settings.product_image | image_url: width: 600, height: 600 }}" alt="Product" width="600px" height="600px"  class="image-overflow">
+        {% endif %}
+        <div class="image-container">
+          <div class="discount-badge">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <h4 class="prices">{{ section.settings.price_text }}</h4>
+              <p class="compared-price">{{ section.settings.compare_text }}</p>
+            </div>
+            <p class="avail-product">Only {{ section.settings.avail_text }} Left</p>
+          </div>
+      </div>
     </div>
   </div>
 </section>
@@ -95,6 +104,22 @@
       "type": "image_picker",
       "id": "product_image",
       "label": "Product Image"
+    },
+
+    {
+      "type": "text",
+      "id": "price_text",
+      "label": "Price Text"
+    },
+    {
+      "type": "text",
+      "id": "compare_text",
+      "label": "Compare Text"
+    },
+     {
+      "type": "text",
+      "id": "avail_text",
+      "label": "Avail Text"
     },
     {
       "type": "text",

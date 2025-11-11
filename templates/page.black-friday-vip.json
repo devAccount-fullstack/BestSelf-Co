@@ -208,10 +208,50 @@
             "thumbnail": "shopify://shop_images/meeting-mastery-pad-50-off-professional-growth-189305.jpg",
             "video_url": "https://www.youtube.com/watch?v=K4TOrB7at0Y"
           }
+        },
+        "video_block_xaDCFw": {
+          "type": "video_block",
+          "settings": {
+            "thumbnail": "shopify://shop_images/its-a-date-100-off-romantic-connection-462551.jpg",
+            "video_url": "https://www.youtube.com/watch?v=K4TOrB7at0Y"
+          }
+        },
+        "video_block_Dzebnw": {
+          "type": "video_block",
+          "settings": {
+            "thumbnail": "shopify://shop_images/meeting-mastery-pad-digital-download-digital-download-personal-growth-998894.jpg",
+            "video_url": ""
+          }
+        },
+        "video_block_dwN9Cg": {
+          "type": "video_block",
+          "settings": {
+            "thumbnail": "shopify://shop_images/680b803d8892baa85c5ff13a6438e391c02adeb8.png",
+            "video_url": "https://www.youtube.com/watch?v=K4TOrB7at0Y"
+          }
+        },
+        "video_block_nm8jhY": {
+          "type": "video_block",
+          "settings": {
+            "thumbnail": "shopify://shop_images/SCRIBE_FOREST_ac051637-aff9-41a4-a2e5-5c3dacfb91ed.jpg",
+            "video_url": "https://www.youtube.com/watch?v=K4TOrB7at0Y"
+          }
+        },
+        "video_block_dD9agX": {
+          "type": "video_block",
+          "settings": {
+            "thumbnail": "shopify://shop_images/scribe-classic-notebook-journal-personal-growth-gray-mist-425764.jpg",
+            "video_url": "https://www.youtube.com/watch?v=K4TOrB7at0Y"
+          }
         }
       },
       "block_order": [
-        "video_block_WbgtrE"
+        "video_block_WbgtrE",
+        "video_block_xaDCFw",
+        "video_block_Dzebnw",
+        "video_block_dwN9Cg",
+        "video_block_nm8jhY",
+        "video_block_dD9agX"
       ],
       "name": "Black Friday UGC",
       "settings": {
@@ -307,6 +347,19 @@
         "gradient_color": "rgba(0,0,0,0)"
       }
     },
+    "black_vip_countdown_m4PKeb": {
+      "type": "black-vip-countdown",
+      "name": "Footer Countdown",
+      "settings": {
+        "bg_color": "#131516",
+        "title": "VIP Access Closes Soon",
+        "content": "This private offer disappears when the public Black Friday sale opens. Once it’s gone, so are the free gifts.",
+        "button_label": "Unlock My VIP Bundle Now",
+        "button_link": "",
+        "text_color": "#ffffff",
+        "end_date": "Nov 29, 2025 23:59:59"
+      }
+    },
     "landing_footer_aqYdtb": {
       "type": "landing-footer",
       "name": "Landing Footer",
@@ -315,20 +368,6 @@
         "logo": "shopify://shop_images/bc4f5bb6def0700ad71e3d30dd75536b39e4dbef_d357d9b1-886b-47bb-bca7-0e71e6090492.png",
         "copyright": "© 2025 BestSelf Co. All rights reserved.",
         "policy_links": "<p><a href=\"/pages/privacy-policy\">Privacy Policy</a> | <a href=\"/pages/terms-conditions\">Terms & Conditions</a> | <a href=\"/pages/shipping-policy\">Shipping Policy</a></p>"
-      }
-    },
-    "footer_countdown_3iknWM": {
-      "type": "footer-countdown",
-      "name": "Footer Countdown",
-      "settings": {
-        "title": "VIP Access Closes Soon",
-        "content": "This private offer disappears when the public Black Friday sale opens. Once it’s gone, so are the free gifts.",
-        "button_label": "Unlock My VIP Bundle Now",
-        "button_link": "",
-        "gradient_start": "#3e2b1f",
-        "gradient_end": "#000000",
-        "text_color": "#ffffff",
-        "end_date": "Nov 29, 2025 23:59:59"
       }
     }
   },
@@ -342,7 +381,7 @@
     "black_friday_ugc_H4Tkmr",
     "black_vip_accordion_J9qrbH",
     "landing_testimonial_rBA7NT",
-    "footer_countdown_3iknWM",
+    "black_vip_countdown_m4PKeb",
     "landing_footer_aqYdtb"
   ]
 }

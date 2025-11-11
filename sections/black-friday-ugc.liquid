@@ -258,16 +258,35 @@
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   var splide = new Splide("#ugc-slider-{{ section.id }}", {
-    type: "loop",
-    perPage: 3.8,
+    type: 'loop',
+    perPage: 4,
+    perMove: 1,
     arrows: false,
+    focus: 'start',
+    gap: '1rem',
+    pagination: false,
     gap: "1rem",
       breakpoints: {
-        1620: { perPage: 3.2 },
-        1440: { perPage: 3.2 },
-        1305: { perPage: 2.5 },
-        768: { perPage: 2 },
-        480: { perPage: 1 }
+        1620: {
+          perPage: 3,
+          perMove: 1
+         },
+        1440: {
+          perPage: 3,
+          perMove: 1
+         },
+        1305: {
+          perPage: 2,
+          perMove: 1
+         },
+        768: {
+          perPage: 2,
+          perMove: 1
+         },
+        480: {
+          perPage: 1,
+          perMove: 1
+         }
       }
   });
   splide.mount();

@@ -1,0 +1,329 @@
+<section id="footer-countdown-{{ section.id }}"
+  class="footer-countdown"
+  style="background-color: {{ section.settings.bg_color }};"
+>
+  <div class="countdown-container">
+    <div class="countdown-left">
+      {% if section.settings.title != blank %}
+        <h3 class="countdown-title">{{ section.settings.title }}</h3>
+      {% endif %}
+      {% if section.settings.content != blank %}
+        <p class="countdown-content">{{ section.settings.content }}</p>
+      {% endif %}
+      {% if section.settings.button_label != blank %}
+        <a href="{{ section.settings.button_link }}" class="countdown-btn">{{ section.settings.button_label }}</a>
+      {% endif %}
+    </div>
+
+    <div class="countdown-footer">
+      <div class="count-down-flex">
+        <span id="days-{{ section.id }}" class="count-box">00</span>
+        <small>Days</small>
+      </div>
+      <div class="count-down-flex">
+        <span id="hours-{{ section.id }}" class="count-box">00</span>
+        <small>Hours</small>
+      </div>
+      <div class="count-down-flex">
+        <span id="minutes-{{ section.id }}" class="count-box">00</span>
+        <small>Minutes</small>
+      </div>
+      <div class="count-down-flex">
+        <span id="seconds-{{ section.id }}" class="count-box">00</span>
+        <small>Seconds</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Footer Countdown",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Gradient Start Color",
+      "default": "#3e2b1f"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "VIP Access Closes Soon"
+    },
+    {
+      "type": "textarea",
+      "id": "content",
+      "label": "Content",
+      "default": "This private offer disappears when the public Black Friday sale opens. Once it’s gone, so are the free gifts."
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Label",
+      "default": "Unlock My VIP Bundle Now"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "text",
+      "id": "end_date",
+      "label": "Countdown End Date (e.g. Nov 29, 2025 23:59:59)",
+      "default": "Nov 29, 2025 23:59:59"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Footer Countdown"
+    }
+  ]
+}
+{% endschema %}
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const endDate = new Date("{{ section.settings.end_date }}").getTime();
+
+    const daysEl = document.getElementById("days-{{ section.id }}");
+    const hoursEl = document.getElementById("hours-{{ section.id }}");
+    const minutesEl = document.getElementById("minutes-{{ section.id }}");
+    const secondsEl = document.getElementById("seconds-{{ section.id }}");
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = endDate - now;
+
+      if (distance <= 0) {
+        daysEl.textContent = "00";
+        hoursEl.textContent = "00";
+        minutesEl.textContent = "00";
+        secondsEl.textContent = "00";
+
+        const container = document.querySelector("#footer-countdown-{{ section.id }} .countdown-footer");
+        if (container) container.innerHTML = "<p>Offer Closed</p>";
+        clearInterval(timer);
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      daysEl.textContent = String(days).padStart(2, '0');
+      hoursEl.textContent = String(hours).padStart(2, '0');
+      minutesEl.textContent = String(minutes).padStart(2, '0');
+      secondsEl.textContent = String(seconds).padStart(2, '0');
+    }
+
+    updateCountdown();
+    const timer = setInterval(updateCountdown, 1000);
+  });
+</script>
+
+
+<style>
+  #footer-countdown-{{ section.id }} {
+    font-family: 'Inter', sans-serif;
+    padding: 60px 0;
+  }
+
+  .countdown-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: linear-gradient(to right, #C9A062 -20%, #000000 95%);
+    color: #ffffff;
+    padding: 40px;
+    border-radius: 20px;
+    width: 60%;
+    margin: 0 auto;
+  }
+
+  .countdown-title {
+    font-size: 24px;
+    font-weight: 500;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #FFFFFF2B;
+    margin-bottom: 10px;
+    font-family: "Inter", sans-serif;
+  }
+
+  .countdown-content {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-family: "Inter", sans-serif;
+  }
+
+  .countdown-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1px solid {{ section.settings.text_color }};
+    border-radius: 30px;
+    text-decoration: none;
+    color: {{ section.settings.text_color }};
+    transition: all 0.3s ease;
+  }
+
+  .countdown-btn:hover {
+    background: {{ section.settings.text_color }};
+    color: {{ section.settings.gradient_end }};
+  }
+
+  {% comment %} Countdown Timer {% endcomment %}
+  .countdown-footer {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    width: 70%;
+  }
+
+  .count-down-flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .count-box {
+    color: #fff;
+    padding: 0 15px;
+    border-radius: 13px;
+    text-align: center;
+    min-width: 120px;
+    display: block;
+    font-size: 100px;
+    font-weight: 700;
+    font-family: libre baskerville, serif;
+  }
+
+  .count-box small {
+    font-size: 20px;
+    font-family: Inter, 'sans-serif';
+  }
+
+  .countdown-left {
+    width: 30%;
+  }
+
+  /* ---------- RESPONSIVE BREAKPOINTS ---------- */
+
+  /* 2550px and below */
+  @media (max-width: 2550px) {
+    .count-box {
+      font-size: 90px;
+      min-width: 110px;
+    }
+    .countdown-container {
+      width: 65%;
+    }
+  }
+
+  /* 1920px and below */
+  @media (max-width: 1920px) {
+    .count-box {
+      font-size: 80px;
+    }
+    .countdown-container {
+      width: 70%;
+      padding: 35px;
+    }
+  }
+
+  /* 1440px and below */
+  @media (max-width: 1440px) {
+    .count-box {
+      font-size: 70px;
+      min-width: 100px;
+    }
+    .countdown-title {
+      font-size: 22px;
+    }
+    .countdown-content {
+      font-size: 15px;
+    }
+    .countdown-container {
+      width: 75%;
+    }
+  }
+
+  /* 1024px and below */
+  @media (max-width: 1024px) {
+    .countdown-container {
+      flex-direction: column;
+      text-align: center;
+      width: 85%;
+    }
+    .countdown-left {
+      width: 100%;
+    }
+    .countdown-footer {
+      justify-content: center;
+      width: 100%;
+    }
+    .count-box {
+      font-size: 60px;
+    }
+  }
+
+  /* 768px and below */
+  @media (max-width: 768px) {
+    .countdown-container {
+      width: 90%;
+      padding: 30px;
+    }
+    .count-box {
+      font-size: 50px;
+      min-width: 80px;
+    }
+    .countdown-title {
+      font-size: 20px;
+    }
+    .countdown-content {
+      font-size: 14px;
+    }
+  }
+
+  /* 475px and below */
+  @media (max-width: 475px) {
+    .count-box {
+      font-size: 40px;
+      min-width: 70px;
+    }
+    .countdown-btn {
+      padding: 8px 16px;
+      font-size: 14px;
+    }
+    .countdown-container {
+      width: 95%;
+      padding: 25px;
+    }
+  }
+
+  /* 375px and below */
+  @media (max-width: 375px) {
+    .count-box {
+      font-size: 32px;
+      min-width: 60px;
+    }
+    .countdown-title {
+      font-size: 18px;
+    }
+    .countdown-content {
+      font-size: 13px;
+    }
+  }
+</style>
