@@ -126,11 +126,6 @@
         "disabled": false,
         "settings": {}
       },
-      "6146500278089136509": {
-        "type": "shopify://apps/bm-country-blocker-ip-blocker/blocks/boostmark-blocker/bf9db4b9-be4b-45e1-8127-bbcc07d93e7e",
-        "disabled": false,
-        "settings": {}
-      },
       "13768625480086291342": {
         "type": "shopify://apps/forms/blocks/forms/8744a304-fcb1-4347-b211-bb6b4759a76a",
         "disabled": true,
@@ -396,18 +391,18 @@
       "scheme-11": {
         "settings": {
           "section_text": "#ffffff",
-          "section_bg": "#242540",
+          "section_bg": "#0c0b1a",
           "section_bg_light": "#f5f2ec",
           "section_bg_gradient": "",
-          "btn_primary_bg": "#fbc94b",
+          "btn_primary_bg": "#ab8c52",
           "btn_primary_text": "#ffffff",
-          "btn_primary_border": "#ffffff",
+          "btn_primary_border": "#d1c9bc",
           "btn_secondary_bg": "#0076ff",
           "btn_secondary_text": "#ffffff",
-          "btn_secondary_border": "#ffffff",
+          "btn_secondary_border": "#d1c9bc",
           "accent": "#ab8c52",
-          "lines_and_border": "#d1cdc4",
-          "overlay": "#000000",
+          "lines_and_border": "#d1c9bc",
+          "overlay": "#ffffff",
           "links": "#282c2e"
         }
       },

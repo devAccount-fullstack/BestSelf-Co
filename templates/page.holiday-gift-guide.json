@@ -105,7 +105,7 @@
         "layout": "grid",
         "grid": 3,
         "layout_mobile": "2",
-        "color_scheme": "",
+        "color_scheme": "scheme-11",
         "padding_top": 40,
         "padding_bottom": 40,
         "heading_tag": "automatic"
@@ -381,7 +381,7 @@
       "settings": {
         "align_text": "text-center",
         "width": "wrapper",
-        "color_scheme": "",
+        "color_scheme": "scheme-11",
         "overlay_opacity": 0,
         "show_overlay_text": false,
         "padding_top": 60,
@@ -572,7 +572,7 @@
         "layout": "grid",
         "grid": 4,
         "layout_mobile": "2",
-        "color_scheme": "",
+        "color_scheme": "scheme-11",
         "padding_top": 30,
         "padding_bottom": 0,
         "heading_tag": "automatic"
@@ -596,7 +596,7 @@
       "settings": {
         "align_text": "text-center",
         "width": "wrapper",
-        "color_scheme": "",
+        "color_scheme": "scheme-11",
         "overlay_opacity": 0,
         "show_overlay_text": false,
         "padding_top": 10,
@@ -614,7 +614,7 @@
         "layout": "inline",
         "link_text": "SHOP {{ section.settings.featured_collection.title }}",
         "link_url": "{{ section.settings.featured_collection.url }}",
-        "button_type": "btn--black",
+        "button_type": "btn--white",
         "button_size": "btn--small",
         "button_style": "btn--outline",
         "show_arrow": true,
@@ -623,7 +623,7 @@
         "rows": 2,
         "width": "wrapper",
         "layout_mobile": "slider",
-        "color_scheme": "",
+        "color_scheme": "scheme-11",
         "padding_top": 40,
         "padding_bottom": 40,
         "heading_tag": "automatic"
@@ -649,7 +649,7 @@
         "rows": 2,
         "width": "wrapper",
         "layout_mobile": "slider",
-        "color_scheme": "",
+        "color_scheme": "scheme-11",
         "padding_top": 40,
         "padding_bottom": 40,
         "heading_tag": "automatic"
@@ -666,8 +666,8 @@
         "layout": "inline",
         "link_text": "SHOP {{ section.settings.featured_collection.title }}",
         "link_url": "{{ section.settings.featured_collection.url }}",
-        "button_type": "btn--black",
-        "button_size": "btn--small",
+        "button_type": "btn--white",
+        "button_size": "",
         "button_style": "btn--outline",
         "show_arrow": true,
         "layout_desktop": "grid",
@@ -675,7 +675,7 @@
         "rows": 2,
         "width": "wrapper",
         "layout_mobile": "slider",
-        "color_scheme": "",
+        "color_scheme": "scheme-11",
         "padding_top": 40,
         "padding_bottom": 40,
         "heading_tag": "automatic"
@@ -733,7 +733,7 @@
       "settings": {
         "align_text": "text-center",
         "width": "wrapper",
-        "color_scheme": "",
+        "color_scheme": "scheme-11",
         "overlay_opacity": 0,
         "show_overlay_text": false,
         "padding_top": 50,
