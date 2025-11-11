@@ -1,0 +1,551 @@
+<style>
+  #landing-bundle-{{ section.id }} {
+    background-color: {{ section.settings.bg_color }};
+    padding: 60px 20px;
+  }
+
+  .bundle-container {
+    max-width: 1240px;
+    margin: 0 auto;
+  }
+
+  .bundle-header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .bundle-title {
+    font-family: 'Libre Baskerville', serif;
+    font-weight: 700;
+    font-size: 56px;
+    color: #FFFFFF;
+    margin: 0 0 8px 0;
+    line-height: 1.2;
+  }
+
+  .bundle-subtitle {
+    font-family: 'Libre Baskerville', serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 56px;
+    color: {{ section.settings.accent_color }};
+    margin: 0;
+    line-height: 1.2;
+  }
+
+  .bundle-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 30px;
+  }
+
+  .bundle-card {
+    background-color: {{ section.settings.card_bg_color }};
+    border-radius: 14px;
+    padding: 30px;
+    padding-right: 0;
+    height: 228.5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .bundle-card__content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 20px;
+    padding-left: 0;
+  }
+
+  .bundle-card__image {
+    width: 150px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0;
+    margin: 0;
+  }
+
+  .bundle-card__image img {
+    width: 100%;
+    height: 100%;
+    max-height: 180px;
+    object-fit: contain;
+  }
+
+  .bundle-card__text-primary {
+    font-family: 'Libre Baskerville', serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 20px;
+    color: {{ section.settings.accent_color }};
+    margin: 0 0 8px 0;
+    line-height: 1.3;
+  }
+
+  .bundle-card__text-secondary {
+    font-family: 'Libre Baskerville', serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: #FFFFFF;
+    margin: 0;
+    line-height: 1.3;
+  }
+
+  .bundle-card__text-bold {
+    font-family: 'Libre Baskerville', serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: #FFFFFF;
+    margin: 0 0 8px 0;
+    line-height: 1.3;
+  }
+
+  .bundle-card__separator {
+    font-family: 'Libre Baskerville', serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: #FFFFFF;
+    display: inline;
+    margin-right: 4px;
+  }
+
+  .bundle-card__discount {
+    font-family: 'Libre Baskerville', serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 20px;
+    color: {{ section.settings.accent_color }};
+    display: inline;
+  }
+
+  .countdown-container {
+    background: linear-gradient(90deg, {{ section.settings.card_bg_color }} 0%, {{ section.settings.gradient_end_color }} 100%);
+    border-radius: 14px;
+    padding: 40px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 228.5px;
+  }
+
+  .countdown-info {
+    flex-shrink: 0;
+  }
+
+  .countdown-heading {
+    font-family: 'Libre Baskerville', serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: #FFFFFF;
+    margin: 0 0 8px 0;
+    line-height: 1.3;
+  }
+
+  .countdown-subheading {
+    font-family: 'Libre Baskerville', serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: #FFFFFF;
+    margin: 0 0 16px 0;
+    line-height: 1.3;
+  }
+
+  .countdown-units {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    color: {{ section.settings.accent_color }};
+    margin: 0;
+  }
+
+  .countdown-timer {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    flex: 1;
+    justify-content: flex-end;
+  }
+
+  .countdown-box {
+    text-align: center;
+  }
+
+  .countdown-value {
+    font-family: 'Libre Baskerville', serif;
+    font-weight: 700;
+    font-size: 100px;
+    color: {{ section.settings.accent_color }};
+    display: block;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .countdown-label {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #FFFFFF;
+    display: block;
+    text-transform: capitalize;
+  }
+
+  @media (max-width: 1024px) {
+    .bundle-cards {
+      grid-template-columns: 1fr;
+    }
+
+    .countdown-container {
+      flex-direction: column;
+      height: auto;
+      gap: 30px;
+      text-align: center;
+    }
+
+    .countdown-timer {
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .countdown-value {
+      font-size: 60px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .bundle-title,
+    .bundle-subtitle {
+      font-size: 36px;
+    }
+
+    .bundle-card {
+      height: auto;
+      min-height: 180px;
+      flex-direction: column;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .bundle-card__content {
+      padding-right: 0;
+      margin-bottom: 15px;
+    }
+
+    .bundle-card__image {
+      width: 50%;
+      max-width: 150px;
+    }
+
+    .countdown-box {
+      flex: 1;
+      min-width: 80px;
+    }
+
+    .countdown-value {
+      font-size: 48px;
+    }
+
+    .countdown-label {
+      font-size: 12px;
+    }
+  }
+</style>
+
+<section id="landing-bundle-{{ section.id }}">
+  <div class="bundle-container">
+    <!-- Header -->
+    <div class="bundle-header">
+      <h2 class="bundle-title">{{ section.settings.main_title }}</h2>
+      <p class="bundle-subtitle">{{ section.settings.subtitle }}</p>
+    </div>
+
+    <!-- Cards -->
+    <div class="bundle-cards">
+      {% for block in section.blocks %}
+        {% if block.type == 'card' %}
+          <div class="bundle-card" {{ block.shopify_attributes }}>
+            <div class="bundle-card__content">
+              {% if block.settings.primary_text != blank %}
+                <p class="bundle-card__text-primary">{{ block.settings.primary_text }}</p>
+              {% endif %}
+              {% if block.settings.secondary_text != blank %}
+                <p class="bundle-card__text-secondary">{{ block.settings.secondary_text }}</p>
+              {% endif %}
+              {% if block.settings.show_discount and block.settings.discount_text != blank %}
+                <p class="bundle-card__text-bold">
+                  <span class="bundle-card__separator">—</span>
+                  <span class="bundle-card__discount">{{ block.settings.discount_text }}</span>
+                </p>
+              {% endif %}
+            </div>
+            {% if block.settings.card_image != blank %}
+              <div class="bundle-card__image">
+                <img
+                  src="{{ block.settings.card_image | image_url: width: 200 }}"
+                  alt="{{ block.settings.primary_text | default: 'Bundle offer' }}"
+                  loading="lazy"
+                  width="200"
+                  height="200"
+                >
+              </div>
+            {% endif %}
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    <!-- Countdown -->
+    <div class="countdown-container">
+      <div class="countdown-info">
+        <h3 class="countdown-heading">{{ section.settings.countdown_heading }}</h3>
+        <p class="countdown-subheading">{{ section.settings.countdown_subheading }}</p>
+        <p class="countdown-units" id="units-left-{{ section.id }}">
+          {{ section.settings.units_text }}
+        </p>
+      </div>
+      <div class="countdown-timer">
+        <div class="countdown-box">
+          <span id="days-{{ section.id }}" class="countdown-value">00</span>
+          <small class="countdown-label">Days</small>
+        </div>
+        <div class="countdown-box">
+          <span id="hours-{{ section.id }}" class="countdown-value">00</span>
+          <small class="countdown-label">Hours</small>
+        </div>
+        <div class="countdown-box">
+          <span id="minutes-{{ section.id }}" class="countdown-value">00</span>
+          <small class="countdown-label">Minutes</small>
+        </div>
+        <div class="countdown-box">
+          <span id="seconds-{{ section.id }}" class="countdown-value">00</span>
+          <small class="countdown-label">Seconds</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  (function() {
+    const sectionId = "{{ section.id }}";
+    const endDateStr = "{{ section.settings.end_date }}";
+    const timezone = "{{ section.settings.timezone }}";
+    
+    const daysEl = document.getElementById(`days-${sectionId}`);
+    const hoursEl = document.getElementById(`hours-${sectionId}`);
+    const minutesEl = document.getElementById(`minutes-${sectionId}`);
+    const secondsEl = document.getElementById(`seconds-${sectionId}`);
+
+    if (!endDateStr || !daysEl || !hoursEl || !minutesEl || !secondsEl) return;
+
+    function updateCountdown() {
+      const now = new Date();
+      const endDate = new Date(endDateStr);
+
+      // Apply timezone offset if provided
+      if (timezone) {
+        const offsetMatch = timezone.match(/([+-])(\d{2}):(\d{2})/);
+        if (offsetMatch) {
+          const sign = offsetMatch[1] === '+' ? 1 : -1;
+          const hours = parseInt(offsetMatch[2], 10);
+          const minutes = parseInt(offsetMatch[3], 10);
+          const offsetMs = sign * (hours * 60 + minutes) * 60 * 1000;
+          endDate.setTime(endDate.getTime() + offsetMs);
+        }
+      }
+
+      const distance = endDate - now;
+
+      if (distance < 0) {
+        daysEl.innerText = "00";
+        hoursEl.innerText = "00";
+        minutesEl.innerText = "00";
+        secondsEl.innerText = "00";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      daysEl.innerText = days.toString().padStart(2, "0");
+      hoursEl.innerText = hours.toString().padStart(2, "0");
+      minutesEl.innerText = minutes.toString().padStart(2, "0");
+      secondsEl.innerText = seconds.toString().padStart(2, "0");
+    }
+
+    updateCountdown();
+    const timer = setInterval(updateCountdown, 1000);
+
+    // Cleanup on page unload
+    window.addEventListener('beforeunload', function() {
+      clearInterval(timer);
+    });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Landing Page Bundle",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#232440"
+    },
+    {
+      "type": "color",
+      "id": "card_bg_color",
+      "label": "Card Background Color",
+      "default": "#3B3D72"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Accent Color",
+      "default": "#FAC848"
+    },
+    {
+      "type": "color",
+      "id": "gradient_end_color",
+      "label": "Countdown Gradient End Color",
+      "default": "#7074D8"
+    },
+    {
+      "type": "header",
+      "content": "Header Text"
+    },
+    {
+      "type": "text",
+      "id": "main_title",
+      "label": "Main Title",
+      "default": "Bundle +"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Black Friday Offer"
+    },
+    {
+      "type": "header",
+      "content": "Countdown Settings"
+    },
+    {
+      "type": "text",
+      "id": "countdown_heading",
+      "label": "Countdown Heading",
+      "default": "Black Friday"
+    },
+    {
+      "type": "text",
+      "id": "countdown_subheading",
+      "label": "Countdown Subheading",
+      "default": "Pricing Ends Soon!"
+    },
+    {
+      "type": "text",
+      "id": "units_text",
+      "label": "Units Left Text",
+      "default": "Only XXX discounted units left!",
+      "info": "Use XXX as placeholder for actual inventory count"
+    },
+    {
+      "type": "text",
+      "id": "end_date",
+      "label": "Countdown End Date",
+      "default": "2024-12-31T23:59:59",
+      "info": "Format: YYYY-MM-DDTHH:MM:SS (e.g., 2024-12-31T23:59:59)"
+    },
+    {
+      "type": "text",
+      "id": "timezone",
+      "label": "Timezone Offset",
+      "default": "+00:00",
+      "info": "Format: +HH:MM or -HH:MM (e.g., -05:00 for EST, +01:00 for CET)"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Bundle Card",
+      "settings": [
+        {
+          "type": "text",
+          "id": "primary_text",
+          "label": "Primary Text (Italic)",
+          "default": "Free Gift Included"
+        },
+        {
+          "type": "text",
+          "id": "secondary_text",
+          "label": "Secondary Text (Bold)",
+          "default": "in Every Purchase"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_discount",
+          "label": "Show Discount Text",
+          "default": false
+        },
+        {
+          "type": "text",
+          "id": "discount_text",
+          "label": "Discount Text",
+          "default": "Save 30%"
+        },
+        {
+          "type": "image_picker",
+          "id": "card_image",
+          "label": "Card Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Landing Page Bundle",
+      "blocks": [
+        {
+          "type": "card",
+          "settings": {
+            "primary_text": "Free Gift Included",
+            "secondary_text": "in Every Purchase",
+            "show_discount": false
+          }
+        },
+        {
+          "type": "card",
+          "settings": {
+            "primary_text": "",
+            "secondary_text": "Couple's Bundle: Intimacy Deck + Icebreaker Deck",
+            "show_discount": true,
+            "discount_text": "Save 30%"
+          }
+        },
+        {
+          "type": "card",
+          "settings": {
+            "primary_text": "",
+            "secondary_text": "Spend $75+ =",
+            "show_discount": true,
+            "discount_text": "Free Shipping"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

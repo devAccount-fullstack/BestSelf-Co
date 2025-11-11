@@ -1,0 +1,443 @@
+<style>
+  .landing-page-get-product {
+    background-color: {{ section.settings.background_color }};
+    padding: 0 0 200px;
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .landing-page-get-product__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    width: 100%;
+  }
+
+  .landing-page-get-product__image-wrapper {
+    position: relative;
+    max-width: 870px;
+    margin: 0 auto;
+    overflow: visible;
+  }
+
+  .landing-page-get-product__image {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .landing-page-get-product__gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, rgba(35, 36, 64, 0) -32.03%, #232440 86.76%);
+    pointer-events: none;
+  }
+
+  .landing-page-get-product__content {
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+    max-width: 800px;
+    padding: 0 20px;
+  }
+
+  .landing-page-get-product__price-wrapper {
+    display: inline-block;
+    background: {{ section.settings.price_bg_color }};
+    width: 248px;
+    height: 73px;
+    border-radius: 4px;
+    padding: 12px 14px;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .landing-page-get-product__price-container {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+  }
+
+  .landing-page-get-product__price {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1.2;
+    color: {{ section.settings.price_color }};
+  }
+
+  .landing-page-get-product__badge {
+    background: {{ section.settings.badge_bg_color }};
+    width: 112px;
+    height: 23px;
+  }
+
+  .landing-page-get-product__badge-text {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.2;
+    color: {{ section.settings.badge_text_color }};
+  }
+
+  .landing-page-get-product__original-price {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.2;
+    color: {{ section.settings.original_price_color }};
+    margin: 0;
+    text-align: left;
+  }
+
+  .landing-page-get-product__stock-text {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.4;
+    color: {{ section.settings.stock_text_color }};
+    margin-bottom: 20px;
+  }
+
+  .landing-page-get-product__headline {
+    font-family: 'Libre Baskerville', serif;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 1.2;
+    color: {{ section.settings.headline_color }};
+    margin-bottom: 10px;
+  }
+
+  .landing-page-get-product__subheadline {
+    font-family: 'Libre Baskerville', serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 48px;
+    line-height: 1.2;
+    color: {{ section.settings.subheadline_color }};
+    margin-bottom: 20px;
+  }
+
+  .landing-page-get-product__description {
+    font-family: 'Libre Baskerville', serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 26px;
+    line-height: 1.4;
+    color: {{ section.settings.description_color }};
+    margin-bottom: 30px;
+  }
+
+  .landing-page-get-product__cta-button {
+    display: inline-block;
+    background: {{ section.settings.button_bg_color }};
+    color: {{ section.settings.button_text_color }};
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1.2;
+    padding: 16px 40px;
+    border-radius: 108px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+  }
+
+  .landing-page-get-product__cta-button:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(250, 200, 72, 0.4);
+  }
+
+  .landing-page-get-product__guarantee {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.4;
+    color: {{ section.settings.guarantee_color }};
+    margin-top: 15px;
+  }
+
+  @media (max-width: 768px) {
+    .landing-page-get-product {
+      min-height: auto;
+      padding: 40px 0 60px;
+    }
+
+    .landing-page-get-product__content {
+      position: relative;
+      top: auto;
+      left: auto;
+      transform: none;
+      margin-top: -100px;
+    }
+
+    .landing-page-get-product__headline {
+      font-size: 32px;
+    }
+
+    .landing-page-get-product__subheadline {
+      font-size: 32px;
+    }
+
+    .landing-page-get-product__description {
+      font-size: 20px;
+    }
+
+    .landing-page-get-product__stock-text {
+      font-size: 14px;
+    }
+
+    .landing-page-get-product__price {
+      font-size: 20px;
+    }
+
+    .landing-page-get-product__cta-button {
+      font-size: 16px;
+      padding: 14px 32px;
+    }
+
+    .landing-page-get-product__guarantee {
+      font-size: 14px;
+    }
+
+    .landing-page-get-product__price-wrapper {
+      width: auto;
+      height: auto;
+      padding: 12px 20px;
+    }
+
+    .landing-page-get-product__badge {
+      width: auto;
+      height: auto;
+      padding: 6px 12px;
+    }
+  }
+</style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+<section class="landing-page-get-product">
+  <div class="landing-page-get-product__container">
+    <div class="landing-page-get-product__image-wrapper">
+      {% if section.settings.product_image %}
+        {% assign img = section.settings.product_image %}
+        <img
+          src="{{ img | img_url: '870x' }}"
+          alt="{{ img.alt | escape }}"
+          width="870"
+          height="{{ img.height | times: 870 | divided_by: img.width }}"
+          class="landing-page-get-product__image"
+          loading="lazy"
+        >
+      {% endif %}
+      <div class="landing-page-get-product__gradient"></div>
+
+      <div class="landing-page-get-product__content">
+        <div class="landing-page-get-product__price-wrapper">
+          <div class="landing-page-get-product__price-container">
+            <span class="landing-page-get-product__price">{{ section.settings.sale_price }}</span>
+            <div class="landing-page-get-product__badge">
+              <span class="landing-page-get-product__badge-text">{{ section.settings.badge_text }}</span>
+            </div>
+          </div>
+          <p class="landing-page-get-product__original-price">{{ section.settings.original_price }}</p>
+        </div>
+
+        <p class="landing-page-get-product__stock-text">{{ section.settings.stock_text }}</p>
+
+        <h2 class="landing-page-get-product__headline">{{ section.settings.headline }}</h2>
+
+        <h3 class="landing-page-get-product__subheadline">{{ section.settings.subheadline }}</h3>
+
+        <p class="landing-page-get-product__description">{{ section.settings.description }}</p>
+
+        <a href="{{ section.settings.button_link }}" class="landing-page-get-product__cta-button">
+          {{ section.settings.button_text }}
+        </a>
+
+        <p class="landing-page-get-product__guarantee">{{ section.settings.guarantee_text }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Landing Page Get Product",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "product_image",
+      "label": "Product Image"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#232440"
+    },
+    {
+      "type": "header",
+      "content": "Price Settings"
+    },
+    {
+      "type": "text",
+      "id": "sale_price",
+      "label": "Sale Price",
+      "default": "$103.20"
+    },
+    {
+      "type": "color",
+      "id": "price_color",
+      "label": "Price Color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "price_bg_color",
+      "label": "Price Background Color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "text",
+      "id": "badge_text",
+      "label": "Badge Text",
+      "default": "Black Friday Only"
+    },
+    {
+      "type": "color",
+      "id": "badge_bg_color",
+      "label": "Badge Background Color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "badge_text_color",
+      "label": "Badge Text Color",
+      "default": "#E3E3E3"
+    },
+    {
+      "type": "text",
+      "id": "original_price",
+      "label": "Original Price",
+      "default": "Original price: $129"
+    },
+    {
+      "type": "color",
+      "id": "original_price_color",
+      "label": "Original Price Color",
+      "default": "#666666"
+    },
+    {
+      "type": "header",
+      "content": "Content Settings"
+    },
+    {
+      "type": "text",
+      "id": "stock_text",
+      "label": "Stock Text",
+      "default": "Limited Black Friday Stock — Only XXX Discounted Units Left"
+    },
+    {
+      "type": "color",
+      "id": "stock_text_color",
+      "label": "Stock Text Color",
+      "default": "#FAC848"
+    },
+    {
+      "type": "text",
+      "id": "headline",
+      "label": "Headline",
+      "default": "Reclaim Your Time."
+    },
+    {
+      "type": "color",
+      "id": "headline_color",
+      "label": "Headline Color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "text",
+      "id": "subheadline",
+      "label": "Subheadline",
+      "default": "Protect Your Focus."
+    },
+    {
+      "type": "color",
+      "id": "subheadline_color",
+      "label": "Subheadline Color",
+      "default": "#FAC848"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Helm makes deep work a habit, not a hope."
+    },
+    {
+      "type": "color",
+      "id": "description_color",
+      "label": "Description Color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "header",
+      "content": "Button Settings"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Get Helm Now"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "color",
+      "id": "button_bg_color",
+      "label": "Button Background Color",
+      "default": "#FAC848"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button Text Color",
+      "default": "#232440"
+    },
+    {
+      "type": "text",
+      "id": "guarantee_text",
+      "label": "Guarantee Text",
+      "default": "90-Day No-Risk Return Policy"
+    },
+    {
+      "type": "color",
+      "id": "guarantee_color",
+      "label": "Guarantee Text Color",
+      "default": "#E3E3E3"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Landing Page Get Product"
+    }
+  ]
+}
+{% endschema %}
