@@ -26,6 +26,16 @@
         "heading_tag": "automatic"
       }
     },
+    "black_announcement_bar_zqJ7Py": {
+      "type": "black-announcement-bar",
+      "name": "Black Announcement Bar",
+      "settings": {
+        "announcement_text": "💝 Looking for the perfect gift? [Shop Gift Ideas ›]",
+        "announcement_link": "/",
+        "background_color": "#c9a062",
+        "text_color": "#ffffff"
+      }
+    },
     "landing_header_wYmeEg": {
       "type": "landing-header",
       "name": "Landing Header",
@@ -373,6 +383,7 @@
   },
   "order": [
     "main",
+    "black_announcement_bar_zqJ7Py",
     "landing_header_wYmeEg",
     "black_banner_vip_yTiAKe",
     "black_friday_product_slider_BpdgDq",
