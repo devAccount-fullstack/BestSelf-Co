@@ -90,35 +90,47 @@
 }
 {% endschema %}
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      const countdownEl = document.querySelector("#timer-{{ section.id }}");
-      const endDate = new Date("{{ section.settings.end_date }}").getTime();
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const endDate = new Date("{{ section.settings.end_date }}").getTime();
 
-      function updateCountdown() {
-        const now = new Date().getTime();
-        const distance = endDate - now;
+    const daysEl = document.getElementById("days-{{ section.id }}");
+    const hoursEl = document.getElementById("hours-{{ section.id }}");
+    const minutesEl = document.getElementById("minutes-{{ section.id }}");
+    const secondsEl = document.getElementById("seconds-{{ section.id }}");
 
-        if (distance < 0) {
-          countdownEl.innerHTML = "<p>Offer Closed</p>";
-          return;
-        }
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = endDate - now;
 
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      if (distance <= 0) {
+        daysEl.textContent = "00";
+        hoursEl.textContent = "00";
+        minutesEl.textContent = "00";
+        secondsEl.textContent = "00";
 
-        countdownEl.querySelector(".days").innerText = String(days).padStart(2, '0');
-        countdownEl.querySelector(".hours").innerText = String(hours).padStart(2, '0');
-        countdownEl.querySelector(".minutes").innerText = String(minutes).padStart(2, '0');
-        countdownEl.querySelector(".seconds").innerText = String(seconds).padStart(2, '0');
+        const container = document.querySelector("#footer-countdown-{{ section.id }} .countdown-footer");
+        if (container) container.innerHTML = "<p>Offer Closed</p>";
+        clearInterval(timer);
+        return;
       }
 
-      updateCountdown();
-      setInterval(updateCountdown, 1000);
-    });
-  </script>
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      daysEl.textContent = String(days).padStart(2, '0');
+      hoursEl.textContent = String(hours).padStart(2, '0');
+      minutesEl.textContent = String(minutes).padStart(2, '0');
+      secondsEl.textContent = String(seconds).padStart(2, '0');
+    }
+
+    updateCountdown();
+    const timer = setInterval(updateCountdown, 1000);
+  });
+</script>
+
 
   <style>
     #footer-countdown-{{ section.id }} {
