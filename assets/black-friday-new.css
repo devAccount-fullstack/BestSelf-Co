@@ -98,7 +98,7 @@
 .discount-badge {
   position: absolute;
   top: 50%;
-  right: 10%;
+  right: 0;
   background-color: #fff;
   color: #000;
   padding: 10px 20px;
