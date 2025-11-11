@@ -1,51 +1,45 @@
+<script>
 document.addEventListener('DOMContentLoaded', function() {
-  // Normalize the path (remove trailing slash)
-  const currentPath = window.location.pathname.replace(/\/$/, '');
+  const currentPath = window.location.pathname;
 
-  // ----------- VIP Page Protection Logic -----------
-  if (currentPath === '/pages/black-friday-vip') {
-    if (localStorage.getItem('vipAccessGranted') !== 'true') {
-      // Redirect to the password page
-      window.location.href = "/pages/password-gate";
-      return;
-    }
-  }
-
-  // ----------- Password / Code Page Logic -----------
+  // ----------- Code Gate Page Logic -----------
   if (currentPath === '/pages/password-gate') {
-    const form = document.querySelector('.vip-form');
-    if (!form) return;
+    // Inject the code entry form dynamically (optional, or keep your HTML form in page)
+    const container = document.querySelector('body'); // you can target a specific div if you want
+    const formHtml = `
+      <section id="black-vip-code" style="text-align:center; padding:60px 20px; font-family:'Poppins',sans-serif;">
+        <h2>Enter Your VIP Code</h2>
+        <form class="vip-form">
+          <input type="text" placeholder="Enter code" style="padding:16px 24px; font-size:20px; border-radius:50px; border:1px solid #ccc; margin-right:10px; width:250px;" />
+          <button type="submit" style="padding:16px 36px; border-radius:50px; background:#e6b85c; color:#404040; font-weight:600; cursor:pointer;">Submit</button>
+        </form>
+      </section>
+    `;
+    container.insertAdjacentHTML('afterbegin', formHtml);
 
+    const form = document.querySelector('#black-vip-code .vip-form');
     const input = form.querySelector('input');
-    const button = form.querySelector('button');
-
-    // Update placeholder and button text to "Enter code"
-    input.placeholder = "Enter code";
-    button.textContent = "Submit";
-
-    // Create error message element below the button if not exists
-    let errorMessage = form.querySelector('.vip-error-message');
-    if (!errorMessage) {
-      errorMessage = document.createElement('p');
-      errorMessage.className = 'vip-error-message';
-      errorMessage.style.color = 'red';
-      errorMessage.style.marginTop = '10px';
-      errorMessage.style.fontWeight = '500';
-      form.appendChild(errorMessage);
-    }
 
     form.addEventListener('submit', function(e) {
-      e.preventDefault(); // prevent refresh
+      e.preventDefault();
       const code = input.value.trim();
 
       if (code === "BLACKFRIDAY") {
         localStorage.setItem('vipAccessGranted', 'true');
         window.location.href = "/pages/black-friday-vip";
       } else {
-        errorMessage.textContent = "Invalid Code";
+        alert("Incorrect code. Please try again.");
         input.value = '';
         input.focus();
       }
     });
   }
+
+  // ----------- VIP Page Protection Logic -----------
+  if (currentPath === '/pages/black-friday-vip') {
+    if (localStorage.getItem('vipAccessGranted') !== 'true') {
+      window.location.href = "/pages/password-gate";
+    }
+  }
 });
+</script>
