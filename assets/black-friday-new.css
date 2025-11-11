@@ -91,6 +91,7 @@
 }
 .image-container {
   position: relative;
+  width: 100%;
 }
 
 .discount-badge {
