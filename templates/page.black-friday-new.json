@@ -26,15 +26,6 @@
         "heading_tag": "automatic"
       }
     },
-    "landing_header_r3qRK8": {
-      "type": "landing-header",
-      "name": "Landing Header",
-      "settings": {
-        "logo": "shopify://shop_images/bc4f5bb6def0700ad71e3d30dd75536b39e4dbef_d357d9b1-886b-47bb-bca7-0e71e6090492.png",
-        "logo_link": "/",
-        "vip-header": false
-      }
-    },
     "black_announcement_bar_aAF33W": {
       "type": "black-announcement-bar",
       "name": "Black Announcement Bar",
@@ -43,6 +34,15 @@
         "announcement_link": "/",
         "background_color": "#fac848",
         "text_color": "#000000"
+      }
+    },
+    "landing_header_r3qRK8": {
+      "type": "landing-header",
+      "name": "Landing Header",
+      "settings": {
+        "logo": "shopify://shop_images/bc4f5bb6def0700ad71e3d30dd75536b39e4dbef_d357d9b1-886b-47bb-bca7-0e71e6090492.png",
+        "logo_link": "/",
+        "vip-header": false
       }
     },
     "black_friday_banner_bL8cN7": {
@@ -332,8 +332,8 @@
   },
   "order": [
     "main",
-    "landing_header_r3qRK8",
     "black_announcement_bar_aAF33W",
+    "landing_header_r3qRK8",
     "black_friday_banner_bL8cN7",
     "black_friday_slider_xyP7TK",
     "black_friday_growth_K6Ke9F",
