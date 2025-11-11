@@ -126,8 +126,7 @@
     data-animations="{{ settings.animations_enable }}"
   >
 
-    {% comment %} Black VIP Password Gatekeeper {% endcomment %}
-{{ 'black-validation.js' | asset_url | script_tag }}
+    {{ 'black-validation.js' | asset_url | script_tag }}
 
     <!-- AMP UPSELL EDITS - START -->
     <script>
