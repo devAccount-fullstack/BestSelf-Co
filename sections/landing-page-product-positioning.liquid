@@ -1,0 +1,375 @@
+<style>
+  .product-positioning {
+    background-color: #131313;
+    padding: 80px 20px;
+    position: relative;
+  }
+
+  .product-positioning__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+  }
+
+  .product-positioning__heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+
+  .product-positioning__heading-primary {
+    font-family: 'Libre Baskerville', serif;
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 140%;
+    letter-spacing: 0.01em;
+    text-align: center;
+    color: #FFFFFF;
+    margin: 0;
+  }
+
+  .product-positioning__heading-secondary {
+    font-family: 'Libre Baskerville', serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 56px;
+    line-height: 140%;
+    letter-spacing: 0.01em;
+    text-align: center;
+    color: #FAC848;
+    margin: 0;
+  }
+
+  .product-positioning__steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 301px));
+    gap: 40px;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .product-positioning__step {
+    width: 301px;
+    height: 286px;
+    padding: 16px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+  }
+
+  .product-positioning__number-container {
+    width: 301px;
+    height: 148px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
+
+  .product-positioning__number-blur {
+    position: absolute;
+    width: 273.81px;
+    height: 89.43px;
+    top: 67.79px;
+    left: 27.19px;
+    background: linear-gradient(180deg, rgba(19, 19, 19, 0) 0%, #131313 88.39%);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .product-positioning__number {
+    font-family: 'Libre Baskerville', serif;
+    font-weight: 700;
+    font-size: 226.18px;
+    line-height: 386.2px;
+    letter-spacing: 0.01em;
+    text-align: center;
+    color: #2D3C61;
+    margin: 0;
+    position: relative;
+    z-index: 0;
+    transform: translateY(40%);
+  }
+
+  .product-positioning__step-title {
+    font-family: 'Libre Baskerville', serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 160%;
+    letter-spacing: 0.01em;
+    text-align: center;
+    color: #FFFFFF;
+    margin: 0;
+    margin-top: 8px;
+  }
+
+  .product-positioning__step-description {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 160%;
+    letter-spacing: 0.01em;
+    text-align: center;
+    color: #FFFFFF;
+    margin: 0;
+    max-width: 280px;
+  }
+
+  .product-positioning__cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    margin-top: 20px;
+  }
+
+  .product-positioning__button {
+    width: 486px;
+    max-width: 100%;
+    height: 64px;
+    padding: 16px 36px;
+    gap: 10px;
+    border-radius: 108px;
+    border: 1px solid #FFFFFF;
+    background: transparent;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 160%;
+    letter-spacing: 0.01em;
+    text-align: center;
+    color: #FFFFFF;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .product-positioning__button:hover {
+    background: #FFFFFF;
+    color: #131313;
+  }
+
+  .product-positioning__units-left {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 160%;
+    letter-spacing: 0.01em;
+    text-align: center;
+    color: #FAC848;
+    margin: 0;
+  }
+
+  /* Mobile Responsive */
+  @media (max-width: 1023px) {
+    .product-positioning {
+      padding: 60px 20px;
+    }
+
+    .product-positioning__heading-primary,
+    .product-positioning__heading-secondary {
+      font-size: 36px;
+    }
+
+    .product-positioning__steps {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+
+    .product-positioning__step {
+      width: 100%;
+      max-width: 301px;
+      margin: 0 auto;
+    }
+
+    .product-positioning__number-container {
+      width: 100%;
+    }
+
+    .product-positioning__button {
+      width: 100%;
+      font-size: 18px;
+      padding: 16px 24px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .product-positioning__heading-primary,
+    .product-positioning__heading-secondary {
+      font-size: 28px;
+    }
+
+    .product-positioning__number {
+      font-size: 180px;
+      line-height: 170px;
+      transform: translateY(35%);
+    }
+
+    .product-positioning__step-title {
+      font-size: 18px;
+    }
+
+    .product-positioning__step-description {
+      font-size: 16px;
+    }
+
+    .product-positioning__button {
+      font-size: 16px;
+      height: 56px;
+    }
+
+    .product-positioning__units-left {
+      font-size: 16px;
+    }
+  }
+</style>
+
+<section class="product-positioning">
+  <div class="product-positioning__container">
+    <!-- Heading -->
+    <div class="product-positioning__heading">
+      {% if section.settings.heading_primary != blank %}
+        <h2 class="product-positioning__heading-primary">{{ section.settings.heading_primary }}</h2>
+      {% endif %}
+      {% if section.settings.heading_secondary != blank %}
+        <h2 class="product-positioning__heading-secondary">{{ section.settings.heading_secondary }}</h2>
+      {% endif %}
+    </div>
+
+    <!-- Steps -->
+    <div class="product-positioning__steps">
+      {% for block in section.blocks %}
+        <div class="product-positioning__step" {{ block.shopify_attributes }}>
+          <div class="product-positioning__number-container">
+            <div class="product-positioning__number-blur"></div>
+            <div class="product-positioning__number">{{ block.settings.step_number }}</div>
+          </div>
+          {% if block.settings.step_title != blank %}
+            <h3 class="product-positioning__step-title">{{ block.settings.step_title }}</h3>
+          {% endif %}
+          {% if block.settings.step_description != blank %}
+            <p class="product-positioning__step-description">{{ block.settings.step_description }}</p>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+
+    <!-- CTA -->
+    <div class="product-positioning__cta">
+      {% if section.settings.cta_text != blank %}
+        <button class="product-positioning__button">
+          {{ section.settings.cta_text }}
+        </button>
+      {% endif %}
+      {% if section.settings.units_text != blank %}
+        <p class="product-positioning__units-left">{{ section.settings.units_text }}</p>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Landing Page Positioning",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "heading_primary",
+      "label": "Primary Heading",
+      "default": "The Physical Key to"
+    },
+    {
+      "type": "text",
+      "id": "heading_secondary",
+      "label": "Secondary Heading (Italic)",
+      "default": "Digital Freedom"
+    },
+    {
+      "type": "header",
+      "content": "CTA Button"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "Button Text",
+      "default": "Get Helm for $103.20 — Save $25.80 Now"
+    },
+    {
+      "type": "text",
+      "id": "units_text",
+      "label": "Units Left Text",
+      "default": "Only XXX discounted units left!"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Step",
+      "settings": [
+        {
+          "type": "text",
+          "id": "step_number",
+          "label": "Step Number",
+          "default": "1"
+        },
+        {
+          "type": "text",
+          "id": "step_title",
+          "label": "Step Title",
+          "default": "Place on Your Desk"
+        },
+        {
+          "type": "textarea",
+          "id": "step_description",
+          "label": "Step Description",
+          "default": "Signals focus with its brass, elegant design."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Landing Page Product Positioning",
+      "blocks": [
+        {
+          "type": "step",
+          "settings": {
+            "step_number": "1",
+            "step_title": "Place on Your Desk",
+            "step_description": "Signals focus with its brass, elegant design."
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "step_number": "2",
+            "step_title": "Tap Your Phone",
+            "step_description": "Activates your custom focus mode instantly."
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "step_number": "3",
+            "step_title": "Enter Deep Work",
+            "step_description": "No willpower needed. To stop, tap again"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

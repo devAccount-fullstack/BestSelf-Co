@@ -1,0 +1,244 @@
+<style>
+  .feature-comparison {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+    min-height: 600px;
+  }
+
+  .feature-comparison__column {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 40px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25); /* Shadow effect like value proposition */
+  }
+
+  .feature-comparison__column::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.79); /* Overlay like value proposition */
+    z-index: 1;
+  }
+
+  .feature-comparison__column--disabled {
+    position: relative;
+  }
+
+  .feature-comparison__column--disabled::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    backdrop-filter: blur(7.5px);
+    background: #000000A8;
+    z-index: 1;
+  }
+
+  .feature-comparison__content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    width: 283px;
+  }
+
+  .feature-comparison__icon {
+    width: 64px;
+    height: 64px;
+    flex-shrink: 0;
+  }
+
+  .feature-comparison__icon--check {
+    width: 72px;
+    height: 51px;
+  }
+
+  .feature-comparison__title {
+    font-family: 'Libre Baskerville', serif;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 160%;
+    letter-spacing: 0.01em;
+    text-align: center;
+    color: #FFFFFF;
+    margin: 0;
+  }
+
+  .feature-comparison__description {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 160%;
+    letter-spacing: 0.01em;
+    text-align: center;
+    color: #FFFFFF;
+    margin: 0;
+  }
+
+  /* Mobile Responsive */
+  @media (max-width: 1023px) {
+    .feature-comparison {
+      grid-template-columns: 1fr;
+      min-height: auto;
+    }
+
+    .feature-comparison__column {
+      min-height: 400px;
+      padding: 40px 20px;
+    }
+
+    .feature-comparison__title {
+      font-size: 28px;
+    }
+
+    .feature-comparison__description {
+      font-size: 16px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .feature-comparison__column {
+      min-height: 350px;
+      padding: 30px 20px;
+    }
+
+    .feature-comparison__icon {
+      width: 48px;
+      height: 48px;
+    }
+
+    .feature-comparison__icon--check {
+      width: 54px;
+      height: 38px;
+    }
+
+    .feature-comparison__title {
+      font-size: 24px;
+    }
+
+    .feature-comparison__description {
+      font-size: 14px;
+    }
+  }
+
+  /* New media query for screens > 1440px to add responsive height */
+  @media (min-width: 1441px) {
+    .feature-comparison {
+      min-height: 800px; /* Increases height proportionally for larger screens to reduce zooming */
+    }
+  }
+</style>
+
+<section class="feature-comparison">
+  {% for block in section.blocks %}
+    <div 
+      class="feature-comparison__column {% if block.settings.is_disabled %}feature-comparison__column--disabled{% endif %}"
+      style="background-image: url('{{ block.settings.background_image | image_url: width: 1920 }}');"
+      {{ block.shopify_attributes }}
+    >
+      <div class="feature-comparison__content">
+        {% if block.settings.is_disabled %}
+          <svg class="feature-comparison__icon" width="65" height="64" viewBox="0 0 65 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M32.0453 25.5167L56.2655 1.36216C58.0575 -0.425633 60.9595 -0.422267 62.7473 1.36968C64.5352 3.16162 64.5318 6.06366 62.7398 7.85152L38.53 31.9958L62.7293 56.1745C64.5199 57.9638 64.5209 60.8658 62.7317 62.6564C60.9424 64.447 58.0404 64.448 56.2498 62.6588L32.0393 38.4688L7.82052 62.622C6.0285 64.4098 3.12653 64.4064 1.33867 62.6145C-0.449191 60.8226 -0.445754 57.9205 1.34619 56.1326L25.5547 31.9898L1.36982 7.82545C-0.42076 6.03623 -0.421762 3.13419 1.36746 1.34361C3.15668 -0.446974 6.05872 -0.447976 7.84931 1.34125L32.0453 25.5167H32.0453Z" fill="white"/>
+          </svg>
+        {% else %}
+          <svg class="feature-comparison__icon feature-comparison__icon--check" width="72" height="51" viewBox="0 0 72 51" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 25.3351L25.3347 46.6697L68 4" stroke="#FAC848" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        {% endif %}
+
+        {% if block.settings.title != blank %}
+          <h3 class="feature-comparison__title">{{ block.settings.title }}</h3>
+        {% endif %}
+
+        {% if block.settings.description != blank %}
+          <p class="feature-comparison__description">{{ block.settings.description }}</p>
+        {% endif %}
+      </div>
+    </div>
+  {% endfor %}
+</section>
+
+{% schema %}
+{
+  "name": "Landing Page Comparison",
+  "tag": "section",
+  "class": "section",
+  "blocks": [
+    {
+      "type": "comparison_item",
+      "name": "Comparison Item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "background_image",
+          "label": "Background Image"
+        },
+        {
+          "type": "checkbox",
+          "id": "is_disabled",
+          "label": "Show as Disabled (X icon)",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "App Blockers"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Easy to bypass"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Landing Page Comparison",
+      "blocks": [
+        {
+          "type": "comparison_item",
+          "settings": {
+            "is_disabled": true,
+            "title": "App Blockers",
+            "description": "Easy to bypass"
+          }
+        },
+        {
+          "type": "comparison_item",
+          "settings": {
+            "is_disabled": true,
+            "title": "Willpower",
+            "description": "Drains quickly, inconsistent"
+          }
+        },
+        {
+          "type": "comparison_item",
+          "settings": {
+            "is_disabled": false,
+            "title": "Helm",
+            "description": "Physical boundary, consistent behavior cue"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

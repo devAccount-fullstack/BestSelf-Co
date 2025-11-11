@@ -262,18 +262,20 @@
     height: 64px;
     max-width: 100%;
     border-radius: 108px;
-    background: white;
-    border: none;
+    background: transparent;
+    border: 2px solid white;
     font-family: 'Inter', sans-serif;
     font-size: 20px;
     font-weight: 600;
-    color: #000000;
+    color: white;
     cursor: pointer;
     transition: opacity 0.3s ease;
   }
 
   .landing-cta__cta-button:hover {
     opacity: 0.9;
+    background: white;
+    color: #000000;
   }
 
   .landing-cta__gift {
@@ -429,9 +431,15 @@
         <div class="landing-cta__reviews">
           <div class="landing-cta__stars">
             {% for i in (1..5) %}
-              <svg class="landing-cta__star {% if i <= section.settings.star_rating %}landing-cta__star--filled{% else %}landing-cta__star--empty{% endif %}" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-              </svg>
+              {% if i <= section.settings.star_rating %}
+                <svg aria-hidden="true" focusable="false" role="presentation" class="landing-cta__star landing-cta__star--filled" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                </svg>
+              {% else %}
+                <svg aria-hidden="true" focusable="false" role="presentation" class="landing-cta__star landing-cta__star--empty" viewBox="0 0 20 20" fill="none" stroke="currentColor">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              {% endif %}
             {% endfor %}
           </div>
           <span class="landing-cta__reviews-text">{{ section.settings.reviews_text }}</span>

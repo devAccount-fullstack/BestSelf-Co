@@ -1,0 +1,255 @@
+<style>
+  .landing-benefits {
+    background: #232440;
+    padding: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    align-items: center;
+  }
+
+  .landing-benefits__title {
+    font-family: 'Libre Baskerville', serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 56px;
+    line-height: 140%;
+    letter-spacing: 0.01em;
+    text-align: center;
+    color: #FFFFFF;
+    margin: 0;
+  }
+
+  .landing-benefits__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    width: 100%;
+    max-width: 1200px;
+  }
+
+  .landing-benefits__item {
+    width: 283px;
+    height: 246px;
+    padding: 16px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .landing-benefits__icon-container {
+    width: 100px;
+    height: 100px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .landing-benefits__icon {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+  }
+
+  .landing-benefits__item-title {
+    font-family: 'Libre Baskerville', serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 160%;
+    letter-spacing: 0.01em;
+    text-align: center;
+    color: #FFFFFF;
+    margin: 0;
+  }
+
+  .landing-benefits__item-description {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 160%;
+    letter-spacing: 0.01em;
+    text-align: center;
+    color: #FFFFFF;
+    margin: 0;
+    max-width: 250px;
+  }
+
+  /* Mobile Responsive */
+  @media (max-width: 1200px) {
+    .landing-benefits {
+      padding: 80px 40px;
+    }
+
+    .landing-benefits__grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+    }
+
+    .landing-benefits__item {
+      width: 100%;
+      max-width: 283px;
+      margin: 0 auto;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .landing-benefits {
+      padding: 60px 20px;
+      gap: 40px;
+    }
+
+    .landing-benefits__title {
+      font-size: 36px;
+    }
+
+    .landing-benefits__grid {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    .landing-benefits__item {
+      height: auto;
+    }
+
+    .landing-benefits__icon-container {
+      width: 80px;
+      height: 80px;
+    }
+
+    .landing-benefits__icon {
+      width: 40px;
+      height: 40px;
+    }
+
+    .landing-benefits__item-title {
+      font-size: 18px;
+    }
+
+    .landing-benefits__item-description {
+      font-size: 16px;
+    }
+  }
+</style>
+
+<section class="landing-benefits">
+  <!-- Title -->
+  {% if section.settings.section_title != blank %}
+    <h2 class="landing-benefits__title">{{ section.settings.section_title }}</h2>
+  {% endif %}
+
+  <!-- Benefits Grid -->
+  <div class="landing-benefits__grid">
+    {% for block in section.blocks %}
+      <div class="landing-benefits__item" {{ block.shopify_attributes }}>
+        <div class="landing-benefits__icon-container">
+          {% if block.settings.icon != blank %}
+            <img
+              src="{{ block.settings.icon | image_url: width: 96 }}"
+              alt="{{ block.settings.benefit_title | escape }}"
+              class="landing-benefits__icon"
+              width="48"
+              height="48"
+              loading="lazy"
+            >
+          {% else %}
+            <!-- Default placeholder icon -->
+            <svg class="landing-benefits__icon" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M24 4L28 20H44L32 28L36 44L24 36L12 44L16 28L4 20H20L24 4Z" stroke="#FAC848" stroke-width="2" fill="none"/>
+            </svg>
+          {% endif %}
+        </div>
+
+        {% if block.settings.benefit_title != blank %}
+          <h3 class="landing-benefits__item-title">{{ block.settings.benefit_title }}</h3>
+        {% endif %}
+
+        {% if block.settings.benefit_description != blank %}
+          <p class="landing-benefits__item-description">{{ block.settings.benefit_description }}</p>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Landing Page Benefits",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section Settings"
+    },
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Section Title",
+      "default": "Benefits"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "benefit",
+      "name": "Benefit",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon (48x48px recommended)"
+        },
+        {
+          "type": "text",
+          "id": "benefit_title",
+          "label": "Benefit Title",
+          "default": "Works With Your Brain"
+        },
+        {
+          "type": "textarea",
+          "id": "benefit_description",
+          "label": "Benefit Description",
+          "default": "Physical action creates a powerful mental shift."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Landing Page Benefits",
+      "blocks": [
+        {
+          "type": "benefit",
+          "settings": {
+            "benefit_title": "Works With Your Brain",
+            "benefit_description": "Physical action creates a powerful mental shift."
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "benefit_title": "Instant Activation",
+            "benefit_description": "No setup or passwords, just tap to focus."
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "benefit_title": "Premium For Life",
+            "benefit_description": "Solid brass. One-time buy. Lasts forever."
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "benefit_title": "Actually Effective",
+            "benefit_description": "Unlike apps, Helm is hard to ignore or override."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
