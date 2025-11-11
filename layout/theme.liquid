@@ -127,48 +127,57 @@
   >
 
     {% comment %} Black VIP Password Gatekeeper {% endcomment %}
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const currentPath = window.location.pathname;
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const currentPath = window.location.pathname;
 
-        // ----------- Password / Code Page Logic -----------
-        if (currentPath === '/pages/password-gate') {
-          const form = document.querySelector('#black-vip-password-{{ section.id }} .vip-form');
-          if (!form) return;
+  // ----------- Code Page Logic -----------
+  if (currentPath === '/pages/password-gate') {
+    const form = document.querySelector('#black-vip-password-{{ section.id }} .vip-form');
+    if (!form) return;
 
-          const input = form.querySelector('input');
-          const button = form.querySelector('button');
+    const input = form.querySelector('input');
+    const button = form.querySelector('button');
 
-          // Update placeholder and button text to use "code"
-          input.placeholder = "Enter code";
-          button.textContent = "Submit";
+    // Update placeholder and button text to "code"
+    input.placeholder = "Enter code";
+    button.textContent = "Submit";
 
-          form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const code = input.value.trim();
+    // Create error message element below the form if it doesn't exist
+    let errorMessage = form.querySelector('.vip-error-message');
+    if (!errorMessage) {
+      errorMessage = document.createElement('p');
+      errorMessage.className = 'vip-error-message';
+      errorMessage.style.color = 'red';
+      errorMessage.style.marginTop = '10px';
+      errorMessage.style.fontWeight = '500';
+      form.appendChild(errorMessage);
+    }
 
-            if (code === "BLACKFRIDAY") {
-              // Set localStorage flag
-              localStorage.setItem('vipAccessGranted', 'true');
-              // Redirect to VIP page
-              window.location.href = "/pages/black-friday-vip";
-            } else {
-              alert("Incorrect code. Please try again.");
-              input.value = '';
-              input.focus();
-            }
-          });
-        }
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const code = input.value.trim();
 
-        // ----------- VIP Page Protection Logic -----------
-        if (currentPath === '/pages/black-friday-vip') {
-          if (localStorage.getItem('vipAccessGranted') !== 'true') {
-            // Redirect to password page if access not granted
-            window.location.href = "/pages/password-gate";
-          }
-        }
-      });
-    </script>
+      if (code === "BLACKFRIDAY") {
+        localStorage.setItem('vipAccessGranted', 'true');
+        window.location.href = "/pages/black-friday-vip";
+      } else {
+        errorMessage.textContent = "Invalid Promo code";
+        input.value = '';
+        input.focus();
+      }
+    });
+  }
+
+  // ----------- VIP Page Protection Logic -----------
+  if (currentPath === '/pages/black-friday-vip') {
+    if (localStorage.getItem('vipAccessGranted') !== 'true') {
+      window.location.href = "/pages/password-gate";
+    }
+  }
+});
+</script>
+
 
 
 
