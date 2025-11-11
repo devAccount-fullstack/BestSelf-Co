@@ -1,4 +1,3 @@
-<script>
 document.addEventListener('DOMContentLoaded', function() {
   const currentPath = window.location.pathname;
 
@@ -42,4 +41,3 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 });
-</script>
