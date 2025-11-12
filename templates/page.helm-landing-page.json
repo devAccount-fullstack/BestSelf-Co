@@ -124,6 +124,7 @@
       "name": "Landing Page Product Positioning",
       "settings": {
         "heading_primary": "The Physical Key to",
+        "heading_subtitle": "",
         "heading_secondary": "Digital Freedom",
         "cta_text": "Get Helm for $103.20 — Save $25.80 Now",
         "units_text": "Only XXX discounted units left!"
@@ -277,6 +278,7 @@
           "settings": {
             "primary_text": "Free Gift Included",
             "secondary_text": "in Every Purchase",
+            "secondary_italic_text": "",
             "show_discount": false,
             "discount_text": "Save 30%",
             "card_image": "shopify://shop_images/6a0ac193db53cd676addf17de5175ca45abf0418.png"
@@ -287,6 +289,7 @@
           "settings": {
             "primary_text": "",
             "secondary_text": "Upgrade to the Deep Work Bundle for 30% OFF + bonus gift",
+            "secondary_italic_text": "",
             "show_discount": true,
             "discount_text": "",
             "card_image": "shopify://shop_images/de778f46beaff6bfe2e7e87d23f5f6693eae2812.png"
@@ -297,8 +300,9 @@
           "settings": {
             "primary_text": "",
             "secondary_text": "Spend $75+ =",
+            "secondary_italic_text": "Free Shipping",
             "show_discount": true,
-            "discount_text": "Free Shipping",
+            "discount_text": "",
             "card_image": "shopify://shop_images/a408d2c8ce3c27a3817c0e9059d5a44fc56404f1.png"
           }
         }
@@ -374,26 +378,28 @@
         "background_color": "#232440",
         "sale_price": "$103.20",
         "price_color": "#000000",
-        "price_bg_color": "#FFFFFF",
+        "price_bg_color": "#ffffff",
         "badge_text": "Black Friday Only",
         "badge_bg_color": "#000000",
-        "badge_text_color": "#E3E3E3",
+        "badge_text_color": "#e3e3e3",
         "original_price": "Original price: $129",
         "original_price_color": "#000000",
         "stock_text": "Limited Black Friday Stock — Only XXX Discounted Units Left",
-        "stock_text_color": "#FAC848",
+        "stock_text_color": "#fac848",
         "headline": "Reclaim Your Time.",
-        "headline_color": "#FFFFFF",
+        "headline_color": "#ffffff",
+        "inline_subheadline": "",
+        "inline_subheadline_color": "#fac848",
         "subheadline": "Protect Your Focus.",
-        "subheadline_color": "#FAC848",
+        "subheadline_color": "#fac848",
         "description": "Helm makes deep work a habit, not a hope.",
-        "description_color": "#FFFFFF",
+        "description_color": "#ffffff",
         "button_text": "Get Helm Now",
         "button_link": "",
-        "button_bg_color": "#FAC848",
+        "button_bg_color": "#fac848",
         "button_text_color": "#232440",
         "guarantee_text": "90-Day No-Risk Return Policy",
-        "guarantee_color": "#E3E3E3"
+        "guarantee_color": "#e3e3e3"
       }
     },
     "landing_footer_X3FcKw": {

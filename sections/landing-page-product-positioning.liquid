@@ -6,7 +6,7 @@
   }
 
   .product-positioning__container {
-    max-width: 1200px;
+    max-width: 1500px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -29,6 +29,18 @@
     letter-spacing: 0.01em;
     text-align: center;
     color: #FFFFFF;
+    margin: 0;
+  }
+
+  .product-positioning__heading-subtitle {
+    font-family: 'Libre Baskerville', serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 26px;
+    line-height: 140%;
+    letter-spacing: 0.01em;
+    text-align: center;
+    color: #FAC848;
     margin: 0;
   }
 
@@ -132,8 +144,9 @@
   }
 
   .product-positioning__button {
-    width: 486px;
-    max-width: 100%;
+    min-width: 300px;
+    max-width: 90vw;
+    width: auto;
     height: 64px;
     padding: 16px 36px;
     gap: 10px;
@@ -149,6 +162,7 @@
     color: #FFFFFF;
     cursor: pointer;
     transition: all 0.3s ease;
+    white-space: nowrap;
   }
 
   .product-positioning__button:hover {
@@ -178,6 +192,10 @@
       font-size: 36px;
     }
 
+    .product-positioning__heading-subtitle {
+      font-size: 22px;
+    }
+
     .product-positioning__steps {
       grid-template-columns: 1fr;
       gap: 30px;
@@ -194,7 +212,7 @@
     }
 
     .product-positioning__button {
-      width: 100%;
+      min-width: 250px;
       font-size: 18px;
       padding: 16px 24px;
     }
@@ -204,6 +222,10 @@
     .product-positioning__heading-primary,
     .product-positioning__heading-secondary {
       font-size: 28px;
+    }
+
+    .product-positioning__heading-subtitle {
+      font-size: 18px;
     }
 
     .product-positioning__number {
@@ -221,8 +243,11 @@
     }
 
     .product-positioning__button {
+      min-width: 200px;
       font-size: 16px;
       height: 56px;
+      white-space: normal;
+      line-height: 1.4;
     }
 
     .product-positioning__units-left {
@@ -237,6 +262,9 @@
     <div class="product-positioning__heading">
       {% if section.settings.heading_primary != blank %}
         <h2 class="product-positioning__heading-primary">{{ section.settings.heading_primary }}</h2>
+      {% endif %}
+      {% if section.settings.heading_subtitle != blank %}
+        <p class="product-positioning__heading-subtitle">{{ section.settings.heading_subtitle }}</p>
       {% endif %}
       {% if section.settings.heading_secondary != blank %}
         <h2 class="product-positioning__heading-secondary">{{ section.settings.heading_secondary }}</h2>
@@ -290,6 +318,11 @@
       "id": "heading_primary",
       "label": "Primary Heading",
       "default": "The Physical Key to"
+    },
+    {
+      "type": "text",
+      "id": "heading_subtitle",
+      "label": "Subtitle (Optional)"
     },
     {
       "type": "text",

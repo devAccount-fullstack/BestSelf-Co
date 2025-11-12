@@ -196,6 +196,15 @@
     text-transform: capitalize;
   }
 
+  .bundle-bottom-text {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    text-align: center;
+    color: #FAC848;
+    margin: 30px 0 0 0;
+  }
+
   @media (max-width: 1024px) {
     .bundle-cards {
       grid-template-columns: 1fr;
@@ -254,6 +263,11 @@
     .countdown-label {
       font-size: 12px;
     }
+
+    .bundle-bottom-text {
+      font-size: 18px;
+      margin-top: 20px;
+    }
   }
 </style>
 
@@ -276,6 +290,11 @@
               {% endif %}
               {% if block.settings.secondary_text != blank %}
                 <p class="bundle-card__text-secondary">{{ block.settings.secondary_text }}</p>
+              {% endif %}
+              {% if block.settings.secondary_italic_text != blank %}
+                <p class="bundle-card__text-bold">
+                  <span class="bundle-card__discount">{{ block.settings.secondary_italic_text }}</span>
+                </p>
               {% endif %}
               {% if block.settings.show_discount and block.settings.discount_text != blank %}
                 <p class="bundle-card__text-bold">
@@ -328,6 +347,11 @@
         </div>
       </div>
     </div>
+
+    <!-- Optional Bottom Text -->
+    {% if section.settings.bottom_text != blank %}
+      <p class="bundle-bottom-text">{{ section.settings.bottom_text }}</p>
+    {% endif %}
   </div>
 </section>
 
@@ -475,6 +499,16 @@
       "label": "Timezone Offset",
       "default": "+00:00",
       "info": "Format: +HH:MM or -HH:MM (e.g., -05:00 for EST, +01:00 for CET)"
+    },
+    {
+      "type": "header",
+      "content": "Bottom Text"
+    },
+    {
+      "type": "text",
+      "id": "bottom_text",
+      "label": "Optional Bottom Text",
+      "info": "Appears below the countdown container"
     }
   ],
   "blocks": [
@@ -493,6 +527,11 @@
           "id": "secondary_text",
           "label": "Secondary Text (Bold)",
           "default": "in Every Purchase"
+        },
+        {
+          "type": "text",
+          "id": "secondary_italic_text",
+          "label": "Secondary Text (Italic)"
         },
         {
           "type": "checkbox",

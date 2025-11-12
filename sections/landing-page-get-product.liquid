@@ -119,6 +119,15 @@
     margin-bottom: 10px;
   }
 
+  .landing-page-get-product__headline-inline {
+    font-family: 'Libre Baskerville', serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 48px;
+    line-height: 1.2;
+    color: {{ section.settings.inline_subheadline_color }};
+  }
+
   .landing-page-get-product__subheadline {
     font-family: 'Libre Baskerville', serif;
     font-weight: 400;
@@ -184,6 +193,10 @@
     }
 
     .landing-page-get-product__headline {
+      font-size: 32px;
+    }
+
+    .landing-page-get-product__headline-inline {
       font-size: 32px;
     }
 
@@ -259,7 +272,12 @@
 
         <p class="landing-page-get-product__stock-text">{{ section.settings.stock_text }}</p>
 
-        <h2 class="landing-page-get-product__headline">{{ section.settings.headline }}</h2>
+        <h2 class="landing-page-get-product__headline">
+          {{ section.settings.headline }}
+          {% if section.settings.inline_subheadline != blank %}
+            <span class="landing-page-get-product__headline-inline">{{ section.settings.inline_subheadline }}</span>
+          {% endif %}
+        </h2>
 
         <h3 class="landing-page-get-product__subheadline">{{ section.settings.subheadline }}</h3>
 
@@ -369,6 +387,18 @@
       "id": "headline_color",
       "label": "Headline Color",
       "default": "#FFFFFF"
+    },
+    {
+      "type": "text",
+      "id": "inline_subheadline",
+      "label": "Inline Subheadline (Optional)",
+      "info": "This appears on the same line as the headline"
+    },
+    {
+      "type": "color",
+      "id": "inline_subheadline_color",
+      "label": "Inline Subheadline Color",
+      "default": "#FAC848"
     },
     {
       "type": "text",

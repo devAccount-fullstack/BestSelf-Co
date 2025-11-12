@@ -45,18 +45,18 @@
         "starburst_image": "shopify://shop_images/Star_6.png",
         "discount_percent": "20%",
         "discount_off": "off",
-        "sale_price": "$103.20",
+        "sale_price": "$28.80",
         "original_price_label": "Original price:",
-        "original_price": "$129",
+        "original_price": "$36",
         "star_rating": 5,
         "reviews_text": "500+ Reviews",
         "promo_text": "Black Friday: 20% OFF — This Weekend Only!",
-        "headline": "Your Phone Is Stealing 6 Hours of Your Day. This Is How You Get It Back",
-        "description": "Used by 10,000+ professionals to reclaim their focus and win back their time.",
+        "headline": "Stop Feeling Scattered. Start Achieving Your Goals.",
+        "description": "Join over 1.2 million people using this science-backed planner to hit their goals faster.",
         "feature_1": "Secure Checkout",
         "feature_2": "Free Shipping $75+",
         "feature_3": "90-Day Guarantee",
-        "cta_text": "Get Helm for $103.20 → Save $25.80",
+        "cta_text": "Get the Self Journal for $28.80 → Save 20%",
         "gift_text": "Free Gift Included in Every Purchase"
       }
     },
@@ -75,7 +75,7 @@
       ],
       "name": "Black Friday UGC",
       "settings": {
-        "bg_color": "#1e1f3a",
+        "bg_color": "#131313",
         "heading": "UGC display here",
         "heading_title": "UGC display here"
       }
@@ -84,17 +84,18 @@
       "type": "landing-page-value-proposition",
       "name": "Landing Page Value Proposition",
       "settings": {
-        "heading_primary": "You Know the Problem.",
-        "heading_secondary": "Helm Breaks the Cycle.",
-        "description": "Apps failed. Willpower's gone. You're not lazy— your phone is designed to hijack your brain.",
-        "show_stats": true,
+        "background_image": "shopify://shop_images/a8e75bff67cf79a007ede75983e8fdae62b8d8bc.jpg",
+        "heading_primary": "Big Dreams. No System.",
+        "heading_secondary": "No Progress.",
+        "description": "You’re juggling work, goals, and life. Notes scattered.  Plans made but never followed. The chaos grows— and nothing gets done.",
+        "show_stats": false,
         "stat_1_number": "$15k",
         "stat_1_label": "Lost Productivity",
         "stat_2_number": "156",
         "stat_2_label": "Phone Pickups Per Day",
         "stat_3_number": "38",
         "stat_3_label": "Days Lost Annually",
-        "quote_text": "Every app blocker failed me. Helm is the first thing that actually made me stop reaching for my phone",
+        "quote_text": "What a delight to have one space to move all the stickies and scraps into one focused space to keep myself moving forward.",
         "quote_author": "— Anonymous"
       }
     },
@@ -105,37 +106,47 @@
           "type": "step",
           "settings": {
             "step_number": "1",
-            "step_title": "Place on Your Desk",
-            "step_description": "Signals focus with its brass, elegant design."
+            "step_title": "Goal Setting",
+            "step_description": "Break down 3 big goals  using the SMART framework."
           }
         },
         "step_dFXhkD": {
           "type": "step",
           "settings": {
             "step_number": "2",
-            "step_title": "Tap Your Phone",
-            "step_description": "Activates your custom focus mode instantly."
+            "step_title": "Weekly Planning",
+            "step_description": "Set intentions, schedule action, stay focused."
           }
         },
         "step_U7Jz3r": {
           "type": "step",
           "settings": {
             "step_number": "3",
-            "step_title": "Enter Deep Work",
-            "step_description": "No willpower needed. To stop, tap again"
+            "step_title": "Daily Pages",
+            "step_description": "Track progress, prioritize tasks, start with gratitude."
+          }
+        },
+        "step_QErThh": {
+          "type": "step",
+          "settings": {
+            "step_number": "4",
+            "step_title": "Weekly Reflection",
+            "step_description": "Celebrate wins, learn from setbacks, reset for success."
           }
         }
       },
       "block_order": [
         "step_Qpfj83",
         "step_dFXhkD",
-        "step_U7Jz3r"
+        "step_U7Jz3r",
+        "step_QErThh"
       ],
       "name": "Landing Page Product Positioning",
       "settings": {
-        "heading_primary": "The Physical Key to",
-        "heading_secondary": "Digital Freedom",
-        "cta_text": "Get Helm for $103.20 — Save $25.80 Now",
+        "heading_primary": "The 13-Week System for",
+        "heading_subtitle": "",
+        "heading_secondary": "Real Progress",
+        "cta_text": "Get Your Self Journal for $28.80 – Limited Stock",
         "units_text": "Only XXX discounted units left!"
       }
     },
@@ -145,29 +156,33 @@
         "benefit_rXkFDK": {
           "type": "benefit",
           "settings": {
-            "benefit_title": "Works With Your Brain",
-            "benefit_description": "Physical action creates a powerful mental shift."
+            "icon": "shopify://shop_images/layers.png",
+            "benefit_title": "Proven Framework",
+            "benefit_description": "SMART goal-setting meets  daily structure."
           }
         },
         "benefit_dVAFTH": {
           "type": "benefit",
           "settings": {
-            "benefit_title": "Instant Activation",
-            "benefit_description": "No setup or passwords, just tap to focus."
+            "icon": "shopify://shop_images/calendar.png",
+            "benefit_title": "Builds Accountability",
+            "benefit_description": "Daily and weekly check-ins  keep you aligned."
           }
         },
         "benefit_W6LWDL": {
           "type": "benefit",
           "settings": {
-            "benefit_title": "Premium For Life",
-            "benefit_description": "Solid brass. One-time buy. Lasts forever."
+            "icon": "shopify://shop_images/coffee.png",
+            "benefit_title": "Focuses Your Energy",
+            "benefit_description": "Prioritize 3 key goals  to avoid burnout."
           }
         },
         "benefit_QqgR4y": {
           "type": "benefit",
           "settings": {
-            "benefit_title": "Actually Effective",
-            "benefit_description": "Unlike apps, Helm is hard to ignore or override."
+            "icon": "shopify://shop_images/sun.png",
+            "benefit_title": "Creates Lasting Habits",
+            "benefit_description": "Habit trackers reinforce momentum."
           }
         }
       },
@@ -188,25 +203,28 @@
         "comparison_item_gGyrU9": {
           "type": "comparison_item",
           "settings": {
+            "background_image": "shopify://shop_images/7be0e25ccd523a124cc2023d6d0424726df1a7d7.png",
             "is_disabled": true,
-            "title": "App Blockers",
-            "description": "Easy to bypass"
+            "title": "Digital Apps",
+            "description": "Easily abandoned,  “productivity graveyard”"
           }
         },
         "comparison_item_9rUQze": {
           "type": "comparison_item",
           "settings": {
+            "background_image": "shopify://shop_images/68c1e2a886dda9d195c18c95fba297aa999c3b25.png",
             "is_disabled": true,
-            "title": "Willpower",
-            "description": "Drains quickly, inconsistent"
+            "title": "Generic Planners",
+            "description": "Pretty, but no structure or accountability"
           }
         },
         "comparison_item_rbaGJc": {
           "type": "comparison_item",
           "settings": {
+            "background_image": "shopify://shop_images/a9fd4294d9c1902fd0995913aa53f0903cc3581e.png",
             "is_disabled": false,
-            "title": "Helm",
-            "description": "Physical boundary, consistent behavior cue"
+            "title": "Self Journal",
+            "description": "Science-backed system used by 1.2M+ goal-setters"
           }
         }
       },
@@ -218,6 +236,40 @@
       "name": "Landing Page Comparison",
       "settings": {}
     },
+    "landing_page_customers_comments_nPC9eH": {
+      "type": "landing-page-customers-comments",
+      "blocks": {
+        "testimonial_GpWwXG": {
+          "type": "testimonial",
+          "settings": {
+            "thumbnail_image": "shopify://shop_images/67cfe5fa30a3010cba20fabbe7028c9d78d0cbc3.png",
+            "video_url": "",
+            "quote_text": "This is the best journal I’ve come across for reflection coupled with action.",
+            "author": "John doe"
+          }
+        },
+        "testimonial_w4th8Q": {
+          "type": "testimonial",
+          "settings": {
+            "thumbnail_image": "shopify://shop_images/2915afcb20eabed1e4ff261b24ca9cc4aea1b62c.png",
+            "video_url": "",
+            "quote_text": "Fewer rabbit holes. The 13-week scope is perfect for shipping something tangible.",
+            "author": "John doe"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_GpWwXG",
+        "testimonial_w4th8Q"
+      ],
+      "name": "Landing Page Comments",
+      "settings": {
+        "heading_primary": "Here's What",
+        "heading_secondary": "Our Customers Are Saying",
+        "star_rating": 5,
+        "reviews_text": "1,775+ Reviews"
+      }
+    },
     "landing_page_bundle_Hmf7ce": {
       "type": "landing-page-bundle",
       "blocks": {
@@ -226,26 +278,32 @@
           "settings": {
             "primary_text": "Free Gift Included",
             "secondary_text": "in Every Purchase",
+            "secondary_italic_text": "",
             "show_discount": false,
-            "discount_text": "Save 30%"
+            "discount_text": "Save 30%",
+            "card_image": "shopify://shop_images/a408d2c8ce3c27a3817c0e9059d5a44fc56404f1.png"
           }
         },
         "card_WQRHWK": {
           "type": "card",
           "settings": {
-            "primary_text": "Free Gift Included",
-            "secondary_text": "Couple's Bundle: Intimacy Deck + Icebreaker Deck",
+            "primary_text": "",
+            "secondary_text": "Self Journal 1-Year Pack (4 Journals) – Save More with Bundles",
+            "secondary_italic_text": "",
             "show_discount": true,
-            "discount_text": "Save 30%"
+            "discount_text": "",
+            "card_image": "shopify://shop_images/960a180dbc5d505ab8f13525002a9cd9e03f3afb.png"
           }
         },
         "card_eABYCH": {
           "type": "card",
           "settings": {
-            "primary_text": "Free Gift Included",
+            "primary_text": "",
             "secondary_text": "Spend $75+ =",
+            "secondary_italic_text": "Free Shipping",
             "show_discount": true,
-            "discount_text": "Free Shipping"
+            "discount_text": "",
+            "card_image": "shopify://shop_images/a408d2c8ce3c27a3817c0e9059d5a44fc56404f1.png"
           }
         }
       },
@@ -257,16 +315,17 @@
       "name": "Landing Page Bundle",
       "settings": {
         "bg_color": "#232440",
-        "card_bg_color": "#3B3D72",
-        "accent_color": "#FAC848",
-        "gradient_end_color": "#7074D8",
+        "card_bg_color": "#3b3d72",
+        "accent_color": "#fac848",
+        "gradient_end_color": "#7074d8",
         "main_title": "Bundle +",
         "subtitle": "Black Friday Offer",
         "countdown_heading": "Black Friday",
         "countdown_subheading": "Pricing Ends Soon!",
         "units_text": "Only XXX discounted units left!",
         "end_date": "2024-12-31T23:59:59",
-        "timezone": "+00:00"
+        "timezone": "+00:00",
+        "bottom_text": "Add one for a partner or friend to unlock 25% OFF"
       }
     },
     "landing_page_faq_Dxdc9g": {
@@ -275,22 +334,22 @@
         "faq_item_LgR6zc": {
           "type": "faq_item",
           "settings": {
-            "question": "Is this really free?",
-            "answer": "<p>Yes. No tricks.</p>"
+            "question": "What makes the Self Journal different?",
+            "answer": "<p>It’s a full system—not just a planner—designed around proven behavioral psychology.</p>"
           }
         },
         "faq_item_B8dfgR": {
           "type": "faq_item",
           "settings": {
-            "question": "Who can enter?",
-            "answer": "<p>Anyone in the U.S. who wants more out of life</p>"
+            "question": "How long does it take to use each day?",
+            "answer": "<p>Just 5–10 minutes morning and night.</p>"
           }
         },
         "faq_item_FJmULf": {
           "type": "faq_item",
           "settings": {
-            "question": "Do I need to buy anything?",
-            "answer": "<p>Nope. Just your email</p>"
+            "question": "I never stick to journals. Will this work for me?",
+            "answer": "<p>Yes! It’s made for real life—structured to help even inconsistent people build habits.</p>"
           }
         }
       },
@@ -308,29 +367,32 @@
       "type": "landing-page-get-product",
       "name": "Landing Page Get Product",
       "settings": {
+        "product_image": "shopify://shop_images/5740035eb7dbd497300de3783ce1b4d02cbf44df.png",
         "background_color": "#232440",
-        "sale_price": "$103.20",
+        "sale_price": "$27.80",
         "price_color": "#000000",
-        "price_bg_color": "#FFFFFF",
+        "price_bg_color": "#ffffff",
         "badge_text": "Black Friday Only",
         "badge_bg_color": "#000000",
-        "badge_text_color": "#E3E3E3",
-        "original_price": "Original price: $129",
+        "badge_text_color": "#e3e3e3",
+        "original_price": "Original price: $39",
         "original_price_color": "#666666",
         "stock_text": "Limited Black Friday Stock — Only XXX Discounted Units Left",
-        "stock_text_color": "#FAC848",
-        "headline": "Reclaim Your Time.",
-        "headline_color": "#FFFFFF",
-        "subheadline": "Protect Your Focus.",
-        "subheadline_color": "#FAC848",
-        "description": "Helm makes deep work a habit, not a hope.",
-        "description_color": "#FFFFFF",
-        "button_text": "Get Helm Now",
+        "stock_text_color": "#fac848",
+        "headline": "The Most Powerful 13 Weeks  of Your Life",
+        "headline_color": "#ffffff",
+        "inline_subheadline": "Start Now",
+        "inline_subheadline_color": "#fac848",
+        "subheadline": "",
+        "subheadline_color": "#fac848",
+        "description": "Achieve your goals with clarity, structure, and momentum.",
+        "description_color": "#ffffff",
+        "button_text": "Get the Self Journal Now",
         "button_link": "",
-        "button_bg_color": "#FAC848",
+        "button_bg_color": "#fac848",
         "button_text_color": "#232440",
         "guarantee_text": "90-Day No-Risk Return Policy",
-        "guarantee_color": "#E3E3E3"
+        "guarantee_color": "#e3e3e3"
       }
     },
     "landing_footer_EcM6Qw": {
@@ -353,6 +415,7 @@
     "landing_page_product_positioning_YrqpW4",
     "landing_page_benefits_fMibBg",
     "landing_page_feature_comparison_X4X3zR",
+    "landing_page_customers_comments_nPC9eH",
     "landing_page_bundle_Hmf7ce",
     "landing_page_faq_Dxdc9g",
     "landing_page_get_product_aKhQNH",
