@@ -39,7 +39,7 @@
       "type": "black-early-banner",
       "name": "Early Access Banner",
       "settings": {
-        "bg_color": "#131313",
+        "bg_color": "#131516",
         "subheading": "Black Friday 2025",
         "heading": "Early Access",
         "banner_image": "shopify://shop_images/Hero_Asset_2.png"
@@ -89,7 +89,7 @@
       ],
       "name": "Black Early Access Email",
       "settings": {
-        "bg_color": "#131313",
+        "bg_color": "#131516",
         "left_title": "The Holiday Perks",
         "left_heading": "start with",
         "left_heading_yellow": "YOU",
