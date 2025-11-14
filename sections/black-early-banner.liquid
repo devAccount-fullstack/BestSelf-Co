@@ -16,7 +16,7 @@
     <div class="beb-image-wrapper">
       {% if section.settings.banner_image %}
         <img
-          src="{{ section.settings.banner_image }}"
+          src="{{ section.settings.banner_image | image_url: width: 900 }}"
           width="100%"
           height="auto"
           alt="Black Friday Early Access Banner"
