@@ -35,6 +35,15 @@
         "vip-header": true
       }
     },
+    "black_early_banner_qQKxqi": {
+      "type": "black-early-banner",
+      "name": "Early Access Banner",
+      "settings": {
+        "subheading": "Black Friday 2025",
+        "heading": "Early Access",
+        "banner_image": "shopify://shop_images/3a559920ddc409372e62b6e57264ff1a883a34c8_9c7cbc36-020c-4f7c-abbb-145742517a97.png"
+      }
+    },
     "landing_footer_ij7m4W": {
       "type": "landing-footer",
       "name": "Landing Footer",
@@ -49,6 +58,7 @@
   "order": [
     "main",
     "landing_header_XTj8kc",
+    "black_early_banner_qQKxqi",
     "landing_footer_ij7m4W"
   ]
 }
