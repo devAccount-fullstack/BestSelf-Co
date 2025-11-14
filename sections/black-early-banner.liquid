@@ -17,7 +17,7 @@
       {% if section.settings.banner_image %}
         <img
           src="{{ section.settings.banner_image | image_url: width: 900 }}"
-          width="900"
+          width="100%"
           height="auto"
           alt="Black Friday Early Access Banner"
           class="beb-image"
@@ -64,7 +64,9 @@
 
 /* ----------- IMAGE ------------- */
 .beb-image-wrapper {
-  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .beb-image {
