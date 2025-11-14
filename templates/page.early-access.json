@@ -60,24 +60,24 @@
           "type": "feature",
           "settings": {
             "icon": "shopify://shop_images/clock_4b297b11-4609-43ce-9561-56b8ef1fe942.png",
-            "title": "2x Loyalty Points",
-            "description": "Nov 13–24 only"
+            "title": "Early access",
+            "description": "to our biggest sale"
           }
         },
         "feature_HjUUEw": {
           "type": "feature",
           "settings": {
             "icon": "shopify://shop_images/gift_c6c6faf3-9848-496a-b410-1f45eb77e03e.png",
-            "title": "2x Loyalty Points",
-            "description": "Nov 13–24 only"
+            "title": "Free gifts",
+            "description": "starting at just $60      "
           }
         },
         "feature_iAbJeF": {
           "type": "feature",
           "settings": {
             "icon": "shopify://shop_images/stary.png",
-            "title": "2x Loyalty Points",
-            "description": "Nov 13–24 only"
+            "title": "VIP-only access",
+            "description": "the public won't see "
           }
         }
       },
