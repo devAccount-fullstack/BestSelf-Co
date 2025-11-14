@@ -82,7 +82,7 @@
       {% for block in section.blocks %}
         {% if block.type == 'price_block' %}
           <div class="gift-card">
-            <img src="{{ block.settings.icon | img_url: 'medium' }}" alt="">
+            <img src="{{ block.settings.icon | img_url: 'medium' }}" width="auto" height="auto" alt="">
             <h3>{{ block.settings.title }}</h3>
             <p>{{ block.settings.text }}</p>
           </div>
@@ -96,7 +96,7 @@
       {% for block in section.blocks %}
         {% if block.type == 'personality_block' %}
           <div class="gift-card">
-            <img src="{{ block.settings.icon | img_url: 'medium' }}" alt="">
+            <img src="{{ block.settings.icon | img_url: 'medium' }}" width="auto" height="auto" alt="">
             <h3>{{ block.settings.title }}</h3>
             <p>{{ block.settings.text }}</p>
           </div>
