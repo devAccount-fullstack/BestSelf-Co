@@ -108,7 +108,8 @@
     {%- if template.name == 'page' and template.suffix == 'customer-acquisition'
        or template.name == 'page' and template.suffix == 'black-friday-new'
        or template.name == 'page' and template.suffix == 'black-vip-password'
-       or template.name == 'page' and template.suffix == 'black-friday-vip' -%}
+       or template.name == 'page' and template.suffix == 'black-friday-vip'
+       or template.name == 'page' and template.suffix == 'early-access' -%}
       {{ 'giveaway-landing.css' | asset_url | stylesheet_tag }}
     {%- endif -%}
 
@@ -156,7 +157,8 @@
     {%- if template.name == 'page' and template.suffix == 'customer-acquisition'
     or template.name == 'page' and template.suffix == 'black-friday-new'
     or template.name == 'page' and template.suffix == 'black-vip-password'
-    or template.name == 'page' and template.suffix == 'black-friday-vip' -%}
+    or template.name == 'page' and template.suffix == 'black-friday-vip'
+    or template.name == 'page' and template.suffix == 'early-access' -%}
 
       <!-- Landing Page layout -->
       <main role="main" id="MainContent" class="main-content">
