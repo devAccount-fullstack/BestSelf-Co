@@ -89,6 +89,7 @@
       ],
       "name": "Black Early Access Email",
       "settings": {
+        "bg_color": "#131313",
         "left_title": "The Holiday Perks",
         "left_heading": "start with",
         "left_heading_yellow": "YOU",
