@@ -99,6 +99,21 @@
         "bottom_text": "Free to join. Instant rewards. No credit card."
       }
     },
+    "black_early_socialproof_8RXwq6": {
+      "type": "black-early-socialproof",
+      "name": "Black Early Social Proof",
+      "settings": {
+        "bg_color": "#0d0d0d",
+        "star_icon": "shopify://shop_images/Star_1.png",
+        "rating_text": "4.8 rating",
+        "heading_before": "Join",
+        "heading_yellow": "500,000+",
+        "heading_after": "customers",
+        "featured_text": "Featured in",
+        "button_text": "Create your wishlist now",
+        "button_link": "/"
+      }
+    },
     "landing_footer_ij7m4W": {
       "type": "landing-footer",
       "name": "Landing Footer",
@@ -115,6 +130,7 @@
     "landing_header_XTj8kc",
     "black_early_banner_qQKxqi",
     "black_early_email_JD4zMh",
+    "black_early_socialproof_8RXwq6",
     "landing_footer_ij7m4W"
   ]
 }
