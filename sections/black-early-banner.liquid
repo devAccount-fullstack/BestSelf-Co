@@ -1,6 +1,8 @@
-<section class="black-early-banner">
+<section class="black-early-banner"
+style="background-color: {{ section.settings.bg_color }};"
+>
+  <div class="acc-gradient-right"></div>
   <div class="beb-container">
-
     <!-- Text Block -->
     <div class="beb-text">
       {% if section.settings.subheading != blank %}
@@ -33,10 +35,13 @@
 .black-early-banner {
   width: 100%;
   padding: 60px 20px;
-  background: linear-gradient(to right, #121212, #0d0d0d);
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  overflow: visible;
 }
 
 /* ----------- CONTAINER ------------- */
