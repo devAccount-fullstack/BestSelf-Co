@@ -1,0 +1,148 @@
+<section
+  class="black-early-banner"
+  style="background-color: {{ section.settings.bg_color }};"
+>
+  <div class="early-left"></div>
+  <div class="beb-container">
+    <!-- Text Block -->
+    <div class="beb-text">
+      {% if section.settings.subheading != blank %}
+        <p class="beb-subheading">{{ section.settings.subheading }}</p>
+      {% endif %}
+
+      {% if section.settings.heading != blank %}
+        <h2 class="beb-heading">{{ section.settings.heading }}</h2>
+      {% endif %}
+    </div>
+
+    <!-- Image Block -->
+    <div class="beb-image-wrapper">
+      {% if section.settings.banner_image %}
+        <img
+          src="{{ section.settings.banner_image | image_url: width: 900 }}"
+          width="100%"
+          height="auto"
+          alt="Black Friday Early Access Banner"
+          class="beb-image"
+        >
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+<style>
+  /* ----------- SECTION WRAPPER ------------- */
+  .black-early-banner {
+    width: 100%;
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 200;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    overflow: visible;
+  }
+
+  .early-left {
+    position: absolute;
+    width: 100%;
+    height: 125%;
+    z-index: 100000;
+    pointer-events: none;
+    left: 0;
+    top: 0;
+    overflow: visible;
+    background: radial-gradient(circle at 0% 34%, rgba(230, 184, 92, 0.2), transparent 16%);
+  }
+
+  /* ----------- CONTAINER ------------- */
+  .beb-container {
+    max-width: 1200px;
+    width: 100%;
+    text-align: center;
+  }
+
+  /* ----------- TEXT STYLES ------------- */
+  .beb-subheading {
+    font-size: 36px;
+    font-family: Inter, sans-serif;
+    color: #ffffff;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+
+  .beb-heading {
+    font-size: 100px;
+    font-family: 'Libre Baskerville', 'sans-serif';
+    font-weight: 400;
+    font-style: italic;
+    color: #fac848;
+    margin-bottom: 40px;
+  }
+
+  /* ----------- IMAGE ------------- */
+  .beb-image-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .beb-image {
+    max-width: 900px;
+    width: 100%;
+    height: auto;
+  }
+
+  /* ----------- RESPONSIVE ------------- */
+  @media (max-width: 768px) {
+    .beb-heading {
+      font-size: 42px;
+    }
+    .beb-subheading {
+      font-size: 18px;
+    }
+    .black-early-banner {
+      padding: 40px 20px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Early Access Banner",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#0d0d0d"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Black Friday 2025"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Early Access"
+    },
+    {
+      "type": "image_picker",
+      "id": "banner_image",
+      "label": "Banner Image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Early Access Banner",
+      "category": "Promotional"
+    }
+  ]
+}
+{% endschema %}

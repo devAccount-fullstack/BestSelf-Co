@@ -1,0 +1,294 @@
+<section
+  class="black-early-socialproof"
+  style="background-color: {{ section.settings.bg_color }};"
+>
+  <div class="besp-gradient"></div>
+
+  <div class="besp-container">
+    <!-- Rating Bar -->
+    <div class="besp-rating">
+      {% if section.settings.star_icon %}
+        <img
+          src="{{ section.settings.star_icon | image_url: width: 150 }}"
+          width="150px"
+          height="auto"
+          class="besp-stars"
+          alt="Rating Stars"
+        >
+        <img
+          src="{{ section.settings.star_icon | image_url: width: 150 }}"
+          width="150px"
+          height="auto"
+          class="besp-stars"
+          alt="Rating Stars"
+        >
+        <img
+          src="{{ section.settings.star_icon | image_url: width: 150 }}"
+          width="150px"
+          height="auto"
+          class="besp-stars"
+          alt="Rating Stars"
+        >
+        <img
+          src="{{ section.settings.star_icon | image_url: width: 150 }}"
+          width="150px"
+          height="auto"
+          class="besp-stars"
+          alt="Rating Stars"
+        >
+        <img
+          src="{{ section.settings.star_icon | image_url: width: 150 }}"
+          width="150px"
+          height="auto"
+          class="besp-stars"
+          alt="Rating Stars"
+        >
+      {% endif %}
+      {% if section.settings.rating_text != blank %}
+        <span class="besp-rating-text">{{ section.settings.rating_text }}</span>
+      {% endif %}
+    </div>
+
+    <!-- Main Heading -->
+    <h2 class="besp-heading">
+      {{ section.settings.heading_before }}
+      <span class="besp-highlight">{{ section.settings.heading_yellow }}</span>
+      {{ section.settings.heading_after }}
+    </h2>
+
+    <!-- Featured Logo -->
+    <div class="besp-featured">
+      {% if section.settings.featured_text != blank %}
+        <span class="besp-featured-text">{{ section.settings.featured_text }}</span>
+      {% endif %}
+
+      {% if section.settings.featured_logo %}
+        <img
+          src="{{ section.settings.featured_logo | image_url: width: 200 }}"
+          width="200px"
+          height="auto"
+          class="besp-featured-logo"
+          alt="Featured Logo"
+        >
+      {% endif %}
+    </div>
+
+    <!-- Button -->
+    {% if section.settings.button_text != blank %}
+      <a href="{{ section.settings.button_link }}" class="besp-btn">
+        {{ section.settings.button_text }}
+      </a>
+    {% endif %}
+  </div>
+</section>
+
+<style>
+  /* ----------------------------- */
+  /* SECTION WRAPPER */
+  /* ----------------------------- */
+  .black-early-socialproof {
+    width: 100%;
+    padding: 80px 20px;
+    position: relative;
+    z-index: 5;
+    color: #fff;
+    overflow: hidden;
+    font-family: 'Inter', sans-serif;
+  }
+
+  /* radial gradient left fade */
+  .besp-gradient {
+    position: absolute;
+    width: 100%;
+    height: 140%;
+    pointer-events: none;
+    left: 0;
+    top: 0;
+    background: radial-gradient(circle at 50% 36%, rgba(230, 184, 92, 0.16), transparent 22%);
+    z-index: 0;
+  }
+
+  .besp-container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* ----------------------------- */
+  /* RATING BAR */
+  /* ----------------------------- */
+  .besp-rating {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(0, 0, 0, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 8px 18px;
+    border-radius: 14px;
+    margin-bottom: 35px;
+  }
+
+  .besp-stars {
+    height: 22px;
+    width: auto;
+  }
+
+  .besp-rating-text {
+    font-size: 16px;
+    color: #fff;
+  }
+
+  /* ----------------------------- */
+  /* HEADING */
+  /* ----------------------------- */
+  .besp-heading {
+    font-size: 62px;
+    font-family: 'Libre Baskerville', serif;
+    font-weight: 400;
+    line-height: 1.15;
+    margin-bottom: 25px;
+  }
+
+  .besp-highlight {
+    color: #fac848;
+    font-weight: 600;
+  }
+
+  /* ----------------------------- */
+  /* FEATURED LOGO row */
+  /* ----------------------------- */
+  .besp-featured {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+    color: #d9d9d9;
+    margin-bottom: 35px;
+  }
+
+  .besp-featured-text {
+    font-size: 16px;
+  }
+
+  .besp-featured-logo {
+    height: 26px;
+    width: auto;
+  }
+
+  /* ----------------------------- */
+  /* BUTTON */
+  /* ----------------------------- */
+  .besp-btn {
+    padding: 15px 38px;
+    background: #fac848;
+    color: #000;
+    border-radius: 40px;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 18px;
+    display: inline-block;
+    transition: 0.2s ease;
+  }
+
+  .besp-btn:hover {
+    background: #ffd978;
+  }
+
+  /* ----------------------------- */
+  /* RESPONSIVE */
+  /* ----------------------------- */
+  @media (max-width: 900px) {
+    .besp-heading {
+      font-size: 42px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .besp-heading {
+      font-size: 34px;
+    }
+
+    .besp-rating {
+      transform: scale(0.9);
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Black Early Social Proof",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#0d0d0d"
+    },
+
+    {
+      "type": "image_picker",
+      "id": "star_icon",
+      "label": "Star Icon",
+      "info": "Upload the stars rating image"
+    },
+    {
+      "type": "text",
+      "id": "rating_text",
+      "label": "Rating Text",
+      "default": "4.8 rating"
+    },
+
+    {
+      "type": "text",
+      "id": "heading_before",
+      "label": "Heading Before Highlight",
+      "default": "Join"
+    },
+    {
+      "type": "text",
+      "id": "heading_yellow",
+      "label": "Highlight Word",
+      "default": "500,000+"
+    },
+    {
+      "type": "text",
+      "id": "heading_after",
+      "label": "Heading After Highlight",
+      "default": "customers"
+    },
+
+    {
+      "type": "text",
+      "id": "featured_text",
+      "label": "Featured Text",
+      "default": "Featured in"
+    },
+    {
+      "type": "image_picker",
+      "id": "featured_logo",
+      "label": "Featured Logo"
+    },
+
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Create your wishlist now"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link",
+      "default": "/"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Black Early Social Proof"
+    }
+  ]
+}
+{% endschema %}

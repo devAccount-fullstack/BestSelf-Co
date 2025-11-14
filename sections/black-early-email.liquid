@@ -1,0 +1,313 @@
+<section class="black-early-email" style="background-color: {{ section.settings.bg_color }};">
+  <div class="early-right"></div>
+  <div class="bee-container">
+    <!-- LEFT COLUMN -->
+    <div class="bee-left">
+      {% if section.settings.left_title != blank %}
+        <h2 class="bee-left-title">
+          {{ section.settings.left_title }}
+        </h2>
+      {% endif %}
+
+      {% if section.settings.left_heading != blank %}
+        <h3 class="bee-left-heading">
+          {{ section.settings.left_heading | escape }}
+          {% if section.settings.left_heading_yellow != blank %}
+            <span class="bee-highlight">{{ section.settings.left_heading_yellow }}</span>
+          {% endif %}
+        </h3>
+      {% endif %}
+
+      <div class="bee-features">
+        {% for block in section.blocks %}
+          {% if block.type == 'feature' %}
+            <div class="bee-feature">
+              {% if block.settings.icon != blank %}
+                <img
+                  src="{{ block.settings.icon | image_url: width: 60 }}"
+                  class="bee-feature-icon"
+                  width="60"
+                  height="60"
+                  alt=""
+                >
+              {% endif %}
+              <div class="bee-feature-text">
+                <h4 class="bee-feature-title">{{ block.settings.title }}</h4>
+                <p class="bee-feature-desc">{{ block.settings.description }}</p>
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div class="bee-right">
+      {% if section.settings.right_title != blank %}
+        <h3 class="bee-right-title">
+          {{ section.settings.right_title }}
+          {% if section.settings.right_title_yellow != blank %}
+            <span class="bee-highlight">{{ section.settings.right_title_yellow }}</span>
+          {% endif %}
+        </h3>
+      {% endif %}
+
+      {% if section.settings.right_subheading != blank %}
+        <p class="bee-right-subheading">{{ section.settings.right_subheading }}</p>
+      {% endif %}
+
+      <!-- FORM PLACEHOLDER FOR KLAVIYO -->
+      <div class="bee-form-placeholder">
+        <!-- Insert your Klaviyo form embed here -->
+        <div class="bee-input-placeholder">Your email address</div>
+        <div class="bee-button-placeholder">Join early access</div>
+      </div>
+
+      {% if section.settings.bottom_text != blank %}
+        <p class="bee-bottom-text">{{ section.settings.bottom_text }}</p>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+<style>
+  /* SECTION */
+  .black-early-email {
+    width: 100%;
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    overflow: visible;
+  }
+
+  .early-right {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 150;
+    pointer-events: none;
+    left: 0;
+    top: 0;
+    overflow: visible;
+    background: radial-gradient(circle at 93% 46%, rgba(230, 184, 92, 0.2), transparent 13%);
+  }
+
+  /* GRID */
+  .bee-container {
+    max-width: 1200px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 60px;
+  }
+
+  /* LEFT COLUMN */
+  .bee-left-title {
+    font-size: 54px;
+    font-weight: 400;
+    margin-bottom: 10px;
+    color: #ffffff;
+  }
+
+  .bee-left-heading {
+    font-size: 54px;
+    font-weight: 400;
+    line-height: 1.1;
+    margin-bottom: 40px;
+  }
+
+  .bee-highlight {
+    color: #f3c44f;
+  }
+
+  /* FEATURES LIST */
+  .bee-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .bee-feature {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 25px;
+  }
+
+  .bee-feature-icon {
+    width: 35px;
+    height: auto;
+  }
+
+  .bee-feature-title {
+    font-size: 20px;
+    margin: 0;
+  }
+
+  .bee-feature-desc {
+    color: #cfcfcf;
+    margin: 3px 0 0 0;
+    font-size: 16px;
+  }
+
+  /* RIGHT COLUMN */
+  .bee-right {
+    background: #000;
+    position: relative;
+    z-index: 200;
+    border-radius: 36px;
+    padding: 50px 40px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .bee-right-title {
+    font-size: 38px;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+
+  .bee-right-subheading {
+    font-size: 18px;
+    color: #d0d0d0;
+    margin-bottom: 30px;
+  }
+
+  /* FORM PLACEHOLDER */
+  .bee-form-placeholder {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+
+  .bee-input-placeholder {
+    padding: 16px;
+    background: #2b2b2b;
+    border-radius: 10px;
+    color: #a9a9a9;
+  }
+
+  .bee-button-placeholder {
+    padding: 16px;
+    background: #f3c44f;
+    text-align: center;
+    border-radius: 40px;
+    color: #000;
+    font-weight: 600;
+  }
+
+  /* Bottom text */
+  .bee-bottom-text {
+    font-size: 14px;
+    color: #c3c3c3;
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .bee-container {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+    .bee-left-heading {
+      font-size: 40px;
+    }
+    .bee-left-title {
+      font-size: 32px;
+    }
+    .bee-right {
+      padding: 30px 20px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Black Early Access Email",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#0d0d0d"
+    },
+    {
+      "type": "text",
+      "id": "left_title",
+      "label": "Left Title",
+      "default": "The Holiday Perks"
+    },
+    {
+      "type": "text",
+      "id": "left_heading",
+      "label": "Left Heading",
+      "default": "start with"
+    },
+    {
+      "type": "text",
+      "id": "left_heading_yellow",
+      "label": "Left Heading Yellow Word",
+      "default": "YOU"
+    },
+
+    {
+      "type": "text",
+      "id": "right_title",
+      "label": "Right Title",
+      "default": "Join our"
+    },
+    {
+      "type": "text",
+      "id": "right_title_yellow",
+      "label": "Right Title Yellow Word",
+      "default": "VIP"
+    },
+    {
+      "type": "textarea",
+      "id": "right_subheading",
+      "label": "Right Subheading",
+      "default": "Get 2x rewards, free gifts and shop before the crowds."
+    },
+    {
+      "type": "textarea",
+      "id": "bottom_text",
+      "label": "Bottom Text",
+      "default": "Free to join. Instant rewards. No credit card."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "2x Loyalty Points"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Nov 13–24 only"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Black Early Access Email"
+    }
+  ]
+}
+{% endschema %}

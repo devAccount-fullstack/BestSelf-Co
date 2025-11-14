@@ -1,0 +1,136 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "subheading": "",
+        "show_title": true,
+        "heading_font_size": "heading-large",
+        "show_content": false,
+        "text_font_size": "body-medium",
+        "align_text": "text-center",
+        "width": "wrapper",
+        "color_scheme": "",
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "heading_tag": "automatic"
+      }
+    },
+    "landing_header_XTj8kc": {
+      "type": "landing-header",
+      "name": "Landing Header",
+      "settings": {
+        "logo": "shopify://shop_images/bc4f5bb6def0700ad71e3d30dd75536b39e4dbef_d357d9b1-886b-47bb-bca7-0e71e6090492.png",
+        "logo_link": "/",
+        "vip-header": true
+      }
+    },
+    "black_early_banner_qQKxqi": {
+      "type": "black-early-banner",
+      "name": "Early Access Banner",
+      "settings": {
+        "bg_color": "#131516",
+        "subheading": "Black Friday 2025",
+        "heading": "Early Access",
+        "banner_image": "shopify://shop_images/Hero_Asset_2.png"
+      }
+    },
+    "black_early_email_JD4zMh": {
+      "type": "black-early-email",
+      "blocks": {
+        "feature_Qtn6Cp": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/award_0f577232-7b10-4fca-a45b-abefbb36a92e.png",
+            "title": "2x Loyalty Points",
+            "description": "Nov 13–24 only"
+          }
+        },
+        "feature_EmtjhF": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/clock_4b297b11-4609-43ce-9561-56b8ef1fe942.png",
+            "title": "Early access",
+            "description": "to our biggest sale"
+          }
+        },
+        "feature_HjUUEw": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/gift_c6c6faf3-9848-496a-b410-1f45eb77e03e.png",
+            "title": "Free gifts",
+            "description": "starting at just $60      "
+          }
+        },
+        "feature_iAbJeF": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/stary.png",
+            "title": "VIP-only access",
+            "description": "the public won't see "
+          }
+        }
+      },
+      "block_order": [
+        "feature_Qtn6Cp",
+        "feature_EmtjhF",
+        "feature_HjUUEw",
+        "feature_iAbJeF"
+      ],
+      "name": "Black Early Access Email",
+      "settings": {
+        "bg_color": "#131516",
+        "left_title": "The Holiday Perks",
+        "left_heading": "start with",
+        "left_heading_yellow": "YOU",
+        "right_title": "Join our",
+        "right_title_yellow": "VIP",
+        "right_subheading": "Get 2x rewards, free gifts and shop before the crowds.",
+        "bottom_text": "Free to join. Instant rewards. No credit card."
+      }
+    },
+    "black_early_socialproof_8RXwq6": {
+      "type": "black-early-socialproof",
+      "name": "Black Early Social Proof",
+      "settings": {
+        "bg_color": "#131516",
+        "star_icon": "shopify://shop_images/Star_1.png",
+        "rating_text": "4.8 rating",
+        "heading_before": "Join",
+        "heading_yellow": "500,000+",
+        "heading_after": "customers",
+        "featured_text": "Featured in",
+        "button_text": "Create your wishlist now",
+        "button_link": "/"
+      }
+    },
+    "landing_footer_ij7m4W": {
+      "type": "landing-footer",
+      "name": "Landing Footer",
+      "settings": {
+        "logo_link": "/",
+        "logo": "shopify://shop_images/bc4f5bb6def0700ad71e3d30dd75536b39e4dbef_d357d9b1-886b-47bb-bca7-0e71e6090492.png",
+        "copyright": "© 2025 BestSelf Co. All rights reserved.",
+        "policy_links": "<p><a href=\"/pages/privacy-policy\">Privacy Policy</a> | <a href=\"/pages/terms-conditions\">Terms & Conditions</a> | <a href=\"/pages/shipping-policy\">Shipping Policy</a></p>"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "landing_header_XTj8kc",
+    "black_early_banner_qQKxqi",
+    "black_early_email_JD4zMh",
+    "black_early_socialproof_8RXwq6",
+    "landing_footer_ij7m4W"
+  ]
+}
