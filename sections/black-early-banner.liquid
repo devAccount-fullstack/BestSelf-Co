@@ -1,8 +1,3 @@
-{% comment %}
-  Black Friday Early Access Banner Section
-  File: black-early-banner.liquid
-{% endcomment %}
-
 <section class="black-early-banner">
   <div class="beb-container">
 
@@ -21,7 +16,7 @@
     <div class="beb-image-wrapper">
       {% if section.settings.banner_image %}
         <img
-          src="{{ section.settings.banner_image | image_url: width: 1200 }}"
+          src="{{ section.settings.banner_image }}"
           width="100%"
           height="auto"
           alt="Black Friday Early Access Banner"
