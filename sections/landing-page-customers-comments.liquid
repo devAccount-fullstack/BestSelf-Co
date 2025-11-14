@@ -1,0 +1,512 @@
+<style>
+  .customers-comments {
+    background: #1A1A1A;
+    padding: 80px 0;
+  }
+
+  .customers-comments__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    {% comment %} max-width: 1440px; {% endcomment %}
+    margin: 0 auto;
+  }
+
+  /* Left Column */
+  .customers-comments__left {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding-left: 80px;
+  }
+
+  .customers-comments__heading-primary {
+    font-family: 'Libre Baskerville', serif;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.2;
+    color: #FFFFFF;
+    margin: 0 0 8px 0;
+  }
+
+  .customers-comments__heading-secondary {
+    font-family: 'Libre Baskerville', serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 36px;
+    line-height: 1.2;
+    color: #FAC848;
+    margin: 0 0 16px 0;
+  }
+
+  .customers-comments__reviews {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .customers-comments__stars {
+    display: flex;
+    gap: 4px;
+  }
+
+  .customers-comments__star {
+    width: 18px;
+    height: 18px;
+  }
+
+  .customers-comments__star--filled {
+    color: #FAC848;
+  }
+
+  .customers-comments__star--empty {
+    color: #FFFFFF;
+  }
+
+  .customers-comments__reviews-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #FFFFFF;
+  }
+
+  /* Right Column - Swipeable Carousel */
+  .customers-comments__right {
+    position: relative;
+    overflow: hidden;
+    padding-right: 80px;
+  }
+
+  .customers-comments__carousel {
+    display: flex;
+    gap: 24px;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .customers-comments__carousel::-webkit-scrollbar {
+    display: none;
+  }
+
+  .customers-comments__card {
+    min-width: 429px;
+    width: 429px;
+    height: 589px;
+    border-radius: 14px;
+    position: relative;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    flex-shrink: 0;
+    overflow: hidden;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  }
+
+  .customers-comments__video-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+
+  /* Dark overlay on the entire image */
+  .customers-comments__video-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+  }
+
+  .customers-comments__thumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .customers-comments__play-button {
+    position: absolute;
+    bottom: 32px;
+    right: 32px;
+    width: 49px;
+    height: 49px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    z-index: 3;
+    transform: none;
+  }
+
+  .customers-comments__play-button:hover {
+    transform: scale(1.1);
+  }
+
+  .customers-comments__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: transparent;
+    padding: 40px 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 16px;
+    z-index: 2;
+  }
+
+  .customers-comments__quote-icon {
+    width: 54.12px;
+    height: 43.91px;
+    margin-bottom: 8px;
+  }
+
+  .customers-comments__quote-text {
+    font-family: 'Libre Baskerville', serif;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 1.4;
+    color: #FFFFFF;
+    margin: 0;
+    margin-top: 40px;
+  }
+
+  .customers-comments__author {
+    font-family: 'Libre Baskerville', serif;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 1.2;
+    color: #FFFFFF;
+    margin: 0;
+    margin-top: auto;
+  }
+
+  /* Navigation Dots */
+  .customers-comments__dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 24px;
+  }
+
+  .customers-comments__dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  .customers-comments__dot--active {
+    background: #FAC848;
+  }
+
+  /* Mobile Responsive */
+  @media (max-width: 1023px) {
+    .customers-comments {
+      padding: 60px 20px;
+    }
+
+    .customers-comments__container {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .customers-comments__left {
+      padding-left: 0;
+    }
+
+    .customers-comments__heading-primary,
+    .customers-comments__heading-secondary {
+      font-size: 28px;
+    }
+
+    .customers-comments__right {
+      padding-right: 0;
+    }
+
+    .customers-comments__card {
+      min-width: 100%;
+      width: 100%;
+      max-width: 429px;
+    }
+
+    .customers-comments__quote-text {
+      font-size: 24px;
+    }
+
+    .customers-comments__author {
+      font-size: 18px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .customers-comments__heading-primary,
+    .customers-comments__heading-secondary {
+      font-size: 24px;
+    }
+
+    .customers-comments__card {
+      height: 500px;
+    }
+
+    .customers-comments__quote-text {
+      font-size: 20px;
+      margin-top: 20px;
+    }
+
+    .customers-comments__author {
+      font-size: 16px;
+    }
+
+    .customers-comments__overlay {
+      padding: 24px 20px;
+    }
+
+    .customers-comments__play-button {
+      width: 40px;
+      height: 40px;
+      bottom: 20px;
+      right: 20px;
+    }
+  }
+</style>
+
+<section class="customers-comments">
+  <div class="customers-comments__container">
+    <!-- Left Column -->
+    <div class="customers-comments__left">
+      {% if section.settings.heading_primary != blank %}
+        <h2 class="customers-comments__heading-primary">{{ section.settings.heading_primary }}</h2>
+      {% endif %}
+
+      {% if section.settings.heading_secondary != blank %}
+        <h2 class="customers-comments__heading-secondary">{{ section.settings.heading_secondary }}</h2>
+      {% endif %}
+
+      <!-- Reviews -->
+      {% if section.settings.star_rating > 0 %}
+        <div class="customers-comments__reviews">
+          <div class="customers-comments__stars">
+            {% for i in (1..5) %}
+              {% if i <= section.settings.star_rating %}
+                <svg aria-hidden="true" focusable="false" role="presentation" class="customers-comments__star customers-comments__star--filled" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                </svg>
+              {% else %}
+                <svg aria-hidden="true" focusable="false" role="presentation" class="customers-comments__star customers-comments__star--empty" viewBox="0 0 20 20" fill="none" stroke="currentColor">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              {% endif %}
+            {% endfor %}
+          </div>
+          <span class="customers-comments__reviews-text">{{ section.settings.reviews_text }}</span>
+        </div>
+      {% endif %}
+    </div>
+
+    <!-- Right Column - Swipeable Carousel -->
+    <div class="customers-comments__right">
+      <div class="customers-comments__carousel" id="commentsCarousel">
+        {% for block in section.blocks %}
+          <div class="customers-comments__card" {{ block.shopify_attributes }}>
+            <div class="customers-comments__video-container">
+              {% if block.settings.thumbnail_image != blank %}
+                <img
+                  src="{{ block.settings.thumbnail_image | image_url: width: 858 }}"
+                  alt="{{ block.settings.author | escape }}"
+                  class="customers-comments__thumbnail"
+                  width="429"
+                  height="589"
+                  loading="lazy"
+                >
+              {% else %}
+                <div style="width: 100%; height: 100%; background: #333;"></div>
+              {% endif %}
+
+              {% if block.settings.video_url != blank %}
+                <a href="{{ block.settings.video_url }}" class="customers-comments__play-button" aria-label="Play video">
+                  <svg width="49" height="49" viewBox="0 0 49 49" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="49" height="49" rx="24.5" fill="#FAC848"/>
+                    <path d="M33.9243 22.7679C35.2577 23.5377 35.2577 25.4622 33.9243 26.232L20.6316 33.9066C19.2983 34.6764 17.6316 33.7141 17.6316 32.1745L17.6316 16.8254C17.6316 15.2858 19.2983 14.3236 20.6316 15.0934L33.9243 22.7679Z" fill="#404040"/>
+                  </svg>
+                </a>
+              {% endif %}
+
+              <div class="customers-comments__overlay">
+                <svg class="customers-comments__quote-icon" width="55" height="44" viewBox="0 0 55 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M54.1182 4.37482C49.1492 8.15554 45.5846 11.7742 43.4242 15.2309C41.3718 18.5795 40.3456 22.3062 40.3456 26.411C41.7499 25.5468 43.3702 25.1147 45.2065 25.1147C47.691 25.1147 49.6893 25.9789 51.2016 27.7072C52.8219 29.3275 53.6321 31.4339 53.6321 34.0264C53.6321 36.9429 52.6059 39.3194 50.5535 41.1557C48.6091 42.9921 45.9626 43.9103 42.614 43.9103C34.9446 43.9103 31.1098 38.8333 31.1098 28.6794C31.1098 25.9789 31.4339 23.4944 32.082 21.226C32.7302 18.8495 33.7563 16.5811 35.1606 14.4207C36.6729 12.1523 38.6713 9.88386 41.1557 7.61543C43.6402 5.23898 46.7188 2.70051 50.3915 0L54.1182 4.37482ZM23.0083 4.37482C18.0394 8.15554 14.4747 11.7742 12.3143 15.2309C10.2619 18.5795 9.23574 22.3062 9.23574 26.411C10.64 25.5468 12.2603 25.1147 14.0967 25.1147C16.5811 25.1147 18.5795 25.9789 20.0918 27.7072C21.7121 29.3275 22.5222 31.4339 22.5222 34.0264C22.5222 36.9429 21.496 39.3194 19.4437 41.1557C17.4993 42.9921 14.8528 43.9103 11.5042 43.9103C3.83472 43.9103 0 38.8333 0 28.6794C0 25.9789 0.324061 23.4944 0.972183 21.226C1.6203 18.8495 2.6465 16.5811 4.05076 14.4207C5.56305 12.1523 7.56142 9.88386 10.0459 7.61543C12.5304 5.23898 15.6089 2.70051 19.2816 0L23.0083 4.37482Z" fill="#FAC848"/>
+                </svg>
+
+                {% if block.settings.quote_text != blank %}
+                  <p class="customers-comments__quote-text">{{ block.settings.quote_text }}</p>
+                {% endif %}
+
+                {% if block.settings.author != blank %}
+                  <p class="customers-comments__author">{{ block.settings.author }}</p>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+
+      <!-- Navigation Dots -->
+      {% if section.blocks.size > 1 %}
+        <div class="customers-comments__dots">
+          {% for block in section.blocks %}
+            <button 
+              class="customers-comments__dot {% if forloop.first %}customers-comments__dot--active{% endif %}"
+              data-index="{{ forloop.index0 }}"
+              aria-label="Go to testimonial {{ forloop.index }}"
+            ></button>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const carousel = document.getElementById('commentsCarousel');
+    const dots = document.querySelectorAll('.customers-comments__dot');
+    
+    if (!carousel || dots.length === 0) return;
+
+    // Update active dot on scroll
+    carousel.addEventListener('scroll', function() {
+      const scrollLeft = carousel.scrollLeft;
+      const cardWidth = 429 + 24; // Card width + gap
+      const activeIndex = Math.round(scrollLeft / cardWidth);
+      
+      dots.forEach((dot, index) => {
+        if (index === activeIndex) {
+          dot.classList.add('customers-comments__dot--active');
+        } else {
+          dot.classList.remove('customers-comments__dot--active');
+        }
+      });
+    });
+
+    // Scroll to card on dot click
+    dots.forEach(dot => {
+      dot.addEventListener('click', function() {
+        const index = parseInt(this.dataset.index);
+        const cardWidth = 429 + 24; // Card width + gap
+        carousel.scrollTo({
+          left: cardWidth * index,
+          behavior: 'smooth'
+        });
+      });
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Landing Page Comments",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Headings"
+    },
+    {
+      "type": "text",
+      "id": "heading_primary",
+      "label": "Primary Heading",
+      "default": "Here's What"
+    },
+    {
+      "type": "text",
+      "id": "heading_secondary",
+      "label": "Secondary Heading (Italic)",
+      "default": "Our Customers Are Saying"
+    },
+    {
+      "type": "header",
+      "content": "Reviews"
+    },
+    {
+      "type": "range",
+      "id": "star_rating",
+      "min": 0,
+      "max": 5,
+      "step": 1,
+      "label": "Star Rating",
+      "default": 5
+    },
+    {
+      "type": "text",
+      "id": "reviews_text",
+      "label": "Reviews Text",
+      "default": "500+ Reviews"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "thumbnail_image",
+          "label": "Thumbnail Image"
+        },
+        {
+          "type": "url",
+          "id": "video_url",
+          "label": "Video URL"
+        },
+        {
+          "type": "textarea",
+          "id": "quote_text",
+          "label": "Quote Text",
+          "default": "I've tried everything. Helm is the first thing that actually helped me focus."
+        },
+        {
+          "type": "text",
+          "id": "author",
+          "label": "Author Name",
+          "default": "John doe"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Landing Page Comments",
+      "blocks": [
+        {
+          "type": "testimonial",
+          "settings": {
+            "quote_text": "I've tried everything. Helm is the first thing that actually helped me focus.",
+            "author": "John doe"
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "quote_text": "It's sculptural, meets form and function. I love how it looks and works.",
+            "author": "John doe"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

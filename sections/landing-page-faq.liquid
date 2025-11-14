@@ -1,0 +1,98 @@
+<style>
+  .landing-faq {
+    background: #131313;
+  }
+</style>
+
+<section class="landing-faq">
+  <div class="container">
+    <div class="landing-two-column-slider__wrapper faq">
+      <!-- Left Column - Heading -->
+      <div class="landing-two-column-slider__content">
+        {% if section.settings.heading != blank %}
+          <h2 class="landing-two-column-slider__heading">{{ section.settings.heading }}</h2>
+        {% endif %}
+      </div>
+
+      <!-- Right Column - FAQ Content -->
+        {% if section.blocks.size > 0 %}
+          <div class="landing-faq__content">
+            {% for block in section.blocks %}
+              <div class="landing-faq__item" {{ block.shopify_attributes }}>
+                {% if block.settings.question != blank %}
+                  <h3 class="landing-faq__question">{{ block.settings.question }}</h3>
+                {% endif %}
+                {% if block.settings.answer != blank %}
+                  <div class="landing-faq__answer">{{ block.settings.answer }}</div>
+                {% endif %}
+              </div>
+            {% endfor %}
+          </div>
+        {% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Landing Page FAQ",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Frequently Asked Questions"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "faq_item",
+      "name": "FAQ Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question",
+          "default": "Is this really free?"
+        },
+        {
+          "type": "richtext",
+          "id": "answer",
+          "label": "Answer",
+          "default": "<p>Yes. No tricks.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Landing FAQ",
+      "blocks": [
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is this really free?",
+            "answer": "<p>Yes. No tricks.</p>"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "Who can enter?",
+            "answer": "<p>Anyone in the U.S. who wants more out of life</p>"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "Do I need to buy anything?",
+            "answer": "<p>Nope. Just your email</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

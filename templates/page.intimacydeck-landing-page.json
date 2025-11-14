@@ -1,0 +1,411 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "subheading": "",
+        "show_title": true,
+        "heading_font_size": "heading-large",
+        "show_content": false,
+        "text_font_size": "body-medium",
+        "align_text": "text-center",
+        "width": "wrapper",
+        "color_scheme": "",
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "heading_tag": "automatic"
+      }
+    },
+    "landing_header_hetdmr": {
+      "type": "landing-header",
+      "name": "Landing Header",
+      "settings": {
+        "logo": "shopify://shop_images/bc4f5bb6def0700ad71e3d30dd75536b39e4dbef_d357d9b1-886b-47bb-bca7-0e71e6090492.png",
+        "logo_link": "/",
+        "vip-header": false
+      }
+    },
+    "landing_page_cta_HkyRm6": {
+      "type": "landing-page-cta",
+      "name": "Landing Page CTA",
+      "settings": {
+        "badge_text": "Only XXX discounted units left!",
+        "units_text": "XXX units left!",
+        "product_image": "shopify://shop_images/412126e077cf7938544cede15861d192889024d7.png",
+        "starburst_image": "shopify://shop_images/Star_6.png",
+        "discount_percent": "20%",
+        "discount_off": "off",
+        "sale_price": "$21.60",
+        "original_price_label": "Original price:",
+        "original_price": "$27",
+        "star_rating": 5,
+        "reviews_text": "1,024+ Reviews",
+        "promo_text": "Black Friday: 20% OFF — This Weekend Only!",
+        "headline": "Feel Like Strangers \nin the Same Room?",
+        "description": "Rediscover each other—One card at a time.",
+        "feature_1": "Secure Checkout",
+        "feature_2": "Free Shipping $75+",
+        "feature_3": "90-Day Guarantee",
+        "cta_text": "Get the Intimacy Deck for $21.60 → Save 20%",
+        "gift_text": "Free Gift Included in Every Purchase"
+      }
+    },
+    "black_friday_ugc_q4RprW": {
+      "type": "black-friday-ugc",
+      "name": "Black Friday UGC",
+      "settings": {
+        "bg_color": "#131313",
+        "heading": "UGC display here",
+        "heading_title": "UGC display here"
+      }
+    },
+    "landing_page_value_proposition_U4iY6B": {
+      "type": "landing-page-value-proposition",
+      "name": "Landing Page Value Proposition",
+      "settings": {
+        "background_image": "shopify://shop_images/f3db424472010fcfb3b8d0ebb2f459cf46a7164f.png",
+        "heading_primary": "Why Are We So Close,",
+        "heading_secondary": "Yet So Disconnected?",
+        "description": "Even strong relationships fall into routine.  Conversations feel shallow. You miss feeling truly seen.",
+        "show_stats": false,
+        "stat_1_number": "$15k",
+        "stat_1_label": "Lost Productivity",
+        "stat_2_number": "156",
+        "stat_2_label": "Phone Pickups Per Day",
+        "stat_3_number": "38",
+        "stat_3_label": "Days Lost Annually",
+        "quote_text": "We learned more about each other in the first week with this deck than we did in our first few months",
+        "quote_author": "— Anonymous"
+      }
+    },
+    "landing_page_product_positioning_eDVEJP": {
+      "type": "landing-page-product-positioning",
+      "blocks": {
+        "step_TTbqtL": {
+          "type": "step",
+          "settings": {
+            "step_number": "1",
+            "step_title": "Draw a Card",
+            "step_description": "No prep, no awkward starts."
+          }
+        },
+        "step_RBVe4M": {
+          "type": "step",
+          "settings": {
+            "step_number": "2",
+            "step_title": "Be Present",
+            "step_description": "One question,  two hearts."
+          }
+        },
+        "step_RpMFC3": {
+          "type": "step",
+          "settings": {
+            "step_number": "3",
+            "step_title": "Feel Closer",
+            "step_description": "Rediscover each other’s world, every time."
+          }
+        }
+      },
+      "block_order": [
+        "step_TTbqtL",
+        "step_RBVe4M",
+        "step_RpMFC3"
+      ],
+      "name": "Landing Page Product Positioning",
+      "settings": {
+        "heading_primary": "The Game That  Feels Like Therapy",
+        "heading_subtitle": "Without Feeling Like Therapy",
+        "heading_secondary": "",
+        "cta_text": "Try the Deck for Just $21.60 – Black Friday Offer",
+        "units_text": "Only XXX discounted units left!"
+      }
+    },
+    "landing_page_benefits_cVEqyF": {
+      "type": "landing-page-benefits",
+      "blocks": {
+        "benefit_8L6z84": {
+          "type": "benefit",
+          "settings": {
+            "icon": "shopify://shop_images/Vector_a34c8522-7bf2-49d7-a5fa-8fdccb2a17cd.png",
+            "benefit_title": "Sparks Real Intimacy",
+            "benefit_description": "Rediscover each other in ways you never imagined"
+          }
+        },
+        "benefit_rfFMNP": {
+          "type": "benefit",
+          "settings": {
+            "icon": "shopify://shop_images/sandbox.png",
+            "benefit_title": "Feels Like a Game",
+            "benefit_description": "No pressure, just laughter, honesty, and joy"
+          }
+        },
+        "benefit_p9Jj4G": {
+          "type": "benefit",
+          "settings": {
+            "icon": "shopify://shop_images/edit.png",
+            "benefit_title": "Expert-Crafted Prompts",
+            "benefit_description": "Built by therapists & psychologists for deep connection"
+          }
+        },
+        "benefit_cDxUdC": {
+          "type": "benefit",
+          "settings": {
+            "icon": "shopify://shop_images/message.png",
+            "benefit_title": "Gets You Talking",
+            "benefit_description": "Even when communication  feels hard"
+          }
+        }
+      },
+      "block_order": [
+        "benefit_8L6z84",
+        "benefit_rfFMNP",
+        "benefit_p9Jj4G",
+        "benefit_cDxUdC"
+      ],
+      "name": "Landing Page Benefits",
+      "settings": {
+        "section_title": "Benefits"
+      }
+    },
+    "landing_page_feature_comparison_PArEkc": {
+      "type": "landing-page-feature-comparison",
+      "blocks": {
+        "comparison_item_zCM8r8": {
+          "type": "comparison_item",
+          "settings": {
+            "background_image": "shopify://shop_images/e66ccbdf844c21d5985948fc1ed3c87b3c55da8a.png",
+            "is_disabled": true,
+            "title": "Free Prompts",
+            "description": "No structure, low depth"
+          }
+        },
+        "comparison_item_C6fTiJ": {
+          "type": "comparison_item",
+          "settings": {
+            "background_image": "shopify://shop_images/9b815d43177b3b60a21d0541a3392c15c2837827.png",
+            "is_disabled": true,
+            "title": "Other Card Games",
+            "description": "Often shallow, random"
+          }
+        },
+        "comparison_item_79ymGr": {
+          "type": "comparison_item",
+          "settings": {
+            "background_image": "shopify://shop_images/1f88c1ef20c2bfb0f84f660c971d1b30c36cedf0.png",
+            "is_disabled": false,
+            "title": "Intimacy Deck",
+            "description": "Structured, meaningful, progressive connection"
+          }
+        }
+      },
+      "block_order": [
+        "comparison_item_zCM8r8",
+        "comparison_item_C6fTiJ",
+        "comparison_item_79ymGr"
+      ],
+      "name": "Landing Page Comparison",
+      "settings": {}
+    },
+    "landing_page_customers_comments_nEwWqa": {
+      "type": "landing-page-customers-comments",
+      "blocks": {
+        "testimonial_wbgrxt": {
+          "type": "testimonial",
+          "settings": {
+            "thumbnail_image": "shopify://shop_images/67cfe5fa30a3010cba20fabbe7028c9d78d0cbc3.png",
+            "video_url": "",
+            "quote_text": "15 years married, still learning new things.",
+            "author": "John doe"
+          }
+        },
+        "testimonial_gwm9pe": {
+          "type": "testimonial",
+          "settings": {
+            "thumbnail_image": "shopify://shop_images/2915afcb20eabed1e4ff261b24ca9cc4aea1b62c.png",
+            "video_url": "",
+            "quote_text": "Lorem ipsum dolor sit amet consectetur.",
+            "author": "John doe"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_wbgrxt",
+        "testimonial_gwm9pe"
+      ],
+      "name": "Landing Page Comments",
+      "settings": {
+        "heading_primary": "Here's What",
+        "heading_secondary": "Our Customers Are Saying",
+        "star_rating": 5,
+        "reviews_text": "1,024+ Reviews"
+      }
+    },
+    "landing_page_bundle_ChDzAF": {
+      "type": "landing-page-bundle",
+      "blocks": {
+        "card_hHppxN": {
+          "type": "card",
+          "settings": {
+            "primary_text": "Free Gift Included",
+            "secondary_text": "in Every Purchase",
+            "secondary_italic_text": "",
+            "show_discount": false,
+            "discount_text": "Save 30%",
+            "card_image": "shopify://shop_images/6a0ac193db53cd676addf17de5175ca45abf0418.png"
+          }
+        },
+        "card_3zPH6J": {
+          "type": "card",
+          "settings": {
+            "primary_text": "Free Gift Included",
+            "secondary_text": "Couple's Bundle: Intimacy Deck + Icebreaker Deck",
+            "secondary_italic_text": "",
+            "show_discount": true,
+            "discount_text": "Save 30%",
+            "card_image": "shopify://shop_images/412126e077cf7938544cede15861d192889024d7.png"
+          }
+        },
+        "card_qamJ74": {
+          "type": "card",
+          "settings": {
+            "primary_text": "",
+            "secondary_text": "Spend $75+ =",
+            "secondary_italic_text": "Free Shipping",
+            "show_discount": true,
+            "discount_text": "",
+            "card_image": "shopify://shop_images/a408d2c8ce3c27a3817c0e9059d5a44fc56404f1.png"
+          }
+        }
+      },
+      "block_order": [
+        "card_hHppxN",
+        "card_3zPH6J",
+        "card_qamJ74"
+      ],
+      "name": "Landing Page Bundle",
+      "settings": {
+        "bg_color": "#232440",
+        "card_bg_color": "#3b3d72",
+        "accent_color": "#fac848",
+        "gradient_end_color": "#7074d8",
+        "main_title": "Bundle +",
+        "subtitle": "Black Friday Offer",
+        "countdown_heading": "Black Friday",
+        "countdown_subheading": "Pricing Ends Soon!",
+        "units_text": "Only XXX discounted units left!",
+        "end_date": "2024-12-31T23:59:59",
+        "timezone": "+00:00"
+      }
+    },
+    "landing_page_faq_pAUxt7": {
+      "type": "landing-page-faq",
+      "blocks": {
+        "faq_item_Mkkq8G": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What if my partner isn’t into it?",
+            "answer": "<p>The game format makes it light and fun.  Most partners end up loving it.</p>"
+          }
+        },
+        "faq_item_r7jFVz": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is this just for struggling couples?",
+            "answer": "<p>Not at all. It’s for any couple wanting more quality time and deeper conversation.</p>"
+          }
+        },
+        "faq_item_KDETJw": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is it worth $27?",
+            "answer": "<p>For less than a dinner out, you’ll get a tool that brings you closer for years.</p>"
+          }
+        },
+        "faq_item_Ngq3WB": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Shipping?",
+            "answer": "<p>Free shipping on $75+ orders. Most decks ship same-day.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_Mkkq8G",
+        "faq_item_r7jFVz",
+        "faq_item_KDETJw",
+        "faq_item_Ngq3WB"
+      ],
+      "name": "Landing FAQ",
+      "settings": {
+        "heading": "Frequently Asked Questions"
+      }
+    },
+    "landing_page_get_product_CiKATe": {
+      "type": "landing-page-get-product",
+      "name": "Landing Page Get Product",
+      "settings": {
+        "product_image": "shopify://shop_images/3ee2f18d37a01e39fdbdfad37b024b8c5303397c.png",
+        "background_color": "#232440",
+        "sale_price": "$21.60",
+        "price_color": "#000000",
+        "price_bg_color": "#ffffff",
+        "badge_text": "Black Friday Only",
+        "badge_bg_color": "#000000",
+        "badge_text_color": "#e3e3e3",
+        "original_price": "Original price: $30",
+        "original_price_color": "#666666",
+        "stock_text": "Limited Black Friday Stock — Only XXX Discounted Units Left",
+        "stock_text_color": "#fac848",
+        "headline": "Make Time for What  Matters Most—",
+        "headline_color": "#ffffff",
+        "inline_subheadline": "Each Other",
+        "inline_subheadline_color": "#fac848",
+        "subheadline": "",
+        "subheadline_color": "#fac848",
+        "description": "Don’t let another holiday pass with the same surface talk.",
+        "description_color": "#ffffff",
+        "button_text": "Get the Intimacy Deck Now",
+        "button_link": "",
+        "button_bg_color": "#fac848",
+        "button_text_color": "#232440",
+        "guarantee_text": "90-Day No-Risk Return Policy",
+        "guarantee_color": "#e3e3e3"
+      }
+    },
+    "landing_footer_dwwWFY": {
+      "type": "landing-footer",
+      "name": "Landing Footer",
+      "settings": {
+        "logo_link": "/",
+        "logo": "shopify://shop_images/bc4f5bb6def0700ad71e3d30dd75536b39e4dbef_d357d9b1-886b-47bb-bca7-0e71e6090492.png",
+        "copyright": "© 2025 BestSelf Co. All rights reserved.",
+        "policy_links": "<p><a href=\"/pages/privacy-policy\">Privacy Policy</a> | <a href=\"/pages/terms-conditions\">Terms & Conditions</a> | <a href=\"/pages/shipping-policy\">Shipping Policy</a></p>"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "landing_header_hetdmr",
+    "landing_page_cta_HkyRm6",
+    "black_friday_ugc_q4RprW",
+    "landing_page_value_proposition_U4iY6B",
+    "landing_page_product_positioning_eDVEJP",
+    "landing_page_benefits_cVEqyF",
+    "landing_page_feature_comparison_PArEkc",
+    "landing_page_customers_comments_nEwWqa",
+    "landing_page_bundle_ChDzAF",
+    "landing_page_faq_pAUxt7",
+    "landing_page_get_product_CiKATe",
+    "landing_footer_dwwWFY"
+  ]
+}
