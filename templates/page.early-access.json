@@ -45,6 +45,59 @@
         "banner_image": "shopify://shop_images/Hero_Asset_2.png"
       }
     },
+    "black_early_email_JD4zMh": {
+      "type": "black-early-email",
+      "blocks": {
+        "feature_Qtn6Cp": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/award_0f577232-7b10-4fca-a45b-abefbb36a92e.png",
+            "title": "2x Loyalty Points",
+            "description": "Nov 13–24 only"
+          }
+        },
+        "feature_EmtjhF": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/clock_4b297b11-4609-43ce-9561-56b8ef1fe942.png",
+            "title": "2x Loyalty Points",
+            "description": "Nov 13–24 only"
+          }
+        },
+        "feature_HjUUEw": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/gift_c6c6faf3-9848-496a-b410-1f45eb77e03e.png",
+            "title": "2x Loyalty Points",
+            "description": "Nov 13–24 only"
+          }
+        },
+        "feature_iAbJeF": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/stary.png",
+            "title": "2x Loyalty Points",
+            "description": "Nov 13–24 only"
+          }
+        }
+      },
+      "block_order": [
+        "feature_Qtn6Cp",
+        "feature_EmtjhF",
+        "feature_HjUUEw",
+        "feature_iAbJeF"
+      ],
+      "name": "Black Early Access Email",
+      "settings": {
+        "left_title": "The Holiday Perks",
+        "left_heading": "start with",
+        "left_heading_yellow": "YOU",
+        "right_title": "Join our",
+        "right_title_yellow": "VIP",
+        "right_subheading": "Get 2x rewards, free gifts and shop before the crowds.",
+        "bottom_text": "Free to join. Instant rewards. No credit card."
+      }
+    },
     "landing_footer_ij7m4W": {
       "type": "landing-footer",
       "name": "Landing Footer",
@@ -60,6 +113,7 @@
     "main",
     "landing_header_XTj8kc",
     "black_early_banner_qQKxqi",
+    "black_early_email_JD4zMh",
     "landing_footer_ij7m4W"
   ]
 }
