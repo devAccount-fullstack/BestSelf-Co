@@ -103,7 +103,7 @@
       "type": "black-early-socialproof",
       "name": "Black Early Social Proof",
       "settings": {
-        "bg_color": "#0d0d0d",
+        "bg_color": "#131516",
         "star_icon": "shopify://shop_images/Star_1.png",
         "rating_text": "4.8 rating",
         "heading_before": "Join",
