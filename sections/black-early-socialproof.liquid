@@ -8,7 +8,7 @@
     <!-- Rating Bar -->
     <div class="besp-rating">
       {% if section.settings.star_icon %}
-        <img src="{{ section.settings.star_icon | image_url: width: 150 }}" class="besp-stars" alt="Rating Stars">
+        <img src="{{ section.settings.star_icon | image_url: width: 150 }}" width="150px" height="auto" class="besp-stars" alt="Rating Stars">
       {% endif %}
       {% if section.settings.rating_text != blank %}
         <span class="besp-rating-text">{{ section.settings.rating_text }}</span>
