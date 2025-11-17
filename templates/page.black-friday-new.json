@@ -271,6 +271,96 @@
         "button_link": "/"
       }
     },
+    "black_friday_gifts_FkEYaT": {
+      "type": "black-friday-gifts",
+      "blocks": {
+        "price_block_9PGbf6": {
+          "type": "price_block",
+          "settings": {
+            "icon": "shopify://shop_images/gift_c6c6faf3-9848-496a-b410-1f45eb77e03e.png",
+            "price": "$30",
+            "title": "Gift Under",
+            "text": "Small but mighty tools that spark daily wins."
+          }
+        },
+        "price_block_4tg6Mb": {
+          "type": "price_block",
+          "settings": {
+            "icon": "shopify://shop_images/gift_c6c6faf3-9848-496a-b410-1f45eb77e03e.png",
+            "price": "$30 - 1000",
+            "title": "Gifts",
+            "text": "Thoughtful gifts for personal growth and deeper connection."
+          }
+        },
+        "price_block_QX4mdA": {
+          "type": "price_block",
+          "settings": {
+            "icon": "shopify://shop_images/gift_c6c6faf3-9848-496a-b410-1f45eb77e03e.png",
+            "price": "$100+",
+            "title": "Gifts",
+            "text": "Premium bundles for people you love most."
+          }
+        },
+        "personality_block_pdqjd8": {
+          "type": "personality_block",
+          "settings": {
+            "icon": "shopify://shop_images/clock_4b297b11-4609-43ce-9561-56b8ef1fe942.png",
+            "title": "",
+            "text": ""
+          }
+        },
+        "personality_block_DU7WTQ": {
+          "type": "personality_block",
+          "settings": {
+            "icon": "shopify://shop_images/gift_c6c6faf3-9848-496a-b410-1f45eb77e03e.png",
+            "title": "",
+            "text": ""
+          }
+        },
+        "personality_block_AcAREe": {
+          "type": "personality_block",
+          "settings": {
+            "icon": "shopify://shop_images/stary.png",
+            "title": "",
+            "text": ""
+          }
+        },
+        "personality_block_P3jHVd": {
+          "type": "personality_block",
+          "settings": {
+            "icon": "shopify://shop_images/award_0f577232-7b10-4fca-a45b-abefbb36a92e.png",
+            "title": "",
+            "text": ""
+          }
+        }
+      },
+      "block_order": [
+        "price_block_9PGbf6",
+        "price_block_4tg6Mb",
+        "price_block_QX4mdA",
+        "personality_block_pdqjd8",
+        "personality_block_DU7WTQ",
+        "personality_block_AcAREe",
+        "personality_block_P3jHVd"
+      ],
+      "name": "Black Gifts Section",
+      "settings": {
+        "heading": "Find the Perfect Gift for Every Personality",
+        "subtitle": "Give gifts that inspire clarity, connection, and growth.",
+        "bg_color": "#1a1a1a",
+        "heading_color": "#ffffff",
+        "subtitle_color": "#d9d9d9",
+        "heading_size": 40,
+        "price_title": "Shop by Price",
+        "personality_title": "Shop by Personality / Relationship Type",
+        "button_text1": "Shop Gift by Budgets",
+        "button_link1": "",
+        "button_text": "Find the Perfect Gift",
+        "button_link": "",
+        "button_bg": "#f5d27a",
+        "button_color": "#000000"
+      }
+    },
     "landing_footer_7exntJ": {
       "type": "landing-footer",
       "name": "Landing Footer",
@@ -341,7 +431,7 @@
     "landing_testimonial_slider_AHqCJr",
     "black_friday_analog_C8An8p",
     "black_friday_claim_cyH94d",
-    "landing_footer_7exntJ",
-    "black_friday_gifts_FkEYaT"
+    "black_friday_gifts_FkEYaT",
+    "landing_footer_7exntJ"
   ]
 }
