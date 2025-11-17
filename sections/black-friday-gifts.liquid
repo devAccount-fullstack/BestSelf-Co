@@ -1,75 +1,3 @@
-{% comment %}
-  Black Friday Gifts Section
-  Filename: black-friday-gifts.liquid
-{% endcomment %}
-
-<style>
-  #black-friday-gifts {
-    padding: 60px 20px;
-    background: {{ section.settings.bg_color }};
-    color: #fff;
-    font-family: inherit;
-  }
-  #black-friday-gifts .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    text-align: center;
-  }
-  #black-friday-gifts h2 {
-    font-size: {{ section.settings.heading_size }}px;
-    color: {{ section.settings.heading_color }};
-    margin-bottom: 10px;
-    font-weight: 700;
-  }
-  #black-friday-gifts p.section-subtitle {
-    color: {{ section.settings.subtitle_color }};
-    max-width: 600px;
-    margin: 0 auto 40px auto;
-    font-size: 16px;
-    line-height: 1.5;
-  }
-
-  /* Grid */
-  .gifts-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 20px;
-    margin-top: 30px;
-  }
-
-  .gift-card {
-    background: #0e1a2b;
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 12px;
-    padding: 25px;
-    text-align: center;
-  }
-  .gift-card img {
-    max-width: 70px;
-    margin-bottom: 15px;
-  }
-  .gift-card h3 {
-    font-size: 20px;
-    margin-bottom: 8px;
-  }
-  .gift-card p {
-    font-size: 15px;
-    opacity: 0.8;
-  }
-
-  /* Button */
-  .bf-button {
-    display: inline-block;
-    margin-top: 20px;
-    background: {{ section.settings.button_bg }};
-    color: {{ section.settings.button_color }};
-    padding: 12px 24px;
-    border-radius: 6px;
-    font-weight: 600;
-    text-decoration: none;
-  }
-</style>
-
 <section id="black-friday-gifts">
   <div class="container">
     <!-- Heading -->
@@ -84,11 +12,13 @@
           <div class="gift-card">
             <img src="{{ block.settings.icon | img_url: 'medium' }}" width="auto" height="auto" alt="">
             <h3>{{ block.settings.title }}</h3>
+            <h3>{{ block.settings.price }}</h3>
             <p>{{ block.settings.text }}</p>
           </div>
         {% endif %}
       {% endfor %}
     </div>
+    <a class="bf-button" href="{{ section.settings.button_link1 }}">{{ section.settings.button_text1 }}</a>
 
     <!-- Shop by Personality -->
     <h3 style="margin-top:50px;">{{ section.settings.personality_title }}</h3>
@@ -136,6 +66,8 @@
       "label": "Shop by Personality Title",
       "default": "Shop by Personality / Relationship Type"
     },
+    { "type": "text", "id": "button_text1", "label": "Button Text Price", "default": "Shop Gift by Budgets" },
+    { "type": "url", "id": "button_link1", "label": "Button Link Price" },
 
     { "type": "text", "id": "button_text", "label": "Button Text", "default": "Find the Perfect Gift" },
     { "type": "url", "id": "button_link", "label": "Button Link" },
@@ -149,6 +81,7 @@
       "name": "Price Block",
       "settings": [
         { "type": "image_picker", "id": "icon", "label": "Icon Image" },
+        { "type": "text", "id": "price", "label": "Price" },
         { "type": "text", "id": "title", "label": "Title" },
         { "type": "textarea", "id": "text", "label": "Description" }
       ]
@@ -167,3 +100,73 @@
   "presets": [{ "name": "Black Gifts Section" }]
 }
 {% endschema %}
+
+<style>
+    #black-friday-gifts {
+      padding: 60px 20px;
+      background: {{ section.settings.bg_color }};
+      color: #fff;
+      font-family: inherit;
+    }
+    #black-friday-gifts .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    #black-friday-gifts h2 {
+      font-size: {{ section.settings.heading_size }}px;
+      color: {{ section.settings.heading_color }};
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+    #black-friday-gifts p.section-subtitle {
+      color: {{ section.settings.subtitle_color }};
+      max-width: 600px;
+      margin: 0 auto 40px auto;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    /* Grid */
+    .gifts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+  .gift-card {
+    background: #0e1a2b;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+    .gift-card img {
+      max-width: 70px;
+      margin-bottom: 15px;
+    }
+    .gift-card h3 {
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+    .gift-card p {
+      font-size: 15px;
+      opacity: 0.8;
+    }
+
+    /* Button */
+    .bf-button {
+      display: inline-block;
+      margin-top: 20px;
+      background: {{ section.settings.button_bg }};
+      color: {{ section.settings.button_color }};
+      padding: 12px 24px;
+      border-radius: 6px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+</style>
