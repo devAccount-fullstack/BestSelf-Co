@@ -305,32 +305,32 @@
           "type": "personality_block",
           "settings": {
             "icon": "shopify://shop_images/clock_4b297b11-4609-43ce-9561-56b8ef1fe942.png",
-            "title": "",
-            "text": ""
+            "title": "The Organizer",
+            "text": "Self Journal, BestSelf Planner"
           }
         },
         "personality_block_DU7WTQ": {
           "type": "personality_block",
           "settings": {
             "icon": "shopify://shop_images/gift_c6c6faf3-9848-496a-b410-1f45eb77e03e.png",
-            "title": "",
-            "text": ""
+            "title": "The Connector",
+            "text": "Intimacy, Date decks"
           }
         },
         "personality_block_AcAREe": {
           "type": "personality_block",
           "settings": {
             "icon": "shopify://shop_images/stary.png",
-            "title": "",
-            "text": ""
+            "title": "The Parent",
+            "text": "Little Talk Deck"
           }
         },
         "personality_block_P3jHVd": {
           "type": "personality_block",
           "settings": {
             "icon": "shopify://shop_images/award_0f577232-7b10-4fca-a45b-abefbb36a92e.png",
-            "title": "",
-            "text": ""
+            "title": "Ultimate Connection Bundle",
+            "text": "Weekly actionpad"
           }
         }
       },
@@ -369,53 +369,6 @@
         "logo": "shopify://shop_images/bc4f5bb6def0700ad71e3d30dd75536b39e4dbef_d357d9b1-886b-47bb-bca7-0e71e6090492.png",
         "copyright": "© 2025 BestSelf Co. All rights reserved.",
         "policy_links": "<p><a href=\"/pages/privacy-policy\">Privacy Policy</a> | <a href=\"/pages/terms-conditions\">Terms & Conditions</a> | <a href=\"/pages/shipping-policy\">Shipping Policy</a></p>"
-      }
-    },
-    "black_friday_gifts_FkEYaT": {
-      "type": "black-friday-gifts",
-      "blocks": {
-        "price_block_9PGbf6": {
-          "type": "price_block",
-          "settings": {
-            "icon": "shopify://shop_images/gift_c6c6faf3-9848-496a-b410-1f45eb77e03e.png",
-            "title": "Gift Under",
-            "text": "Small but mighty tools that spark daily wins."
-          }
-        },
-        "price_block_4tg6Mb": {
-          "type": "price_block",
-          "settings": {
-            "title": "",
-            "text": ""
-          }
-        },
-        "price_block_QX4mdA": {
-          "type": "price_block",
-          "settings": {
-            "title": "",
-            "text": ""
-          }
-        }
-      },
-      "block_order": [
-        "price_block_9PGbf6",
-        "price_block_4tg6Mb",
-        "price_block_QX4mdA"
-      ],
-      "name": "Black Gifts Section",
-      "settings": {
-        "heading": "Find the Perfect Gift for Every Personality",
-        "subtitle": "Give gifts that inspire clarity, connection, and growth.",
-        "bg_color": "#081226",
-        "heading_color": "#ffffff",
-        "subtitle_color": "#d9d9d9",
-        "heading_size": 32,
-        "price_title": "Shop by Price",
-        "personality_title": "Shop by Personality / Relationship Type",
-        "button_text": "Find the Perfect Gift",
-        "button_link": "",
-        "button_bg": "#f5d27a",
-        "button_color": "#000"
       }
     }
   },
