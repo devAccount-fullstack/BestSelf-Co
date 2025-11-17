@@ -288,6 +288,7 @@
           "type": "price_block",
           "settings": {
             "icon": "shopify://shop_images/gift_c6c6faf3-9848-496a-b410-1f45eb77e03e.png",
+            "price": "$30",
             "title": "Gift Under",
             "text": "Small but mighty tools that spark daily wins."
           }
@@ -295,15 +296,19 @@
         "price_block_4tg6Mb": {
           "type": "price_block",
           "settings": {
-            "title": "",
-            "text": ""
+            "icon": "shopify://shop_images/gift_c6c6faf3-9848-496a-b410-1f45eb77e03e.png",
+            "price": "$30 - 1000",
+            "title": "Gifts",
+            "text": "Thoughtful gifts for personal growth and deeper connection."
           }
         },
         "price_block_QX4mdA": {
           "type": "price_block",
           "settings": {
-            "title": "",
-            "text": ""
+            "icon": "shopify://shop_images/gift_c6c6faf3-9848-496a-b410-1f45eb77e03e.png",
+            "price": "$100+",
+            "title": "Gifts",
+            "text": "Premium bundles for people you love most."
           }
         }
       },
@@ -325,7 +330,7 @@
         "button_text": "Find the Perfect Gift",
         "button_link": "",
         "button_bg": "#f5d27a",
-        "button_color": "#000"
+        "button_color": "#000000"
       }
     }
   },
