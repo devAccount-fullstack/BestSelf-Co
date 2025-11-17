@@ -28,6 +28,10 @@
         "title_WDMUEe": {
           "type": "title",
           "settings": {
+            "custom_title": "",
+            "title_metafield": "",
+            "text_size_mobile": 28,
+            "text_size_desktop": 32,
             "mt_desk": 8,
             "mt_mob": 8,
             "hide_on_mobile": false
@@ -162,6 +166,9 @@
             "show_diners_club": false,
             "show_jcb": false,
             "show_unionpay": false,
+            "show_klarna": false,
+            "show_bancontact": false,
+            "show_ideal": false,
             "title_color": "",
             "title_size": 0,
             "title_weight": "",
@@ -1356,6 +1363,26 @@
         "padding_bottom": 0
       }
     },
+    "1763401990c6c49d75": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_qM8RCA": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "review_data": "sample_data",
+            "max_width": 1200,
+            "show_shop_reviews": false,
+            "empty_state": "empty_widget"
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_qM8RCA"
+      ],
+      "settings": {
+        "include_margins": false
+      }
+    },
     "42_faq_hGXPRA": {
       "type": "42-faq",
       "blocks": {
@@ -1702,6 +1729,7 @@
     "42_benefits_yLQbA7",
     "section_custom_code_qTVXMP",
     "42_faq_hGXPRA",
+    "1763401990c6c49d75",
     "section_accordion_group_3XamJT",
     "related"
   ]
