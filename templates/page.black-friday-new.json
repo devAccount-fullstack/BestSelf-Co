@@ -120,15 +120,6 @@
     "black_friday_growth_K6Ke9F": {
       "type": "black-friday-growth",
       "blocks": {
-        "discount_block_RNNBPg": {
-          "type": "discount_block",
-          "settings": {
-            "block_link": "/",
-            "discount_text": "20% OFF any order",
-            "sub_text": "",
-            "bg_color": "#ffffff"
-          }
-        },
         "discount_block_pbn4UM": {
           "type": "discount_block",
           "settings": {
@@ -143,7 +134,7 @@
           "settings": {
             "block_link": "/",
             "discount_text": "30% OFF $75+",
-            "sub_text": "",
+            "sub_text": "+ Free Shipping",
             "bg_color": "#ffffff"
           }
         },
@@ -158,7 +149,6 @@
         }
       },
       "block_order": [
-        "discount_block_RNNBPg",
         "discount_block_pbn4UM",
         "discount_block_9JyLh7",
         "discount_block_P7dJQP"
