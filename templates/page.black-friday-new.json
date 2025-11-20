@@ -31,7 +31,7 @@
       "name": "Black Announcement Bar",
       "settings": {
         "announcement_text": "💝 Looking for the perfect gift? [Shop Gift Ideas ›]",
-        "announcement_link": "/",
+        "announcement_link": "https://bestself.co/pages/holiday-gift-guide?_pos=10&_sid=aa493580f&_ss=r",
         "background_color": "#fac848",
         "text_color": "#000000"
       }
