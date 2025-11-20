@@ -36,13 +36,40 @@
         "text_color": "#000000"
       }
     },
-    "landing_header_r3qRK8": {
-      "type": "landing-header",
-      "name": "Landing Header",
+    "section_rich_text_fEHLHf": {
+      "type": "section-rich-text",
+      "blocks": {
+        "heading_48gLn4": {
+          "type": "heading",
+          "settings": {
+            "title": "Black Friday Sale",
+            "heading_font_size": "heading-large",
+            "padding_bottom": 16,
+            "heading_tag": "automatic"
+          }
+        },
+        "text_aBpjVk": {
+          "type": "text",
+          "settings": {
+            "text": "",
+            "text_font_size": "body-medium",
+            "padding_bottom": 16
+          }
+        }
+      },
+      "block_order": [
+        "heading_48gLn4",
+        "text_aBpjVk"
+      ],
+      "name": "Rich text",
       "settings": {
-        "logo": "shopify://shop_images/bc4f5bb6def0700ad71e3d30dd75536b39e4dbef_d357d9b1-886b-47bb-bca7-0e71e6090492.png",
-        "logo_link": "/",
-        "vip-header": false
+        "align_text": "text-center",
+        "width": "wrapper",
+        "color_scheme": "scheme-11",
+        "overlay_opacity": 0,
+        "show_overlay_text": false,
+        "padding_top": 8,
+        "padding_bottom": 0
       }
     },
     "section_multicolumn_zXCptz": {
@@ -55,7 +82,7 @@
             "icon_name": "icon-pin",
             "icon_size": 20,
             "icon_alignment": "icon--left",
-            "icon_color": "",
+            "icon_color": "#fac848",
             "title": "25% off everything",
             "heading_font_size": "heading-small",
             "text": "",
@@ -70,7 +97,7 @@
             "icon_name": "icon-pin",
             "icon_size": 20,
             "icon_alignment": "icon--left",
-            "icon_color": "",
+            "icon_color": "#fac848",
             "title": "30% off $75+ orders",
             "heading_font_size": "heading-small",
             "text": "",
@@ -85,7 +112,7 @@
             "icon_name": "icon-pin",
             "icon_size": 20,
             "icon_alignment": "icon--left",
-            "icon_color": "",
+            "icon_color": "#fac848",
             "title": " 35% off $100+ orders",
             "heading_font_size": "heading-small",
             "text": "",
@@ -110,7 +137,7 @@
         "align_columns": "flex-align-top",
         "layout_mobile": "slider",
         "color_scheme": "scheme-11",
-        "padding_top": 1,
+        "padding_top": 0,
         "padding_bottom": 1,
         "heading_tag": "automatic"
       }
@@ -422,7 +449,7 @@
   "order": [
     "main",
     "black_announcement_bar_aAF33W",
-    "landing_header_r3qRK8",
+    "section_rich_text_fEHLHf",
     "section_multicolumn_zXCptz",
     "black_friday_banner_bL8cN7",
     "black_friday_slider_xyP7TK",
