@@ -152,7 +152,7 @@
         "headline_text": "Up to 35% OFF + Free Gifts — Tools That Actually Stick.",
         "subtext": "End your phone addiction with Helm. Buy now and get the desktop app for free.",
         "cta_text": "Unlock My Discount",
-        "button_link": "/",
+        "button_link": "shopify://collections/best-sellers",
         "product_image": "shopify://shop_images/5b0ffd57a3a3658d378d5e698bb86670e2b8dfd3.png",
         "price_text": "$87.72",
         "compare_text": "$129",
@@ -214,6 +214,113 @@
         "bg_color": "#000000"
       }
     },
+    "section_rich_text_7AcNJU": {
+      "type": "section-rich-text",
+      "blocks": {
+        "heading_94Mh3C": {
+          "type": "heading",
+          "settings": {
+            "title": "The More You Grow,",
+            "heading_font_size": "heading-large",
+            "padding_bottom": 16,
+            "heading_tag": "automatic"
+          }
+        },
+        "heading_UyFFWW": {
+          "type": "heading",
+          "settings": {
+            "title": "The More You Save",
+            "heading_font_size": "heading-large",
+            "padding_bottom": 16,
+            "heading_tag": "automatic"
+          }
+        }
+      },
+      "block_order": [
+        "heading_94Mh3C",
+        "heading_UyFFWW"
+      ],
+      "name": "Rich text",
+      "settings": {
+        "align_text": "text-center",
+        "width": "wrapper",
+        "color_scheme": "scheme-2",
+        "overlay_opacity": 0,
+        "show_overlay_text": false,
+        "padding_top": 8,
+        "padding_bottom": 0
+      }
+    },
+    "section_multicolumn_bMKCFw": {
+      "type": "section-multicolumn",
+      "blocks": {
+        "icon_MNALhw": {
+          "type": "icon",
+          "settings": {
+            "column_width": 33,
+            "icon_name": "icon-pin",
+            "icon_size": 20,
+            "icon_alignment": "icon--left",
+            "icon_color": "#fac848",
+            "title": "25% off everything",
+            "heading_font_size": "heading-small",
+            "text": "",
+            "text_font_size": "body-medium",
+            "heading_tag": "automatic"
+          }
+        },
+        "icon_Ydybz3": {
+          "type": "icon",
+          "settings": {
+            "column_width": 33,
+            "icon_name": "icon-pin",
+            "icon_size": 20,
+            "icon_alignment": "icon--left",
+            "icon_color": "#fac848",
+            "title": "30% off $75+ orders",
+            "heading_font_size": "heading-small",
+            "text": "",
+            "text_font_size": "body-medium",
+            "heading_tag": "automatic"
+          }
+        },
+        "icon_JbNQCp": {
+          "type": "icon",
+          "settings": {
+            "column_width": 33,
+            "icon_name": "icon-pin",
+            "icon_size": 20,
+            "icon_alignment": "icon--left",
+            "icon_color": "#fac848",
+            "title": " 35% off $100+ orders",
+            "heading_font_size": "heading-small",
+            "text": "",
+            "text_font_size": "body-medium",
+            "heading_tag": "automatic"
+          }
+        }
+      },
+      "block_order": [
+        "icon_MNALhw",
+        "icon_Ydybz3",
+        "icon_JbNQCp"
+      ],
+      "name": "Multi column",
+      "settings": {
+        "title": "",
+        "heading_font_size": "heading-medium",
+        "description": "",
+        "align_heading": "text-left",
+        "align_text": "text-left",
+        "width": "wrapper--full-padded",
+        "align_columns": "flex-align-top",
+        "layout_mobile": "slider",
+        "color_scheme": "scheme-2",
+        "padding_top": 0,
+        "padding_bottom": 1,
+        "heading_tag": "automatic"
+      }
+    },
     "black_friday_growth_K6Ke9F": {
       "type": "black-friday-growth",
       "blocks": {
@@ -250,6 +357,7 @@
         "discount_block_9JyLh7",
         "discount_block_P7dJQP"
       ],
+      "disabled": true,
       "name": "Black Friday Growth",
       "settings": {
         "second-layout_enable": true,
@@ -273,6 +381,79 @@
         "bg_color": "#000000"
       }
     },
+    "42_results_slider_ThFVqp": {
+      "type": "42-results-slider",
+      "blocks": {
+        "block_JLdTXb": {
+          "type": "block",
+          "settings": {
+            "video": "shopify://files/videos/UGC- SOONA - RELATIONSHIP BUNDLE.mov",
+            "avatar_user": "shopify://shop_images/girl-studying.jpg",
+            "name_user": "Sandra M."
+          }
+        },
+        "block_NRCUyL": {
+          "type": "block",
+          "settings": {
+            "video": "shopify://files/videos/Brandi_LittleTalk2.mov",
+            "avatar_user": "shopify://shop_images/Rectangle_58.png",
+            "name_user": "Eillis K."
+          }
+        },
+        "block_kPex4X": {
+          "type": "block",
+          "settings": {
+            "video": "shopify://files/videos/B39D5D50-F5E7-4B89-9090-18B6A3C663AD.mov",
+            "avatar_user": "shopify://shop_images/Nike_K..png",
+            "name_user": "Nike K."
+          }
+        },
+        "block_e3A7ab": {
+          "type": "block",
+          "settings": {
+            "video": "shopify://files/videos/Intimacy Deck 11-Video Review.mp4",
+            "avatar_user": "shopify://shop_images/woman-reflecting-on-morning-walk.jpg",
+            "name_user": "Sara."
+          }
+        },
+        "block_G766CU": {
+          "type": "block",
+          "settings": {
+            "video": "shopify://files/videos/Maggie - IMG_7476.mov",
+            "avatar_user": "shopify://shop_images/woman-starting-to-work.jpg",
+            "name_user": "Anna."
+          }
+        },
+        "block_nh8fdi": {
+          "type": "block",
+          "settings": {
+            "video": "shopify://files/videos/Self Journal V3 video review.mp4",
+            "avatar_user": "shopify://shop_images/Nicholas-Kneuper--Paid-Ads-Manager.jpg",
+            "name_user": "Nicholas."
+          }
+        }
+      },
+      "block_order": [
+        "block_JLdTXb",
+        "block_NRCUyL",
+        "block_kPex4X",
+        "block_e3A7ab",
+        "block_G766CU",
+        "block_nh8fdi"
+      ],
+      "name": "Real stories Real results",
+      "settings": {
+        "star_rating": "4.9, (10979)",
+        "section_title": "<h2><strong>Real stories. <br/>Real results.</strong></h2>",
+        "section_text": "See how real people are reaching their goals with BestSelf tools - proven to inspire, empower, and deliver results.",
+        "pt_mob": 56,
+        "pb_mob": 0,
+        "pt_tab": 80,
+        "pb_tab": 0,
+        "pt_desk": 122,
+        "pb_desk": 0
+      }
+    },
     "black_friday_ugc_PRWPqF": {
       "type": "black-friday-ugc",
       "blocks": {
@@ -282,16 +463,366 @@
             "thumbnail": "shopify://shop_images/meeting-mastery-pad-50-off-professional-growth-189305.jpg",
             "video_url": "https://www.youtube.com/watch?v=C0DPdy98e4c"
           }
+        },
+        "video_block_bYckeD": {
+          "type": "video_block",
+          "settings": {
+            "video_url": ""
+          }
+        },
+        "video_block_Bj6hGH": {
+          "type": "video_block",
+          "settings": {
+            "video_url": ""
+          }
+        },
+        "video_block_UThfRK": {
+          "type": "video_block",
+          "settings": {
+            "video_url": ""
+          }
         }
       },
       "block_order": [
-        "video_block_XaNEhM"
+        "video_block_XaNEhM",
+        "video_block_bYckeD",
+        "video_block_Bj6hGH",
+        "video_block_UThfRK"
       ],
       "name": "Black Friday UGC",
       "settings": {
         "bg_color": "#232440",
         "heading": "UGC display here",
         "heading_title": "UGC display here"
+      }
+    },
+    "section_columns_VBDTby": {
+      "type": "section-columns",
+      "blocks": {
+        "image_bedaew": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Intimacy_Deck_focused.jpg",
+            "image_shape": "normal",
+            "title": "",
+            "heading_font_size": "heading-small",
+            "text": "",
+            "text_font_size": "body-medium",
+            "button_text": "",
+            "button_url": "shopify://collections/30-and-under",
+            "button_type": "btn--white",
+            "button_size": "",
+            "button_style": "btn--outline",
+            "show_arrow": true,
+            "image_aspect_ratio": 1,
+            "mobile_image_aspect_ratio": 1,
+            "heading_tag": "automatic"
+          }
+        },
+        "image_by7HzE": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Self_Journal_focused.jpg",
+            "image_shape": "normal",
+            "title": "",
+            "heading_font_size": "heading-small",
+            "text": "",
+            "text_font_size": "body-medium",
+            "button_text": "",
+            "button_url": "shopify://collections/35-50",
+            "button_type": "btn--white",
+            "button_size": "",
+            "button_style": "btn--outline",
+            "show_arrow": false,
+            "image_aspect_ratio": 1,
+            "mobile_image_aspect_ratio": 1,
+            "heading_tag": "automatic"
+          }
+        },
+        "image_9C7UHQ": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Helmfocused2.jpg",
+            "image_shape": "normal",
+            "title": "",
+            "heading_font_size": "heading-small",
+            "text": "",
+            "text_font_size": "body-medium",
+            "button_text": "",
+            "button_url": "shopify://collections/50-100",
+            "button_type": "btn--white",
+            "button_size": "",
+            "button_style": "btn--outline",
+            "show_arrow": false,
+            "image_aspect_ratio": 1,
+            "mobile_image_aspect_ratio": 1,
+            "heading_tag": "automatic"
+          }
+        }
+      },
+      "block_order": [
+        "image_bedaew",
+        "image_by7HzE",
+        "image_9C7UHQ"
+      ],
+      "settings": {
+        "title": "Gifts That Fit Every Budget",
+        "heading_font_size": "heading-large",
+        "align_heading": "text-center",
+        "align_text": "text-center",
+        "width": "wrapper",
+        "align_columns": "flex-align-center",
+        "layout": "grid",
+        "grid": 3,
+        "layout_mobile": "2",
+        "color_scheme": "scheme-11",
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "heading_tag": "automatic"
+      }
+    },
+    "section_rich_text_qFMMmn": {
+      "type": "section-rich-text",
+      "blocks": {
+        "subheading_8J79GC": {
+          "type": "subheading",
+          "disabled": true,
+          "settings": {
+            "subheading": "gifts for the good list",
+            "padding_bottom": 16
+          }
+        },
+        "heading_BN9k6r": {
+          "type": "heading",
+          "settings": {
+            "title": "Find the Perfect Gift for Every Personality",
+            "heading_font_size": "heading-large",
+            "padding_bottom": 16,
+            "heading_tag": "automatic"
+          }
+        },
+        "text_pwjNqg": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Give gifts that inspire clarity, connection, and growth.</p>",
+            "text_font_size": "body-medium",
+            "padding_bottom": 16
+          }
+        },
+        "text_fCd7cV": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p><em>Tap into their personality—literally! Click to explore thoughtful gifts for everyone on your list.</em></p>",
+            "text_font_size": "body-medium",
+            "padding_bottom": 16
+          }
+        }
+      },
+      "block_order": [
+        "subheading_8J79GC",
+        "heading_BN9k6r",
+        "text_pwjNqg",
+        "text_fCd7cV"
+      ],
+      "settings": {
+        "align_text": "text-center",
+        "width": "wrapper",
+        "color_scheme": "scheme-11",
+        "overlay_opacity": 0,
+        "show_overlay_text": false,
+        "padding_top": 60,
+        "padding_bottom": 0
+      }
+    },
+    "section_columns_VjRdah": {
+      "type": "section-columns",
+      "blocks": {
+        "image_mY4mc6": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/4_2dfdedc2-b2c4-4020-8f30-037f83b0e549.jpg",
+            "image_shape": "rounded",
+            "title": "",
+            "heading_font_size": "heading-small",
+            "text": "",
+            "text_font_size": "body-medium",
+            "button_text": "",
+            "button_url": "https://bestself.co/collections/the-organizer",
+            "button_type": "btn--primary",
+            "button_size": "btn--small",
+            "button_style": "btn--solid",
+            "show_arrow": false,
+            "image_aspect_ratio": 1,
+            "mobile_image_aspect_ratio": 1,
+            "heading_tag": "automatic"
+          }
+        },
+        "image_mrLxFY": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/1_2efe1494-dd69-40b0-b3df-28c973793224.jpg",
+            "image_shape": "rounded",
+            "title": "",
+            "heading_font_size": "heading-small",
+            "text": "",
+            "text_font_size": "body-medium",
+            "button_text": "",
+            "button_url": "https://bestself.co/collections/the-thinker",
+            "button_type": "btn--primary",
+            "button_size": "btn--small",
+            "button_style": "btn--outline",
+            "show_arrow": false,
+            "image_aspect_ratio": 1,
+            "mobile_image_aspect_ratio": 1,
+            "heading_tag": "automatic"
+          }
+        },
+        "image_fggxwj": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/5_ccfd3310-56d4-43b6-af1a-090135f850a1.jpg",
+            "image_shape": "rounded",
+            "title": "",
+            "heading_font_size": "heading-small",
+            "text": "",
+            "text_font_size": "body-medium",
+            "button_text": "",
+            "button_url": "https://bestself.co/collections/the-connector",
+            "button_type": "btn--primary",
+            "button_size": "",
+            "button_style": "btn--solid",
+            "show_arrow": false,
+            "image_aspect_ratio": 1,
+            "mobile_image_aspect_ratio": 1,
+            "heading_tag": "automatic"
+          }
+        },
+        "image_rV7pwc": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/6_b415d9ad-82ed-4af0-a21d-112fc6919b68.jpg",
+            "image_shape": "rounded",
+            "title": "",
+            "heading_font_size": "heading-small",
+            "text": "",
+            "text_font_size": "body-medium",
+            "button_text": "",
+            "button_url": "https://bestself.co/collections/the-entrepreneur",
+            "button_type": "btn--primary",
+            "button_size": "",
+            "button_style": "btn--solid",
+            "show_arrow": false,
+            "image_aspect_ratio": 1,
+            "mobile_image_aspect_ratio": 1,
+            "heading_tag": "automatic"
+          }
+        },
+        "image_3TRemY": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/the-couple.jpg",
+            "image_shape": "rounded",
+            "title": "",
+            "heading_font_size": "heading-small",
+            "text": "",
+            "text_font_size": "body-medium",
+            "button_text": "",
+            "button_url": "https://bestself.co/collections/the-couple",
+            "button_type": "btn--primary",
+            "button_size": "",
+            "button_style": "btn--solid",
+            "show_arrow": false,
+            "image_aspect_ratio": 1,
+            "mobile_image_aspect_ratio": 1,
+            "heading_tag": "automatic"
+          }
+        },
+        "image_yeMgqj": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/7_579eb4e5-1b81-4165-93c3-09566503b95e.jpg",
+            "image_shape": "rounded",
+            "title": "",
+            "heading_font_size": "heading-small",
+            "text": "",
+            "text_font_size": "body-medium",
+            "button_text": "",
+            "button_url": "https://bestself.co/collections/the-parent",
+            "button_type": "btn--primary",
+            "button_size": "",
+            "button_style": "btn--solid",
+            "show_arrow": false,
+            "image_aspect_ratio": 1,
+            "mobile_image_aspect_ratio": 1,
+            "heading_tag": "automatic"
+          }
+        },
+        "image_6GCDmi": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/2_7fd04104-51cc-471a-9b14-3b391112c00c.jpg",
+            "image_shape": "rounded",
+            "title": "",
+            "heading_font_size": "heading-small",
+            "text": "",
+            "text_font_size": "body-medium",
+            "button_text": "",
+            "button_url": "https://bestself.co/collections/the-introvert",
+            "button_type": "btn--primary",
+            "button_size": "",
+            "button_style": "btn--solid",
+            "show_arrow": false,
+            "image_aspect_ratio": 1,
+            "mobile_image_aspect_ratio": 1,
+            "heading_tag": "automatic"
+          }
+        },
+        "image_njBrCf": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/3_497afb72-0203-44da-b241-24d041189109.jpg",
+            "image_shape": "rounded",
+            "title": "",
+            "heading_font_size": "heading-small",
+            "text": "",
+            "text_font_size": "body-medium",
+            "button_text": "",
+            "button_url": "https://bestself.co/collections/the-creator",
+            "button_type": "btn--primary",
+            "button_size": "",
+            "button_style": "btn--solid",
+            "show_arrow": false,
+            "image_aspect_ratio": 1,
+            "mobile_image_aspect_ratio": 1,
+            "heading_tag": "automatic"
+          }
+        }
+      },
+      "block_order": [
+        "image_mY4mc6",
+        "image_mrLxFY",
+        "image_fggxwj",
+        "image_rV7pwc",
+        "image_3TRemY",
+        "image_yeMgqj",
+        "image_6GCDmi",
+        "image_njBrCf"
+      ],
+      "settings": {
+        "title": "",
+        "heading_font_size": "heading-medium",
+        "align_heading": "text-center",
+        "align_text": "text-center",
+        "width": "wrapper",
+        "align_columns": "flex-align-center",
+        "layout": "grid",
+        "grid": 4,
+        "layout_mobile": "2",
+        "color_scheme": "scheme-11",
+        "padding_top": 30,
+        "padding_bottom": 0,
+        "heading_tag": "automatic"
       }
     },
     "black_friday_gifts_FkEYaT": {
@@ -366,6 +897,7 @@
         "personality_block_AcAREe",
         "personality_block_P3jHVd"
       ],
+      "disabled": true,
       "name": "Black Gifts Section",
       "settings": {
         "heading": "Find the Perfect Gift for Every Personality",
@@ -419,7 +951,7 @@
       ],
       "name": "Landing Testimonial",
       "settings": {
-        "bg_color": "#1a1a1a",
+        "bg_color": "#242540",
         "heading": "Join 10,000+ Who've Transformed Their Focus & Relationships"
       }
     },
@@ -432,7 +964,7 @@
         "highlight_text": "can’t wait.",
         "end_date": "2025-11-04T10:30:00",
         "button_text": "Claim My Black Friday Discount",
-        "button_link": "/"
+        "button_link": "shopify://collections/best-sellers"
       }
     },
     "landing_footer_7exntJ": {
@@ -453,9 +985,15 @@
     "section_multicolumn_zXCptz",
     "black_friday_banner_bL8cN7",
     "black_friday_slider_xyP7TK",
+    "section_rich_text_7AcNJU",
+    "section_multicolumn_bMKCFw",
     "black_friday_growth_K6Ke9F",
     "black_friday_product_slider_rErbLd",
+    "42_results_slider_ThFVqp",
     "black_friday_ugc_PRWPqF",
+    "section_columns_VBDTby",
+    "section_rich_text_qFMMmn",
+    "section_columns_VjRdah",
     "black_friday_gifts_FkEYaT",
     "landing_testimonial_slider_AHqCJr",
     "black_friday_claim_cyH94d",
