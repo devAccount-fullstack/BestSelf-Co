@@ -45,6 +45,76 @@
         "vip-header": false
       }
     },
+    "section_multicolumn_zXCptz": {
+      "type": "section-multicolumn",
+      "blocks": {
+        "icon_cEDDDw": {
+          "type": "icon",
+          "settings": {
+            "column_width": 33,
+            "icon_name": "icon-pin",
+            "icon_size": 20,
+            "icon_alignment": "icon--left",
+            "icon_color": "",
+            "title": "25% off everything",
+            "heading_font_size": "heading-small",
+            "text": "",
+            "text_font_size": "body-medium",
+            "heading_tag": "automatic"
+          }
+        },
+        "icon_EEzdxJ": {
+          "type": "icon",
+          "settings": {
+            "column_width": 33,
+            "icon_name": "icon-pin",
+            "icon_size": 20,
+            "icon_alignment": "icon--left",
+            "icon_color": "",
+            "title": "30% off $75+ orders",
+            "heading_font_size": "heading-small",
+            "text": "",
+            "text_font_size": "body-medium",
+            "heading_tag": "automatic"
+          }
+        },
+        "icon_3bgenh": {
+          "type": "icon",
+          "settings": {
+            "column_width": 33,
+            "icon_name": "icon-pin",
+            "icon_size": 20,
+            "icon_alignment": "icon--left",
+            "icon_color": "",
+            "title": " 35% off $100+ orders",
+            "heading_font_size": "heading-small",
+            "text": "",
+            "text_font_size": "body-medium",
+            "heading_tag": "automatic"
+          }
+        }
+      },
+      "block_order": [
+        "icon_cEDDDw",
+        "icon_EEzdxJ",
+        "icon_3bgenh"
+      ],
+      "name": "Multi column",
+      "settings": {
+        "title": "",
+        "heading_font_size": "heading-medium",
+        "description": "",
+        "align_heading": "text-left",
+        "align_text": "text-left",
+        "width": "wrapper--full-padded",
+        "align_columns": "flex-align-top",
+        "layout_mobile": "slider",
+        "color_scheme": "scheme-11",
+        "padding_top": 1,
+        "padding_bottom": 1,
+        "heading_tag": "automatic"
+      }
+    },
     "black_friday_banner_bL8cN7": {
       "type": "black-friday-banner",
       "name": "Black Friday Banner",
@@ -197,57 +267,6 @@
         "heading_title": "UGC display here"
       }
     },
-    "landing_testimonial_slider_AHqCJr": {
-      "type": "landing-testimonial-slider",
-      "blocks": {
-        "slide_Aqnpby": {
-          "type": "slide",
-          "settings": {
-            "background_image": "shopify://shop_images/little-talk-deck-card-deck-kids-family-221238.jpg",
-            "message": "I ditched my phone addiction thanks to Helm. I actually feel present now.",
-            "name": "Jasmine K."
-          }
-        },
-        "slide_KEy4Bz": {
-          "type": "slide",
-          "settings": {
-            "background_image": "shopify://shop_images/landing-testimonial2.png",
-            "message": "Add your testimonial message here",
-            "name": "Customer Name"
-          }
-        },
-        "slide_gW7Xn9": {
-          "type": "slide",
-          "settings": {
-            "background_image": "shopify://shop_images/landing-testimonial.png",
-            "message": "The Self Journal helped me finish my book in 11 weeks.",
-            "name": "Tony R."
-          }
-        }
-      },
-      "block_order": [
-        "slide_Aqnpby",
-        "slide_KEy4Bz",
-        "slide_gW7Xn9"
-      ],
-      "name": "Landing Testimonial",
-      "settings": {
-        "bg_color": "#1a1a1a",
-        "heading": "Join 10,000+ Who've Transformed Their Focus & Relationships"
-      }
-    },
-    "black_friday_claim_cyH94d": {
-      "type": "black-friday-claim",
-      "name": "Black Friday Claim",
-      "settings": {
-        "bg_color": "#232440",
-        "heading": "Because your best self — and the people you love —",
-        "highlight_text": "can’t wait.",
-        "end_date": "2025-11-04T10:30:00",
-        "button_text": "Claim My Black Friday Discount",
-        "button_link": "/"
-      }
-    },
     "black_friday_gifts_FkEYaT": {
       "type": "black-friday-gifts",
       "blocks": {
@@ -338,6 +357,57 @@
         "button_color": "#000000"
       }
     },
+    "landing_testimonial_slider_AHqCJr": {
+      "type": "landing-testimonial-slider",
+      "blocks": {
+        "slide_Aqnpby": {
+          "type": "slide",
+          "settings": {
+            "background_image": "shopify://shop_images/little-talk-deck-card-deck-kids-family-221238.jpg",
+            "message": "I ditched my phone addiction thanks to Helm. I actually feel present now.",
+            "name": "Jasmine K."
+          }
+        },
+        "slide_KEy4Bz": {
+          "type": "slide",
+          "settings": {
+            "background_image": "shopify://shop_images/landing-testimonial2.png",
+            "message": "Add your testimonial message here",
+            "name": "Customer Name"
+          }
+        },
+        "slide_gW7Xn9": {
+          "type": "slide",
+          "settings": {
+            "background_image": "shopify://shop_images/landing-testimonial.png",
+            "message": "The Self Journal helped me finish my book in 11 weeks.",
+            "name": "Tony R."
+          }
+        }
+      },
+      "block_order": [
+        "slide_Aqnpby",
+        "slide_KEy4Bz",
+        "slide_gW7Xn9"
+      ],
+      "name": "Landing Testimonial",
+      "settings": {
+        "bg_color": "#1a1a1a",
+        "heading": "Join 10,000+ Who've Transformed Their Focus & Relationships"
+      }
+    },
+    "black_friday_claim_cyH94d": {
+      "type": "black-friday-claim",
+      "name": "Black Friday Claim",
+      "settings": {
+        "bg_color": "#232440",
+        "heading": "Because your best self — and the people you love —",
+        "highlight_text": "can’t wait.",
+        "end_date": "2025-11-04T10:30:00",
+        "button_text": "Claim My Black Friday Discount",
+        "button_link": "/"
+      }
+    },
     "landing_footer_7exntJ": {
       "type": "landing-footer",
       "name": "Landing Footer",
@@ -353,6 +423,7 @@
     "main",
     "black_announcement_bar_aAF33W",
     "landing_header_r3qRK8",
+    "section_multicolumn_zXCptz",
     "black_friday_banner_bL8cN7",
     "black_friday_slider_xyP7TK",
     "black_friday_growth_K6Ke9F",
