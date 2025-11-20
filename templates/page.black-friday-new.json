@@ -133,7 +133,7 @@
         "description": "",
         "align_heading": "text-center",
         "align_text": "text-center",
-        "width": "wrapper",
+        "width": "wrapper--full-padded",
         "align_columns": "flex-align-center",
         "layout_mobile": "slider",
         "color_scheme": "scheme-11",
