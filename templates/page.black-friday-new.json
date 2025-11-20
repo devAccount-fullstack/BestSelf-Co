@@ -240,6 +240,7 @@
         "heading_94Mh3C",
         "heading_UyFFWW"
       ],
+      "disabled": true,
       "name": "Rich text",
       "settings": {
         "align_text": "text-center",
@@ -261,7 +262,7 @@
             "icon_name": "icon-pin",
             "icon_size": 20,
             "icon_alignment": "icon--left",
-            "icon_color": "#273d63",
+            "icon_color": "#fac848",
             "title": "25% off everything",
             "heading_font_size": "heading-small",
             "text": "",
@@ -276,7 +277,7 @@
             "icon_name": "icon-pin",
             "icon_size": 20,
             "icon_alignment": "icon--left",
-            "icon_color": "#273d63",
+            "icon_color": "#fac848",
             "title": "30% off $75+ orders",
             "heading_font_size": "heading-small",
             "text": "",
@@ -291,7 +292,7 @@
             "icon_name": "icon-pin",
             "icon_size": 20,
             "icon_alignment": "icon--left",
-            "icon_color": "#273d63",
+            "icon_color": "#fac848",
             "title": " 35% off $100+ orders",
             "heading_font_size": "heading-small",
             "text": "",
@@ -307,18 +308,18 @@
       ],
       "name": "Multi column",
       "settings": {
-        "title": "",
-        "heading_font_size": "heading-medium",
-        "description": "",
-        "align_heading": "text-left",
-        "align_text": "text-left",
+        "title": "The More You Grow,",
+        "heading_font_size": "heading-large",
+        "description": "<h4>The More you Save</h4>",
+        "align_heading": "text-center",
+        "align_text": "text-center",
         "width": "wrapper--full-padded",
         "align_columns": "flex-align-top",
         "layout_mobile": "slider",
-        "color_scheme": "scheme-5",
-        "padding_top": 0,
+        "color_scheme": "scheme-2",
+        "padding_top": 20,
         "padding_bottom": 0,
-        "heading_tag": "automatic"
+        "heading_tag": "h2"
       }
     },
     "black_friday_growth_K6Ke9F": {
