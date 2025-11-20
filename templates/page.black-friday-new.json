@@ -244,7 +244,7 @@
       "settings": {
         "align_text": "text-center",
         "width": "wrapper",
-        "color_scheme": "scheme-2",
+        "color_scheme": "scheme-11",
         "overlay_opacity": 0,
         "show_overlay_text": false,
         "padding_top": 8,
@@ -261,7 +261,7 @@
             "icon_name": "icon-pin",
             "icon_size": 20,
             "icon_alignment": "icon--left",
-            "icon_color": "#fac848",
+            "icon_color": "#273d63",
             "title": "25% off everything",
             "heading_font_size": "heading-small",
             "text": "",
@@ -276,7 +276,7 @@
             "icon_name": "icon-pin",
             "icon_size": 20,
             "icon_alignment": "icon--left",
-            "icon_color": "#fac848",
+            "icon_color": "#273d63",
             "title": "30% off $75+ orders",
             "heading_font_size": "heading-small",
             "text": "",
@@ -291,7 +291,7 @@
             "icon_name": "icon-pin",
             "icon_size": 20,
             "icon_alignment": "icon--left",
-            "icon_color": "#fac848",
+            "icon_color": "#273d63",
             "title": " 35% off $100+ orders",
             "heading_font_size": "heading-small",
             "text": "",
@@ -315,9 +315,9 @@
         "width": "wrapper--full-padded",
         "align_columns": "flex-align-top",
         "layout_mobile": "slider",
-        "color_scheme": "scheme-2",
+        "color_scheme": "scheme-5",
         "padding_top": 0,
-        "padding_bottom": 1,
+        "padding_bottom": 0,
         "heading_tag": "automatic"
       }
     },
@@ -381,79 +381,6 @@
         "bg_color": "#000000"
       }
     },
-    "42_results_slider_ThFVqp": {
-      "type": "42-results-slider",
-      "blocks": {
-        "block_JLdTXb": {
-          "type": "block",
-          "settings": {
-            "video": "shopify://files/videos/UGC- SOONA - RELATIONSHIP BUNDLE.mov",
-            "avatar_user": "shopify://shop_images/girl-studying.jpg",
-            "name_user": "Sandra M."
-          }
-        },
-        "block_NRCUyL": {
-          "type": "block",
-          "settings": {
-            "video": "shopify://files/videos/Brandi_LittleTalk2.mov",
-            "avatar_user": "shopify://shop_images/Rectangle_58.png",
-            "name_user": "Eillis K."
-          }
-        },
-        "block_kPex4X": {
-          "type": "block",
-          "settings": {
-            "video": "shopify://files/videos/B39D5D50-F5E7-4B89-9090-18B6A3C663AD.mov",
-            "avatar_user": "shopify://shop_images/Nike_K..png",
-            "name_user": "Nike K."
-          }
-        },
-        "block_e3A7ab": {
-          "type": "block",
-          "settings": {
-            "video": "shopify://files/videos/Intimacy Deck 11-Video Review.mp4",
-            "avatar_user": "shopify://shop_images/woman-reflecting-on-morning-walk.jpg",
-            "name_user": "Sara."
-          }
-        },
-        "block_G766CU": {
-          "type": "block",
-          "settings": {
-            "video": "shopify://files/videos/Maggie - IMG_7476.mov",
-            "avatar_user": "shopify://shop_images/woman-starting-to-work.jpg",
-            "name_user": "Anna."
-          }
-        },
-        "block_nh8fdi": {
-          "type": "block",
-          "settings": {
-            "video": "shopify://files/videos/Self Journal V3 video review.mp4",
-            "avatar_user": "shopify://shop_images/Nicholas-Kneuper--Paid-Ads-Manager.jpg",
-            "name_user": "Nicholas."
-          }
-        }
-      },
-      "block_order": [
-        "block_JLdTXb",
-        "block_NRCUyL",
-        "block_kPex4X",
-        "block_e3A7ab",
-        "block_G766CU",
-        "block_nh8fdi"
-      ],
-      "name": "Real stories Real results",
-      "settings": {
-        "star_rating": "4.9, (10979)",
-        "section_title": "<h2><strong>Real stories. <br/>Real results.</strong></h2>",
-        "section_text": "See how real people are reaching their goals with BestSelf tools - proven to inspire, empower, and deliver results.",
-        "pt_mob": 56,
-        "pb_mob": 0,
-        "pt_tab": 80,
-        "pb_tab": 0,
-        "pt_desk": 122,
-        "pb_desk": 0
-      }
-    },
     "black_friday_ugc_PRWPqF": {
       "type": "black-friday-ugc",
       "blocks": {
@@ -489,6 +416,7 @@
         "video_block_Bj6hGH",
         "video_block_UThfRK"
       ],
+      "disabled": true,
       "name": "Black Friday UGC",
       "settings": {
         "bg_color": "#232440",
@@ -825,6 +753,79 @@
         "heading_tag": "automatic"
       }
     },
+    "42_results_slider_ThFVqp": {
+      "type": "42-results-slider",
+      "blocks": {
+        "block_JLdTXb": {
+          "type": "block",
+          "settings": {
+            "video": "shopify://files/videos/UGC- SOONA - RELATIONSHIP BUNDLE.mov",
+            "avatar_user": "shopify://shop_images/girl-studying.jpg",
+            "name_user": "Sandra M."
+          }
+        },
+        "block_NRCUyL": {
+          "type": "block",
+          "settings": {
+            "video": "shopify://files/videos/Brandi_LittleTalk2.mov",
+            "avatar_user": "shopify://shop_images/Rectangle_58.png",
+            "name_user": "Eillis K."
+          }
+        },
+        "block_kPex4X": {
+          "type": "block",
+          "settings": {
+            "video": "shopify://files/videos/B39D5D50-F5E7-4B89-9090-18B6A3C663AD.mov",
+            "avatar_user": "shopify://shop_images/Nike_K..png",
+            "name_user": "Nike K."
+          }
+        },
+        "block_e3A7ab": {
+          "type": "block",
+          "settings": {
+            "video": "shopify://files/videos/Intimacy Deck 11-Video Review.mp4",
+            "avatar_user": "shopify://shop_images/woman-reflecting-on-morning-walk.jpg",
+            "name_user": "Sara."
+          }
+        },
+        "block_G766CU": {
+          "type": "block",
+          "settings": {
+            "video": "shopify://files/videos/Maggie - IMG_7476.mov",
+            "avatar_user": "shopify://shop_images/woman-starting-to-work.jpg",
+            "name_user": "Anna."
+          }
+        },
+        "block_nh8fdi": {
+          "type": "block",
+          "settings": {
+            "video": "shopify://files/videos/Self Journal V3 video review.mp4",
+            "avatar_user": "shopify://shop_images/Nicholas-Kneuper--Paid-Ads-Manager.jpg",
+            "name_user": "Nicholas."
+          }
+        }
+      },
+      "block_order": [
+        "block_JLdTXb",
+        "block_NRCUyL",
+        "block_kPex4X",
+        "block_e3A7ab",
+        "block_G766CU",
+        "block_nh8fdi"
+      ],
+      "name": "Real stories Real results",
+      "settings": {
+        "star_rating": "4.9, (10979)",
+        "section_title": "<h2><strong>Real stories. <br/>Real results.</strong></h2>",
+        "section_text": "See how real people are reaching their goals with BestSelf tools - proven to inspire, empower, and deliver results.",
+        "pt_mob": 56,
+        "pb_mob": 0,
+        "pt_tab": 80,
+        "pb_tab": 0,
+        "pt_desk": 122,
+        "pb_desk": 0
+      }
+    },
     "black_friday_gifts_FkEYaT": {
       "type": "black-friday-gifts",
       "blocks": {
@@ -989,11 +990,11 @@
     "section_multicolumn_bMKCFw",
     "black_friday_growth_K6Ke9F",
     "black_friday_product_slider_rErbLd",
-    "42_results_slider_ThFVqp",
     "black_friday_ugc_PRWPqF",
     "section_columns_VBDTby",
     "section_rich_text_qFMMmn",
     "section_columns_VjRdah",
+    "42_results_slider_ThFVqp",
     "black_friday_gifts_FkEYaT",
     "landing_testimonial_slider_AHqCJr",
     "black_friday_claim_cyH94d",
