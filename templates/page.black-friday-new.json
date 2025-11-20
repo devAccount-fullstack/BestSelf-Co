@@ -79,7 +79,7 @@
           "type": "icon",
           "settings": {
             "column_width": 33,
-            "icon_name": "icon-pin",
+            "icon_name": "icon-check-circle",
             "icon_size": 20,
             "icon_alignment": "icon--left",
             "icon_color": "#fac848",
@@ -94,7 +94,7 @@
           "type": "icon",
           "settings": {
             "column_width": 33,
-            "icon_name": "icon-pin",
+            "icon_name": "icon-check-circle",
             "icon_size": 20,
             "icon_alignment": "icon--left",
             "icon_color": "#fac848",
@@ -109,7 +109,7 @@
           "type": "icon",
           "settings": {
             "column_width": 33,
-            "icon_name": "icon-pin",
+            "icon_name": "icon-check-circle",
             "icon_size": 20,
             "icon_alignment": "icon--left",
             "icon_color": "#fac848",
