@@ -158,7 +158,7 @@
         "compare_text": "$129",
         "avail_text": "1,908",
         "loyalty_message": "Today only — earn 2X loyalty points on every purchase.",
-        "end_date": "2025-11-25T12:30:00"
+        "end_date": "2025-12-03T23:59:59"
       }
     },
     "black_friday_slider_xyP7TK": {
@@ -318,7 +318,7 @@
         "layout_mobile": "1",
         "color_scheme": "scheme-2",
         "padding_top": 20,
-        "padding_bottom": 0,
+        "padding_bottom": 20,
         "heading_tag": "h2"
       }
     },
