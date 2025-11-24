@@ -315,7 +315,7 @@
         "align_text": "text-center",
         "width": "wrapper--full-padded",
         "align_columns": "flex-align-top",
-        "layout_mobile": "slider",
+        "layout_mobile": "1",
         "color_scheme": "scheme-2",
         "padding_top": 20,
         "padding_bottom": 0,
