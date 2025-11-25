@@ -72,84 +72,14 @@
         "padding_bottom": 0
       }
     },
-    "section_multicolumn_zXCptz": {
-      "type": "section-multicolumn",
-      "blocks": {
-        "icon_cEDDDw": {
-          "type": "icon",
-          "settings": {
-            "column_width": 33,
-            "icon_name": "icon-check-circle",
-            "icon_size": 20,
-            "icon_alignment": "icon--top",
-            "icon_color": "#fac848",
-            "title": "25% off everything",
-            "heading_font_size": "heading-small",
-            "text": "",
-            "text_font_size": "body-medium",
-            "heading_tag": "automatic"
-          }
-        },
-        "icon_EEzdxJ": {
-          "type": "icon",
-          "settings": {
-            "column_width": 33,
-            "icon_name": "icon-check-circle",
-            "icon_size": 20,
-            "icon_alignment": "icon--top",
-            "icon_color": "#fac848",
-            "title": "30% off $75+ orders",
-            "heading_font_size": "heading-small",
-            "text": "",
-            "text_font_size": "body-medium",
-            "heading_tag": "automatic"
-          }
-        },
-        "icon_3bgenh": {
-          "type": "icon",
-          "settings": {
-            "column_width": 33,
-            "icon_name": "icon-check-circle",
-            "icon_size": 20,
-            "icon_alignment": "icon--top",
-            "icon_color": "#fac848",
-            "title": " 35% off $100+ orders",
-            "heading_font_size": "heading-small",
-            "text": "",
-            "text_font_size": "body-medium",
-            "heading_tag": "automatic"
-          }
-        }
-      },
-      "block_order": [
-        "icon_cEDDDw",
-        "icon_EEzdxJ",
-        "icon_3bgenh"
-      ],
-      "name": "Multi column",
-      "settings": {
-        "title": "",
-        "heading_font_size": "heading-x-large",
-        "description": "",
-        "align_heading": "text-center",
-        "align_text": "text-center",
-        "width": "wrapper--full-padded",
-        "align_columns": "flex-align-center",
-        "layout_mobile": "1",
-        "color_scheme": "scheme-11",
-        "padding_top": 0,
-        "padding_bottom": 1,
-        "heading_tag": "automatic"
-      }
-    },
     "black_friday_banner_bL8cN7": {
       "type": "black-friday-banner",
       "name": "Black Friday Banner",
       "settings": {
         "left_bg_color": "#0c0b1a",
         "right_bg_color": "#111b36",
-        "highlight_text": "Black Friday:",
-        "headline_text": "Up to 35% OFF + Free Gifts — Tools That Actually Stick.",
+        "highlight_text": "25% Off Everything / 30% Off $75+ orders / 35% Off $100+ Orders",
+        "headline_text": "",
         "subtext": "End your phone addiction with Helm. Buy now and get the desktop app for free.",
         "cta_text": "Shop Helm",
         "button_link": "shopify://products/helm",
@@ -993,7 +923,6 @@
     "main",
     "black_announcement_bar_aAF33W",
     "section_rich_text_fEHLHf",
-    "section_multicolumn_zXCptz",
     "black_friday_banner_bL8cN7",
     "black_friday_slider_xyP7TK",
     "section_rich_text_7AcNJU",
