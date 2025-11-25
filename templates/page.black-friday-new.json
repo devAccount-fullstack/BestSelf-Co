@@ -238,9 +238,9 @@
       ],
       "name": "Multi column",
       "settings": {
-        "title": "The More You Grow,",
+        "title": "The More You Grow, The More You Save",
         "heading_font_size": "heading-large",
-        "description": "<h4>The More you Save</h4>",
+        "description": "",
         "align_heading": "text-center",
         "align_text": "text-center",
         "width": "wrapper--full-padded",
